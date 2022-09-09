@@ -1,7 +1,7 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
-# Risks, pitfalls, and leverage
+# Risks and pitfalls
 What are the risks associated with options?
 
