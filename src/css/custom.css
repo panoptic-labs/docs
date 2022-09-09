@@ -6,25 +6,39 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: hsl(263, 49%, 45%);
+  --ifm-color-primary-dark: hsl(263, 49%, 42%);
+  --ifm-color-primary-darker: hsl(263, 49%, 40%);
+  --ifm-color-primary-darkest: hsl(263, 49%, 35%);
+  --ifm-color-primary-light: hsl(263, 49%, 49%);
+  --ifm-color-primary-lighter: hsl(263, 49%, 50%);
+  --ifm-color-primary-lightest: hsl(263, 49%, 56%);
   --ifm-code-font-size: 95%;
+  --ifm-global-spacing: 2rem;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-color-primary: hsl(273, 68%, 55%);
+  --ifm-color-primary-dark: hsl(273, 68%, 51%);
+  --ifm-color-primary-darker: hsl(273, 68%, 48%);
+  --ifm-color-primary-darkest: hsl(273, 68%, 42%);
+  --ifm-color-primary-light: hsl(273, 68%, 60%);
+  --ifm-color-primary-lighter: hsl(273, 68%, 62%);
+  --ifm-color-primary-lightest: hsl(273, 68%, 69%);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.html {
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif,
+    BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+  font-size: 16px;
+  font-variant: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-feature-settings: 'ss01' on, 'ss02' on, 'cv01' on, 'cv03' on;
+  font-weight: 200;
 }
