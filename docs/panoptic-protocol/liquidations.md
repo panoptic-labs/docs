@@ -9,7 +9,11 @@ Accounts can be margin called and liquidated.
 
 ## Buying power requirement
 
-## Option Sellers
+### SELL_COLLATERAL_RATIO
 
-## Option Buyers
+### BUY_COLLATERAL_RATIO 
+
+## Margin Calls
+
+## Liquidations Process
 

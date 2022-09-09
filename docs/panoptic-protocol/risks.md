@@ -7,9 +7,13 @@ Trading undercollateralized options is risky.
 
 ## Introduction
 
-## Buying power requirement
+## Risks for...
+### Option Sellers
 
-## Option Sellers
+### Option Buyers
 
-## Option Buyers
+### Liquidity Providers
 
+## Forced Exercise
+
+## Liquidations
