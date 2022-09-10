@@ -42,3 +42,8 @@
   font-feature-settings: 'ss01' on, 'ss02' on, 'cv01' on, 'cv03' on;
   font-weight: 200;
 }
+
+[data-theme='light'] img[src$='#gh-dark-mode-only'],
+[data-theme='dark'] img[src$='#gh-light-mode-only'] {
+  display: none;
+}
