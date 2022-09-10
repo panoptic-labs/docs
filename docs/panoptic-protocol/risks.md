@@ -1,11 +1,11 @@
 ---
-sidebar_position: 5
+sidebar_position: 3
 ---
 
 # Options trading risks
 Trading undercollateralized options is risky.
 
-## Introduction
+## Margin call
 
 ## Risks for...
 ### Option Sellers

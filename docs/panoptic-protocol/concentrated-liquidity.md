@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+icon: BookOpenIcon
 ---
 
 # Concentrated Liquidity AMMs

@@ -1,7 +1,7 @@
 ---
-sidebar_position: 3
+sidebar_position: 5
 ---
 
 # Risks and pitfalls
-What are the risks associated with options?
+How to manage the risks associated with trading options?
 
