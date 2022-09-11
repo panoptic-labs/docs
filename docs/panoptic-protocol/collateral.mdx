@@ -12,7 +12,8 @@ The amount of capital available to place trade with is defined by this collatera
 For example, if Alice deposits 1500 Dai and 2 ETH the ETH-Dai-30bps Panoptic Pool when the price of ETH is 1500Dai, then her buying power on the put side is 4500 Dai and it is 2.5 ETH on the call side.
 
 The minting of any option in Panoptic will reduce the account's Buying Power. 
-The Buying Power Reduction of an option depends on 1) the notional value of that option and 2) the price of the underlying asset. 
+The Buying Power Reduction of an option depends on 1) the notional value of that option and 2) the price of the underlying asset and 3) the pool utilization at the time the position was minted. 
+
 
 ---
 
@@ -28,6 +29,10 @@ BUY\_COLLATERAL\_RATIO = \begin{cases}
 $$
 
 Concretely, the collateral requirement will be 10% of notional when the pool utilization is less than 50% and will decrease linearly to 5% between 50% and 90% pool utilization.
+
+|poolUtilization (%) | 0|10|20|30|40|50|60|70|80|90|100|
+|-|-|-|-|-|-|-|-|-|-|-|-|
+|buy_collateral_ratio (%)|10|10|10|10|10|10|8.75|7.5|6.25|5|5|
 
 Then, the buying power reduction for this long option is simply $\mathtt{BUY\_COLLATERAL\_RATIO \cdot notionalValue}$ is the position is Out-The-Money.
 If the position is In-The-Money, the Panoptic pool will swap the required assets after moving them out of the Uniswap pool, so the buying power reduction will be $\mathtt{BUY\_COLLATERAL\_RATIO \cdot notionalValue + \frac{currentPrice}{strike}\cdot notionalValue}$.  
@@ -47,6 +52,11 @@ $$
 
 Concretely, the collateral requirement will be 10% of notional when the pool utilization is less than 50% and will decrease linearly to 5% between 50% and 90% pool utilization.
 
+|poolUtilization (%) | 0|10|20|30|40|50|60|70|80|90|100|
+|-|-|-|-|-|-|-|-|-|-|-|-|
+|sell_collateral_ratio (%) |20|20|20|20|20|20|40|60|80|100|100|
+
+
 ---
 
 ## Commissions
@@ -65,6 +75,10 @@ COMMISSION = \begin{cases}
 \mathtt{0.002\cdot Notional\cdot2^{14\cdot\left(poolUtilization-0.5\right)}} & p > 50\%\\
 \end{cases}
 $$
+
+|poolUtilization (%) | 0|10|20|30|40|50|60|70|80|90|100|
+|-|-|-|-|-|-|-|-|-|-|-|-|
+|commission (bps)|20|20|20|20|20|20|50|140|367|970|2560|
 
 
 import ThemedImage from '@theme/ThemedImage';
