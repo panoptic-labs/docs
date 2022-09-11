@@ -1,0 +1,80 @@
+---
+sidebar_position: 4
+---
+
+# Commissions and Collateral
+How does Panoptic calculate collateralization requirements?
+
+## Buying Power Reduction
+
+Each account in Panoptic has to deposit collateral in order to mint an option. 
+The amount of capital available to place trade with is defined by this collateral and is called the *Buying Power*.
+For example, if Alice deposits 1500 Dai and 2 ETH the ETH-Dai-30bps Panoptic Pool when the price of ETH is 1500Dai, then her buying power on the put side is 4500 Dai and it is 2.5 ETH on the call side.
+
+The minting of any option in Panoptic will reduce the account's Buying Power. 
+The Buying Power Reduction of an option depends on 1) the notional value of that option and 2) the price of the underlying asset. 
+
+---
+
+## Collateral requirements for BUYING
+
+The collateral requirements for buying an options depends on the *poolUtilization* according to:
+$$
+BUY\_COLLATERAL\_RATIO = \begin{cases}
+\mathtt{0.1} & p < 50\%\\
+\mathtt{0.125\cdot\left(1.3 - poolUtilization\right)} & 50\% < p < 90\%\\
+\mathtt{0.05} & > 90\%
+\end{cases}
+$$
+
+Concretely, the collateral requirement will be 10% of notional when the pool utilization is less than 50% and will decrease linearly to 5% between 50% and 90% pool utilization.
+
+Then, the buying power reduction for this long option is simply $\mathtt{BUY\_COLLATERAL\_RATIO \cdot notionalValue}$ is the position is Out-The-Money.
+If the position is In-The-Money, the Panoptic pool will swap the required assets after moving them out of the Uniswap pool, so the buying power reduction will be $\mathtt{BUY\_COLLATERAL\_RATIO \cdot notionalValue + \frac{currentPrice}{strike}\cdot notionalValue}$.  
+
+---
+
+## Collateral requirements for SELLING
+
+The collateral requirements for buying an options depends on the *poolUtilization* according to:
+$$
+SELL\_COLLATERAL\_RATIO = \begin{cases}
+\mathtt{0.2} & p < 50\%\\
+\mathtt{2\cdot\left(poolUtilization - 0.4\right)} & 50\% < p < 90\%\\
+\mathtt{1} & > 90\%
+\end{cases}
+$$
+
+Concretely, the collateral requirement will be 10% of notional when the pool utilization is less than 50% and will decrease linearly to 5% between 50% and 90% pool utilization.
+
+---
+
+## Commissions
+
+This contrasts with brokerage firms that charge a fixed commission when a position is opened and closed.
+When a position expires, however, no commission is paid regardless of if it expired in-the-money or out-the-money.
+A consequence of this is that users may keep their position open for longer because they do not want to paid the commission.
+
+In Panoptic, since options never expire and we wanted to limit any that could impact the decision-making when closing a position, commissions are only paid when a new position is minted. 
+
+However, commissions depend on the pool utilization according to:
+
+$$
+COMMISSION = \begin{cases}
+\mathtt{0.002\cdot Notional} & p < 50\%\\
+\mathtt{0.002\cdot Notional\cdot2^{14\cdot\left(poolUtilization-0.5\right)}} & p > 50\%\\
+\end{cases}
+$$
+
+
+import ThemedImage from '@theme/ThemedImage';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<ThemedImage
+  alt="Commissions"
+  sources={{
+    light: useBaseUrl('/img/commissions-light.svg'),
+    dark: useBaseUrl('/img/commissions-dark.svg'),
+  }}
+/>
+
