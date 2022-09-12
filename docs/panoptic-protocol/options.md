@@ -8,7 +8,7 @@ The core primitive of the Panoptic is a Uniswap v3 LP position.
 ### What are Options?
 
 Options are one of the most traded instrument in traditional finance.
-They can be used to [hedge](./trading/basic-concepts) a portfolio, [speculate](./trading/perpetual-options) on the value of an asset, create [synthetic positions](./trading/multi-leg-strategies) in a capital-efficient manner, or as a way to create [defined-risk](./trading/risks) positions.
+They can be used to [hedge](docs/trading/basic-concepts) a portfolio, [speculate](/docs/trading/perpetual-options) on the value of an asset, create [synthetic positions](docs/trading/multi-leg-strategies) in a capital-efficient manner, or as a way to create [defined-risk](docs/trading/risks) positions.
 
 Options are an agreement between two parties to buy (or sell) an asset for a fixed price at a pre-determined time.
 Hence, each option has a
@@ -29,11 +29,11 @@ Options in Panoptic, however, are a little bit different than traditional option
 Behind the scenes, the Panoptic protocol utilizes Liquidity Provider (LP) positions in Uniswap v3 as a core primitive for trading long and short options.
 Concretely, this means that:
 
-- Options are [perpetual and never expire](./panoptic-protocol/options#liquidity-providing-as-selling-options)
-- [Pricing](./panoptic-protocol/premium) does not involved counterparties (like market makers) and is path-dependent
-- Options have a [width](./panoptic-protocol/options#liquidity-providing-as-selling-options), which simulates a time to expiration and reduce pin risk
-- Collateralization requirements [respond](./panoptic-protocol/liquidations) to market activity
-- Anybody can deploy an options market on any asset in a [permissionless manner](./category/technical-specifications)
+- Options are [perpetual and never expire](/docs/panoptic-protocol/options#liquidity-providing-as-selling-options)
+- [Pricing](/docs/panoptic-protocol/premium) does not involved counterparties (like market makers) and is path-dependent
+- Options have a [width](/docs/panoptic-protocol/options#liquidity-providing-as-selling-options), which simulates a time to expiration and reduce pin risk
+- Collateralization requirements [respond](/docs/panoptic-protocol/liquidations) to market activity
+- Anybody can deploy an options market on any asset in a [permissionless manner](/docs/category/technical-specifications)
 
 (figure here)
 

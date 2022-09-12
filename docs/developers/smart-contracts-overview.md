@@ -6,15 +6,6 @@ Panoptic smart contracts directly interface with Uniswap v3's core contracts to 
 
 ---
 
-# Table of contents
-import TOCInline from '@theme/TOCInline';
-
-<TOCInline toc={toc} minHeadingLevel={1} />
-
-
----
-
-
 ## Architecture & Contracts
 
 ### (dependency) UniswapV3Pool.sol
