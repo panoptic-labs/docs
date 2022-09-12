@@ -40,9 +40,9 @@ const config = {
           },
           {
             type: 'doc',
-            docId: '/category/options-trading-concepts',
+            docId: '/category/options-trading-101',
             position: 'left',
-            label: 'Options trading concepts',
+            label: 'Options trading 101',
           },
           {
             type: 'doc',
@@ -110,6 +110,12 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      docs: {
+        sidebar: {
+          autoCollapseCategories: true,
+          hideable: true,
+        },
+      },      
     }),
 
   // Even if you don't use internalization, you can use this field to set useful

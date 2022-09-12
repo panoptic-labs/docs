@@ -1,5 +1,5 @@
 {
-  "label": "Subgraph",
+  "label": "subGraph",
   "position": 5,
   "link": {
     "type": "generated-index",

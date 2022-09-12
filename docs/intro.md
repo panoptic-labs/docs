@@ -1,5 +1,7 @@
 ---
 sidebar_position: 1
+sidebar_label: Introduction
+sidebar_class_name: menu__list-item-collapsible
 ---
 
 # What is Panoptic?
@@ -36,6 +38,8 @@ The main risks are:
 ### What is the relationship between Panoptic and the Uniswap v3 protocol?
 
 Options in Panoptic trace their origin to the simple observation that providing concentrated liquidity in Uniswap v3 generates a payoff that is mathematically identical to selling a put option.
+In a sense, the liquidity provider (LP) positions are tokenized short puts.
+What Panoptic enables is the minting of options in  "peer-to-protocol" manner but facilitating the transfer of these tokenized LP positions to create long/short puts and calls.
 
 (block diagram here)
 
