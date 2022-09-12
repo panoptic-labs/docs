@@ -6,15 +6,14 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: hsl(264, 49%, 45%);
-  --ifm-color-primary-dark: hsl(264, 49%, 42%);
-  --ifm-color-primary-darker: hsl(264, 49%, 40%);
-  --ifm-color-primary-darkest: hsl(264, 49%, 35%);
-  --ifm-color-primary-light: hsl(264, 49%, 49%);
-  --ifm-color-primary-lighter: hsl(264, 49%, 50%);
-  --ifm-color-primary-lightest: hsl(264, 49%, 56%);
-  --ifm-color-navbar-links: hsl(269, 68%, 60%);
-  --ifm-navbar-background-color: hsl(269, 68%, 92%);
+  --ifm-color-primary: hsl(262, 49%, 45%);
+  --ifm-color-primary-dark: hsl(262, 49%, 42%);
+  --ifm-color-primary-darker: hsl(262, 49%, 40%);
+  --ifm-color-primary-darkest: hsl(262, 49%, 35%);
+  --ifm-color-primary-light: hsl(262, 49%, 49%);
+  --ifm-color-primary-lighter: hsl(262, 49%, 50%);
+  --ifm-color-primary-lightest: hsl(262, 49%, 56%);
+  --ifm-color-navbar-links: hsl(257, 68%, 69%);
   --ifm-font-family-base: 'Inter';
   --ifm-font-size-base: 16px;
   --ifm-font-weight-semibold: 400;  
@@ -27,13 +26,13 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: hsl(269, 68%, 55%);
-  --ifm-color-primary-dark: hsl(269, 68%, 51%);
-  --ifm-color-primary-darker: hsl(269, 68%, 48%);
-  --ifm-color-primary-darkest: hsl(269, 68%, 42%);
-  --ifm-color-primary-light: hsl(269, 68%, 60%);
-  --ifm-color-primary-lighter: hsl(269, 68%, 62%);
-  --ifm-color-primary-lightest: hsl(269, 68%, 69%);
+  --ifm-color-primary: hsl(257, 68%, 55%);
+  --ifm-color-primary-dark: hsl(257, 68%, 51%);
+  --ifm-color-primary-darker: hsl(257, 68%, 48%);
+  --ifm-color-primary-darkest: hsl(257, 68%, 42%);
+  --ifm-color-primary-light: hsl(257, 68%, 60%);
+  --ifm-color-primary-lighter: hsl(257, 68%, 62%);
+  --ifm-color-primary-lightest: hsl(257, 68%, 69%);
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
@@ -43,13 +42,13 @@
 
 .navbar--dark {
   box-shadow: 0 1px 2px 0 hsla(263,100%,100%,.9);
-  background: radial-gradient(circle at 100%, hsl(264, 94%, 20%) 2% 0%, hsl(264, 49%, 13%) 15% 7%, hsl(264, 94%, 24%) 47% 53%, hsl(264, 49%, 13%) 80%);
+  background: radial-gradient(circle at 100%, hsl(262, 94%, 20%) 2% 0%, hsl(262, 49%, 13%) 15% 7%, hsl(262, 94%, 24%) 47% 53%, hsl(262, 49%, 13%) 80%);
 }
 
 
 .footer {
   box-shadow: 0 -1px 2px 0 hsla(263,100%,100%,.9);
-  background: radial-gradient(circle at 100%, hsl(264, 94%, 20%) 2% 0%, hsl(264, 49%, 13%) 15% 7%, hsl(264, 94%, 24%) 47% 53%, hsl(264, 49%, 13%) 80%);
+  background: radial-gradient(circle at 100%, hsl(262, 94%, 20%) 2% 0%, hsl(262, 49%, 13%) 15% 7%, hsl(262, 94%, 24%) 47% 53%, hsl(262, 49%, 13%) 80%);
 }
 
 .html { 
