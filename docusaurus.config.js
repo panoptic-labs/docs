@@ -36,25 +36,13 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Protocol',
+            label: 'Docs',
           },
           {
             type: 'doc',
             docId: '/category/options-trading-concepts',
             position: 'left',
             label: 'Options trading concepts',
-          },
-          {
-            type: 'doc',
-            docId: '/category/technical-specifications',
-            position: 'left',
-            label: 'Technical Specifications',
-          },
-          {
-            type: 'doc',
-            docId: '/category/subgraph',
-            position: 'left',
-            label: 'Subgraph',
           },
           {
             type: 'doc',
@@ -65,12 +53,17 @@ const config = {
           {
             type: 'doc',
             docId: '/category/faq',
-            position: 'left',
+            position: 'right',
             label: 'FAQ',
           },
           {
             href: 'https://github.com/panoptic-labs/docs',
             label: 'GitHub',
+            position: 'right',
+          },
+          {
+            href: 'https://app.panoptic.xyz',
+            label: 'App',
             position: 'right',
           },
         ],
@@ -110,7 +103,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Axicon Labs, Inc.`,
       },
       prism: {
         additionalLanguages: ['solidity'],
