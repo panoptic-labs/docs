@@ -30,6 +30,7 @@ const config = {
           alt: 'Panoptic Logo',
           src: 'img/logo.svg',
         },
+        style: 'dark',
         items: [
           {
             type: 'doc',
