@@ -14,8 +14,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <ThemedImage
   alt="Commissions"
   sources={{
-    light: useBaseUrl('/img/protocol-architecture.svg'),
-    dark: useBaseUrl('/img/protocol-architecture.svg'),
+    light: useBaseUrl('/img/protocol-architecture-light.svg'),
+    dark: useBaseUrl('/img/protocol-architecture-dark.svg'),
   }}
 />
 
