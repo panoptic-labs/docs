@@ -1,8 +1,8 @@
 ---
-sidebar_position: 3
+sidebar_position: 2
 ---
 
-# Panoptic roles
+# Protocol roles
 Ecosystem participants include liquidity providers, options sellers, options buyers, and liquidators.
 
 ## Introduction

@@ -1,8 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require('prism-react-renderer/themes/paleNight');
+const darkCodeTheme = require('prism-react-renderer/themes/paleNight');
 
 const math = require('remark-math');
 const katex = require('rehype-katex');
@@ -43,6 +43,12 @@ const config = {
             docId: '/category/options-trading-101',
             position: 'left',
             label: 'Options trading 101',
+          },
+          {
+            type: 'doc',
+            docId: '/category/technical-specifications',
+            position: 'left',
+            label: 'Technical specs',
           },
           {
             type: 'doc',

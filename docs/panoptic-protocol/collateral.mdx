@@ -1,23 +1,79 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # Commissions and Collateral
 How does Panoptic calculate collateralization requirements?
 
-## Buying Power Reduction
+## Collateral tracking
 
+### Depositing collateral
 Each account in Panoptic has to deposit collateral in order to mint an option. 
+This is done by calling the `deposit(uint128 assets, address token)` function in `PanopticPool.sol`.
+The `PanopticPool` smart contract will issues a receipt token (similar to Aave's `aToken` and Compound's `cToken`) which uses a shares model to track yield distribution.
+
+The amount of shares received after depositing `uint128 assets` is computed using the `convertToShares(uint128 assets)` function from `ReceiptBase.sol`:
+
+```solidity
+uint256 shares =  (uint256(assets) * totalSupply()) / totalBalance();
+```
+
+where `totalSupply()` returns the total amount of receipt token issued and `totalBalance()` returns the amount of token available to withdraw
+
+```solidity
+uint256 totalBalance() =
+    underlyingToken.balanceOf(panopticPool) -  // total amount in the PanopticPool
+    collectedFees() + // amount of collected fees (protected)
+    inAMM(); // amount moved from PanopticPool to UniswapV3Pool (available)
+```
+
+Here, the accumulator `collectedFees()` tracks the amount of fees that have been collected. 
+This amount does not count towards `totalBalance()` because it is reserved to pay options sellers.
+
+The accumulator `inAMM()` tracks the amount of token that has been moved from the PanopticPool to the UniswapV3Pool.
+This amount does cound towards `totalBalance()` because it has not left the Panoptic-Uniswap ecosystem.
+
+### Withdrawing collateral
+When a user wants to withdraw their tokens out of the Panoptic pool, they have to call `withdraw(uint256 shares, address token, uint256[] calldata positionIdList)`.
+Accumulated yields from the deposited collateral will be transferred pro-rata to the user according to the shares model, where:
+
+```solidity
+uint128 assets = (shares * totalBalance()) / totalSupply();
+```
+where `totalBalance()` and `totalSupply()` are computed as described in the [Deposit](/docs/panoptic-protocol/collateral#deposit) section.
+
+The third argument of the `withdraw()` function, `positionIdList`,  must be the list of all positions held by `msg.sender`.
+The `positionIdList` will be used to compute the collateral requirement for the account, and will fail if the position will be margin called or underwater (ie. `collateralRequired / collateralBalance < 1`).
+
+## Margin Requirements
+Panoptic makes use of built-in leverage to enable the minting of undercollateralized options.
+In traditional finance, some accounts like IRA or a Level 1 trading account, requires all options to be fully collateralized.
+Specifically, users in IRA accounts can only sell cash-secured puts or covered calls, which means they have to deposit the notional value of the underlying position in cash (for cash-secured puts) or own the underlying shares (for covered calls).
+
+Undercollateralization is handled by reducing the buying power requirement of an asset. 
+In the examples above, a Level 4 trading account in a brokerage firm may be able to sell naked puts and naked calls by only posting about 5x less collateral than in a Level 1 account.
+For Portfolio margin accounts, the collateral requirements could be even smaller, requiring about 10-15x less collateral than a Level 1 account.
+
+### Buying Power Reduction
+
 The amount of capital available to place trade with is defined by this collateral and is called the *Buying Power*.
 For example, if Alice deposits 1500 Dai and 2 ETH the ETH-Dai-30bps Panoptic Pool when the price of ETH is 1500Dai, then her buying power on the put side is 4500 Dai and it is 2.5 ETH on the call side.
 
 The minting of any option in Panoptic will reduce the account's Buying Power. 
 The Buying Power Reduction of an option depends on 1) the notional value of that option and 2) the price of the underlying asset and 3) the pool utilization at the time the position was minted. 
 
+Financial Industry Regulatory Authority (FINRA) Rule 4210 (FINRA, 2022) and the Cboe rules (CBOE, 2022) state that the margin account collateral requirements for a short put or a short call are:
+```
+100% of option proceeds plus 20% of underlying security/index value less out-of-the- money amount, if any, 
+to a minimum of option proceeds plus 10% of underlying security/index value for calls; 
+10% of the put exercise price for puts. (source: Cboe Rule 10.3)
+```
+
+
 
 ---
 
-## Collateral requirements for BUYING
+### Collateral requirements for BUYING
 
 The collateral requirements for buying an options depends on the *poolUtilization*.
 
@@ -41,7 +97,7 @@ $$
 
 ---
 
-## Collateral requirements for SELLING
+### Collateral requirements for SELLING
 
 The collateral requirements for buying an options depends on the *poolUtilization*.
 
@@ -61,7 +117,7 @@ $$
 
 ---
 
-## Commissions
+## Commissions & Fees
 
 This contrasts with brokerage firms that charge a fixed commission when a position is opened and closed.
 When a position expires, however, no commission is paid regardless of if it expired in-the-money or out-the-money.

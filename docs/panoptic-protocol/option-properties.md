@@ -1,9 +1,9 @@
 ---
-sidebar_position: 5
+sidebar_position: 3
 ---
 
-# Moneyness of an option
-In- and out-the-money, at-the-money, and far-the-money
+# Option properties
+Panoptic options have: width, moneyness, type, legs, etc..
 
 ## In-the-money and out-the-money
 

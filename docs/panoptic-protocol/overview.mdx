@@ -1,9 +1,9 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
-# Panoptic Options
-The core primitive of the Panoptic is a Uniswap v3 LP position.
+# Panoptic Overview
+A basic overview of the Panoptic Protocol.
 
 ### What are Options?
 
@@ -28,11 +28,18 @@ Options in Panoptic, however, are a little bit different than traditional option
 Behind the scenes, the Panoptic protocol utilizes Liquidity Provider (LP) positions in Uniswap v3 as a core primitive for trading long and short options.
 Concretely, this means that:
 
-- Options are [perpetual and never expire](/docs/panoptic-protocol/options#liquidity-providing-as-selling-options)
-- [Pricing](/docs/panoptic-protocol/premium) does not involved counterparties (like market makers) and is path-dependent
-- Options have a [width](/docs/panoptic-protocol/options#liquidity-providing-as-selling-options), which simulates a time to expiration and reduce pin risk
-- Collateralization requirements [respond](/docs/panoptic-protocol/liquidations) to market activity
+- Options are [perpetual and never expire](/docs/panoptic-protocol/overview#liquidity-providing-as-selling-options)
 - Anybody can deploy an options market on any asset in a [permissionless manner](/docs/category/technical-specifications)
+- Panoptic allows anyone to be a [liquidity provider](docs/panoptic-protocol/protocol-roles#liquidity-providers) to lend their capital to options traders 
+- Options have [unique properties](/docs/panoptic-protocol/option-properties): width, new concept of moneyness, user-defined numeraire, etc.
+- [Pricing](/docs/panoptic-protocol/premium) does not involved counterparties (like market makers) and is path-dependent
+- There is no concept of [vega](https://en.wikipedia.org/wiki/Greeks_(finance)#Vega), which means premium for open positions will be affected by volatility expansion
+- Collateralization requirements and buying power reduction [respond](/docs/panoptic-protocol/liquidations) to market activity
+- Commissions are paid [only once](/docs/panoptic-protocol/collateral#commissions--fees), when the position is created
+- Users can [delegate funds](/docs/) to another account
+- Distressed accounts will be [liquidated](/docs/panoptic-protocol/liquidations) by external users
+- Long positions that are far-the-money may be [forced exercised](/docs/panoptic-protocol/liquidations#forced-exercise) by external users
+
 
 (figure here)
 
