@@ -51,17 +51,17 @@ Concretely, this means that:
 >pp = IPanopticPool
 >univ3pool = IUniswapV3Pool
 >token0 = ERC20 interface of collateral token
-                                                                       _- amount of token0 
-                                                                      /    owned by the
-    _----------------pp.totalBalance()---------------_               /      Panoptic Pool
+                                                                       _- token0.balanceOf(pp) =
+                                                                      /    amount of token0 owned
+    _----------------pp.totalBalance()---------------_               /      by the Panoptic Pool
    /                                                  \            /
   |   _----pp.inAMM0()---_     _--------------token0.balanceOf(pp)---------------_       
   |  /                    \   /                        |  _---pp.collected0()--_  \
-  | |  amount of token0    | | amount of `free`        | /                      \  |
-  | |  moved from Panoptic | |  token0 that can be     ||   collected token0,    | |
-  | |   to UniswapV3       | |   used to sell under-   ||    reserved to be      | |
-  | |                      | |    collateralized       | \    paid to sellers   /  |
-  |  \                    /   \    options             |  ¯--------------------¯  /
+  | |  amount of token0    | |  amount of `free`       | /                      \  |
+  | |  moved from Panoptic | |   token0 that can be    ||   collected token0,    | |
+  | |   to UniswapV3       | |    used to sell under-  ||    reserved to be      | |
+  | |                      | |     collateralized      | \    paid to sellers   /  |
+  |  \                    /   \     options            |  ¯--------------------¯  /
   |   ¯------------------¯     ¯-----------------------+-------------------------¯  
    \                                                   |
     ¯-------------------------------------------------¯          
@@ -77,7 +77,7 @@ Concretely, this means that:
 
 
 
--Example 1: poolUtilization = 50%  (targetted equilibrium) 
+-Example 1: poolUtilization = 50%  (targeted equilibrium) 
    _------pp.totalBalance()--+-------------------------_
   /                          |                          \   COMMISSION_RATE       = 20bps             
  |     pp.inAMM0()           |     `free` token0         |  BUY_COLLATERAL_RATIO  = 10%                 
@@ -121,7 +121,7 @@ _RATE         ^
 ```
 
 ### Collateral Requirements
-#### Collateralization ration (buying)
+#### Collateralization ratio (buying)
 
 ```solidity
 
@@ -138,7 +138,7 @@ _RATIO        ^
                                       50%                 90%   100%
                                                                       
 ```
-#### Collateralization ration (selling)
+#### Collateralization ratio (selling)
 
 ```solidity
 
@@ -164,10 +164,10 @@ LIQUIDATION
 _BONUS        ^  max bonus = 100%
        100% _ |___________
               |          .¯-_
-              |          .   ¯-_              no cost at 100% capitalization  
-              |          .      ¯-_         /
-              |          .         ¯-_     / 
-              |          .            ¯-_ /
+              |          .   ¯-_                   no cost at 100% capitalization  
+              |          .      ¯-_             /
+              |          .         ¯-_        / 
+              |          .            ¯-_  /
          0% - +----------+---------------+---------------+---------->    MIN_CAPITAL_REQUIREMENT
               |        50%            100% ¯-_         150%       
               |                               ¯-_        .   
@@ -183,17 +183,17 @@ _BONUS        ^  max bonus = 100%
 
 EXERCISE
 _COST         ^   max cost = 10.24%
-    1024bps _ |___    
-     512bps _ |   \.___  
-     256bps _ |    .   \.___   
-     128bps _ |    .    .   \.___      
-      64bps _ |    .    .    .   \.___        
-      32bps _ |    .    .    .    .   \.___        
-      16bps _ |    .    .    .    .    .   \.___              
-       8bps _ |    .    .    .    .    .    .   \.___               
-       4bps _ |    .    .    .    .    .    .    .   \.___      
-       2bps _ |    .    .    .    .    .    .    .    .   \.___    min cost = 0.01% 
-       1bps _ |    .    .    .    .    .    .    .    .    .   \.______         
+    1024bps _ |____   
+     512bps _ |    |____  
+     256bps _ |    .    |____   
+     128bps _ |    .    .    |____      
+      64bps _ |    .    .    .    |____        
+      32bps _ |    .    .    .    .    |____        
+      16bps _ |    .    .    .    .    .    |____              
+       8bps _ |    .    .    .    .    .    .    |____               
+       4bps _ |    .    .    .    .    .    .    .    |____      
+       2bps _ |    .    .    .    .    .    .    .    .    |____    min cost = 0.01% 
+       1bps _ |    .    .    .    .    .    .    .    .    .    |____         
               +----+----+----+----+----+----+----+----+----+----+--->   
                   1x   2x   3x   4x   5x   6x   7x   8x   9x  10x    DISTANCE_FROM_STRIKE 
                                                                       (number of "widths")
