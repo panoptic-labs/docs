@@ -76,7 +76,7 @@
 }
 
 html[data-theme='dark'] {
-  background-position: 0px -30vh;
+  background-position: 0px 25vh;
   background: radial-gradient(circle at 100%, hsla(262, 94%, 80%, 0.1) 2% 0%, hsla(262, 69%, 100%, 0.1) 15% 7%, hsla(262, 94%, 76%, 0.1) 47% 53%, hsla(262, 69%, 87%, 0.1) 80%);
 
   /* any other colors you wish to overwrite */
@@ -84,7 +84,7 @@ html[data-theme='dark'] {
 
 html[data-theme='light'] {
 
-  background-position: 0px -30vh;
+  background-position: 0px 25vh;
   background: radial-gradient(circle at 100%, hsla(262, 94%, 20%, 0.05) 2% 0%, hsla(262, 49%, 13%, 0.05) 15% 7%, hsla(262, 94%, 24%, 0.05) 47% 53%, hsla(262, 49%, 13%, 0.05) 80%);
   /* any other colors you wish to overwrite */
 }
