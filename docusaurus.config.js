@@ -2,7 +2,7 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const lightCodeTheme = require('prism-react-renderer/themes/palenight');
-const darkCodeTheme = require('prism-react-renderer/themes/shadesofpurple');
+const darkCodeTheme = require('prism-react-renderer/themes/shadesOfPurple');
 
 const math = require('remark-math');
 const katex = require('rehype-katex');
