@@ -179,15 +179,83 @@ The collateralization ratio for buying an option is set at a fixed 20% for pool 
 
 SELL
 _COLLATERAL
-_RATIO        ^
+_RATIO        ^                                            max ratio = 100%
        100% - |                                            _________
               |                                       __-¯¯.    .
               |                                  __-¯¯     .    .
-              |                             __-¯¯          .    .
+              |  min ratio = 20%            __-¯¯          .    .
         20% _ |_________________________--¯¯               .    .       
               |                        .                   .    .
               +------------------------+-------------------+----+--->   POOL_UTILIZATION
                                     50%                   90%   100%
+                                           
+```
+
+### Buying Power Requirement (buying)
+
+The buying power requirement for buying an option is simply: `BPR = BUY_COLLATERAL_RATIO * NOTIONAL_VALUE + ACCUMULATED_LONG_PREMIUM`
+
+### Buying Power Requirement (selling)
+
+The buying power requirement (BPR) for selling an option is : 
+
+
+BPR for puts (with collateral denominated in numeraire):
+
+```solidity
+                                        .
+BUYING                                  .
+_POWER                         <- ITM   .  OTM ->
+_REQUIREMENT                            .
+              ^                         .  
+       100% - |-__    BPR = 100% - (100% - SCR)*(price/strike)             
+              |   ¯¯--__                .    
+              |         ¯¯--__          .               
+              |               ¯¯--__    .            min BRP = SELL_COLLATERAL_RATIO  
+        SCR - |                     ¯¯--________________________________                         
+              |                         .          
+              +-------------------------+--------------------------->   current price
+              0                      strike           
+                                           
+```
+
+BPR for calls (with collateral denominated in numeraire):
+
+```solidity
+
+BUYING                     .                                              __-- >100%
+_POWER                     .                                        __--¯¯  
+_REQUIREMENT       <- OTM  .  ITM ->                          __--¯¯
+              ^            .                            __--¯¯    
+       100% - |  -   -   - . -   -   -   -   -   -__--¯¯  -   -   -   -   -   - 100%          
+              |            .                __--¯¯  .
+              |            .          __--¯¯        .
+              | min BRP    .    __--¯¯       BPR = SCR + (100% - SCR)*(price/strike - 1)    
+ SELL_RATIO _ |_____________--¯¯                    .    
+              |            .                        .              
+              +------------+------------------------+--------------->   current price
+              0         strike                 2 * strike
+                                           
+```
+
+The buying power requirement of a call can exceed the notional value of the minted option. 
+However, users can deposit the asset as collateral in order to mitigate those risks.
+
+BPR for calls (with collateral denominated in asset):
+```solidity
+
+BUYING                     .                                            
+_POWER                     .                                     
+_REQUIREMENT       <- OTM  .  ITM ->                      
+              ^            .                               
+       100% - |  -   -   - . -   -   -   -   -   -   -   -   -   -___----- 100%          
+              |            .               ______-------¯¯¯¯¯¯¯¯¯¯     
+              |            .   ___----¯¯¯¯¯            
+              | min BRP    . --      BPR = 100% - (100% - SCR)*(strike/price) 
+ SELL_RATIO _ |_____________¯                         
+              |            .                                      
+              +------------+---------------------------------------->   current price
+              0         strike           
                                            
 ```
 
