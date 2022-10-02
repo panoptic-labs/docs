@@ -18,11 +18,21 @@ This command starts a local development server and opens up a browser window. Mo
 
 ### Build
 
+You can use the `build.sh` file to build the documentation:
+
 ```
-$ yarn build
+$ ./build.sh
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+This command generates static content into the `build` directory and can be served using any static contents hosting service. It also ensures that the Glossary is updated.
+
+### Glossary
+
+You can generate the glossary with:
+
+```
+$ ./glossary.sh
+```
 
 ### Build the Glossary
 
