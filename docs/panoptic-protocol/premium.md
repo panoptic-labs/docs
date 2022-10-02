@@ -2,12 +2,15 @@
 sidebar_position: 4
 ---
 
+import Term from "@docusaurus-terminology/term";
+
+
 # Streaming premium
 Options are priced using the novel streaming premium model.
 
 ## LP fees
 Option positions in Panoptic have no expiration. 
-This makes pricing them quite different from vanilla options whose price can easily be derived from the Black-Scholes model given a time to expiration.
+This makes pricing them quite different from vanilla options whose price can easily be derived from the <Term popup="The Black-Scholes model, aka the Black-Scholes-Merton (BSM) model, is a differential equation widely used to price options contracts." reference="/docs/terms/blackscholes">Black-Scholes</Term> model given a time to expiration.
 
 The key difference between the pricing of regular options and the streaming premium model is that, instead of requiring the users to pay for their options upfront, the pricing of an option is path-dependent and will grow at each block according to the proximity of the spot price to the option strike price.
 Since the LP position earn trading fees in the Uniswap v3 pool, the premium to be paid for a long option is simply the amount of fees collected by that option.
