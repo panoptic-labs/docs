@@ -24,9 +24,10 @@ Following the development of Nobel-prize winning mathematical models by Black, S
 
 ## How do Panoptic Options differ from traditional options?
 
-Options in Panoptic, however, are a little bit different than traditional options..
-Behind the scenes, the Panoptic protocol utilizes Liquidity Provider (LP) positions in Uniswap v3 as a core primitive for trading long and short options.
-Concretely, this means that:
+Options in Panoptic, however, differ slightly from conventional options.
+
+The Panoptic protocol uses Liquidity Provider (LP) positions in Uniswap v3 as a fundamental building block for trading long and short options.
+Specifically, this means:
 
 - Options are [perpetual and never expire](/docs/panoptic-protocol/overview#liquidity-providing-as-selling-options)
 - Anybody can deploy an options market on any asset in a [permissionless manner](/docs/category/technical-specifications)
@@ -46,26 +47,30 @@ Concretely, this means that:
 # Protocol Design
 
 ## Manipulation Protections
-Many flash-loan based attacks involve the borrowing of a large amount of fund (sometimes at zero cost!) with the goal of manipulate the price of an asset or token balance in a smart contract.
-Impartantly, flash-loan attacks require all funds to be paid back in the same block. 
+The objective of many flash-loan-based attacks is to manipulate the price of an asset or token balance in a smart contract by borrowing a large amount of funds (sometimes for free!).
+Importantly, all funds must be returned in the same block for flash-loan attacks.
 
-The Panoptic Protocol aims to prevent pool manipulation attacks by prevent funds to be withdrawn in the same block they were deposited.
-Similarly, delegating funds to an account locks both the `delegator` and `delegatee` accounts for that particular block.
-
+The Panoptic Protocol seeks to prevent pool manipulation attacks by prohibiting the withdrawal of funds from the same block in which they were deposited.
+Similarly, when funds are delegated to an account, both the delegator and delegatee accounts are locked for that block.
 
 ## Computed quantities 
 Several computed quantities are derived from the token balance in the Panoptic and Uniswap v3 pools.
 
 ### Total Balance
-The totalBalance() value is the amount of tokens that 1) can be sold and moved to the Uniswap v3 pool or 2) have already moved to the Uniswap v3 pool.
-This balance is computed using the total token balance inside the Panoptic pool, obtained by calling `IERC20(token0).balanceOf(panopticPool)`, the amount of tokens moved into the Uniswap v3 pool and the amount of token collected.
+The `totalBalance()` value is the amount of tokens that
+<ol>
+<li>can be sold and moved to the Uniswap v3 pool, or</li>
+<li>have already moved to the Uniswap v3 pool</li>
+</ol>
+
+This balance is computed using the total token balance inside the Panoptic pool (obtained via `IERC20(token0).balanceOf(panopticPool)`), the amount of tokens moved into the Uniswap v3 pool, and the amount of tokens collected.
 
 This derived quantity is used to compute the collateral shares.
 
 ```solidity
 >pp = IPanopticPool
 >univ3pool = IUniswapV3Pool
->token0 = ERC20 interface of collateral token                                | tolen0.balanceOf(pp) =
+>token0 = ERC20 interface of collateral token                                | token0.balanceOf(pp) =
                                                                           _--| amount of token0 owned
                                                                          /   | by the Panoptic Pool
     _----------------pp.totalBalance()---------------_                  /      
@@ -83,23 +88,28 @@ This derived quantity is used to compute the collateral shares.
 
 ```
 
+The `pp.collected0()` is the amount of tokens that are reserved to be paid to the sellers. Recall that, when you buy an option in Panoptic, you remove a seller's liquidity from a Uniswap v3 pool.
+When trading activity happens in the pool, fees accumulate that the sellers *would* have earned had the buyer not moved the liquidity out of the pool to Panoptic.
+These fees are incidentally also what makes up the cost of the option for the buyer, and we cover that topic elsewhere. The point is that the Panoptic Pool manages and collects these to-be-paid tokens and stores in `pp.collected0()`.
+
+If the buyer has more collateral than what they owe the seller (and more by some margin of course), they can use their remaining free capital to do whatever they want.
+They can sell options, e.g., by deploying this capital as LPs into the Uniswap v3 pool. This is what `token0.balanceOf(pp) - pp.collected0()` represents.
+
 ### Pool Utilization
 The pool utilization is a measure of the fraction of the `totalBalance()` which belongs to the Uniswap v3 pool.
-This parameter is compute whenever a position is minted to set the collateralization ratio and commission rate of the position (calculations shown below).
-
-
+This parameter is computed whenever a position is minted to set the collateralization ratio and commission rate of the position:
 
 ```solidity
 poolUtilization = pp.inAMM0() / pp.totalBalance();
                 = pp.inAMM0() / (pp.inAMM0() + `free` token0)
-                = pp.inAMM0() / (pp.inAMM0)) + token0.balanceOf(pp) - pp.collected())   
+                = pp.inAMM0() / (pp.inAMM0() + token0.balanceOf(pp) - pp.collected0())   
 
 
 
 -Example 1: poolUtilization = 50%  (targeted equilibrium) 
    _------pp.totalBalance()--+-------------------------_
   /                          |                          \   COMMISSION_RATE       = 20bps             
- |     pp.inAMM0()           |     `free` token0         |  BUY_COLLATERAL_RATIO  = 10%                 
+ |     pp.inAMM0() (inAMM0)  |     `free` token0 (fT0)   |  BUY_COLLATERAL_RATIO  = 10%                 
   \                          |                          /   SELL_COLLATERAL_RATIO = 20%
    ¯-------------------------+-------------------------¯
 
@@ -134,11 +144,11 @@ The commission and the collateralization ratios are computed *after* all funds h
 The commission rate is computed from the pool utilization and is paid whenever an option is minted.
 The value of the commission to be paid is the `notional value` of the options multiplied by the commission rate.
 
-The comission decreases to 20bps at >50% pool utilization and linearly increases to 60bps for pool utilization below 10%.
+The comission is set to 20bps at $\geq50$% pool utilization and linearly increases to 60bps for pool utilizations $\leq10$%.
 
 ```solidity
-COMMISSION
-_RATE         ^
+COMMISSION_RATE
+              ^
               |  max commission = 60bps
      60bps  _ |_____
               |    .¯¯---__
@@ -153,14 +163,14 @@ _RATE         ^
 
 ### Collateralization ratio (buying)
 
-The collateralization ratio for buying an option is set at a fixed 10% for pool utilization less than 50% and decrease to 5% at 90% or more.  
+When buying an option, collateral is necessary in order to ensure that the buyer can pay the seller the cost of the option which starts at zero and can increase based on trading activity.
+The collateralization ratio for buying an option is set at 10% for pool utilization $\leq50$% and decreases linearly to 5% at a utilization of $\geq90$%.  
 
 
 ```solidity
 
-BUY
-_COLLATERAL
-_RATIO        ^
+BUY_COLLATERAL_RATIO
+              ^
               |   max ratio = 10% 
         10% _ |_________________________
               |                         ¯¯---__
@@ -173,13 +183,12 @@ _RATIO        ^
 ```
 ### Collateralization ratio (selling)
 
-The collateralization ratio for buying an option is set at a fixed 20% for pool utilization less than 50% and increases to 100% at 90% or more.  
+The collateralization ratio for selling an option is set at a fixed 20% for pool utilization less than 50% and increases to 100% at 90% or more.  
 
 ```solidity
 
-SELL
-_COLLATERAL
-_RATIO        ^                                            max ratio = 100%
+SELL_COLLATERAL_RATIO
+              ^                                            max ratio = 100%
        100% - |                                            _________
               |                                       __-¯¯.    .
               |                                  __-¯¯     .    .
