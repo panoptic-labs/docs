@@ -33,4 +33,6 @@ $ yarn docusaurus parse
 $ yarn docusaurus glossary
 ```
 
+### Acknowledgements
+
 Built using [Docusaurus 2](https://docusaurus.io/).
