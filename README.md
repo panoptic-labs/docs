@@ -1,6 +1,6 @@
-# Website
+# Panoptic Documentation
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+
 
 ### Installation
 
@@ -18,24 +18,31 @@ This command starts a local development server and opens up a browser window. Mo
 
 ### Build
 
-```
-$ yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
+You can use the `build.sh` file to build the documentation:
 
 ```
-$ USE_SSH=true yarn deploy
+$ ./build.sh
 ```
 
-Not using SSH:
+This command generates static content into the `build` directory and can be served using any static contents hosting service. It also ensures that the Glossary is updated.
+
+### Glossary
+
+You can generate the glossary with:
 
 ```
-$ GIT_USER=<Your GitHub username> yarn deploy
+$ ./glossary.sh
 ```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+### Build the Glossary
+
+We use the plugin here: https://gitlab.grnet.gr/terminology/docusaurus-terminology to manage our glossary. Build the glossary with:
+
+```
+$ yarn docusaurus parse
+$ yarn docusaurus glossary
+```
+
+### Acknowledgements
+
+Built using [Docusaurus 2](https://docusaurus.io/).

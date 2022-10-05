@@ -18,7 +18,6 @@ Hence, each option has a
 
 (figure here)
 
-The value of an option --called the premium-- used to be difficult to determine.
-Following the development of Nobel-prize winning mathematical models by Black, Scholes, and Merton, an optimal price can be derived in a way that buyers _and_ sellers both agree on the option contract's price.
-
+The value of an option&#151;called the premium&#151;used to be difficult to determine.
+Following the development of Nobel-prize winning mathematical models by <Term popup="The Black-Scholes model, aka the Black-Scholes-Merton (BSM) model, is a differential equation widely used to price options contracts." reference="/docs/terms/blackscholes">Black, Scholes, and Merton</Term>, an optimal price can be derived in a way that buyers _and_ sellers both agree on the option contract's price.
 

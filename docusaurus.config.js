@@ -158,6 +158,9 @@ const config = {
     },
   ],
 
+  plugins: [
+    '@docusaurus-terminology/parser'
+  ]
 };
 
 module.exports = config;
