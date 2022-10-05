@@ -10,14 +10,23 @@ Provide fungible liquidity to the options market.
 This liquidity will be lended out to the options traders to allow them to access trading on leverage. 
 Funds can be deposited in the Panoptic pools at any ratio.
 
+**Typical users**: Retail, Institutions, DAOs.
+
 ## Option Sellers
 Sell options by borrowing liquidity for a fixed commission fee and relocating it to a Uni v3 pool. 
 Sellers have to deposit collateral and can sell options with notional values close to five times larger than their collateral balance.
+
+**Typical users**: Pro-tail, Market makers, DAOs.
 
 ## Option Buyers
 Buy options by moving liquidity out of the Uni v3 pool back to the Panoptic smart contract for a fixed commission fess. 
 Buyers also have to deposit collateral (10% of the notional value of the option) to cover the potential premium to be paid to the sellers.
 
+**Typical users**: Retail, Institutions.
+
 ## Liquidators
 Ensures the health of the protocol by liquidating accounts whose collateral balance falls below the margin requirements.
 Liquidators will receive a bonus proportional to the amount of funds necessary to cover the distressed positions. 
+
+**Typical users**: Pro-tail, Market makers, MEV seekers.
+
