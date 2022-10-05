@@ -1,8 +1,8 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
-# Protocol Design
+# Protocol design
 What are the key ideas behind Panoptic.
 
 ## Manipulation Protections
@@ -238,8 +238,8 @@ _BONUS        ^  max bonus = 100%
               |          .      ¯-_             /
               |          .         ¯-_        /
               |          .            ¯-_  /
-         0% - +----------+---------------+---------------+---------->    MIN_CAPITAL_REQUIREMENT
-              |        50%            100% ¯-_         150%
+         0% - +-//-------+---------------+---------------+---------->    MIN_CAPITAL_REQUIREMENT
+              |        80%            100% ¯-_         120%
               |                               ¯-_        .
               |                                  ¯-_     .
               |                                     ¯-_  .     min bonus = -100%

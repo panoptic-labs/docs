@@ -21,6 +21,8 @@
   --ifm-code-font-size: 90%;
   --ifm-global-spacing: 2rem;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-alert-padding-vertical: 12px;  
+  --doc-sidebar-width: 400px;
 }
 
 
@@ -48,8 +50,11 @@
 }
 
 .alert {
-  --ifm-alert-background-color: hsla(262, 80%, 63%, 0.05);
-  --ifm-color-info-dark: hsla(262, 80%, 63%, 1);;
+  --ifm-alert-background-color: hsla(262, 80%, 73%, 0.05);
+  --ifm-color-info-dark: hsla(262, 80%, 63%, 0.5);
+}
+
+.alert--info {
 }
 
 .menu {
