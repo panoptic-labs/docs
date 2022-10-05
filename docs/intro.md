@@ -26,7 +26,6 @@ The following sections will provide a brief overview of the _Panoptic protocol_.
 
 ## Resources
 
-
 #### Developers
 Users can access the developers docs [here](./developers/smart-contracts-overview)
 
