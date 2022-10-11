@@ -17,47 +17,47 @@ _All liquidity deployed to/from Uniswap v3 is owned by this smart contract_
 ```solidity
 function startPool(
     address _univ3pool,
-    address _receiptReference
+    address _collateralReference
 ) external nonpayable
 ```
 
 Creates a method for creating a Panoptic pool on top of an existing Uniswap v3 pair
 
-_Must be called first before any transaction can occur. Must also deploy receiptReference first._
+*Must be called first before any transaction can occur. Must also deploy collateralReference first.*
 
 #### Parameters
 
-| Name                 | Type    | Description                           |
-| -------------------- | ------- | ------------------------------------- |
-| `_univ3pool`        | address | Address of the target Uniswap v3 pool |
-| `_receiptReference` | address | undefined                             |
-
+| Name | Type | Description |
+|---|---|---|
+| _univ3pool | address | Address of the target Uniswap v3 pool |
+| _collateralReference | address | undefined |
 
 ### deposit
 
 ```solidity
 function deposit(
-    uint128 assets,
+    uint128 assets, 
     address token
 ) external nonpayable returns (uint256 shares)
 ```
 
-Deposits assets as collateral in the Panoptic Pool
 
-_Will internally compute the number of shares to mint_
+
+*Will internally compute the number of shares to mint*
 
 #### Parameters
 
-| Name     | Type    | Description                                                                |
-| -------- | ------- | -------------------------------------------------------------------------- |
-| `assets` | uint128 | User-specified amount of token deposited                                   |
-| `token`  | address | Address of the token deposited, must be uniswapPool&#39;s token0 or token1 |
+| Name | Type | Description |
+|---|---|---|
+| assets | uint128 | User-specified amount of token deposited |
+| token | address | Address of the token deposited, must be uniswapPool&#39;s token0 or token1 |
 
 #### Returns
 
-| Name     | Type    | Description                                            |
-| -------- | ------- | ------------------------------------------------------ |
-| `shares` | uint256 | The number of shares minted when assets were deposited |
+| Name | Type | Description |
+|---|---|---|
+| shares | uint256 | The number of shares minted when assets were deposited |
+
 
 ### withdraw
 
@@ -71,56 +71,58 @@ function withdraw(
 
 Withdraw collateral assets from the Panoptic Pool
 
-_Will internally compute the number of shares to burn_
+*Will internally compute the number of shares to burn*
 
 #### Parameters
 
-| Name             | Type      | Description                                                                                                 |
-| ---------------- | --------- | ----------------------------------------------------------------------------------------------------------- |
-| `shares`         | uint256   | User-specified amount of shares token to be withdrawn. Will withdraw all if greater than user&#39;s balance |
-| `token`          | address   | Address of the token deposited, must be uniswapPool&#39;s token0 or token1                                  |
-| `positionIdList` | uint256[] | List of positions owned by the user. Written as [tokenId1, tokenId2, ...]                                   |
+| Name | Type | Description |
+|---|---|---|
+| shares | uint256 | User-specified amount of shares token to be withdrawn. Will withdraw all if greater than user&#39;s balance |
+| token | address | Address of the token deposited, must be uniswapPool&#39;s token0 or token1 |
+| positionIdList | uint256[] | List of positions owned by the user. Written as [tokenId1, tokenId2, ...] |
 
 #### Returns
 
-| Name     | Type    | Description                    |
-| -------- | ------- | ------------------------------ |
-| `assets` | uint128 | The number of assets withdrawn |
+| Name | Type | Description |
+|---|---|---|
+| assets | uint128 | The number of assets withdrawn |
+
 
 ### mintOptions
 
 ```solidity
 function mintOptions(
     uint256[] positionIdList,
-    uint128 numberOfContracts,
+    uint128 positionSize,
     uint256 effectiveLiquidityLimit
 ) external nonpayable returns (bool)
 ```
 
 Mints a specific number of contracts for a new option
 
-_Must be a new option, will revert if a position with that tokenId already exists._
+*Must be a new option, will revert if a position with that tokenId already exists.*
 
 #### Parameters
 
-| Name                      | Type      | Description                                                                                                                                                                                                        |
-| ------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `positionIdList`          | uint256[] | List of positions owned by msg.sender. Written as [tokenId1, tokenId2, ..., tokenIdN] with tokenIdN as the NEW TOKEN                                                                                               |
-| `numberOfContracts`       | uint128   | The number of contracts to be minted, expressed in terms of token0                                                                                                                                                 |
-| `effectiveLiquidityLimit` | uint256   | Maximum amount of &quot;spread&quot; defined as baseLiquidity/(baseLiquidity - legLiquidity) for a new position. Generate using effectiveLiquidityFactorHelper first or set to 0 for no limit / only short options |
+| Name | Type | Description |
+|---|---|---|
+| positionIdList | uint256[] | List of positions owned by msg.sender. Written as [tokenId1, tokenId2, ..., tokenIdN] with tokenIdN as the NEW TOKEN |
+| positionSize | uint128 | The number of contracts to be minted, expressed in terms of the numeraire |
+| effectiveLiquidityLimit | uint256 | Maximum amount of &quot;spread&quot; defined as baseLiquidity/(baseLiquidity - legLiquidity) for a new position. Generate using effectiveLiquidityFactorHelper first or set to 0 for no limit / only short options |
 
 #### Returns
 
-| Name | Type | Description                            |
-| ---- | ---- | -------------------------------------- |
-| \_0  | bool | Returns true if the mint is successful |
+| Name | Type | Description |
+|---|---|---|
+| _0 | bool | Returns true if the mint is successful |
+
 
 ### mintOptionsITM
 
 ```solidity
 function mintOptionsITM(
     uint256[] positionIdList,
-    uint128 numberOfContracts,
+    uint128 positionSize,
     uint256 effectiveLiquidityLimit,
     int24 tickLimitLow,
     int24 tickLimitHigh
@@ -129,45 +131,49 @@ function mintOptionsITM(
 
 Mints a specific number of contracts for a new option that is ITM
 
-_Must be a new option, will revert if a position with that tokenId already exists or it is not ITM._
+*Must be a new option, will revert if a position with that tokenId already exists or it is not ITM.*
 
 #### Parameters
 
-| Name                      | Type      | Description                                                                                                                                                                                                        |
-| ------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `positionIdList`          | uint256[] | List of positions owned by msg.sender. Written as [tokenId1, tokenId2, ..., tokenIdN] with tokenIdN as the NEW TOKEN                                                                                               |
-| `numberOfContracts`       | uint128   | The number of contracts to be minted, expressed in terms of token0                                                                                                                                                 |
-| `effectiveLiquidityLimit` | uint256   | Maximum amount of &quot;spread&quot; defined as baseLiquidity/(baseLiquidity - legLiquidity) for a new position. Generate using effectiveLiquidityFactorHelper first or set to 0 for no limit / only short options |
-| `tickLimitLow`            | int24     | Low price slippage limit when minting ITM option, as a int24 tick                                                                                                                                                  |
-| `tickLimitHigh`           | int24     | High price slippage limit when minting ITM option, as a int24 tick                                                                                                                                                 |
+| Name | Type | Description |
+|---|---|---|
+| positionIdList | uint256[] | List of positions owned by msg.sender. Written as [tokenId1, tokenId2, ..., tokenIdN] with tokenIdN as the NEW TOKEN |
+| positionSize | uint128 | The number of contracts to be minted, expressed in terms of the numeraire |
+| effectiveLiquidityLimit | uint256 | Maximum amount of &quot;spread&quot; defined as baseLiquidity/(baseLiquidity - legLiquidity) for a new position. Generate using effectiveLiquidityFactorHelper first or set to 0 for no limit / only short options |
+| tickLimitLow | int24 | Low price slippage limit when minting ITM option |
+| tickLimitHigh | int24 | High price slippage limit when minting ITM option |
 
 #### Returns
 
-| Name    | Type | Description                                |
-| ------- | ---- | ------------------------------------------ |
+| Name | Type | Description |
+|---|---|---|
 | success | bool | Returns true if the ITM mint is successful |
+
 
 ### burnOptions
 
 ```solidity
-function burnOptions(uint256 tokenId) external nonpayable returns (bool)
+function burnOptions(
+    uint256 tokenId
+) external nonpayable returns (bool)
 ```
 
-Burns the entire balance of tokenId of msg.sender. Will exercise if necessary using msg.sender's deposited collateral.
+Burns the entire balance of tokenId of msg.sender
 
-_Will exercise if necessary, and will revert if user does not have enough collateral to exercise._
+*Will exercise if necessary, and will revert if user does not have enough collateral to exercise.*
 
 #### Parameters
 
-| Name      | Type    | Description                             |
-| --------- | ------- | --------------------------------------- |
-| `tokenId` | uint256 | The tokenId of the position to be burnt |
+| Name | Type | Description |
+|---|---|---|
+| tokenId | uint256 | The tokenId of the position to be burnt |
 
 #### Returns
 
-| Name | Type | Description                            |
-| ---- | ---- | -------------------------------------- |
-| \_0  | bool | Returns true is the burn is successful |
+| Name | Type | Description |
+|---|---|---|
+| _0 | bool | Returns true is the burn is successful |
+
 
 ### burnOptionsITM
 
@@ -179,80 +185,23 @@ function burnOptionsITM(
 ) external nonpayable returns (bool)
 ```
 
-Burns the entire balance of tokenId of msg.sender if the position is in-the-money. Will exercise if necessary using msg.sender's deposited collateral.
+Burns the entire balance of tokenId of msg.sender
 
-_Will exercise if necessary, and will revert if user does not have enough collateral to exercise._
-
-#### Parameters
-
-| Name            | Type    | Description                                     |
-| --------------- | ------- | ----------------------------------------------- |
-| `tokenId`       | uint256 | The tokenId of the position to be burnt         |
-| `tickLimitLow`  | int24   | Price slippate limit when burning an ITM option |
-| `tickLimitHigh` | int24   | Price slippate limit when burning an ITM option |
-
-#### Returns
-
-| Name | Type | Description                            |
-| ---- | ---- | -------------------------------------- |
-| \_0  | bool | Returns true is the burn is successful |
-
-### delegate
-
-```solidity
-function delegate(
-    address token,
-    address delegatee,
-    uint128 assets
-) external nonpayable returns (uint256 shares)
-```
-
-Delegate assets to another user. Delegated assets cannot be withdrawn by the delegatee
-
-_Will internally compute the number of shares to mint_
+*Will exercise if necessary, and will revert if user does not have enough collateral to exercise.*
 
 #### Parameters
 
-| Name        | Type    | Description                                                                                                                      |
-| ----------- | ------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `token`     | address | Address of the token deposited, must be uniswapPool&#39;s token0 or token1                                                       |
-| `delegatee` | address | Address of the user who will receive delegated funds                                                                             |
-| `assets`    | uint128 | User-specified amount of token to be delegated. These assets will be taken from the existing collateral balance of the delegator |
+| Name | Type | Description |
+|---|---|---|
+| tokenId | uint256 | The tokenId of the position to be burnt |
+| tickLimitLow | int24 | Price slippage limit when burning an ITM option |
+| tickLimitHigh | int24 | Price slippage limit when burning an ITM option |
 
 #### Returns
 
-| Name     | Type    | Description                    |
-| -------- | ------- | ------------------------------ |
-| `shares` | uint256 | The number of shares delegated |
-
-### revoke
-
-```solidity
-function revoke(
-    address token,
-    address delegatee,
-    uint256[] delegateePositionIdList
-) external nonpayable returns (uint256 shares, uint128 adjustedAssets)
-```
-
-Revokes delegated assets from a user. Checks that the revoked user is still solvent
-
-_Will internally compute the number of shares to burn and will revert if account is margin called or underwater_
-
-#### Parameters
-
-| Name                      | Type      | Description                                                                |
-| ------------------------- | --------- | -------------------------------------------------------------------------- |
-| `token`                   | address   | Address of the token deposited, must be uniswapPool&#39;s token0 or token1 |
-| `delegatee`               | address   | Address of the user who will receive delegated funds                       |
-| `delegateePositionIdList` | uint256[] | List of positions owned by the user. Written as [tokenId1, tokenId2, ...]  |
-
-#### Returns
-
-| Name             | Type    | Description                                              |
-| ---------------- | ------- | -------------------------------------------------------- |
-| `shares`         | uint256 | The number of shares delegated                           |
-| `adjustedAssets` | uint128 | Assets removed, which may include impact of liquidations |
+| Name | Type | Description |
+|---|---|---|
+| _0 | bool | Returns true is the burn is successful |
 
 
 ### forceExercise
@@ -260,62 +209,55 @@ _Will internally compute the number of shares to burn and will revert if account
 ```solidity
 function forceExercise(
     address _account,
-    int48 tickLimits,
+    int24 tickLimitLow,
+    int24 tickLimitHigh,
     uint256[] _positionIdList,
     uint256[] _touchedId,
     uint256[] _leftoverIds
-) external nonpayable returns (bool success)
+) external nonpayable
 ```
 
-Force the exercise of a single position. Exercisor will have to pay a small fee do force exercise
 
-_Will revert if: number of touchedId is larger than 1 or if user force exercises their own position_
+
+*Will revert if: number of touchedId is larger than 1 or if user force exercises their own position*
 
 #### Parameters
 
-| Name               | Type      | Description |
-| ------------------ | --------- | ----------- |
-| `_account`        | address   |  Address of the distressed account   |
-| `tickLimits`       | int48     | LeftRight encoded tick limits for slippage. lower = int24(tickLimits >> 24), higher = int24(tickLimits)                      |
-| `_positionIdList` | uint256[] | List of positions owned by the user. Written as [tokenId1, tokenId2, ...]   |
-| `_touchedId`      | uint256[] | List of position to be force exercised. Can only contain one tokenId, written as [tokenId]   |
-| `_leftoverIds`    | uint256[] | List of positions remaining after exercise. Must not contain tokenId, written as [tokenId1, tokenId2, ...]   |
-
-#### Returns
-
-| Name    | Type | Description                |
-| ------- | ---- | -------------------------- |
-| success | bool | Returns true if successful |
+| Name | Type | Description |
+|---|---|---|
+| _account | address | undefined |
+| tickLimitLow | int24 | The lower tick slippagelimit |
+| tickLimitHigh | int24 | The upper tick slippagelimit |
+| _positionIdList | uint256[] | undefined |
+| _touchedId | uint256[] | undefined |
+| _leftoverIds | uint256[] | undefined |
 
 ### liquidateAccount
 
 ```solidity
 function liquidateAccount(
     address _account,
-    int48 tickLimits,
+    int24 tickLimitLow,
+    int24 tickLimitHigh,
     uint256[] _positionIdList,
     uint256[] emptyList
-) external nonpayable returns (bool)
+) external nonpayable
 ```
 
 Liquidates a distressed account. Will burn all positions and will issue a bonus to the liquidator
 
-_Will revert if: accout is not margin called or if the user liquidates themselves_
+*Will revert if: accout is not margin called or if the user liquidates themselves*
 
 #### Parameters
 
-| Name               | Type      | Description                   |
-| ------------------ | --------- | ----------------------------- |
-| `_account`         | address   | Address of the distressed account                     |
-| `tickLimits`       | int48     | LeftRight encoded tick limits for slippage. lower = int24(tickLimits >> 24), higher = int24(tickLimits)                      |
-| `_positionIdList`  | uint256[] |  List of positions owned by the user. Written as [tokenId1, tokenId2, ...]                     |
-| `emptyList`        | uint256[] | Must always be provided as [] |
+| Name | Type | Description |
+|---|---|---|
+| _account | address | undefined |
+| tickLimitLow | int24 | The lower tick slippagelimit |
+| tickLimitHigh | int24 | The upper tick slippagelimit |
+| _positionIdList | uint256[] | undefined |
+| emptyList | uint256[] | Must always be provided as [] |
 
-#### Returns
-
-| Name | Type | Description                |
-| ---- | ---- | -------------------------- |
-| \_0  | bool | Returns true if successful |
 
 ## View Methods
 
@@ -330,44 +272,53 @@ function calculateAccumulatedFeesBatch(
 
 Computes the total amount of premium accumulated for a list of positions
 
-_Could be costly because it reads information from 2 ticks for each leg of each tokenId_
+*Could be costly because it reads information from 2 ticks for each leg of each tokenId*
 
 #### Parameters
 
-| Name             | Type      | Description                                             |
-| ---------------- | --------- | ------------------------------------------------------- |
-| `user`           | address   | Address of the user that owns the positions             |
-| `positionIdList` | uint256[] | List of positions. Written as [tokenId1, tokenId2, ...] |
+| Name | Type | Description |
+|---|---|---|
+| user | address | Address of the user that owns the positions |
+| positionIdList | uint256[] | List of positions. Written as [tokenId1, tokenId2, ...] |
 
 #### Returns
 
-| Name       | Type   | Description                                    |
-| ---------- | ------ | ---------------------------------------------- |
-| `premium0` | int128 | Premium for token0 (negative = amount is owed) |
-| `premium1` | int128 | Premium for token1 (negative = amount is owed) |
+| Name | Type | Description |
+|---|---|---|
+| premium0 | int128 | Premium for token0 (negative = amount is owed) |
+| premium1 | int128 | Premium for token1 (negative = amount is owed) |
 
-### effectiveLiquidityFactorHelper
+### checkCollateral
 
 ```solidity
-function effectiveLiquidityFactorHelper(
-    uint256 tokenId,
-    uint128 numberOfContracts
-) external view returns (uint256 maxFactor)
+function checkCollateral(
+    address token,
+    address account,
+    int24 atTick,
+    uint256[] positionIdList
+) external view returns (uint128, uint128)
 ```
 
-Helper function that computes the total max amount of liquidity factor for that position. Inputs as `effectiveLiquidityLimit` in mintOptions() and mintOptionsITM()
+Computes the collateral requirement of a given `account` and for a given `token`
+
+*To be used as a helper function or called from another contract*
+
+
 #### Parameters
 
-| Name                | Type    | Description                                                        |
-| ------------------- | ------- | ------------------------------------------------------------------ |
-| `tokenId`           | uint256 | TokenId of the position to be checked                              |
-| `numberOfContracts` | uint128 | The number of contracts to be minted, expressed in terms of token0 |
+| Name | Type | Description |
+|---|---|---|
+| token | address | Address of the collateral token |
+| account | address | Address of the account to check collateral |
+| atTick | int24 | Value of the tick at which collateral is checked (user-specified) |
+| positionIdList | uint256[] | List of positions owned by the user. Written as [tokenId1, tokenId2, ...] |
 
 #### Returns
 
-| Name        | Type    | Description                                                                 |
-| ----------- | ------- | --------------------------------------------------------------------------- |
-| `maxFactor` | uint256 | Maximum allowable effectiveLiquidityFactor for minting the tokenId position |
+| Name | Type | Description |
+|---|---|---|
+| tokenBalance  | uint128 | Balance of `token` held by the account |
+| tokenRequired | uint128 | Amount of token required as collateral for that account |
 
 
 ### optionPositionBalance
@@ -398,7 +349,9 @@ Returns the total number of contracts by user for a specified position
 ### optionPositionCounter
 
 ```solidity
-function optionPositionCounter(address user) external view returns (uint128 n)
+function optionPositionCounter(
+    address user
+) external view returns (uint128 n)
 ```
 
 Returns the total number of positions owned by a user
@@ -420,7 +373,11 @@ Returns the total number of positions owned by a user
 ### AccountLiquidated
 
 ```solidity
-event AccountLiquidated(address liquidator, address liquidatee, int256 bonusAmounts)
+event AccountLiquidated(
+    address liquidator,
+    address liquidatee,
+    int256 bonusAmounts
+)
 ```
 
 Emitted when an account is liquidated
@@ -433,28 +390,15 @@ Emitted when an account is liquidated
 | liquidatee   | address | undefined   |
 | bonusAmounts | int256  | undefined   |
 
-### Delegated
-
-```solidity
-event Delegated(address delegator, address delegatee, address tokenAddress, uint128 assets, uint256 shares)
-```
-
-Emitted when any amount is delegated to a user
-
-#### Parameters
-
-| Name         | Type    | Description |
-| ------------ | ------- | ----------- |
-| delegator    | address | undefined   |
-| delegatee    | address | undefined   |
-| tokenAddress | address | undefined   |
-| assets       | uint128 | undefined   |
-| shares       | uint256 | undefined   |
-
 ### Deposited
 
 ```solidity
-event Deposited(address user, address tokenAddress, uint128 assets, uint256 shares)
+event Deposited(
+    address user,
+    address tokenAddress,
+    uint128 assets,
+    uint256 shares
+)
 ```
 
 Emitted when any amount is deposited as collateral
@@ -471,7 +415,12 @@ Emitted when any amount is deposited as collateral
 ### ForcedExercised
 
 ```solidity
-event ForcedExercised(address exercisor, address user, uint256 tokenId, uint256 costAmounts)
+event ForcedExercised(
+    address exercisor,
+    address user,
+    uint256 tokenId,
+    uint256 costAmounts
+)
 ```
 
 Emitted when a position is forces exercised
@@ -488,7 +437,13 @@ Emitted when a position is forces exercised
 ### OptionBurnt
 
 ```solidity
-event OptionBurnt(address recipient, uint128 numberOfContracts, uint256 tokenId, int256 premia, uint128 positionCounter)
+event OptionBurnt(
+    address recipient,
+    uint128 numberOfContracts,
+    uint256 tokenId,
+    int256 premia,
+    uint128 positionCounter
+)
 ```
 
 Emitted when an option is burnt
@@ -506,7 +461,14 @@ Emitted when an option is burnt
 ### OptionMinted
 
 ```solidity
-event OptionMinted(address recipient, uint128 numberOfContracts, uint256 tokenId, int256 commissionRates, uint128 poolUtilizations, uint256 positionCounter)
+event OptionMinted(
+    address recipient,
+    uint128 numberOfContracts,
+    uint256 tokenId,
+    int256 commissionRates,
+    uint128 poolUtilizations,
+    uint256 positionCounter
+)
 ```
 
 Emitted when an option is minted
@@ -525,7 +487,10 @@ Emitted when an option is minted
 ### OwnershipTransferred
 
 ```solidity
-event OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
+event OwnershipTransferred(
+    address indexed previousOwner,
+    address indexed newOwner
+)
 ```
 
 #### Parameters
@@ -535,28 +500,16 @@ event OwnershipTransferred(address indexed previousOwner, address indexed newOwn
 | previousOwner `indexed` | address | undefined   |
 | newOwner `indexed`      | address | undefined   |
 
-### Revoked
-
-```solidity
-event Revoked(address delegator, address delegatee, address tokenAddress, uint128 assets, uint256 shares)
-```
-
-Emitted when any amount is revoked
-
-#### Parameters
-
-| Name         | Type    | Description |
-| ------------ | ------- | ----------- |
-| delegator    | address | undefined   |
-| delegatee    | address | undefined   |
-| tokenAddress | address | undefined   |
-| assets       | uint128 | undefined   |
-| shares       | uint256 | undefined   |
 
 ### Withdrawn
 
 ```solidity
-event Withdrawn(address user, address tokenAddress, uint128 assets, uint256 shares)
+event Withdrawn(
+    address user,
+    address tokenAddress,
+    uint128 assets,
+    uint256 shares
+)
 ```
 
 Emitted when any amount of collateral is withdrawn
@@ -593,13 +546,13 @@ Emitted when any amount of collateral is withdrawn
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
+        "indexed": true,
         "internalType": "address",
         "name": "liquidator",
         "type": "address"
       },
       {
-        "indexed": false,
+        "indexed": true,
         "internalType": "address",
         "name": "liquidatee",
         "type": "address"
@@ -618,50 +571,13 @@ Emitted when any amount of collateral is withdrawn
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
-        "internalType": "address",
-        "name": "delegator",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "delegatee",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "tokenAddress",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint128",
-        "name": "assets",
-        "type": "uint128"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "shares",
-        "type": "uint256"
-      }
-    ],
-    "name": "Delegated",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
+        "indexed": true,
         "internalType": "address",
         "name": "user",
         "type": "address"
       },
       {
-        "indexed": false,
+        "indexed": true,
         "internalType": "address",
         "name": "tokenAddress",
         "type": "address"
@@ -686,19 +602,19 @@ Emitted when any amount of collateral is withdrawn
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
+        "indexed": true,
         "internalType": "address",
         "name": "exercisor",
         "type": "address"
       },
       {
-        "indexed": false,
+        "indexed": true,
         "internalType": "address",
         "name": "user",
         "type": "address"
       },
       {
-        "indexed": false,
+        "indexed": true,
         "internalType": "uint256",
         "name": "tokenId",
         "type": "uint256"
@@ -717,7 +633,7 @@ Emitted when any amount of collateral is withdrawn
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
+        "indexed": true,
         "internalType": "address",
         "name": "recipient",
         "type": "address"
@@ -725,11 +641,11 @@ Emitted when any amount of collateral is withdrawn
       {
         "indexed": false,
         "internalType": "uint128",
-        "name": "numberOfContracts",
+        "name": "positionSize",
         "type": "uint128"
       },
       {
-        "indexed": false,
+        "indexed": true,
         "internalType": "uint256",
         "name": "tokenId",
         "type": "uint256"
@@ -754,7 +670,7 @@ Emitted when any amount of collateral is withdrawn
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
+        "indexed": true,
         "internalType": "address",
         "name": "recipient",
         "type": "address"
@@ -762,11 +678,11 @@ Emitted when any amount of collateral is withdrawn
       {
         "indexed": false,
         "internalType": "uint128",
-        "name": "numberOfContracts",
+        "name": "positionSize",
         "type": "uint128"
       },
       {
-        "indexed": false,
+        "indexed": true,
         "internalType": "uint256",
         "name": "tokenId",
         "type": "uint256"
@@ -799,6 +715,55 @@ Emitted when any amount of collateral is withdrawn
       {
         "indexed": true,
         "internalType": "address",
+        "name": "recipient",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "positionSize",
+        "type": "uint128"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "oldTokenId",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "newTokenId",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "int256",
+        "name": "commissionRates",
+        "type": "int256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "poolUtilizations",
+        "type": "uint128"
+      },
+      {
+        "indexed": false,
+        "internalType": "int256",
+        "name": "premia",
+        "type": "int256"
+      }
+    ],
+    "name": "OptionRolled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
         "name": "previousOwner",
         "type": "address"
       },
@@ -816,50 +781,13 @@ Emitted when any amount of collateral is withdrawn
     "anonymous": false,
     "inputs": [
       {
-        "indexed": false,
-        "internalType": "address",
-        "name": "delegator",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "delegatee",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "address",
-        "name": "tokenAddress",
-        "type": "address"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint128",
-        "name": "assets",
-        "type": "uint128"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "shares",
-        "type": "uint256"
-      }
-    ],
-    "name": "Revoked",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": false,
+        "indexed": true,
         "internalType": "address",
         "name": "user",
         "type": "address"
       },
       {
-        "indexed": false,
+        "indexed": true,
         "internalType": "address",
         "name": "tokenAddress",
         "type": "address"
@@ -879,6 +807,19 @@ Emitted when any amount of collateral is withdrawn
     ],
     "name": "Withdrawn",
     "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "DECIMALS",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "",
+        "type": "uint16"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
   },
   {
     "inputs": [
@@ -966,24 +907,60 @@ Emitted when any amount of collateral is withdrawn
       },
       {
         "internalType": "address",
-        "name": "delegatee",
+        "name": "account",
         "type": "address"
       },
       {
+        "internalType": "int24",
+        "name": "atTick",
+        "type": "int24"
+      },
+      {
+        "internalType": "uint256[]",
+        "name": "positionIdList",
+        "type": "uint256[]"
+      }
+    ],
+    "name": "checkCollateral",
+    "outputs": [
+      {
         "internalType": "uint128",
-        "name": "assets",
+        "name": "",
+        "type": "uint128"
+      },
+      {
+        "internalType": "uint128",
+        "name": "",
         "type": "uint128"
       }
     ],
-    "name": "delegate",
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "collateralToken0",
     "outputs": [
       {
-        "internalType": "uint256",
-        "name": "shares",
-        "type": "uint256"
+        "internalType": "contract CollateralTracker",
+        "name": "",
+        "type": "address"
       }
     ],
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "collateralToken1",
+    "outputs": [
+      {
+        "internalType": "contract CollateralTracker",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -1008,30 +985,6 @@ Emitted when any amount of collateral is withdrawn
       }
     ],
     "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "tokenId",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint128",
-        "name": "numberOfContracts",
-        "type": "uint128"
-      }
-    ],
-    "name": "effectiveLiquidityFactorHelper",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "maxFactor",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -1068,13 +1021,7 @@ Emitted when any amount of collateral is withdrawn
       }
     ],
     "name": "forceExercise",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "success",
-        "type": "bool"
-      }
-    ],
+    "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
@@ -1107,13 +1054,7 @@ Emitted when any amount of collateral is withdrawn
       }
     ],
     "name": "liquidateAccount",
-    "outputs": [
-      {
-        "internalType": "bool",
-        "name": "",
-        "type": "bool"
-      }
-    ],
+    "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
@@ -1126,7 +1067,7 @@ Emitted when any amount of collateral is withdrawn
       },
       {
         "internalType": "uint128",
-        "name": "numberOfContracts",
+        "name": "positionSize",
         "type": "uint128"
       },
       {
@@ -1155,7 +1096,7 @@ Emitted when any amount of collateral is withdrawn
       },
       {
         "internalType": "uint128",
-        "name": "numberOfContracts",
+        "name": "positionSize",
         "type": "uint128"
       },
       {
@@ -1298,14 +1239,19 @@ Emitted when any amount of collateral is withdrawn
         "internalType": "address",
         "name": "user",
         "type": "address"
+      },
+      {
+        "internalType": "uint256[]",
+        "name": "positionIdList",
+        "type": "uint256[]"
       }
     ],
-    "name": "optionPositionCounter",
+    "name": "optionPositionBalanceBatch",
     "outputs": [
       {
-        "internalType": "uint128",
-        "name": "n",
-        "type": "uint128"
+        "internalType": "uint256[]",
+        "name": "",
+        "type": "uint256[]"
       }
     ],
     "stateMutability": "view",
@@ -1315,31 +1261,16 @@ Emitted when any amount of collateral is withdrawn
     "inputs": [
       {
         "internalType": "address",
-        "name": "",
+        "name": "user",
         "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
       }
     ],
-    "name": "options",
+    "name": "optionPositionCounter",
     "outputs": [
       {
-        "internalType": "int256",
-        "name": "",
-        "type": "int256"
+        "internalType": "uint128",
+        "name": "n",
+        "type": "uint128"
       }
     ],
     "stateMutability": "view",
@@ -1359,65 +1290,39 @@ Emitted when any amount of collateral is withdrawn
     "type": "function"
   },
   {
-    "inputs": [],
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "index",
+        "type": "uint256"
+      }
+    ],
     "name": "poolData",
     "outputs": [
       {
-        "components": [
-          {
-            "internalType": "uint256",
-            "name": "balance0",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "balance1",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "totalBalance0",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "totalBalance1",
-            "type": "uint256"
-          },
-          {
-            "internalType": "int256",
-            "name": "inAMM0",
-            "type": "int256"
-          },
-          {
-            "internalType": "int256",
-            "name": "inAMM1",
-            "type": "int256"
-          },
-          {
-            "internalType": "int256",
-            "name": "totalCollectedFees0",
-            "type": "int256"
-          },
-          {
-            "internalType": "int256",
-            "name": "totalCollectedFees1",
-            "type": "int256"
-          },
-          {
-            "internalType": "int128",
-            "name": "poolUtilization0",
-            "type": "int128"
-          },
-          {
-            "internalType": "int128",
-            "name": "poolUtilization1",
-            "type": "int128"
-          }
-        ],
-        "internalType": "struct PanopticPool.PanopticPoolData",
-        "name": "panopticPoolData",
-        "type": "tuple"
+        "internalType": "uint256",
+        "name": "panopticPoolBalance",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "totalBalance",
+        "type": "uint256"
+      },
+      {
+        "internalType": "int128",
+        "name": "inAMM",
+        "type": "int128"
+      },
+      {
+        "internalType": "int128",
+        "name": "totalCollected",
+        "type": "int128"
+      },
+      {
+        "internalType": "int128",
+        "name": "currentPoolUtilization",
+        "type": "int128"
       }
     ],
     "stateMutability": "view",
@@ -1425,25 +1330,12 @@ Emitted when any amount of collateral is withdrawn
   },
   {
     "inputs": [],
-    "name": "receiptToken0",
+    "name": "poolId",
     "outputs": [
       {
-        "internalType": "contract ReceiptBase",
+        "internalType": "uint80",
         "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "receiptToken1",
-    "outputs": [
-      {
-        "internalType": "contract ReceiptBase",
-        "name": "",
-        "type": "address"
+        "type": "uint80"
       }
     ],
     "stateMutability": "view",
@@ -1459,35 +1351,79 @@ Emitted when any amount of collateral is withdrawn
   {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "token",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "delegatee",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256[]",
-        "name": "delegateePositionIdList",
-        "type": "uint256[]"
-      }
-    ],
-    "name": "revoke",
-    "outputs": [
-      {
         "internalType": "uint256",
-        "name": "shares",
+        "name": "oldTokenId",
         "type": "uint256"
       },
       {
-        "internalType": "uint128",
-        "name": "adjustedAssets",
-        "type": "uint128"
+        "internalType": "uint256",
+        "name": "newTokenId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256[]",
+        "name": "emptyList",
+        "type": "uint256[]"
+      },
+      {
+        "internalType": "uint256",
+        "name": "effectiveLiquidityLimit",
+        "type": "uint256"
+      },
+      {
+        "internalType": "int24",
+        "name": "tickLimitLow",
+        "type": "int24"
+      },
+      {
+        "internalType": "int24",
+        "name": "tickLimitHigh",
+        "type": "int24"
+      }
+    ],
+    "name": "rollOptions",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
       }
     ],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "s_options",
+    "outputs": [
+      {
+        "internalType": "int256",
+        "name": "",
+        "type": "int256"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -1512,7 +1448,7 @@ Emitted when any amount of collateral is withdrawn
       },
       {
         "internalType": "address",
-        "name": "_receiptReference",
+        "name": "_collateralReference",
         "type": "address"
       }
     ],
@@ -1635,6 +1571,7 @@ Emitted when any amount of collateral is withdrawn
     "type": "function"
   }
 ]
+
 ```
 
 </details>

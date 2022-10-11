@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# Receipt token
+# Collateral tracker
 Tracks and manages collateral using a shares model.
 
 ## View Methods
@@ -867,14 +867,14 @@ function uniswapPool() external view returns (contract IUniswapV3Pool)
 function burn(address from, uint256 amount) external nonpayable
 ```
 
-Burn receipt tokens from some user
+Burn collateral tokens from some user
 
 #### Parameters
 
 | Name   | Type    | Description                                           |
 | ------ | ------- | ----------------------------------------------------- |
-| from   | address | Address of the user that gets the receipt tokens burn |
-| amount | uint256 | Amount of receipt tokens that will get burned         |
+| from   | address | Address of the user that gets the collateral tokens burn |
+| amount | uint256 | Amount of collateral tokens that will get burned         |
 
 ### delegate
 
@@ -947,14 +947,14 @@ _To be issued when a position is burnt because it may need to be exercised_
 function mint(address to, uint256 amount) external nonpayable
 ```
 
-Mint new receipt tokens to some user
+Mint new collateral tokens to some user
 
 #### Parameters
 
 | Name   | Type    | Description                                      |
 | ------ | ------- | ------------------------------------------------ |
-| to     | address | Address of the user that gets the receipt tokens |
-| amount | uint256 | Amount of receipt tokens that will get minted    |
+| to     | address | Address of the user that gets the collateral tokens |
+| amount | uint256 | Amount of collateral tokens that will get minted    |
 
 ### revoke
 
@@ -1100,7 +1100,7 @@ event Transfer(address indexed from, address indexed to, uint256 value)
 ## ABI
 
 <details>
-<summary>ReceiptBase ABI</summary>
+<summary>CollateralTracker ABI</summary>
 
 ```json
 [
@@ -1187,7 +1187,33 @@ event Transfer(address indexed from, address indexed to, uint256 value)
   },
   {
     "inputs": [],
-    "name": "COMMISSION_FEE",
+    "name": "COMMISSION_FEE_MAX",
+    "outputs": [
+      {
+        "internalType": "int128",
+        "name": "",
+        "type": "int128"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "COMMISSION_FEE_MIN",
+    "outputs": [
+      {
+        "internalType": "int128",
+        "name": "",
+        "type": "int128"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "COMMISSION_START_UTILIZATION",
     "outputs": [
       {
         "internalType": "int128",
@@ -1265,6 +1291,19 @@ event Transfer(address indexed from, address indexed to, uint256 value)
   },
   {
     "inputs": [],
+    "name": "PREFIX",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "SATURATED_POOL_UTILIZATION",
     "outputs": [
       {
@@ -1300,6 +1339,44 @@ event Transfer(address indexed from, address indexed to, uint256 value)
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "int256",
+        "name": "x",
+        "type": "int256"
+      }
+    ],
+    "name": "abs",
+    "outputs": [
+      {
+        "internalType": "int256",
+        "name": "",
+        "type": "int256"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "int128",
+        "name": "x",
+        "type": "int128"
+      }
+    ],
+    "name": "abs128",
+    "outputs": [
+      {
+        "internalType": "int128",
+        "name": "",
+        "type": "int128"
+      }
+    ],
+    "stateMutability": "pure",
     "type": "function"
   },
   {
@@ -1428,7 +1505,7 @@ event Transfer(address indexed from, address indexed to, uint256 value)
     "outputs": [
       {
         "internalType": "int128",
-        "name": "buyRatio",
+        "name": "buyCollateral",
         "type": "int128"
       }
     ],
@@ -1448,6 +1525,11 @@ event Transfer(address indexed from, address indexed to, uint256 value)
         "type": "int24"
       },
       {
+        "internalType": "uint64",
+        "name": "utilization",
+        "type": "uint64"
+      },
+      {
         "internalType": "int128",
         "name": "longAmount",
         "type": "int128"
@@ -1459,7 +1541,7 @@ event Transfer(address indexed from, address indexed to, uint256 value)
       },
       {
         "internalType": "int128",
-        "name": "premium",
+        "name": "premiumAllPositions",
         "type": "int128"
       },
       {
@@ -1479,11 +1561,6 @@ event Transfer(address indexed from, address indexed to, uint256 value)
         "internalType": "uint256",
         "name": "tokenData",
         "type": "uint256"
-      },
-      {
-        "internalType": "uint64",
-        "name": "utilization",
-        "type": "uint64"
       }
     ],
     "stateMutability": "view",
@@ -1513,7 +1590,7 @@ event Transfer(address indexed from, address indexed to, uint256 value)
       },
       {
         "internalType": "int128",
-        "name": "premium",
+        "name": "premiumAllPositions",
         "type": "int128"
       }
     ],
@@ -1618,14 +1695,14 @@ event Transfer(address indexed from, address indexed to, uint256 value)
         "type": "uint256"
       },
       {
-        "internalType": "int256",
+        "internalType": "int128",
         "name": "insideAMM",
-        "type": "int256"
+        "type": "int128"
       },
       {
-        "internalType": "int256",
+        "internalType": "int128",
         "name": "totalCollectedFees",
-        "type": "int256"
+        "type": "int128"
       },
       {
         "internalType": "int128",
@@ -1744,25 +1821,6 @@ event Transfer(address indexed from, address indexed to, uint256 value)
     "inputs": [
       {
         "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "name": "delegatedAmount",
-    "outputs": [
-      {
-        "internalType": "int256",
-        "name": "",
-        "type": "int256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
         "name": "delegator",
         "type": "address"
       },
@@ -1773,30 +1831,6 @@ event Transfer(address indexed from, address indexed to, uint256 value)
       }
     ],
     "name": "delegatedShares",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "name": "delegation",
     "outputs": [
       {
         "internalType": "uint256",
@@ -1839,13 +1873,18 @@ event Transfer(address indexed from, address indexed to, uint256 value)
         "type": "address"
       },
       {
+        "internalType": "uint256",
+        "name": "currentTickPriceFee",
+        "type": "uint256"
+      },
+      {
         "internalType": "int128",
         "name": "movedAssets",
         "type": "int128"
       },
       {
         "internalType": "int128",
-        "name": "transactedAmount",
+        "name": "swappedAmount",
         "type": "int128"
       },
       {
@@ -1855,7 +1894,7 @@ event Transfer(address indexed from, address indexed to, uint256 value)
       },
       {
         "internalType": "int128",
-        "name": "premium",
+        "name": "currentPositionPremium",
         "type": "int128"
       }
     ],
@@ -1903,7 +1942,7 @@ event Transfer(address indexed from, address indexed to, uint256 value)
       },
       {
         "internalType": "uint128",
-        "name": "numberOfContracts",
+        "name": "positionSize",
         "type": "uint128"
       },
       {
@@ -1921,7 +1960,7 @@ event Transfer(address indexed from, address indexed to, uint256 value)
     "outputs": [
       {
         "internalType": "uint128",
-        "name": "",
+        "name": "combinedTokenRequired",
         "type": "uint128"
       }
     ],
@@ -2020,83 +2059,55 @@ event Transfer(address indexed from, address indexed to, uint256 value)
         "type": "int256"
       }
     ],
-    "stateMutability": "view",
+    "stateMutability": "pure",
     "type": "function"
   },
   {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
+        "internalType": "int24",
+        "name": "a",
+        "type": "int24"
+      },
+      {
+        "internalType": "int24",
+        "name": "b",
+        "type": "int24"
       }
     ],
-    "name": "maxDeposit",
+    "name": "max24",
     "outputs": [
       {
-        "internalType": "uint256",
+        "internalType": "int24",
         "name": "",
-        "type": "uint256"
+        "type": "int24"
       }
     ],
-    "stateMutability": "view",
+    "stateMutability": "pure",
     "type": "function"
   },
   {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
+        "internalType": "int24",
+        "name": "a",
+        "type": "int24"
+      },
+      {
+        "internalType": "int24",
+        "name": "b",
+        "type": "int24"
       }
     ],
-    "name": "maxMint",
+    "name": "min24",
     "outputs": [
       {
-        "internalType": "uint256",
+        "internalType": "int24",
         "name": "",
-        "type": "uint256"
+        "type": "int24"
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "user",
-        "type": "address"
-      }
-    ],
-    "name": "maxRedeem",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "user",
-        "type": "address"
-      }
-    ],
-    "name": "maxWithdraw",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
+    "stateMutability": "pure",
     "type": "function"
   },
   {
@@ -2172,114 +2183,6 @@ event Transfer(address indexed from, address indexed to, uint256 value)
   {
     "inputs": [
       {
-        "internalType": "int128",
-        "name": "amountRemoved",
-        "type": "int128"
-      }
-    ],
-    "name": "poolUtilization",
-    "outputs": [
-      {
-        "internalType": "int128",
-        "name": "",
-        "type": "int128"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "prefix",
-    "outputs": [
-      {
-        "internalType": "string",
-        "name": "",
-        "type": "string"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint128",
-        "name": "assets",
-        "type": "uint128"
-      }
-    ],
-    "name": "previewDeposit",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "shares",
-        "type": "uint256"
-      }
-    ],
-    "name": "previewMint",
-    "outputs": [
-      {
-        "internalType": "uint128",
-        "name": "",
-        "type": "uint128"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "shares",
-        "type": "uint256"
-      }
-    ],
-    "name": "previewRedeem",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "assets",
-        "type": "uint256"
-      }
-    ],
-    "name": "previewWithdraw",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
         "internalType": "address",
         "name": "delegator",
         "type": "address"
@@ -2295,9 +2198,9 @@ event Transfer(address indexed from, address indexed to, uint256 value)
         "type": "int24"
       },
       {
-        "internalType": "int256",
+        "internalType": "int128",
         "name": "bonus",
-        "type": "int256"
+        "type": "int128"
       },
       {
         "internalType": "int128",
@@ -2329,6 +2232,49 @@ event Transfer(address indexed from, address indexed to, uint256 value)
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "s_delegatedAmount",
+    "outputs": [
+      {
+        "internalType": "int256",
+        "name": "",
+        "type": "int256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "s_delegation",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "int128",
         "name": "utilization",
         "type": "int128"
@@ -2338,7 +2284,7 @@ event Transfer(address indexed from, address indexed to, uint256 value)
     "outputs": [
       {
         "internalType": "int128",
-        "name": "sellRatio",
+        "name": "sellCollateral",
         "type": "int128"
       }
     ],
@@ -2355,35 +2301,6 @@ event Transfer(address indexed from, address indexed to, uint256 value)
     ],
     "name": "startToken",
     "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "optionOwner",
-        "type": "address"
-      },
-      {
-        "internalType": "int128",
-        "name": "movedAssets",
-        "type": "int128"
-      },
-      {
-        "internalType": "int128",
-        "name": "transactedAmount",
-        "type": "int128"
-      }
-    ],
-    "name": "swapTakeCommissionAddData",
-    "outputs": [
-      {
-        "internalType": "int128",
-        "name": "rate",
-        "type": "int128"
-      }
-    ],
     "stateMutability": "nonpayable",
     "type": "function"
   },
@@ -2408,17 +2325,52 @@ event Transfer(address indexed from, address indexed to, uint256 value)
         "type": "address"
       },
       {
+        "internalType": "uint256",
+        "name": "currentTickPriceFee",
+        "type": "uint256"
+      },
+      {
         "internalType": "int128",
-        "name": "movedAssets",
+        "name": "longAmount",
         "type": "int128"
+      },
+      {
+        "internalType": "int128",
+        "name": "shortAmount",
+        "type": "int128"
+      },
+      {
+        "internalType": "int128",
+        "name": "collectedAmount",
+        "type": "int128"
+      },
+      {
+        "internalType": "int128",
+        "name": "premium",
+        "type": "int128"
+      },
+      {
+        "internalType": "int128",
+        "name": "swappedAmount",
+        "type": "int128"
+      },
+      {
+        "internalType": "uint256[]",
+        "name": "positionIdList",
+        "type": "uint256[]"
       }
     ],
     "name": "takeCommissionAddData",
     "outputs": [
       {
-        "internalType": "int128",
-        "name": "rate",
-        "type": "int128"
+        "internalType": "int256",
+        "name": "rateAndUtilization",
+        "type": "int256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "tokenData",
+        "type": "uint256"
       }
     ],
     "stateMutability": "nonpayable",
@@ -2535,6 +2487,32 @@ event Transfer(address indexed from, address indexed to, uint256 value)
     "outputs": [
       {
         "internalType": "contract IUniswapV3Pool",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "univ3token0",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "univ3token1",
+    "outputs": [
+      {
+        "internalType": "address",
         "name": "",
         "type": "address"
       }
