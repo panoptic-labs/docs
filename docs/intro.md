@@ -22,6 +22,12 @@ We achieve this by embracing the decentralized nature of Automated Market Makers
 
 The following sections will provide a brief overview of the _Panoptic protocol_.
 
+- [Panoptic Protocol](./category/the-panoptic-protocol): Getting to know Panoptic's most important concepts.
+- [Options Trading 101](./category/options-trading-101): Options trading resources.
+- [Technical Specifications](./category/technical-specifications): Learn how to build on Panoptic.
+- [Protocol Security](./category/security): Audits, code reviews, security.
+
+
 ---
 
 ## Resources
