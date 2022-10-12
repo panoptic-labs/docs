@@ -43,7 +43,7 @@ Creates and manages undercollateralized options. Manages positions, collateral, 
 Panoptic Pool, create permissionless option on top of Uniswap V3
 
 
-### [ReceiptBase.sol](/docs/developers/receipt-token)
+### [CollateralTracker.sol](/docs/developers/collateral-tracker)
 Tracks and manages collateral using a shares model.
 
 ### (periphery) NFPMigrator.sol
