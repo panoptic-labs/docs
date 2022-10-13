@@ -78,8 +78,21 @@ Link: <a href="/docs/trading/multi-leg-strategies">Strategies for DAOs and proto
 # How do Panoptic Options differ from traditional options?
 
 Options in Panoptic, however, differ slightly from conventional options.
+Instead of using a clearginhouse to settle options constracts, the Panoptic protocol uses Liquidity Provider (LP) positions in Uniswap v3 as a fundamental building block for trading long and short options.
 
-The Panoptic protocol uses Liquidity Provider (LP) positions in Uniswap v3 as a fundamental building block for trading long and short options.
+Panoptic allows users to access to new and improved features when options trading:
+
+- Panoptic Options [never expire and are perpetual](/docs/panoptic-protocol/overview#liquidity-providing-as-selling-options)
+- Anybody can deploy an options market on any asset in a [permissionless manner](/docs/category/technical-specifications)
+- Panoptic enables anyone to lend their capital to options traders as a [liquidity provider](docs/panoptic-protocol/protocol-roles#liquidity-providers)
+- Options have [unique properties](/docs/panoptic-protocol/option-properties): width, new concept of moneyness, user-defined numeraire, etc.
+- [Pricing](/docs/panoptic-protocol/premium) is path-dependent and does not involve counterparties (such as market makers)
+- There is no concept of [vega], which means that the premium for open positions will not be affected by volatility expansion
+- Collateralization requirements and buying power reduction [respond](/docs/panoptic-protocol/liquidations) to market activity
+- Buying power requirements [do not change over time](/docs/panoptic-protocol/collateral)
+- Commissions are paid [only once](/docs/panoptic-protocol/collateral#commissions--fees), when the position is created
+- Distressed accounts will be [liquidated](/docs/panoptic-protocol/liquidations) by external users
+- External users may [forcefully exercise](/docs/panoptic-protocol/liquidations#forced-exercise) far out-of-the-money long positions
 
 <details>
 <summary>What is the relationship between Panoptic and the Uniswap v3 protocol?</summary>
@@ -105,19 +118,6 @@ In addition to the `SemiFungiblePositionManager.sol` contract, users in Panoptic
 />
 </details>
 
-Specifically, this means that with Panoptic you get access to new and improved features when options trading:
-
-- Panoptic Options [never expire and are perpetual](/docs/panoptic-protocol/overview#liquidity-providing-as-selling-options)
-- Anybody can deploy an options market on any asset in a [permissionless manner](/docs/category/technical-specifications)
-- Panoptic enables anyone to lend their capital to options traders as a [liquidity provider](docs/panoptic-protocol/protocol-roles#liquidity-providers)
-- Options have [unique properties](/docs/panoptic-protocol/option-properties): width, new concept of moneyness, user-defined numeraire, etc.
-- [Pricing](/docs/panoptic-protocol/premium) is path-dependent and does not involve counterparties (such as market makers)
-- There is no concept of [vega], which means that the premium for open positions will not be affected by volatility expansion
-- Collateralization requirements and buying power reduction [respond](/docs/panoptic-protocol/liquidations) to market activity
-- Commissions are paid [only once](/docs/panoptic-protocol/collateral#commissions--fees), when the position is created
-- Users can [delegate funds](/docs/panoptic-protocol/liquidations) to another account
-- Distressed accounts will be [liquidated](/docs/panoptic-protocol/liquidations) by external users
-- External users may [forcefully exercise](/docs/panoptic-protocol/liquidations#forced-exercise) far out-of-the-money long positions
 
 ---
 
