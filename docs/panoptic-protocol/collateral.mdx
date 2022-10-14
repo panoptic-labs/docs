@@ -22,7 +22,7 @@ In Panoptic, since options never expire and we wanted to limit any that could im
 The commission rate is computed from the pool utilization and is paid whenever an option is minted.
 The value of the commission to be paid is the `notional value` of the options multiplied by the commission rate.
 
-The comission decreases to 20bps at >50% pool utilization and linearly increases to 60bps for pool utilization below 10%.
+The commission fee decreases to 20bps at >50% pool utilization and linearly increases to reach 60bps for pool utilization below 10%.
 
 ```solidity
 COMMISSION
@@ -38,6 +38,16 @@ _RATE         ^
 
 ```
 
+Below is a few examples of the commission fees for various options:
+
+
+| Uni v3 Pool      | Option type | strike | Position size (token0) | Commission (<10% utilization) |
+| ----------- | ----------- |------ | ----------- | ----------- |
+| USDC-ETH     | long call | 1/2000 | 2000 USDC  | 12 USDC |
+| ETH-USDT   | short put  |  1000   | 1 ETH | 0.006 ETH |
+| SHIB-ETH | long put | 1/201,050,000 | 201,050,000 SHIB | 1,206,300 SHIB |
+| UNI-ETH   | short strangle | put: 0.004; call:0.01 | 1000 UNI | 0.6 + 0.6 UNI  |
+| ETH-OSQTH   | long straddle | put: 10; call:30   | 1 ETH  |  0.006 + 0.006 ETH |
 
 ## Collateral tracking
 

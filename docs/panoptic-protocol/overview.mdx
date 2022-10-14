@@ -24,30 +24,36 @@ Here is how Panoptic can be valuable investment instrument for different user pr
 <summary>1. Retail Users</summary>
 Retail investors may trade options the same way they trade stock or tokens: buy call options to profit when the underlying increases in price, or buy put options to profit when the underlying goes down in price.
 
-Retail user can also choose to participate indecentralize option vaults (a novel type of managed investment instrument pioneered by Ribbon) that can easily be implemented in Panoptic to target strategy that can be bearish, bullish, delta-neutral, or any combination thereof.
-<br />
+&nbsp;&nbsp;&nbsp;&nbsp;Retail user can also choose to participate indecentralize option vaults (a novel type of managed investment instrument pioneered by [Ribbon Finance](https://www.ribbon.finance/). 
+Option vauls can easily be implemented in Panoptic to target strategy that can be bearish, bullish, delta-neutral, or any combination thereof.
 <br />
 Link: <a href="/docs/trading/management-strategies">Strategies for retail users</a>.
+<br />
+&nbsp;
 </details>
 
 <details>
 <summary>2. "Pro-tail" Users</summary>
 Investors which are comfortable enough to manage a self-directed investment portfolio (we call those professional retail, or pro-tail, users) may employ strategies that fill the "complexity" gap between the retail and professional levels.
 
-In Panoptic, these users could be DeFi-native users that are comfortable with liquidity providing in AMMs and liquidity mining in protocol such as Uniswap or Sushiswap.
+&nbsp;&nbsp;&nbsp;&nbsp;In Panoptic, these users could be DeFi-native users that are comfortable with liquidity providing in AMMs and liquidity mining in protocol such as Uniswap or Sushiswap.
 Or they could be seasoned TradFi options traders that may want to get exposure to 24/7 markets on the long-tail of digital assets that are tradable on Uniswap v3.
 <br />
-<br />
 Link: <a href="/docs/trading/multi-leg-strategies">Strategies for Pro-tail users</a>.
+<br />
+&nbsp;
 </details>
 
 <details>
 <summary>3. Market Makers and Uniswap v3 Liquidity Providers</summary>
 Market making by sophisticated actors is necessary to create markets that are liquid enough to allow retail and pro-tail users to use varied strategies.
-In Panoptic, market making involves responding to both the demand from buyers and the need to stability prices within a Uniswap v3 pool.
-<br />
+
+&nbsp;&nbsp;&nbsp;&nbsp;In Panoptic, market making involves responding to both the demand from buyers and the need to stability prices within a Uniswap v3 pool.
+That may mean having to sell OTM options and providing liquidity in response to the put skew of an underlying asset, and do so in a way that maintains delta-neutrality at the portfolio level.
 <br />
 Link: <a href="/docs/trading/multi-leg-strategies">Strategies for Uni v3 LPs</a>.
+<br />
+&nbsp;
 </details>
 
 <details>
@@ -56,20 +62,23 @@ Institution may need to hedge their portfolio exposure.
 They may do this by purchasing put options on pairs representative of the crypto market (eg. ETH-USDC, ETH-BTC, etc).
 Alternatively, funds may sell calls on token they hold as a way to realize profits on tokens.
 
-In addition, institutions may deposit funds in the Panoptic pool as liquidity providers in order to collect a stable yield on their capital due to the lending of their tokens to options sellers and market makers. 
-<br />
+&nbsp;&nbsp;&nbsp;&nbsp;In addition, institutions may deposit funds in the Panoptic pool as liquidity providers in order to collect a stable yield on their capital due to the lending of their tokens to options sellers and market makers. 
 <br />
 Link: <a href="/docs/trading/multi-leg-strategies">Strategies for institutions</a>.
+<br />
+&nbsp;
 </details>
 
 <details>
 <summary>5. DAOs and protocol treasuries</summary>
-DAOs and protocol treasuries are typically in a uniquely difficult position when trying to deploy liquidity in a Uniswap pool: how to create liquid markets without having to deploy ETH or stablecoins?
+DAOs and protocol treasuries are in a uniquely difficult position when trying to deploy liquidity in a Uniswap pool: how to create liquid markets without having to deploy ETH or stablecoins?
 
-By seeding a Panoptic pool from the "token" side, DAOs will effectively increase the liquidity available for the creating of call options, which in turn should allow both retail speculators and pro-tail users to profit from an increase in token price. 
-<br />
+&nbsp;&nbsp;&nbsp;&nbsp;By seeding a Panoptic pool from the "token" side, DAOs will effectively increase the liquidity available for the creating of call options, which in turn should allow both retail speculators and pro-tail users to profit from an increase in token price. 
+These tokens could in turn be used as collateral to back a DAO's market making activities, which could help stabilize prices and decrease market volatility.
 <br />
 Link: <a href="/docs/trading/multi-leg-strategies">Strategies for DAOs and protocols</a>.
+<br />
+&nbsp;
 </details>
 
 
@@ -77,7 +86,7 @@ Link: <a href="/docs/trading/multi-leg-strategies">Strategies for DAOs and proto
 
 # How do Panoptic Options differ from traditional options?
 
-Options in Panoptic, however, differ slightly from conventional options.
+Options in Panoptic differ slightly from conventional options.
 Instead of using a clearginhouse to settle options constracts, the Panoptic protocol uses Liquidity Provider (LP) positions in Uniswap v3 as a fundamental building block for trading long and short options.
 
 Panoptic allows users to access to new and improved features when options trading:
@@ -93,30 +102,6 @@ Panoptic allows users to access to new and improved features when options tradin
 - Commissions are paid [only once](/docs/panoptic-protocol/collateral#commissions--fees), when the position is created
 - Distressed accounts will be [liquidated](/docs/panoptic-protocol/liquidations) by external users
 - External users may [forcefully exercise](/docs/panoptic-protocol/liquidations#forced-exercise) far out-of-the-money long positions
-
-<details>
-<summary>What is the relationship between Panoptic and the Uniswap v3 protocol?</summary>
-
-The core idea behind Perpetual Options is that Uniswap v3 liquidity provider (LP) positions can be seen as tokenized short puts.
-This core results emerges from the simple observation that providing concentrated liquidity in Uniswap v3 generates a payoff that is mathematically identical to selling a put option.
-This means that Uniswap v3 LP tokens can be users as a primitive for an option contract.
-What Panoptic enables is the minting of options in a "peer-to-protocol" manner by facilitating the minting of LP tokens as long/short puts and calls.
-
-At a core level, Panoptic has deployed a smart contract that replaces the `NonFungiblePositionManager.sol` smart contract from `v3-periphery`.
-This smart contract, called the `SemiFungiblePositionMananger.sol`, uses the `ERC1155` interface to track positions within Uniswap v3
-The SFPM and the NFPM both interact with the `UniswapV3Pool.sol` smart contracts to deploy and track liquidity positions.
-
-The Panoptic interface allows existing Uniswap v3 liquidity providers to easily migrate their positions from NFPM to SFPM, replicating all the basic functionalities of NFPM but with a 30% decrease in gas costs. 
-In addition to the `SemiFungiblePositionManager.sol` contract, users in Panoptic can also deploy `PanopticPool.sol`, which effectively unlocks an options market on top of any `UniswapV3Pool` pair.
-
-<ThemedImage
-  alt="Uniswap v3 <> Panoptic"
-  sources={{
-    light: useBaseUrl('/img/panoptic-univ3-light.svg'),
-    dark: useBaseUrl('/img/panoptic-univ3-dark.svg'),
-  }}
-/>
-</details>
 
 
 ---

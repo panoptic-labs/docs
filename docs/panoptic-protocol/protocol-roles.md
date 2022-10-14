@@ -1,9 +1,20 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # Protocol roles
 Ecosystem participants include liquidity providers, options sellers, options buyers, and liquidators.
+
+import ThemedImage from '@theme/ThemedImage';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<ThemedImage
+  alt="Commissions"
+  sources={{
+    light: useBaseUrl('/img/user-roles.svg'),
+    dark: useBaseUrl('/img/user-roles.svg'),
+  }}
+/>
 
 ## Liquidity Providers
 Provide fungible liquidity to the options market. 
@@ -19,7 +30,7 @@ Sellers have to deposit collateral and can sell options with notional values clo
 **Typical users**: Pro-tail, Market makers, DAOs.
 
 ## Option Buyers
-Buy options by moving liquidity out of the Uni v3 pool back to the Panoptic smart contract for a fixed commission fess. 
+Buy options by moving liquidity out of the Uni v3 pool back to the Panoptic smart contract for a fixed commission fee. 
 Buyers also have to deposit collateral (10% of the notional value of the option) to cover the potential premium to be paid to the sellers.
 
 **Typical users**: Retail, Institutions.

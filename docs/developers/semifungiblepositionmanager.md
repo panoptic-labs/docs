@@ -8,6 +8,17 @@ The SFPM smart contract manages LP position using the ERC1155 interface.
 > Semifungible Position Manager for Panoptic. Replaces the functionalities of the Nonfungible Position manager, and more.
 > Wraps up to 4-legged Uniswap V3 positions in the ERC1155 non-fungible token interface
 
+import ThemedImage from '@theme/ThemedImage';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<ThemedImage
+  alt="Commissions"
+  sources={{
+    light: useBaseUrl('/img/SFPM-architecture.svg'),
+    dark: useBaseUrl('/img/SFPM-architecture.svg'),
+  }}
+/>
+
 
 ## Write Methods
 

@@ -10,6 +10,7 @@ Panoptic is a perpetual, oracle-free options protocol build on the Ethereum bloc
 
 (put video here)
 
+
 ---
 
 ## Introduction
