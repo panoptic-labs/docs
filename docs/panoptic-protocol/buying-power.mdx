@@ -1,0 +1,161 @@
+---
+sidebar_position: 8
+---
+
+# Buying Power
+How does an option affect buying power
+
+## Margin Requirements
+
+Panoptic makes use of built-in leverage to enable the minting of undercollateralized options.
+In traditional finance, some accounts like IRA or a Level 1 trading account, requires all options to be fully collateralized.
+Specifically, users in IRA accounts can only sell cash-secured puts or covered calls, which means they have to deposit the notional value of the underlying position in cash (for cash-secured puts) or own the underlying shares (for covered calls).
+
+Undercollateralization is handled by reducing the buying power requirement of an asset. 
+In traditional finance, a Level 4 trading account in a brokerage firm may be able to sell naked puts and naked calls by only posting about 5x less collateral than in a Level 1 account.
+For Portfolio margin accounts, the collateral requirements could be even smaller, requiring about 10-15x less collateral than a Level 1 account.
+
+In TradFi, the selling options also has a buying power requirement that depends on the relative risk of the traded asset.
+For instance, selling calls on GameStop (GME) may require a 100% collateral requirement whereas as liquidty underlying like Apple (AAPL) may only have a 20% collateral requirement.
+
+## Buying Power Reduction
+
+The amount of capital available to place trade with is defined by this collateral and is called the *Buying Power*.
+The minting of any option in Panoptic will reduce the account's Buying Power. 
+The Buying Power Reduction of an option depends on 1) the notional value of that option and 2) the price of the underlying asset and 3) the pool utilization at the time the position was minted. 
+
+For example, if Alice deposits 1500 Dai and 2 ETH the ETH-Dai-30bps Panoptic Pool when the price of ETH is 1500Dai, then her buying power on the put side is 4500 Dai and it is 2.5 ETH on the call side.
+Users could also choose to deposit a single type of collateral: Bob could decide to deposit 4500 Dai, and Charlie could decide to deposit 2.5ETH and they would all have the same buying power (although they would all depend on the current price differently).
+
+This amount of collateral will be used to back the purchase and sale of options.
+Assuming ideal conditions, Alice could in theory sell puts for up to 22,500 in notional value (eg. selling 22.5 puts at the 1000 strike) or buy puts for up to 45,000 Dai in notional value (eg. buy 90 puts at the 500 strike).
+Similarly, Alice could sell calls with up to 12.5 ETH in notional value (eg. selling 12.5 calls at the 3000 strike) or buy calls for up to 25 ETH in notional value (eg. buy 25 puts at the 4000 strike).
+However, in all those scenarios, any change in price or accumulation of long premium could make Alice's account insolvent and lead her account to be [liquidated](docs/panoptic-protocol/liquidations).
+
+### Buying Power Requirement (buying)
+
+The buying power requirement for buying an option is simply: 
+```solidity
+BUYING POWER REQUIREMENT (buying) =
+    BUY_COLLATERAL_RATIO * NOTIONAL_VALUE +
+    IN_THE_MONEY_AMOUNT
+```
+
+The collateralization ratio for buying an option depends on the pool utilization.
+It is set at a fixed 10% for pool utilization less than 50% and decrease to 5% at 90% or more.
+
+
+```solidity
+
+BUY
+_COLLATERAL
+_RATIO        ^
+              |   
+              |
+              |   max ratio = 10%                         
+        10% - |-------------------------______              min ratio = 5%
+        5%  - |                        .      ¯¯¯¯¯¯------___________
+              |                        .                  .    .
+              +------------------------+------------------+----+---->   POOL_UTILIZATION
+                                      50%                 90%   100%
+
+```
+
+
+### Buying Power Requirement (selling)
+
+The buying power requirement (BPR) for selling an option is :
+
+```solidity
+BUYING POWER REQUIREMENT (selling) =
+   SELL_COLLATERAL_RATIO * NOTIONAL_VALUE -
+   IN_THE_MONEY_AMOUNT
+```
+
+The collateralization ratio for selling an option is set at a fixed 20% for pool utilization less than 50% and increases to 100% at pool utilization >90%.
+
+```solidity
+
+SELL
+_COLLATERAL
+_RATIO        ^                                            max ratio = 100%
+       100% - |                                            _________
+              |                                       __-¯¯.    .
+              |                                  __-¯¯     .    .
+              |  min ratio = 20%            __-¯¯          .    .
+        20% _ |_________________________--¯¯               .    .
+              |                        .                   .    .
+              +------------------------+-------------------+----+--->   POOL_UTILIZATION
+                                    50%                   90%   100%
+
+```
+
+---
+
+
+```solidity
+                                        .
+BUYING                                  .
+_POWER                         <- ITM   .  OTM ->
+_REQUIREMENT                            .
+              ^                         .
+       100% - |-__    BPR = 100% - (100% - SCR)*(price/strike)
+              |   ¯¯--__                .
+              |         ¯¯--__          .
+              |               ¯¯--__    .            min BRP = SELL_COLLATERAL_RATIO
+        SCR - |                     ¯¯--________________________________
+              |                         .
+              +-------------------------+--------------------------->   current price
+              0                      strike
+
+```
+
+BPR for calls (with collateral denominated in numeraire):
+
+```solidity
+
+BUYING                     .                                              __-- >100%
+_POWER                     .                                        __--¯¯
+_REQUIREMENT       <- OTM  .  ITM ->                          __--¯¯
+              ^            .                            __--¯¯
+       100% - |  -   -   - . -   -   -   -   -   -__--¯¯  -   -   -   -   -   - 100%
+              |            .                __--¯¯  .
+              |            .          __--¯¯        .
+              | min BRP    .    __--¯¯       BPR = SCR + (100% - SCR)*(price/strike - 1)
+ SELL_RATIO _ |_____________--¯¯                    .
+              |            .                        .
+              +------------+------------------------+--------------->   current price
+              0         strike                 2 * strike
+
+```
+
+The buying power requirement of a call can exceed the notional value of the minted option.
+However, users can deposit the asset as collateral in order to mitigate those risks.
+
+
+The buying power requirement of a call can exceed the notional value of the minted option.
+However, users can deposit the asset as collateral in order to mitigate those risks.
+
+
+
+BPR for calls (with collateral denominated in asset):
+```solidity
+
+BUYING                     .
+_POWER                     .
+_REQUIREMENT       <- OTM  .  ITM ->
+              ^            .
+       100% - |  -   -   - . -   -   -   -   -   -   -   -   -   -___----- 100%
+              |            .               ______-------¯¯¯¯¯¯¯¯¯¯
+              |            .   ___----¯¯¯¯¯
+              | min BRP    . --      BPR = 100% - (100% - SCR)*(strike/price)
+ SELL_RATIO _ |_____________¯
+              |            .
+              +------------+---------------------------------------->   current price
+              0         strike
+
+```
+
+
+
+

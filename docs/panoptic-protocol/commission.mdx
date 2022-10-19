@@ -1,0 +1,42 @@
+---
+sidebar_position: 6
+---
+
+# Commissions
+How does Panoptic calculate commissions
+
+## Commission Fees
+
+In traditional brokerage firms, a fixed commission is changed when a position is opened AND closed.
+With options, no commission is paid regardless if the user allows the option to expire expires.
+A perhaps perverse incentive of this model is that users may keep their position open for longer because they do not want to pay that commission fee.
+
+In Panoptic, since options never expire, commissions are only paid when a new position is minted. 
+We believe that this will eliminate the impact of the commissionf ee on the user's decision-making process when closing a position. 
+
+
+### Commission rate and pool utilization
+
+The value of the commission to be paid is the `notional value` of the option (ie. the amount of token moved to/from the Uniswap pool) multiplied by the commission rate:
+Note that the commission will alway be paid in terms of the `tokenype` of the position: it will be paid using `token0` for puts and `token1` for calls.
+
+```solidity
+commission = (notional value) * commissionRate()
+```
+
+The commission fee decreases to 20bps at >50% pool utilization and linearly increases to reach 60bps for pool utilization below 10%.
+
+```solidity
+COMMISSION
+_RATE         ^
+              |  max commission = 60bps
+     60bps  _ |_____
+              |    .¯¯---__
+              |    .       ¯¯---__        min commission = 20bps
+     20bps  _ |    .              ¯¯---____________________________
+              |    .                   .                        .
+              +----+-------------------+------------------------+--->   POOL_UTILIZATION
+                  10%                 50%                      100%
+
+```
+
