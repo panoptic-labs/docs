@@ -69,7 +69,7 @@ This derived quantity is used to compute the collateral shares.
 ```solidity
 >pp = IPanopticPool
 >univ3pool = IUniswapV3Pool
->token0 = IERC20 interface of the collateral token                                | token0.balanceOf(pp) =
+>token0 = IERC20 interface of the collateral token                           | token0.balanceOf(pp) =
                                                                           _--| amount of token0 owned
                                                                          /   | by the Panoptic Pool
     _----------------pp.totalBalance()---------------_                  /
@@ -99,8 +99,11 @@ poolUtilization = pp.inAMM() / pp.totalBalance();
                 = pp.inAMM() / (pp.inAMM() + token0.balanceOf(pp) - pp.locked())
 ```
 
-Here are a few examples of the `poolUtilisation` calculation:
+Here are a few examples of the `poolUtilization` calculation.
 
+
+First, the pool utilization is equal to 50%, the targeted equilibrium. 
+When this happens, the commission rate is at its minimum, and the Buy/Sell collateralization ratios are at their minimum too.
 ```solidity
 -Example 1: poolUtilization = 50%  (targeted equilibrium)
    _------pp.totalBalance()--+----------------------_
@@ -108,18 +111,23 @@ Here are a few examples of the `poolUtilisation` calculation:
  |     pp.inAMM0()           |    `free` token0       |  BUY_COLLATERAL_RATIO  = 10%
   \                          |                       /   SELL_COLLATERAL_RATIO = 20%
    ¯-------------------------+----------------------¯
+```
 
-
-
+If the pool utilization increases to 90% or more, then the protocol aims to favor options buying (which returns funds to the Panoptic pool and decreases the pool utilization).
+At the same time, the collateralization ratio required for selling an option increases to 100%, which means that all nedwly minted short options will not increase the pool utilization beyond 90%.
+```solidity
 -Example 2: poolUtilization = 90% (favors buying)
    _------pp.totalBalance()------------------+------_
   /                                          |       \   COMMISSION_RATE       = 20bps
  |                    pp.inAMM0()            | fT0    |  BUY_COLLATERAL_RATIO  = 5% <- favors buying
   \                                          |       /   SELL_COLLATERAL_RATIO = 100%
    ¯-----------------------------------------+------¯
+```
 
 
-
+If the pool utyilization decreases below 10%, then the pool likely has low trading activity and the liquitidy providers will receive a lower return on their investments.
+To compensate for this, the commission rate is increased to 60bps, and the collateralization ratio for selling new options is at its minimum (20% of notional).
+```solidity
 -Example 3: poolUtilization = 10% (favors selling)
    _-----+-----pp.totalBalance()--------------------_
   /      |                                           \   COMMISSION_RATE       = 60bps

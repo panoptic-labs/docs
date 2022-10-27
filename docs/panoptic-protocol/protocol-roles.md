@@ -99,7 +99,18 @@ Long options are minted by *removing* liquidity from the Uni v3 pool and moving 
 While any option can be sold at any price at any time, users wishing to buy an option can only do it if it has been sold first.
 
 Let us consider what happens if a user wants to buy a PUT option at price K=1000 and *width 10%* (basically buying the option that has been sold in the example above).
+Buying this specific PUT option means that a fraction of the USDC liquidity deployed between (903, 1101) will be removed from the Uni v3 pool and moved back to the Panoptic Pool, and the price of that option will be the amount of fees that would have been collected had the liquidity remained there. 
+If the price at the time the option was purchased is above 1101, the position is out-the-money (OTM) and will not accrue any premium.
 
+If the price never enters the (903, 1101) range, then the position is a debt denominated in USDC and the option price will remain zero.
+The user can choose to close their long PUT at any time and pay no premium.
+
+If, on the other hand, the price falls below 1101, the position will start accumulating a premium.
+If the price falls below 903, the position will become in-the-money (ITM) and will stop earning fees, so the option buyer can choose to exercise that option.
+At exercise, the buyer has to "re-deploy" the liquidity that was borrowed, which is not a debt denominated in ETH. 
+So the user has to send ETH to the Panoptic Pool and gets to keep the USDC that was received when deploying the long PUT option --effectively selling ETH at a price of 1000 USDC when the "market price" is <903. 
+
+Once again, a similar process happens when buying a call at say 2000: the user will borrow 1 ETH and will have to pay 2000 USDC for it even though the market price could be much higher than 2000.
 </details>
 
 
