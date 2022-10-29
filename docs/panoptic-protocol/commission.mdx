@@ -24,7 +24,9 @@ Note that the commission will alway be paid in terms of the `tokenype` of the po
 commission = (notional value) * commissionRate()
 ```
 
-The commission fee decreases to 20bps at >50% pool utilization and linearly increases to reach 60bps for pool utilization below 10%.
+The commission fee start at 60bps below 10% pool utilization and linearly decreases to 20bps at >50% pool utilization.
+The reason why the commission is high at low pool utilizations is to ensure that Liquidity Providers receive a reasonable yield even if there is low trading activity. 
+Keeping the commission rate constant above the target utilization rate of 50% also means traders will be not be disincentitized to trade as the market activity increases.
 
 ```solidity
 COMMISSION

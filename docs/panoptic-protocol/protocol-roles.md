@@ -28,8 +28,8 @@ Funds can be deposited in the Panoptic pools at any ratio.
 <ThemedImage
   alt="sellers"
   sources={{
-    light: useBaseUrl('/img/OptionTradingDiagram-03.svg'),
-    dark: useBaseUrl('/img/OptionTradingDiagram-03.svg'),
+    light: useBaseUrl('/img/OptionTradingDiagram-LP.svg'),
+    dark: useBaseUrl('/img/OptionTradingDiagram-LP.svg'),
   }}
 />
 
@@ -54,8 +54,8 @@ Sellers have to deposit collateral and can sell options with notional values clo
 <ThemedImage
   alt="sellers"
   sources={{
-    light: useBaseUrl('/img/OptionTradingDiagram-01.svg'),
-    dark: useBaseUrl('/img/OptionTradingDiagram-01.svg'),
+    light: useBaseUrl('/img/OptionTradingDiagram-sell.svg'),
+    dark: useBaseUrl('/img/OptionTradingDiagram-sell.svg'),
   }}
 />
 
@@ -90,8 +90,8 @@ Buyers also have to deposit collateral (10% of the notional value of the option)
 <ThemedImage
   alt="sellers"
   sources={{
-    light: useBaseUrl('/img/OptionTradingDiagram-02.svg'),
-    dark: useBaseUrl('/img/OptionTradingDiagram-02.svg'),
+    light: useBaseUrl('/img/OptionTradingDiagram-buy.svg'),
+    dark: useBaseUrl('/img/OptionTradingDiagram-buy.svg'),
   }}
 />
 

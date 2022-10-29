@@ -31,7 +31,8 @@ Assuming ideal conditions, Alice could in theory sell puts for up to 22,500 in n
 Similarly, Alice could sell calls with up to 12.5 ETH in notional value (eg. selling 12.5 calls at the 3000 strike) or buy calls for up to 25 ETH in notional value (eg. buy 25 puts at the 4000 strike).
 This amount of deposited collateral will be used to back the purchase and sale of options, and users will not be able to mint new options as the buying power approaches zero.
 Any change in price or accumulation of long premium could may even make Alice's account insolvent and lead her account to be [liquidated](docs/panoptic-protocol/liquidations) if the buying power falls below zero.
-### Buying Power Requirement (buying)
+
+### Buying Power Requirement (buying out-the-money options)
 
 The buying power requirement for buying an option is simply: 
 ```solidity
@@ -62,7 +63,7 @@ _RATIO        ^
 ```
 
 
-### Buying Power Requirement (selling)
+### Buying Power Requirement (selling out-the-money options)
 
 The buying power requirement (BPR) for selling an option is :
 
@@ -92,6 +93,20 @@ _RATIO        ^                                            max ratio = 100%
 ```
 
 ---
+
+## Maintenance Margin Requirement (in-the-money options)
+For options that have been minted out-the-money (OTM), the buying power requirement is simply given by the sell and buy collateral ration calculated above.
+As the price evolves and an option becomes in-the-money, risks may increase and the amout of collateral may need to increase to mitigate those risks.
+
+For example, selling an OTM put option initially requires 20% collateralization.
+As the price changes and decreases below the strike price, the buying power requirement will increase above 20%.
+The exact buying power requirement for a put at strike $\mathtt{K}$ when the current price is $\mathtt{S}$ and an initial collateral ratio of $\mathtt{C_i}$ is given by: 
+$$
+\mathtt{Buying\ Power\ Requirement = notionalSize \cdot \left(100\% - (100\% - C_i)\cdot\frac{S}{K}\right)}
+$$
+
+In contrast, the in-the-money amount (or the amount of funds necessary to cover the option) is always lower than the buying power requirement, and it is defined as $\mathtt{ITM\ amount = notionalSize \cdot\left(100\% - \frac{S}{K} \right)}$.
+So, selling a 1000 ETH-USDC put will start with a buying power requirement of 200 USDC when the price is above 1000 but will increase to 500 USDC if the price decreases to 625, whereas the ITM amount will be 400.
 
 
 ```solidity
