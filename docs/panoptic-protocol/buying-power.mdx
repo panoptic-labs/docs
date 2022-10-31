@@ -7,30 +7,65 @@ How does an option affect buying power
 
 ## Margin Requirements
 
-Panoptic makes use of built-in leverage to enable the minting of undercollateralized options.
-In traditional finance, some accounts, like IRA or a Level 1 trading account, require all options to be fully collateralized.
+In traditional finance, some types of account such IRA or Level 1 trading account require all options to be fully collateralized.
 Specifically, users in IRA accounts can only sell cash-secured puts or covered calls, which means they have to deposit the notional value of the underlying position in cash (for cash-secured puts) or own the underlying shares (for covered calls).
 
-Undercollateralization is handled by reducing the buying power requirement of an asset below the notional value of the position. 
-A Level 4 trading account holder in a brokerage firm, for instance, may be able to sell naked puts and naked calls with about 20% of the notional value as collateral.
+Undercollateralization is handled by reducing the buying power requirement of an asset.
+A Level 4 trading account in a TradFi brokerage firm allows users to sell naked puts and naked calls by only posting 5x less collateral than users in a Level 1 account.
 For Portfolio margin accounts, the collateral requirements could be even smaller, requiring about 10-15x less collateral than a Level 1 account.
 
-In TradFi, the selling options also has a buying power requirement that depends on the relative risk of the traded asset.
-For instance, selling calls on GameStop (GME) may require a 100% collateral requirement whereas as liquidty underlying like Apple (AAPL) may only have a 20% collateral requirement.
+Panoptic makes use of built-in leverage similar to level 4 trading to enable the minting of undercollateralized options.
+The collateralization requirements follows the guidelines outlined by the CBOE and FINRA, and can be summarized as follows:
+
+$$
+\mathtt{MaximumOf\left[notionalValue \cdot 20\%,\ notionalValue\cdot\left(1-80\%\frac{Price}{strike} \right)\right]}
+$$ 
+
+It helps to visualize the collateral requirement *for a short put at strike K* compared to the in-the-money amount and the liquidation bonus (more details in the [liquidation](docs/panoptic-protocol/liquidations) page) in a graph:
+
+import ThemedImage from '@theme/ThemedImage';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+
+<ThemedImage
+  alt="Commissions"
+  sources={{
+    light: useBaseUrl('/img/MarginRequirements.svg'),
+    dark: useBaseUrl('/img/MarginRequirements.svg'),
+  }}
+/>
 
 ## Buying Power Reduction
 
-The amount of capital available to place trade with is defined by the asset's collateral requirement.
-The total amount of capital available to trade options is called the *Buying Power*, and the minting of any option in Panoptic will reduce the account's Buying Power. 
-The Buying Power Reduction of an option depends on 1) the notional value of that option and 2) the price of the underlying asset and 3) the pool utilization at the time the position was minted. 
 
-For example, if Alice deposits 1500 Dai and 2 ETH the ETH-Dai-30bps Panoptic Pool when the price of ETH is 1500Dai, then her buying power on the put side is 4500 Dai and it is 2.5 ETH on the call side.
-Panoptic does not require users to deposit a specific type of collateral: Bob could decide to deposit 4500 Dai, and Charlie could decide to deposit 2.5ETH and they would all have the same buying power (although their buying power would all depend on the current price of the asset).
+The amount of capital available to place trade with is defined by this collateral and is called the *Buying Power*.
+The minting of any option in Panoptic will reduce the account's Buying Power.
+The Buying Power Reduction of an option depends on 1) the notional value of that option and 2) the price of the underlying asset and 3) the risks associated with trading the underlying assets.
 
-Assuming ideal conditions, Alice could in theory sell puts for up to 22,500 in notional value (eg. selling 22.5 puts at the 1000 strike) or buy puts for up to 45,000 Dai in notional value (eg. buy 90 puts at the 500 strike).
-Similarly, Alice could sell calls with up to 12.5 ETH in notional value (eg. selling 12.5 calls at the 3000 strike) or buy calls for up to 25 ETH in notional value (eg. buy 25 puts at the 4000 strike).
-This amount of deposited collateral will be used to back the purchase and sale of options, and users will not be able to mint new options as the buying power approaches zero.
-Any change in price or accumulation of long premium could may even make Alice's account insolvent and lead her account to be [liquidated](docs/panoptic-protocol/liquidations) if the buying power falls below zero.
+Determining the buying power reduction from points 1) and 2) can be compute in a faitly straightforward manner (see sections below).
+The impact of point 3), on the other hand, is not as clearly defined.
+In TradFi, for instance, selling calls on GameStop (GME) may require a 100% collateral requirement whereas as liquidty underlying like Apple (AAPL) may only have a 20% collateral requirement.
+The choice to change the collateral requirement of a specific asset resides entirely within the power of centralized actors at each brokerage firms.
+
+In Panoptic, we evaluate the relative risk of a specific asset by looking at the pool utilization at the time the position was minted.
+The rational behind this is as follows.
+If an asset is in high demand, then there will be a lot of trading activity and most liquidity will be actively traded.
+This means that liquidity that is normally available to trade/adjust/roll positions will be reduced for underlyings that either have 1) significant trading activity or 2) low liquidity.
+
+### Cross-collateralization
+
+In TradFi, most options on equities are collateralized using cash.  
+
+Users can choose to deposit a single type of collateral: Alice could decide to deposit 4500 Dai as collateral, and Bob could decide to deposit 3ETH.
+In this case, if the price is 1500 Dai, then both Alice and Bob would all have the same buying power, about 4500 Dai to sell puts and 3 ETH to sell calls.
+The maximum loss for Alice when selling puts would be 4500 Dai (if the price of ETH goes to 0), but it could be potentially infinite if she chooses to sell naked calls instead (this will happend if the price goes to $\infty$).
+Similarly, the maximum loss for Bob when selling calls is 3 ETH (if the price of ETH goes to $\infty$) and could potentially be infinity of he chooses to sell naked puts instead (which happens if the price of ETH goes to zero).
+
+For this reason, we recommend that users deposit both collateral when trading both puts and calls.
+For example, if Charlie deposits 1500 Dai and 2 ETH the ETH-Dai-30bps Panoptic Pool when the price of ETH is 1500Dai, then their buying power on the put side is 4500 Dai and it is 3 ETH on the call side.
+In this case, the maximum loss will be bounded by the amount of collateral desposited and Charlie could never lose more than they deposited.
+
+However, in all those scenarios, any change in price or accumulation of long premium could make Alice's, Bob's or Charlie's accounts insolvent and lead their account to be [liquidated](docs/panoptic-protocol/liquidations).
 
 ### Buying Power Requirement (buying out-the-money options)
 

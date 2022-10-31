@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1200 500" style="enable-background:new 0 0 1200 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:5.9797,4.9831;}
+	.st3{fill:none;stroke:#CC333F;stroke-width:3;stroke-miterlimit:10;}
+	.st4{fill:none;stroke:#4682B4;stroke-width:3;stroke-miterlimit:10;}
+	.st5{font-family:'Courier';}
+	.st6{font-size:32px;}
+	.st7{font-size:28px;}
+	.st8{fill:#F1F5F9;stroke:#231F20;stroke-miterlimit:10;}
+	.st9{font-size:16.8px;}
+	.st10{fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:6,5;}
+	.st11{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	.st12{font-size:16px;}
+	.st13{fill:none;stroke:#231F20;stroke-miterlimit:10;}
+	.st14{fill:#231F20;}
+</style>
+<rect x="188.5" y="16.5" class="st0" width="910" height="420"/>
+<polyline class="st1" points="1098,436 188,436 188,16 "/>
+<g>
+	<g>
+		<line class="st1" x1="176.5" y1="344.5" x2="179.5" y2="344.5"/>
+		<line class="st2" x1="184.48" y1="344.5" x2="1059.01" y2="344.5"/>
+		<line class="st1" x1="1061.5" y1="344.5" x2="1064.5" y2="344.5"/>
+	</g>
+</g>
+<line class="st1" x1="735.5" y1="425.5" x2="735.5" y2="445.5"/>
+<polyline class="st3" points="188.5,111.5 735.5,435.5 1078.53,435.5 "/>
+<polyline class="st4" points="188.5,111.5 735.5,344.5 1075.88,344.5 "/>
+<text transform="matrix(1 0 0 1 968.5732 485.5728)" class="st5 st6">Asset Price</text>
+<text transform="matrix(6.123234e-17 -1 1 6.123234e-17 67.7831 466.0342)" class="st5 st6">Collateral requirement</text>
+<text transform="matrix(1 0 0 1 109.0742 119.2413)" class="st5 st7">100%</text>
+<text transform="matrix(1 0 0 1 123.4763 352.2413)" class="st5 st7">20%</text>
+<line class="st1" x1="178" y1="111.5" x2="198" y2="111.5"/>
+<text transform="matrix(1 0 0 1 670.9344 474.8416)" class="st5 st7">Strike K</text>
+<g>
+	<path class="st8" d="M1043,236H783c-5.52,0-10-4.48-10-10v-64c0-5.52,4.48-10,10-10h260c5.52,0,10,4.48,10,10v64
+		C1053,231.52,1048.52,236,1043,236z"/>
+	<line class="st4" x1="789.45" y1="179.36" x2="834.45" y2="179.36"/>
+	<line class="st3" x1="789.45" y1="210.48" x2="834.45" y2="210.48"/>
+	<text transform="matrix(1 0 0 1 849.5889 182.5586)" class="st5 st9">required collateral</text>
+	<text transform="matrix(1 0 0 1 850.2129 213.6758)" class="st5 st9">in-the-money amount</text>
+</g>
+<line class="st10" x1="735.5" y1="435.5" x2="735.5" y2="76.5"/>
+<line class="st10" x1="465.5" y1="444.5" x2="465.5" y2="76.5"/>
+<g>
+	<g>
+		<line class="st11" x1="747.67" y1="110.5" x2="1072.28" y2="110.5"/>
+		<g>
+			<polygon points="754.3,118.68 755.66,117.21 748.44,110.5 755.66,103.79 754.3,102.32 745.5,110.5 			"/>
+		</g>
+		<g>
+			<polygon points="1065.65,118.68 1064.29,117.21 1071.51,110.5 1064.29,103.79 1065.65,102.32 1074.45,110.5 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line class="st11" x1="445.56" y1="110.5" x2="212" y2="110.5"/>
+		<g>
+			<polygon points="438.93,102.32 437.56,103.79 444.79,110.5 437.56,117.21 438.93,118.68 447.72,110.5 			"/>
+		</g>
+		<g>
+			<polygon points="218.63,102.32 219.99,103.79 212.77,110.5 219.99,117.21 218.63,118.68 209.83,110.5 			"/>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<line class="st11" x1="717.54" y1="110.5" x2="483.17" y2="110.5"/>
+		<g>
+			<polygon points="710.92,102.32 709.55,103.79 716.78,110.5 709.55,117.21 710.92,118.68 719.71,110.5 			"/>
+		</g>
+		<g>
+			<polygon points="489.8,102.32 491.16,103.79 483.94,110.5 491.16,117.21 489.8,118.68 481,110.5 			"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 839.6373 76.4016)" class="st5 st12">Not liquidatable</text>
+<text transform="matrix(1 0 0 1 440.8412 476.5315)" class="st5 st7">K-C</text>
+<g>
+	<g>
+		<line class="st13" x1="644.5" y1="310.58" x2="644.5" y2="340.42"/>
+		<g>
+			<polygon class="st14" points="640.41,313.9 641.14,314.58 644.5,310.97 647.86,314.58 648.59,313.9 644.5,309.5 			"/>
+		</g>
+		<g>
+			<polygon class="st14" points="640.41,337.1 641.14,336.42 644.5,340.03 647.86,336.42 648.59,337.1 644.5,341.5 			"/>
+		</g>
+	</g>
+</g>
+<line class="st10" x1="170.5" y1="275.5" x2="1078.5" y2="275.5"/>
+<text transform="matrix(1 0 0 1 196.3113 339.3085)"><tspan x="0" y="0" class="st5 st12">Minimum</tspan><tspan x="0" y="19.2" class="st5 st12">collateral</tspan></text>
+<text transform="matrix(1 0 0 1 196.71 270.3082)"><tspan x="0" y="0" class="st5 st12">User</tspan><tspan x="0" y="19.2" class="st5 st12">collateral</tspan></text>
+<g>
+	<g>
+		<line class="st13" x1="411.5" y1="249.08" x2="411.5" y2="271.92"/>
+		<g>
+			<polygon class="st14" points="407.41,252.4 408.14,253.08 411.5,249.47 414.86,253.08 415.59,252.4 411.5,248 			"/>
+		</g>
+		<g>
+			<polygon class="st14" points="407.41,268.6 408.14,267.92 411.5,271.53 414.86,267.92 415.59,268.6 411.5,273 			"/>
+		</g>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 364.767 260.82)" class="st5 st12">loss</text>
+<text transform="matrix(1 0 0 1 141.981 283.2135)" class="st5 st7">C</text>
+<text transform="matrix(1 0 0 1 585.2148 328.9438)" class="st5 st12">bonus</text>
+<text transform="matrix(1 0 0 1 506.3462 56.3674)"><tspan x="0" y="0" class="st5 st12">Account = -bonus</tspan><tspan x="0" y="19.2" class="st5 st12">Liquidator = +bonus</tspan><tspan x="0" y="38.4" class="st5 st12">protocol = no loss</tspan></text>
+<text transform="matrix(1 0 0 1 236.9518 56.1675)"><tspan x="0" y="0" class="st5 st12">Account = -collateral</tspan><tspan x="0" y="19.2" class="st5 st12">Liquidator = no loss</tspan><tspan x="0" y="38.4" class="st5 st12">protocol = (S-K)+C</tspan></text>
+</svg>
