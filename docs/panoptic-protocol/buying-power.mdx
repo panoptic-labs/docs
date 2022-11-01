@@ -1,39 +1,9 @@
 ---
-sidebar_position: 8
+sidebar_position: 9
 ---
 
 # Buying Power
 How does an option affect buying power
-
-## Margin Requirements
-
-In traditional finance, some types of account such IRA or Level 1 trading account require all options to be fully collateralized.
-Specifically, users in IRA accounts can only sell cash-secured puts or covered calls, which means they have to deposit the notional value of the underlying position in cash (for cash-secured puts) or own the underlying shares (for covered calls).
-
-Undercollateralization is handled by reducing the buying power requirement of an asset.
-A Level 4 trading account in a TradFi brokerage firm allows users to sell naked puts and naked calls by only posting 5x less collateral than users in a Level 1 account.
-For Portfolio margin accounts, the collateral requirements could be even smaller, requiring about 10-15x less collateral than a Level 1 account.
-
-Panoptic makes use of built-in leverage similar to level 4 trading to enable the minting of undercollateralized options.
-The collateralization requirements follows the guidelines outlined by the CBOE and FINRA, and can be summarized as follows:
-
-$$
-\mathtt{MaximumOf\left[notionalValue \cdot 20\%,\ notionalValue\cdot\left(1-80\%\frac{Price}{strike} \right)\right]}
-$$ 
-
-It helps to visualize the collateral requirement *for a short put at strike K* compared to the in-the-money amount and the liquidation bonus (more details in the [liquidation](docs/panoptic-protocol/liquidations) page) in a graph:
-
-import ThemedImage from '@theme/ThemedImage';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
-
-<ThemedImage
-  alt="Commissions"
-  sources={{
-    light: useBaseUrl('/img/MarginRequirements.svg'),
-    dark: useBaseUrl('/img/MarginRequirements.svg'),
-  }}
-/>
 
 ## Buying Power Reduction
 
