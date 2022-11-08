@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/easy.svg').default,
     description: (
       <>
         Panoptic designed from the ground up to be easy to use..
@@ -14,7 +14,7 @@ const FeatureList = [
   },
   {
     title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/focus.svg').default,
     description: (
       <>
         Panoptic lets you manage your options position quickly and easily.
@@ -23,7 +23,7 @@ const FeatureList = [
   },
   {
     title: 'Backed by Math+Code',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/math.svg').default,
     description: (
       <>
          Leverage the time-tested Uniswap v3 ecosystem to create perpetual options.
