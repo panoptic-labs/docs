@@ -5,37 +5,34 @@
 <style type="text/css">
 	.st0{fill:#FFFFFF;stroke:#1D1233;stroke-width:3;stroke-miterlimit:10;}
 	.st1{fill:#FFFFFF;}
-	.st2{fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:6,5;}
-	.st3{fill:#EB6841;fill-opacity:0.15;stroke:#000000;stroke-miterlimit:10;}
-	.st4{fill:#47B247;fill-opacity:0.15;stroke:#000000;stroke-miterlimit:10;}
+	.st2{opacity:0.1;fill:#CC333F;}
+	.st3{opacity:0.1;fill:#CCCC36;}
+	.st4{opacity:0.1;fill:#47B247;}
 	.st5{fill:none;stroke:#000000;stroke-miterlimit:10;}
 	.st6{fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:5.9797,4.9831;}
 	.st7{fill:none;stroke:#4682B4;stroke-width:3;stroke-miterlimit:10;}
 	.st8{font-family:'Courier';}
 	.st9{font-size:32px;}
 	.st10{font-size:28px;}
-	.st11{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
-	.st12{font-size:25px;}
-	.st13{font-size:16px;}
-	.st14{fill:none;stroke:#231F20;stroke-miterlimit:10;}
-	.st15{fill:#231F20;}
+	.st11{fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:6,5;}
+	.st12{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	.st13{font-size:24px;}
+	.st14{fill:#47B247;}
+	.st15{font-size:16px;}
 	.st16{enable-background:new    ;}
-	.st17{font-size:24px;}
+	.st17{fill:#CC333F;}
 	.st18{fill:#F1F5F9;stroke:#231F20;stroke-miterlimit:10;}
 	.st19{fill:none;stroke:#CC333F;stroke-width:3;stroke-miterlimit:10;}
 	.st20{font-size:16.758px;}
-	.st21{font-size:14.9993px;}
+	.st21{font-size:14.9986px;}
 	.st22{font-size:15px;}
-	.st23{fill:#4682B4;fill-opacity:0.15;stroke:#000000;stroke-miterlimit:10;}
 </style>
 <path class="st0" d="M68.14,12.33h1151.5c27.61,0,50,22.39,50,50v460.12c0,27.61-22.39,50-50,50H68.14c-27.61,0-50-22.39-50-50
 	V62.33C18.14,34.72,40.53,12.33,68.14,12.33z"/>
 <rect x="177.5" y="52" class="st1" width="910" height="420"/>
-<line class="st2" x1="767.5" y1="406.78" x2="767.5" y2="479.5"/>
-<path class="st2" d="M767.5,406.78"/>
-<line class="st2" x1="767.5" y1="334.06" x2="767.5" y2="368.46"/>
-<polyline class="st3" points="177,330 177.5,147 601.87,330.59 "/>
-<polyline class="st4" points="924.5,330 721.5,279.52 604.87,330.59 "/>
+<rect x="177" y="45.63" class="st2" width="425.87" height="425.87"/>
+<rect x="602.87" y="45.01" class="st3" width="321.63" height="425.87"/>
+<rect x="924.86" y="45.63" class="st4" width="315.9" height="425.87"/>
 <g>
 	<g>
 		<polyline class="st5" points="1079.82,471.5 177,471.5 177,78.68 		"/>
@@ -64,10 +61,10 @@
 <line class="st5" x1="167" y1="147" x2="187" y2="147"/>
 <text transform="matrix(1 0 0 1 875.5262 510.3416)" class="st8 st10">Strike</text>
 <text transform="matrix(1 0 0 1 917.5362 543.9416)" class="st8 st10">K</text>
-<line class="st2" x1="924.5" y1="471" x2="924.5" y2="112"/>
+<line class="st11" x1="924.5" y1="471" x2="924.5" y2="112"/>
 <g>
 	<g>
-		<line class="st11" x1="933.67" y1="146" x2="1111.28" y2="146"/>
+		<line class="st12" x1="933.67" y1="146" x2="1111.28" y2="146"/>
 		<g>
 			<polygon points="940.3,154.18 941.66,152.71 934.44,146 941.66,139.29 940.3,137.82 931.5,146 			"/>
 		</g>
@@ -78,7 +75,7 @@
 </g>
 <g>
 	<g>
-		<line class="st11" x1="584.56" y1="146" x2="231" y2="146"/>
+		<line class="st12" x1="584.56" y1="146" x2="231" y2="146"/>
 		<g>
 			<polygon points="577.93,137.82 576.56,139.29 583.79,146 576.56,152.71 577.93,154.18 586.72,146 			"/>
 		</g>
@@ -89,7 +86,7 @@
 </g>
 <g>
 	<g>
-		<line class="st11" x1="911.54" y1="146" x2="619.17" y2="146"/>
+		<line class="st12" x1="911.54" y1="146" x2="619.17" y2="146"/>
 		<g>
 			<polygon points="904.92,137.82 903.55,139.29 910.78,146 903.55,152.71 904.92,154.18 913.71,146 			"/>
 		</g>
@@ -98,28 +95,15 @@
 		</g>
 	</g>
 </g>
-<text transform="matrix(1 0 0 1 955.3497 74.8037)" class="st8 st12">Not liquidatable</text>
+<g>
+	<text transform="matrix(1 0 0 1 943.6373 77.0676)"><tspan x="0" y="0" class="st8 st13">Liquidatable: </tspan><tspan x="201.63" y="0" class="st14 st8 st13">false</tspan><tspan x="0" y="28.8" class="st8 st13">Protocol:</tspan><tspan x="129.62" y="28.8" class="st14 st8 st13"> solvent</tspan></text>
+</g>
 <text transform="matrix(1 0 0 1 577.8412 510.0315)" class="st8 st10">K-C</text>
-<text transform="matrix(1 0 0 1 185.3113 324.8085)" class="st8 st13">mininum</text>
-<text transform="matrix(1 0 0 1 185.3113 344.0085)" class="st8 st13">collateral</text>
-<g>
-	<g>
-		<line class="st14" x1="478.5" y1="286.58" x2="478.5" y2="324.42"/>
-		<g>
-			<polygon class="st15" points="474.41,289.9 475.14,290.58 478.5,286.97 481.86,290.58 482.59,289.9 478.5,285.5 			"/>
-		</g>
-		<g>
-			<polygon class="st15" points="474.41,321.1 475.14,320.42 478.5,324.03 481.86,320.42 482.59,321.1 478.5,325.5 			"/>
-		</g>
-	</g>
-</g>
-<text transform="matrix(1 0 0 1 345.767 305.32)" class="st8 st13">protocol loss</text>
-<text transform="matrix(1 0 0 1 710.1229 315.0565)" class="st8 st13">bonus</text>
-<text transform="matrix(1 0 0 1 622.5155 46.5673)" class="st16"><tspan x="0" y="0" class="st8 st17">Liquidatee = -bonus</tspan><tspan x="0" y="28.8" class="st8 st17">Liquidator = +bonus</tspan><tspan x="0" y="57.6" class="st8 st17">Protocol = no loss</tspan></text>
-<g>
-	<text transform="matrix(1 0 0 1 225.9518 51.6675)" class="st16"><tspan x="0" y="0" class="st8 st17">Liquidatee = -collateral</tspan><tspan x="0" y="28.8" class="st8 st17">Liquidator = no loss</tspan><tspan x="0" y="57.6" class="st8 st17">Protocol = (1-S/K)-C</tspan></text>
-</g>
-<line class="st2" x1="602.87" y1="479.5" x2="602.87" y2="111.5"/>
+<text transform="matrix(1 0 0 1 185.3113 324.8085)" class="st8 st15">mininum</text>
+<text transform="matrix(1 0 0 1 185.3113 344.0085)" class="st8 st15">collateral</text>
+<text transform="matrix(1 0 0 1 625.3462 77.0677)" class="st16"><tspan x="0" y="0" class="st8 st13">Liquidatable: </tspan><tspan x="201.63" y="0" class="st17 st8 st13">true</tspan><tspan x="0" y="28.8" class="st8 st13">Protocol: </tspan><tspan x="144.02" y="28.8" class="st14 st8 st13">solvent</tspan></text>
+<text transform="matrix(1 0 0 1 225.9518 77.0675)" class="st16"><tspan x="0" y="0" class="st8 st13">Liquidatable: </tspan><tspan x="201.63" y="0" class="st17 st8 st13">true</tspan><tspan x="0" y="28.8" class="st8 st13">Protocol: </tspan><tspan x="144.02" y="28.8" class="st17 st8 st13">insolvent</tspan></text>
+<line class="st11" x1="602.87" y1="479.5" x2="602.87" y2="111.5"/>
 <g>
 	<path class="st18" d="M1224.65,283.4h-259.3c-5.52,0-10-4.48-10-10v-63.8c0-5.52,4.48-10,10-10h259.3c5.52,0,10,4.48,10,10v63.79
 		C1234.65,278.92,1230.17,283.4,1224.65,283.4z"/>
@@ -127,34 +111,8 @@
 	<line class="st19" x1="971.76" y1="257.94" x2="1016.65" y2="257.94"/>
 	<text transform="matrix(1 0 0 1 1031.7479 230.0869)" class="st8 st20">required collateral</text>
 	<text transform="matrix(1 0 0 1 1032.3701 261.127)" class="st8 st20">in-the-money amount</text>
-	<text transform="matrix(0.9744 0.2246 -0.2246 0.9744 420.4093 198.6131)" class="st8 st21">required collateral</text>
+	<text transform="matrix(0.9744 0.2246 -0.2246 0.9744 420.4086 198.6132)" class="st8 st21">required collateral</text>
 	<text transform="matrix(0.9109 0.4127 -0.4127 0.9109 389.5267 228.948)" class="st8 st22">in-the-money amount</text>
 </g>
-<polyline class="st23" points="923.3,331.65 720.3,382.14 923.5,471 "/>
 <polyline class="st19" points="177.5,147 924.5,471 1067.53,471 "/>
-<g>
-	<g>
-		<line class="st14" x1="767.5" y1="295.4" x2="767.5" y2="326.23"/>
-		<g>
-			<polygon class="st15" points="763.41,298.71 764.14,299.4 767.5,295.78 770.85,299.4 771.59,298.71 767.5,294.32 			"/>
-		</g>
-		<g>
-			<polygon class="st15" points="763.41,322.92 764.14,322.24 767.5,325.85 770.85,322.24 771.59,322.92 767.5,327.32 			"/>
-		</g>
-	</g>
-</g>
-<g>
-	<g>
-		<line class="st14" x1="767.5" y1="374.58" x2="767.5" y2="398.42"/>
-		<g>
-			<polygon class="st15" points="763.41,377.9 764.14,378.58 767.5,374.97 770.86,378.58 771.59,377.9 767.5,373.5 			"/>
-		</g>
-		<g>
-			<polygon class="st15" points="763.41,395.1 764.14,394.42 767.5,398.03 770.86,394.42 771.59,395.1 767.5,399.5 			"/>
-		</g>
-	</g>
-</g>
-<text transform="matrix(1 0 0 1 781.4334 382.3965)" class="st8 st13">Liquidatee</text>
-<text transform="matrix(1 0 0 1 781.4334 401.5965)" class="st8 st13">balance</text>
-<text transform="matrix(1 0 0 1 673.8217 510.9569)" class="st16"><tspan x="0" y="0" class="st8 st10">Liquidation</tspan><tspan x="50.41" y="33.6" class="st8 st10">price</tspan></text>
 </svg>

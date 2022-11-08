@@ -19,36 +19,9 @@ The choice to change the collateral requirement of a specific asset resides enti
 In Panoptic, we evaluate the relative risk of a specific asset by looking at the pool utilization at the time the position was minted.
 The rational behind this is as follows.
 If an asset is in high demand, then there will be a lot of trading activity and most liquidity will be actively traded.
-This means that liquidity that is normally available to trade/adjust/roll positions will be reduced for underlyings that either have 1) significant trading activity or 2) low liquidity.
-
-### Cross-collateralization
-
-<!--In TradFi, most options on equities are collateralized using cash or investments with stable value.
-This means that the maximum loss for a cash-secured put is limited -->
-
-In Panoptic, every user must deposit collateral in the `PanopticPool` before they can mint long or short options.
-Liquidity providers can simply deposit their collateral like they would do in a lending protocol, and collect yields every time a user mints an option.
-
-#### Single-collateral
-Let's consider Alice and Bob, who choose to deposite a single type of collateral: Alice deposits 4500 Dai as collateral, and Bob deposits 3ETH.
-In this case, if the price is 1500 Dai, then both Alice and Bob would all have the same buying power, about 4500 Dai to sell puts and 3 ETH to sell calls.
-
-The maximum loss for Alice when selling puts would be 4500 Dai, which would happen if the price of ETH goes to 0.
-The maximum loss if she chooses to sell naked calls instead could potentially be infinite: the max loss is unbounded and continues to linearly increase as the price goes to $\infty$.
-
-Similarly, the maximum loss for Bob when selling calls is 3 ETH (if the price of ETH goes to $\infty$) and could potentially be infinity of he chooses to sell naked puts instead (which happens if the price of ETH goes to zero).
-
-#### Cross-collateral
-Since losses could potentially be infinite, we recommend that users deposit both collateral when trading both puts and calls.
-For example, let's consider what happens if Charlie deposits 1500 Dai and 2 ETH the ETH-Dai Panoptic Pool when the price of ETH is 1500Dai.
-Their buying power on the put side is 4500 Dai and it is 3 ETH on the call side, which is the same as Alice's and Bob's from the example above.
-
-The maximum loss for Charlie, however, will be constrained by the amount of collateral desposited.
-Charlie's max loss for selling naked calls will be partially covered by their 2 ETH of collateral, and the max loss will increase more slowly than Alice's
-Similarly, Charlie's max loss for selling puts will also partially covered by their 1500Dai of collateral.
-In that case, Charlie's max loss will increase more slowly than Bobs's.
-
-However, in all those scenarios, any change in price or accumulation of long premium could make Alice's, Bob's or Charlie's accounts insolvent and lead their account to be [liquidated](docs/panoptic-protocol/liquidations).
+This means that liquidity that is normally available to trade/adjust/roll positions will be reduced.
+Hence, it will be more difficult for traders to respond to market moves, thereby increasing the risk for those specific pools.
+So, increasing the collateral requirement for pool with high utilization will help mitigate those risks.
 
 ### Buying Power Requirement (buying out-the-money options)
 
@@ -68,15 +41,13 @@ If an option is minted in-the-money (ITM), then the ITM amount is automatically 
 
 BUY
 _COLLATERAL
-_RATIO        ^
-              |   
-              |
-              |   max ratio = 10%                         
-        10% - |-------------------------______              min ratio = 5%
-        5%  - |                        .      ¯¯¯¯¯¯------___________
-              |                        .                  .    .
-              +------------------------+------------------+----+---->   POOL_UTILIZATION
-                                      50%                 90%   100%
+_RATIO ^
+       |   max ratio = 10%                         
+ 10% - |----------__       min ratio = 5%
+ 5%  - | . . . . .  ¯¯¯--______
+       |         .       . .
+       +---------+-------+-+--->   POOL_
+                50%    90% 100%      UTILIZATION
 
 ```
 
@@ -98,15 +69,15 @@ When an option is minted in-the-money, the ITM amount is negative and the user m
 
 SELL
 _COLLATERAL
-_RATIO        ^                                            max ratio = 100%
-       100% - |                                            _________
-              |                                       __-¯¯.    .
-              |                                  __-¯¯     .    .
-              |  min ratio = 20%            __-¯¯          .    .
-        20% _ |_________________________--¯¯               .    .
-              |                        .                   .    .
-              +------------------------+-------------------+----+--->   POOL_UTILIZATION
-                                    50%                   90%   100%
+_RATIO        ^       
+              |                  max ratio = 100%            
+       100% - |                _------   
+              |             _-¯
+              |          _-¯
+        20% - |---------¯
+              |         .       . .
+              +---------+-------+-+--->   POOL_
+                       50%    90% 100%     UTILIZATION
 
 ```
 

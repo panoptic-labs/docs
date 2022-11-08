@@ -24,7 +24,7 @@ Here is how Panoptic can be valuable investment instrument for different user pr
 <summary>1. Retail Users</summary>
 Retail investors may trade options the same way they trade stock or tokens: buy call options to profit when the underlying increases in price, or buy put options to profit when the underlying goes down in price.
 
-&nbsp;&nbsp;&nbsp;&nbsp;Retail user can also choose to participate indecentralize option vaults (a novel type of managed investment instrument pioneered by [Ribbon Finance](https://www.ribbon.finance/). 
+&nbsp;&nbsp;&nbsp;&nbsp;Retail user can also choose to participate in decentralized option vaults --a novel type of managed investment instrument pioneered by [Ribbon Finance](https://www.ribbon.finance/). 
 Option vauls can easily be implemented in Panoptic to target strategy that can be bearish, bullish, delta-neutral, or any combination thereof.
 <br />
 Link: <a href="/docs/trading/management-strategies">Strategies for retail users</a>.
@@ -46,10 +46,12 @@ Link: <a href="/docs/trading/multi-leg-strategies">Strategies for Pro-tail users
 
 <details>
 <summary>3. Market Makers and Uniswap v3 Liquidity Providers</summary>
-Market making by sophisticated actors is necessary to create markets that are liquid enough to allow retail and pro-tail users to use varied strategies.
+Market making by sophisticated actors is necessary to create markets that are liquid enough to allow retail and pro-tail users to trade a large variety strategies in multiple underlyings.
 
 &nbsp;&nbsp;&nbsp;&nbsp;In Panoptic, market making involves responding to both the demand from buyers and the need to stability prices within a Uniswap v3 pool.
-That may mean having to sell OTM options and providing liquidity in response to the put skew of an underlying asset, and do so in a way that maintains delta-neutrality at the portfolio level.
+That may mean having to sell OTM options or providing liquidity in response to the put skew of an underlying asset.
+Or buy close to the money options when the implied volatility is low compared to the realized volatility.
+Of course, seasoned market makers will need to do so in a way that maintains delta-neutrality at the portfolio level.
 <br />
 Link: <a href="/docs/trading/multi-leg-strategies">Strategies for Uni v3 LPs</a>.
 <br />
@@ -58,11 +60,11 @@ Link: <a href="/docs/trading/multi-leg-strategies">Strategies for Uni v3 LPs</a>
 
 <details>
 <summary>4. Institutions</summary>
-Institution may need to hedge their portfolio exposure.
+Institution may need to hedge their portfolio exposure in order to reduce the overall portfolio risk.
 They may do this by purchasing put options on pairs representative of the crypto market (eg. ETH-USDC, ETH-BTC, etc).
 Alternatively, funds may sell calls on token they hold as a way to realize profits on tokens.
 
-&nbsp;&nbsp;&nbsp;&nbsp;In addition, institutions may deposit funds in the Panoptic pool as liquidity providers in order to collect a stable yield on their capital due to the lending of their tokens to options sellers and market makers. 
+&nbsp;&nbsp;&nbsp;&nbsp;In addition, institutions may deposit funds in the Panoptic pool as liquidity providers in order to collect a stable yield on their capital, which means they would effectively be lending their tokens to options sellers and market makers for a fixed commission fee. 
 <br />
 Link: <a href="/docs/trading/multi-leg-strategies">Strategies for institutions</a>.
 <br />
@@ -71,7 +73,7 @@ Link: <a href="/docs/trading/multi-leg-strategies">Strategies for institutions</
 
 <details>
 <summary>5. DAOs and protocol treasuries</summary>
-DAOs and protocol treasuries are in a uniquely difficult position when trying to deploy liquidity in a Uniswap pool: how to create liquid markets without having to deploy ETH or stablecoins?
+DAOs and protocol treasuries are in a uniquely difficult position when deploying liquidity in a Uniswap pool: how can they create liquid markets without having to deploy ETH or stablecoins?
 
 &nbsp;&nbsp;&nbsp;&nbsp;By seeding a Panoptic pool from the "token" side, DAOs will effectively increase the liquidity available for the creating of call options, which in turn should allow both retail speculators and pro-tail users to profit from an increase in token price. 
 These tokens could in turn be used as collateral to back a DAO's market making activities, which could help stabilize prices and decrease market volatility.

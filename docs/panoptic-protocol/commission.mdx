@@ -12,12 +12,12 @@ With options, no commission is paid regardless if the user allows the option to 
 A perhaps perverse incentive of this model is that users may keep their position open for longer because they do not want to pay that commission fee.
 
 In Panoptic, since options never expire, commissions are only paid when a new position is minted. 
-We believe that this will eliminate the impact of the commissionf ee on the user's decision-making process when closing a position. 
+We believe that this will eliminate the impact of the commission fee on the user's decision-making process when closing a position. 
 
 
 ### Commission rate and pool utilization
 
-The value of the commission to be paid is the `notional value` of the option (ie. the amount of token moved to/from the Uniswap pool) multiplied by the commission rate:
+The value of the commission to be paid is the `notional value` of the option (ie. the amount of token moved to/from the Uniswap pool) multiplied by the commission rate.
 Note that the commission will alway be paid in terms of the `tokenype` of the position: it will be paid using `token0` for puts and `token1` for calls.
 
 ```solidity
@@ -32,13 +32,13 @@ Keeping the commission rate constant above the target utilization rate of 50% al
 COMMISSION
 _RATE         ^
               |  max commission = 60bps
-     60bps  _ |_____
-              |    .¯¯---__
-              |    .       ¯¯---__        min commission = 20bps
-     20bps  _ |    .              ¯¯---____________________________
-              |    .                   .                        .
-              +----+-------------------+------------------------+--->   POOL_UTILIZATION
-                  10%                 50%                      100%
+     60bps  _ |__
+              | .¯-_
+              | .   ¯-_   min commission = 20bps
+     20bps  _ | .      ¯-_____________
+              | .       .         .
+              +-+-------+---------+--->  POOL_
+               10%     50%      100%      UTILIZATION
 
 ```
 
