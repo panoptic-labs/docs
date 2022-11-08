@@ -13,8 +13,8 @@ What are the key ideas behind Panoptic.
 The core idea behind Perpetual Options is that Uniswap v3 liquidity provider (LP) positions can be seen as tokenized short puts.
 This core results emerges from the simple observation that providing concentrated liquidity in Uniswap v3 generates a payoff that is mathematically identical to selling a put option.
 
-This means that Uniswap v3 LP tokens can be users as a primitive for an option contract.
-What Panoptic enables is the minting of options in a "peer-to-protocol" manner by facilitating the minting of LP tokens as long/short puts and calls.
+This means that Uniswap v3 LP tokens can be used as a primitive for an option contract.
+While users can already sell options by providing liquidity in the UniswapV3Pool smart contractsm, what Panoptic enables is the capital-efficient minting of options in a "peer-to-protocol" manner by facilitating the minting of LP tokens as long/short puts and calls.
 
 <ThemedImage    
   alt="Uniswap v3 <> Panoptic"
@@ -34,14 +34,16 @@ The Panoptic interface allows existing Uniswap v3 liquidity providers to easily 
 Option positions in Panoptic have no expiration.
 Anyone can sell an option at any stike on any asset.
 Buyers can purchase any option that has been sold beforehand.
+Panoptic aims to transform the way users trade options the same way Uniswap V1 transformed spot trading on-chain.
 
 ## Oracle-free Pricing
-The key difference between the pricing of regular op- tions and the streaming premium model is that, instead of requiring the users to pay for their options upfront, the pricing of an option is path-dependent and will grow at each block according to the proximity of the spot price to the option strike price.
+The key difference between the pricing of regular options in TradFi and in Panoptic is that way premium is calculated: instead of requiring the users to pay for their options upfront, the pricing of an option is path-dependent and will grow at each block according to the proximity of the spot price to the option strike price.
+While this may create an extra level of uncertainty for options buyers (it is impossible to know ahead of time how much an options will cost), one of the advantage of the path-depending pricing model is that some options may cost nothing even if it is held for several days.
 
 ## Capital Efficiency
-Options sellers in Panoptic are  able to write undercollateralized options.
-The collateral required to sell an option is equal to approximately 20% of the notional value of that option.
-Have a buying power requrement of about 20% more accurately reflects the risks associated with selling options that fully-collateralized options.
+Options sellers in Panoptic are able to write undercollateralized options.
+The collateral required to sell an option is equal to approximately 20% of the notional value of that option and follows leverage recommendations from the CBOE and the Financial Industry Regulatory Authority (FINRA)
+Undercollateralized options aims to more accurately reflect the risks associated with selling options compared to fully-collateralized options.
 
 ## Fees
 Users pay fees at two levels.
@@ -57,7 +59,8 @@ Concretely, this fee exists to compensate for the swap fee that is paid to the U
 Many flash-loan based attacks involve the borrowing of a large amount of fund (sometimes at zero cost!) with the goal of manipulate the price of an asset or token balance in a smart contract.
 Impartantly, flash-loan attacks require all funds to be paid back in the same block.
 
-The Panoptic Protocol aims to prevent pool manipulation attacks by prevent funds to be withdrawn in the same block they were deposited.
+To prevent these types of attack, the Panoptic Protocol prevents funds from being withdrawn in the same block they were deposited.
+Similarly, options cannot be minted and burned in the same block. 
 
 ## Computed quantities 
 Several computed quantities are derived from the token balance in the Panoptic and Uniswap v3 pools.

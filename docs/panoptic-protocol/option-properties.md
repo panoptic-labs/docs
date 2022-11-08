@@ -6,14 +6,36 @@ sidebar_position: 4
 Panoptic options have: width, moneyness, type, legs, etc..
 
 ## Payoff of a LP position 
-Payoff equation, range, etc
+The value $\texttt{V(S)}$ of a LP position at a pool price $\texttt{S}$ is given by 
+
+$$
+\mathtt{V(S) = numberOfToken1 + S * numberOfToken0}
+$$
+
+In Uniswap v3, $\texttt{numberOfToken0}$ and \texttt{numberOfToken1}$ depends on the current price $\texttt{S}$, the range factor of the position $\texttt{r}$ and the strike $\texttt{K}$.
+Here, the range factor $\texttt{r}$ and the strike $\texttt{K}$ are related to the lowerPrice $\mathtt{P_a}$ and upperPrice $\mathtt{P_b}$ of a LP position according to:
+
+$$
+\mathtt{K = \sqrt{P_a \cdot P_b}}\\ \\
+\mathtt{r = \sqrt{\frac{P_b}{P_a}}}
+$$
+
+After some algebra, we arrive at a closed form expression for $\mathtt{V(S)}$:
+
+$$
+\begin{cases}
+\mathtt{V(S) = \frac{\sqrt{KSr} - K - S}{r-1}}
+\end{cases}
+$$
+
+## LP token as a short option
 
 ## Create long options 
 Removing K numéraire of liquidity at price K creates a long put option. 
 In other words, users can create a long option by borrowing/shorting a short option.
 
 ## Option's width
-One key advantage of Panoptic options over regular op- tions is the ability to create options with a fixed range, resulting in an options with a fixed Gamma. 
+One key advantage of Panoptic options over regular options is the ability to create options with a fixed range, resulting in an options with a fixed Gamma. 
 In other words, the Gamma of an option can be capped by widen- ing the range of an options position. 
 
 
