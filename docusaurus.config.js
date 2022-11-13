@@ -109,7 +109,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Axicon Labs, Inc.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Axicon Labs Inc.`,
       },
       prism: {
         additionalLanguages: ['solidity'],
