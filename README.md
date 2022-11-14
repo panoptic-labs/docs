@@ -1,7 +1,6 @@
 # Panoptic Documentation
 
 
-
 ### Installation
 
 ```
