@@ -11,10 +11,10 @@ What are the key ideas behind Panoptic.
 ## What is the relationship between Panoptic and Uniswap v3?
     
 The core idea behind Perpetual Options is that Uniswap v3 liquidity provider (LP) positions can be seen as tokenized short puts.
-This core results emerges from the simple observation that providing concentrated liquidity in Uniswap v3 generates a payoff that is mathematically identical to selling a put option.
+This core result emerges from the simple observation that providing concentrated liquidity in Uniswap v3 generates a payoff that is mathematically identical to selling a put option.
 
 This means that Uniswap v3 LP tokens can be used as a primitive for an option contract.
-While users can already sell options by providing liquidity in the UniswapV3Pool smart contractsm, what Panoptic enables is the capital-efficient minting of options in a "peer-to-protocol" manner by facilitating the minting of LP tokens as long/short puts and calls.
+While users can already sell options by providing liquidity in the UniswapV3Pool smart contracts, what Panoptic enables is the capital-efficient minting of options in a "peer-to-protocol" manner by facilitating the minting of LP tokens as long/short puts and calls.
 
 <ThemedImage    
   alt="Uniswap v3 <> Panoptic"
@@ -32,13 +32,13 @@ The Panoptic interface allows existing Uniswap v3 liquidity providers to easily 
 
 ## Permissionless, perpetual Options
 Option positions in Panoptic have no expiration.
-Anyone can sell an option at any stike on any asset.
+Anyone can sell an option at any strike on any asset.
 Buyers can purchase any option that has been sold beforehand.
 Panoptic aims to transform the way users trade options the same way Uniswap V1 transformed spot trading on-chain.
 
 ## Oracle-free Pricing
 The key difference between the pricing of regular options in TradFi and in Panoptic is that way premium is calculated: instead of requiring the users to pay for their options upfront, the pricing of an option is path-dependent and will grow at each block according to the proximity of the spot price to the option strike price.
-While this may create an extra level of uncertainty for options buyers (it is impossible to know ahead of time how much an options will cost), one of the advantage of the path-depending pricing model is that some options may cost nothing even if it is held for several days.
+While this may create an extra level of uncertainty for options buyers (it is impossible to know ahead of time how much an option will cost), one of the advantages of the path-dependent pricing model is that some options may cost nothing even if it is held for several days.
 
 ## Capital Efficiency
 Options sellers in Panoptic are able to write undercollateralized options.
@@ -47,17 +47,17 @@ Undercollateralized options aims to more accurately reflect the risks associated
 
 ## Fees
 Users pay fees at two levels.
-First, when a new options is minted, the option trader pays a commission fee equal to 60bps of the notional value of the option to the liquidity providers.
+First, when a new option is minted, the option trader pays a commission fee equal to 60bps of the notional value of the option to the liquidity providers.
 There is no commission fee when burning an option.
 This commission fee decreases to 20bps when the pool utilization reaches 50% (`poolUtilization` is defined below).
 
-Second, users pays a trading fee whenever an option is minted or burned when it is in-the-money.
+Second, users pay a trading fee whenever an option is minted or burned when it is in-the-money.
 This is because minting/burning an in-the-money option  results in some assets being swapped in the Uniswap v3 pool. 
 Concretely, this fee exists to compensate for the swap fee that is paid to the Uniswap pool and any price slippage, and it is set to be equal to twice (2x) the pool swap fee.
 
 ## Manipulation Protections
-Many flash-loan based attacks involve the borrowing of a large amount of fund (sometimes at zero cost!) with the goal of manipulate the price of an asset or token balance in a smart contract.
-Impartantly, flash-loan attacks require all funds to be paid back in the same block.
+Many flash-loan based attacks involve the borrowing of a large amount of funds (sometimes at zero cost!) with the goal of manipulating the price of an asset or token balance in a smart contract.
+Importantly, flash-loan attacks require all funds to be paid back in the same block.
 
 To prevent these types of attack, the Panoptic Protocol prevents funds from being withdrawn in the same block they were deposited.
 Similarly, options cannot be minted and burned in the same block. 
@@ -92,7 +92,7 @@ This derived quantity is used to compute the collateral shares.
 
 ### Pool Utilization
 The pool utilization is a measure of the fraction of the `totalBalance()` which belongs to the Uniswap v3 pool.
-This parameter is compute whenever a position is minted to set the collateralization ratio and commission rate of the position (calculations shown below).
+This parameter is computed whenever a position is minted to set the collateralization ratio and commission rate of the position (calculations shown below).
 
 
 
@@ -117,7 +117,7 @@ When this happens, the commission rate is at its minimum, and the Buy/Sell colla
 ```
 
 If the pool utilization increases to 90% or more, then the protocol aims to favor options buying (which returns funds to the Panoptic pool and decreases the pool utilization).
-At the same time, the collateralization ratio required for selling an option increases to 100%, which means that all nedwly minted short options will not increase the pool utilization beyond 90%.
+At the same time, the collateralization ratio required for selling an option increases to 100%, which means that all newly minted short options will not increase the pool utilization beyond 90%.
 ```solidity
 -Example 2: poolUtilization = 90% (favors buying)
    _------pp.totalBalance()------------------+------_
@@ -128,7 +128,7 @@ At the same time, the collateralization ratio required for selling an option inc
 ```
 
 
-If the pool utyilization decreases below 10%, then the pool likely has low trading activity and the liquitidy providers will receive a lower return on their investments.
+If the pool utilization decreases below 10%, then the pool likely has low trading activity and the liquidity providers will receive a lower return on their investments.
 To compensate for this, the commission rate is increased to 60bps, and the collateralization ratio for selling new options is at its minimum (20% of notional).
 ```solidity
 -Example 3: poolUtilization = 10% (favors selling)

@@ -14,9 +14,9 @@ This makes pricing them quite different from vanilla options whose price can eas
 
 The key difference between the pricing of regular options and the streaming premium model is that, instead of requiring the users to pay for their options upfront, the pricing of an option is path-dependent and will grow at each block according to the proximity of the spot price to the option strike price.
 
-Since the Liquidity Provider (LP) position earn trading fees in the Uniswap v3 pool, the premium to be paid for a long option is simply the amount of fees collected by that option.
+Since the Liquidity Provider (LP) position earns trading fees in the Uniswap v3 pool, the premium to be paid for a long option is simply the amount of fees collected by that option.
 
-Mechanically, what happens is that when an options buyer moves a sellers pre-deployed liquidity out of the Uniswap v3 pool to Panoptic, the Uniswap trading activity generates LP fees which the buyer owes the seller; this is the premium.
+Mechanically, what happens is that when an options buyer moves a seller's pre-deployed liquidity out of the Uniswap v3 pool to Panoptic, the Uniswap trading activity generates LP fees which the buyer owes the seller; this is the premium.
 
 ## Options' return
 The price of an option will heavily depend on the history of the asset price, with many options that spent all their time OTM being worth exactly zero (ignoring any commission) or hovering around the strike price and being worth much more than the Black-Scholes price. 

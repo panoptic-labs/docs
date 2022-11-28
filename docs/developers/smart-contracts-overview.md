@@ -25,7 +25,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ### (dependency) [UniswapV3Pool.sol](https://docs.uniswap.org/protocol/reference/core/UniswapV3Pool)
 The interface for a Uniswap V3 Pool. A Uniswap pool facilitates swapping and automated market making between any two assets that strictly conform to the ERC20 specification
 
-Panoptic deploys contract that interact with the already-deployed UniswapV3Pool.sol contracts.
+Panoptic deploys contracts that interact with the already-deployed UniswapV3Pool.sol contracts.
 
 ### [SemiFungiblePositionManager.sol](/docs/developers/semifungiblepositionmanager)
 The SFPM smart contract manages LP position using the ERC1155 interface.

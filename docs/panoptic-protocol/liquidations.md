@@ -6,8 +6,8 @@ sidebar_position: 10
 Accounts can be margin called and liquidated.
 
 ## Maintenance Margin Requirement
-For options that have been minted out-the-money (OTM), the buying power requirement is simply given by the sell and buy collateral ration calculated above.
-As the price evolves and an option becomes in-the-money, risks may increase and the amout of collateral may need to increase to mitigate those risks.
+For options that have been minted out-the-money (OTM), the buying power requirement is simply given by the sell and buy collateral ratio calculated above.
+As the price evolves and an option becomes in-the-money, risks may increase and the amount of collateral may need to increase to mitigate those risks.
 
 For example, selling an OTM put option initially requires 20% collateralization.
 As the price changes and decreases below the strike price, the buying power requirement will increase above 20%.
@@ -95,7 +95,7 @@ Based on that calculation, an account can be liquidated if `Total value of colla
 
 The liquidation bonus for liquidating an account is determined by two factors: i) the distance between the strike and ii) the current price and the in-the-money amount 
 
-If is worth revisiting the figure shown in the [Margin](/docs/panoptic-protocol/margin) page, where the size of the bonus and the amount of loss incurred by the protocol is highlighted.
+It is worth revisiting the figure shown in the [Margin](/docs/panoptic-protocol/margin) page, where the size of the bonus and the amount of loss incurred by the protocol is highlighted.
 
 import ThemedImage from '@theme/ThemedImage';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -114,6 +114,6 @@ A few key points from the liquidation process:
 1. The liquidatee's collateral is used to exercise the in-the-money options *and* pay the liquidator
 2. The bonus to the liquidator will be equal to zero if the price falls below `strike` - `CollateralRequirement`
 3. It will stay zero as the price decreases further.
-4. The liquidator will be compensated by the protocol loss and will be rewarded by not losing anything (as opposed to the rest of the liquidity providers which will share that loss amongsts themselves
+4. The liquidator will be compensated by the protocol loss and will be rewarded by not losing anything (as opposed to the rest of the liquidity providers which will share that loss amongst themselves
 
 The goal of the liquidation system is to incentivize *Liquidity Providers* to be liquidators as well, since a healthy liquidation system means the pool will never incur a loss.

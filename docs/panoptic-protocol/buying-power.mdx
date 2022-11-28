@@ -13,15 +13,15 @@ The minting of any option in Panoptic will reduce the account's Buying Power, an
 
 Determining the buying power reduction from points 1) and 2) can be computed in a fairly straightforward manner (see sections below).
 The impact of point 3), on the other hand, is not as clearly defined.
-In TradFi, for instance, selling calls on GameStop (GME) may require a 100% collateral requirement whereas as liquidty underlying like Apple (AAPL) may only have a 20% collateral requirement.
+In TradFi, for instance, selling calls on GameStop (GME) may require a 100% collateral requirement whereas liquidity underlying like Apple (AAPL) may only have a 20% collateral requirement.
 The choice to change the collateral requirement of a specific asset resides entirely within the power of centralized actors at each brokerage firms.
 
 In Panoptic, we evaluate the relative risk of a specific asset by looking at the pool utilization at the time the position was minted.
-The rational behind this is as follows.
+The rationale behind this is as follows.
 If an asset is in high demand, then there will be a lot of trading activity and most liquidity will be actively traded.
 This means that liquidity that is normally available to trade/adjust/roll positions will be reduced.
 Hence, it will be more difficult for traders to respond to market moves, thereby increasing the risk for those specific pools.
-So, increasing the collateral requirement for pool with high utilization will help mitigate those risks.
+So, increasing the collateral requirement for pools with high utilization will help mitigate those risks.
 
 ### Buying Power Requirement (buying out-the-money options)
 
@@ -33,7 +33,7 @@ BUYING POWER REQUIREMENT (buying) =
 ```
 
 The collateralization ratio for buying an option depends on the pool utilization.
-For out-the-money options, it is set at a fixed 10% for pool utilization less than 50% and decrease to 5% at 90% or more.
+For out-the-money options, it is set at a fixed 10% for pool utilization less than 50% and decreases to 5% at 90% or more.
 If an option is minted in-the-money (ITM), then the ITM amount is automatically deducted from the user's balance.
 
 
