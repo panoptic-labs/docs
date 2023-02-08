@@ -22,5 +22,5 @@ In addition, options can be used to generate income, through the writing of opti
 Because options allow traders to take on different levels of risk, and also [defined-risk](/docs/trading/risks) positions, they are a useful tool for managing financial portfolios.
 
 The value of an option&#151;called the premium&#151;used to be difficult to determine.
-Following the development of Nobel-prize winning mathematical models by <Term popup="The Black-Scholes model, aka the Black-Scholes-Merton (BSM) model, is a differential equation widely used to price options contracts." reference="/docs/terms/blackscholes">Black, Scholes, and Merton</Term>, an optimal price can be derived in a way that buyers _and_ sellers both agree on the option contract's price.
 
+Following the development of Nobel-prize winning mathematical models by [Black, Scholes, and Merton](/docs/terms/blackscholes), an optimal price can be derived in a way that buyers _and_ sellers both agree on the option contract's price.
