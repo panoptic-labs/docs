@@ -24,7 +24,7 @@ Funds can be deposited in the Panoptic pools at any ratio.
 **Typical users**: Retail, Institutions, DAOs.
 
 <details>
-<summary>How liquidity providing works?</summary>
+<summary>How does liquidity providing work?</summary>
 <ThemedImage
   alt="sellers"
   sources={{
@@ -50,7 +50,7 @@ Sellers have to deposit collateral and can sell options with notional values clo
 **Typical users**: Pro-tail, Market makers, DAOs.
 
 <details>
-<summary>How selling options works?</summary>
+<summary>How does selling options work?</summary>
 <ThemedImage
   alt="sellers"
   sources={{
@@ -86,7 +86,7 @@ Buyers also have to deposit collateral (10% of the notional value of the option)
 
 
 <details>
-<summary>How buying options works?</summary>
+<summary>How does buying options work?</summary>
 <ThemedImage
   alt="sellers"
   sources={{
