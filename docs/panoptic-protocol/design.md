@@ -106,7 +106,7 @@ Here are a few examples of the `poolUtilization` calculation.
 
 
 First, the pool utilization is equal to 50%, the targeted equilibrium. 
-When this happens, the commission rate is at its minimum, and the Buy/Sell collateralization ratios are at their minimum too.
+When this happens, the commission rate is at its minimum, and the Sell collateralization ratio is at its minimum, too.
 ```solidity
 -Example 1: poolUtilization = 50%  (targeted equilibrium)
    _------pp.totalBalance()--+----------------------_
