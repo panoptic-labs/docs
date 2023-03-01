@@ -45,5 +45,5 @@ Users can access details about the security audits [here](./category/security)
 #### Quick links
 
 - Twitter [@panoptic_xyz](https://twitter.com/panoptic_xyz)
-- Medium [panoptic](https://panoptic.medium.com)
+- Medium [panoptic](https://blog.panoptic.xyz/)
 
