@@ -3,7 +3,7 @@ sidebar_position: 4
 ---
 
 # Option properties
-Panoptic options have: width, moneyness, type, legs, etc..
+Panoptic options have: width, moneyness, type, legs, etc.
 
 ## LP token as a short option
 
@@ -33,7 +33,7 @@ Let's look at what happens for a long put:
 
 ### Creating a call option
 Removing 1 asset of liquidity at price K creates a long call option payoff. 
-Adding K asset of liquidity at price K creates a short call option payoff. 
+Adding 1 asset of liquidity at price K creates a short call option payoff. 
 
 <ThemedImage
   alt="Call"
