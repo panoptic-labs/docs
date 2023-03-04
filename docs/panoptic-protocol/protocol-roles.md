@@ -16,10 +16,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   }}
 />
 
-## Liquidity Providers
+## Panoptic Liquidity Providers (PLPs)
 Provide fungible liquidity to the options market. 
-This liquidity will be lended out to the options traders to allow them to access trading on leverage. 
-Funds can be deposited in the Panoptic pools at any ratio.
+This liquidity will be lent out to the options traders to allow them to access trading on leverage. 
+Funds can be deposited into Panoptic pools at any ratio.
 
 **Typical users**: Retail, Institutions, DAOs.
 
@@ -33,19 +33,19 @@ Funds can be deposited in the Panoptic pools at any ratio.
   }}
 />
 
-Liquidity Providers (LPs) will provide liquidity to the Panoptic smart contract by depositing assets into the option pool in the form of a single type.
+Panoptic Liquidity Providers (PLPs) will provide liquidity to the Panoptic smart contract by depositing assets into the option pool in the form of a single type.
 They will receive an ERC20 receipt for their deposited liquidity, and their portion of collateral inside the Panoptic pool will be tracked using a shares model.
 
-The role of LPs in Panoptic differs somewhat from the one for LPs in Uni v3: the net goal of Panoptic LPs is *not* to deploy liquidity with a specific range in a Uni v3 pool.
-Rather, LPs in Panoptic generate yield by providing liquidity that can be borrowed and relocated to a Uni v3 pool by options sellers for a fixed commission fee.
+The role of PLPs in Panoptic differs somewhat from that of LPs in Uni v3. The net goal of PLPs is *not* to deploy liquidity within a specific range of a Uni v3 pool.
+Rather, PLPs generate yield by providing liquidity that can be borrowed and relocated to a Uni v3 pool by options sellers for a fixed commission fee.
 
-When a LP removes their liquidity from the option pool, Panoptic will burn their collateral tokens, and the LP will receive their share of the collateral pool, including collected fees.
+When a PLP removes their liquidity from the option pool, Panoptic will burn their collateral tokens, and the PLP will receive their share of the collateral pool plus collected fees.
 </details>
 
 
 ## Option Sellers
 Sell options by borrowing liquidity for a fixed commission fee and relocating it to a Uni v3 pool. 
-Sellers have to deposit collateral and can sell options with notional values close to five times larger than their collateral balance.
+Sellers must deposit collateral and can sell options with notional values up to five times larger than their collateral balance.
 
 **Typical users**: Pro-tail, Market makers, DAOs.
 
@@ -115,7 +115,7 @@ Once again, a similar process happens when buying a call at say 2000: the user w
 
 
 ## Liquidators
-Ensures the health of the protocol by liquidating accounts whose collateral balance falls below the margin requirements.
+Ensure the health of the protocol by liquidating accounts whose collateral balance falls below the margin requirements.
 Liquidators will receive a bonus proportional to the amount of funds necessary to cover the distressed positions. 
 
 **Typical users**: Pro-tail, Market makers, MEV seekers.
