@@ -3,19 +3,19 @@ sidebar_position: 8
 ---
 
 # Margin
-How is margin trading implemented in Panoptic
+How margin trading is implemented in Panoptic
 
 ## Margin Requirements
 
-In traditional finance, some types of account such IRA or Level 1 trading account require all options to be fully collateralized.
-Specifically, users in IRA accounts can only sell cash-secured puts or covered calls, which means they have to deposit the notional value of the underlying position in cash (for cash-secured puts) or own the underlying shares (for covered calls).
+In traditional finance, some types of accounts such as IRA or Level 1 trading accounts require all options to be fully collateralized.
+Specifically, users in IRA accounts can only sell cash-secured puts or covered calls, which means they must deposit the notional value of the underlying position in cash (for cash-secured puts) or own the underlying shares (for covered calls).
 
 Undercollateralization is handled by reducing the buying power requirement of an asset.
-A Level 4 trading account in a TradFi brokerage firm allows users to sell naked puts and naked calls by only posting 5x less collateral than users in a Level 1 account.
-For Portfolio margin accounts, the collateral requirements could be even smaller, requiring about 10-15x less collateral than a Level 1 account.
+A Level 4 trading account in a TradFi brokerage firm allows users to sell naked puts and naked calls by posting 5x less collateral than users in a Level 1 account.
+For portfolio margin accounts, the collateral requirements could be even smaller, requiring about 10-15x less collateral than a Level 1 account.
 
-Panoptic makes use of built-in leverage similar to level 4 trading to enable the minting of undercollateralized options.
-The collateralization requirements follows the guidelines outlined by the CBOE and FINRA, and can be summarized as follows:
+Panoptic makes use of built-in leverage similar to Level 4 trading accounts to enable the minting of undercollateralized options.
+The collateralization requirements follows the guidelines outlined by CBOE and FINRA and can be summarized as follows:
 
 $$
 \mathtt{MaximumOf\left[notionalValue \cdot 20\%,\ notionalValue\cdot\left(1-80\%\frac{Price}{strike} \right)\right]}
