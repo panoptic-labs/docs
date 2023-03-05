@@ -3,15 +3,15 @@ sidebar_position: 1
 ---
 
 # Options basics
-What are options and how to manage them.
+What options are and how to manage them.
 
 ## What are Options?
 
-Options are an agreement between two parties to buy (or sell) an asset for a fixed price at a pre-determined time.
+Options are an agreement between two parties for the right, but not the obligation, to buy (or sell) an asset for a fixed price at a pre-determined time.
 Hence, each option has a
-- **Strike**: the agreed-upon price the asset has to be bought/sold
+- **Strike**: the agreed-upon price the asset can be bought/sold for
 - **Expiry**: a time in the future when the transaction has to occur
-- **Premium**: the value of the option, or how much does the buyer pays for the right to buy/sell the asset
+- **Premium**: the value of the option, or how much the buyer pays for the right to buy/sell the asset
 
 (figure here)
 
@@ -21,6 +21,6 @@ Options can also be used to manage portfolio risk, by [hedging](/docs/trading/ba
 In addition, options can be used to generate income, through the writing of options contracts.
 Because options allow traders to take on different levels of risk, and also [defined-risk](/docs/trading/risks) positions, they are a useful tool for managing financial portfolios.
 
-The value of an option&#151;called the premium&#151;used to be difficult to determine.
+The value of an option &#151; called the premium &#151; used to be difficult to determine.
 
-Following the development of Nobel-prize winning mathematical models by [Black, Scholes, and Merton](/docs/terms/blackscholes), an optimal price can be derived in a way that buyers _and_ sellers both agree on the option contract's price.
+But following the development of Nobel-prize winning mathematical models by [Black, Scholes, and Merton](/docs/terms/blackscholes), an optimal price could be derived in a way that buyers _and_ sellers both agree on the option contract's price.
