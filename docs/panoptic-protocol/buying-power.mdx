@@ -3,29 +3,32 @@ sidebar_position: 9
 ---
 
 # Buying Power
-How does an option affect buying power
+How an option affects buying power
 
 ## Buying Power Reduction
 
 
 The amount of capital available to place a trade is called the *Buying Power*.
-The minting of any option in Panoptic will reduce the account's Buying Power, and the Buying Power Reduction (BPR) of an option depends on 1) the notional value of that option and 2) the price of the underlying asset and 3) the risks associated with trading the underlying assets.
+The minting of any option in Panoptic will reduce the account's Buying Power, and the Buying Power Reduction (BPR) of an option depends on:  
+1) Notional value of that option  
+2) Price of the underlying asset  
+3) Risks associated with trading the underlying assets
 
-Determining the buying power reduction from points 1) and 2) can be computed in a fairly straightforward manner (see sections below).
-The impact of point 3), on the other hand, is not as clearly defined.
-In TradFi, for instance, selling calls on GameStop (GME) may require a 100% collateral requirement whereas liquidity underlying like Apple (AAPL) may only have a 20% collateral requirement.
+Determining the buying power reduction from points (1) and (2) can be computed in a fairly straightforward manner (see sections below).
+The impact of point (3), on the other hand, is not as clearly defined.
+In TradFi, for instance, selling calls on GameStop (GME) may have a 100% collateral requirement, whereas Apple (AAPL) may only have a 20% collateral requirement.
 The choice to change the collateral requirement of a specific asset resides entirely within the power of centralized actors at each brokerage firms.
 
-In Panoptic, we evaluate the relative risk of a specific asset by looking at the pool utilization at the time the position was minted.
-The rationale behind this is as follows.
-If an asset is in high demand, then there will be a lot of trading activity and most liquidity will be actively traded.
+At Panoptic, the protocol evaluates the relative risk of a specific asset by looking at the pool utilization at the time the position was minted.
+The rationale behind this is as follows:
+If an asset is in high demand then there will be a lot of trading activity, and most liquidity will be actively traded.
 This means that liquidity that is normally available to trade/adjust/roll positions will be reduced.
 Hence, it will be more difficult for traders to respond to market moves, thereby increasing the risk for those specific pools.
 So, increasing the collateral requirement for pools with high utilization will help mitigate those risks.
 
-### Buying Power Requirement (buying out-the-money options)
+### Buying Power Requirement (buying options)
 
-The buying power requirement for buying an option is simply: 
+The buying power requirement for buying an option is: 
 ```solidity
 BUYING POWER REQUIREMENT (buying) =
     BUY_COLLATERAL_RATIO * NOTIONAL_VALUE +
@@ -33,9 +36,8 @@ BUYING POWER REQUIREMENT (buying) =
 ```
 
 The collateralization ratio for buying an option depends on the pool utilization.
-For out-the-money options, it is set at a fixed 10% for pool utilization less than 50% and decreases to 5% at 90% or more.
-If an option is minted in-the-money (ITM), then the ITM amount is automatically deducted from the user's balance.
-
+For out-the-money options, the collateralization ratio for buying an option is fixed at 10% when pool utilization is less than 50% and (linearly) decreases to 5% when pool utilization is 90% or more.
+For in-the-money (ITM) options, the ITM amount is automatically deducted from the user's balance.
 
 ```solidity
 
@@ -52,9 +54,9 @@ _RATIO ^
 ```
 
 
-### Buying Power Requirement (selling out-the-money options)
+### Buying Power Requirement (selling options)
 
-The buying power requirement (BPR) for selling an option is :
+The buying power requirement (BPR) for selling an option is:
 
 ```solidity
 BUYING POWER REQUIREMENT (selling) =
@@ -62,8 +64,8 @@ BUYING POWER REQUIREMENT (selling) =
    IN_THE_MONEY_AMOUNT
 ```
 
-For an out-the-money option, the collateralization ratio for selling an option is set at a fixed 20% for pool utilization less than 50% and increases to 100% at pool utilization >90%.
-When an option is minted in-the-money, the ITM amount is negative and the user may see their collateral balance increase.
+For out-the-money options, the collateralization ratio for selling an option is fixed at 20% when pool utilization is less than 50% and (linearly) increases to 100% when pool utilization is 90% or more.
+For in-the-money (ITM) options, the ITM amount is negative and the user may see their collateral balance increase.
 
 ```solidity
 
