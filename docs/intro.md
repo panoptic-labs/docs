@@ -8,8 +8,7 @@ sidebar_class_name: menu__list-item-collapsible
 
 Panoptic is a perpetual, oracle-free options protocol built on the Ethereum blockchain. 
 
-<video src="https://user-images.githubusercontent.com/62954565/222942474-4dc94c6d-db45-4ec1-81fe-b6c81f67bdc1.mp4" controls="controls">
-</video>
+<video style="max-width: 480px;" src="https://user-images.githubusercontent.com/62954565/222942474-4dc94c6d-db45-4ec1-81fe-b6c81f67bdc1.mp4" type="video/mp4"> </video>
 
 ---
 
@@ -46,4 +45,3 @@ Users can access details about the security audits [here](./category/security)
 
 - Twitter [@panoptic_xyz](https://twitter.com/panoptic_xyz)
 - Medium [panoptic](https://blog.panoptic.xyz/)
-- Test
