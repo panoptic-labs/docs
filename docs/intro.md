@@ -46,3 +46,4 @@ Users can access details about the security audits [here](./category/security)
 
 - Twitter [@panoptic_xyz](https://twitter.com/panoptic_xyz)
 - Medium [panoptic](https://blog.panoptic.xyz/)
+- Telegram [@panoptic](https://t.me/panoptic)
