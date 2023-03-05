@@ -3,12 +3,12 @@ sidebar_position: 6
 ---
 
 # Commissions
-How does Panoptic calculate commissions
+How Panoptic calculates commissions
 
 ## Commission Fees
 
 In traditional brokerage firms, a fixed commission is charged when a position is opened AND closed.
-With options, no commission is paid regardless if the user allows the option to expire.
+And with options, no commission is paid if the user allows the option to expire.
 A perhaps perverse incentive of this model is that users may keep their position open for longer because they do not want to pay that commission fee.
 
 In Panoptic, since options never expire, commissions are only paid when a new position is minted. 
@@ -17,16 +17,16 @@ We believe that this will eliminate the impact of the commission fee on the user
 
 ### Commission rate and pool utilization
 
-The value of the commission to be paid is the `notional value` of the option (ie. the amount of token moved to/from the Uniswap pool) multiplied by the commission rate.
-Note that the commission will alway be paid in terms of the `tokentype` of the position: it will be paid using `token0` for puts and `token1` for calls.
+The value of the commission to be paid is the commission rate multiplied by the `notional value` of the option (i.e. the amount of token moved to/from the Uniswap pool).
+Note that the commission will always be paid in terms of the `tokentype` of the position: it will be paid using `token0` for puts and `token1` for calls.
 
 ```solidity
 commission = (notional value) * commissionRate()
 ```
 
-The commission fee starts at 60bps below 10% pool utilization and linearly decreases to 20bps at >50% pool utilization.
-The reason why the commission is high at low pool utilizations is to ensure that Liquidity Providers receive a reasonable yield even if there is low trading activity. 
-Keeping the commission rate constant above the target utilization rate of 50% also means traders will not be disincentivized to trade as the market activity increases.
+The commission fee starts at 60 bps when pool utilization is below 10%. The commission fee (linearly) decreases to 20 bps when pool utilization is at 50%. The commission fee remains at 20bps when pool utilization is above 50%.
+The reason why the commission is high at low pool utilizations is to ensure that Panoptic Liquidity Providers (PLPs) receive a reasonable yield even if there is low trading activity. 
+Keeping the commission rate constant above the target utilization rate of 50% also means traders will not be disincentivized to trade as market activity increases.
 
 ```solidity
 COMMISSION
