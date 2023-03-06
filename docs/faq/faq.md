@@ -30,12 +30,12 @@ Yes, after Panoptic launches on Ethereum mainnet.
 Yes. Panoptic <a href="https://blog.panoptic.xyz/abdk-completes-panoptics-first-audit-panoptic-announces-second-audit-with-openzeppelin-c7216cdbfd4f">was audited by ABDK</a> and is currently undergoing an audit with OpenZeppelin. There will also be an audit by Code4Arena in Q2-Q3 2023. See our <a href="https://blog.panoptic.xyz/panoptics-v1-roadmap-d7b72a8e2005">roadmap</a>.
 </details>
 
-<details>
+<!-- <details>
 <summary>Does Panoptic only allow for limited upside positions?</summary>
 No. You can create limited upside, unlimited upside, limited downside, and unlimited downside positions by combining put and call options on Panoptic.
 </details>
 
-<!-- <details>
+<details>
 <summary>(T/F) Panoptic only allow for limited upside positions?</summary>
   <details>
   <summary>True</summary>
@@ -46,7 +46,7 @@ No. You can create limited upside, unlimited upside, limited downside, and unlim
   <summary>False</summary>
   Correct! You can create limited upside, unlimited upside, limited downside, and unlimited downside positions by combining put and call options on Panoptic.
   </details>
-</details> -->
+</details>
 
 
 <details>
@@ -119,7 +119,7 @@ Example: Alice sells an out-of-the-money (OTM) ETH-USDC put option, with strike 
 <summary>What is the commission fee?</summary>
 This is the fee to mint an option. When an option seller or buyer opens their position, they pay a commission fee on the notional value of the position. The commission is paid to the PLPs. The commission fee percentage varies between 0.2% - 0.6% based on <a href="/docs/panoptic-protocol/commission#commission-rate-and-pool-utilization">pool utilization</a>.
 </details>
-
+ -->
 <!-- 
 
 20.	How are you different from InfinityPools?
