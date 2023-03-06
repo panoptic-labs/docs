@@ -30,7 +30,7 @@ Yes, after Panoptic launches on Ethereum mainnet.
 Yes. Panoptic <a href="https://blog.panoptic.xyz/abdk-completes-panoptics-first-audit-panoptic-announces-second-audit-with-openzeppelin-c7216cdbfd4f">was audited by ABDK</a> and is currently undergoing an audit with OpenZeppelin. There will also be an audit by Code4Arena in Q2-Q3 2023. See our <a href="https://blog.panoptic.xyz/panoptics-v1-roadmap-d7b72a8e2005">roadmap</a>.
 </details>
 
-<!-- <details>
+<details>
 <summary>Does Panoptic only allow for limited upside positions?</summary>
 No. You can create limited upside, unlimited upside, limited downside, and unlimited downside positions by combining put and call options on Panoptic.
 </details>
@@ -52,7 +52,7 @@ No. You can create limited upside, unlimited upside, limited downside, and unlim
 <details>
 <summary>Is Panoptic only useful for hedging Uniswap LP positions?</summary>
 No. While Panoptic allows you to hedge against Uniswap LP positions by shorting them, it also allows you to create puts, calls, straddles, jade lizards, zebra spreads, and <a href="https://twitter.com/Panoptic_xyz/status/1628530117118169088?s=20">many other custom option payoffs</a>!
-</details> -->
+</details>
 
 <details>
 <summary>What tokens can I trade options on?</summary>
