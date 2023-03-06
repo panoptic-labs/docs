@@ -6,17 +6,22 @@ sidebar_position: 1
 There's a good chance it's been asked before :)
 
 <details>
-<summary>1.	Is there a token?</summary>
-  
-No. At this time, Panoptic does not have a token.  
+<summary>Is there a token?</summary>
+No. Panoptic does not have a token at this time.  
 </details>
 
-<!-- a.	
-2.	Wen launch?
-a.	Testnet is scheduled for []. Mainnet launch is scheduled for []. See our [roadmap].
-3.	What chain will Panoptic launch on?
-a.	Panoptic mainnet will launch on Ethereum mainnet.
-4.	Will Panoptic launch on an L2?
+<details>
+<summary>Wen launch?</summary>
+Testnet is scheduled for September 2023. Mainnet is scheduled for Q4 2023. See our [roadmap].
+</details>
+
+<details>
+<summary>What chain will Panoptic launch on?</summary>
+Panoptic will launch on Ethereum mainnet.
+</details>
+
+
+<!-- 4.	Will Panoptic launch on an L2?
 a.	Yes, after Panoptic launches on Ethereum mainnet.
 5.	Will there be a code audit?
 a.	Yes. Panoptic was audited by ABDK and is currently undergoing an audit with Open [Zeppelin]. There will also be an audit by Code4Arena in [].
@@ -56,5 +61,5 @@ a.	No. While Panoptic allows you to hedge against Uniswap LP positions by shorti
 23.	Why doesn’t Panoptic need oracles?
 24.	Is my liquidity locked?
 25.	How can I close my seller position?
-26.	How can I get liquidated? -->
-
+26.	How can I get liquidated?
+ -->
