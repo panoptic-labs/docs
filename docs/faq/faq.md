@@ -35,7 +35,7 @@ Yes. Panoptic <a href="https://blog.panoptic.xyz/abdk-completes-panoptics-first-
 No. You can create limited upside, unlimited upside, limited downside, and unlimited downside positions by combining put and call options on Panoptic.
 </details>
 
-<details>
+<!-- <details>
 <summary>(T/F) Panoptic only allow for limited upside positions?</summary>
   <details>
   <summary>True</summary>
@@ -46,7 +46,7 @@ No. You can create limited upside, unlimited upside, limited downside, and unlim
   <summary>False</summary>
   Correct! You can create limited upside, unlimited upside, limited downside, and unlimited downside positions by combining put and call options on Panoptic.
   </details>
-</details>
+</details> -->
 
 
 <details>
