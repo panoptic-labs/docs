@@ -31,6 +31,30 @@ Yes. Panoptic <a href="https://blog.panoptic.xyz/abdk-completes-panoptics-first-
 </details>
 
 <details>
+<summary>Does Panoptic only allow for limited upside positions?</summary>
+No. You can create limited upside, unlimited upside, limited downside, and unlimited downside positions by combining put and call options on Panoptic.
+</details>
+
+<details>
+<summary>(T/F) Panoptic only allow for limited upside positions?</summary>
+  <details>
+  <summary>True</summary>
+  Wrong! You can create limited upside, unlimited upside, limited downside, and unlimited downside positions by combining put and call options on Panoptic.
+  </details>
+ 
+  <details>
+  <summary>False</summary>
+  Correct! You can create limited upside, unlimited upside, limited downside, and unlimited downside positions by combining put and call options on Panoptic.
+  </details>
+</details>
+
+
+<details>
+<summary>Is Panoptic only useful for hedging Uniswap LP positions?</summary>
+No. While Panoptic allows you to hedge against Uniswap LP positions by shorting them, it also allows you to create puts, calls, straddles, jade lizards, zebra spreads, and <a href="https://twitter.com/Panoptic_xyz/status/1628530117118169088?s=20">many other custom option payoffs</a>!
+</details>
+
+<details>
 <summary>What tokens can I trade options on?</summary>
 Any token pair on Uniswap V3. The Panoptic protocol enables permissionless options trading for longtail assets just as Uniswap allows for permissionless spot trading for longtail assets.
 </details>
@@ -76,34 +100,28 @@ Selling an option on Panoptic has the same before-fees payoff as LPing on Uniswa
 
 <details>
 <summary>What does it cost to sell an option?</summary>
-Selling an option costs a commission fee plus gas fee. The commission fee is 0.2% to 0.6% of the notional value of the option position, depending on the <a href="/docs/panoptic-protocol/commission#commission-rate-and-pool-utilization">pool utilization</a> at the time of sell. There is no commission fee to close the position.
+Selling an option costs a commission fee and gas fee. The commission fee is 0.2% to 0.6% of the notional value of the option position, depending on the <a href="/docs/panoptic-protocol/commission#commission-rate-and-pool-utilization">pool utilization</a> at the time of sell. There is no commission fee to close the position.
 </details>
 
-[hello](/docs/panoptic-protocol/commission#commission-rate-and-pool-utilization)
+<details>
+<summary>What does it cost to buy an option?</summary>
+Buying an option costs a commission fee, premium, and gas fee. The commission fee is 0.2% to 0.6% of the notional value of the option position, depending on the <a href="/docs/panoptic-protocol/commission#commission-rate-and-pool-utilization">pool utilization</a> at the time of purchase. The premium starts at 0, and accumulates while the underlying price remains in range. There is no commission fee to close the position.
+</details>
+
+<details>
+<summary>How is the premium calculated?</summary>
+The premium is equal to the amount of swap fees the borrowed LP position would have earned in the Uniswap pool, multiplied by a spread multiplier.  
+</br></br>
+Example: Alice sells an out-of-the-money (OTM) ETH-USDC put option, with strike = 1000 and width = ±10%. Bob buys the OTM put option from Alice for 0 upfront premium. If the ETH-USDC price moves between 909 and 1100, the option is “in range” and would have earned swap fees from the Uniswap pool. If the ETH-USDC price is above 1100 or below 909, the option is “out of range” and would not have earned any swap fees. Bob owes the total amount of accumulated swap fees to Alice as premium.
+</details>
+
+<details>
+<summary>What is the commission fee?</summary>
+This is the fee to mint an option. When an option seller or buyer opens their position, they pay a commission fee on the notional value of the position. The commission is paid to the PLPs. The commission fee percentage varies between 0.2% - 0.6% based on <a href="/docs/panoptic-protocol/commission#commission-rate-and-pool-utilization">pool utilization</a>.
+</details>
 
 <!-- 
-9.	
-a.	
-10.	
 
-11.	
-a.	
-12.	
-13.	
-a.	
-14.	
-a.	
-15.	What does it cost to buy an option?
-a.	Buying an option costs a commission fee, premium, and gas fee. The commission fee is 0.2% to 0.6% of the notional value of the option position, depending on the [pool utilization] at the time of purchase. The premium starts at 0, and accumulates while the underlying price remains in range. There is no commission fee to close the position.
-16.	How is the premium calculated?
-a.	The premium is equal to the amount of swap fees the borrowed LP position would have earned in the Uniswap pool, multiplied by a spread multiplier.
-b.	Example: Alice sells an out-of-the-money (OTM) ETH-USDC put option, with strike = 1000 and width = +/-10%. Bob buys the OTM put option from Alice for 0 upfront premium. If the ETH-USDC price moves between 909 and 1100, the option is “in range” and would’ve earned swap fees from the Uniswap pool. If the ETH-USDC price is above 1100 or below 909, the option is “out of range” and would not have earned any swap fees. Bob owes the total amount of accumulated swap fees to Alice as premium.
-17.	What is the commission fee?
-a.	This is the fee to mint an option. When an option seller or buyer opens their position, they pay a commission fee on the notional value of the position. The commission is paid to the PLPs. The commission fee percentage varies between 0.2% - 0.6% based on [pool utilization].
-18.	Does Panoptic only allow for limited upside positions?
-a.	No. You can create limited upside, unlimited upside, limited downside, and unlimited downside positions by combining put and call options on Panoptic.
-19.	Is Panoptic just used for hedging Uniswap LP positions?
-a.	No. While Panoptic allows you to hedge against Uniswap LP positions by shorting them, it also allows you to create puts, calls, straddles, jade lizards, zebra spreads, and many other custom option payoffs!
 20.	How are you different from InfinityPools?
 21.	How are you different from GammaSwap?
 22.	How are you different from Lyra?
