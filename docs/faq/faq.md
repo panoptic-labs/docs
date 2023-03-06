@@ -20,11 +20,17 @@ Testnet is scheduled for September 2023. Mainnet is scheduled for Q4 2023. See o
 Panoptic will launch on Ethereum mainnet.
 </details>
 
+<details>
+<summary>Will Panoptic launch on an L2?</summary>
+Yes, after Panoptic launches on Ethereum mainnet.
+</details>
 
-<!-- 4.	Will Panoptic launch on an L2?
-a.	Yes, after Panoptic launches on Ethereum mainnet.
-5.	Will there be a code audit?
-a.	Yes. Panoptic was audited by ABDK and is currently undergoing an audit with Open [Zeppelin]. There will also be an audit by Code4Arena in [].
+<details>
+<summary>Will there be a code audit?</summary>
+Yes. Panoptic [was audited by ABDK](https://blog.panoptic.xyz/abdk-completes-panoptics-first-audit-panoptic-announces-second-audit-with-openzeppelin-c7216cdbfd4f) and is currently undergoing an audit with OpenZeppelin. There will also be an audit by Code4Arena in Q2-Q3 2023. See our [roadmap].
+</details>
+
+<!-- 
 6.	What tokens can I trade options on?
 a.	Any token pair on Uniswap V3. The Panoptic protocol enables permissionless options trading for longtail assets just as Uniswap allowed for permissionless spot trading for longtail assets.
 7.	Can I sell options at any strike?
