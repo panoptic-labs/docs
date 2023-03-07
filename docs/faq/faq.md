@@ -103,9 +103,9 @@ Selling an option on Panoptic has the same before-fees payoff as LPing on Uniswa
 Selling an option costs a commission fee and gas fee. The commission fee is 0.2% to 0.6% of the notional value of the option position, depending on the <a href="/docs/panoptic-protocol/commission#commission-rate-and-pool-utilization">pool utilization</a> at the time of sell. There is no commission fee to close the position.
 </details>
 
-<!-- <details>
+<details>
 <summary>What does it cost to buy an option?</summary>
-Buying an option costs a commission fee, premium, and gas fee. The commission fee is 0.2% to 0.6% of the notional value of the option position, depending on the <a href="/docs/panoptic-protocol/commission#commission-rate-and-pool-utilization">pool utilization</a> at the time of purchase. The premium starts at 0, and accumulates while the underlying price remains in range. There is no commission fee to close the position.
+Buying an option costs a commission fee, premium, and gas fee. The commission fee is 0.2% to 0.6% of the notional value of the option position, depending on the <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/commission#commission-rate-and-pool-utilization">pool utilization</a> at the time of purchase. The premium starts at 0, and accumulates while the underlying price remains in range. There is no commission fee to close the position.
 </details>
 
 <details>
@@ -117,8 +117,8 @@ Example: Alice sells an out-of-the-money (OTM) ETH-USDC put option, with strike 
 
 <details>
 <summary>What is the commission fee?</summary>
-This is the fee to mint an option. When an option seller or buyer opens their position, they pay a commission fee on the notional value of the position. The commission is paid to the PLPs. The commission fee percentage varies between 0.2% - 0.6% based on <a href="/docs/panoptic-protocol/commission#commission-rate-and-pool-utilization">pool utilization</a>.
-</details> -->
+This is the fee to mint an option. When an option seller or buyer opens their position, they pay a commission fee on the notional value of the position. The commission is paid to the PLPs. The commission fee percentage varies between 0.2% - 0.6% based on <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/commission#commission-rate-and-pool-utilization">pool utilization</a>.
+</details>
  
 <!-- 
 20.	How are you different from InfinityPools?
