@@ -84,10 +84,10 @@ No, Panoptic liquidity providers (PLPs) do not suffer IL from Uniswap LP positio
 Selling an option on Panoptic has the same before-fees payoff as LPing on Uniswap. However, selling an option on Panoptic earns a premium (paid by the option buyer) that is greater than or equal to the swap fees earned by an LP position.
 </details>
 
-<details>
+<!-- <details>
 <summary>What does it cost to sell an option?</summary>
 Selling an option costs a commission fee and gas fee. The commission fee is 0.2% to 0.6% of the notional value of the option position, depending on the <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/commission#commission-rate-and-pool-utilization">pool utilization</a> at the time of sell. There is no commission fee to close the position.
-</details>
+</details> -->
 
 <!-- <details>
 <summary>What does it cost to buy an option?</summary>
