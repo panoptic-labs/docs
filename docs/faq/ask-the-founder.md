@@ -5,6 +5,7 @@ sidebar_position: 2
 # Ask the Founders
 Reach out to the founders if you have any questions not covered in this section.
 
+<details>
 <summary>What are your thoughts on Infinity Pools?</summary>
 We welcome any competition, and this is key to a healthy market and industry. That has always been and continues to be our stance.
 </details>
