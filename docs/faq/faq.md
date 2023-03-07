@@ -74,11 +74,6 @@ Example B: Bob is an option seller for ETH-USDC options. After depositing some c
 No, Panoptic liquidity providers (PLPs) do not suffer IL from Uniswap LP positions. PLPs earn commission fees, and take on protocol risk (e.g. if the Panoptic pool is underwater, then PLPs can lose capital).
 </details>
 
-<!-- <details>
-<summary>Why does moving an LP position constitute trading an option?</summary>
-
-</details> -->
-
 <details>
 <summary>Why should I sell an option on Panoptic when I can just LP directly on Uniswap?</summary>
 Selling an option on Panoptic has the same before-fees payoff as LPing on Uniswap. However, selling an option on Panoptic earns a premium (paid by the option buyer) that is greater than or equal to the swap fees earned by an LP position.
@@ -107,9 +102,7 @@ This is the fee to mint an option. When an option seller or buyer opens their po
 </details>
  
 <!-- 
-20.	How are you different from InfinityPools?
-21.	How are you different from GammaSwap?
-22.	How are you different from Lyra?
+Why does moving an LP position constitute trading an option?
 23.	Why doesn’t Panoptic need oracles?
 24.	Is my liquidity locked?
 25.	How can I close my seller position?
