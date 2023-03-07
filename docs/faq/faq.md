@@ -100,11 +100,3 @@ Example: Alice sells an out-of-the-money (OTM) ETH-USDC put option, with strike 
 <summary>What is the commission fee?</summary>
 This is the fee to mint an option. When an option seller or buyer opens their position, they pay a commission fee on the notional value of the position. The commission is paid to the PLPs. The commission fee percentage varies between 0.2% - 0.6% based on <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/commission#commission-rate-and-pool-utilization">pool utilization</a>.
 </details>
- 
-<!-- 
-Why does moving an LP position constitute trading an option?
-23.	Why doesn’t Panoptic need oracles?
-24.	Is my liquidity locked?
-25.	How can I close my seller position?
-26.	How can I get liquidated?
- -->
