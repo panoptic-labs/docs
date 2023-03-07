@@ -32,19 +32,19 @@ Yes. Panoptic <a href="https://blog.panoptic.xyz/abdk-completes-panoptics-first-
 
 <details>
 <summary>Does Panoptic only allow for limited upside positions?</summary>
-No. You can create limited upside, unlimited upside, limited downside, and unlimited downside positions by combining put and call options on Panoptic.
+No. You can create limited upside, unlimited upside, limited downside, and unlimited downside positions by <a href="https://twitter.com/Panoptic_xyz/status/1628530117118169088?s=20">combining put and call options</a> on Panoptic.
 </details>
 
 <details>
-<summary>(T/F) Panoptic only allow for limited upside positions?</summary>
+<summary>(T/F) Panoptic only allows for limited upside positions?</summary>
   <details>
   <summary>True</summary>
-  Wrong! You can create limited upside, unlimited upside, limited downside, and unlimited downside positions by combining put and call options on Panoptic.
+  Wrong! You can create limited upside, unlimited upside, limited downside, and unlimited downside positions by <a href="https://twitter.com/Panoptic_xyz/status/1628530117118169088?s=20">combining put and call options</a> on Panoptic.
   </details>
  
   <details>
   <summary>False</summary>
-  Correct! You can create limited upside, unlimited upside, limited downside, and unlimited downside positions by combining put and call options on Panoptic.
+  Correct! You can create limited upside, unlimited upside, limited downside, and unlimited downside positions by <a href="https://twitter.com/Panoptic_xyz/status/1628530117118169088?s=20">combining put and call options</a> on Panoptic.
   </details>
 </details>
 
