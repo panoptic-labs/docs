@@ -27,7 +27,7 @@ Yes, after Panoptic launches on Ethereum mainnet.
 
 <details>
 <summary>Will there be a code audit?</summary>
-Yes. Panoptic <a href="https://blog.panoptic.xyz/abdk-completes-panoptics-first-audit-panoptic-announces-second-audit-with-openzeppelin-c7216cdbfd4f">was audited by ABDK</a> and is currently undergoing an audit with OpenZeppelin. There will also be an audit by Code4Arena in Q2-Q3 2023. See our <a href="https://blog.panoptic.xyz/panoptics-v1-roadmap-d7b72a8e2005">roadmap</a>.
+Yes. Panoptic <a href="https://blog.panoptic.xyz/abdk-completes-panoptics-first-audit-panoptic-announces-second-audit-with-openzeppelin-c7216cdbfd4f">was audited by ABDK</a> and is currently undergoing an audit with OpenZeppelin. There will also be an audit by Code4rena in Q2-Q3 2023. See our <a href="https://blog.panoptic.xyz/panoptics-v1-roadmap-d7b72a8e2005">roadmap</a>.
 </details>
 
 <details>
