@@ -71,7 +71,7 @@ Example B: Bob is an option seller for ETH-USDC options. After depositing some c
 
 <details>
 <summary>Do Panoptic liquidity providers (PLPs) suffer impermanent loss (IL)?</summary>
-No, Panoptic liquidity providers (PLPs) do not suffer IL from Uniswap LP positions. PLPs earn commission fees, and take on protocol risk (e.g. if the Panoptic pool is underwater, then PLPs can lose capital).
+No, Panoptic liquidity providers (PLPs) do not suffer IL from Uniswap LP positions. PLPs earn commission fees, and take on protocol risk (e.g. if the Panoptic pool accrues bad debt, then PLPs can lose capital). However, protocol risk is minimized through state-of-the-art decentralized liquidation networks just as Aave, Compound, and dYdX use.
 </details>
 
 <details>
