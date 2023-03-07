@@ -63,9 +63,9 @@ Yes.
 <details>
 <summary>What is the Panoptic liquidity provider (PLP) role? How is this different from the option seller?</summary>
 The Panoptic liquidity provider (PLP) provides fungible liquidity to the Panoptic pool and receives commission fees in return. This differs from the liquidity provider (LP) who deploys liquidity in a Uniswap V3 pool and receives swap fees in return. The option seller borrows liquidity from the PLP to deploy in a Uniswap V3 pool as an LP. This act of moving liquidity from the Panoptic pool to the Uniswap pool constitutes selling an option.   
-<br/><br/>
+<br /><br />
 Example A: Alice is a PLP for the ETH-USDC pool on Panoptic. She can deposit ETH, USDC, or both ETH & USDC into the pool. She receives a share of commission fees in return.  
-<br/><br/>
+<br /><br />
 Example B: Bob is an option seller for ETH-USDC options. After depositing some collateral to the ETH-USDC pool on Panoptic (making him a PLP), he borrows a larger amount of ETH & USDC. The Panoptic protocol deploys his borrowed ETH & USDC into the ETH-USDC pool on Uniswap (making him an LP). His LP position on Uniswap has the same payoffs as a short option (making him an option seller).
 </details>
 
@@ -84,10 +84,10 @@ No, Panoptic liquidity providers (PLPs) do not suffer IL from Uniswap LP positio
 Selling an option on Panoptic has the same before-fees payoff as LPing on Uniswap. However, selling an option on Panoptic earns a premium (paid by the option buyer) that is greater than or equal to the swap fees earned by an LP position.
 </details>
 
-<!-- <details>
+<details>
 <summary>What does it cost to sell an option?</summary>
 Selling an option costs a commission fee and gas fee. The commission fee is 0.2% to 0.6% of the notional value of the option position, depending on the <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/commission#commission-rate-and-pool-utilization">pool utilization</a> at the time of sell. There is no commission fee to close the position.
-</details> -->
+</details>
 
 <!-- <details>
 <summary>What does it cost to buy an option?</summary>
