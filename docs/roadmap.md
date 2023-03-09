@@ -19,7 +19,7 @@ We formed the company in July of 2022 as we seriously began building the product
 We are two technical founders. We didn’t have much experience building smart contracts then, but that was about to change.
 
 ## Smart Contract Development & First Audit
-We both jumped in, and I, Jesper, joined Guillaume in building and preparing the smart contracts for our first audit, which began with ABDK in December, 2022. We worked around the clock and completed the contracts in time for the audit!
+We both jumped in to build and prepare the smart contracts for our first audit, which began with ABDK in December, 2022. We worked around the clock and completed the contracts in time for the audit!
 
 ## Frontend Development
 We started the frontend engineering work in January and just showed the product's first live demo to the world at ETH Denver 2023! We are moving fast and executing, which is key.
@@ -27,7 +27,7 @@ We started the frontend engineering work in January and just showed the product'
 We wanted to highlight also that in February, we started work on our novel advanced graphing library running bare-metal on top of Javascript, which will give a unique, extremely fast, and simplified UX to Panoptic’s users. You can seamlessly drag the payoff curve to create whatever custom curve you see fit.
 
 ## Second Audit & Testnet Launch
-Now, we are starting the audit with OpenZeppelin, and after that, we will launch to “testnet.” We are ahead of schedule and will most likely launch on testnet in June, but time will tell. The time between testnet and mainnet will be essential as we collect key information and iterate on our product bringing it into prime shape for mainnet.
+Now we are starting the audit with OpenZeppelin, and after that, we will launch to “testnet.” We are ahead of schedule and will most likely launch on testnet in June, but time will tell. The time between testnet and mainnet will be essential as we collect key information and iterate on our product bringing it into prime shape for mainnet.
 
 The roadmap only shows the highlights. There are many things to build and design on our way to the mainnet launch this fall, but we are excited and on-track!
 
