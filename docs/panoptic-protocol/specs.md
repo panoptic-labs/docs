@@ -1,9 +1,9 @@
 # Panoptic Specs
 
 ### User Balances
-Funds are deposited by users in the Panoptic Pool. These funds will are used as collateral for writing/buying options.
+Funds are deposited by users in the Panoptic Pool. These funds will be used as collateral for writing/buying options.
 
-The balance of each user, where user could also be the Panoptic Pool, is:
+The balance of each "user", where "user" could also be the Panoptic Pool, is:
 
 
 ```python
@@ -20,6 +20,12 @@ Funds are moved from the PanopticPool to the UniswapPool to create a short optio
 
 Funds in the Uniswap pool can be "shorted" and moved back to the PanopticPool to create a long option payoff.
 
+The amount of funds moves is called the `notionalValue`, and it is defined (for puts) as 
+
+`notionalValue = strike * positionSize`
+
+where `positionSize` is similar to the number of contracts for a regular option
+
 
 ```python
 inAMM = 0
@@ -29,21 +35,17 @@ def _inAMM():
 # Will only consider put options with token0
 def mintPutOption(strike, positionSize, optionType):
     
-    #do stuff
-    
-    #do stuff
+    #[...]
     
     # update inAMM
     notionalValue = strike * positionSize
     if optionType == 'short':
-        #do stuff
         inAMM += notionalValue
         
     elif optionType == 'long':
-        #do stuff
         inAMM -= notionalValue
         
-    #do stuff  
+  
         
         
 ```
@@ -52,9 +54,9 @@ def mintPutOption(strike, positionSize, optionType):
 
 Liquidity that has been moved to Uniswap will collect fees from the trading activity. These fees are the option premium that will be distributed to the option sellers.
 
-When a user sells an option at a specific strike, liquidity is moved to the Uniswap pool and the smart contract starts recording the fees accumulated.
+When a user sells an option at a specific strike, liquidity is deployed to the Uniswap pool at a specific tick range and the smart contract starts recording the fees accumulated.
 
-If another user sells that *same* option at the same strike, the liquidity is also moved to the Uniswap pool. In addition, all fees accumulated by the first position will be collected and moved to a "secure" location called `lockedFees` inside the PanopticPool. 
+If another user sells that *same* option at the same strike, the liquidity is also moved to the Uniswap pool. In addition, all fees accumulated at that position will be collected and moved to a "secure" location called `lockedFees` inside the PanopticPool. 
 
 Collecting fees every time a position is touched reduces the risks of the protocol becoming insolvent.
 
@@ -68,28 +70,18 @@ def _lockedFees():
 # Will only consider put options with token0
 def mintPutOption(strike, positionSize, optionType):
     
-    #do stuff
+    #[...]
     
     # lock collected fees
     fees = collect(strike) # collect all fees at that strike
     lockedFees += _fees
     
-    # update inAMM
-    notionalValue = strike * positionSize
-    if optionType == 'short':
-        #do stuff
-        inAMM += notionalValue
-        
-    elif optionType == 'long':
-        #do stuff
-        inAMM += notionalValue
-
-    #do stuff        
+    #[...]
         
 ```
 
 ### Pool Utilization
-The instantaneous pool utilization is the fraction of all fees deposited that has been moved to the Uniswap pool. Several quantities depend on the pool utilization.
+The instantaneous pool utilization is the fraction of all funds deposited that have been moved to the Uniswap pool. Several quantities depend on the pool utilization: the `totalAssets()`, `_inAMM()`, and `_lockedFees()`.
 
 The amount of `totalAssets()` and the `_poolUtilization()` are computed as follow:
 
@@ -101,7 +93,7 @@ def totalAssets():
 def _poolUtilization():
     if totalAssets() == 0:
         return 0
-    return _inAMM() * DECIMALS / totalAssets()
+    return _inAMM() / totalAssets()
 ```
 
 ### Commission fee
@@ -172,7 +164,7 @@ def mintPutOption(strike, positionSize, optionType):
 
 The Buying power requirement is the amount of collateral needed to be deposited in order to sell/buy an option. 
 
-The buying power requirement for LONG options ensures that enough funds are available to cover any potential premium to be paid for purchasing that option. It is based on the pool utilization that was determined at the time a position was minted and the buying power requirement will not change over time.
+The buying power requirement for LONG options ensures that enough funds are available to cover any potential premium to be paid for purchasing that option. It is based on the pool utilization that was determined at the time a position was minted and this initial buying power requirement will not change over time (although the buying power requirement will increase as the position accumulates owed premium).
 
 `BUYING_POWER_REQUIREMENT = buyCollateralRatio() * notionalValue`
 
@@ -235,11 +227,10 @@ def mintPutOption(strike, positionSize, optionType):
     # update inAMM
     notionalValue = strike * positionSize
     if optionType == 'short':
-        buyingPowerRequirement[msg.sender] -= notionalValue * _buyCollateralRatio()
         inAMM += notionalValue
         
     elif optionType == 'long':
-        #do stuff
+        buyingPowerRequirement[msg.sender] -= notionalValue * _buyCollateralRatio()
         inAMM += notionalValue        
         
     # Pay commission. 
