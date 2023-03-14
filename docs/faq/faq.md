@@ -7,7 +7,7 @@ There's a good chance it's been asked before :)
 
 <details>
 <summary>Is there a token?</summary>
-No. Panoptic does not have a token at this time. testing123 
+No. Panoptic does not have a token at this time. 
 </details>
 
 <details>
