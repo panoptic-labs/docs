@@ -76,7 +76,7 @@ No, Panoptic liquidity providers (PLPs) do not suffer IL from Uniswap LP positio
 
 <details>
 <summary>Why should I sell an option on Panoptic when I can just LP directly on Uniswap?</summary>
-Selling an option on Panoptic has the same before-fees payoff as LPing on Uniswap. However, selling an option on Panoptic earns a premium (paid by the option buyer) that is strictly greater than the swap fees earned by an LP position due to the <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/premium#liquidity-spread">liquidity spread</a>.
+Selling an option on Panoptic has the same before-fees payoff as LPing on Uniswap. However, selling an option on Panoptic earns a premium (paid by the option buyer) that is strictly greater than the swap fees earned by an LP position due to the <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/premium#net-gross-and-owed-fees-with-spread">liquidity spread</a>.
 </details>
 
 <details>
