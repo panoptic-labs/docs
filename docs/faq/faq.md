@@ -71,12 +71,12 @@ Example B: Bob is an option seller for ETH-USDC options. After depositing some c
 
 <details>
 <summary>Do Panoptic liquidity providers (PLPs) suffer impermanent loss (IL)?</summary>
-No, Panoptic liquidity providers (PLPs) do not suffer IL from Uniswap LP positions. PLPs earn commission fees, and take on protocol risk (e.g. if the Panoptic pool accrues bad debt, then PLPs can lose capital). However, protocol risk is minimized through tried-and-true decentralized liquidation networks just as Aave, Compound, and dYdX use to prevent bad debt from accruing.
+No, Panoptic liquidity providers (PLPs) do not suffer IL from Uniswap LP positions. PLPs earn commission fees, and take on protocol risk (e.g. if the Panoptic pool accrues bad debt from <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/margin">failing to liquidate</a> on time, then PLPs can lose capital). However, protocol risk is minimized through a tried-and-true <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/liquidations#liquidation-bonus">decentralized liquidation network</a> just as Aave, Compound, and dYdX use to prevent protocol insolvency.
 </details>
 
 <details>
 <summary>Why should I sell an option on Panoptic when I can just LP directly on Uniswap?</summary>
-Selling an option on Panoptic has the same before-fees payoff as LPing on Uniswap. However, selling an option on Panoptic earns a premium (paid by the option buyer) that is strictly greater than the swap fees earned by an LP position. The premium is strictly greater than the swap fees because of the <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/premium#liquidity-spread">liquidity spread</a>.
+Selling an option on Panoptic has the same before-fees payoff as LPing on Uniswap. However, selling an option on Panoptic earns a premium (paid by the option buyer) that is strictly greater than the swap fees earned by an LP position due to the <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/premium#liquidity-spread">liquidity spread</a>.
 </details>
 
 <details>
@@ -93,7 +93,7 @@ Buying an option costs a commission fee, premium, and gas fee. The commission fe
 <summary>How is the premium calculated?</summary>
 The premium is equal to the amount of swap fees the borrowed LP position would have earned in the Uniswap pool, multiplied by a spread multiplier.  
 <br /><br />
-Example: Alice sells an out-of-the-money (OTM) ETH-USDC put option, with strike = 1000 and width = ±10%. Bob buys the OTM put option from Alice for 0 upfront premium. If the ETH-USDC price moves between 909 and 1100, the option is “in range” and would have earned swap fees from the Uniswap pool. If the ETH-USDC price is above 1100 or below 909, the option is “out of range” and would not have earned any swap fees. Bob owes the total amount of accumulated swap fees to Alice as premium.
+Example: Alice sells an out-of-the-money (OTM) ETH-USDC put Panoption, with strike = 1000 and width = ±10%. Bob buys the OTM put Panoption from Alice for 0 upfront premium. If the ETH-USDC price moves between 909 and 1100, the option is “in range” and would have earned swap fees from the Uniswap pool. If the ETH-USDC price is above 1100 or below 909, the option is “out of range” and would not have earned any swap fees. Bob owes the total amount of accumulated swap fees to Alice as premium.
 </details>
 
 <details>
