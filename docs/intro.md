@@ -44,8 +44,9 @@ Users can access details about the security audits [here](./category/security)
 
 #### Quick links
 
-- Twitter [@panoptic_xyz](https://twitter.com/panoptic_xyz)
-- Medium [panoptic](https://blog.panoptic.xyz/)
+- Twitter [@Panoptic_xyz](https://twitter.com/panoptic_xyz)
+- Substack [Panoptic Research](https://panopticxyz.substack.com)
+- Blog [Panoptic](https://blog.panoptic.xyz/)
 - Telegram [@panoptic](https://t.me/panoptic)
 - Discord [Panoptic](https://discord.gg/7fE8SN9pRT)
 - LinkedIn [Panoptic](https://www.linkedin.com/company/panoptic-xyz)
