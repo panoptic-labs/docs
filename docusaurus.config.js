@@ -121,7 +121,8 @@ const config = {
           autoCollapseCategories: true,
           hideable: true,
         },
-      },      
+      },
+      metadata: [{property: 'og:image', content: 'img/logo.svg'}],
     }),
 
   // Even if you don't use internalization, you can use this field to set useful
