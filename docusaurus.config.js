@@ -124,11 +124,11 @@ const config = {
       },
       metadata: [{
         property: 'og:image',
-        content: 'https://github.com/panoptic-labs/docs/blob/main/static/img/logo.svg'
+        content: 'https://raw.githubusercontent.com/panoptic-labs/docs/b7f9a05496eaf349fe00aa592e0ba732bef476c6/static/img/logo.svg'
       },
       {
         name: 'twitter:image',
-        content: 'https://github.com/panoptic-labs/docs/blob/main/static/img/logo.svg'
+        content: 'https://raw.githubusercontent.com/panoptic-labs/docs/b7f9a05496eaf349fe00aa592e0ba732bef476c6/static/img/logo.svg'
       }],
     }),
 
