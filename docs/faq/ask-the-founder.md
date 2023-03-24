@@ -36,3 +36,8 @@ Jesper holds a Ph.D. in Applied Physics and Computer Science from Cornell Univer
 
 ### Defi Toronto 2022 - Panoptic: The Perpetual, Oracle-Free Options Protocol
 <iframe width="560" height="315" src="https://www.youtube.com/embed/KDnAXqo3uyg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Podcasts
+
+### Foot Guns - Uniswap and Panoptic Options
+<iframe src="https://open.spotify.com/embed/episode/51E2kRodvnkbbSqGTGIzp6?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>

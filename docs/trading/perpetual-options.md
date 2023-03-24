@@ -3,5 +3,5 @@ sidebar_position: 2
 ---
 
 # Perpetual options
-How to manage options that never expire?
+How do you manage options that never expire? [COMING SOON...]
 
