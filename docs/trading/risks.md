@@ -6,7 +6,7 @@ sidebar_position: 5
 # The Risks of Trading (Pan)Options
 
 
-## Introduction:
+## Introduction
 Options trading has become increasingly popular among investors due to its flexibility and potential for high returns. However, options trading also comes with its fair share of risks. However, it is crucial to understand and manage the risks associated with options trading.
  This short guide will delve into the risks associated with (pan)options trading and offer tips on mitigating these risks.
 
@@ -48,35 +48,35 @@ Delta measures the degree to which an option is exposed to shifts in the underly
 *Tip:* Trade Panoptions ;) ==to check==
 
 
-## Complexity and the Learning Curve:
+## Complexity and the Learning Curve
 Options trading is inherently more complex than trading stocks. With options, investors must consider the direction of the underlying asset's price movement and factors like implied volatility, time decay, and strike price selection. The learning curve for trading options can be steep, and it takes time and dedication to master the intricacies of the options market.
 
 *Applies to* (T, F, P)
 
  *Tip:* Start with a solid foundation in options trading and consider paper trading to practice and refine your strategies before risking real capital.
 
-## Leverage Risk:
+## Leverage Risk
 Options provide a high degree of leverage, amplifying gains and losses. A small move in the underlying asset's price can lead to significant changes in the value of an options contract. While this leverage can lead to substantial profits, it can also result in significant losses, especially when trading on margin.
 
 *Applies to:* (T,F) ==to check==
 
 *Tip:* Establish strict risk management rules and avoid using excessive leverage. Set appropriate position sizes and stop-loss orders to protect your trading capital.
 
-## Time Decay:
+## Time Decay
 Options have a finite lifespan, and their value erodes as the expiration date approaches. This is known as time decay or "theta." Time decay accelerates as the option nears expiration, leading to rapid losses for option buyers if the underlying asset's price doesn't move in the anticipated direction. Notice that Panoptions and (funding-rate-based) perpetuals do not have a theta, as their values do not depend on time. However, it is worth mentioning that there is an equivalent to time-to-expiration in Panoptions, based on the range of the option. 
 
 *Applies to:* (T) ==to check==
 
 *Tip*: To mitigate time decay risk, consider selling options, implementing time decay-neutral strategies, or trading options with longer expiration dates.
 
-## Liquidity Risk:
+## Liquidity Risk
 Not all options contracts are highly liquid, which can lead to wider bid-ask spreads and difficulties in entering or exiting positions at favorable prices. Illiquid options may also be more susceptible to manipulation and sudden price swings.
 
 *Applies to:* (T,F,P*) ==to check==
 
 Tip: To ensure sufficient liquidity, focus on trading options with high open interest and trading volume. Liquid options typically have tighter bid-ask spreads, making entering and exiting trades at desired prices easier.
 
-## Early Assignment Risk:
+## Early Assignment Risk
 For American-style options, the option holder can exercise the contract any time before expiration. Option sellers can be assigned and required to fulfill their obligations at an inopportune time, potentially resulting in unexpected losses.
 
 *Applies to:* (T,F,P) ==to check==
@@ -84,7 +84,7 @@ For American-style options, the option holder can exercise the contract any time
 *Tip*: Monitor your short options positions closely and be prepared for early assignments. If early assignment seems likely, consider closing your position or rolling it to a later expiration date.
 
 
-## Liquidation Risk:
+## Liquidation Risk
  For Panoptions and other perpetuals, there is a risk of having a position liquidated due to large swings in price. Liquidation occurs when a position's margin is ≤ maintenance margin (+ potentially some fees). In this case, the position gets exercised immediately by a smart contract. While this risk is mitigated by providing some reasonably-large margins (i.e., large enough to cover many adversarial scenarios but not so large that they are an impediment to opening a position), this risk remains. 
 
 *Applies to* (F, P) 
@@ -92,7 +92,7 @@ For American-style options, the option holder can exercise the contract any time
 *Tip*: Monitor your short options positions closely and be prepared to deploy more margin if needed. 
 
 
-## Out-of-range Risk:
+## Out-of-range Risk
 Remember that Panoptions are created by **rearranging** liquidity in a UNiswap V3 pool. In particular, this means that Panoptions are subject to a price *range*, where the position collects fees if the underlying asset's price is in range. For very tight ranges or very volatile or drift-driven assets, the risk of having the price leave the range (and hence having the contract collect 0 fees) is more significant. 
 
 *Applies to:* (P) 
@@ -101,7 +101,7 @@ Remember that Panoptions are created by **rearranging** liquidity in a UNiswap V
 
 
 
-## Gap Risk:
+## Gap Risk
 Options are exposed to gap risk due to the possibility of sharp overnight or weekend price movements in the underlying asset. These price gaps can result in significant losses for options traders, especially when holding positions overnight or over the weekend.
 
 *Applies to:* (T) 
@@ -110,7 +110,7 @@ Options are exposed to gap risk due to the possibility of sharp overnight or wee
 
 
 
-## Funding Rate Risk:
+## Funding Rate Risk
 
 Perpetual options have a unique feature called the funding rate, which is periodically exchanged between long and short-position holders. Depending on market conditions, traders may either receive or pay funding fees, which can impact the profitability of their positions.
 
