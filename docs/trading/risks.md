@@ -58,7 +58,7 @@ Options trading is inherently more complex than trading stocks. With options, in
 ## Leverage Risk
 Options provide a high degree of leverage, amplifying gains and losses. A small move in the underlying asset's price can lead to significant changes in the value of an options contract. While this leverage can lead to substantial profits, it can also result in significant losses, especially when trading on margin.
 
-*Applies to:* (T,F) ==to check==
+*Applies to:* (T, F, P) ==to check==
 
 *Tip:* Establish strict risk management rules and avoid using excessive leverage. Set appropriate position sizes and stop-loss orders to protect your trading capital.
 
