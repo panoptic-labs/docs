@@ -23,10 +23,10 @@ We achieve this by embracing the decentralized nature of Automated Market Makers
 
 The following sections will provide a brief overview of the _Panoptic protocol_.
 
-- [Panoptic Protocol](./category/the-panoptic-protocol): Getting to know Panoptic's most important concepts.
-- [Options Trading 101](./category/options-trading-101): Options trading resources.
-- [Technical Specifications](./category/technical-specifications): Learn how to build on Panoptic.
-- [Protocol Security](./category/security): Audits, code reviews, security.
+- [Panoptic Protocol](./panoptic-protocol/overview): Getting to know Panoptic's most important concepts.
+- [Options Trading 101](./trading/basic-concepts): Options trading resources.
+- [Technical Specifications](./developers/smart-contracts-overview): Learn how to build on Panoptic.
+- [Protocol Security](./security/audits): Audits, code reviews, security.
 
 
 ---
@@ -40,7 +40,7 @@ Users can access the developers docs [here](./developers/smart-contracts-overvie
 Users can access the whitepaper [here](./whitepaper.pdf)
 
 #### Security 
-Users can access details about the security audits [here](./category/security)
+Users can access details about the security audits [here](./security/audits)
 
 #### Quick links
 

@@ -1,8 +1,5 @@
 {
   "label": "Options Trading 101",
   "position": 3,
-  "link": {
-    "type": "generated-index",
-    "description": "Options trading resources."
-  }
+  "link": null
 }

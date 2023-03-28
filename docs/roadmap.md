@@ -44,7 +44,7 @@ Users can access the developers docs [here](./developers/smart-contracts-overvie
 Users can access the whitepaper [here](./whitepaper.pdf)
 
 #### Security 
-Users can access details about the security audits [here](./category/security)
+Users can access details about the security audits [here](./security/audits)
 
 #### Quick links
 
