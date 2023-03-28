@@ -136,7 +136,7 @@ const config = {
         backgroundColor: '#f305f9',
         textColor: '#FFFFFF',
         isCloseable: true,
-      }
+      },
       image: 'https://raw.githubusercontent.com/panoptic-labs/docs/main/static/img/logo.png',
     }),
 
