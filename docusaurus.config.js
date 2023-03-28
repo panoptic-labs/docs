@@ -137,6 +137,7 @@ const config = {
         textColor: '#FFFFFF',
         isCloseable: true,
       }
+      image: 'https://raw.githubusercontent.com/panoptic-labs/docs/main/static/img/logo.png',
     }),
 
   // Even if you don't use internalization, you can use this field to set useful
