@@ -24,3 +24,14 @@ Because options allow traders to take on different levels of risk, and also defi
 The value of an option &#151; called the premium &#151; used to be difficult to determine.
 
 But following the development of Nobel-prize winning mathematical models by [Black, Scholes, and Merton](/docs/terms/blackscholes), an optimal price could be derived in a way that buyers _and_ sellers both agree on the option contract's price.
+
+## Resources
+
+### Beginner Tutorials
+
+#### Options Trading for Beginners (The ULTIMATE In-Depth Guide) 👇
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7PM4rNDr4oI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+#### [Khan Academy - Put and call options](https://www.khanacademy.org/economics-finance-domain/core-finance/derivative-securities/put-call-options/v/american-call-options) 👈
+
+#### [Khan Academy - Black-Scholes Formula](https://www.khanacademy.org/economics-finance-domain/core-finance/derivative-securities/black-scholes/v/introduction-to-the-black-scholes-formula) 👈
