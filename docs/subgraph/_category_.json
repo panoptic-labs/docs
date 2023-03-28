@@ -1,8 +1,5 @@
 {
   "label": "subgraph",
   "position": 5,
-  "link": {
-    "type": "generated-index",
-    "description": "Accessing the Panoptic subgraph."
-  }
+  "link": null
 }

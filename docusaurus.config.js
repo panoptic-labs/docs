@@ -40,25 +40,7 @@ const config = {
           },
           {
             type: 'doc',
-            docId: '/category/options-trading-101',
-            position: 'left',
-            label: 'Options trading 101',
-          },
-          {
-            type: 'doc',
-            docId: '/category/technical-specifications',
-            position: 'left',
-            label: 'Technical specs',
-          },
-          {
-            type: 'doc',
-            docId: '/category/security',
-            position: 'left',
-            label: 'Security',
-          },
-          {
-            type: 'doc',
-            docId: '/category/faq',
+            docId: 'faq/faq',
             position: 'right',
             label: 'FAQ',
           },
@@ -78,25 +60,46 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Learn',
             items: [
               {
-                label: 'Protocol',
+                label: 'Intro',
                 to: '/docs/intro',
               },
+              {
+                label: 'Options Trading 101',
+                to: '/docs/trading/basic-concepts'
+              },
+              {
+                label: 'Developers',
+                to: '/docs/developers/smart-contracts-overview'
+              },
+              {
+                label: 'Glossary',
+                to: '/docs/terms/American'
+              }
             ],
           },
           {
             title: 'Community',
             items: [
               {
+                label: 'Twitter',
+                href: 'https://twitter.com/panoptic_xyz',
+              },
+              {
+                label: 'Telegram',
+                href: 'https://t.me/panoptic',
+              },
+              {
                 label: 'Discord',
                 href: 'https://discord.gg/8sX5Af2KXG',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/panoptic_xyz',
+                label: 'LinkedIn',
+                href: 'https://www.linkedin.com/company/panoptic-xyz',
               },
+              
             ],
           },
           {
@@ -105,6 +108,14 @@ const config = {
               {
                 label: 'GitHub',
                 href: 'https://github.com/panoptic-labs/docs',
+              },
+              {
+                label: 'Substack',
+                href: 'https://panopticxyz.substack.com',
+              },
+              {
+                label: 'Blog',
+                href: 'https://blog.panoptic.xyz',
               },
             ],
           },
