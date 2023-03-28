@@ -13,7 +13,8 @@ Hence, each option has a
 - **Expiry**: a time in the future when the transaction has to occur
 - **Premium**: the value of the option, or how much the buyer pays for the right to buy/sell the asset
 
-(figure here)
+![Call Option Graphic](https://user-images.githubusercontent.com/62954565/228379525-d8fb6c35-e7bb-498d-87d5-3f1e4261f410.png)
+
 
 Options provide options traders with a versatile tool for managing risk and generating profits.
 By buying or selling options, traders can speculate in a capital efficient manner on the price movement of a security. This is done by taking a long or short position without having to own the underlying asset.
