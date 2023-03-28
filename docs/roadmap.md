@@ -9,7 +9,7 @@ As we near the end of the roadmap for releasing Panoptic V1 to mainnet in the fa
 
 As a reminder, this roadmap is a live document: We will make adjustments to months that are currently further in the future as we later gain clarity regarding the tasks required to attain each milestone.
 
-![1_Zp1l6P_0e33SfhpZV7cuww](https://user-images.githubusercontent.com/62954565/223883179-317e0833-c770-4f01-841b-802800f7a2c5.png)
+![Roadmap](https://user-images.githubusercontent.com/62954565/228114352-d4c01070-8c58-45f5-95d7-5c4b5cf4f184.png)
 
 ---
 
