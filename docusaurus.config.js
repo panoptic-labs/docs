@@ -130,6 +130,13 @@ const config = {
         name: 'twitter:image',
         content: 'https://raw.githubusercontent.com/panoptic-labs/docs/b7f9a05496eaf349fe00aa592e0ba732bef476c6/static/img/logo.svg'
       }],
+      announcementBar: {
+        id: 'ETH_Denver_2023',
+        content: 'Don\'t miss our first-ever live product demo at ETH Denver 2023! Watch our COO\'s <a href="https://docs.panoptic.xyz/docs/faq/ask-the-founder#eth-denver-2023---the-panoptic-protocol-a-new-defi-options-paradigm">presentation</a> 👈',
+        backgroundColor: '#f305f9',
+        textColor: '#FFFFFF',
+        isCloseable: true,
+      }
     }),
 
   // Even if you don't use internalization, you can use this field to set useful
