@@ -58,6 +58,12 @@ const config = {
       },
       footer: {
         style: 'dark',
+        logo: {
+          alt: 'Panoptic Logo',
+          src: 'https://raw.githubusercontent.com/panoptic-labs/docs/4825969722841d1ace89c3837ae05511b96d6426/static/img/logo.svg',
+          width: 160,
+          height: 160,
+        },
         links: [
           {
             title: 'Learn',
@@ -120,7 +126,8 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Axicon Labs Inc.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Axicon Labs Inc.<br><br>
+        The content provided is for informational and educational purposes only and is not intended as, nor should it be construed as, financial, investment, or trading advice, or a recommendation to buy, sell, or hold any options. Options trading carries significant risks, including the potential for substantial losses, and may not be suitable for all investors. Before engaging in options trading, you should consult with a qualified financial advisor or other professional to evaluate your specific financial situation and objectives.`,
       },
       prism: {
         additionalLanguages: ['solidity'],
@@ -135,17 +142,16 @@ const config = {
       },
       metadata: [{
         property: 'og:image',
-        content: 'https://raw.githubusercontent.com/panoptic-labs/docs/b7f9a05496eaf349fe00aa592e0ba732bef476c6/static/img/logo.svg'
+        content: 'https://raw.githubusercontent.com/panoptic-labs/docs/main/static/img/logo.png'
       },
       {
         name: 'twitter:image',
-        content: 'https://raw.githubusercontent.com/panoptic-labs/docs/b7f9a05496eaf349fe00aa592e0ba732bef476c6/static/img/logo.svg'
+        content: 'https://raw.githubusercontent.com/panoptic-labs/docs/main/static/img/logo.png'
       }],
       announcementBar: {
         id: 'ETH_Denver_2023',
-        content: 'Don\'t miss our first-ever live product demo at ETH Denver 2023! Watch our COO\'s <a href="https://docs.panoptic.xyz/docs/faq/ask-the-founder#eth-denver-2023---the-panoptic-protocol-a-new-defi-options-paradigm">presentation</a> 👈',
-        backgroundColor: '#f305f9',
-        textColor: '#FFFFFF',
+        content: 'Don\'t miss our first-ever live product demo at ETH Denver 2023! Watch our COO\'s <a href="https://docs.panoptic.xyz/docs/faq/ask-the-founder#eth-denver-2023---the-panoptic-protocol-a-new-defi-options-paradigm">presentation</a> 👈🏾',
+        textColor: '#000000',
         isCloseable: true,
       },
       image: 'https://raw.githubusercontent.com/panoptic-labs/docs/main/static/img/logo.png',

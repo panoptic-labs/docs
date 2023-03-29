@@ -40,6 +40,14 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+div[class^='announcementBar_'] {
+  background: repeating-linear-gradient(35deg, hsl(336, 100%, 90%), hsl(336, 100%, 90%) 20px, hsl(298, 100%, 82%) 10px, hsl(298, 100%, 82%) 40px);
+  height: 2.5em;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
 .navbar__link {
   color: var(--ifm-color-navbar-links);
 }
