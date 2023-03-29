@@ -6,6 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/shadesOfPurple');
 
 const math = require('remark-math');
 const katex = require('rehype-katex');
+const path = require('path');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
