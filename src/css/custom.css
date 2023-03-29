@@ -40,21 +40,9 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-div[class^='announcementBar_mb4j'] {
-  --site-announcement-bar-stripe-color1: hsl(
-    #f305f9 85%
-  );
-  --site-announcement-bar-stripe-color2: hsl(
-    #f305f9 95%
-  );
-  background: repeating-linear-gradient(
-    35deg,
-    var(--site-announcement-bar-stripe-color1),
-    var(--site-announcement-bar-stripe-color1) 20px,
-    var(--site-announcement-bar-stripe-color2) 10px,
-    var(--site-announcement-bar-stripe-color2) 40px
-  );
-  font-weight: bold;
+div[class^='announcementBar_'] {
+  background: repeating-linear-gradient(35deg, hsl(336,100%,98%), hsl(336,100%,98%) 20px, hsl(297.8,96.1%,49.8%) 10px, hsl(297.8,96.1%,49.8%) 40px);
+  font-weight: 700;
 }
 
 .navbar__link {
