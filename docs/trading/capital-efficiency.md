@@ -8,7 +8,7 @@ In options trading, capital efficiency refers to the ability of an options strat
 For example, a capital-efficient options strategy may involve using options to gain exposure to a crypto asset while requiring less capital than buying the crypto asset outright. This can be achieved through strategies such as call options or options spreads.
 
 Options trading can be a powerful tool for investors looking to maximize their capital efficiency. By leveraging the unique features of options, traders can better manage risk, generate additional income, and potentially enhance returns. In this section we'll explore the basics of options trading and delve into strategies that can help you optimize your capital's potential.
-For a primer on terminology see [here](/docs/glossary.md).
+For a primer on terminology see [here](/docs/terms/glossary.md).
 
 
 ### Leverage
