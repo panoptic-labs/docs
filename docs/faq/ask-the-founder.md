@@ -39,7 +39,7 @@ Jesper holds a Ph.D. in Applied Physics and Computer Science from Cornell Univer
 
 ## Podcasts
 
-### [Deal Flow - Decentralized Revolution: Exploring Panoptic, Novel Options Protocol](https://twitter.com/i/spaces/1MYGNgjYwDZJw?s=20) 
+- [Deal Flow - Decentralized Revolution: Exploring Panoptic, Novel Options Protocol](https://twitter.com/i/spaces/1MYGNgjYwDZJw?s=20) 
 
-### Foot Guns - Uniswap and Panoptic Options
+- Foot Guns - Uniswap and Panoptic Options
 <iframe src="https://open.spotify.com/embed/episode/51E2kRodvnkbbSqGTGIzp6?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
