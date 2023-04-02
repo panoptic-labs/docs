@@ -11,7 +11,7 @@ As we near the end of the roadmap for releasing Panoptic V1 to mainnet in the fa
 
 As a reminder, this roadmap is a live document: We will make adjustments to months that are currently further in the future as we later gain clarity regarding the tasks required to attain each milestone.
 
-<DownloadButton imageUrl="https://user-images.githubusercontent.com/62954565/228114352-d4c01070-8c58-45f5-95d7-5c4b5cf4f184.png" fileName="Panoptic_Roadmap_2023" />
+<DownloadButton imageUrl="https://raw.githubusercontent.com/panoptic-labs/docs/main/static/img/Roadmap.png" fileName="Panoptic_Roadmap_2023" />
 
 ---
 
