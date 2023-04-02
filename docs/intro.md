@@ -42,12 +42,17 @@ Users can access the whitepaper [here](./whitepaper.pdf)
 #### Security 
 Users can access details about the security audits [here](./security/audits)
 
+#### 10,000-Foot View of Panoptic and the DeFi Options Landscape
+- [Panoptic - The Most Detailed Exposition To Date](https://blog.panoptic.xyz/panoptic-483c6de77a0e)  
+- [Three Sigma: Options Series Part I - An Overview of the DeFi Options Landscape](https://threesigma.xyz/blog/defi-options-landscape)  
+- [Three Sigma: Options Series Part II - Exploring Different Pricing Approaches and Tokenomics](https://threesigma.xyz/blog/exploring-options-pricing-tokenomics)
+
 #### Quick links
 
-- Twitter [@Panoptic_xyz](https://twitter.com/panoptic_xyz)
-- Substack [Panoptic Research](https://panopticxyz.substack.com)
-- Blog [Panoptic](https://blog.panoptic.xyz/)
-- Telegram [@panoptic](https://t.me/panoptic)
-- Discord [Panoptic](https://discord.gg/7fE8SN9pRT)
-- LinkedIn [Panoptic](https://www.linkedin.com/company/panoptic-xyz)
-- Github [Panoptic Research](https://github.com/panoptic-labs/research)
+- [Twitter](https://twitter.com/panoptic_xyz)
+- [Substack](https://panopticxyz.substack.com)
+- [Blog](https://blog.panoptic.xyz/)
+- [Telegram](https://t.me/panoptic)
+- [Discord](https://discord.gg/7fE8SN9pRT)
+- [LinkedIn](https://www.linkedin.com/company/panoptic-xyz)
+- [Github](https://github.com/panoptic-labs/research)

@@ -1,0 +1,34 @@
+.download-container {
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    position: relative;
+    display: inline-block;
+  }
+  
+  .download-button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    right: 10px;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    position: relative;
+    top: 10px;
+    z-index: 1;
+    position: absolute;
+  }
+  
+  .download-container img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .image-container {
+    display: inline-block;
+    position: relative;
+  }
