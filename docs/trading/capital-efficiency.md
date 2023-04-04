@@ -28,7 +28,8 @@ For example, let's say that ETH is trading at $1,000. Buying ETH outright would 
 #### Short Straddles and Strangles
 Selling straddles and strangles are extremely capital efficient. That’s because they’re made up of one short put and one short call, and only one of those legs can be “tested” at any given time. For example, if the put is ITM, then the call is OTM, and vice versa.
 
-(Add figures)
+![Short Straddle](https://user-images.githubusercontent.com/62954565/229919444-c4462fb3-baa0-4f8e-a69b-c5717c201b70.png)
+![Short Strangle](https://user-images.githubusercontent.com/62954565/229919467-913b5321-3b09-4b73-bc4e-6aa3dd5113b1.png)
 
 Because of this, the collateral requirements for selling a straddle or strangle is relaxed. The collateral requirement for a short straddle or strangle is just the collateral requirement of one of its legs (either the short put or short call, whichever is larger).
 
@@ -39,7 +40,7 @@ For example, let's say that ETH is trading at $1,000. Under normal circumstances
 #### Synthetic Long Asset
 Exposure to assets can be mimicked through options strategies that are more capital efficient. A "synthetic long asset" is created by selling an ATM put option and buying an ATM call option, which creates a similar payoff to that of owning the underlying asset, but with less capital required.
 
-(Add figure)
+![Synthetic Asset](https://user-images.githubusercontent.com/62954565/229919542-ccc6dae8-602d-4a7e-a212-f2e0c268fa15.png)
 
 For example, let's say that ETH is trading at $1,000. Buying ETH outright would require $1,000 (1x leverage). To create a synthetic long ETH position, one could sell an ATM put and buy an ATM call. Under normal circumstances in Panoptic, selling 1 ATM ETH put option would require $200 of collateral and buying 1 ATM ETH call option would require $100 of collateral, for a total required collateral of $300 (3.33x leverage).
 
