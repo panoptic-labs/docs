@@ -6,4 +6,78 @@ hoverText: Model used to calculate European-style options prices
 
 ### Term explanation
 
-The Black-Scholes Model is a mathematical model used to calculate the theoretical price of European-style options. It takes into account factors such as the current stock price, strike price, time to expiration, and implied volatility to determine the option's fair market value.
+The Black-Scholes Model is a mathematical model used to calculate the theoretical price of European-style options. It takes into account factors such as the current asset price, strike price, time to expiration, and implied volatility to determine the option's fair market value.
+
+
+### Formula
+So, how does it work? In the simplest case (i.e. for [European options](/docs/terms/european)) the Black-Scholes Model (BSM) considers the following variables:
+
+- Spot price ($S$): The current price of the underlying asset.
+- Strike price ($K$): The predetermined price at which the option can be exercised.
+- Time to expiration ($T$): The time remaining until the option expires.
+- Volatility ($\sigma$): The annualized standard deviation of the underlying asset's returns, reflecting fluctuations in the underlying asset's price.
+- Risk-free interest rate ($r$): The interest rate on a risk-free investment, typically a government bond.
+
+Using these variables, the Black-Scholes equation calculates the fair value of an option. The equation is different for call and put options, but they share the same core components, namely:
+
+$N(d_1)$ and $N(d_2)$: These are probability values derived from the cumulative standard normal distribution. They represent the likelihood of the option being exercised. More precisely,
+
+- $d_1$:  can be thought of as a measure of how much the option is "in the money" relative to its risk, incorporating factors such as the stock price, strike price, time to expiration, volatility, and risk-free interest rate. A higher d1 value indicates that the option is more likely to be exercised, as the stock price is expected to be further away from the strike price. This increased likelihood of exercise is reflected in a higher N(d1) value. The formula for $d_1$ is: $$d_1 =\frac{(\ln\left(\frac{S}{K}\right) + (r + \frac{\sigma^2}{2}) \cdot T)}{\sigma \cdot \sqrt{T}}$$
+
+- $d_2$  can be understood as a measure of the expected payoff when the option is exercised, considering the time value of money. A higher $d_2$ value indicates that the option's exercise price is more favorable compared to the current stock price and risk-free interest rate, which is reflected in a higher N(d2) value. $d_2$ is derived from $d_1$ as follows: $$d_2 = d_1 - \sigma \cdot \sqrt{T}$$
+
+Present value factor ($e^{-rT}$): This factor discounts the value of the option based on the risk-free interest rate and time to expiration. 
+
+Given the discussion above, the Black-Scholes equation for call options is as follows:
+- Call option value = $S \cdot N(d_1) - K  e^{-rT} \cdot N(d_2)$
+
+For put options, the equation is:
+- Put option value = $K \cdot e^{-rT} \cdot N(-d_2) - S \cdot N(-d_1)$
+
+
+### Assumptions
+It is worth mentioning that, while the BSM is widely used, it has some limitations:
+
+- Assumes constant volatility: The equation assumes that the underlying asset's volatility remains constant, which is not always the case in reality.
+- Ignores dividends: The original model doesn't account for dividends paid by the underlying asset, which can affect the option's value.
+- Assumes European-style options: The model is based on European-style options, which can only be exercised on the expiration date. It may not be accurate for American-style options, which can be exercised any time before expiration.
+- Assumes a constant risk-free rate: The equation assumes that the risk-free rate remains constant, which is not always the case in reality.
+- Assumes GBM: The model assumes the underlying asset's price follows a geometric Brownian motion, which is not always the case in reality (especially for stablecoins!).
+
+
+### Example
+
+Let's consider a hypothetical example using the Black-Scholes model to price a European call option for Ethereum (ETH). Note that this example is for illustrative purposes only and does not reflect the actual market conditions.
+
+Assume the following information:
+1. Current price of Ethereum (S): $2,500
+2. Option strike price (K): $2,600
+3. Time to expiration (T): 3 months (0.25 years)
+4. Risk-free interest rate (r): 2% per annum
+5. Annualized volatility (σ) of Ethereum: 80%
+
+We can now use the Black-Scholes formula to calculate the price of the call option.
+
+First, compute d1 and d2:
+- $$d_1 =\frac{(\ln\left(\frac{S}{K}\right) + (r + \frac{\sigma^2}{2}) \cdot T)}{\sigma \cdot \sqrt{T}}$$
+    - &rarr; $$d_1 =\frac{(\ln\left(\frac{2500}{2600}\right) + (0.02 + \frac{0.8^2}{2}) \cdot 0.25)}{0.8 \cdot \sqrt{0.25}}$$
+    - &rarr; $$d1 ≈ 0.1144$$
+- $$d_2 = d_1 - \sigma \cdot \sqrt{T}$$
+    - $$d_2 = 0.1144 - 0.8 \cdot \sqrt{0.25}$$
+    - &rarr; $$d2 ≈ -0.2855$$
+
+Next, calculate the call option price (C):
+- $$C = S \cdot N(d_1) - K  e^{-rT} \cdot N(d_2)$$
+    - &rarr; $$C = 2500 \cdot N(0.1144) - 2600  e^{-0.02 \cdot 0.25} \cdot N(-0.2855)$$
+
+Using a standard normal distribution table or calculator, we can find the values of N(d1) and N(d2):
+- $$N(0.1144) ≈ 0.5455$$
+- $$N(-0.2855) ≈ 0.3876$$
+
+Now, substitute these values into the formula:
+- $$C = 2500 \cdot 0.5455 - 2600  e^{-0.02 \cdot 0.25} \cdot 0.3876$$
+    - &rarr; $$\textcolor{red}{C ≈ \$361.14}$$
+
+According to the Black-Scholes model, the theoretical price of the 3-month European call option for Ethereum with a strike price of $2,600 is approximately $361.14.
+
+Keep in mind that this example is for educational purposes only and should not be considered as financial advice. Actual option prices may differ due to various factors not accounted for in the Black-Scholes model.
