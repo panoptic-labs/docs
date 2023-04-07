@@ -6,4 +6,39 @@ hoverText: An option that can be exercised any time up to and including the expi
 
 ### Term explanation
 
-An option that can be exercised any time up to and including the expiration date. They are slightly more complicated to price than European-style options
+An option that can be exercised any time up to and including the expiration date. They are slightly more complicated to price than [European-style options](/docs/terms/european).
+
+### Difference from European-Style Options
+
+An American-Style Option is a type of financial derivative that gives the holder the right, but not the obligation, to buy (in the case of a call option) or sell (in the case of a put option) an underlying asset at a specified price (known as the strike price) any time up to and including the expiration date.
+
+This flexibility to exercise the option at any point during its life is the main difference between American-Style Options and European-Style Options, which can only be exercised on the expiration date. As a result, American-Style Options are generally more expensive and complex to price than their European counterparts due to the additional uncertainty in determining when the option might be exercised.
+
+American-Style Options can be traded on various underlying assets, such as stocks, indexes, currencies, commodities, and cryptocurrencies. The pricing of American-Style Options takes into account factors like the underlying asset's price, strike price, time to expiration, volatility, interest rates, and dividends.
+
+### Example (TradFi)
+Suppose an investor purchases an American-Style Call Option on ETH with the following details:
+
+- Underlying asset: Ether (ETH)
+- Contract size: 100 ETH
+- Strike price: $2,500
+- Expiration date: December 31, 2023
+- Option premium: $200
+
+In this case, the investor has the right to buy 100 ETH at a price of $2,500 per ETH any time before or on December 31, 2023. If the market price of ETH rises above $2,500 before the expiration date, the investor may choose to exercise the option and buy the 100 ETH at the specified strike price, making a profit from the difference between the market price and the strike price (minus the option premium paid). If the market price of ETH remains below $2,500, the investor can simply let the option expire and not exercise it, limiting his/her loss to the option premium paid.
+
+The ability to exercise the option at any time before expiration allows the investor to capture potential profits from any significant upward price movement in ETH during the option's life.
+
+### Example (Panoptic)
+Suppose an investor purchases a Panoptic Call Option on ETH with the following details:
+
+- Underlying asset: Ether (ETH)
+- Contract size: 0.5 ETH
+- Strike price: 2,500 USDC
+- Expiration date: None
+- Width: r = 1.0001 (.01%)
+- Numeraire (quote asset): USDC
+
+In this case, the investor has the right to buy 0.5 ETH at a price of 2,500 USDC/ETH at any time. If the market price of ETH rises above 2500 USDC at any time, the investor may choose to exercise the option and buy the 0.5 ETH at the specified strike price, making a profit from the difference between the market price and the strike price (minus the accumulated premia paid). If the market price of ETH remains below 2500 USDC, the investor can simply do nothing, limiting his/her loss to the accumulated premia paid.
+
+The ability to exercise the option at any time allows the investor to capture potential profits from any significant upward price movement in ETH.

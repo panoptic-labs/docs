@@ -6,4 +6,54 @@ hoverText: Price at which an option or stock is available for purchase
 
 ### Term explanation
 
-The Bid is the price at which an option or stock is available for purchase. It represents the highest price that a buyer is willing to pay for the security.
+The Bid is the price at which an option is available for purchase. It represents the highest price that a buyer is willing to pay for the option.
+
+### Bid-Ask Spread
+The [Ask](/docs/terms/ask) price, which is the lowest price a seller is willing to accept for the option, is typically higher than the Bid price. The difference between the bid and ask prices is known as the bid-ask spread, and it represents the cost of trading the option and the level of liquidity in the market.
+
+In the context of options, the bid price is the premium that a potential seller will receive if they sell an option contract to a buyer. Option bid prices are influenced by factors such as the underlying asset's price, strike price, time to expiration, implied volatility, interest rates, and dividends.
+
+### In Panoptic
+Panoptic utilizes a novel [streaming premia](/docs/terms/streaming) model, in which there is no bid-ask spread in Panoptic. The Ask price (premium) of a Panoption is always 0, since the premia begins at 0 and accumulates over time based on real market trading activity in the underlying AMM pool.
+
+Additionally, there is no bid price because Panoptions cannot be resold. Rather, Panoptions may be closed at any time by returning the Liquidity Provider (LP) Token to the AMM pool along with any premia owed. The remaining amount (if any) is kept by the investor as profit.
+
+Although there is no bid-ask spread in Panoptic, Panoptic *does* charge a [spread](/docs/panoptic-protocol/premium#net-gross-and-owed-fees-with-spread) based on the level of liquidity of the option.
+
+### Example (TradFi)
+Suppose there is an American-Style Call Option on Ether with the following details:
+- Underlying asset: Ether (ETH)
+- Contract size: 100 ETH
+- Strike price: $2,500
+- Expiration date: December 31, 2023
+
+An investor looking to purchase this option might see the following Bid and Ask prices on the options exchange:
+- Bid price: $190/ETH
+- Ask price: $200/ETH
+
+In this example, the investor can purchase the option contract at the Ask price of $200/ETH ($20,000). This means they would have to pay a $20,000 premium to acquire the right to buy 100 ETH at a price of $2,500 per ETH any time before or on December 31, 2023. If the investor wishes to sell the option contract later, they would receive the Bid price, which is currently $190/ETH ($19,000) in this example. The Bid-Ask spread, which is $10/ETH ($200 - $190), represents the cost of trading the option and the level of liquidity in the market for this specific Ethereum option.
+
+### Example (Panoptic)
+Suppose there is a Panoptic Call Option on Ether with the following details:
+- Underlying asset: Ether (ETH)
+- Contract size: 0.5 ETH
+- Strike price (K): 2,500 USDC
+- Expiration date: None
+- Width: r = 1.5 (50%)
+- Numeraire (quote asset): USDC
+
+In this example, the investor can purchase the option by borrowing Liquidity Provider (LP) Tokens through Panoptic. The Ask price is always 0 USDC. This means they would NOT have to pay any upfront premium to acquire the right to buy 0.5 ETH at a price of 2,500 USDC/ETH at any time. Rather the Panoptic protocol charges a streaming premia, which accumulates every block (on Ethereum mainnet that's roughly every 12 seconds).
+
+The premia accrued at each block is based on 2 factors:
+1. The range of the Panoption
+2. The trading activity & liquidity in the underlying AMM pool
+
+In this case, the range (1) of the Panoptic Call Option is 1,666.66 USDC to 3,750 USDC. It is calculated as $$Price Lower = \frac{K}{r}$$ and $$Price Upper = K \cdot r$$. As long as the price of ETH trades between 1,666.66 USDC and 3,750 USDC in Uniswap's ETH-USDC pool, then premia will accrue. If the price of ETH trades outside of that range (e.g. ETH price = 1500 USDC or ETH price = 4,000 USDC), then the Panoption will not accrue any additional premia.
+
+The premia accrued by the Panoptic Call Option also depends on the trading activity & liquidity (2) in Uniswap's ETH-USDC pool. The more trading activity there is, the higher the premia accrued by the Panoptic Call Option. The lower the liquidity there is, the higher the premia accrued by the Panoptic Call Option.
+
+In summary, the premia accrued by the Panoption at each block is equal to the fees the liquidity *would* have earned had it remained as a Liquidity Provider (LP) Token position in the underlying AMM pool.
+
+When the investor wishes to close the Panoptic Call Option, he/she must return an amount equal to the value of the liquidity *had* it remained as a Liquidity Provider (LP) Token position in Uniswap's ETH-USDC pool. Hence, there is no Bid price since the option is essentiallly "exercised" rather than "resold".
+
+In order to close the position, the investor pays the total amount of premia accrued during the life of the Panoption in addition to the value of the borrowed LP Token position. The remaining funds (if any) are kept by the investor as profit.
