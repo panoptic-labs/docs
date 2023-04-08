@@ -1,0 +1,24 @@
+---
+id: in_range
+title: In Range (IR)
+hoverText: Underlying asset's market price is between Panoption's lower and upper price range.
+---
+
+### Term Definition
+A Panoption is considered in range (IR) when the underlying asset's market price is between the Panoption's lower and upper price range.
+
+### Example (Panoptic)
+Suppose an investor purchases a Panoptic Call Option on ETH with the following details:
+
+- Underlying asset: Ether (ETH)
+- Contract size: 0.5 ETH
+- Strike price (K): 2,500 USDC
+- Expiration date: None
+- Width: r = 1.1 (10%)
+- Numeraire (quote asset): USDC
+
+In this case, the investor has the right to buy 0.5 ETH at a price of 2,500 USDC/ETH at any time. The Panoption's range can be computed from its strike price (K) and width (r) as follows:
+- $$Lower Price Range = \frac{K}{r} = \frac{2,500}{1.1} = 2,272 \text{ USDC}$$
+- $$Upper Price Range = K \cdot r = 2,500 \cdot 1.1 = 2,750 \text{ USDC}$$
+
+While the market price of ETH remains in between the lower and upper price range (2,272 &mdash; 2,750 USDC) the Panoption is considered "in range". If the market price of ETH rises above the upper price range (2,750 USDC), the Panoption becomes [out of range](/docs/terms/out_of_range). If the market price of ETH falls below the lower price range (2,272 USDC), the Panoption also becomes out of range.

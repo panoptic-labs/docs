@@ -1,19 +1,19 @@
 ---
 id: at_the_money
-title: At-the-Money (ATM)
+title: At-The-Money (ATM)
 hoverText: Option's strike price equal to the underlying asset's market price.
 ---
 
 ### Term explanation
 
-At-the-Money (ATM) refers to a situation when the strike price of an option is equal to the current market price of the underlying asset.
+At-the-money (ATM) refers to a situation when the strike price of an option is equal to the current market price of the underlying asset.
 
 ### Option Value (TradFi)
 An option that is at-the-money has no intrinsic value, only time value.
 
 Intrinsic value is the difference between the market price of the underlying asset and the option's strike price that results in a profit if the option is exercised. Time value, on the other hand, represents the potential for the option's (intrinsic) value to increase before its expiration due to changes in the underlying asset's price.
 
-At-the-Money options are generally more sensitive to changes in the underlying asset's price and implied volatility, making them popular among traders seeking to profit from short-term market movements. The premia of ATM options consist solely of time value, which decreases as the option approaches its expiration date (time decay). As a result, the value of ATM options is highly dependent on the remaining time to expiration and the expected price movements of the underlying asset.
+At-the-money options are generally more sensitive to changes in the underlying asset's price and implied volatility, making them popular among traders seeking to profit from short-term market movements. The premia of ATM options consist solely of time value, which decreases as the option approaches its expiration date (time decay). As a result, the value of ATM options is highly dependent on the remaining time to expiration and the expected price movements of the underlying asset.
 
 ### Example (TradFi)
 Suppose the current market price of ETH is $2,500. An investor is considering purchasing a call option on ETH with the following details:
@@ -23,7 +23,7 @@ Suppose the current market price of ETH is $2,500. An investor is considering pu
 - Expiration date: December 31, 2023
 - Option premium: $150
 
-In this example, the call option is At-the-Money because the strike price ($2,500) is equal to the current market price of ETH ($2,500). The option has no intrinsic value, as exercising it would not result in any immediate profit. The option's premium of $150 represents its time value, which accounts for the potential future price movements of ETH and the remaining time until the option's expiration.
+In this example, the call option is at-the-money because the strike price ($2,500) is equal to the current market price of ETH ($2,500). The option has no intrinsic value, as exercising it would not result in any immediate profit. The option's premium of $150 represents its time value, which accounts for the potential future price movements of ETH and the remaining time until the option's expiration.
 
 If the market price of ETH increases above $2,500 before the expiration date, the option will gain intrinsic value, and the investor can potentially profit from exercising the option or selling it at a higher price. Conversely, if the market price of ETH remains at or below $2,500, the option's time value will continue to decrease due to time decay, and the option may expire worthless if not exercised or sold before the expiration date (December 31, 2023).
 
@@ -41,13 +41,13 @@ Suppose the current market price of ETH is $2,500. An investor is considering pu
 - Width: r = 1.1 (10%)
 - Numeraire (quote asset): USDC
 
-In this example, the call option is At-the-Money because the strike price ($2,500) is equal to the current market price of ETH ($2,500). The option has no intrinsic value, as exercising it would not result in any immediate profit. The option's streaming premium represents its time value, which accounts for the potential future price movements of ETH.
+In this example, the call option is At-the-money because the strike price ($2,500) is equal to the current market price of ETH ($2,500). The option has no intrinsic value, as exercising it would not result in any immediate profit. The option's streaming premium represents its time value, which accounts for the potential future price movements of ETH.
 
 There are four (4) scenarios:
 1. If the market price of ETH increases above 2,500 USDC (but stays below 2,750 USDC = $$K \cdot r$$) in the future, the Panoption will gain intrinsic value, and the investor can potentially profit from exercising the option. The Panoption continues to accrue premia at each block and still has time value, since it can potentially increase in (intrinsic) value from further upward price movement of ETH in the future.
-2. If the market price of ETH decreases below 2,500 USDC (but stays above 2,272 USDC = $$\frac{K}{r}) in the future, the Panoption will have no intrinsic value. The Panoption continues to accrue premia at each block and still has time value, since it can potentially increase in (intrinsic) value from further upward price movement of ETH in the future.
+2. If the market price of ETH decreases below 2,500 USDC (but stays above 2,272 USDC = $$\frac{K}{r}$$) in the future, the Panoption will have no intrinsic value. The Panoption continues to accrue premia at each block and still has time value, since it can potentially increase in (intrinsic) value from further upward price movement of ETH in the future.
 3. If the market price of ETH increases above 2,750 USDC ($$K \cdot r$$) in the future, the Panoption will gain a significant amount of intrinsic value (>10%), and the investor can potentially profit from exercising the option. The Panoption does NOT accrue additional premia (as long as the market price of ETH stays above 2,750 USDC) and does NOT have time value, since it is deeply in-the-money ([ITM](/docs/terms/itm)) and unlikely to become worthless. 
-4. If the market price of ETH decreases below 2,272 USDC ($$\frac{K}{r}) in the future, the Panoption will have no intrinsic value. The Panoption does NOT accrue additional premia (as long as the market price of ETH stays below 2,272 USDC) and does NOT have time value, since it is deeply out-of-the-money ([OTM](/docs/terms/otm)) and likely to remain worthless.
+4. If the market price of ETH decreases below 2,272 USDC ($$\frac{K}{r}$$) in the future, the Panoption will have no intrinsic value. The Panoption does NOT accrue additional premia (as long as the market price of ETH stays below 2,272 USDC) and does NOT have time value, since it is deeply out-of-the-money ([OTM](/docs/terms/otm)) and likely to remain worthless.
 
 ### Summary
 Panoptions are similar to TradFi Options in that:
@@ -59,4 +59,4 @@ Panoptions differ from TradFi options in that:
 2. The time value of a Panoption is unaffected by the spot price (assuming the Panoption does not go [out of range](/docs/terms/out_of_range)), whereas in TradFi options the time value gradually increases as the option becomes nearer-the-money.
 3. The time value of a Panoption immediately goes to 0 should the the market price of the underlying asset fall "[out of range](/docs/terms/out_of_range)", whereas in TradFi options the theta gradually goes to 0 as the option becomes farther-the-money.
 
-<blockquote class="twitter-tweet"><p lang="ro" dir="ltr">3/13 Fees collected<br>• Determined by theta (Θ) of LP position<br><br>🕒 Θ: Rate of time decay (dV/dτ)<br>💰 dV = fees collected<br>🧊 dτ = 1 block<br><br>→ Θ = fees per block 🤯<br><br>✅ Near the money: Θ &gt; 0<br>❌ Far the money: Θ = 0 <a href="https://t.co/Lbp2QPTKYJ">pic.twitter.com/Lbp2QPTKYJ</a></p>&mdash; Panoptic (@Panoptic_xyz) <a href="https://twitter.com/Panoptic_xyz/status/1625963222015832064?ref_src=twsrc%5Etfw">February 15, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+![Call Option Graphic 2](https://raw.githubusercontent.com/panoptic-labs/docs/main/static/img/theta.png)
