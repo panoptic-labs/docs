@@ -16,13 +16,6 @@ This core result emerges from the simple observation that providing concentrated
 import PanopticUniswapRelationship from './PanopticUniswapRelationship';
 
 <PanopticUniswapRelationship />
-<ThemedImage    
-  alt="LP-Put-Option"
-  sources={{
-    light: useBaseUrl('/img/ETH-USDC LP.png'),
-    dark: useBaseUrl('/img/ETH-USDC LP.png'),
-  }}
-/>
 
 This means that Uniswap v3 LP tokens can be used as a primitive for an options contract.
 While users can already sell options by providing liquidity in the UniswapV3Pool smart contracts, what Panoptic enables is the capital-efficient minting of options in a "peer-to-protocol" manner by facilitating the minting of LP tokens as long/short puts and calls.
