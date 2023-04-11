@@ -11,7 +11,18 @@ The key ideas behind Panoptic.
 ## What is the relationship between Panoptic and Uniswap v3?
     
 The core idea behind Perpetual Options is that Uniswap v3 liquidity provider (LP) positions can be seen as tokenized short puts.
-This core result emerges from the simple observation that providing concentrated liquidity in Uniswap v3 generates a payoff that is mathematically identical to selling a put option.
+This core result emerges from the simple observation that providing concentrated liquidity in Uniswap v3 generates a payoff that is mathematically identical to selling a put option.  
+
+import PanopticUniswapRelationship from './PanopticUniswapRelationship';
+
+<PanopticUniswapRelationship />
+<ThemedImage    
+  alt="LP-Put-Option"
+  sources={{
+    light: useBaseUrl('/img/ETH-USDC LP.png'),
+    dark: useBaseUrl('/img/ETH-USDC LP.png'),
+  }}
+/>
 
 This means that Uniswap v3 LP tokens can be used as a primitive for an options contract.
 While users can already sell options by providing liquidity in the UniswapV3Pool smart contracts, what Panoptic enables is the capital-efficient minting of options in a "peer-to-protocol" manner by facilitating the minting of LP tokens as long/short puts and calls.
