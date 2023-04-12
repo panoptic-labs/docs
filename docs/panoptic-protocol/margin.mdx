@@ -35,4 +35,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   }}
 />
 
+In the figure above, two key elements are illustrated:
+1. In-the-money (ITM) amount: This represents the intrinsic value of the option. Essentially, it is the loss incurred by the seller in the event the buyer exercises the option. In this situation, the seller is obligated to sell the underlying asset at a preferential price, which results in a loss for them.
+2. Required collateral: This is the amount of collateral that the seller must post to cover any potential losses that may arise from selling the option.
 
+It is important to note that the required collateral (depicted by the blue line) is consistently higher than the ITM amount (represented by the red line) in the figure. This design feature ensures that there is a sufficient "buffer" of collateral to protect the protocol against sudden losses that could stem from extreme price movements. This additional layer of protection helps maintain the overall stability and security of the system.
