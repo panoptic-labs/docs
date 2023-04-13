@@ -319,7 +319,7 @@ def _sellCollateralRatio(utilization):
     elif utilization > Umid:
         return max_ratio
     else:
-        return base_ratio + (max_ratio - base_ratio)*(Umid - utilization) / (Umid - Umin)     
+        return base_ratio + (max_ratio - base_ratio)*(Umin - utilization) / (Umin - Umid)     
     
     
 buyingPowerRequirement = {}   
