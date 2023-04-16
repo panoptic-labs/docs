@@ -50,31 +50,6 @@ Tracks and manages collateral using a shares model.
 
 ---
 
-
-## Protocol Interactions
-
-(diagram here)
-
-### Deposit / Withdraw
-
-### Mint / Burn Position
-
-<ThemedImage
-  alt="Commissions"
-  sources={{
-    light: useBaseUrl('/img/contract-architecture.svg'),
-    dark: useBaseUrl('/img/contract-architecture.svg'),
-  }}
-/>
-
-
-### Delegate / Revoke
-
-### ForceExercise / Liquidate
-
-
----
-
 ## Events
 
 
