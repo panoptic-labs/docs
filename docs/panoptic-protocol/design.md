@@ -59,13 +59,6 @@ Second, users pay a trading fee whenever an option is minted/burned in the money
 This is because minting/burning an in-the-money option results in assets being swapped in the Uniswap v3 pool. 
 This fee exists to compensate for the swap fee that is paid to the Uniswap pool as well as any price slippage from the Uniswap pool, and it is set to be equal to twice (2x) the Uniswap pool swap fee.
 
-## Manipulation Protections
-Many flash-loan based attacks involve the borrowing of a large amount of funds (sometimes at zero cost!) with the goal of manipulating the price of an asset or token balance in a smart contract.
-Importantly, flash-loan attacks require all funds to be paid back in the same block.
-
-To prevent these types of attack, the Panoptic Protocol prevents funds from being withdrawn in the same block they were deposited.
-Similarly, options cannot be minted and burned in the same block. 
-
 ## Computed quantities 
 Several computed quantities are derived from the token balance in the Panoptic and Uniswap v3 pools.
 
