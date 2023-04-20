@@ -67,11 +67,15 @@ Measure of the rate of change of an option's delta
 Measures of risk in options pricing
 
 
-### [Implied Volatility](/docs/terms/iv) 
+### [Implied Volatility](/docs/terms/implied_volatility) 
 Measure of expected volatility of the underlying asset
 
 
-### [In-the-Money (ITM)](/docs/terms/itm) 
+### [In Range (IR)](/docs/terms/in_range)
+When the underlying asset's market price is between the Panoption's lower and upper price range
+
+
+### [In-the-Money (ITM)](/docs/terms/in_the_money) 
 Option with strike price favorable relative to the underlying asset's market price
 
 
@@ -79,7 +83,7 @@ Option with strike price favorable relative to the underlying asset's market pri
 Value of an option if exercised immediately
 
 
-### [Iron Condor](/docs/terms/ironCondor) 
+### [Iron Condor](/docs/terms/iron_condor) 
 Options strategy involving selling out-of-the-money calls and puts
 
 
@@ -103,11 +107,11 @@ Theoretical value of the underlying asset represented by an option
 A list of options available for a specific underlying asset
 
 
-### [Option Premium](/docs/terms/premium) 
-The price paid by the buyer of an option to the seller.
+### [Out of Range (OOR)](/docs/terms/out_of_range)
+When the underlying asset's market price is above tjhe Panoption's upper price range or below the Panoption's lower price range
 
 
-### [Out of the Money](/docs/terms/otm) 
+### [Out of the Money](/docs/terms/out_of_the_money) 
 An option with no intrinsic value
 
 
@@ -119,7 +123,11 @@ A perpetual, oracle-less, decentralized, option based on Uniswap V3.
 Options with no expiration date
 
 
-### [Price Oracles in Blockchains](/docs/terms/oracles) 
+### [Premium](/docs/terms/premium) 
+The price paid by the buyer of an option to the seller.
+
+
+### [Price Oracles in Blockchains](/docs/terms/price_oracles) 
 External data providers for blockchain-based smart contracts
 
 
