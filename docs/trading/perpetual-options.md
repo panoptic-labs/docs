@@ -5,7 +5,7 @@ sidebar_position: 2
 # Perpetual options
 
 
-Perpetual options (also known as XPOs) are financial derivatives that give investors the right (but not obligation) to buy or sell an asset at a specified price *at any time*. This is in contrast to traditional options that have a predetermined expiry date to the contract. Perpetual options give investors the flexibility to exercise their option whenever they see fit. 
+Perpetual options (also known as [XPOs](https://www.investopedia.com/terms/p/perpetual-option.asp)) are financial derivatives that give investors the right (but not obligation) to buy or sell an asset at a specified price *at any time*. This is in contrast to traditional options that have a predetermined expiry date to the contract. Perpetual options give investors the flexibility to exercise their option whenever they see fit. 
 
 Intuitively, perpetual options are (traditional) options contracts&mdash;with a very short expiration date&mdash;that is continually rolled over right before expiring. 
 
