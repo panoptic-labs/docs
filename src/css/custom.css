@@ -6,6 +6,12 @@
 
 /* You can override the default Infima variables here. */
 :root {
+  --color-body: #ffffff;
+  --color-card: #fbfbfb;
+  --color-primary: #4e14d0;
+  --color-text-primary: #323232;
+  --color-text-secondary: #8d8e94;
+  --color-link: #4e14d0;
   --ifm-color-primary: hsl(262, 49%, 45%);
   --ifm-color-primary-dark: hsl(262, 49%, 42%);
   --ifm-color-primary-darker: hsl(262, 49%, 40%);
@@ -14,20 +20,27 @@
   --ifm-color-primary-lighter: hsl(262, 49%, 50%);
   --ifm-color-primary-lightest: hsl(262, 49%, 56%);
   --ifm-color-navbar-links: hsl(257, 68%, 69%);
-  --ifm-font-family-base: 'Inter';
+  --ifm-font-family-base: "Inter";
   --ifm-font-size-base: 16px;
-  --ifm-font-weight-semibold: 400;  
+  --ifm-font-weight-semibold: 400;
   --ifm-font-weight-bold: 700;
   --ifm-code-font-size: 75%;
   --ifm-global-spacing: 2rem;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --ifm-alert-padding-vertical: 12px;  
+  --ifm-alert-padding-vertical: 12px;
   --doc-sidebar-width: 400px;
+  --ifm-navbar-height: auto;
+  --ifm-navbar-padding-vertical: 23px;
+  --ifm-navbar-padding-horizontal: 70px;
 }
 
-
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+[data-theme="dark"] {
+  --color-body: #0f0426;
+  --color-card: rgba(50, 46, 57, 0.51);
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #f3f3f3;
+  --color-link: #28cb95;
   --ifm-color-primary: hsl(257, 68%, 55%);
   --ifm-color-primary-dark: hsl(257, 68%, 51%);
   --ifm-color-primary-darker: hsl(257, 68%, 48%);
@@ -40,21 +53,32 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-div[class^='announcementBar_'] {
-  background: repeating-linear-gradient(35deg, hsl(336, 100%, 90%), hsl(336, 100%, 90%) 20px, hsl(298, 100%, 82%) 10px, hsl(298, 100%, 82%) 40px);
+div[class^="announcementBar_"] {
+  background: repeating-linear-gradient(
+    35deg,
+    hsl(336, 100%, 90%),
+    hsl(336, 100%, 90%) 20px,
+    hsl(298, 100%, 82%) 10px,
+    hsl(298, 100%, 82%) 40px
+  );
   height: 2.5em;
   font-family: var(--ifm-font-family-base), sans-serif;
   font-weight: var(--ifm-heading-font-weight);
   font-size: 1.25em;
 }
-
-.navbar__link {
-  color: var(--ifm-color-navbar-links);
+nav[aria-label="Main"] {
+  display: none;
 }
 
 .navbar--dark {
-  box-shadow: 0 1px 2px 0 hsla(263,100%,100%,.9);
-  background: radial-gradient(circle at 100%, hsl(262, 94%, 20%) 2% 0%, hsl(262, 49%, 13%) 15% 7%, hsl(262, 94%, 24%) 47% 53%, hsl(262, 49%, 13%) 80%);
+  box-shadow: 0 1px 2px 0 hsla(263, 100%, 100%, 0.9);
+  background: radial-gradient(
+    circle at 100%,
+    hsl(262, 94%, 20%) 2% 0%,
+    hsl(262, 49%, 13%) 15% 7%,
+    hsl(262, 94%, 24%) 47% 53%,
+    hsl(262, 49%, 13%) 80%
+  );
 }
 
 .alert {
@@ -80,25 +104,42 @@ div[class^='announcementBar_'] {
 }
 
 .footer {
-  box-shadow: 0 -1px 2px 0 hsla(263,100%,100%,.9);
-  background: radial-gradient(circle at 100%, hsl(262, 94%, 20%) 2% 0%, hsl(262, 49%, 13%) 15% 7%, hsl(262, 94%, 24%) 47% 53%, hsl(262, 49%, 13%) 80%);
+  box-shadow: 0 -1px 2px 0 hsla(263, 100%, 100%, 0.9);
+  background: radial-gradient(
+    circle at 100%,
+    hsl(262, 94%, 20%) 2% 0%,
+    hsl(262, 49%, 13%) 15% 7%,
+    hsl(262, 94%, 24%) 47% 53%,
+    hsl(262, 49%, 13%) 80%
+  );
 }
 
-.html { 
+.html {
   font-family: var(--ifm-font-family-base), "system-ui";
 }
 
-html[data-theme='dark'] {
+html[data-theme="dark"] {
   background-position: 0px 25vh;
-  background: radial-gradient(circle at 100%, hsla(262, 94%, 80%, 0.1) 2% 0%, hsla(262, 69%, 100%, 0.1) 15% 7%, hsla(262, 94%, 76%, 0.1) 47% 53%, hsla(262, 69%, 87%, 0.1) 80%);
+  background: radial-gradient(
+    circle at 100%,
+    hsla(262, 94%, 80%, 0.1) 2% 0%,
+    hsla(262, 69%, 100%, 0.1) 15% 7%,
+    hsla(262, 94%, 76%, 0.1) 47% 53%,
+    hsla(262, 69%, 87%, 0.1) 80%
+  );
 
   /* any other colors you wish to overwrite */
 }
 
-html[data-theme='light'] {
-
+html[data-theme="light"] {
   background-position: 0px 25vh;
-  background: radial-gradient(circle at 100%, hsla(262, 94%, 20%, 0.05) 2% 0%, hsla(262, 49%, 13%, 0.05) 15% 7%, hsla(262, 94%, 24%, 0.05) 47% 53%, hsla(262, 49%, 13%, 0.05) 80%);
+  background: radial-gradient(
+    circle at 100%,
+    hsla(262, 94%, 20%, 0.05) 2% 0%,
+    hsla(262, 49%, 13%, 0.05) 15% 7%,
+    hsla(262, 94%, 24%, 0.05) 47% 53%,
+    hsla(262, 49%, 13%, 0.05) 80%
+  );
   /* any other colors you wish to overwrite */
 }
 
@@ -107,10 +148,16 @@ html[data-theme='light'] {
 }
 
 @supports (font-variation-settings: normal) {
-  .html { font-family: "Inter var", "system-ui"; }
+  .html {
+    font-family: "Inter var", "system-ui";
+  }
 }
 
-[data-theme='light'] img[src$='#gh-dark-mode-only'],
-[data-theme='dark'] img[src$='#gh-light-mode-only'] {
+[data-theme="light"] img[src$="#gh-dark-mode-only"],
+[data-theme="dark"] img[src$="#gh-light-mode-only"] {
   display: none;
+}
+
+.bg-body {
+  background-color: var(--color-body) !important;
 }

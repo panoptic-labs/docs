@@ -1,0 +1,49 @@
+.toggle-theme {
+  border: 1px solid #f2f2f2;
+  border-radius: 100px;
+  display: flex;
+  padding: 6px;
+  gap: 6px;
+}
+
+.toggle-theme_button {
+  width: 37px;
+  height: 37px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  display: block;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.toggle-theme_button path,
+.toggle-theme_button rect {
+  color: #8d8e94;
+}
+
+.toggle-theme_button circle {
+  color: #f2f2f2;
+}
+
+[data-theme="dark"] .toggle-theme {
+  border-color: #8d8e94;
+}
+
+[data-theme="dark"] .toggle-theme_button path,
+[data-theme="dark"] .toggle-theme_button rect {
+  color: #8d8e94;
+}
+
+[data-theme="dark"] .toggle-theme_button circle {
+  color: #323232;
+}
+
+.toggle-theme_button[data-active="true"] path,
+.toggle-theme_button[data-active="true"] rect {
+  color: #ffffff;
+}
+
+.toggle-theme_button[data-active="true"] circle {
+  color: var(--color-primary);
+}

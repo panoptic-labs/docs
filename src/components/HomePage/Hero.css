@@ -1,0 +1,56 @@
+.hero {
+  display: flex;
+  gap: 25px;
+  background: transparent;
+  padding: 0 0 0 180px;
+}
+
+.hero__content {
+  max-width: 415px;
+  width: 100%;
+}
+
+.hero__planet {
+  position: relative;
+  max-width: 821px;
+  width: 100%;
+}
+
+.hero__planet img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.content__title {
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 97px;
+  letter-spacing: -0.02em;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.content__subtitle {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 34px;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+}
+
+.content__description {
+  display: inline-block;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+  color: var(--color-text-secondary);
+  margin-top: 19.87px;
+}
+
+.content__buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 40px;
+}

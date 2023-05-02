@@ -1,0 +1,36 @@
+.header {
+  padding: 23px 71px 18px 70px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background: var(--color-body);
+  z-index: 20;
+}
+
+.header__logo {
+  display: block;
+}
+
+.header__logo img {
+  display: inherit;
+  margin-right: 42px;
+}
+
+.header__nav {
+  display: flex;
+  gap: 40px;
+}
+
+.nav__link {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+}
+
+.nav__link:hover {
+  color: inherit;
+  text-decoration: none;
+}

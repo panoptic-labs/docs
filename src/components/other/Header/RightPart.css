@@ -1,0 +1,5 @@
+.right-part {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}
