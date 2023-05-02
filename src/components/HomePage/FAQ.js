@@ -1,44 +1,27 @@
-import React, { useMemo, useState } from "react";
+import React, { useState, lazy, Suspense } from "react";
 
 import "./FAQ.css";
-import Link from "@docusaurus/Link";
 import Button from "../other/Button";
+import useResponsive from "../../hooks/useResponsive";
+
+const GridPosts = lazy(() => import("./FAQ/GridPosts"));
+const AccordionPosts = lazy(() => import("./FAQ/AccordionPosts"));
 
 const FAQ = () => {
+  const { isTabletWidth } = useResponsive();
+  const stopIndex = isTabletWidth ? 3 : 5;
   const [showMore, setShowMore] = useState(false);
-
-  const faqToRender = useMemo(() => {
-    const list = [];
-
-    for (let i = 0; i < faq.length; i += 6) {
-      if (!showMore && i > 5) break;
-
-      list.push(faq.slice(i, i + 6));
-    }
-
-    return list;
-  }, [showMore, faq]);
 
   return (
     <section className="faq">
       <h2 className="faq__title">F.A.Q.</h2>
-      {faqToRender.map((posts, idx) => (
-        <div className="faq__posts" key={idx}>
-          {posts.map((post) => (
-            <div key={post.title} className="faq__post">
-              <h3 className="post__title">{post.title}</h3>
-              <div>
-                {!!post.description ? (
-                  <p className="post__description">{post.description}</p>
-                ) : null}
-                <Link className="post__link" to={post.link}>
-                  Learn more
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
-      ))}
+      <Suspense fallback={null}>
+        {isTabletWidth ? (
+          <AccordionPosts faq={faq} showMore={showMore} stopIndex={stopIndex} />
+        ) : (
+          <GridPosts faq={faq} showMore={showMore} stopIndex={stopIndex} />
+        )}
+      </Suspense>
       {!showMore && (
         <Button
           className="faq__load-more"

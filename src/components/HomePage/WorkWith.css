@@ -17,17 +17,21 @@
   color: var(--color-primary);
 }
 
-.work-with__partners {
+[data-theme="dark"] .title__main {
+  color: var(--color-link);
+}
+
+.work-with__coins {
   padding: 40px 0;
 }
 
-.partners__cards {
+.coins__cards {
   display: flex;
   justify-content: center;
   gap: 20px;
 }
 
-.partners__card {
+.coins__card {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -65,7 +69,7 @@
   color: var(--color-text-secondary);
 }
 
-.partners__pagination {
+.coins__pagination {
   display: flex;
   gap: 4px;
   justify-content: center;
@@ -85,9 +89,18 @@
   transition: all 0.3s;
 }
 
+[data-theme="dark"] .pagination_button {
+  background-color: #393443;
+  opacity: 1;
+}
+
 .pagination_active {
   width: 40px;
   opacity: 1;
+}
+
+[data-theme="dark"] .pagination_active {
+  background-color: var(--color-link);
 }
 
 .work-with__features {
@@ -131,13 +144,42 @@
   background: #0c0c0c url("/img/features-2.svg") no-repeat 100% 100%;
 }
 
+[data-theme="dark"] .features__card:nth-child(2) {
+  background: var(--color-card) url("/img/features-2.svg") no-repeat 100% 100%;
+}
+
 .features__card:nth-child(3) {
   background: url("/img/features-3.svg") no-repeat 100% 100%,
     linear-gradient(132.17deg, #9086f2 -0.95%, #bdb8ff 51.23%, #9086f2 105.64%);
 }
 
-[data-theme="dark"] .partners__card {
+[data-theme="dark"] .coins__card {
   background: rgba(50, 46, 57, 0.51);
   border: 1px solid #413755;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1024px) {
+  .work-with {
+    padding-top: 0;
+    margin-top: -20px;
+  }
+
+  .work-with__title {
+    max-width: 325px;
+    margin: 0 auto;
+  }
+
+  .work-with__coins {
+    padding-top: 20px;
+  }
+
+  .work-with__features {
+    flex-direction: column;
+  }
+
+  .features__card {
+    height: 160px;
+    background-position: 100% 0% !important;
+  }
 }

@@ -1,9 +1,12 @@
 import React from "react";
+import { useColorMode } from "@docusaurus/theme-common";
 
 import "./Hero.css";
 import Button from "../other/Button";
 
 const Hero = () => {
+  const { colorMode } = useColorMode();
+
   return (
     <section className="hero">
       <div className="hero__content">
@@ -16,11 +19,11 @@ const Hero = () => {
         </span>
         <div className="content__buttons">
           <Button>Launch App</Button>
-          <Button variant="outlined">Learn mode</Button>
+          <Button variant="outlined">Learn more</Button>
         </div>
       </div>
       <div className="hero__planet">
-        <img src="/img/planet.png" alt="planet" />
+        <img src={`/img/planet-${colorMode}.png`} alt="planet" />
       </div>
     </section>
   );

@@ -3,3 +3,11 @@
   gap: 10px;
   margin-left: auto;
 }
+
+.right-part__menu_button {
+  padding: 12px !important;
+}
+
+.right-part__icon {
+  background: #ffffff;
+}

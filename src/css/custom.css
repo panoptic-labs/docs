@@ -161,3 +161,34 @@ html[data-theme="light"] {
 .bg-body {
   background-color: var(--color-body) !important;
 }
+
+.icon__arrow-left {
+  display: block;
+  width: 16px;
+  height: 16px;
+  mask-image: url("/img/icons/arrow-left.svg");
+  mask-repeat: no-repeat;
+}
+
+.icon__arrow-right {
+  display: block;
+  width: 16px;
+  height: 16px;
+  mask-image: url("/img/icons/arrow-right.svg");
+  mask-repeat: no-repeat;
+}
+
+.icon__external-link {
+  display: block;
+  width: 10px;
+  height: 10px;
+  mask-image: url("/img/icons/external-link.svg");
+  mask-repeat: no-repeat;
+}
+
+.icon__burger {
+  display: block;
+  width: 24px;
+  height: 24px;
+  mask-image: url("/img/icons/burger.svg");
+}

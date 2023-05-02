@@ -1,17 +1,34 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 
 import "./RightPart.css";
 import Button from "../Button";
-import ToggleTheme from "../ToggleTheme";
+import useResponsive from "../../../hooks/useResponsive";
+
+const ToggleTheme = lazy(() => import("../ToggleTheme"));
 
 const RightPart = () => {
+  const { isTabletWidth, isMobileWidth } = useResponsive();
+
   return (
     <div className="right-part">
-      <Button href="/" variant="outlined">
-        Github
-      </Button>
-      <Button to="/">Launch app</Button>
-      <ToggleTheme />
+      {!isMobileWidth && (
+        <>
+          <Button href="/" variant="outlined">
+            Github
+          </Button>
+          <Button to="/">Launch app</Button>
+        </>
+      )}
+      {!isTabletWidth && (
+        <Suspense fallback={null}>
+          <ToggleTheme />
+        </Suspense>
+      )}
+      {isTabletWidth && (
+        <Button className="right-part__menu_button">
+          <i className="icon__burger right-part__icon" />
+        </Button>
+      )}
     </div>
   );
 };

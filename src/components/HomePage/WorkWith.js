@@ -2,15 +2,17 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 
 import "./WorkWith.css";
 import clsx from "clsx";
+import useResponsive from "../../hooks/useResponsive";
 
 const WorkWith = () => {
-  const countOfCards = useRef(12);
+  const { isTabletWidth } = useResponsive();
+  const countOfCards = isTabletWidth ? 6 : 12;
   const [paginator, setPaginator] = useState(1);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setPaginator(
-        Math.ceil(partners.length / countOfCards.current) === paginator
+        Math.ceil(coins.length / countOfCards) === paginator
           ? 1
           : paginator + 1
       );
@@ -19,22 +21,22 @@ const WorkWith = () => {
     return () => {
       clearInterval(interval);
     };
-  }, [countOfCards.current, paginator, setPaginator]);
+  }, [countOfCards, paginator, setPaginator]);
 
   const renderCard = useCallback(
     (name, index) => {
       if (
-        index > paginator * countOfCards.current ||
-        index <= paginator * countOfCards.current - countOfCards.current
+        index > paginator * countOfCards ||
+        index <= paginator * countOfCards - countOfCards
       ) {
         return null;
       }
 
       return (
-        <div className="partners__card" key={`${name}_${index}`}>
+        <div className="coins__card" key={`${name}_${index}`}>
           <div className="card__image">
             <img
-              src={`/img/partners/${name}.png`}
+              src={`/img/coins/${name}.png`}
               width="40"
               height="40"
               alt={name}
@@ -44,7 +46,7 @@ const WorkWith = () => {
         </div>
       );
     },
-    [paginator, countOfCards.current]
+    [paginator, countOfCards]
   );
 
   return (
@@ -52,11 +54,11 @@ const WorkWith = () => {
       <h2 className="work-with__title">
         Panoptic work with <span className="title__main">any ERC20 token</span>
       </h2>
-      <div className="work-with__partners">
-        <div className="partners__cards">{partners.map(renderCard)}</div>
-        <div className="partners__pagination">
+      <div className="work-with__coins">
+        <div className="coins__cards">{coins.map(renderCard)}</div>
+        <div className="coins__pagination">
           {[
-            ...Array(Math.ceil(partners.length / countOfCards.current)).keys(),
+            ...Array(Math.ceil(coins.length / countOfCards)).keys(),
           ].map((key) => (
             <button
               aria-label={key + 1}
@@ -86,7 +88,7 @@ const WorkWith = () => {
   );
 };
 
-const partners = [
+const coins = [
   "wbtc",
   "eth",
   "usdc",

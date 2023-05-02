@@ -16,6 +16,7 @@
 
 .button-contained:hover {
   opacity: 0.9;
+  color: #ffffff;
 }
 
 .button-outlined {

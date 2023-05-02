@@ -106,3 +106,57 @@
   border-color: #28cb95;
   color: #28cb95;
 }
+
+[data-theme="dark"] .faq__load-more:hover {
+  background: #28cb95;
+  border-color: #28cb95;
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .faq__post {
+    display: block;
+    background: var(--color-card);
+    margin-bottom: 10px;
+    padding: 34px 30px 34px 40px;
+    position: relative;
+  }
+
+  .post__title::after,
+  .post__title::before {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 40px;
+    top: 30px;
+    right: 30px;
+    border-radius: 10px;
+  }
+
+  .post__title::after {
+    mask-image: url("/img/icons/arrow-right.svg");
+    mask-repeat: no-repeat;
+    mask-position: 50% 50%;
+    background: var(--color-link);
+    transition: all 0.3s;
+  }
+
+  .post__title::before {
+    border: 1px solid var(--color-link);
+  }
+
+  .react-sanfona-item-expanded > .post__title::after {
+    transform: rotate(90deg);
+  }
+
+  .post__description {
+    padding-top: 24px;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .faq__load-more {
+    margin-top: 30px;
+  }
+}

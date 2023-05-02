@@ -8,6 +8,8 @@ import Hero from "../components/HomePage/Hero";
 import WorkWith from "../components/HomePage/WorkWith";
 import FAQ from "../components/HomePage/FAQ";
 import RecentUpdates from "../components/HomePage/RecentUpdates";
+import Partners from "../components/HomePage/Partners";
+import Footer from "../components/other/Footer";
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
@@ -22,7 +24,9 @@ export default function Home() {
         <WorkWith />
         <FAQ />
         <RecentUpdates />
+        <Partners />
       </main>
+      <Footer />
     </Layout>
   );
 }
