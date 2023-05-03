@@ -1,15 +1,16 @@
 import { useLayoutEffect, useState } from "react";
 
 const useResponsive = () => {
-  const [width, setWidth] = useState(window.outerWidth);
+  const [width, setWidth] = useState(1920);
   const isTabletWidth = width <= 1024;
   const isMobileWidth = width <= 767;
 
   useLayoutEffect(() => {
-    const handleResize = (event) => {
-      setWidth(event.target.outerWidth);
+    const handleResize = () => {
+      setWidth(window.outerWidth);
     };
 
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => {
