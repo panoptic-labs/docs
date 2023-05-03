@@ -93,6 +93,11 @@
     transform: translateX(calc(-50% - 15px));
   }
 
+  .hero__content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
   .content__title {
     font-size: 60px;
     line-height: 73px;
@@ -109,7 +114,6 @@
   }
 
   .content__buttons {
-    flex-wrap: nowrap;
     gap: 20px;
   }
 
