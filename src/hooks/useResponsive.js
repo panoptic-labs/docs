@@ -1,11 +1,11 @@
-import { useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const useResponsive = () => {
   const [width, setWidth] = useState(1920);
   const isTabletWidth = width <= 1024;
   const isMobileWidth = width <= 767;
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const handleResize = () => {
       setWidth(window.outerWidth);
     };

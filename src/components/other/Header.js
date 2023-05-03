@@ -1,13 +1,12 @@
-import React, { Suspense, lazy, useState } from "react";
+import React, { useState } from "react";
 import Link from "@docusaurus/Link";
 import { useColorMode } from "@docusaurus/theme-common";
 
 import RightPart from "./Header/RightPart";
 import useResponsive from "../../hooks/useResponsive";
 import "./Header.css";
+import Nav from "./Header/Nav";
 import Sidebar from "./Sidebar";
-
-const Nav = lazy(() => import("./Header/Nav"));
 
 const Header = () => {
   const [isOpenedSidebar, setOpenedSidebar] = useState(false);
@@ -29,21 +28,15 @@ const Header = () => {
         <Link to="/" className="header__logo">
           <img src={logoPath} alt="logo" />
         </Link>
-        {!isTabletWidth && (
-          <Suspense fallback={null}>
-            <Nav />
-          </Suspense>
-        )}
+        {!isTabletWidth && <Nav />}
         <RightPart isOpenedSidebar={isOpenedSidebar} onToggle={handleToggle} />
       </header>
       {isTabletWidth && (
-        <Suspense fallback={null}>
-          <Sidebar
-            isOpenedSidebar={isOpenedSidebar}
-            onClose={handleClose}
-            onToggle={handleToggle}
-          />
-        </Suspense>
+        <Sidebar
+          isOpenedSidebar={isOpenedSidebar}
+          onClose={handleClose}
+          onToggle={handleToggle}
+        />
       )}
     </>
   );

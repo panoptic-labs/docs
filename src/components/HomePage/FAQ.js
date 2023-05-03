@@ -1,11 +1,10 @@
-import React, { useState, lazy, Suspense } from "react";
+import React, { useState } from "react";
 
 import "./FAQ.css";
 import Button from "../other/Button";
 import useResponsive from "../../hooks/useResponsive";
-
-const GridPosts = lazy(() => import("./FAQ/GridPosts"));
-const AccordionPosts = lazy(() => import("./FAQ/AccordionPosts"));
+import GridPosts from "./FAQ/GridPosts";
+import AccordionPosts from "./FAQ/AccordionPosts";
 
 const FAQ = () => {
   const { isTabletWidth } = useResponsive();
@@ -15,13 +14,11 @@ const FAQ = () => {
   return (
     <section className="faq">
       <h2 className="faq__title">F.A.Q.</h2>
-      <Suspense fallback={null}>
-        {isTabletWidth ? (
-          <AccordionPosts faq={faq} showMore={showMore} stopIndex={stopIndex} />
-        ) : (
-          <GridPosts faq={faq} showMore={showMore} stopIndex={stopIndex} />
-        )}
-      </Suspense>
+      {isTabletWidth ? (
+        <AccordionPosts faq={faq} showMore={showMore} stopIndex={stopIndex} />
+      ) : (
+        <GridPosts faq={faq} showMore={showMore} stopIndex={stopIndex} />
+      )}
       {!showMore && (
         <Button
           className="faq__load-more"

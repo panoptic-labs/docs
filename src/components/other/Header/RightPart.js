@@ -1,12 +1,11 @@
-import React, { lazy, Suspense } from "react";
+import React from "react";
 
 import "./RightPart.css";
 import Button from "../Button";
+import ToggleTheme from "../ToggleTheme";
 import useResponsive from "../../../hooks/useResponsive";
 
-const ToggleTheme = lazy(() => import("../ToggleTheme"));
-
-const RightPart = ({ isOpenedSidebar, onToggle }) => {
+const RightPart = ({ onToggle }) => {
   const { isTabletWidth, isMobileWidth } = useResponsive();
 
   return (
@@ -19,11 +18,7 @@ const RightPart = ({ isOpenedSidebar, onToggle }) => {
           <Button to="/">Launch app</Button>
         </>
       )}
-      {!isTabletWidth && (
-        <Suspense fallback={null}>
-          <ToggleTheme />
-        </Suspense>
-      )}
+      {!isTabletWidth && <ToggleTheme />}
       {isTabletWidth && (
         <Button className="right-part__menu_button" onClick={onToggle}>
           <i className="icon__burger right-part__icon" />
