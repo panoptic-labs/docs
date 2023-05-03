@@ -24,78 +24,110 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // footer: {
-      //   style: "dark",
-      //   logo: {
-      //     alt: "Panoptic Logo",
-      //     src: "https://raw.githubusercontent.com/panoptic-labs/docs/4825969722841d1ace89c3837ae05511b96d6426/static/img/logo.svg",
-      //     width: 160,
-      //     height: 160,
-      //   },
-      //   links: [
-      //     {
-      //       title: "Learn",
-      //       items: [
-      //         {
-      //           label: "Intro",
-      //           to: "/docs/intro",
-      //         },
-      //         {
-      //           label: "Options Trading 101",
-      //           to: "/docs/trading/basic-concepts",
-      //         },
-      //         {
-      //           label: "Developers",
-      //           to: "/docs/developers/smart-contracts-overview",
-      //         },
-      //         {
-      //           label: "Glossary",
-      //           to: "/docs/terms/American",
-      //         },
-      //       ],
-      //     },
-      //     {
-      //       title: "Community",
-      //       items: [
-      //         {
-      //           label: "Twitter",
-      //           href: "https://twitter.com/panoptic_xyz",
-      //         },
-      //         {
-      //           label: "Telegram",
-      //           href: "https://t.me/panoptic",
-      //         },
-      //         {
-      //           label: "Discord",
-      //           href: "https://discord.gg/8sX5Af2KXG",
-      //         },
-      //         {
-      //           label: "LinkedIn",
-      //           href: "https://www.linkedin.com/company/panoptic-xyz",
-      //         },
-      //       ],
-      //     },
-      //     {
-      //       title: "More",
-      //       items: [
-      //         {
-      //           label: "GitHub",
-      //           href: "https://github.com/panoptic-labs/docs",
-      //         },
-      //         {
-      //           label: "Substack",
-      //           href: "https://panopticxyz.substack.com",
-      //         },
-      //         {
-      //           label: "Blog",
-      //           href: "https://blog.panoptic.xyz",
-      //         },
-      //       ],
-      //     },
-      //   ],
-      //   copyright: `Copyright © ${new Date().getFullYear()} Axicon Labs Inc.<br><br>
-      //   The content provided is for informational and educational purposes only and is not intended as, nor should it be construed as, financial, investment, or trading advice, or a recommendation to buy, sell, or hold any options. Options trading carries significant risks, including the potential for substantial losses, and may not be suitable for all investors. Before engaging in options trading, you should consult with a qualified financial advisor or other professional to evaluate your specific financial situation and objectives.`,
-      // },
+      navbar: {
+        title: "Panoptic",
+        logo: {
+          alt: "Panoptic Logo",
+          src: "img/logo.svg",
+        },
+        style: "dark",
+        items: [
+          {
+            type: "doc",
+            docId: "intro",
+            position: "left",
+            label: "Docs",
+          },
+          {
+            type: "doc",
+            docId: "faq/faq",
+            position: "right",
+            label: "FAQ",
+          },
+          {
+            href: "https://github.com/panoptic-labs/docs",
+            label: "GitHub",
+            position: "right",
+          },
+          {
+            href: "https://app.panoptic.xyz",
+            label: "App",
+            position: "right",
+          },
+        ],
+      },
+      footer: {
+        style: "dark",
+        logo: {
+          alt: "Panoptic Logo",
+          src: "https://raw.githubusercontent.com/panoptic-labs/docs/4825969722841d1ace89c3837ae05511b96d6426/static/img/logo.svg",
+          width: 160,
+          height: 160,
+        },
+        links: [
+          {
+            title: "Learn",
+            items: [
+              {
+                label: "Intro",
+                to: "/docs/intro",
+              },
+              {
+                label: "Options Trading 101",
+                to: "/docs/trading/basic-concepts",
+              },
+              {
+                label: "Developers",
+                to: "/docs/developers/smart-contracts-overview",
+              },
+              {
+                label: "Glossary",
+                to: "/docs/terms/American",
+              },
+            ],
+          },
+          {
+            title: "Community",
+            items: [
+              {
+                label: "Twitter",
+                href: "https://twitter.com/panoptic_xyz",
+              },
+              {
+                label: "Telegram",
+                href: "https://t.me/panoptic",
+              },
+              {
+                label: "Discord",
+                href: "https://discord.gg/8sX5Af2KXG",
+              },
+              {
+                label: "LinkedIn",
+                href: "https://www.linkedin.com/company/panoptic-xyz",
+              },
+            ],
+          },
+          {
+            title: "More",
+            items: [
+              {
+                label: "GitHub",
+                href: "https://github.com/panoptic-labs/docs",
+              },
+              {
+                label: "Substack",
+                href: "https://panopticxyz.substack.com",
+              },
+              {
+                label: "Blog",
+                href: "https://blog.panoptic.xyz",
+              },
+            ],
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} Axicon Labs Inc.<br><br>
+        The content provided is for informational and educational purposes only and is not intended as, nor should it be construed as, financial, investment, or trading advice, or a recommendation to buy, sell, or hold any options. Options trading carries significant risks, including the potential for substantial losses, and may not be suitable for all investors. Before engaging in options trading, you should consult with a qualified financial advisor or other professional to evaluate your specific financial situation and objectives.`,
+      },
       prism: {
         additionalLanguages: ["solidity"],
         theme: lightCodeTheme,

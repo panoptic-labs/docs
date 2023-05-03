@@ -16,7 +16,7 @@ const Footer = () => {
   );
 
   return (
-    <footer className="footer">
+    <footer className="custom-footer">
       <div className="footer__blured-container">
         <div className="footer__blured-circle_1" />
         <div className="footer__blured-circle_2" />

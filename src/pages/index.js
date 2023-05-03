@@ -1,5 +1,5 @@
 import "inter-ui/inter.css";
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 
@@ -13,6 +13,15 @@ import Footer from "../components/other/Footer";
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
+
+  useLayoutEffect(() => {
+    document.body.dataset.is_landing_page = true;
+
+    return () => {
+      document.body.dataset.is_landing_page = false;
+    };
+  }, []);
+
   return (
     <Layout
       title={`${siteConfig.title} Documentation`}
