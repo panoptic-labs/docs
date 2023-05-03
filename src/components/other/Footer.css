@@ -205,3 +205,42 @@
     margin-top: 40px;
   }
 }
+
+@media (max-width: 767px) {
+  .footer__container {
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+  }
+
+  .footer__container__logo-part {
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .footer__container__logo-part > img {
+    max-width: 200px;
+  }
+
+  .footer__container__learn-part {
+    width: auto;
+    margin-right: auto;
+  }
+
+  .footer__container__community-and-more-part {
+    width: 157px;
+  }
+
+  .more-part__links {
+    flex-wrap: wrap;
+  }
+
+  .logo-part__copyright {
+    margin-top: 40px;
+  }
+
+  .footer__container__description-part {
+    margin-top: 20px;
+    margin-bottom: 2px;
+  }
+}

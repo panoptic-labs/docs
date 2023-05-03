@@ -6,7 +6,7 @@ import useResponsive from "../../../hooks/useResponsive";
 
 const ToggleTheme = lazy(() => import("../ToggleTheme"));
 
-const RightPart = () => {
+const RightPart = ({ isOpenedSidebar, onToggle }) => {
   const { isTabletWidth, isMobileWidth } = useResponsive();
 
   return (
@@ -25,7 +25,7 @@ const RightPart = () => {
         </Suspense>
       )}
       {isTabletWidth && (
-        <Button className="right-part__menu_button">
+        <Button className="right-part__menu_button" onClick={onToggle}>
           <i className="icon__burger right-part__icon" />
         </Button>
       )}

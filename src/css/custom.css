@@ -192,3 +192,16 @@ html[data-theme="light"] {
   height: 24px;
   mask-image: url("/img/icons/burger.svg");
 }
+
+.icon__close {
+  display: block;
+  width: 15px;
+  height: 15px;
+  mask-image: url("/img/icons/close.svg");
+}
+
+.with-icon {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}

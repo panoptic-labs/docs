@@ -18,8 +18,8 @@ const Hero = () => {
           Permissionlessly trade options on any crypto asset
         </span>
         <div className="content__buttons">
-          <Button>Launch App</Button>
-          <Button variant="outlined">Learn more</Button>
+          <Button hasIcon>Launch App</Button>
+          <Button variant="outlined" hasIcon>Learn more</Button>
         </div>
       </div>
       <div className="hero__planet">

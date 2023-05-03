@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useCallback } from "react";
 
 import "./Footer.css";
+import useResponsive from "../../hooks/useResponsive";
 
 const Footer = () => {
+  const { isMobileWidth } = useResponsive();
+
+  const renderCopyright = useCallback(
+    () => (
+      <span className="logo-part__copyright">
+        Copyright {new Date().getFullYear()} Axicon Labs Inc.
+      </span>
+    ),
+    []
+  );
+
   return (
     <footer className="footer">
       <div className="footer__blured-container">
@@ -16,9 +28,7 @@ const Footer = () => {
             src="/img/logo-dark.svg"
             alt="footer logo"
           />
-          <span className="logo-part__copyright">
-            Copyright {new Date().getFullYear()} Axicon Labs Inc.
-          </span>
+          {!isMobileWidth && renderCopyright()}
         </div>
         <div className="footer__container__learn-part">
           <h4 className="learn-part__title">Learn</h4>
@@ -50,6 +60,7 @@ const Footer = () => {
             </a>
           </div>
         </div>
+        {isMobileWidth && renderCopyright()}
         <p className="footer__container__description-part">
           The content provided is for informational and educational purposes
           only and is not intended as, nor should it be construed as, financial,

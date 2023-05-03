@@ -102,8 +102,26 @@
   font-size: 14px;
   line-height: 24px;
   color: var(--color-link);
+  gap: 10px;
 }
 
 .recent-updates__card__link:hover {
+  color: var(--color-text-primary);
   text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .recent-updates {
+    padding: 40px 20px;
+  }
+
+  .recent-updates__head {
+    justify-content: center;
+  }
+
+  .recent-updates__pagination {
+    padding-top: 30px;
+    padding-bottom: 9px;
+    justify-content: center;
+  }
 }

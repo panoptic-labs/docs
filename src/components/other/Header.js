@@ -1,30 +1,51 @@
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useState } from "react";
 import Link from "@docusaurus/Link";
 import { useColorMode } from "@docusaurus/theme-common";
 
 import RightPart from "./Header/RightPart";
 import useResponsive from "../../hooks/useResponsive";
 import "./Header.css";
+import Sidebar from "./Sidebar";
 
 const Nav = lazy(() => import("./Header/Nav"));
 
 const Header = () => {
+  const [isOpenedSidebar, setOpenedSidebar] = useState(false);
   const { isTabletWidth } = useResponsive();
   const { colorMode } = useColorMode();
   const logoPath = `/img/logo-${colorMode}.svg`;
 
+  const handleToggle = () => {
+    setOpenedSidebar((state) => !state);
+  };
+
+  const handleClose = () => {
+    setOpenedSidebar(false);
+  };
+
   return (
-    <header className="header">
-      <Link to="/" className="header__logo">
-        <img src={logoPath} alt="logo" />
-      </Link>
-      {!isTabletWidth && (
+    <>
+      <header className="header">
+        <Link to="/" className="header__logo">
+          <img src={logoPath} alt="logo" />
+        </Link>
+        {!isTabletWidth && (
+          <Suspense fallback={null}>
+            <Nav />
+          </Suspense>
+        )}
+        <RightPart isOpenedSidebar={isOpenedSidebar} onToggle={handleToggle} />
+      </header>
+      {isTabletWidth && (
         <Suspense fallback={null}>
-          <Nav />
+          <Sidebar
+            isOpenedSidebar={isOpenedSidebar}
+            onClose={handleClose}
+            onToggle={handleToggle}
+          />
         </Suspense>
       )}
-      <RightPart />
-    </header>
+    </>
   );
 };
 

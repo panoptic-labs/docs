@@ -96,3 +96,13 @@
     gap: 40px;
   }
 }
+
+@media (max-width: 767px) {
+  .partners {
+    padding: 40px 20px;
+  }
+
+  .partners img {
+    max-width: 130px;
+  }
+}

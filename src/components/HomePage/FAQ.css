@@ -85,9 +85,11 @@
   font-size: 14px;
   line-height: 24px;
   color: var(--color-link);
+  gap: 10px;
 }
 
 .post__link:hover {
+  color: var(--color-text-primary);
   text-decoration: none;
 }
 
@@ -158,5 +160,25 @@
 
   .faq__load-more {
     margin-top: 30px;
+  }
+
+  .faq__post:nth-child(2) > div,
+  .faq__post:nth-child(5) > div {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .faq {
+    padding: 40px 20px;
+  }
+
+  .faq__post {
+    padding: 34px 93px 34px 30px;
+  }
+
+  .post__title {
+    font-size: 22px;
+    line-height: 32px;
   }
 }
