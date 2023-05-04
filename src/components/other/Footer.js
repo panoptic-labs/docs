@@ -53,7 +53,7 @@ const Footer = () => {
               Github <i className="icon__external-link" />
             </a>
             <a className="more-part__link" target="_blank" href="https://research.panoptic.xyz/">
-              Substack <i className="icon__external-link" />
+              Research <i className="icon__external-link" />
             </a>
             <a className="more-part__link" target="_blank" href="https://blog.panoptic.xyz/">
               Blog <i className="icon__external-link" />
