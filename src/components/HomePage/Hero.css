@@ -4,6 +4,8 @@
   background: transparent;
   padding: 0 0 0 180px;
   overflow: hidden;
+  max-width: 1441px;
+  margin: 0 auto;
 }
 
 .hero__content {

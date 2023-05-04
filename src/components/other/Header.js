@@ -25,11 +25,16 @@ const Header = () => {
   return (
     <>
       <header className="header">
-        <Link to="/" className="header__logo">
-          <img src={logoPath} alt="logo" />
-        </Link>
-        {!isTabletWidth && <Nav />}
-        <RightPart isOpenedSidebar={isOpenedSidebar} onToggle={handleToggle} />
+        <div className="header-container">
+          <Link to="/" className="header__logo">
+            <img src={logoPath} alt="logo" />
+          </Link>
+          {!isTabletWidth && <Nav />}
+          <RightPart
+            isOpenedSidebar={isOpenedSidebar}
+            onToggle={handleToggle}
+          />
+        </div>
       </header>
       {isTabletWidth && (
         <Sidebar

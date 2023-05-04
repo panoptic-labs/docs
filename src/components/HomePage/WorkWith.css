@@ -1,6 +1,12 @@
 .work-with {
-  padding: 40px 70px;
   background-color: var(--color-body);
+}
+
+.work-with__container {
+  padding: 40px 70px;
+  max-width: 1441px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .work-with__title {
@@ -187,7 +193,7 @@
 }
 
 @media (max-width: 1024px) {
-  .work-with {
+  .work-with__container {
     padding-top: 0;
     margin-top: -20px;
   }
@@ -226,7 +232,7 @@
 }
 
 @media (max-width: 767px) {
-  .work-with {
+  .work-with__container {
     padding: 0 20px 40px;
   }
 

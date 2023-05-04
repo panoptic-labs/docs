@@ -1,6 +1,12 @@
 .recent-updates {
-  padding: 40px 70px;
   background: var(--color-body);
+}
+
+.recent-updates__container {
+  padding: 40px 70px;
+  max-width: 1441px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .recent-updates__head {
@@ -111,7 +117,7 @@
 }
 
 @media (max-width: 767px) {
-  .recent-updates {
+  .recent-updates__container {
     padding: 40px 20px;
   }
 

@@ -1,5 +1,8 @@
 .partners {
   padding: 40px 70px;
+  max-width: 1441px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .partners__title {

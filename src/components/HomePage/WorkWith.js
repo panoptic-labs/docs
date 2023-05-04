@@ -49,40 +49,43 @@ const WorkWith = () => {
 
   return (
     <section className="work-with">
-      <h2 className="work-with__title">
-        Panoptic work with <span className="title__main">any ERC20 token</span>
-      </h2>
-      <div className="work-with__coins">
-        <div className="coins__cards">{coins.map(renderCard)}</div>
-        <div className="coins__pagination">
-          {[...Array(Math.ceil(coins.length / countOfCards)).keys()].map(
-            (key) => (
-              <button
-                aria-label={key + 1}
-                className={clsx("pagination_button", {
-                  pagination_active: key === paginator - 1,
-                })}
-                onClick={setPaginator.bind(null, key + 1)}
-              />
-            )
-          )}
+      <div className="work-with__container">
+        <h2 className="work-with__title">
+          Panoptic work with{" "}
+          <span className="title__main">any ERC20 token</span>
+        </h2>
+        <div className="work-with__coins">
+          <div className="coins__cards">{coins.map(renderCard)}</div>
+          <div className="coins__pagination">
+            {[...Array(Math.ceil(coins.length / countOfCards)).keys()].map(
+              (key) => (
+                <button
+                  aria-label={key + 1}
+                  className={clsx("pagination_button", {
+                    pagination_active: key === paginator - 1,
+                  })}
+                  onClick={setPaginator.bind(null, key + 1)}
+                />
+              )
+            )}
+          </div>
         </div>
-      </div>
-      <div className="work-with__features">
-        <div className="features__card">
-          <h3>EASY TO USE</h3>
-          <p>Panoptic designed from the ground up to be easy to use..</p>
-          <i className="features__card_bg" />
-        </div>
-        <div className="features__card">
-          <h3>LIQUID MARKETS</h3>
-          <p>Panoptic designed from the ground up to be easy to use..</p>
-          <i className="features__card_bg" />
-        </div>
-        <div className="features__card">
-          <h3>PERPETUAL OPTION</h3>
-          <p>Panoptic designed from the ground up to be easy to use..</p>
-          <i className="features__card_bg" />
+        <div className="work-with__features">
+          <div className="features__card">
+            <h3>EASY TO USE</h3>
+            <p>Panoptic designed from the ground up to be easy to use..</p>
+            <i className="features__card_bg" />
+          </div>
+          <div className="features__card">
+            <h3>LIQUID MARKETS</h3>
+            <p>Panoptic designed from the ground up to be easy to use..</p>
+            <i className="features__card_bg" />
+          </div>
+          <div className="features__card">
+            <h3>PERPETUAL OPTION</h3>
+            <p>Panoptic designed from the ground up to be easy to use..</p>
+            <i className="features__card_bg" />
+          </div>
         </div>
       </div>
     </section>

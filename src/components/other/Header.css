@@ -1,11 +1,17 @@
 .header {
-  padding: 23px 70px 18px;
-  display: flex;
-  align-items: center;
   position: sticky;
   top: 0;
   background: var(--color-body);
   z-index: 20;
+}
+
+.header-container {
+  padding: 23px 70px 18px;
+  display: flex;
+  align-items: center;
+  max-width: 1441px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .header__logo {
@@ -36,7 +42,7 @@
 }
 
 @media (max-width: 767px) {
-  .header {
+  .header-container {
     padding: 17px 20px 14px;
   }
 }
