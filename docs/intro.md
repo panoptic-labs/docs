@@ -50,7 +50,7 @@ Users can access details about the security audits [here](./security/audits)
 #### Quick links
 
 - [Twitter](https://twitter.com/panoptic_xyz)
-- [#ResearchBites](https://panopticxyz.substack.com)
+- [#ResearchBites](https://research.panoptic.xyz/)
 - [Blog](https://blog.panoptic.xyz/)
 - [Telegram](https://t.me/panoptic)
 - [Discord](https://discord.gg/7fE8SN9pRT)
