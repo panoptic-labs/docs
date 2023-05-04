@@ -9,9 +9,9 @@ const katex = require("rehype-katex");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Panoptic Docs",
-  tagline: "Documentation for the Panoptic Protocol",
-  url: "https://docs.panoptic.xyz",
+  title: "Panoptic",
+  tagline: "The Panoptic Protocol",
+  url: "http://panoptic.xyz/",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -115,8 +115,8 @@ const config = {
                 href: "https://github.com/panoptic-labs/docs",
               },
               {
-                label: "Substack",
-                href: "https://panopticxyz.substack.com",
+                label: "Research",
+                href: "https://research.panoptic.xyz/",
               },
               {
                 label: "Blog",
