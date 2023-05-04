@@ -9,12 +9,12 @@ const AccordionPosts = ({ faq, stopIndex, showMore }) => {
 
         return (
           <AccordionItem
-            key={post.title}
+            key={post.id}
             titleClassName="post__title"
             className="faq__post"
             title={post.title}
           >
-            <p className="post__description">{post.description}</p>
+            <p className="post__description">{post.content}</p>
           </AccordionItem>
         );
       })}

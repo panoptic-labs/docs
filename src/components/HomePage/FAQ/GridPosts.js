@@ -1,7 +1,8 @@
-import React, { useMemo } from "react";
-import Link from "@docusaurus/Link";
+import React, { useMemo, useState } from "react";
 
 const GridPosts = ({ faq, stopIndex, showMore }) => {
+  const [openedId, setOpenedId] = useState(null);
+
   const faqToRender = useMemo(() => {
     const list = [];
 
@@ -14,18 +15,43 @@ const GridPosts = ({ faq, stopIndex, showMore }) => {
     return list;
   }, [showMore, faq]);
 
+  const renderPopup = () => {
+    console.log(openedId);
+    if (openedId === null) return null;
+
+    const post = faq.find((post) => post.id === openedId);
+
+    return (
+      <div className="faq__popup">
+        <div className="faq__popup__container">
+          <button
+            className="faq__popup__close"
+            onClick={setOpenedId.bind(null, null)}
+          >
+            <i className="icon__close" />
+          </button>
+          <h4 className="faq__popup__title">{post.title}</h4>
+          <p className="faq__popup__content">{post.content}</p>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <>
       {faqToRender.map((posts, idx) => (
         <div className="faq__posts" key={idx}>
           {posts.map((post) => (
-            <div key={post.title} className="faq__post">
+            <div key={post.id} className="faq__post">
               <h3 className="post__title">{post.title}</h3>
               <div>
                 {!!post.description ? (
                   <p className="post__description">{post.description}</p>
                 ) : null}
-                <Link className="post__link with-icon" to={post.link}>
+                <button
+                  className="post__link with-icon"
+                  onClick={setOpenedId.bind(null, post.id)}
+                >
                   Learn more
                   <svg
                     width="5"
@@ -40,10 +66,11 @@ const GridPosts = ({ faq, stopIndex, showMore }) => {
                       fill="currentColor"
                     />
                   </svg>
-                </Link>
+                </button>
               </div>
             </div>
           ))}
+          {renderPopup()}
         </div>
       ))}
     </>

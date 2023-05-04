@@ -77,7 +77,7 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
-  color: var(--color-text-secondary);
+  color: #8D8E94;
 }
 
 .post__link {
@@ -86,6 +86,9 @@
   line-height: 24px;
   color: var(--color-link);
   gap: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .post__link:hover {
@@ -98,6 +101,79 @@
   margin-top: 40px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.faq__popup {
+  max-width: 641px;
+  width: 100%;
+  position: fixed;
+  z-index: 50;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.faq__popup__container {
+  padding: 40px 50px 60px 40px;
+  background: #fbfbfb;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  z-index: 50;
+  width: 100%;
+  position: relative;
+}
+
+.faq__popup__close {
+  width: 46px;
+  height: 49px;
+  background: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ffffff;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.faq__popup__close > i {
+  background: rgba(50, 46, 57, 0.51);
+}
+
+.faq__popup__title {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  margin-bottom: 30px;
+}
+
+.faq__popup__content {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #8d8e94;
+  margin: 0;
+}
+
+[data-theme="dark"] .faq__popup__container {
+  border: 1px solid #413755;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(27px);
+  background: rgba(50, 46, 57, 0.51);
+  border-radius: 20px;
+}
+
+[data-theme="dark"] .faq__popup__close {
+  background: transparent;
+  border-color: #413755;
+}
+
+[data-theme="dark"] .faq__popup__close > i {
+  background: #ffffff;
 }
 
 [data-theme="dark"] .faq__post {
@@ -174,11 +250,13 @@
   }
 
   .faq__post {
-    padding: 34px 93px 34px 30px;
+    padding: 34px 38px 34px 30px;
   }
 
   .post__title {
+    display: inline-block;
     font-size: 22px;
     line-height: 32px;
+    padding-right: 59px;
   }
 }
