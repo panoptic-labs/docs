@@ -1,3 +1,4 @@
+import Link from "@docusaurus/Link";
 import React from "react";
 
 import "./RightPart.css";
@@ -12,9 +13,11 @@ const RightPart = ({ onToggle }) => {
     <div className="right-part">
       {!isMobileWidth && (
         <>
-          <Button href="/" variant="outlined">
-            Github
-          </Button>
+          <Link to="https://github.com/panoptic-labs">
+            <Button href="/" variant="outlined">
+              Github
+            </Button>
+          </Link>
           <Button to="/">Launch app</Button>
         </>
       )}

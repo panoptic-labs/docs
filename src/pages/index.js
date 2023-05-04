@@ -24,8 +24,8 @@ export default function Home() {
 
   return (
     <Layout
-      title={`${siteConfig.title} Documentation`}
-      description="Docs for the Panoptic Protocol"
+      title={`${siteConfig.title}`}
+      description="Panoptic, the perpetual oracle-free options protocol"
     >
       <Header />
       <main className="bg-body">

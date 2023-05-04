@@ -1,3 +1,4 @@
+import Link from "@docusaurus/Link";
 import React from "react";
 import { useColorMode } from "@docusaurus/theme-common";
 
@@ -12,14 +13,16 @@ const Hero = () => {
       <div className="hero__content">
         <h1 className="content__title">Panoptic</h1>
         <span className="content__subtitle">
-          the perpetual options protocol
+          The perpetual, oracle-free options protocol
         </span>
         <span className="content__description">
           Permissionlessly trade options on any crypto asset
         </span>
         <div className="content__buttons">
           <Button hasIcon>Launch App</Button>
-          <Button variant="outlined" hasIcon>Learn more</Button>
+          <Link to="/docs/intro">
+             <Button variant="outlined" hasIcon>Learn more</Button>
+          </Link>
         </div>
       </div>
       <div className="hero__planet">

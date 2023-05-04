@@ -1,3 +1,4 @@
+import Link from "@docusaurus/Link";
 import React, { useMemo, useState } from "react";
 
 const GridPosts = ({ faq, stopIndex, showMore }) => {
@@ -48,11 +49,8 @@ const GridPosts = ({ faq, stopIndex, showMore }) => {
                 {!!post.description ? (
                   <p className="post__description">{post.description}</p>
                 ) : null}
-                <button
-                  className="post__link with-icon"
-                  onClick={setOpenedId.bind(null, post.id)}
-                >
-                  Learn more
+                <Link to="/docs/faq/" className="post__link with-icon">
+                  Learn more 
                   <svg
                     width="5"
                     height="8"
@@ -66,7 +64,7 @@ const GridPosts = ({ faq, stopIndex, showMore }) => {
                       fill="currentColor"
                     />
                   </svg>
-                </button>
+                </Link>
               </div>
             </div>
           ))}

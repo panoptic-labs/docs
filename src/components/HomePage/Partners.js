@@ -4,7 +4,7 @@ import "./Partners.css";
 
 const Partners = () => {
   return (
-    <section className="partners">
+    <section className="partners" id={'partners'}>
       <h3 className="partners__title">Partners</h3>
       <div className="partners__blocks">
         <div className="partners__invertors__block">

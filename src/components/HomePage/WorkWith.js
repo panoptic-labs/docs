@@ -51,7 +51,7 @@ const WorkWith = () => {
     <section className="work-with">
       <div className="work-with__container">
         <h2 className="work-with__title">
-          Panoptic work with{" "}
+          Panoptic works with{" "}
           <span className="title__main">any ERC20 token</span>
         </h2>
         <div className="work-with__coins">
@@ -73,17 +73,17 @@ const WorkWith = () => {
         <div className="work-with__features">
           <div className="features__card">
             <h3>EASY TO USE</h3>
-            <p>Panoptic designed from the ground up to be easy to use..</p>
+            <p>Panoptic designed from the ground up to be easy to use.</p>
             <i className="features__card_bg" />
           </div>
           <div className="features__card">
             <h3>LIQUID MARKETS</h3>
-            <p>Panoptic designed from the ground up to be easy to use..</p>
+            <p>Panoptic is integrated with Uniswap v3, the largest decentralize exchange on Ethereum</p>
             <i className="features__card_bg" />
           </div>
           <div className="features__card">
             <h3>PERPETUAL OPTION</h3>
-            <p>Panoptic designed from the ground up to be easy to use..</p>
+            <p>Panoptic re-imagines options to make them work on-chain</p>
             <i className="features__card_bg" />
           </div>
         </div>

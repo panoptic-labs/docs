@@ -33,10 +33,10 @@ const Footer = () => {
         <div className="footer__container__learn-part">
           <h4 className="learn-part__title">Learn</h4>
           <div className="learn-part__list">
-            <a>Intro</a>
-            <a>Options Trading 101</a>
-            <a>Developers</a>
-            <a>Glossary</a>
+            <a href="/docs/panoptic-protocol/overview">Protocol Overview</a>
+            <a href="/docs/trading/basic-concepts">Options Trading 101</a>
+            <a href="/docs/developers/smart-contracts-overview">Developers</a>
+            <a href="/docs/terms/glossary">Glossary</a>
           </div>
         </div>
         <div className="footer__container__community-and-more-part">
@@ -49,13 +49,13 @@ const Footer = () => {
           </div>
           <h4 className="more-part__title">More</h4>
           <div className="more-part__links">
-            <a className="more-part__link">
+            <a className="more-part__link" target="_blank" href="https://github.com/panoptic-labs">
               Github <i className="icon__external-link" />
             </a>
-            <a className="more-part__link">
+            <a className="more-part__link" target="_blank" href="https://research.panoptic.xyz/">
               Substack <i className="icon__external-link" />
             </a>
-            <a className="more-part__link">
+            <a className="more-part__link" target="_blank" href="https://blog.panoptic.xyz/">
               Blog <i className="icon__external-link" />
             </a>
           </div>
