@@ -1,42 +1,41 @@
 import "inter-ui/inter.css";
-import React from 'react';
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import React, { useEffect } from "react";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import Layout from "@theme/Layout";
 
-import styles from './index.module.css';
-
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Read the docs!
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
-}
+import Header from "../components/other/Header";
+import Hero from "../components/HomePage/Hero";
+import WorkWith from "../components/HomePage/WorkWith";
+import FAQ from "../components/HomePage/FAQ";
+import RecentUpdates from "../components/HomePage/RecentUpdates";
+import Partners from "../components/HomePage/Partners";
+import Footer from "../components/other/Footer";
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
+
+  useEffect(() => {
+    document.body.dataset.is_landing_page = true;
+
+    return () => {
+      document.body.dataset.is_landing_page = false;
+    };
+  }, []);
+
   return (
     <Layout
-      title={`${siteConfig.title} Documentation`}
-      description="Docs for the Panoptic Protocol">
-      <HomepageHeader />
-      <main>
-        <HomepageFeatures />
+      title={`${siteConfig.title}`}
+      description="Panoptic, the perpetual oracle-free options protocol"
+    >
+      <Header />
+      <main className="bg-body">
+        <Hero />
+        <WorkWith />
+        <FAQ />
+        <RecentUpdates />
+        <Partners />
       </main>
+      <Footer />
     </Layout>
   );
 }

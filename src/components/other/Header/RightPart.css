@@ -1,0 +1,15 @@
+.right-part {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.right-part__menu_button {
+  position: relative;
+  padding: 12px !important;
+  z-index: 50;
+}
+
+.right-part__icon {
+  background: #ffffff;
+}

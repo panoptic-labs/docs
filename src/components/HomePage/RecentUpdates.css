@@ -1,0 +1,133 @@
+.recent-updates {
+  background: var(--color-body);
+}
+
+.recent-updates__container {
+  padding: 40px 70px;
+  max-width: 1441px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.recent-updates__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+.recent-updates__title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.recent-updates__pagination {
+  display: flex;
+  gap: 10px;
+}
+
+.pagination__prev,
+.pagination__next {
+  display: block;
+  background: transparent;
+  color: var(--color-link);
+  border: 1px solid var(--color-link);
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.pagination__next:hover,
+.pagination__prev:hover {
+  background: var(--color-link);
+}
+
+.pagination__prev:hover > .pagination__icon,
+.pagination__next:hover > .pagination__icon {
+  background-color: #ffffff;
+}
+
+.pagination__icon {
+  background-color: var(--color-link);
+}
+
+.recent-updates__cards {
+  margin: 0 -20px;
+}
+
+.recent-updates__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.recent-updates__card_top {
+  display: flex;
+  flex-direction: column;
+}
+
+.recent-updates__card_bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recent-updates__card__title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  margin: 20px 0 10px;
+}
+
+.recent-updates__card__excerpt {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+  color: #8d8e94;
+  margin-bottom: 22px;
+}
+
+.recent-updates__card__date {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  color: #8d8e94;
+}
+
+.recent-updates__card__link {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--color-link);
+  gap: 10px;
+}
+
+.recent-updates__card__link:hover {
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .recent-updates__container {
+    padding: 40px 20px;
+  }
+
+  .recent-updates__head {
+    justify-content: center;
+  }
+
+  .recent-updates__pagination {
+    padding-top: 30px;
+    padding-bottom: 9px;
+    justify-content: center;
+  }
+}

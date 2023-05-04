@@ -1,0 +1,40 @@
+.button {
+  padding: 15px 30px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.button-contained {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.button-contained:hover {
+  opacity: 0.9;
+  color: #ffffff;
+}
+
+.button-outlined {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.button-outlined:hover {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+[data-theme="dark"] .button-outlined {
+  border-color: #8d8e94;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .button-outlined:hover {
+  border-color: var(--color-primary);
+}
