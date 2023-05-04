@@ -24,7 +24,7 @@ export default function Home() {
 
   return (
     <Layout
-      title={`${siteConfig.title}`}
+      title=""
       description="Panoptic, the perpetual oracle-free options protocol"
     >
       <Header />
