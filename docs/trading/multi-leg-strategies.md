@@ -113,7 +113,7 @@ In every case, the synthetic position's value is similar to shorting the asset o
 
 
 
-Want a more visual tutorial of advanced options strategies? Check out our post: [*18 Options Strategies Every Trader Should Know (With Emojis)*](https://panopticxyz.substack.com/p/18-options-strategies-every-trader)!
+Want a more visual tutorial of advanced options strategies? Check out our post: [*18 Options Strategies Every Trader Should Know (With Emojis)*](https://research.panoptic.xyz/p/18-options-strategies-every-trader)!
 
 
 
