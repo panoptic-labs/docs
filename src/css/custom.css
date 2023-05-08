@@ -54,10 +54,10 @@
 div[class^="announcementBar_"] {
   background: repeating-linear-gradient(
     35deg,
-    hsl(336, 100%, 90%),
-    hsl(336, 100%, 90%) 20px,
-    hsl(298, 100%, 82%) 10px,
-    hsl(298, 100%, 82%) 40px
+    hsl(259, 76%, 8%),
+    hsl(259, 76%, 8%) 20px,
+    hsl(258, 82%, 45%) 10px,
+    hsl(258, 82%, 45%) 40px
   );
   height: 2.5em;
   font-family: var(--ifm-font-family-base), sans-serif;

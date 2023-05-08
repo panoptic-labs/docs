@@ -149,39 +149,39 @@ const recentUpdates = [
     excerpt:
       "We are thrilled to announce the official launch of Panoptic Docs, the ultimate resource for understanding our innovative “magical” technology.",
     link: "https://blog.panoptic.xyz/mastering-panoptic-the-definitive-resource-guide-cf6dd50c15c5",
-    date: "2019-04-04 21:52:10",
+    date: "2023-04-04 21:52:10",
   },
   {
     title: "Panoptic Research launches on Substack",
     image: "/img/recent-updates/post-1.png",
     excerpt:
       "The Panoptic liquidity provider (PLP) provides fungible liquidity to the Panoptic pool and receives commission fees in return.",
-    link: "/",
-    date: "2019-10-12 21:52:10",
+    link: "https://blog.panoptic.xyz/panoptic-research-launches-on-substack-abe7473693d6",
+    date: "2023-03-20 21:52:10",
   },
   {
     title: "Panoptic Partners with OpenZeppelin for their Second Smart Contract Audit",
     image: "/img/recent-updates/post-2.png",
     excerpt:
       "The Panoptic liquidity provider (PLP) provides fungible liquidity to the Panoptic pool and receives commission fees in return.",
-    link: "/",
-    date: "2019-10-12 21:52:10",
+    link: "https://blog.panoptic.xyz/panoptic-partners-with-openzeppelin-for-their-second-smart-contract-audit-379e9bd25540",
+    date: "2023-03-08 21:52:10",
   },
   {
     title: "ETH Denver 2023—A Recap",
     image: "/img/recent-updates/post-3.png",
     excerpt:
       "The Panoptic liquidity provider (PLP) provides fungible liquidity to the Panoptic pool and receives commission fees in return.",
-    link: "/",
-    date: "2019-10-12 21:52:10",
+    link: "https://blog.panoptic.xyz/eth-denver-2023-a-recap-8b498abd9196",
+    date: "2023-03-08 21:52:10",
   },
   {
     title: "Panoptic’s V1 Roadmap",
     image: "/img/recent-updates/post-3.png",
     excerpt:
       "The Panoptic liquidity provider (PLP) provides fungible liquidity to the Panoptic pool and receives commission fees in return.",
-    link: "/",
-    date: "2019-10-12 21:52:10",
+    link: "https://blog.panoptic.xyz/panoptics-v1-roadmap-d7b72a8e2005",
+    date: "2023-03-05 21:52:10",
   },
 ];
 
