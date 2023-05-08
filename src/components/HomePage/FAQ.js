@@ -45,21 +45,21 @@ const faq = [
     id: 2,
     title: "How can I use Panoptic?",
     description:
-      "You can access Panoptic by connected your wallet to the Panoptic App, which will be deployed on app.panoptic.xyz",
+      "You can access Panoptic by connecting your wallet to the Panoptic App, which will be deployed on app.panoptic.xyz",
   },
   {
     id: 3,
     title: "What are the key benefits of Panoptic?",
     description:
-      "Options positions in Panoptic have no expiration. Anyone can sell options at any strike on any asset. Options sellers in Panoptic are able to write undercollateralized options. ",
+      "Options positions in Panoptic have no expiration. Anyone can sell options at any strike on any asset. Options sellers in Panoptic are able to write undercollateralized options.",
     content:
-      "Options in Panoptic differ slightly from conventional options. Instead of using a clearinghouse to settle options contracts, the Panoptic protocol uses Liquidity Provider (LP) positions in Uniswap v3 as a fundamental building block for trading long and short options. Panoptic allows users to access new and improved features when options trading: 1) Panoptic options never expire and are perpetual, 2) anybody can deploy an options market on any asset in a permissionless manner, 3) Panoptic enables anyone to lend their capital to options traders as a liquidity provider, 4) Pricing is path-dependent and does not involve counterparties (such as market makers).",
+      "Options in Panoptic differ slightly from conventional options. Instead of using a clearinghouse to settle options contracts, the Panoptic protocol uses Liquidity Provider (LP) positions in Uniswap v3 as a fundamental building block for trading long and short options. Panoptic allows users to access new and improved features when options trading: 1) Panoptic options never expire and are perpetual, 2) Anybody can deploy an options market on any asset in a permissionless manner, 3) Panoptic enables anyone to lend their capital to options traders as a liquidity provider, 4) Pricing is path-dependent and does not involve counterparties (such as market makers).",
   },
   {
     id: 4,
     title: "Which assets can be traded on Panoptic?",
     description:
-      "Panoptic users can create an options market on any token pair that exists on Uniswap V3.",
+      "Panoptic works on any ERC20 token. Panoptic users can create an options market on any token pair that exists on Uniswap V3.",
   },
   {
     id: 5,

@@ -50,7 +50,7 @@ const investors = [
   "blizzard",
 ];
 
-const security = ["abdk", "simtopia", "open-zeppelin"];
+const security = ["open-zeppelin", "abdk", "simtopia"];
 
 const chains = ["etherum", "arbitrum", "optimism", "polygon", "base", "binance"];
 

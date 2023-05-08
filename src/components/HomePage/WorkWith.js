@@ -73,16 +73,16 @@ const WorkWith = () => {
         <div className="work-with__features">
           <div className="features__card">
             <h3>EASY TO USE</h3>
-            <p>Panoptic designed from the ground up to be easy to use.</p>
+            <p>Panoptic is designed from the ground up to be easy to use.</p>
             <i className="features__card_bg" />
           </div>
           <div className="features__card">
             <h3>LIQUID MARKETS</h3>
-            <p>Panoptic is integrated with Uniswap v3, the largest decentralize exchange on Ethereum</p>
+            <p>Panoptic is integrated with Uniswap v3, the largest decentralized exchange on Ethereum</p>
             <i className="features__card_bg" />
           </div>
           <div className="features__card">
-            <h3>PERPETUAL OPTION</h3>
+            <h3>PERPETUAL OPTIONS</h3>
             <p>Panoptic re-imagines options to make them work on-chain</p>
             <i className="features__card_bg" />
           </div>
