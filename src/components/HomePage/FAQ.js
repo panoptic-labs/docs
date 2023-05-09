@@ -8,7 +8,7 @@ import AccordionPosts from "./FAQ/AccordionPosts";
 
 const FAQ = () => {
   const { isTabletWidth } = useResponsive();
-  const stopIndex = 3;
+  const stopIndex = 2;
   const [showMore, setShowMore] = useState(false);
 
   return (
@@ -39,6 +39,8 @@ const faq = [
     id: 1,
     title: "What is Panoptic?",
     description:
+      "The Panoptic protocol enables the minting, trading, and market-making of perpetual put and call options. Trade 24/7 without intermediaries.",
+    content:
       "The Panoptic protocol enables the minting, trading, and market-making of perpetual put and call options. All smart contracts are available 24/7 and users can interact with the Panoptic protocol without the need for intermediaries like banks, brokerage firms, clearinghouses, market makers, or centralized exchanges.",
   },
   {
@@ -46,10 +48,12 @@ const faq = [
     title: "How can I use Panoptic?",
     description:
       "You can access Panoptic by connecting your wallet to the Panoptic App, which will be deployed on app.panoptic.xyz",
+    content:
+      "You can access Panoptic by connecting your wallet to the Panoptic App, which will be deployed on app.panoptic.xyz",
   },
   {
     id: 3,
-    title: "What are the key benefits of Panoptic?",
+    title: "What are the key benefits?",
     description:
       "Options positions in Panoptic have no expiration. Anyone can sell options at any strike on any asset. Options sellers in Panoptic are able to write undercollateralized options.",
     content:
@@ -57,8 +61,10 @@ const faq = [
   },
   {
     id: 4,
-    title: "Which assets can be traded on Panoptic?",
+    title: "Which assets can I trade?",
     description:
+      "Panoptic works on any ERC20 token. Panoptic users can create an options market on any token pair that exists on Uniswap V3.",
+    content:
       "Panoptic works on any ERC20 token. Panoptic users can create an options market on any token pair that exists on Uniswap V3.",
   },
   {
@@ -66,12 +72,16 @@ const faq = [
     title: "Where will Panoptic launch?",
     description:
       "Panoptic will launch on Ethereum mainnet and all EVM-compatible layer 2's where the Uniswap v3 smart contracts have been deployed.",
+    content:
+      "Panoptic will launch on Ethereum mainnet and all EVM-compatible layer 2's where the Uniswap v3 smart contracts have been deployed.",
   },
   {
     id: 6,
-    title: "What does it cost to trade on Panoptic?",
+    title: "What does it cost to trade?",
     description:
-      "In addition to paying gas fees, all options traders pay a fixed commission fee when opening a position. This commission fee will be between 10bps and 60bps, depending on protocol utilization.",
+      "In addition to paying gas fees, all options traders pay a fixed commission fee (10bps - 60bps, depending on pool utilization) to Panoptic liquidity providers when opening a position.",
+    content:
+      "In addition to paying gas fees, all options traders pay a fixed commission fee to Panoptic liquidity providers when opening a position. This commission fee will be between 10bps and 60bps, depending on protocol utilization.",
   },
 ];
 
