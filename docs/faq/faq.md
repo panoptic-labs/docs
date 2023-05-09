@@ -6,6 +6,42 @@ sidebar_position: 1
 There's a good chance it's been asked before :)
 
 <details>
+<summary>What is Panoptic?</summary>
+The Panoptic protocol enables the minting, trading, and market-making of perpetual put and call options. All smart contracts are available 24/7 and users can interact with the Panoptic protocol without the need for intermediaries like banks, brokerage firms, clearinghouses, market makers, or centralized exchanges. 
+</details>
+
+<details>
+<summary>How can I use Panoptic?</summary>
+You can access Panoptic by connecting your wallet to the Panoptic App, which will be deployed on app.panoptic.xyz (COMING SOON...)
+</details>
+
+<details>
+<summary>What are the key benefits?</summary>
+Options in Panoptic differ slightly from conventional options. Instead of using a clearinghouse to settle options contracts, the Panoptic protocol uses Liquidity Provider (LP) positions in Uniswap v3 as a fundamental building block for trading long and short options.
+  
+Panoptic allows users to access new and improved features when options trading:
+1) Panoptic options never expire and are perpetual.
+2) Anybody can deploy an options market on any asset in a permissionless manner.
+3) Panoptic enables anyone to lend their capital to options traders as a liquidity provider.
+4) Pricing is path-dependent and does not involve counterparties (such as market makers).
+</details>
+
+<details>
+<summary>Which assets can I trade?</summary>
+Panoptic works on any ERC20 token. Panoptic users can create an options market on any token pair that exists on Uniswap V3.
+</details>
+
+<details>
+<summary>Where will Panoptic launch?</summary>
+Panoptic will launch on Ethereum mainnet and all EVM-compatible layer 2's where the Uniswap v3 smart contracts have been deployed.
+</details>
+
+<details>
+<summary>What does it cost to trade?</summary>
+In addition to paying gas fees, all options traders pay a fixed commission fee to Panoptic liquidity providers when opening a position. This commission fee will be between 10bps and 60bps, depending on protocol utilization.
+</details>
+
+<details>
 <summary>Is there a token?</summary>
 No. Panoptic does not have a token at this time. 
 </details>
@@ -16,18 +52,13 @@ Testnet is scheduled for September 2023. Mainnet is scheduled for Q4 2023. See o
 </details>
 
 <details>
-<summary>What chain will Panoptic launch on?</summary>
-Panoptic will launch on Ethereum mainnet.
-</details>
-
-<details>
-<summary>Will Panoptic launch on an L2?</summary>
-Yes, after Panoptic launches on Ethereum mainnet.
-</details>
-
-<details>
 <summary>Will there be a code audit?</summary>
 Yes. Panoptic was audited by <a href="https://blog.panoptic.xyz/abdk-completes-panoptics-first-audit-panoptic-announces-second-audit-with-openzeppelin-c7216cdbfd4f">ABDK</a> and is currently undergoing an audit with <a href="https://www.panoptic.xyz/blog-posts/panoptic-x-openzeppelin">OpenZeppelin</a>. There will also be an audit by Code4rena in Q2-Q3 2023. See our <a href="https://blog.panoptic.xyz/panoptics-v1-roadmap-d7b72a8e2005">roadmap</a>.
+</details>
+
+<details>
+<summary>Can I buy and sell options on leverage?</summary>
+Yes. Traders can buy options with up to 10x leverage and sell options with up to 5x leverage under normal market conditions. Please note that <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/buying-power">collateral requirements</a> are dynamic and change in response to pool utilization.
 </details>
 
 <details>
@@ -42,7 +73,7 @@ No. While Panoptic allows you to hedge against Uniswap LP positions by shorting 
 
 <details>
 <summary>What tokens can I trade options on?</summary>
-Any token pair on Uniswap V3. The Panoptic protocol enables permissionless options trading for longtail assets just as Uniswap allows for permissionless spot trading for longtail assets.
+Any ERC20 tokens. The Panoptic protocol enables permissionless options trading for longtail assets just as Uniswap allows for permissionless spot trading for longtail assets.
 </details>
 
 <details>
