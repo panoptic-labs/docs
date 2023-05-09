@@ -18,11 +18,11 @@ You can access Panoptic by connecting your wallet to the Panoptic App, which wil
 <details>
 <summary>What are the key benefits?</summary>
 Options in Panoptic differ slightly from conventional options. Instead of using a clearinghouse to settle options contracts, the Panoptic protocol uses Liquidity Provider (LP) positions in Uniswap v3 as a fundamental building block for trading long and short options.
-  
-Panoptic allows users to access new and improved features when options trading:
-1) Panoptic options never expire and are perpetual.
-2) Anybody can deploy an options market on any asset in a permissionless manner.
-3) Panoptic enables anyone to lend their capital to options traders as a liquidity provider.
+<br /><br />
+Panoptic allows users to access new and improved features when options trading:<br />
+1) Panoptic options never expire and are perpetual.<br />
+2) Anybody can deploy an options market on any asset in a permissionless manner.<br />
+3) Panoptic enables anyone to lend their capital to options traders as a liquidity provider.<br />
 4) Pricing is path-dependent and does not involve counterparties (such as market makers).
 </details>
 
