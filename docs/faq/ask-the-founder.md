@@ -3,7 +3,7 @@ sidebar_position: 2
 ---
 
 # Ask the Founders
-Reach out to us on [Discord](https://discord.com/invite/7fE8SN9pRT) or [email](mailto:hello@panoptic.xyz) if any of your questions aren't covered!
+Reach out to us on [Discord](https://discord.com/invite/7fE8SN9pRT) if any of your questions aren't covered!
 
 ## Meet the Founders
 import ThemedImage from '@theme/ThemedImage';
@@ -27,8 +27,11 @@ Jesper holds a Ph.D. in Applied Physics and Computer Science from Cornell Univer
 
 ## Presentations
 
+### Cornell Blockchain Conference 2023 - DeFi Panel
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zmvZSOG2HNs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ### ETH Denver 2023 - The Panoptic Protocol: a New DeFi Options Paradigm
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Dt5AdCNavjs?start=86" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Dt5AdCNavjs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### ETH Denver 2022 - Riding the Unicorn Uniswap v3 as a Perpetual Option Primitive
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mtd4JphPcuA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
