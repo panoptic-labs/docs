@@ -9,7 +9,7 @@ const Footer = () => {
   const renderCopyright = useCallback(
     () => (
       <span className="logo-part__copyright">
-        Copyright {new Date().getFullYear()} Axicon Labs Inc.
+        Copyright © {new Date().getFullYear()} Axicon Labs Inc. All Rights Reserved. Panoptic™ is a trademark of Axicon Labs Inc. All other trademarks and registered trademarks are the sole property of their respective owners.
       </span>
     ),
     []
