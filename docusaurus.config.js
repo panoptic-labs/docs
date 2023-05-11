@@ -39,6 +39,16 @@ const config = {
             label: "Docs",
           },
           {
+            to: 'blog',
+            label: 'Blog',
+            position: 'left'
+          },
+          {
+            to: 'research',
+            label: 'Research',
+            position: 'left'
+          },
+          {
             type: "doc",
             docId: "faq/faq",
             position: "right",
@@ -187,6 +197,30 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
         },
+        blog: {
+          blogTitle: 'Panoptic Blog',
+          blogDescription: 'All-Things DeFi Options',
+          postsPerPage: 10,
+          blogSidebarTitle: 'All posts',
+          blogSidebarCount: 'ALL',
+          showReadingTime: true,
+          readingTime: ({content, frontMatter, defaultReadingTime}) =>
+            defaultReadingTime({content, options: {wordsPerMinute: 300}}),
+          feedOptions: {
+            type: 'all',
+            copyright: `Copyright © ${new Date().getFullYear()} 2023 Axicon Labs Inc. All Rights Reserved. Panoptic™ is a trademark of Axicon Labs Inc. All other trademarks and registered trademarks are the sole property of their respective owners.`,
+            createFeedItems: async (params) => {
+              const {blogPosts, defaultCreateFeedItems, ...rest} = params;
+              return defaultCreateFeedItems({
+                // keep only the 10 most recent blog posts in the feed
+                blogPosts: blogPosts.filter((item, index) => index < 10),
+                ...rest,
+              });
+            },
+          },
+          remarkPlugins: [math],
+          rehypePlugins: [katex],
+        },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
@@ -201,7 +235,30 @@ const config = {
     },
   ],
 
-  plugins: ["@docusaurus-terminology/parser"],
+  plugins: [
+    "@docusaurus-terminology/parser",
+
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        /**
+         * Required for any multi-instance plugin
+         */
+        id: 'research',
+        /**
+         * URL route for the blog section of your site.
+         * *DO NOT* include a trailing slash.
+         */
+        routeBasePath: 'research',
+        /**
+         * Path to data on filesystem relative to site dir.
+         */
+        path: 'research',
+        remarkPlugins: [math],
+        rehypePlugins: [katex],
+      },
+    ],
+  ],
 };
 
 module.exports = config;

@@ -7,14 +7,14 @@ const Nav = () => {
       <Link to="/docs/intro" className="nav__link">
         Docs
       </Link>
+      <Link to="/blog" className="nav__link">
+        Blog
+      </Link>
+      <Link to="/research" className="nav__link">
+        Research
+      </Link>
       <Link to="/#faq" className="nav__link">
         FAQ
-      </Link>
-      <Link to="/#partners" className="nav__link">
-        Partners
-      </Link>
-      <Link to="/#updates" className="nav__link">
-        Recent Updates
       </Link>
     </nav>
   );
