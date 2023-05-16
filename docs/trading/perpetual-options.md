@@ -29,7 +29,7 @@ Panoptic's perpetual options streaming premia accrue every block (e.g. 12 second
 
 ### Comparing Perpetual Options to Traditional Options
 
-There are a few key differences between perpetuals and traditional options. We outline some of them bellow. 
+There are a few key differences between perpetuals and traditional options. We outline some of them below. 
 
 - **Expiration**: The most notable difference between perpetual options and traditional options is the lack of an expiration date. Traditional options have a fixed expiry date, after which the option becomes worthless. Perpetual options, on the other hand, can be exercised at any point, giving investors more flexibility.
 
