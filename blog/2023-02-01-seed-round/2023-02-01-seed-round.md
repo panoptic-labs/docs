@@ -1,5 +1,5 @@
 ---
-slug: seed-round
+slug: defi-options-protocol-seed-round
 title: Panoptic Raises $4.5M Seed Round!
 tags: [Funding, Raise, Seed]
 ---
