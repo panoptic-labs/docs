@@ -42,10 +42,9 @@ const Footer = () => {
         <div className="footer__container__community-and-more-part">
           <h4 className="community-part__title">Community</h4>
           <div className="community-part__links">
-            <a className="community-part__link" aria-label="Discord" />
-            <a className="community-part__link" aria-label="Linked In" />
-            <a className="community-part__link" aria-label="Telegram" />
-            <a className="community-part__link" aria-label="Twitter" />
+            <a className="community-part__link" href="https://discord.gg/7fE8SN9pRT" aria-label="Discord" />
+            <a className="community-part__link" href="https://www.linkedin.com/company/panoptic-xyz" aria-label="Linked In" />
+            <a className="community-part__link" href="https://twitter.com/panoptic_xyz" aria-label="Twitter" />
           </div>
           <h4 className="more-part__title">More</h4>
           <div className="more-part__links">

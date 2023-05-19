@@ -104,10 +104,6 @@ const config = {
                 href: "https://twitter.com/panoptic_xyz",
               },
               {
-                label: "Telegram",
-                href: "https://t.me/panoptic",
-              },
-              {
                 label: "Discord",
                 href: "https://discord.gg/8sX5Af2KXG",
               },

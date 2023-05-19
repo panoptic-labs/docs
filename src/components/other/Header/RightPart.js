@@ -8,17 +8,18 @@ import useResponsive from "../../../hooks/useResponsive";
 
 const RightPart = ({ onToggle }) => {
   const { isTabletWidth, isMobileWidth } = useResponsive();
+  const appIsDisabled = true; // Set the app disabled state
 
   return (
     <div className="right-part">
       {!isMobileWidth && (
         <>
-          <Link to="https://github.com/panoptic-labs">
-            <Button href="/" variant="outlined">
-              Github
-            </Button>
-          </Link>
-          <Button to="/">Launch app</Button>
+          <a href="https://github.com/panoptic-labs">
+            <Button variant="outlined">Github</Button>
+          </a>
+          <Button hasIcon disabled={appIsDisabled}>
+            {appIsDisabled ? "App Coming Soon" : "Launch App"}
+          </Button>
         </>
       )}
       {!isTabletWidth && <ToggleTheme />}
