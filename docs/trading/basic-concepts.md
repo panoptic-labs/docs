@@ -75,9 +75,11 @@ We will discuss these concepts in the following sections.
 
 ### Beginner Tutorials
 
+#### Tastylive - [Beginner Options Course](https://www.tastylive.com/learn-courses) 👈
+
 #### Options Trading for Beginners (The ULTIMATE In-Depth Guide) 👇
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7PM4rNDr4oI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-#### [Khan Academy - Put and call options](https://www.khanacademy.org/economics-finance-domain/core-finance/derivative-securities/put-call-options/v/american-call-options) 👈
+#### Khan Academy - [Put and call options](https://www.khanacademy.org/economics-finance-domain/core-finance/derivative-securities/put-call-options/v/american-call-options) 👈
 
-#### [Khan Academy - Black-Scholes Formula](https://www.khanacademy.org/economics-finance-domain/core-finance/derivative-securities/black-scholes/v/introduction-to-the-black-scholes-formula) 👈
+#### Khan Academy - [Black-Scholes Formula](https://www.khanacademy.org/economics-finance-domain/core-finance/derivative-securities/black-scholes/v/introduction-to-the-black-scholes-formula) 👈
