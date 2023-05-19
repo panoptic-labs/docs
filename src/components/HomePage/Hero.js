@@ -7,6 +7,7 @@ import Button from "../other/Button";
 
 const Hero = () => {
   const { colorMode } = useColorMode();
+  const appIsDisabled = true; // Set the app disabled state
 
   return (
     <section className="hero">
@@ -19,7 +20,9 @@ const Hero = () => {
           Permissionlessly trade options on any crypto asset
         </span>
         <div className="content__buttons">
-          <Button hasIcon>Launch App</Button>
+          <Button hasIcon disabled={appIsDisabled}>
+            {appIsDisabled ? "App Coming Soon" : "Launch App"}
+          </Button>
           <Link to="/docs/intro">
              <Button variant="outlined" hasIcon>Learn more</Button>
           </Link>

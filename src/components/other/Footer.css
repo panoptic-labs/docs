@@ -154,10 +154,6 @@
   mask-image: url("/img/icons/linkedin.svg");
 }
 
-.community-part__link[aria-label="Telegram"] {
-  mask-image: url("/img/icons/telegram.svg");
-}
-
 .community-part__link[aria-label="Twitter"] {
   mask-image: url("/img/icons/twitter.svg");
 }
