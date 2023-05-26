@@ -2,6 +2,7 @@
 slug: abdk-audit-completion 
 title: ABDK Completes Panoptic’s First Audit, Second Audit with OpenZeppelin Upcoming
 tags: [Audit, ABDK, Security, OpenZeppelin]
+image: /img/banners/Panoptic_Audit.png
 ---
 ![abdk-audit-banner](./Panoptic_Audit.png)
 

@@ -2,6 +2,7 @@
 slug: cornell-blockchain-conference-2023
 title: Panoptic at Cornell Blockchain Conference 2023
 tags: [Cornell, Conference]
+image: /img/banners/cornell-blockchain-conference-banner.png
 ---
 ![cornell-blockchain-conference-banner](./cornell-blockchain-conference-banner.png)‍
 

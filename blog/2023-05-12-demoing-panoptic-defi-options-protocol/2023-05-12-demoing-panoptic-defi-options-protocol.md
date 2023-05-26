@@ -2,6 +2,7 @@
 slug: demoing-panoptic-defi-options-protocol
 title: "Demoing Panoptic’s Protocol: The Future of DeFi Options"
 tags: [Conference, UI/UX, Event]
+image: /img/banners/panoptic-product-demo.jpg
 ---
 ![panoptic-product-demo](./panoptic-product-demo.jpg)
 

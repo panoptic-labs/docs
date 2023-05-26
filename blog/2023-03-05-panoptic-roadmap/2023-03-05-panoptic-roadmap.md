@@ -2,6 +2,7 @@
 slug: panoptic-defi-options-protocol-roadmap
 title: Panoptic’s V1 Roadmap
 tags: [Roadmap, Gated Launch, Mainnet, Launch]
+image: /img/banners/panoptic-v1-roadmap-banner.jpg
 ---
 ![panoptic-v1-roadmap-banner](./panoptic-v1-roadmap-banner.jpg)
 

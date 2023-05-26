@@ -2,6 +2,7 @@
 slug: resources
 title: "Mastering Panoptic: The Definitive Resource Guide for All Things Panoptic"
 tags: [Resource, How-To, Docs, Blog, Research]
+image: /img/banners/panoptic-resource-guide-banner.jpg
 ---
 
 ![panoptic-resource-guide-banner](./panoptic-resource-guide-banner.jpg)

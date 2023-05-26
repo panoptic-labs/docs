@@ -2,6 +2,7 @@
 slug: openzeppelin-audits-panoptic-defi-options-protocol
 title: Panoptic Partners with OpenZeppelin for Second Smart Contract Audit
 tags: [Audit, Security, ABDK, OpenZeppelin]
+image: /img/banners/panoptic-openzeppelin-audit-banner.jpg
 ---
 
 ![panoptic-openzeppelin-audit-banner](./panoptic-openzeppelin-audit-banner.jpg)
