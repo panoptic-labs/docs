@@ -3,6 +3,7 @@ slug: simtopia-partnership-panoptic-defi-options
 title: Panoptic Partners with Simtopia.ai to Analyze and Optimize Risk Parameters
 tags: [Partnerships, AI, ML, Research, Risk]
 date: 2023-02-01T03:00
+image: /img/banners/Panoptic-Simtopia.ai-Partnership-Banner.jpg
 ---
 
 ![simtopia-partnership-banner](./Panoptic-Simtopia.ai-Partnership-Banner.jpg)

@@ -3,6 +3,7 @@ slug: panoptic-defi-options-research-launch
 title: The Launch of Panoptic Research
 tags: [Research, Research Bites]
 date: 2023-02-01T04:00
+image: /img/banners/Panoptic_Research_1.jpg
 ---
 ![panoptic-research](./Panoptic_Research_1.jpg)
 
