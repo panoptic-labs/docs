@@ -122,11 +122,11 @@ const config = {
               },
               {
                 label: "Research",
-                href: "https://research.panoptic.xyz/",
+                href: "https://panoptic.xyz/research",
               },
               {
                 label: "Blog",
-                href: "https://blog.panoptic.xyz",
+                href: "https://panoptic.xyz/blog",
               },
             ],
           },
@@ -271,6 +271,26 @@ const config = {
          * Path to data on filesystem relative to site dir.
          */
         path: 'research',
+        blogTitle: 'Research',
+        blogDescription: 'DeFi Options Research',
+        postsPerPage: 10,
+        blogSidebarTitle: 'All posts',
+        blogSidebarCount: 'ALL',
+        showReadingTime: true,
+        readingTime: ({content, frontMatter, defaultReadingTime}) =>
+          defaultReadingTime({content, options: {wordsPerMinute: 300}}),
+        feedOptions: {
+          type: 'all',
+          copyright: `Copyright © ${new Date().getFullYear()} 2023 Axicon Labs Inc. All Rights Reserved. Panoptic™ is a trademark of Axicon Labs Inc. All other trademarks and registered trademarks are the sole property of their respective owners.`,
+          createFeedItems: async (params) => {
+            const {blogPosts, defaultCreateFeedItems, ...rest} = params;
+            return defaultCreateFeedItems({
+              // keep only the 10 most recent blog posts in the feed
+              blogPosts: blogPosts.filter((item, index) => index < 10),
+              ...rest,
+            });
+          },
+        },
         remarkPlugins: [math],
         rehypePlugins: [katex],
       },
