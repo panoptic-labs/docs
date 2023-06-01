@@ -154,12 +154,12 @@ const config = {
         {
           property: "og:image",
           content:
-            "https://raw.githubusercontent.com/panoptic-labs/docs/main/static/img/logo.png",
+            "https://raw.githubusercontent.com/panoptic-labs/docs/main/static/img/website-banner.png",
         },
         {
           name: "twitter:image",
           content:
-            "https://raw.githubusercontent.com/panoptic-labs/docs/main/static/img/logo.png",
+            "https://raw.githubusercontent.com/panoptic-labs/docs/main/static/img/website-banner.png",
         },
       ],
       announcementBar: {
@@ -170,7 +170,7 @@ const config = {
         isCloseable: true,
       },
       image:
-        "https://raw.githubusercontent.com/panoptic-labs/docs/main/static/img/logo.png",
+        "https://raw.githubusercontent.com/panoptic-labs/docs/main/static/img/website-banner.png",
       algolia: {
         appId: '8ICJTW297L',
         // Public API key: it is safe to commit it
