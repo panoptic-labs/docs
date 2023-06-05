@@ -1,11 +1,12 @@
 ---
-slug: defi-options-protocol-seed-round
-title: Panoptic Raises $4.5M Seed Round!
-tags: [Funding, Raise, Seed]
+slug: defi-options-protocol-safe-round
+title: Panoptic Raises $4.5M SAFE Round
+tags: [Funding, Raise, SAFE]
 date: 2023-02-01T00:00
+image: /img/banners/panoptic-safe-round-banner-02-01-2023.jpg
 ---
-![seed-round-banner](./seed-round-banner.png)
-We are pleased to announce that the Panoptic team has raised $4.5M in seed funding!
+![panoptic-safe-round-banner](./panoptic-safe-round-banner.jpg)
+We are pleased to announce that the Panoptic team has raised $4.5M in SAFE funding!
 
 The round is led by gumi Cryptos Capital (gCC), with significant contributions from Uniswap Labs Ventures, Coinbase Ventures, Jane Street, Blizzard (the Avalanche Ecosystem Fund), Zee Prime Capital, and many others, including strategic founders in the DeFi space.
 
@@ -17,7 +18,7 @@ Due for release in the first quarter of 2023, the Panoptic protocol will make it
 
 > “We see Panoptic as a true 0-to-1 innovation for on-chain options”, said Guillaume, Founder and Chief Executive Officer of Panoptic. “The same way Uniswap revolutionized spot trading by making order books irrelevant, Panoptic will transform what it means to trade options by getting rid of the Options chain and enabling liquid markets without the need for intermediaries and centralized points of failure.”
 
-![seed-round-founders](./seed-round-founders.png)
+![safe-round-founders](./safe-round-founders.png)
 
 > “The collapse of FTX underscores the need for exchange markets that eliminate counterparty risk,” said Miko Matsumura, Managing Partner at gumi Cryptos Capital. “the Panoptic team, working closely with our co-investor Uniswap Labs Ventures, has the technical excellence to make fundamental and lasting improvements to the world’s financial infrastructure.”
 
