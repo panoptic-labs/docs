@@ -1,5 +1,5 @@
 ---
-slug: panoptic-three-sigma-360-audit
+slug: panoptic-three-sigma-partnership
 title: "Panoptic Partners with Three Sigma For Enhanced Economic Security"
 tags: [Audit, Security, Three Sigma, ABDK, OpenZeppelin]
 image: /img/banners/panotic_three_sigma_partnership_banner.png
