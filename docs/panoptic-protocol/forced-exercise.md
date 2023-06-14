@@ -42,4 +42,17 @@ _COST         ^   max cost = 10.24%
 
 ```
 
+'Width' is characterized by the tick spacing of the underlying Uniswap pool, which differs depending on each Uniswap pool's fee tier. This is illustrated by the following relationships:
 
+- For a fee tier of 1 basis point (bp): width = 1 tick.
+- For a fee tier of 5 basis points (bps), width = 10 ticks.
+- For a fee tier of 30 basis points (bps), width = 60 ticks.
+- For a fee tier of 100 basis points (bps), width = 200 ticks.
+
+Note: Uniswap v3 currently has four distinct fee tiers.
+
+The conversion from tick to price can be calculated using the formula:
+
+$Price = 1.0001 ^{Ticks}$
+
+Let's consider an example using a Panoptic pool built over a Uniswap v3 pool with a fee tier of 30 basis points (bps). Here, 1 'width' corresponds to 60 ticks. Suppose the strike price is \$991.93 (= $1.0001 ^ {69,000}$) and the spot price is \$997.90 (= $1.0001 ^ {69,060}$). In this scenario, the spot price would be considered 1 'width' away from the strike price due to the 60 ticks difference.
