@@ -1,0 +1,9 @@
+.pill-text {
+  display: inline-block;
+  padding: 0px 7px;
+  border: 1.5px solid #F3F3F3;
+  border-radius: 60px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+}

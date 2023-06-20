@@ -1,0 +1,29 @@
+.launch-page {
+  height: 352px;
+  background-color: #4E14D0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.launch-background {
+  background-image: url("/img/new-home-page/launch-background-vector.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+}
+
+.launch-text {
+  color: #F3F3F3;
+  text-align: center;
+}
+
+.launch-title {
+  font-size: 52px;
+  font-family: Alice;
+}
+
+.launch-subtitle {
+  font-size: 18px;
+}

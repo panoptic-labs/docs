@@ -1,0 +1,21 @@
+.partner-page {
+  height: 323px;
+  background-color: #F3F3F3;
+  padding: 0 96px;
+}
+
+.partner-text {
+  padding: 60px 0 21px 0;
+  color: black;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 100%;
+}
+
+.investor {
+  margin: 0 12.5px 20px 12.5px;
+  height: 56px;
+  width: auto;
+}
