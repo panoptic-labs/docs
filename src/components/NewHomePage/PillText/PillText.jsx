@@ -1,11 +1,11 @@
 import React from "react"
 import "./PillText.css"
 
-const PillText = ({text}) => {
-
+const PillText = ({children, grey = false}) => {
+ 
   return (
-    <div className="pill-text">
-      {text}
+    <div className={`pill-text ${grey ? 'grey' : ''}`}>
+      {children}
     </div>
   )
 }

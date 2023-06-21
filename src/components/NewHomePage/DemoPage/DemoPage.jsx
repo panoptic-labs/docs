@@ -1,5 +1,6 @@
 import React from "react"
 import PillText from "../PillText/PillText"
+import * as Select from '@radix-ui/react-select';
 import "./DemoPage.css"
 
 const DemoPage = () => {
@@ -8,7 +9,7 @@ const DemoPage = () => {
     <div className="demo-page">
       <div className="demo-flex">
         <div className="demo-text">
-          <PillText text="Streamlined Trading"/>
+          <PillText>Streamlined Trading</PillText>
           <div className="demo-title">
             <div>Panoptic App</div>
             <div>puts you in the</div>
@@ -30,7 +31,7 @@ const DemoPage = () => {
             <div>Swap assets and options fully liquidly powered by our</div>
             <div>
               {`integration, the `}
-              <PillText text="Uniswap v3"/>
+              <PillText>Uniswap v3</PillText>
             </div>
             <div>largest decentralized exchange on Ethereum</div>
           </div>
@@ -39,7 +40,29 @@ const DemoPage = () => {
           </div>
         </div>
         <div className="demo-interactive">
-          <div>TODO:</div>
+          <div>
+            <div className="demo-interactive-text">
+              Create a 
+              <OptionSelect></OptionSelect>
+              {/* Jade Lizard */}
+            </div>
+            <img src={`/img/new-home-page/demo-placeholder.png`}  alt="demo placeholder" />
+            <div className="demo-interactive-details">
+              <div className="demo-interactive-details-left">
+                <div className="demo-interactive-details-title">Jade Lizard</div>
+                <div className="demo-interactive-details-tags">
+                  <div className="demo-interactive-details-tags-first">
+                    <PillText>Risky</PillText>
+                  </div>
+                  <PillText>Put</PillText>
+                </div>
+              </div>
+              <div className="demo-interactive-details-right">
+                A strategy used to buy while the market is down, very little downsides in case of exit.
+              </div>
+              
+            </div>
+          </div>
         </div>
       </div>
       <div className="demo-video">
@@ -54,4 +77,49 @@ const DemoPage = () => {
   )
 }
 
+import classnames from 'classnames';
+// import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons';
+// import './styles.css';
+
+const OptionSelect = () => (
+  <Select.Root>
+    <Select.Trigger className="select-trigger" aria-label="Food">
+      <Select.Value placeholder="Jade Lizard" />
+      <Select.Icon className="SelectIcon">
+        {/* <ChevronDownIcon /> */}
+        <img src={`/img/new-home-page/demo-dropdown-arrow.svg`}  alt="dropdown arrow" />
+      </Select.Icon>
+    </Select.Trigger>
+    <Select.Portal>
+      <Select.Content className="select-content">
+        <Select.Viewport className="SelectViewport">
+          <Select.Group>
+            <SelectItem value="Long Call">
+              
+            </SelectItem>
+            <SelectItem value="Jade Lizard">Jade Lizard</SelectItem>
+            <SelectItem value="Long Strangle">Long Strangle</SelectItem>
+          </Select.Group>
+        </Select.Viewport>
+      </Select.Content>
+    </Select.Portal>
+  </Select.Root>
+);
+
+const SelectItem = ({ children }) => (
+  <Select.Item className="SelectItem">
+    <Select.ItemText>f</Select.ItemText>
+      <div className="select-item">
+        <div className="select-item-image"></div>
+        <div>
+          <div className="select-item-title">Long Call</div>
+          <div className="select-item-subtitle">Gives me right to purchase the asset for the strike price.</div>
+          <PillText>Undefined Risk</PillText>
+        </div>
+      </div>
+    <Select.ItemIndicator className="SelectItemIndicator">
+      {/* <CheckIcon /> */}g
+    </Select.ItemIndicator>
+  </Select.Item>
+);
 export default DemoPage
