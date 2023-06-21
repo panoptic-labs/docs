@@ -24,18 +24,18 @@ const Footer = () => {
         </div>
         <div className="footer-conversation-social">
           <div className="footer-conversation-social-text">Find us on:</div>
-          <div className="community-part__links">
-            <a href="https://discord.gg/7fE8SN9pRT" aria-label="Discord">
+          <div >
+            <a className="footer-conversation-social-icon-link" href="https://discord.gg/7fE8SN9pRT" aria-label="Discord">
               <img src={"/img/icons/discord.svg"} alt="discord" className="footer-conversation-social-icon"></img>
             </a>
-            <a href="https://www.linkedin.com/company/panoptic-xyz" aria-label="Linked In">
+            <a className="footer-conversation-social-icon-link" href="https://www.linkedin.com/company/panoptic-xyz" aria-label="Linked In">
               <img src={"/img/icons/linkedin.svg"} alt="discord" className="footer-conversation-social-icon"></img>
             </a>
-            <a href="https://twitter.com/panoptic_xyz" aria-label="Twitter">
+            <a className="footer-conversation-social-icon-link" href="https://twitter.com/panoptic_xyz" aria-label="Twitter">
               <img src={"/img/icons/twitter.svg"} alt="discord" className="footer-conversation-social-icon"></img>
             </a>
-            <a href="https://telegram.com/" aria-label="Telegram">
-              <img src={"/img/icons/telegram.svg"} alt="telegram" className="footer-conversation-social-icon"></img>
+            <a className="footer-conversation-social-icon-link" href="https://telegram.com/" aria-label="Telegram">
+              <img src={"/img/icons/telegram-big.svg"} alt="telegram" className="footer-conversation-social-icon"></img>
             </a>
           </div>
         </div>
@@ -54,6 +54,7 @@ const Footer = () => {
           <div className="learn-part__list">
             <a href="/docs/panoptic-protocol/overview">Protocol Overview</a>
             <a href="/docs/trading/basic-concepts">Options Trading 101</a>
+            <a href="/docs/whitepaper" target="_blank">White Paper</a>
             <a href="/docs/developers/smart-contracts-overview">Developers</a>
             <a href="/docs/terms/glossary">Glossary</a>
           </div>

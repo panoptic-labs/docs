@@ -40,7 +40,7 @@
   display: block;
   background: transparent;
   color: #4E14D0;
-  border: 1px solid #4E14D0;
+  border: 1.5px solid #4E14D0;
   border-radius: 10px;
   padding: 12px;
   cursor: pointer;
@@ -73,7 +73,7 @@
 }
 
 .recent-updates__card__content {
-  height: 420px;
+  height: 366px;
 }
 
 .recent-updates__card_top {
@@ -93,17 +93,22 @@
   line-height: 28px;
   letter-spacing: -0.02em;
   color: black;
-  margin: 20px 0 10px;
+  margin: 13px 0 3px;
   width: 320px;
+  display: -webkit-box; 
+  -webkit-line-clamp: 3; 
+  -webkit-box-orient: vertical; 
+  overflow: hidden; 
+  text-overflow: ellipsis;
 }
 
 .recent-updates__card__excerpt {
-  font-weight: 500;
   font-size: 14px;
-  line-height: 22px;
+  line-height: 130%;
+  font-weight: 400;
   letter-spacing: -0.02em;
   color: #8d8e94;
-  margin-bottom: 22px;
+  margin-bottom: 13px;
   width: 320px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -114,11 +119,11 @@
 }
 
 .recent-updates__card__date {
-  font-weight: 500;
+  /* font-weight: 500;
   font-size: 12px;
   line-height: 20px;
   letter-spacing: -0.02em;
-  color: #8d8e94;
+  color: #8d8e94; */
 }
 
 .recent-updates__card__link {
