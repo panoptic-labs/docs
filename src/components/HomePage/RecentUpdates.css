@@ -1,9 +1,9 @@
 .recent-updates {
-  background: var(--color-body);
+  background-color: #F3F3F3;
 }
 
 .recent-updates__container {
-  padding: 40px 70px;
+  padding: 42px 96px 77px 96px;
   max-width: 1441px;
   width: 100%;
   margin: 0 auto;
@@ -16,12 +16,17 @@
   margin-bottom: 40px;
 }
 
+.recent-updates__card__image {
+  width: 320px;
+  height: 180px;
+}
+
 .recent-updates__title {
   font-weight: 700;
   font-size: 36px;
   line-height: 44px;
   letter-spacing: -0.02em;
-  color: var(--color-text-primary);
+  color: black;
   margin: 0;
 }
 
@@ -34,8 +39,8 @@
 .pagination__next {
   display: block;
   background: transparent;
-  color: var(--color-link);
-  border: 1px solid var(--color-link);
+  color: #4E14D0;
+  border: 1px solid #4E14D0;
   border-radius: 10px;
   padding: 12px;
   cursor: pointer;
@@ -43,7 +48,7 @@
 
 .pagination__next:hover,
 .pagination__prev:hover {
-  background: var(--color-link);
+  background: #4E14D0;
 }
 
 .pagination__prev:hover > .pagination__icon,
@@ -52,7 +57,7 @@
 }
 
 .pagination__icon {
-  background-color: var(--color-link);
+  background-color: #4E14D0;
 }
 
 .recent-updates__cards {
@@ -63,13 +68,18 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100%;
+  width: 320px;
   padding: 0 20px;
+}
+
+.recent-updates__card__content {
+  height: 420px;
 }
 
 .recent-updates__card_top {
   display: flex;
   flex-direction: column;
+  width: 320px;
 }
 
 .recent-updates__card_bottom {
@@ -79,11 +89,12 @@
 
 .recent-updates__card__title {
   font-weight: 700;
-  font-size: 18px;
+  font-size: 22px;
   line-height: 28px;
   letter-spacing: -0.02em;
-  color: var(--color-text-primary);
+  color: black;
   margin: 20px 0 10px;
+  width: 320px;
 }
 
 .recent-updates__card__excerpt {
@@ -93,6 +104,13 @@
   letter-spacing: -0.02em;
   color: #8d8e94;
   margin-bottom: 22px;
+  width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  height: auto;
 }
 
 .recent-updates__card__date {

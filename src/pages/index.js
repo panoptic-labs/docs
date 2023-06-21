@@ -42,13 +42,13 @@ export default function Home() {
         <LaunchPage/>
         <PartnerPage/>
         <SecurityPage/>
-        <UpdatesPage/>
         <FAQPage/>
+        {/* <UpdatesPage/> */}
         {/* <Hero /> */}
-        {/* <WorkWith />
-        <FAQ />
+        {/* <WorkWith /> */}
+        {/* <FAQ /> */}
         <RecentUpdates />
-        <Partners /> */}
+        {/* <Partners /> */}
       </main>
       <Footer />
     </Layout>
