@@ -21,6 +21,7 @@
     "@docusaurus/preset-classic": "^2.2.0",
     "@mdx-js/react": "^1.6.22",
     "@radix-ui/react-accordion": "^1.1.2",
+    "@radix-ui/react-dialog": "^1.0.4",
     "@radix-ui/react-select": "^1.2.2",
     "clsx": "^1.2.1",
     "hast-util-is-element": "1.1.0",
