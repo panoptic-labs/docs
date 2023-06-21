@@ -26,13 +26,13 @@ const Footer = () => {
           <div className="footer-conversation-social-text">Find us on:</div>
           <div >
             <a className="footer-conversation-social-icon-link" href="https://discord.gg/7fE8SN9pRT" aria-label="Discord">
-              <img src={"/img/icons/discord.svg"} alt="discord" className="footer-conversation-social-icon"></img>
+              <img src={"/img/icons/discord.svg"} alt="discord" className="footer-conversation-social-icon ocial-icon-margin"></img>
             </a>
             <a className="footer-conversation-social-icon-link" href="https://www.linkedin.com/company/panoptic-xyz" aria-label="Linked In">
-              <img src={"/img/icons/linkedin.svg"} alt="discord" className="footer-conversation-social-icon"></img>
+              <img src={"/img/icons/linkedin.svg"} alt="discord" className="footer-conversation-social-icon ocial-icon-margin"></img>
             </a>
             <a className="footer-conversation-social-icon-link" href="https://twitter.com/panoptic_xyz" aria-label="Twitter">
-              <img src={"/img/icons/twitter.svg"} alt="discord" className="footer-conversation-social-icon"></img>
+              <img src={"/img/icons/twitter.svg"} alt="discord" className="footer-conversation-social-icon ocial-icon-margin"></img>
             </a>
             <a className="footer-conversation-social-icon-link" href="https://telegram.com/" aria-label="Telegram">
               <img src={"/img/icons/telegram-big.svg"} alt="telegram" className="footer-conversation-social-icon"></img>

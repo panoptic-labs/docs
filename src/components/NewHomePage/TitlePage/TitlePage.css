@@ -46,10 +46,22 @@
   margin-right: 5px;
 }
 
-.screenshot {
+.screenshot-container {
   max-width: 735px;
+  width: 55vw;
   height: auto;
-  width: auto;
+}
+
+@media screen and (max-width: 1200px) { 
+  .screenshot-container { 
+    width: 45vw; 
+  } 
+}
+
+@media screen and (max-width: 1000px) { 
+  .screenshot-container { 
+    display: none;
+  } 
 }
 
 .join-button-text {
