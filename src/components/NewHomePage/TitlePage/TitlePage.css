@@ -52,6 +52,13 @@
   height: auto;
 }
 
+.join-button-text {
+  margin-right: 19px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+}
+
 @media screen and (max-width: 1200px) { 
   .screenshot-container { 
     width: 45vw; 
@@ -64,9 +71,22 @@
   } 
 }
 
-.join-button-text {
-  margin-right: 19px;
-  font-family: Inter;
-  font-size: 16px;
-  font-weight: 500;
+@media screen and (max-width: 767px) { 
+  .title {
+    font-size: 48px;
+  }
+
+  .title-page-info {
+    margin: 37px 40px 0 40px;
+  }
+
+  .join-button {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 405px) { 
+  .title {
+    font-size: 32px;
+  } 
 }

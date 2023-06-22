@@ -18,3 +18,22 @@
   height: 56px;
   width: auto;
 }
+
+@media screen and (max-width: 767px) { 
+  .partner-page {
+    padding: 0 40px 30px;
+  }
+
+  .partner-logos {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 380px) { 
+  .investor {
+    margin: 0 4px 10px 6px;
+    height: 42px;
+  }
+}

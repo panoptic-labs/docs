@@ -29,11 +29,11 @@ const DemoPage = () => {
             <div className="text-purple">performance.</div>
           </div>
           <div className="demo-details">
-            <div>Swap assets and options fully liquidly powered by our</div>
-            <div>
+            <span>{`Swap assets and options fully liquidly powered by our `}</span>
+            <span>
               {`integration, the `}
               <PillText>Uniswap v3</PillText>
-            </div>
+            </span>
             <div>largest decentralized exchange on Ethereum</div>
           </div>
           <div className="hovering-arrow-container">
@@ -80,6 +80,7 @@ const DemoPage = () => {
   )
 }
 
+import "./Select.css"
 const OptionSelect = () => (
   <Select.Root>
     <Select.Trigger className="select-trigger" aria-label="Food">
@@ -122,6 +123,7 @@ const SelectItem = ({ children }) => (
   </Select.Item>
 );
 
+import "./VideoDialog.css"
 const VideoDialog = ({trigger}) => (
   <Dialog.Root>
     <Dialog.Trigger asChild>
