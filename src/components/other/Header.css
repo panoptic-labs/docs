@@ -1,7 +1,7 @@
 .header {
   position: sticky;
   top: 0;
-  background: var(--color-body);
+  background: white;
   z-index: 20;
 }
 
@@ -25,6 +25,7 @@
 
 .header__nav {
   display: flex;
+  margin-left: auto;
   gap: 40px;
 }
 
@@ -33,7 +34,7 @@
   font-size: 16px;
   line-height: 19px;
   letter-spacing: -0.02em;
-  color: var(--color-text-primary);
+  color: black;
 }
 
 .nav__link:hover {
