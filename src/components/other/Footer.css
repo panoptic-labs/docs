@@ -1,13 +1,63 @@
 .custom-footer {
   overflow: hidden;
-  background: #0c0c0c;
+  background: black;
   position: relative;
   padding: 0;
   box-shadow: none;
 }
 
+.footer-conversation-container {
+  background-color: #4E14D0;
+  margin: 73px 96px;
+  display: flex;
+  border-radius: 10px;
+  padding: 34px 67px 48px 55px;
+  justify-content: space-between;
+}
+
+.footer-conversation-container-background {
+  background-image: url("/img/new-home-page/footer-background-lines.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 60%;
+}
+
+.footer-conversation-title {
+  font-weight: 400;
+  font-size: 64px;
+  font-family: Alice;
+  line-height: 100%;
+}
+
+.footer-conversation-social-text {
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 100%;
+  margin: 32px 0 15px 0;
+}
+
+.footer-conversation-social-icon-link {
+  width: 56px;
+  height: 56px;
+  margin-right: 14px;
+}
+
+.footer-conversation-social-icon {
+  width: 56px;
+  height: 56px;
+  margin-right: 14px;
+}
+
+.footer-conversation-social-icon-container img {
+  /* background-color: white; */
+}
+.footer-conversation-social-icon {
+  
+}
+
 .footer__container {
-  padding: 40px 70px 60px;
+  padding: 40px 96px 60px;
   width: 100%;
   height: 100%;
   display: flex;
@@ -82,7 +132,7 @@
 .footer__container__community-and-more-part {
   max-width: 221px;
   width: 100%;
-  margin-right: 109px;
+  margin-right: 85px;
 }
 
 .footer__container__description-part {
@@ -158,30 +208,14 @@
   mask-image: url("/img/icons/twitter.svg");
 }
 
+.community-part__link[aria-label="Telegram"] {
+  mask-image: url("/img/icons/telegram-small.svg");
+}
+
 .footer__blured-container {
   position: absolute;
   inset: 0px 0px 0px 0px;
   filter: blur(100px);
-}
-
-.footer__blured-circle_1,
-.footer__blured-circle_2 {
-  background: linear-gradient(180deg, #5d1ee9 0%, rgba(17, 3, 47, 0) 100%);
-  width: 498px;
-  height: 498px;
-  position: absolute;
-  border-radius: 9999px;
-  z-index: -1;
-}
-
-.footer__blured-circle_1 {
-  bottom: -400px;
-  left: -250px;
-}
-
-.footer__blured-circle_2 {
-  right: 70px;
-  top: -250px;
 }
 
 @media (max-width: 1024px) {

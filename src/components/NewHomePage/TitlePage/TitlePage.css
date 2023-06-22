@@ -1,0 +1,60 @@
+.title-page {
+  position: relative;
+  background-color: #F3F3F3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.with-background {
+  background-image: url("/img/new-home-page/BackgroundLines.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.title-page-flex {
+  padding-top: 58px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-page-info {
+  margin-left: 96px;
+  margin-top: 37px;
+}
+
+.title {
+  font-family: Alice;
+  font-size: 64px;
+  font-weight: 400;
+  color: #4E14D0;
+  line-height: 100%;
+  margin-bottom: 40px;
+}
+
+.subtitles {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 46px;
+  line-height: 120%;
+  color: #4E14D0;
+}
+
+.checkmark {
+  margin-right: 5px;
+}
+
+.screenshot {
+  max-width: 735px;
+  height: auto;
+  width: auto;
+}
+
+.join-button-text {
+  margin-right: 19px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+}
