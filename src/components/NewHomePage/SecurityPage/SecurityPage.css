@@ -64,9 +64,13 @@ h4 {
 
 .abdkIcons {
   display: flex;
-  margin-left: 90px;
+  margin-left: 98px;
 }
 
+.arrow {
+  margin-top: 36px;
+  margin-left: 338px;
+}
 
 .scrollingIconsBorder {
   height: 51px;
@@ -99,7 +103,7 @@ h4 {
   }
 }
 
-/* reset */
+/* reset for tab */
 button,
 fieldset,
 input {
@@ -112,17 +116,14 @@ input {
   height: 214px;
   width: 617px;
   margin-top: 15px;
-  box-shadow: 0 2px 10px var(--blackA4);
 }
 
 .TabsList {
   flex-shrink: 0;
   display: flex;
-  border-bottom: 1px solid var(--mauve6);
 }
 
 .TabsTrigger {
-  /* TODO: onlick of other tab, change boldness - when not on tab others are regular weight */
   font-family: inherit;
   background-color: black;
   height: 45px;
@@ -131,27 +132,15 @@ input {
   justify-content: center;
   line-height: 1;
   color: white;
-  font-size: 18px;
-  font-weight: 800;
+  font-size: 20px;
   user-select: none;
 }
 
-.TabsTrigger:first-child {
-  border-top-left-radius: 6px;
-}
-
-.TabsTrigger:last-child {
-  border-top-right-radius: 6px;
-}
-
 .TabsTrigger[data-state='active'] {
+  /* TODO: box shadow line needs to be like 40% of the width */
   box-shadow: inset 0 -1px 0 0 currentColor, 0 1px 0 0 currentColor;
+  font-weight: 800;
 }
-
-/* .TabsTrigger:focus {
-  position: relative;
-  box-shadow: 0 0 0 2px black;
-} */
 
 .TabsContent {
   flex-grow: 1;
@@ -161,30 +150,12 @@ input {
   border-bottom-right-radius: 6px;
   outline: none;
 }
-/* .TabsContent:focus {
-  box-shadow: 0 0 0 2px black;
-} */
 
 .Text {
   margin-top: 0;
   margin-bottom: 20px;
-  color: var(--mauve11);
-  font-size: 15px;
+  color: #FFFFFF;
+  font-size: 18px;
   line-height: 1.5;
 }
 
-/* .Fieldset {
-  margin-bottom: 15px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-} */
-
-/* .Label {
-  font-size: 13px;
-  line-height: 1;
-  margin-bottom: 10px;
-  color: var(--violet12);
-  display: block;
-} */
