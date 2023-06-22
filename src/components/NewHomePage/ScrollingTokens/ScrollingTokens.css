@@ -11,7 +11,7 @@
   display: flex;
   margin-bottom: 48px;
   display: flex;
-  animation: swipe 14000ms linear infinite backwards;
+  /* animation: swipe 14000ms linear infinite backwards; */
 }
 
 .token-container {

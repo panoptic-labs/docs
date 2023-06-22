@@ -1,9 +1,33 @@
 import AbdkIcon from "../Icons/ABDK";
 import * as Tabs from "@radix-ui/react-tabs";
 import "./SecurityPage.css";
-import React from "react";
+import React, { useState } from "react";
+import DocumentIcon from "../Icons/Document";
 
 const SecurityPage = () => {
+  const [activeTab, setActiveTab] = useState("tab1");
+
+  const RenderIcon = () => {
+    if (activeTab === "tab1") {
+      return (
+        <>
+          <div className="icon-container">
+            <DocumentIcon />
+            <DocumentIcon />
+            <DocumentIcon />
+            <DocumentIcon />
+          </div>
+          <div className="icon-container">
+            <DocumentIcon />
+            <DocumentIcon />
+            <DocumentIcon />
+            <DocumentIcon />
+          </div>
+        </>
+      );
+    }
+  };
+
   return (
     <div className="security-page">
       <div className="security-flex">
@@ -26,33 +50,60 @@ const SecurityPage = () => {
           </div>
         </div>
         <div className="tab-section">
-          <Tabs.Root className="TabsRoot" defaultValue="tab1">
+          <div className="scrollingIconsBorder">
+            <div className="scrollingIcons">{RenderIcon()}</div>
+          </div>
+          <Tabs.Root
+            className="TabsRoot"
+            defaultValue="tab1"
+            value={activeTab}
+            onValueChange={(event) => setActiveTab(event)}
+          >
             <Tabs.List className="TabsList" aria-label="Security">
               <Tabs.Trigger className="TabsTrigger" value="tab1">
                 Smart Contracts
               </Tabs.Trigger>
               <Tabs.Trigger className="TabsTrigger" value="tab2">
-                Full-Stack Security 
+                Full-Stack Security
               </Tabs.Trigger>
-              <Tabs.Trigger className="TabsTrigger" value="tab2">
+              <Tabs.Trigger className="TabsTrigger" value="tab3">
                 Economic Security
               </Tabs.Trigger>
             </Tabs.List>
             <Tabs.Content className="TabsContent" value="tab1">
               <p className="Text">
-                Using simulations and agent-based modeling, we stress-tested and fine-tuned parameters to revolutionize our understanding of its economic dynamics. This comprehensive approach identified vulnerabilities and ensured stability under different market conditions. Our economic audit sets us apart, inspiring confidence among users and investors. With a solid foundation, our protocol thrives, attracting a growing community that values its resilience."
+                Using simulations and agent-based modeling, we stress-tested and
+                fine-tuned parameters to revolutionize our understanding of its
+                economic dynamics. This comprehensive approach identified
+                vulnerabilities and ensured stability under different market
+                conditions. Our economic audit sets us apart, inspiring
+                confidence among users and investors. With a solid foundation,
+                our protocol thrives, attracting a growing community that values
+                its resilience."
               </p>
             </Tabs.Content>
             <Tabs.Content className="TabsContent" value="tab2">
               <p className="Text">
-                TODO: 
-                Using simulations and agent-based modeling, we stress-tested and fine-tuned parameters to revolutionize our understanding of its economic dynamics. This comprehensive approach identified vulnerabilities and ensured stability under different market conditions. Our economic audit sets us apart, inspiring confidence among users and investors. With a solid foundation, our protocol thrives, attracting a growing community that values its resilience."
+                TODO: Using simulations and agent-based modeling, we
+                stress-tested and fine-tuned parameters to revolutionize our
+                understanding of its economic dynamics. This comprehensive
+                approach identified vulnerabilities and ensured stability under
+                different market conditions. Our economic audit sets us apart,
+                inspiring confidence among users and investors. With a solid
+                foundation, our protocol thrives, attracting a growing community
+                that values its resilience."
               </p>
             </Tabs.Content>
             <Tabs.Content className="TabsContent" value="tab3">
               <p className="Text">
-                TODO:
-                Using simulations and agent-based modeling, we stress-tested and fine-tuned parameters to revolutionize our understanding of its economic dynamics. This comprehensive approach identified vulnerabilities and ensured stability under different market conditions. Our economic audit sets us apart, inspiring confidence among users and investors. With a solid foundation, our protocol thrives, attracting a growing community that values its resilience."
+                TODO: Using simulations and agent-based modeling, we
+                stress-tested and fine-tuned parameters to revolutionize our
+                understanding of its economic dynamics. This comprehensive
+                approach identified vulnerabilities and ensured stability under
+                different market conditions. Our economic audit sets us apart,
+                inspiring confidence among users and investors. With a solid
+                foundation, our protocol thrives, attracting a growing community
+                that values its resilience."
               </p>
             </Tabs.Content>
           </Tabs.Root>

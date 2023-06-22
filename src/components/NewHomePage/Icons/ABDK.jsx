@@ -1,4 +1,5 @@
 import React from 'react';
+
 const AbdkIcon = () => (
     <svg
     width="121"
