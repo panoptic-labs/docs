@@ -1,10 +1,10 @@
 import './Button.css'
 import React from "react";
 
-const Button = ({children}) => {
+const Button = ({children, disabled = false}) => {
 
   return (
-    <button className="button">
+    <button className="primary-button" disabled={disabled}>
       {children}
     </button>
   )

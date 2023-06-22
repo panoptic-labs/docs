@@ -1,0 +1,10 @@
+.nav__link {
+  display: flex;
+}
+
+.external-link-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 4px;
+}
