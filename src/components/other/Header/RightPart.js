@@ -2,7 +2,7 @@ import Link from "@docusaurus/Link";
 import React from "react";
 
 import "./RightPart.css";
-import Button from "../Button";
+import Button from "../../NewHomePage/Button/Button";
 import ToggleTheme from "../ToggleTheme";
 import useResponsive from "../../../hooks/useResponsive";
 
@@ -17,7 +17,7 @@ const RightPart = ({ onToggle }) => {
           {/* <a href="https://github.com/panoptic-labs">
             <Button variant="outlined">Github</Button>
           </a> */}
-          <Button hasIcon disabled={appIsDisabled}>
+          <Button disabled={appIsDisabled}>
             {appIsDisabled ? "App Coming Soon" : "Launch App"}
           </Button>
         </>
