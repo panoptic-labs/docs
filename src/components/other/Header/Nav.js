@@ -16,6 +16,9 @@ const Nav = () => {
       <Link to="/docs/faq/" className="nav__link">
         FAQ
       </Link>
+      <Link to="/" className="nav__link">
+        Github
+      </Link>
     </nav>
   );
 };
