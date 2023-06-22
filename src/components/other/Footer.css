@@ -11,7 +11,7 @@
   margin: 73px 96px;
   display: flex;
   border-radius: 10px;
-  padding: 34px 91px 48px 55px;
+  padding: 34px 67px 48px 55px;
   justify-content: space-between;
 }
 
@@ -33,12 +33,27 @@
 .footer-conversation-social-text {
   font-weight: 800;
   font-size: 24px;
+  line-height: 100%;
+  margin: 32px 0 15px 0;
+}
+
+.footer-conversation-social-icon-link {
+  width: 56px;
+  height: 56px;
+  margin-right: 14px;
 }
 
 .footer-conversation-social-icon {
   width: 56px;
   height: 56px;
   margin-right: 14px;
+}
+
+.footer-conversation-social-icon-container img {
+  /* background-color: white; */
+}
+.footer-conversation-social-icon {
+  
 }
 
 .footer__container {
@@ -117,7 +132,7 @@
 .footer__container__community-and-more-part {
   max-width: 221px;
   width: 100%;
-  margin-right: 109px;
+  margin-right: 85px;
 }
 
 .footer__container__description-part {
@@ -194,7 +209,7 @@
 }
 
 .community-part__link[aria-label="Telegram"] {
-  mask-image: url("/img/icons/telegram.svg");
+  mask-image: url("/img/icons/telegram-small.svg");
 }
 
 .footer__blured-container {

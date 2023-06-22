@@ -1,6 +1,5 @@
 .title-page {
   position: relative;
-  height: calc(120vh - 92px);
   background-color: #F3F3F3;
   display: flex;
   flex-direction: column;
@@ -39,6 +38,7 @@
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 46px;
+  line-height: 120%;
   color: #4E14D0;
 }
 
@@ -47,7 +47,8 @@
 }
 
 .screenshot {
-  max-height: 447px;
+  max-width: 735px;
+  height: auto;
   width: auto;
 }
 

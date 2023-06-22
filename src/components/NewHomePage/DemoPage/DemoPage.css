@@ -76,6 +76,7 @@
   display: flex;
   align-items: center;
   width: 622px;
+  line-height: 130%;
 }
 
 .demo-interactive-details-left {
@@ -86,6 +87,8 @@
   font-size: 22px;
   font-weight: 700;
   white-space: nowrap;
+  line-height: 130%;
+  margin-bottom: 4px;
 }
 
 .demo-interactive-details-tags {
@@ -101,19 +104,20 @@
 }
 
 .demo-video {
+  margin-top: -75px;
 }
 
 .video-text {
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 0%);
+  transform: translate(-50%, 114%);
   font-weight: 700;
   font-size: 36px;
 }
 
 .play-button {
   left: 50%;
-  transform: translate(-50%, 100%);
+  transform: translate(-50%, 128%);
   border-radius: 50%;
   position: absolute;
   width: 180.75px;
