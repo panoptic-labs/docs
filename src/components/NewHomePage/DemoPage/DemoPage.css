@@ -32,6 +32,7 @@
   line-height: 130%;
   padding-top: 15px;
   width: 490px;
+  max-width: 100%;
 }
 
 .text-green {

@@ -12,7 +12,7 @@ const Header = () => {
   const [isOpenedSidebar, setOpenedSidebar] = useState(false);
   const { isTabletWidth } = useResponsive();
   const { colorMode } = useColorMode();
-  const logoPath = `/img/logo-${colorMode}.svg`;
+  const logoPath = `/img/logo-mono.svg`;
 
   const handleToggle = () => {
     setOpenedSidebar((state) => !state);

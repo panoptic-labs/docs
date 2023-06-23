@@ -29,11 +29,10 @@ const DemoPage = () => {
             <div className="text-purple">performance.</div>
           </div>
           <div className="demo-details">
-            <span>{`Swap assets and options fully liquidly powered by our `}</span>
-            <span>
-              {`integration, the `}
+            <div>
+              {`Swap assets and options fully liquidly powered by our integration, the `}
               <PillText>Uniswap v3</PillText>
-            </span>
+            </div>
             <div>largest decentralized exchange on Ethereum</div>
           </div>
           <div className="hovering-arrow-container">

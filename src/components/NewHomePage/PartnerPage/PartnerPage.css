@@ -17,6 +17,7 @@
   margin: 0 12.5px 20px 12.5px;
   height: 56px;
   width: auto;
+  mix-blend-mode: multiply;
 }
 
 @media screen and (max-width: 767px) { 

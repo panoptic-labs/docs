@@ -2,7 +2,7 @@ import Link from "@docusaurus/Link";
 import React from "react";
 
 import "./RightPart.css";
-import Button from "../Button";
+import Button from "../../NewHomePage/Button/Button";
 import ToggleTheme from "../ToggleTheme";
 import useResponsive from "../../../hooks/useResponsive";
 
@@ -14,20 +14,20 @@ const RightPart = ({ onToggle }) => {
     <div className="right-part">
       {!isMobileWidth && (
         <>
-          <a href="https://github.com/panoptic-labs">
+          {/* <a href="https://github.com/panoptic-labs">
             <Button variant="outlined">Github</Button>
-          </a>
-          <Button hasIcon disabled={appIsDisabled}>
+          </a> */}
+          <Button disabled={appIsDisabled}>
             {appIsDisabled ? "App Coming Soon" : "Launch App"}
           </Button>
         </>
       )}
-      {!isTabletWidth && <ToggleTheme />}
+      {/* {!isTabletWidth && <ToggleTheme />}
       {isTabletWidth && (
         <Button className="right-part__menu_button" onClick={onToggle}>
           <i className="icon__burger right-part__icon" />
         </Button>
-      )}
+      )} */}
     </div>
   );
 };
