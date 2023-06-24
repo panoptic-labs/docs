@@ -42,7 +42,7 @@ As we go through applications, we are looking for people with some (or all) of t
 -   Content creation (video, animation, graphic design, or copywriting)
 -   Community management
 -   Options trading (preferably in crypto)
--   A high-level understanding of Uniswap,and the Ethereum ecosystem
+-   A high-level understanding of Uniswap, and the Ethereum ecosystem
 -   Experience participating in Discord-based communities
 -   Active presence on Twitter
 
