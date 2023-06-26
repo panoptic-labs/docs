@@ -17,6 +17,17 @@
   padding-top: 58px;
   display: flex;
   justify-content: space-between;
+  animation: fade-in 2800ms linear;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+  }
 }
 
 .title-page-info {
@@ -79,14 +90,20 @@
   .title-page-info {
     margin: 37px 40px 0 40px;
   }
-
-  .join-button {
-    width: 100%;
-  }
 }
 
 @media screen and (max-width: 405px) { 
   .title {
     font-size: 32px;
   } 
+}
+
+@media screen and (max-width: 340px) { 
+  .subtitles {
+    font-size: 16px;
+  }
+
+  .join-button {
+    padding: 1px 20px;
+  }
 }

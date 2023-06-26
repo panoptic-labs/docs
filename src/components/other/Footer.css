@@ -52,13 +52,6 @@
   margin-right: 14px;
 }
 
-.footer-conversation-social-icon-container img {
-  /* background-color: white; */
-}
-.footer-conversation-social-icon {
-  
-}
-
 .footer__container {
   padding: 40px 96px 60px;
   width: 100%;
@@ -69,6 +62,7 @@
   align-items: stretch;
   max-width: 1441px;
   margin: 0 auto;
+  justify-content: space-between;
 }
 
 .footer__container__logo-part {
@@ -78,7 +72,6 @@
   width: 100%;
   justify-content: space-between;
   padding-bottom: 17px;
-  margin-right: auto;
 }
 
 .logo-part__logo {
@@ -97,8 +90,7 @@
 }
 
 .footer__container__learn-part {
-  max-width: 128px;
-  margin-right: 93px;
+  min-width: 140px;
 }
 
 .learn-part__title,
@@ -116,6 +108,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  white-space: nowrap;
 }
 
 .learn-part__list > a {
@@ -135,7 +128,6 @@
 .footer__container__community-and-more-part {
   max-width: 221px;
   width: 100%;
-  margin-right: 85px;
 }
 
 .footer__container__description-part {
@@ -233,7 +225,7 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .footer__container {
     padding-bottom: 40px;
     flex-wrap: wrap;
@@ -275,6 +267,13 @@
   .footer-conversation-social-text {
     display: none;
   }
+
+  .footer__container__community-and-more-part {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    margin-top: 39px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -285,8 +284,8 @@
   }
 
   .footer__container {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
     display: flex;
   }
 
@@ -306,6 +305,8 @@
 
   .footer__container__community-and-more-part {
     width: 157px;
+    display: block;
+    margin-top: 0px;
   }
 
   .more-part__links {
@@ -341,4 +342,22 @@
     margin: 60px 40px 30px 40px;
     padding: 34px 28px 25px 30px;
   }
+}
+
+@media screen and (max-width: 376px) { 
+  .footer__container__community-and-more-part {
+    margin-top: 39px;
+  }
+
+  .footer-conversation-social-icon-link {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .footer-conversation-social-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+
 }

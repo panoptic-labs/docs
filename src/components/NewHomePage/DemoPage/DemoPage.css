@@ -177,6 +177,10 @@
     transform: translate(-50%, 100%);
   }
 
+  .demo-details {
+    width: 380px;
+  }
+
 }
 
 @media screen and (max-width: 560px) { 
@@ -194,7 +198,7 @@
   
   .demo-details {
     font-size: 14px;
-    width: 420px;
+    width: 380px;
   }
   .play-button {
     transform: translate(-50%, 70%);

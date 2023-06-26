@@ -33,6 +33,10 @@
 }
 
 @media screen and (max-width: 380px) { 
+  .partner-text {
+    font-size: 18px;
+  }
+
   .investor {
     margin: 0 4px 10px 6px;
     height: 42px;

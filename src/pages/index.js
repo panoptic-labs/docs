@@ -12,6 +12,7 @@ import LaunchPage from '../components/NewHomePage/LaunchPage/LaunchPage';
 import PartnerPage from '../components/NewHomePage/PartnerPage/PartnerPage';
 import SecurityPage from '../components/NewHomePage/SecurityPage/SecurityPage';
 import FAQPage from '../components/NewHomePage/FAQPage/FAQPage';
+import LoadingScreen from '../components/NewHomePage/LoadingScreen/LoadingScreen'
 
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
@@ -29,6 +30,7 @@ export default function Home() {
       title=""
       description="Panoptic, the perpetual oracle-free options protocol"
     >
+      {/* <LoadingScreen/> */}
       <Header />
       <main className="bg-body">
         <TitlePage/>

@@ -60,24 +60,28 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer__container__community-and-more-part">
-          <div className="community-part__title">Community</div>
-          <div className="community-part__links">
-            <a className="community-part__link" href="https://discord.gg/7fE8SN9pRT" aria-label="Discord" />
-            <a className="community-part__link" href="https://www.linkedin.com/company/panoptic-xyz" aria-label="Linked In" />
-            <a className="community-part__link" href="https://twitter.com/panoptic_xyz" aria-label="Twitter" />
-            <a className="community-part__link" href="https://telegram.com/" aria-label="Telegram" />
+          <div clasName="community-part">
+            <div className="community-part__title">Community</div>
+            <div className="community-part__links">
+              <a className="community-part__link" href="https://discord.gg/7fE8SN9pRT" aria-label="Discord" />
+              <a className="community-part__link" href="https://www.linkedin.com/company/panoptic-xyz" aria-label="Linked In" />
+              <a className="community-part__link" href="https://twitter.com/panoptic_xyz" aria-label="Twitter" />
+              <a className="community-part__link" href="https://telegram.com/" aria-label="Telegram" />
+            </div>
           </div>
-          <div className="more-part__title">More</div>
-          <div className="more-part__links">
-            <a className="more-part__link" target="_blank" href="https://github.com/panoptic-labs">
-              Github <i className="icon__external-link" />
-            </a>
-            <a className="more-part__link" target="_blank" href="https://research.panoptic.xyz/">
-              Research <i className="icon__external-link" />
-            </a>
-            <a className="more-part__link" target="_blank" href="https://blog.panoptic.xyz/">
-              Blog <i className="icon__external-link" />
-            </a>
+          <div clasName="more-part">
+            <div className="more-part__title">More</div>
+            <div className="more-part__links">
+              <a className="more-part__link" target="_blank" href="https://github.com/panoptic-labs">
+                Github <i className="icon__external-link" />
+              </a>
+              <a className="more-part__link" target="_blank" href="https://research.panoptic.xyz/">
+                Research <i className="icon__external-link" />
+              </a>
+              <a className="more-part__link" target="_blank" href="https://blog.panoptic.xyz/">
+                Blog <i className="icon__external-link" />
+              </a>
+            </div>
           </div>
         </div>
         {isMobileWidth && renderCopyright()}

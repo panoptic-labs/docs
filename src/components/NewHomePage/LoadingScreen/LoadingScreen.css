@@ -1,0 +1,55 @@
+.loading-logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 41;
+  width: 280px;
+  animation: fade-in 1400ms linear;
+}
+
+.curtain {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: #4E14D0;
+  z-index: 40;
+}
+
+.curtain-left {
+  animation: swipe-left 1400ms linear;
+}
+
+.curtain-right {
+  animation: swipe-right 1400ms linear;
+}
+
+@keyframes swipe-left {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(-100%, -40%);
+  }
+}
+
+@keyframes swipe-right {
+  0% {
+    transform: translate(0, 0%);
+  }
+
+  100% {
+    transform: translate(100%, 40%);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
