@@ -6,13 +6,15 @@
 
 .faq-content {
   padding-top: 112px;
-  width: 780px;
+  max-width: 780px;
+  width: 85%;
 }
 
 .faq-title {
   font-weight: 700;
   font-size: 36px;
   color: black;
+  line-height: 120%;
 }
 
 .faq-button-container {

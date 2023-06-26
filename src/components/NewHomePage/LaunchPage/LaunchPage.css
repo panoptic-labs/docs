@@ -17,6 +17,7 @@
 .launch-text {
   color: #F3F3F3;
   text-align: center;
+  padding: 0 40px;
 }
 
 .launch-title {
@@ -30,3 +31,54 @@
 .launch-subtitle {
   font-size: 18px;
 }
+
+@media screen and (max-width: 1310px) { 
+  .launch-background { 
+    background-size: 100%; 
+  } 
+} 
+
+@media screen and (max-width: 950px) { 
+  .launch-background { 
+    background-size: 120%; 
+  } 
+  .launch-title {
+    max-width: 500px;
+  }
+} 
+
+@media screen and (max-width: 780px) { 
+  .launch-background { 
+    background-size: 150%; 
+  } 
+} 
+
+@media screen and (max-width: 640px) { 
+  .launch-background { 
+    background-size: 180%; 
+  } 
+} 
+
+@media screen and (max-width: 510px) { 
+  .launch-title {
+    font-size: 36px;
+  }
+
+  .launch-subtitle {
+    font-size: 14px;
+  }
+
+  .launch-page {
+    height: 300px;
+  }
+} 
+
+@media screen and (max-width: 370px) { 
+  .launch-title {
+    font-size: 28px;
+  }
+
+  .launch-subtitle {
+    font-size: 14px;
+  }
+} 

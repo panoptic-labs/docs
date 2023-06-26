@@ -14,6 +14,8 @@
   margin-bottom: 5px;
 }
 
+
+
 .headerBorder{ 
   display: inline-block;
   margin-top: 121px;
@@ -159,3 +161,8 @@ input {
   line-height: 1.5;
 }
 
+@media screen and (max-width: 1400px) { 
+  .security-flex {
+    display: none;
+  }
+}
