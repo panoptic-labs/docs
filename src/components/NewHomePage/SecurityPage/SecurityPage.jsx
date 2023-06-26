@@ -3,6 +3,9 @@ import * as Tabs from "@radix-ui/react-tabs";
 import "./SecurityPage.css";
 import React, { useState } from "react";
 import DocumentIcon from "../Icons/Document";
+import AoIcon from "../Icons/Ao";
+import MagnifyingIcon from "../Icons/Magnifying";
+import ArrowIcon from "../Icons/Arrow";
 
 const SecurityPage = () => {
   const [activeTab, setActiveTab] = useState("tab1");
@@ -12,16 +15,52 @@ const SecurityPage = () => {
       return (
         <>
           <div className="icon-container">
-            <DocumentIcon />
-            <DocumentIcon />
-            <DocumentIcon />
-            <DocumentIcon />
+            <DocumentIcon color={"#28CB95"} />
+            <DocumentIcon color={"#F3F3F3"} />
+            <DocumentIcon color={"#F3F3F3"} />
+            <DocumentIcon color={"#28CB95"} />
           </div>
           <div className="icon-container">
-            <DocumentIcon />
-            <DocumentIcon />
-            <DocumentIcon />
-            <DocumentIcon />
+            <DocumentIcon color={"#F3F3F3"} />
+            <DocumentIcon color={"#F3F3F3"} />
+            <DocumentIcon color={"#28CB95"} />
+            <DocumentIcon color={"#F3F3F3"} />
+          </div>
+        </>
+      );
+    }
+    if (activeTab === "tab2") {
+      return (
+        <>
+          <div className="icon-container">
+            <AoIcon color={"#28CB95"} />
+            <AoIcon color={"#F3F3F3"} />
+            <AoIcon color={"#F3F3F3"} />
+            <AoIcon color={"#28CB95"} />
+          </div>
+          <div className="icon-container">
+            <AoIcon color={"#F3F3F3"} />
+            <AoIcon color={"#F3F3F3"} />
+            <AoIcon color={"#28CB95"} />
+            <AoIcon color={"#F3F3F3"} />
+          </div>
+        </>
+      );
+    }
+    if (activeTab === "tab3") {
+      return (
+        <>
+          <div className="icon-container">
+            <MagnifyingIcon color={"#28CB95"} />
+            <MagnifyingIcon color={"#F3F3F3"}/>
+            <MagnifyingIcon color={"#F3F3F3"}/>
+            <MagnifyingIcon color={"#28CB95"} />
+          </div>
+          <div className="icon-container">
+            <MagnifyingIcon color={"#F3F3F3"}/>
+            <MagnifyingIcon color={"#F3F3F3"}/>
+            <MagnifyingIcon color={"#28CB95"} />
+            <MagnifyingIcon color={"#F3F3F3"}/>
           </div>
         </>
       );
@@ -47,6 +86,9 @@ const SecurityPage = () => {
             <AbdkIcon />
             <AbdkIcon />
             <AbdkIcon />
+          </div>
+          <div className="arrow">
+            <ArrowIcon />
           </div>
         </div>
         <div className="tab-section">
@@ -79,31 +121,33 @@ const SecurityPage = () => {
                 conditions. Our economic audit sets us apart, inspiring
                 confidence among users and investors. With a solid foundation,
                 our protocol thrives, attracting a growing community that values
-                its resilience."
+                its resilience.
               </p>
             </Tabs.Content>
             <Tabs.Content className="TabsContent" value="tab2">
               <p className="Text">
-                TODO: Using simulations and agent-based modeling, we
-                stress-tested and fine-tuned parameters to revolutionize our
-                understanding of its economic dynamics. This comprehensive
-                approach identified vulnerabilities and ensured stability under
-                different market conditions. Our economic audit sets us apart,
-                inspiring confidence among users and investors. With a solid
-                foundation, our protocol thrives, attracting a growing community
-                that values its resilience."
+                We have revolutionized security standards by conducting holistic
+                audits of both our frontend and backend systems. By thoroughly
+                examining every aspect of our protocol, we ensure comprehensive
+                protection. This approach goes beyond just smart contract
+                security, encompassing the entire system.Our diligent audits
+                address vulnerabilities in both frontend and backend components,
+                fortifying our protocol against potential risks. As a result, we
+                have set a new benchmark for security, instilling trust and
+                confidence among our users.
               </p>
             </Tabs.Content>
             <Tabs.Content className="TabsContent" value="tab3">
               <p className="Text">
-                TODO: Using simulations and agent-based modeling, we
-                stress-tested and fine-tuned parameters to revolutionize our
-                understanding of its economic dynamics. This comprehensive
-                approach identified vulnerabilities and ensured stability under
-                different market conditions. Our economic audit sets us apart,
-                inspiring confidence among users and investors. With a solid
-                foundation, our protocol thrives, attracting a growing community
-                that values its resilience."
+                Our protocol's resilience has been greatly strengthened through
+                an in-depth economic audit. Using simulations and agent-based
+                modeling, we stress-tested and fine-tuned parameters to
+                revolutionize our understanding of its economic dynamics. This
+                comprehensive approach identified vulnerabilities and ensured
+                stability under different market conditions. Our economic audit
+                sets us apart, inspiring confidence among users and investors.
+                With a solid foundation, our protocol thrives, attracting a
+                growing community that values its resilience.
               </p>
             </Tabs.Content>
           </Tabs.Root>
