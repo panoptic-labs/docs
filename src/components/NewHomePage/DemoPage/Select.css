@@ -1,0 +1,34 @@
+.select-trigger {
+  background-color: rgb(0,0,0,0);
+  border: none;
+  font-size: 36px;
+  font-weight: 700;
+  border-bottom: 4px solid #F3F3F3;
+}
+
+.select-content {
+  overflow: hidden;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0px 10px 38px -10px rgba(22, 23, 24, 0.35), 0px 10px 20px -15px rgba(22, 23, 24, 0.2);
+}
+
+.select-item {
+  display: flex;
+}
+
+.select-item-image {
+  width: 100px;
+  height: 100px;
+  background-color: #D9D9D9;
+}
+
+.select-item-title {
+  font-weight: 600;
+  font-size: 22px;
+}
+
+.select-item-sutitle {
+  font-weight: 400;
+  font-size: 14px;
+}

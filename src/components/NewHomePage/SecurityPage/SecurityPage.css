@@ -14,6 +14,8 @@
   margin-bottom: 5px;
 }
 
+
+
 .headerBorder{ 
   display: inline-block;
   margin-top: 121px;
@@ -188,3 +190,9 @@ input {
   color: var(--violet12);
   display: block;
 } */
+
+@media screen and (max-width: 1400px) { 
+  .security-flex {
+    display: none;
+  }
+}

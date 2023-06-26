@@ -62,6 +62,13 @@ div[class^="announcementBar_"] {
 button[class^="clean-btn"] {
   color: #F3F3F3;
 }
+
+@media screen and (max-width: 767px) { 
+  div[class^="announcementBar_"] {
+    display: none;
+  }
+}
+
 body[data-is_landing_page="true"] nav[aria-label="Main"],
 body[data-is_landing_page="true"] footer:not(.custom-footer) {
   display: none;
