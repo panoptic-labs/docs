@@ -65,7 +65,7 @@
 }
 
 .recent-updates__card {
-  display: flex;
+  display: inline-block;
   flex-direction: column;
   justify-content: space-between;
   width: 320px;
@@ -141,7 +141,7 @@
 
 @media (max-width: 767px) {
   .recent-updates__container {
-    padding: 40px 20px;
+    padding: 40px;
   }
 
   .recent-updates__head {
@@ -152,5 +152,26 @@
     padding-top: 30px;
     padding-bottom: 9px;
     justify-content: center;
+  }
+
+  .recent-updates__card_top {
+    width: 100%;
+  }
+
+  .recent-updates__card {
+    width: 100%;
+  }
+
+  .recent-updates__card__title {
+    width: 100%;
+  }
+
+  .recent-updates__card__excerpt {
+    width: 100%;
+  }
+
+  .recent-updates__card__image {
+    width: 100%;
+    height: auto;
   }
 }

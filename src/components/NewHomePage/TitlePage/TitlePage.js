@@ -31,12 +31,10 @@ const TitlePage = () => {
               <span className="subtitle">No Liquidity Fragmentation</span>
             </div>
           </div>
-          <div className="join-button">
-            <Button>
-              <span className="join-button-text">Join the Gated Launch</span>
-              <img src={Arrow} alt="awwor" />
-            </Button>
-          </div>
+          <Button className="join-button">
+            <span className="join-button-text">Join the Gated Launch</span>
+            <img src={Arrow} alt="awwor" />
+          </Button>
         </div>
         <div className="screenshot-container">
           <img src={AppScreenshot} alt="App Screenshot" className="screenshot"/>

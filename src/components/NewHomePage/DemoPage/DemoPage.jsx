@@ -1,6 +1,7 @@
 import React from "react"
 import PillText from "../PillText/PillText"
 import * as Select from '@radix-ui/react-select';
+import * as Dialog from '@radix-ui/react-dialog';
 import "./DemoPage.css"
 
 const DemoPage = () => {
@@ -28,9 +29,8 @@ const DemoPage = () => {
             <div className="text-purple">performance.</div>
           </div>
           <div className="demo-details">
-            <div>Swap assets and options fully liquidly powered by our</div>
             <div>
-              {`integration, the `}
+              {`Swap assets and options fully liquidly powered by our integration, the `}
               <PillText>Uniswap v3</PillText>
             </div>
             <div>largest decentralized exchange on Ethereum</div>
@@ -67,9 +67,11 @@ const DemoPage = () => {
       </div>
       <div className="demo-video">
         <div className="video-text">Just watch the Demo</div>
-        <div className="play-button">
-          PLAY
-        </div>
+        <VideoDialog trigger={
+          <div className="play-button">
+            PLAY
+          </div>
+        }></VideoDialog>
         <img src={`/img/new-home-page/video-thumbnail.png`} alt="video-thumbnail" className="video-thumbnail"/>
       </div>
 
@@ -77,10 +79,7 @@ const DemoPage = () => {
   )
 }
 
-import classnames from 'classnames';
-// import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons';
-// import './styles.css';
-
+import "./Select.css"
 const OptionSelect = () => (
   <Select.Root>
     <Select.Trigger className="select-trigger" aria-label="Food">
@@ -122,4 +121,20 @@ const SelectItem = ({ children }) => (
     </Select.ItemIndicator>
   </Select.Item>
 );
+
+import "./VideoDialog.css"
+const VideoDialog = ({trigger}) => (
+  <Dialog.Root>
+    <Dialog.Trigger asChild>
+      {trigger}
+    </Dialog.Trigger>
+    <Dialog.Portal>
+      <Dialog.Overlay className="dialog-overlay" />
+      <Dialog.Content className="dialog-content">
+        <video src="https://user-images.githubusercontent.com/62954565/223510059-8c057bc5-3957-466d-bbdd-27e2bdea02bb.mp4#t=0.55" preload="metadata" type="video/mp4" width="100%" height="auto" autoPlay controls></video>
+      </Dialog.Content>
+    </Dialog.Portal>
+  </Dialog.Root>
+);
+
 export default DemoPage

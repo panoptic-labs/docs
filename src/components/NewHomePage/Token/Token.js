@@ -25,7 +25,7 @@ const Token = ({ tokenName }) => {
 
   return (
     <div className="token">
-      <img src={imageSrc} alt="App Screenshot" className="screenshot"/>
+      <img src={imageSrc} alt="token"/>
       <div className="token-name">
         {tokenName}
       </div>

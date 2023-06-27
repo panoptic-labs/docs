@@ -4,24 +4,32 @@
   position: relative;
 }
 
-.heading {
+.security-flex {
+  display: flex;
+  gap: 10rem;
+}
+
+.heading-section {
   color:white;
   margin-bottom: 5px;
 }
+
+
 
 .headerBorder{ 
   display: inline-block;
   margin-top: 121px;
   margin-left: 105px;
   padding: 0px 8px;
-  border-style: solid;
   border-radius: 60px;
   border-width: 1.5px;
+  border-style: solid;
   border-color: white;
 }
 
 .smallHeader {
   display: inline-block;
+  margin: 0;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
@@ -43,11 +51,118 @@
   letter-spacing: -0.72px;
 }
 
+span {
+  white-space: nowrap;
+}
+
+p.no-break {
+  display: inline;
+  margin: 0; 
+}
+
 h4 {
   text-transform: uppercase;
 }
 
 .abdkIcons {
   display: flex;
-  margin-left: 90px;
+  margin-left: 98px;
+}
+
+.arrow {
+  margin-top: 36px;
+  margin-left: 338px;
+}
+
+.scrollingIconsBorder {
+  height: 51px;
+  width: 157px;
+  margin-top: 158px;
+  border-radius: 12px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: white;
+  overflow: hidden;
+}
+
+.scrollingIcons {
+  overflow: hidden;
+  width: max-content;
+  display: flex;
+}
+
+.icon-container {
+  animation: swipe 14000ms linear infinite backwards;
+}
+
+@keyframes swipe {
+  0% {
+    transform: translate(0);
+  }
+
+  100% {
+    transform: translate(-100%);
+  }
+}
+
+/* reset for tab */
+button,
+fieldset,
+input {
+  all: unset;
+}
+
+.TabsRoot {
+  display: flex;
+  flex-direction: column;
+  height: 214px;
+  width: 617px;
+  margin-top: 15px;
+}
+
+.TabsList {
+  flex-shrink: 0;
+  display: flex;
+}
+
+.TabsTrigger {
+  font-family: inherit;
+  background-color: black;
+  height: 45px;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  color: white;
+  font-size: 20px;
+  user-select: none;
+}
+
+.TabsTrigger[data-state='active'] {
+  /* TODO: box shadow line needs to be like 40% of the width */
+  box-shadow: inset 0 -1px 0 0 currentColor, 0 1px 0 0 currentColor;
+  font-weight: 800;
+}
+
+.TabsContent {
+  flex-grow: 1;
+  padding: 20px 0px;
+  background-color: black;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  outline: none;
+}
+
+.Text {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 1400px) { 
+  .security-flex {
+    display: none;
+  }
 }

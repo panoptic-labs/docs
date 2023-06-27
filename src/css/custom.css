@@ -52,18 +52,23 @@
 }
 
 div[class^="announcementBar_"] {
-  background: repeating-linear-gradient(
-    35deg,
-    hsl(259, 76%, 8%),
-    hsl(259, 76%, 8%) 20px,
-    hsl(258, 82%, 45%) 10px,
-    hsl(258, 82%, 45%) 40px
-  );
+  background-color: #4E14D0;
   height: 2.5em;
   font-family: var(--ifm-font-family-base), sans-serif;
   font-weight: var(--ifm-heading-font-weight);
   font-size: 1.25em;
 }
+
+button[class^="clean-btn"] {
+  color: #F3F3F3;
+}
+
+@media screen and (max-width: 767px) { 
+  div[class^="announcementBar_"] {
+    display: none;
+  }
+}
+
 body[data-is_landing_page="true"] nav[aria-label="Main"],
 body[data-is_landing_page="true"] footer:not(.custom-footer) {
   display: none;

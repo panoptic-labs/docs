@@ -17,6 +17,17 @@
   padding-top: 58px;
   display: flex;
   justify-content: space-between;
+  animation: fade-in 2800ms linear;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+  }
 }
 
 .title-page-info {
@@ -46,10 +57,10 @@
   margin-right: 5px;
 }
 
-.screenshot {
+.screenshot-container {
   max-width: 735px;
+  width: 55vw;
   height: auto;
-  width: auto;
 }
 
 .join-button-text {
@@ -57,4 +68,42 @@
   font-family: Inter;
   font-size: 16px;
   font-weight: 500;
+}
+
+@media screen and (max-width: 1200px) { 
+  .screenshot-container { 
+    width: 45vw; 
+  } 
+}
+
+@media screen and (max-width: 1000px) { 
+  .screenshot-container { 
+    display: none;
+  } 
+}
+
+@media screen and (max-width: 767px) { 
+  .title {
+    font-size: 48px;
+  }
+
+  .title-page-info {
+    margin: 37px 40px 0 40px;
+  }
+}
+
+@media screen and (max-width: 405px) { 
+  .title {
+    font-size: 32px;
+  } 
+}
+
+@media screen and (max-width: 340px) { 
+  .subtitles {
+    font-size: 16px;
+  }
+
+  .join-button {
+    padding: 1px 20px;
+  }
 }

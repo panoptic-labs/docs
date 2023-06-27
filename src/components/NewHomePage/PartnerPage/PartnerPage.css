@@ -1,7 +1,6 @@
 .partner-page {
-  height: 323px;
   background-color: #F3F3F3;
-  padding: 0 96px;
+  padding: 0 96px 30px;
 }
 
 .partner-text {
@@ -18,4 +17,28 @@
   margin: 0 12.5px 20px 12.5px;
   height: 56px;
   width: auto;
+  mix-blend-mode: multiply;
+}
+
+@media screen and (max-width: 767px) { 
+  .partner-page {
+    padding: 0 40px 30px;
+  }
+
+  .partner-logos {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 380px) { 
+  .partner-text {
+    font-size: 18px;
+  }
+
+  .investor {
+    margin: 0 4px 10px 6px;
+    height: 42px;
+  }
 }
