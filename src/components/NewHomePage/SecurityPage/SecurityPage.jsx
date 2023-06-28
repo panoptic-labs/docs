@@ -6,114 +6,100 @@ import DocumentIcon from "../Icons/Document";
 import AoIcon from "../Icons/Ao";
 import MagnifyingIcon from "../Icons/Magnifying";
 import ArrowIcon from "../Icons/Arrow";
+import PillText from "../PillText/PillText"
 
 const SecurityPage = () => {
   const [activeTab, setActiveTab] = useState("tab1");
 
+  const iconMap = {
+    tab1: {
+      white: <DocumentIcon color={"#F3F3F3"}/>,
+      green: <DocumentIcon color={"#28CB95"}/>,
+    },
+    tab2: {
+      white: <AoIcon color={"#F3F3F3"}/>,
+      green: <AoIcon color={"#28CB95"}/>,
+    },
+    tab3: {
+      white: <MagnifyingIcon color={"#F3F3F3"}/>,
+      green: <MagnifyingIcon color={"#28CB95"}/>,
+    },
+  };
+  
   const RenderIcon = () => {
-    if (activeTab === "tab1") {
-      return (
-        <>
-          <div className="icon-container">
-            <DocumentIcon color={"#28CB95"} />
-            <DocumentIcon color={"#F3F3F3"} />
-            <DocumentIcon color={"#F3F3F3"} />
-            <DocumentIcon color={"#28CB95"} />
-          </div>
-          <div className="icon-container">
-            <DocumentIcon color={"#F3F3F3"} />
-            <DocumentIcon color={"#F3F3F3"} />
-            <DocumentIcon color={"#28CB95"} />
-            <DocumentIcon color={"#F3F3F3"} />
-          </div>
-        </>
-      );
-    }
-    if (activeTab === "tab2") {
-      return (
-        <>
-          <div className="icon-container">
-            <AoIcon color={"#28CB95"} />
-            <AoIcon color={"#F3F3F3"} />
-            <AoIcon color={"#F3F3F3"} />
-            <AoIcon color={"#28CB95"} />
-          </div>
-          <div className="icon-container">
-            <AoIcon color={"#F3F3F3"} />
-            <AoIcon color={"#F3F3F3"} />
-            <AoIcon color={"#28CB95"} />
-            <AoIcon color={"#F3F3F3"} />
-          </div>
-        </>
-      );
-    }
-    if (activeTab === "tab3") {
-      return (
-        <>
-          <div className="icon-container">
-            <MagnifyingIcon color={"#28CB95"} />
-            <MagnifyingIcon color={"#F3F3F3"}/>
-            <MagnifyingIcon color={"#F3F3F3"}/>
-            <MagnifyingIcon color={"#28CB95"} />
-          </div>
-          <div className="icon-container">
-            <MagnifyingIcon color={"#F3F3F3"}/>
-            <MagnifyingIcon color={"#F3F3F3"}/>
-            <MagnifyingIcon color={"#28CB95"} />
-            <MagnifyingIcon color={"#F3F3F3"}/>
-          </div>
-        </>
-      );
-    }
+    const activeIconWhite = iconMap[activeTab].white;
+    const activeIconGreen = iconMap[activeTab].green;
+    
+    return (
+      <>
+        <div className="icon-container">
+          {activeIconGreen}
+          {activeIconWhite}
+          {activeIconWhite}
+        </div>
+        <div className="icon-container">
+          {activeIconGreen}
+          {activeIconWhite}
+          {activeIconWhite}
+        </div>
+      </>
+    );
   };
 
   return (
     <div className="security-page">
       <div className="security-flex">
         <div className="heading-section">
-          <div className="headerBorder">
-            <h3 className="smallHeader">State-of-the-Art-Security</h3>
+          <div className="header-border">
+            <div className="small-header">
+              <PillText>State-of-the-Art-Security</PillText>
+            </div>
           </div>
-          <div className="mainHeader">
+          <div className="main-header">
             <span>
-              Our <span style={{ color: "#28CB95" }}>360 Audit:</span>{" "}
+              Our <span style={{ color: "#28CB95" }}>360° Audit:</span>{" "}
             </span>
             <p className="no-break">setting new </p>
             <p className="no-break">standards for </p>
             <p className="no-break">platform security</p>
           </div>
-          <div className="abdkIcons">
+          <div className="abdk-icons">
             <AbdkIcon />
             <AbdkIcon />
             <AbdkIcon />
           </div>
-          <div className="arrow">
-            <ArrowIcon />
+          <div className="arrow-container">
+            <div className="arrow hovering-arrow">
+              <ArrowIcon />
+            </div>
           </div>
         </div>
         <div className="tab-section">
-          <div className="scrollingIconsBorder">
-            <div className="scrollingIcons">{RenderIcon()}</div>
+          <div className="scrolling-icons-border">
+            <div className="scrolling-icons">{RenderIcon()}</div>
           </div>
           <Tabs.Root
-            className="TabsRoot"
+            className="tabs-root"
             defaultValue="tab1"
             value={activeTab}
             onValueChange={(event) => setActiveTab(event)}
           >
-            <Tabs.List className="TabsList" aria-label="Security">
-              <Tabs.Trigger className="TabsTrigger" value="tab1">
+            <Tabs.List className="tabs-list" aria-label="Security">
+              <Tabs.Trigger className="tabs-trigger" value="tab1">
                 Smart Contracts
+                <div className="tab-trigger-underline"/>
               </Tabs.Trigger>
-              <Tabs.Trigger className="TabsTrigger" value="tab2">
+              <Tabs.Trigger className="tabs-trigger" value="tab2">
                 Full-Stack Security
+                <div className="tab-trigger-underline"/>
               </Tabs.Trigger>
-              <Tabs.Trigger className="TabsTrigger" value="tab3">
+              <Tabs.Trigger className="tabs-trigger" value="tab3">
                 Economic Security
+                <div className="tab-trigger-underline"/>
               </Tabs.Trigger>
             </Tabs.List>
-            <Tabs.Content className="TabsContent" value="tab1">
-              <p className="Text">
+            <Tabs.Content className="tabs-content" value="tab1">
+              <p className="text">
                 Using simulations and agent-based modeling, we stress-tested and
                 fine-tuned parameters to revolutionize our understanding of its
                 economic dynamics. This comprehensive approach identified
@@ -124,8 +110,8 @@ const SecurityPage = () => {
                 its resilience.
               </p>
             </Tabs.Content>
-            <Tabs.Content className="TabsContent" value="tab2">
-              <p className="Text">
+            <Tabs.Content className="tabs-content" value="tab2">
+              <p className="text">
                 We have revolutionized security standards by conducting holistic
                 audits of both our frontend and backend systems. By thoroughly
                 examining every aspect of our protocol, we ensure comprehensive
@@ -137,8 +123,8 @@ const SecurityPage = () => {
                 confidence among our users.
               </p>
             </Tabs.Content>
-            <Tabs.Content className="TabsContent" value="tab3">
-              <p className="Text">
+            <Tabs.Content className="tabs-content" value="tab3">
+              <p className="text">
                 Our protocol's resilience has been greatly strengthened through
                 an in-depth economic audit. Using simulations and agent-based
                 modeling, we stress-tested and fine-tuned parameters to
