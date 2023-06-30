@@ -12,22 +12,16 @@ const RightPart = ({ onToggle }) => {
 
   return (
     <div className="right-part">
-      {!isMobileWidth && (
-        <>
-          {/* <a href="https://github.com/panoptic-labs">
-            <Button variant="outlined">Github</Button>
-          </a> */}
-          <Button disabled={appIsDisabled}>
-            {appIsDisabled ? "App Coming Soon" : "Launch App"}
-          </Button>
-        </>
+      {!isTabletWidth && (
+        <Button disabled={appIsDisabled}>
+          {appIsDisabled ? "App Coming Soon" : "Launch App"}
+        </Button>
       )}
-      {/* {!isTabletWidth && <ToggleTheme />}
       {isTabletWidth && (
         <Button className="right-part__menu_button" onClick={onToggle}>
           <i className="icon__burger right-part__icon" />
         </Button>
-      )} */}
+      )}
     </div>
   );
 };

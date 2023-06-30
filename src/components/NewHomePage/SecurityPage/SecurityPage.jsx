@@ -85,7 +85,7 @@ const SecurityPage = () => {
             onValueChange={(event) => setActiveTab(event)}
           >
             <Tabs.List className="tabs-list" aria-label="Security">
-              <Tabs.Trigger className="tabs-trigger" value="tab1">
+              <Tabs.Trigger className="tabs-trigger tab1" value="tab1">
                 Smart Contracts
                 <div className="tab-trigger-underline"/>
               </Tabs.Trigger>
@@ -99,7 +99,7 @@ const SecurityPage = () => {
               </Tabs.Trigger>
             </Tabs.List>
             <Tabs.Content className="tabs-content" value="tab1">
-              <p className="text">
+              {/* <p className="text"> */}
                 Using simulations and agent-based modeling, we stress-tested and
                 fine-tuned parameters to revolutionize our understanding of its
                 economic dynamics. This comprehensive approach identified
@@ -108,10 +108,10 @@ const SecurityPage = () => {
                 confidence among users and investors. With a solid foundation,
                 our protocol thrives, attracting a growing community that values
                 its resilience.
-              </p>
+              {/* </p> */}
             </Tabs.Content>
             <Tabs.Content className="tabs-content" value="tab2">
-              <p className="text">
+              {/* <p className="text"> */}
                 We have revolutionized security standards by conducting holistic
                 audits of both our frontend and backend systems. By thoroughly
                 examining every aspect of our protocol, we ensure comprehensive
@@ -121,10 +121,10 @@ const SecurityPage = () => {
                 fortifying our protocol against potential risks. As a result, we
                 have set a new benchmark for security, instilling trust and
                 confidence among our users.
-              </p>
+              {/* </p> */}
             </Tabs.Content>
             <Tabs.Content className="tabs-content" value="tab3">
-              <p className="text">
+              {/* <p className="text"> */}
                 Our protocol's resilience has been greatly strengthened through
                 an in-depth economic audit. Using simulations and agent-based
                 modeling, we stress-tested and fine-tuned parameters to
@@ -134,7 +134,7 @@ const SecurityPage = () => {
                 sets us apart, inspiring confidence among users and investors.
                 With a solid foundation, our protocol thrives, attracting a
                 growing community that values its resilience.
-              </p>
+              {/* </p> */}
             </Tabs.Content>
           </Tabs.Root>
         </div>

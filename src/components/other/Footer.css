@@ -279,7 +279,8 @@
 @media (max-width: 767px) {
 
   .footer-conversation-container {
-    margin: 60px 40px;
+    margin: 0px 0px 60px;
+    border-radius: 0px;
     padding: 34px 53px 48px 55px;
   }
 
@@ -323,41 +324,35 @@
   }
 }
 
-@media screen and (max-width: 490px) { 
+@media screen and (max-width: 400px) { 
   .footer-conversation-title {
-    font-size: 32px;
+    font-size: 44px;
   }
 
   .footer-conversation-social-icon-link {
-    width: 40px;
-    height: 40px;
+    width: 56px;
+    height: 56px;
   }
   
   .footer-conversation-social-icon {
-    width: 40px;
-    height: 40px;
+    width: 56px;
+    height: 56px;
   }
 
   .footer-conversation-container {
-    margin: 60px 40px 30px 40px;
+    margin: 0px 0px 30px;
     padding: 34px 28px 25px 30px;
   }
 }
 
 @media screen and (max-width: 376px) { 
-  .footer__container__community-and-more-part {
-    margin-top: 39px;
-  }
-
   .footer-conversation-social-icon-link {
-    width: 30px;
-    height: 30px;
+    width: 48px;
+    height: 48px;
   }
   
   .footer-conversation-social-icon {
-    width: 30px;
-    height: 30px;
+    width: 48px;
+    height: 48px;
   }
-
-
 }

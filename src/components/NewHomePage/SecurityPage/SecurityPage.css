@@ -97,7 +97,7 @@ h4 {
 }
 
 .icon-container {
-  animation: swipe 14000ms linear infinite backwards;
+  animation: swipe 8000ms linear infinite backwards;
 }
 
 @keyframes swipe {
@@ -130,7 +130,6 @@ input {
 }
 
 .tabs-list {
-  flex-shrink: 0;
   display: flex;
 }
 
@@ -138,13 +137,14 @@ input {
   font-family: inherit;
   background-color: black;
   height: 45px;
-  flex: 1;
+  margin-right: 32px;
   align-items: center;
   justify-content: center;
   line-height: 1;
   color: white;
   font-size: 20px;
   user-select: none;
+  cursor: pointer;
 }
 
 .tab-trigger-underline {
@@ -168,9 +168,6 @@ input {
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
   outline: none;
-}
-
-.text {
   margin-top: 0;
   margin-bottom: 20px;
   color: #FFFFFF;
@@ -189,6 +186,7 @@ input {
 
   .tabs-trigger {
     font-size: 18px;
+    margin-right: 18px;
   }
 }
 
@@ -223,9 +221,10 @@ input {
   }
 }
 
-@media screen and (max-width: 380px) { 
+@media screen and (max-width: 400px) { 
   .tabs-trigger {
-    font-size: 14px;
+    font-size: 16px;
+    margin-right: 0px;
   }
 
   .tab-section {

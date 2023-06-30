@@ -21,13 +21,14 @@ const PartnerPage = () => {
   return (
     <div className="partner-page">
       <div className="partner-text">
-        <div>Backed by a trusted team</div>
-        <div>of Investors & Partners...</div>
+        <div>Backed by a trusted team of Investors & Partners...</div>
       </div>
-      <div className="partner-logos">
-        {investors.map((card) => (
-          <img key={card} src={`/img/partners/${card}.svg`} alt={card} className="investor"/>
-        ))}
+      <div className="partner-logos-container">
+        <div className="partner-logos">
+          {investors.map((card) => (
+            <img key={card} src={`/img/partners/${card}.svg`} alt={card} className="investor"/>
+          ))}
+        </div>
       </div>
     </div>
   )
