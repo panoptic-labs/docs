@@ -4,13 +4,16 @@
 }
 
 .partner-text {
-  padding: 60px 0 21px 0;
+  padding: 60px 0 40px 0;
   color: black;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
   font-size: 22px;
   line-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .investor {
@@ -18,17 +21,24 @@
   height: 56px;
   width: auto;
   mix-blend-mode: multiply;
+  filter: grayscale(100%)
+}
+
+.partner-logos-container {
+  display: flex;
+  justify-content: center;
+}
+
+.partner-logos {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1000px;
 }
 
 @media screen and (max-width: 767px) { 
   .partner-page {
     padding: 0 40px 30px;
-  }
-
-  .partner-logos {
-    display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: center;
   }
 }
 

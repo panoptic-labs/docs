@@ -4,6 +4,7 @@ const useResponsive = () => {
   const [width, setWidth] = useState(1920);
   const isTabletWidth = width <= 1024;
   const isMobileWidth = width <= 767;
+  const is440 = width <= 440;
 
   useEffect(() => {
     const handleResize = () => {
@@ -21,6 +22,7 @@ const useResponsive = () => {
   return {
     isMobileWidth,
     isTabletWidth,
+    is440,
   };
 };
 

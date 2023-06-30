@@ -37,7 +37,7 @@
 
 .title {
   font-family: Alice;
-  font-size: 64px;
+  font-size: 76px;
   font-weight: 400;
   color: #4E14D0;
   line-height: 100%;
@@ -70,13 +70,13 @@
   font-weight: 500;
 }
 
-@media screen and (max-width: 1200px) { 
+@media screen and (max-width: 1400px) { 
   .screenshot-container { 
-    width: 45vw; 
+    width: 40vw; 
   } 
 }
 
-@media screen and (max-width: 1000px) { 
+@media screen and (max-width: 1050px) { 
   .screenshot-container { 
     display: none;
   } 
@@ -90,15 +90,27 @@
   .title-page-info {
     margin: 37px 40px 0 40px;
   }
+
+  .title-page-flex {
+    padding-top: 8px;
+  }
+
+  .with-background {
+    background-position: bottom left;
+  }
 }
 
 @media screen and (max-width: 405px) { 
   .title {
-    font-size: 32px;
+    font-size: 38px;
   } 
 }
 
 @media screen and (max-width: 340px) { 
+  .title {
+    font-size: 34px;
+  } 
+
   .subtitles {
     font-size: 16px;
   }

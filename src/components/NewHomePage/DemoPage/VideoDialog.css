@@ -1,6 +1,6 @@
 
 .dialog-overlay {
-  background-color: rgba(128, 128, 128, 0.9);
+  background-color: rgba(13, 13, 13, 0.8);
   position: fixed;
   inset: 0;
   animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);

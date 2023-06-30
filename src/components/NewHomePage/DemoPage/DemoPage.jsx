@@ -2,9 +2,11 @@ import React from "react"
 import PillText from "../PillText/PillText"
 import * as Select from '@radix-ui/react-select';
 import * as Dialog from '@radix-ui/react-dialog';
+import useResponsive from "../../../hooks/useResponsive";
 import "./DemoPage.css"
 
 const DemoPage = () => {
+  const { is440 } = useResponsive();
 
   return (
     <div className="demo-page">
@@ -29,11 +31,24 @@ const DemoPage = () => {
             <div className="text-purple">performance.</div>
           </div>
           <div className="demo-details">
-            <div>
-              {`Swap assets and options fully liquidly powered by our integration, the `}
-              <PillText>Uniswap v3</PillText>
-            </div>
-            <div>largest decentralized exchange on Ethereum</div>
+            {!is440 &&
+              <>
+                <div>
+                  {`Swap assets and options fully liquidly powered by our integration, the `}
+                  <PillText>Uniswap v3</PillText>
+                </div>
+                <div>largest decentralized exchange on Ethereum</div>
+              </>
+            }
+            {is440 &&
+              <>
+                <div>
+                  {`Swap assets and options fully liquidly powered by our integration, the `}
+                  <PillText>Uniswap v3</PillText>
+                  {` largest decentralized exchange on Ethereum`}
+                </div>
+              </>
+            }
           </div>
           <div className="hovering-arrow-container">
             <img src={`/img/new-home-page/hovering-arrow.svg`} alt="hovering-arrow" className="hovering-arrow"/>

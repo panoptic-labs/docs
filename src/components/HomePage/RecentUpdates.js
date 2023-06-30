@@ -67,32 +67,34 @@ const RecentUpdates = () => {
           <Slider {...settings} ref={slickRef}>
             {recentUpdates.map((post) => (
               <div className="recent-updates__card" key={post.id}>
-                <div className="recent-updates__card__content">
-                  <div className="recent-updates__card_top">
-                    <img
-                      className="recent-updates__card__image"
-                      src={post.image}
-                      alt={post.title}
-                    />
-                    <div className="recent-updates__card__title">{post.title}</div>
-                    <p className="recent-updates__card__excerpt">
-                      {post.excerpt}
-                    </p>
+                <a href={post.link}>
+                  <div className="recent-updates__card__content">
+                    <div className="recent-updates__card_top">
+                      <img
+                        className="recent-updates__card__image"
+                        src={post.image}
+                        alt={post.title}
+                      />
+                      <div className="recent-updates__card__title">{post.title}</div>
+                      <p className="recent-updates__card__excerpt">
+                        {post.excerpt}
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div className="recent-updates__card_bottom">
-                    <PillText grey={true}>
-                      <span className="recent-updates__card__date">
-                        {new Intl.DateTimeFormat("en-US", {
-                          month: "short",
-                          year: "numeric",
-                          day: "numeric",
-                        })
-                          .format(new Date(post.date))
-                          }
-                      </span>
-                    </PillText>
-                  </div>
+                  <div className="recent-updates__card_bottom">
+                      <PillText grey={true}>
+                        <span className="recent-updates__card__date">
+                          {new Intl.DateTimeFormat("en-US", {
+                            month: "short",
+                            year: "numeric",
+                            day: "numeric",
+                          })
+                            .format(new Date(post.date))
+                            }
+                        </span>
+                      </PillText>
+                    </div>
+                  </a>
               </div>
             ))}
           </Slider>
