@@ -17,7 +17,7 @@ const Nav = () => {
       <Link to="/docs/faq/" className="nav__link">
         FAQ
       </Link>
-      <Link to="/" className="nav__link">
+      <Link to="https://github.com/panoptic-labs" className="nav__link">
         Github
         <span className="external-link-arrow">
           <img src={"/img/new-home-page/external-link-arrow.svg"} alt="arrow"/>

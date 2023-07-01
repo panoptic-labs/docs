@@ -11,7 +11,7 @@
 }
 
 .sidebar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -75,7 +75,7 @@
   font-size: 22px;
   line-height: 32px;
   letter-spacing: -0.02em;
-  color: var(--color-text-primary);
+  color: white;
 }
 
 .sidebar__nav__bottom-part {
@@ -109,8 +109,8 @@
   .sidebar__nav {
     max-width: calc(100% - 40px);
     width: 100%;
-    padding-left: calc((100% - 227px) / 2);
-    padding-right: calc((100% - 227px) / 2);
+    padding-left: calc((100% - 240px) / 2);
+    padding-right: calc((100% - 240px) / 2);
   }
 
   [data-theme="dark"] .sidebar {

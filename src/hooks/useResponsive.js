@@ -8,7 +8,7 @@ const useResponsive = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setWidth(window.outerWidth);
+      setWidth(window.innerWidth);
     };
 
     handleResize();

@@ -70,6 +70,9 @@
 .demo-interactive-text {
   font-size: 36px;
   font-weight: 700;
+  display: flex;
+  line-height: 44px;
+  margin-bottom: 14px;
 }
 
 .demo-interactive-details {
@@ -97,10 +100,19 @@
 
 .demo-interactive-details-tags {
   display: flex;
+  gap: 8px;
 }
 
-.demo-interactive-details-tags-first {
-  margin-right: 8px;
+.explode-button {
+  position: absolute;
+  right: 115px;
+  font-size: 20px;
+  font-weight: 500;
+  transform: translateY(325px);
+}
+
+.explode-button:hover:not([disabled]) {
+  transform: translateY(325px);
 }
 
 .demo-video {
@@ -132,6 +144,69 @@
   font-size: 24px;
   font-weight: 600;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1400px) { 
+  .explode-button:hover:not([disabled]) {
+    transform: translateY(325px);
+  }
+  .explode-button {
+    transform: translateY(325px);
+  }
+}
+
+@media screen and (max-width: 1350px) { 
+  .explode-button:hover:not([disabled]) {
+    transform: translateY(315px);
+  }
+  .explode-button {
+    transform: translateY(315px);
+  }
+}
+
+@media screen and (max-width: 1301px) { 
+  .explode-button:hover:not([disabled]) {
+    transform: translateY(305px);
+  }
+  .explode-button {
+    transform: translateY(305px);
+  }
+}
+
+@media screen and (max-width: 1300px) { 
+  .explode-button:hover:not([disabled]) {
+    transform: translateY(215px);
+  }
+  .explode-button {
+    transform: translateY(215px);
+  }
+}
+
+@media screen and (max-width: 1250px) { 
+  .explode-button:hover:not([disabled]) {
+    transform: translateY(205px);
+  }
+  .explode-button {
+    transform: translateY(205px);
+  }
+}
+
+@media screen and (max-width: 1200px) { 
+  .explode-button:hover:not([disabled]) {
+    transform: translateY(195px);
+  }
+  .explode-button {
+    transform: translateY(195px);
+  }
+}
+
+@media screen and (max-width: 1150px) { 
+  .explode-button:hover:not([disabled]) {
+    transform: translateY(180px);
+  }
+  .explode-button {
+    transform: translateY(180px);
+  }
 }
 
 @media screen and (max-width: 1300px) { 
@@ -275,4 +350,9 @@
   .demo-details {
     width: 250px;
   }
+}
+
+.pill {
+  color: #575757;
+  border-color: #575757;
 }

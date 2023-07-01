@@ -1,15 +1,53 @@
-import React from "react"
+import React, { useState } from "react"
 import PillText from "../PillText/PillText"
-import * as Select from '@radix-ui/react-select';
 import * as Dialog from '@radix-ui/react-dialog';
+import * as Popover from '@radix-ui/react-popover';
 import useResponsive from "../../../hooks/useResponsive";
+import ConfettiExplosion from 'react-confetti-explosion';
+import Button from "../Button/Button"
 import "./DemoPage.css"
+import "./Select.css"
+import "./VideoDialog.css"
 
 const DemoPage = () => {
   const { is440 } = useResponsive();
+  const [optionType, setOptionType] = useState("Jade Lizard") // "Jade Lizard" | "Long Call" | "Long Strangle"
+  const [optionMenuOpen, setOptionMenuOpen] = useState(false)
+  const [isExploding, setIsExploding] = useState(false);
+
+  const handleOptionTypeChange = (optionType) => {
+    setOptionType(optionType)
+    setOptionMenuOpen(false)
+  }
+
+  const explode = () => {
+    setIsExploding(true);
+    setTimeout(() => {
+      setIsExploding(false);
+    }, 2000);
+  }
+
+  const optionTypes = {
+    "Long Call": {
+      name: "Long Call",
+      description: "Gives me right to purchase the asset for the strike price.",
+      tags: ["Risky", "Put"]
+    },
+    "Jade Lizard": {
+      name: "Jade Lizard",
+      description: "A strategy used to buy while the market is down, very little downsides in case of exit.",
+      tags: ["Defined-Risk"]
+    },
+    "Long Strangle": {
+      name: "Long Strangle",
+      description: "A nondirectional bet on a large price move",
+      tags: ["Risky", "Call"]
+    },
+  }
 
   return (
     <div className="demo-page">
+      {isExploding && <ConfettiExplosion width={4000}/>}
       <div className="demo-flex">
         <div className="demo-text">
           <PillText>Streamlined Trading</PillText>
@@ -57,23 +95,27 @@ const DemoPage = () => {
         <div className="demo-interactive">
           <div>
             <div className="demo-interactive-text">
-              Create a 
-              <OptionSelect></OptionSelect>
-              {/* Jade Lizard */}
+              <span>{"Create a"}&#160;</span>
+              <OptionsPopover 
+                title={optionTypes[optionType].name} 
+                handleOptionTypeChange={handleOptionTypeChange} 
+                open={optionMenuOpen} 
+                onOpenChange={setOptionMenuOpen}
+              />
             </div>
             <img src={`/img/new-home-page/demo-placeholder.png`}  alt="demo placeholder" />
+            <Button className="explode-button" onClick={() => explode()}>Mint It!</Button>
             <div className="demo-interactive-details">
               <div className="demo-interactive-details-left">
-                <div className="demo-interactive-details-title">Jade Lizard</div>
+                <div className="demo-interactive-details-title">{optionTypes[optionType].name}</div>
                 <div className="demo-interactive-details-tags">
-                  <div className="demo-interactive-details-tags-first">
-                    <PillText>Risky</PillText>
-                  </div>
-                  <PillText>Put</PillText>
+                  {optionTypes[optionType].tags.map((tag) => (
+                    <PillText>{tag}</PillText>
+                  ))}
                 </div>
               </div>
               <div className="demo-interactive-details-right">
-                A strategy used to buy while the market is down, very little downsides in case of exit.
+                {optionTypes[optionType].description}
               </div>
               
             </div>
@@ -94,50 +136,6 @@ const DemoPage = () => {
   )
 }
 
-import "./Select.css"
-const OptionSelect = () => (
-  <Select.Root>
-    <Select.Trigger className="select-trigger" aria-label="Food">
-      <Select.Value placeholder="Jade Lizard" />
-      <Select.Icon className="SelectIcon">
-        {/* <ChevronDownIcon /> */}
-        <img src={`/img/new-home-page/demo-dropdown-arrow.svg`}  alt="dropdown arrow" />
-      </Select.Icon>
-    </Select.Trigger>
-    <Select.Portal>
-      <Select.Content className="select-content">
-        <Select.Viewport className="SelectViewport">
-          <Select.Group>
-            <SelectItem value="Long Call">
-              
-            </SelectItem>
-            <SelectItem value="Jade Lizard">Jade Lizard</SelectItem>
-            <SelectItem value="Long Strangle">Long Strangle</SelectItem>
-          </Select.Group>
-        </Select.Viewport>
-      </Select.Content>
-    </Select.Portal>
-  </Select.Root>
-);
-
-const SelectItem = ({ children }) => (
-  <Select.Item className="SelectItem">
-    <Select.ItemText>f</Select.ItemText>
-      <div className="select-item">
-        <div className="select-item-image"></div>
-        <div>
-          <div className="select-item-title">Long Call</div>
-          <div className="select-item-subtitle">Gives me right to purchase the asset for the strike price.</div>
-          <PillText>Undefined Risk</PillText>
-        </div>
-      </div>
-    <Select.ItemIndicator className="SelectItemIndicator">
-      {/* <CheckIcon /> */}g
-    </Select.ItemIndicator>
-  </Select.Item>
-);
-
-import "./VideoDialog.css"
 const VideoDialog = ({trigger}) => (
   <Dialog.Root>
     <Dialog.Trigger asChild>
@@ -150,6 +148,53 @@ const VideoDialog = ({trigger}) => (
       </Dialog.Content>
     </Dialog.Portal>
   </Dialog.Root>
+);
+
+const OptionsPopover = ({handleOptionTypeChange, title, onOpenChange, open}) => (
+  <Popover.Root onOpenChange={onOpenChange} open={open}>
+    <Popover.Trigger asChild>
+      <div>
+        <span className="select-trigger">{title}</span>
+        <img className="select-arrow" src={`/img/new-home-page/demo-dropdown-arrow.svg`}  alt="dropdown arrow" />
+      </div>
+    </Popover.Trigger>
+    <Popover.Portal>
+      <Popover.Content className="PopoverContent" sideOffset={5}>
+
+      <div className="select-item" onClick={() => handleOptionTypeChange("Long Call")}>
+        <div className="select-item-image"></div>
+        <div className="select-item-details">
+          <div className="select-item-title">Long Call</div>
+          <div className="select-item-subtitle">Gives me right to purchase the asset for the strike price.</div>
+          <PillText className="pill">Defined Risk</PillText>
+        </div>
+      </div>
+
+      <div className="select-item" onClick={() => handleOptionTypeChange("Jade Lizard")}>
+        <div className="select-item-image"></div>
+        <div className="select-item-details">
+          <div className="select-item-title">Jade Lizard</div>
+          <div className="select-item-subtitle">Unlimited risk on the downside, defined risk on the upside.</div>
+          <PillText className="pill">Undefined Risk</PillText>
+        </div>
+      </div>
+
+      <div className="select-item last-item" onClick={() => handleOptionTypeChange("Long Strangle")}>
+        <div className="select-item-image"></div>
+        <div className="select-item-details">
+          <div className="select-item-title">Long Strangle</div>
+          <div className="select-item-subtitle">A nondirectional bet on a large price move.</div>
+          <PillText className="pill">Undefined Risk</PillText>
+        </div>
+      </div>
+
+        <Popover.Close className="PopoverClose" aria-label="Close">
+          {/* <Cross2Icon /> */}
+        </Popover.Close>
+        <Popover.Arrow className="PopoverArrow" />
+      </Popover.Content>
+    </Popover.Portal>
+  </Popover.Root>
 );
 
 export default DemoPage
