@@ -9,7 +9,7 @@
 
 .token-set {
   display: flex;
-  margin: 60px 0 48px 0;
+  margin: 0px 0 28px 0;
   display: flex;
   animation: swipe 24000ms linear infinite backwards;
 }

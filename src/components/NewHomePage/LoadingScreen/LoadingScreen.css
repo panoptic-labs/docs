@@ -4,28 +4,43 @@
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 41;
+  opacity: 0;
   width: 280px;
-  animation: fade-in 1400ms linear;
+  animation: fade-in 1000ms linear;
 }
 
 .curtain {
   position: absolute;
   height: 100vh;
   width: 100vw;
-  background-color: #4E14D0;
   z-index: 40;
 }
 
 .curtain-left {
-  animation: swipe-left 1400ms linear;
+  animation: swipe-left 2000ms linear forwards;
+  background-image: url("/img/loading-curtain-left.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: 100%;
+
 }
 
 .curtain-right {
-  animation: swipe-right 1400ms linear;
+  animation: swipe-right 2000ms linear forwards;
+  background-image: url("/img/loading-curtain-right.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: 100% 100%;
 }
 
 @keyframes swipe-left {
   0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
     transform: translate(0, 0);
   }
 
@@ -36,7 +51,11 @@
 
 @keyframes swipe-right {
   0% {
-    transform: translate(0, 0%);
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(0, 0);
   }
 
   100% {
@@ -47,6 +66,10 @@
 @keyframes fade-in {
   0% {
     opacity: 0;
+  }
+
+  20% {
+    opacity: 100%;
   }
 
   100% {
