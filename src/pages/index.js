@@ -30,7 +30,7 @@ export default function Home() {
       title=""
       description="Panoptic, the perpetual oracle-free options protocol"
     >
-      {/* <LoadingScreen/> */}
+      <LoadingScreen/>
       <Header />
       <main className="bg-body">
         <TitlePage/>

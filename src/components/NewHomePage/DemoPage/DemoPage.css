@@ -253,7 +253,7 @@
   }
 
   .demo-details {
-    width: 380px;
+    width: 469px;
   }
 
 }
@@ -315,6 +315,9 @@
   }
   .demo-subtitle {
     font-size: 22px;
+  }
+  .demo-details {
+    width: 310px;
   }
 }
 

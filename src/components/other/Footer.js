@@ -28,14 +28,14 @@ const Footer = () => {
             <a className="footer-conversation-social-icon-link" href="https://discord.gg/7fE8SN9pRT" aria-label="Discord">
               <img src={"/img/icons/discord.svg"} alt="discord" className="footer-conversation-social-icon ocial-icon-margin"></img>
             </a>
-            <a className="footer-conversation-social-icon-link" href="https://www.linkedin.com/company/panoptic-xyz" aria-label="Linked In">
-              <img src={"/img/icons/linkedin.svg"} alt="discord" className="footer-conversation-social-icon ocial-icon-margin"></img>
-            </a>
             <a className="footer-conversation-social-icon-link" href="https://twitter.com/panoptic_xyz" aria-label="Twitter">
-              <img src={"/img/icons/twitter.svg"} alt="discord" className="footer-conversation-social-icon ocial-icon-margin"></img>
+              <img src={"/img/icons/twitter.svg"} alt="Twitter" className="footer-conversation-social-icon ocial-icon-margin"></img>
             </a>
             <a className="footer-conversation-social-icon-link" href="https://t.me/panoptic" aria-label="Telegram">
               <img src={"/img/icons/telegram-big.svg"} alt="telegram" className="footer-conversation-social-icon"></img>
+            </a>
+            <a className="footer-conversation-social-icon-link" href="https://www.linkedin.com/company/panoptic-xyz" aria-label="Linked In">
+              <img src={"/img/icons/linkedin.svg"} alt="Linked In" className="footer-conversation-social-icon ocial-icon-margin"></img>
             </a>
           </div>
         </div>
@@ -54,7 +54,8 @@ const Footer = () => {
           <div className="learn-part__list">
             <a href="/docs/panoptic-protocol/overview">Protocol Overview</a>
             <a href="/docs/trading/basic-concepts">Options Trading 101</a>
-            <a href="https://panoptic.xyz/assets/files/whitepaper-64d6dbbd571190e9ef4d10b9cbe7c7fd.pdf" target="_blank">White Paper</a>
+            <a href="https://paper.panoptic.xyz/" target="_blank">Whitepaper</a>
+            <a href="https://intro.panoptic.xyz/" target="_blank">Litepaper</a>
             <a href="/docs/developers/smart-contracts-overview">Developers</a>
             <a href="/docs/terms/glossary">Glossary</a>
           </div>

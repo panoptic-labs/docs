@@ -63,11 +63,6 @@ const SecurityPage = () => {
             <p className="no-break">standards for </p>
             <p className="no-break">platform security</p>
           </div>
-          <div className="abdk-icons">
-            <AbdkIcon />
-            <AbdkIcon />
-            <AbdkIcon />
-          </div>
           <div className="arrow-container">
             <div className="arrow hovering-arrow">
               <ArrowIcon />
@@ -100,40 +95,17 @@ const SecurityPage = () => {
             </Tabs.List>
             <Tabs.Content className="tabs-content" value="tab1">
               {/* <p className="text"> */}
-                Using simulations and agent-based modeling, we stress-tested and
-                fine-tuned parameters to revolutionize our understanding of its
-                economic dynamics. This comprehensive approach identified
-                vulnerabilities and ensured stability under different market
-                conditions. Our economic audit sets us apart, inspiring
-                confidence among users and investors. With a solid foundation,
-                our protocol thrives, attracting a growing community that values
-                its resilience.
+              Employing cutting-edge tools, frameworks, and renowned security firms, we perform stringent audits on our blockchain smart contracts. Our approach integrates modern technologies with industry-best practices to scrutinize and optimize these contracts. The use of such avant-garde resources facilitates thorough audit processes, strengthening the integrity of our blockchain. Consequently, our resilient smart contracts are backed by rigorous audits, raising the bar for blockchain security and instilling unparalleled confidence among our users.
               {/* </p> */}
             </Tabs.Content>
             <Tabs.Content className="tabs-content" value="tab2">
               {/* <p className="text"> */}
-                We have revolutionized security standards by conducting holistic
-                audits of both our frontend and backend systems. By thoroughly
-                examining every aspect of our protocol, we ensure comprehensive
-                protection. This approach goes beyond just smart contract
-                security, encompassing the entire system.Our diligent audits
-                address vulnerabilities in both frontend and backend components,
-                fortifying our protocol against potential risks. As a result, we
-                have set a new benchmark for security, instilling trust and
-                confidence among our users.
+              Implementing revolutionary security measures, we conduct exhaustive audits on our frontend and backend systems. Through rigorous scrutiny of our entire protocol, we deliver all-encompassing protection. Our method extends beyond mere smart contract security, covering the full system scope. Our diligent audits target and address vulnerabilities in frontend and backend elements, bolstering our protocol against possible risks. Consequently, we’ve established a new gold standard for security, fostering unshakeable trust among our users.
               {/* </p> */}
             </Tabs.Content>
             <Tabs.Content className="tabs-content" value="tab3">
               {/* <p className="text"> */}
-                Our protocol's resilience has been greatly strengthened through
-                an in-depth economic audit. Using simulations and agent-based
-                modeling, we stress-tested and fine-tuned parameters to
-                revolutionize our understanding of its economic dynamics. This
-                comprehensive approach identified vulnerabilities and ensured
-                stability under different market conditions. Our economic audit
-                sets us apart, inspiring confidence among users and investors.
-                With a solid foundation, our protocol thrives, attracting a
-                growing community that values its resilience.
+              Harnessing advanced simulations and agent-based modeling, we've meticulously optimized parameters to redefine economic dynamics. Our comprehensive approach unearths vulnerabilities, fortifying stability in varied market conditions. Our distinctive economic audit cultivates trust among users and investors. Built on a robust foundation, our protocol flourishes, attracting a community that values resilience.
               {/* </p> */}
             </Tabs.Content>
           </Tabs.Root>

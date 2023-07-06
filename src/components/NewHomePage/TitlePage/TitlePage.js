@@ -1,5 +1,6 @@
 import "./TitlePage.css"
 import AppScreenshot from '/img/new-home-page/AppScreenshot.png'
+import LaptopMockup from '/img/new-home-page/LaptopMockup.svg'
 import CheckMark from "/img/new-home-page/CheckMark.png"
 import Button from "../Button/Button"
 import Arrow from "/img/new-home-page/Arrow.png"
@@ -41,7 +42,7 @@ const TitlePage = () => {
           </Button>
         </div>
         <div className="screenshot-container">
-          <img src={AppScreenshot} alt="App Screenshot" className="screenshot"/>
+          <img src="/img/new-home-page/LaptopMockup.svg" alt="App Screenshot" className="app-screenshot"/>
         </div>
       </div>
       <ScrollingTokens/>
