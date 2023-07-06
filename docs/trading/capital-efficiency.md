@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Capital effiency
+# Capital efficiency
 In options trading, capital efficiency refers to the ability of an options strategy to control a maximum amount of funds with minimal capital investment. It is a measure of how effectively an options trader uses their available capital to achieve their desired trading objectives.
 
 For example, a capital-efficient options strategy may involve using options to gain exposure to a crypto asset while requiring less capital than buying the crypto asset outright. This can be achieved through strategies such as call options or options spreads.
