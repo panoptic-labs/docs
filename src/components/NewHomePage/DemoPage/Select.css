@@ -1,4 +1,8 @@
 .select-trigger {
+  cursor: pointer;
+}
+
+.select-trigger-title {
   background-color: rgb(0,0,0,0);
   border: none;
   font-size: 36px;

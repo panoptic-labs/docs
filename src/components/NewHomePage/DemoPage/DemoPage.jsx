@@ -69,16 +69,14 @@ const DemoPage = () => {
             <div className="text-purple">performance.</div>
           </div>
           <div className="demo-details">
-            {!is440 &&
-              <>
+            {/* {!is440 &&
+              <> */}
                 <div>
-                  {`Swap assets and options fully liquidly powered by our integration, the `}
-                  <PillText>Uniswap v3</PillText>
+                  Immerse yourself in a thrilling financial revolution powered by our integration with <PillText>Uniswap v3</PillText> - the reigning champion of Ethereum-based decentralized exchanges. Embrace complete autonomy with the ability to seamlessly swap assets and options, fully liquid, like never before.                  
                 </div>
-                <div>largest decentralized exchange on Ethereum</div>
-              </>
-            }
-            {is440 &&
+              {/* </>
+            } */}
+            {/* {is440 &&
               <>
                 <div>
                   {`Swap assets and options fully liquidly powered by our integration, the `}
@@ -86,7 +84,7 @@ const DemoPage = () => {
                   {` largest decentralized exchange on Ethereum`}
                 </div>
               </>
-            }
+            } */}
           </div>
           <div className="hovering-arrow-container">
             <img src={`/img/new-home-page/hovering-arrow.svg`} alt="hovering-arrow" className="hovering-arrow"/>
@@ -103,7 +101,7 @@ const DemoPage = () => {
                 onOpenChange={setOptionMenuOpen}
               />
             </div>
-            <img src={`/img/new-home-page/demo-placeholder.png`}  alt="demo placeholder" />
+            <img src={`/img/new-home-page/interactive-demo.png`}  alt="demo placeholder" />
             <Button className="explode-button" onClick={() => explode()}>Mint It!</Button>
             <div className="demo-interactive-details">
               <div className="demo-interactive-details-left">
@@ -153,8 +151,8 @@ const VideoDialog = ({trigger}) => (
 const OptionsPopover = ({handleOptionTypeChange, title, onOpenChange, open}) => (
   <Popover.Root onOpenChange={onOpenChange} open={open}>
     <Popover.Trigger asChild>
-      <div>
-        <span className="select-trigger">{title}</span>
+      <div className="select-trigger">
+        <span className="select-trigger-title">{title}</span>
         <img className="select-arrow" src={`/img/new-home-page/demo-dropdown-arrow.svg`}  alt="dropdown arrow" />
       </div>
     </Popover.Trigger>

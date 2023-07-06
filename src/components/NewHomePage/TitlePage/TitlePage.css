@@ -19,7 +19,7 @@
   padding-top: 58px;
   display: flex;
   justify-content: space-between;
-  animation: fade-in-title 2600ms linear;
+  animation: fade-in-title 2300ms linear;
 }
 
 @keyframes fade-in-title {
@@ -38,12 +38,11 @@
 
 .title-page-info {
   margin-left: 96px;
-  margin-top: 37px;
 }
 
 .title {
   font-family: Alice;
-  font-size: 76px;
+  font-size: 92px;
   font-weight: 400;
   color: #4E14D0;
   line-height: 100%;
@@ -63,9 +62,10 @@
   margin-right: 5px;
 }
 
-.screenshot-container {
+.app-screenshot {
+  box-shadow: 0px 4px 180px 3px rgba(0, 0, 0, 0.20);
   max-width: 735px;
-  width: 55vw;
+  width: 40vw;
   height: auto;
 }
 
@@ -77,20 +77,31 @@
 }
 
 @media screen and (max-width: 1400px) { 
-  .screenshot-container { 
-    margin-top: 80px;
-    width: 40vw; 
-  } 
-
-  .title-page-flex {
-    padding-top: 0px;
+  .app-screenshot {
+    width: 35vw;
   }
+  .screenshot-container { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  } 
+}
+
+@media screen and (max-width: 1200px) { 
+  .title {
+    font-size: 76px;
+  }
+  
 }
 
 @media screen and (max-width: 1050px) { 
   .screenshot-container { 
     display: none;
   } 
+
+  .title {
+    font-size: 92px;
+  }
 }
 
 @media screen and (max-width: 1024px) { 
@@ -99,13 +110,16 @@
   }
 }
 
+@media screen and (max-width: 815px) { 
+  .title {
+    font-size: 86px;
+  }
+}
+
 @media screen and (max-width: 767px) { 
   .title-page {
     height: calc(100vh - 106px);
-  }
-
-  .title {
-    font-size: 48px;
+    min-height: 500px;
   }
 
   .title-page-info {
@@ -118,6 +132,18 @@
 
   .with-background {
     background-position: bottom left;
+  }
+}
+
+@media screen and (max-width: 600px) { 
+  .title {
+    font-size: 64px;
+  }
+}
+
+@media screen and (max-width: 510px) { 
+  .title {
+    font-size: 48px;
   }
 }
 

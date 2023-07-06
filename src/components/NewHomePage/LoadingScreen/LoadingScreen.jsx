@@ -9,7 +9,8 @@ const LaunchPage = () => {
         <img src={`/img/logo-dark.svg`} alt="logo" className="loading-logo"/>
       </div>
       <div className="curtain curtain-left"/>
-      <div className="curtain curtain-right"/>
+      <div className="curtain curtain-right-base"/>
+      <div className="curtain curtain-right-top"/>
     </div>
   )
 }

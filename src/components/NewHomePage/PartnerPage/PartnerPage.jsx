@@ -7,15 +7,15 @@ const PartnerPage = () => {
   const investors = [
     "gumi-crypos",
     "uniswap",
-    "zee-drime-capital",
-    "sevenx",
-    "hailstone",
     "coinbase",
     "jane-street",
-    "big-brain",
-    "mh",
-    "divergence",
     "blizzard",
+    "hailstone",
+    "sevenx",
+    "divergence",
+    "zee-drime-capital",
+    "mh",
+    "big-brain",
   ];
 
   return (

@@ -69,7 +69,7 @@
 }
 
 .accordion-trigger[data-state='open'] > .faq-arrow-container .faq-arrow {
-  animation: bounce 2000ms infinite; 
+  animation: faqbounce 2000ms infinite; 
 }
 
 /* Content */
@@ -90,7 +90,7 @@
   100% { transform: rotate(0deg)} 
 }
 
-@keyframes bounce { 
+@keyframes faqbounce { 
   0% { transform: translateX(0); } 
   50% { transform: translateX(-10px); } 
   100% { transform: translateX(0); } 

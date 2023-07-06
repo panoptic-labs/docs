@@ -17,35 +17,52 @@
 }
 
 .curtain-left {
-  animation: swipe-left 2000ms linear forwards;
-  background-image: url("/img/loading-curtain-left.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top right;
-  background-size: 100%;
+  animation: swipe-left 1500ms linear forwards;
+
+	width: 100vw;
+  height: 80vh;
+  background-color: #4E14D0;
+  transform:skew(315deg);
+  position: absolute;
+  right: 39vh;
+  top: 0;
 
 }
 
-.curtain-right {
-  animation: swipe-right 2000ms linear forwards;
-  background-image: url("/img/loading-curtain-right.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top right;
-  background-size: 100% 100%;
+.curtain-right-base {
+  animation: swipe-right 1500ms linear forwards;
+
+  width: 100vw;
+  height: 21vh;
+  background-color: #4E14D0;
+  position: absolute;
+  top: 79vh;
+  border: none;
+
+}
+
+.curtain-right-top {
+  animation: swipe-right 1500ms linear forwards;
+
+  position: absolute;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 80vh solid #4E14D0;
+  border-left: 80vh solid transparent
 }
 
 @keyframes swipe-left {
   0% {
-    transform: translate(0, 0);
+    transform: translate(0, 0) skew(315deg);
   }
 
-  50% {
-    transform: translate(0, 0);
+  75% {
+    transform: translate(0, 0) skew(315deg);
   }
 
   100% {
-    transform: translate(-100%, -40%);
+    transform: translate(-100%, -40%) skew(315deg);
   }
 }
 
@@ -54,7 +71,7 @@
     transform: translate(0, 0);
   }
 
-  50% {
+  75% {
     transform: translate(0, 0);
   }
 
