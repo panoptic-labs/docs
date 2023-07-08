@@ -73,6 +73,18 @@
   width: 320px;
   padding: 0 20px;
   cursor: pointer;
+  padding: 5px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.recent-updates__card:hover  .recent-updates__card__image{
+  transform: scale(1.05);
+  cursor: pointer;
+  border-radius: 50px;
+  transition: transform 300ms ease, box-shadow 600ms 60ms ease, border-radius 600ms ease;
 }
 
 .recent-updates__card__content {
@@ -163,6 +175,11 @@
 
   .recent-updates__card {
     width: 100%;
+    /* max-width: 350px; */
+  }
+
+  .recent-updates__card__content {
+    height: auto;
   }
 
   .recent-updates__card__title {

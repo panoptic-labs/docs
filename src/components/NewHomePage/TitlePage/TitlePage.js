@@ -1,6 +1,4 @@
 import "./TitlePage.css"
-import AppScreenshot from '/img/new-home-page/AppScreenshot.png'
-import LaptopMockup from '/img/new-home-page/LaptopMockup.svg'
 import CheckMark from "/img/new-home-page/CheckMark.png"
 import Button from "../Button/Button"
 import Arrow from "/img/new-home-page/Arrow.png"

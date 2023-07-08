@@ -1,3 +1,7 @@
+html, body {
+  overflow-x: hidden;
+}
+
 .loading-logo {
   position: absolute;
   left: 50%;
@@ -19,7 +23,7 @@
 .curtain-left {
   animation: swipe-left 1500ms linear forwards;
 
-	width: 100vw;
+	width: 102vw;
   height: 80vh;
   background-color: #4E14D0;
   transform:skew(315deg);
@@ -62,7 +66,7 @@
   }
 
   100% {
-    transform: translate(-100%, -40%) skew(315deg);
+    transform: translate(-100vw, -40vh) skew(315deg);
   }
 }
 
@@ -76,7 +80,7 @@
   }
 
   100% {
-    transform: translate(100%, 40%);
+    transform: translate(100vw, 40vh);
   }
 }
 

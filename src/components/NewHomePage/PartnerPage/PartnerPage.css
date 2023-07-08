@@ -18,8 +18,10 @@
 
 .investor {
   margin: 0 12.5px 20px 12.5px;
-  height: 56px;
-  width: auto;
+  width: 122px;
+  height: auto;
+  max-height: 56px;
+
   mix-blend-mode: multiply;
   filter: grayscale(100%)
 }
