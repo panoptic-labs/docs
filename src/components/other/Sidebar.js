@@ -5,7 +5,6 @@ import "./Sidebar.css";
 import useResponsive from "../../hooks/useResponsive";
 import Button from "../NewHomePage/Button/Button";
 import Link from "@docusaurus/Link";
-import ToggleTheme from "./ToggleTheme";
 
 const Sidebar = ({ isOpenedSidebar, onClose, onToggle }) => {
   const { isTabletWidth } = useResponsive();
