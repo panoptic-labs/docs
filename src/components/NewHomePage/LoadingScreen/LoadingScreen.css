@@ -21,7 +21,7 @@ html, body {
 }
 
 .curtain-left {
-  animation: swipe-left 1500ms linear forwards;
+  animation: swipe-left-with-skew 1500ms linear forwards;
 
 	width: 102vw;
   height: 80vh;
@@ -30,7 +30,6 @@ html, body {
   position: absolute;
   right: 39vh;
   top: 0;
-
 }
 
 .curtain-right-base {
@@ -42,7 +41,6 @@ html, body {
   position: absolute;
   top: 79vh;
   border: none;
-
 }
 
 .curtain-right-top {
@@ -56,7 +54,7 @@ html, body {
   border-left: 80vh solid transparent
 }
 
-@keyframes swipe-left {
+@keyframes swipe-left-with-skew {
   0% {
     transform: translate(0, 0) skew(315deg);
   }
@@ -67,6 +65,20 @@ html, body {
 
   100% {
     transform: translate(-100vw, -40vh) skew(315deg);
+  }
+}
+
+@keyframes swipe-left {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  75% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(-100vw, -40vh);
   }
 }
 
@@ -95,5 +107,39 @@ html, body {
 
   100% {
     opacity: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) { 
+  .curtain-left {
+    animation: swipe-left 1500ms linear forwards;
+
+    transform: none;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: transparent;
+
+    width: 0px;
+    height: 0px;
+
+    border-top: 100vh solid #4E14D0;
+    border-right: 101vw solid transparent;
+    border-bottom: none;
+    border-left: none;
+  }
+  
+  .curtain-right-base {
+    display: none;
+  
+  }
+  
+  .curtain-right-top {
+    position: absolute;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 100vh solid #4E14D0;
+    border-left: 100vw solid transparent
   }
 }

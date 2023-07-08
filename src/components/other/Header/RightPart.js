@@ -3,7 +3,6 @@ import React from "react";
 
 import "./RightPart.css";
 import Button from "../../NewHomePage/Button/Button";
-import ToggleTheme from "../ToggleTheme";
 import useResponsive from "../../../hooks/useResponsive";
 
 const RightPart = ({ onToggle }) => {

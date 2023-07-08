@@ -83,11 +83,6 @@ html, body {
   }
 }
 
-body[data-is_landing_page="true"] nav[aria-label="Main"],
-body[data-is_landing_page="true"] footer:not(.custom-footer) {
-  display: none;
-}
-
 .navbar--dark {
   box-shadow: 0 1px 2px 0 hsla(263, 100%, 100%, 0.9);
   background: radial-gradient(
@@ -102,9 +97,6 @@ body[data-is_landing_page="true"] footer:not(.custom-footer) {
 .alert {
   --ifm-alert-background-color: hsla(262, 80%, 73%, 0.05);
   --ifm-color-info-dark: hsla(262, 80%, 63%, 0.5);
-}
-
-.alert--info {
 }
 
 .menu {
