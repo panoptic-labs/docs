@@ -17,9 +17,11 @@ import LoadingScreen from '../components/NewHomePage/LoadingScreen/LoadingScreen
 export default function Home() {
   const { siteConfig } = useDocusaurusContext();
 
-  window.onunload = () => {
-    window.scrollTo(0, 0);
-  }
+  useEffect(() => {
+    window.onunload = () => {
+      window.scrollTo(0, 0);
+    }
+  })
 
   useEffect(() => {
     document.body.dataset.is_landing_page = true;
