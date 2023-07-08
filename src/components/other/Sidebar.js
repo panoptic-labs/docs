@@ -13,13 +13,13 @@ const Sidebar = ({ isOpenedSidebar, onClose, onToggle }) => {
 
   useEffect(() => {
     if (isOpenedSidebar && isTabletWidth) {
-      document.documentElement.style.overflow = "hidden";
+      document.documentElement.style.overflowY = "hidden";
     } else {
-      document.documentElement.style.overflow = "auto";
+      document.documentElement.style.overflowY = "auto";
     }
 
     return () => {
-      document.documentElement.style.overflow = "auto";
+      document.documentElement.style.overflowY = "auto";
     };
   }, [isTabletWidth, isOpenedSidebar]);
 

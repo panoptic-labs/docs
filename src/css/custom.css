@@ -69,6 +69,20 @@ button[class^="clean-btn"] {
   }
 }
 
+html, body {
+  animation: lock-scroll 2300ms;
+}
+
+@keyframes lock-scroll {
+  0% {
+    overflow-y: hidden;
+  }
+  
+  100% {
+    overflow-y: hidden;
+  }
+}
+
 body[data-is_landing_page="true"] nav[aria-label="Main"],
 body[data-is_landing_page="true"] footer:not(.custom-footer) {
   display: none;
