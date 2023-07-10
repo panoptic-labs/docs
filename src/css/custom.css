@@ -73,6 +73,14 @@ html, body {
   animation: lock-scroll 2300ms;
 }
 
+html {
+  overflow-y: hidden;
+}
+
+body {
+  overflow-y: scroll;
+}
+
 @keyframes lock-scroll {
   0% {
     overflow-y: hidden;
