@@ -101,7 +101,7 @@ const DemoPage = () => {
                 onOpenChange={setOptionMenuOpen}
               />
             </div>
-            <img src={`/img/new-home-page/interactive-demo.png`}  alt="demo placeholder" />
+            <img src={`/img/new-home-page/interactive-demo.svg`}  alt="demo placeholder" />
             <Button className="explode-button" onClick={() => explode()}>Mint It!</Button>
             <div className="demo-interactive-details">
               <div className="demo-interactive-details-left">
