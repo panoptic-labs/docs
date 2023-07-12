@@ -48,11 +48,6 @@ No. Panoptic does not have a token at this time.
 Testnet is scheduled for September 2023. Mainnet is scheduled for Q4 2023. See our <a href="https://panoptic.xyz/blog/panoptic-defi-options-protocol-roadmap">roadmap</a>.
 </details>
 
-<details>
-<summary>Will there be an audit?</summary>
-Yes. Panoptic's smart contracts were audited by <a href="https://panoptic.xyz/blog/abdk-audit-completion">ABDK</a> and is currently undergoing an audit with <a href="https://panoptic.xyz/blog/openzeppelin-audits-panoptic-defi-options-protocol">OpenZeppelin</a>. There are multiple other audits scheduled to ensure the holistic, end-to-end security of Panoptic. This includes a smart contract audit by Code4rena, economic audits by <a href="https://panoptic.xyz/blog/panoptic-three-sigma-partnership">Three Sigma</a> and <a href="https://panoptic.xyz/blog/simtopia-partnership-panoptic-defi-options">Simtopia</a>, and more to come. See our <a href="https://panoptic.xyz/blog/panoptic-defi-options-protocol-roadmap">roadmap</a>.
-</details>
-
 ## Perpetual Options
 <details>
 <summary>Do crypto users want options?</summary>
@@ -134,6 +129,11 @@ Example B: Bob is an option seller for ETH-USDC options. After depositing some c
 No, Panoptic liquidity providers (PLPs) do not suffer IL from Uniswap LP positions. PLPs earn commission fees, and take on protocol risk (e.g. if the Panoptic pool accrues bad debt from <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/margin">failing to liquidate</a> on time, then PLPs can lose capital). However, protocol risk is minimized through a tried-and-true <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/liquidations#liquidation-bonus">decentralized liquidation network</a> just as Aave, Compound, and dYdX use to prevent protocol insolvency.
 </details>
 
+<details>
+<summary>Is the capital deposited by Panoptic liquidity providers (PLP) locked when they are utilized by traders in Panoptic?</summary>
+Yes, the capital of Panoptic Liquidity Providers (PLPs) can be locked under certain conditions. PLPs play a more passive role in which they deposit their tokens and earn yield from commissions. However, if 100% of PLP capital has been utilized by options sellers, then PLPs may have to wait to withdraw their capital. This is similar to what happens in lending protocols when they reach 100% utilization and withdrawals are temporarily locked. Note that options buyers in Panoptic actually reduce pool utilization by returning liquidity to the Panoptic pool, freeing up capital that PLPs can withdraw.
+</details>
+
 ## Fees
 
 <details>
@@ -158,3 +158,27 @@ Example: Alice sells an out-of-the-money (OTM) ETH-USDC put Panoption, with stri
 This is the fee to mint an option. When an option seller or buyer opens their position, they pay a commission fee on the notional value of the position. The commission is paid to the PLPs. The commission fee percentage varies between 0.2% - 0.6% based on <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/commission#commission-rate-and-pool-utilization">pool utilization</a>.
 </details>
 
+## Security
+<details>
+<summary>Will there be an audit?</summary>
+Yes. Panoptic's smart contracts were audited by <a href="https://panoptic.xyz/blog/abdk-audit-completion">ABDK</a> and is currently undergoing an audit with <a href="https://panoptic.xyz/blog/openzeppelin-audits-panoptic-defi-options-protocol">OpenZeppelin</a>. There are multiple other audits scheduled to ensure the holistic, end-to-end security of Panoptic. This includes a smart contract audit by Code4rena, economic audits by <a href="https://panoptic.xyz/blog/panoptic-three-sigma-partnership">Three Sigma</a> and <a href="https://panoptic.xyz/blog/simtopia-partnership-panoptic-defi-options">Simtopia</a>, and more to come. See our <a href="https://panoptic.xyz/blog/panoptic-defi-options-protocol-roadmap">roadmap</a>.
+</details>
+
+<details>
+<summary>Why is Panoptic oracle-free?</summary>
+Panoptic is designed to minimize the risk of single-point failures and broaden market opportunities. This approach enables the creation of options markets for any asset immediately upon launch, eliminating the need to wait for oracle support to list specific assets.
+</details>
+
+<details>
+<summary>How are existing options protocols subject to manipulation?</summary>
+Options protocols that depend on positions expiring at a certain block are susceptible to manipulation. Bad actors can manipulate the price on that specific block, altering the status of an option from in-the-money (ITM) to out-of-the-money (OTM), or the reverse. In contrast, Panoptic's perpetual options model significantly reduces this vulnerability.
+<br /><br />
+Furthermore, DeFi options vaults with publicly scheduled auctions may face the risk of <a href="https://www.coindesk.com/markets/2022/04/19/crypto-options-traders-adopt-new-strategies-to-profit-from-defi-volatility-gyrations/">front-running</a>, a strategy where traders anticipate and exploit market movements created by the auctions. The result leads to unfavorable pricing for auction participants. 
+</details>
+
+<details>
+<summary>Are options for long-tail assets with low liquidity in Uniswap at risk of being manipulated on Panoptic?</summary>
+Every Panoptic pool relies on its Uniswap counterpart for key metrics such as pricing, moneyness, liquidations, and forced exercises. The downside is that if the Uniswap pool is illiquid, it may be easier to manipulate. Such manipulation could result in rapid streamia accumulation and premature liquidation for buyers, heightened liquidation risk for sellers, and forced exercises for ITM buyers temporarily pushed OTM.
+<br /><br />
+However, price manipulation in Uniswap is costly due to fees paid to Uniswap LPs, which also serve as compensation for Panoptic options sellers. Panoptic further discourages manipulation by implementing Time-Weighted Average Price (TWAP) requirements, meaning manipulators must hold the price for several minutes, not just a single block. Additionally, Panoptic's gradual liquidation of long positions further deters manipulation due to the associated costs.
+</details>
