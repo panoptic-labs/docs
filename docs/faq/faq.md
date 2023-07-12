@@ -147,16 +147,31 @@ Buying an option costs a commission fee, streamia (streaming premia), and gas fe
 </details>
 
 <details>
-<summary>How is the streamia calculated?</summary>
-The streamia (streaming premia) is equal to the amount of swap fees the borrowed LP position would have earned in the Uniswap pool, multiplied by a spread multiplier.  
+<summary>What is the commission fee?</summary>
+This is the fee to mint an option. When an option seller or buyer opens their position, they pay a commission fee on the notional value of the position. The commission is paid to the PLPs. The commission fee percentage varies between 0.2% - 0.6% based on <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/commission#commission-rate-and-pool-utilization">pool utilization</a>.
+</details>
+
+<details>
+<summary>How is the streaming premia (streamia) calculated?</summary>
+The <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/premium">streamia</a> is equal to the amount of swap fees the borrowed LP position would have earned in the Uniswap pool, multiplied by a spread multiplier.  
 <br /><br />
 Example: Alice sells an out-of-the-money (OTM) ETH-USDC put Panoption, with strike = 1000 and width = ±10%. Bob buys the OTM put Panoption from Alice for 0 upfront premium. If the ETH-USDC price moves between 909 and 1100, the option is “in range” and would have earned swap fees from the Uniswap pool. If the ETH-USDC price is above 1100 or below 909, the option is “out of range” and would not have earned any swap fees. Bob owes the total amount of accumulated swap fees to Alice as premium.
 </details>
 
 <details>
-<summary>What is the commission fee?</summary>
-This is the fee to mint an option. When an option seller or buyer opens their position, they pay a commission fee on the notional value of the position. The commission is paid to the PLPs. The commission fee percentage varies between 0.2% - 0.6% based on <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/commission#commission-rate-and-pool-utilization">pool utilization</a>.
+<summary>Has a streaming premia (streamia) been used in practice before?</summary>
+No, Panoptic is a pioneer in introducing <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/premium">streamia</a> for options. While similar pricing mechanisms exist such as the <a href="https://docs.panoptic.xyz/docs/trading/perpetual-options#how-do-perpetual-options-compare-to-perpetual-futures-perps">funding rate</a> in perpetual futures (perps), Panoptic's streamia is unique and innovative.
 </details>
+
+<details>
+<summary>How does Panoptic's new pricing model, streamia, differ from the Black-Scholes model?</summary>
+Panoptic's streamia pricing model is specifically designed for perpetual options, unlike the Black-Scholes model (BSM) which is used to price expiring options. Streamia introduces dynamic payments as opposed to a single upfront payment.
+<br /><br />
+Streamia operates efficiently on-chain, providing accessibility, risk management, capital efficiency, gas efficiency, transparency, and fair pricing for expirationless options. <a href="https://paper.panoptic.xyz">Research</a> shows that streamia-based perpetual options pricing converges to the BSM price of an equivalent traditional option.
+<br /><br />
+For a detailed explanation of the differences and advantages of streamia, you can refer to <a href="https://panoptic.xyz/blog/black-scholes-streamia-defi-options-pricing-models">this article</a>.
+</details>
+
 
 ## Security
 <details>
