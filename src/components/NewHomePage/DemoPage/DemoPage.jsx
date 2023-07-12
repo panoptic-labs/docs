@@ -3,6 +3,7 @@ import PillText from "../PillText/PillText"
 import * as Dialog from '@radix-ui/react-dialog';
 import * as Popover from '@radix-ui/react-popover';
 import useResponsive from "../../../hooks/useResponsive";
+import DemoChart from "../DemoChart/DemoChart"
 import ConfettiExplosion from 'react-confetti-explosion';
 import Button from "../Button/Button"
 import "./DemoPage.css"
@@ -102,7 +103,8 @@ const DemoPage = () => {
             </div>
             <div className="demo-interactive-body">
             {isExploding && <ConfettiExplosion width={4000}/>}
-              <img src={`/img/new-home-page/${optionTypes[optionType].image}.svg`} className={showReciept || showConfirm ? 'demo-greyed-out demo-graph' : 'demo-graph'} alt="demo placeholder" />
+              <DemoChart optionType={optionTypes[optionType].name}/>
+              {/* <img src={`/img/new-home-page/${optionTypes[optionType].image}.svg`} className={showReciept || showConfirm ? 'demo-greyed-out demo-graph' : 'demo-graph'} alt="demo placeholder" /> */}
               {showReciept && 
                 <div className="demo-interactive-reciept">
                   <div className="receipt-container">

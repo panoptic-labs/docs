@@ -84,6 +84,9 @@
 
 .demo-interactive-body {
   position: relative;
+  background-color: #F3F3F3;
+  border-radius: 12px;
+  max-width: 617px;
 }
 
 .demo-interactive-details {
