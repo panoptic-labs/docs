@@ -66,7 +66,12 @@
 .demo-interactive {
   max-width: 45vw;
   margin-top: 106px;
-  position: relative;
+}
+
+.demo-graph {
+  width: 100%;
+  background-color: #F3F3F3;
+  border-radius: 36px;
 }
 
 .demo-interactive-text {
@@ -75,6 +80,10 @@
   display: flex;
   line-height: 44px;
   margin-bottom: 14px;
+}
+
+.demo-interactive-body {
+  position: relative;
 }
 
 .demo-interactive-details {
@@ -105,16 +114,142 @@
   gap: 8px;
 }
 
+.demo-interactive-label {
+  position: absolute;
+  top: 20px;
+  left: 25px;
+  color: black;
+  font-weight: 500;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.demo-label-coin {
+  width: 25px;
+  height: auto;
+}
+
+.coin-eth {
+  margin-right: -15px;
+}
+
+.coin-dai {
+  margin-right: -5px;
+}
+
+.demo-label-pair {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.demo-label-basis-points {
+  font-weight: 600;
+  font-size: 12px;
+  background-color: white;
+  border-radius: 6px;
+  padding: 2px 4px;
+  margin-left: 10px;
+}
+
+.demo-confirm-label {
+  color: black;
+  font-weight: 500;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .explode-button {
   position: absolute;
   right: 20px;
   font-size: 20px;
   font-weight: 500;
-  transform: translateY(325px);
+  bottom: 30px;
 }
 
-.explode-button:hover:not([disabled]) {
-  transform: translateY(325px);
+.demo-greyed-out {
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+}
+
+.demo-interactive-reciept {
+  position: absolute;
+  top: 15px;
+  left: 51px;
+  width: 520px;
+  height: 368px;
+  border-radius: 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 26px;
+  padding-left: calc(50% - 142.5);
+  padding-bottom:  28px;
+  padding-right: calc(50% - 142.5);
+}
+
+.receipt-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.receipt-checkmark {
+  width: 85px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.receipt-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 19px;
+  color: black;
+}
+
+.reciept-flex {
+ display: flex;
+ justify-content: space-around;
+}
+
+.receipt-subtitle {
+  color: #707070;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 19px;
+  margin-top: -12px;
+}
+
+.reciept-detail-title {
+  color: black;
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 19px;
+}
+
+.reciept-detail {
+  color: black;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.receipt-note {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 110%;
+  color: #707070;
+  max-width: 255px;
+  margin-right: auto;
+  margin-left: auto;
+
 }
 
 .demo-video {
@@ -156,67 +291,12 @@
 }
 
 @media screen and (max-width: 1400px) { 
-  .explode-button:hover:not([disabled]) {
-    transform: translateY(325px);
-  }
-  .explode-button {
-    transform: translateY(325px);
-  }
-}
-
-@media screen and (max-width: 1350px) { 
-  .explode-button:hover:not([disabled]) {
-    transform: translateY(315px);
-  }
-  .explode-button {
-    transform: translateY(315px);
-  }
-}
-
-@media screen and (max-width: 1301px) { 
-  .explode-button:hover:not([disabled]) {
-    transform: translateY(305px);
-  }
-  .explode-button {
-    transform: translateY(305px);
-  }
-}
-
-@media screen and (max-width: 1300px) { 
-  .explode-button:hover:not([disabled]) {
-    transform: translateY(215px);
-  }
-  .explode-button {
-    transform: translateY(215px);
-  }
-}
-
-@media screen and (max-width: 1250px) { 
-  .explode-button:hover:not([disabled]) {
-    transform: translateY(205px);
-  }
-  .explode-button {
-    transform: translateY(205px);
-  }
-}
-
-@media screen and (max-width: 1200px) { 
-  .explode-button:hover:not([disabled]) {
-    transform: translateY(195px);
-  }
-  .explode-button {
-    transform: translateY(195px);
+  .demo-interactive-reciept {
+    width: calc(45vw - 102px);
   }
 }
 
 @media screen and (max-width: 1150px) { 
-  .explode-button:hover:not([disabled]) {
-    transform: translateY(180px);
-  }
-  .explode-button {
-    transform: translateY(180px);
-  }
-
   .demo-interactive-text {
     font-size: 32px;
   }
@@ -237,6 +317,11 @@
 
   .play-button:hover {
     transform: translate(-50%, 90%) scale(1.05);
+  }
+
+  .demo-interactive-reciept {
+    width: calc(35vw - 60px);
+    left: 30px;
   }
 }
 
