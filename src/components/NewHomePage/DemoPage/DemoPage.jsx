@@ -14,40 +14,54 @@ const DemoPage = () => {
   const [optionType, setOptionType] = useState("Jade Lizard") // "Jade Lizard" | "Long Call" | "Long Strangle"
   const [optionMenuOpen, setOptionMenuOpen] = useState(false)
   const [isExploding, setIsExploding] = useState(false);
+  const [showReciept, setShowReciept] = useState(false)
+  const [showConfirm, setShowConfirm] = useState(false)
 
   const handleOptionTypeChange = (optionType) => {
     setOptionType(optionType)
     setOptionMenuOpen(false)
   }
 
-  const explode = () => {
+  const mint = () => {
+    setShowConfirm(true)
+  }
+
+  const confirm = () => {
     setIsExploding(true);
+    setShowConfirm(false)
+    setShowReciept(true)
     setTimeout(() => {
       setIsExploding(false);
     }, 2000);
+  }
+
+  const mintAnother = () => {
+    setShowReciept(false)
   }
 
   const optionTypes = {
     "Long Call": {
       name: "Long Call",
       description: "Gives me right to purchase the asset for the strike price.",
-      tags: ["Risky", "Put"]
+      tags: ["Risky", "Put"],
+      image: "demo-graph-1",
     },
     "Jade Lizard": {
       name: "Jade Lizard",
       description: "A strategy used to buy while the market is down, very little downsides in case of exit.",
-      tags: ["Defined-Risk"]
+      tags: ["Defined-Risk"],
+      image: "demo-graph-2",
     },
     "Long Strangle": {
       name: "Long Strangle",
       description: "A nondirectional bet on a large price move",
-      tags: ["Risky", "Call"]
+      tags: ["Risky", "Call"],
+      image: "demo-graph-3",
     },
   }
 
   return (
     <div className="demo-page">
-      {isExploding && <ConfettiExplosion width={4000}/>}
       <div className="demo-flex">
         <div className="demo-text">
           <PillText>Streamlined Trading</PillText>
@@ -69,22 +83,7 @@ const DemoPage = () => {
             <div className="text-purple">performance.</div>
           </div>
           <div className="demo-details">
-            {/* {!is440 &&
-              <> */}
-                <div>
-                  Immerse yourself in a thrilling financial revolution powered by our integration with <PillText>Uniswap v3</PillText> - the reigning champion of Ethereum-based decentralized exchanges. Embrace complete autonomy with the ability to seamlessly swap assets and options, fully liquid, like never before.                  
-                </div>
-              {/* </>
-            } */}
-            {/* {is440 &&
-              <>
-                <div>
-                  {`Swap assets and options fully liquidly powered by our integration, the `}
-                  <PillText>Uniswap v3</PillText>
-                  {` largest decentralized exchange on Ethereum`}
-                </div>
-              </>
-            } */}
+            Immerse yourself in a thrilling financial revolution powered by our integration with <PillText>Uniswap v3</PillText> - the reigning champion of Ethereum-based decentralized exchanges. Embrace complete autonomy with the ability to seamlessly swap assets and options, fully liquid, like never before.                  
           </div>
           <div className="hovering-arrow-container">
             <img src={`/img/new-home-page/hovering-arrow.svg`} alt="hovering-arrow" className="hovering-arrow"/>
@@ -101,8 +100,89 @@ const DemoPage = () => {
                 onOpenChange={setOptionMenuOpen}
               />
             </div>
-            <img src={`/img/new-home-page/interactive-demo.svg`}  alt="demo placeholder" />
-            <Button className="explode-button" onClick={() => explode()}>Mint It!</Button>
+            <div className="demo-interactive-body">
+            {isExploding && <ConfettiExplosion width={4000}/>}
+              <img src={`/img/new-home-page/${optionTypes[optionType].image}.svg`} className={showReciept || showConfirm ? 'demo-greyed-out demo-graph' : 'demo-graph'} alt="demo placeholder" />
+              {showReciept && 
+                <div className="demo-interactive-reciept">
+                  <div className="receipt-container">
+                    <img src={`/img/new-home-page/receipt-checkmark.svg`} className="receipt-checkmark" alt="Check Mark" />
+                    <div className="receipt-title">Option Minted on Chain!</div>
+                    <div className="reciept-flex">
+                      <div className="receipt-subtitle">ETH/DAI</div>
+                      <div className="receipt-subtitle">30bps</div>
+                      <div className="receipt-subtitle">0x0359087578839</div>
+                    </div>
+                    <div className="reciept-flex">
+                      <div>
+                        <div className="reciept-detail-title">Network</div>
+                        <div className="reciept-detail">Ethereum</div>
+                      </div>
+                      <div>
+                        <div className="reciept-detail-title">Network Fee</div>
+                        <div className="reciept-detail">.0000014 ETH</div>
+                      </div>
+                    </div>
+                    <Button onClick={() => mintAnother()}>Mint another option!</Button>
+                    <div className="receipt-note">
+                      Note: this demo is for informational purposes only, no real funds are used
+                    </div>
+                  </div>
+                </div>
+              }
+              {showConfirm && 
+                <div className="demo-interactive-reciept">
+                  <div className="receipt-container">
+                    <div className="receipt-title">New Position</div>
+                    <div className="demo-confirm-label">
+                      <img src="/img/coins/eth.png" className="demo-label-coin coin-eth" alt="eth" />
+                      <img src="/img/coins/dai.png" className="demo-label-coin coin-dai" alt="eth" />
+                      <span className="demo-label-pair">ETH</span>
+                      <span className="demo-label-pair">/</span>
+                      <span className="demo-label-pair">DAI</span>
+                      <div className="demo-label-basis-points">30bps</div>
+                    </div>
+                    <div className="reciept-flex">
+                      <div>
+                        <div className="reciept-detail-title"># of Contracts</div>
+                        <div className="reciept-detail">138,982</div>
+                      </div>
+                      <div>
+                        <div className="reciept-detail-title">Fee Tier</div>
+                        <div className="reciept-detail">1 week</div>
+                      </div>
+                    </div>
+                    <div className="reciept-flex">
+                      <div>
+                        <div className="reciept-detail-title">P/L Open</div>
+                        <div className="reciept-detail">$988,476</div>
+                      </div>
+                      <div>
+                        <div className="reciept-detail-title">Collateral Req.</div>
+                        <div className="reciept-detail">$723,251</div>
+                      </div>
+                    </div>
+                    <Button onClick={() => confirm()}>Confirm Mint</Button>
+                    <div className="receipt-note">
+                      Note: this demo is for informational purposes only, no real funds are used
+                    </div>
+                  </div>
+                </div>
+              }
+              {!showReciept && !showConfirm && 
+                <>
+                  <div className="demo-interactive-label">
+                    <img src="/img/coins/eth.png" className="demo-label-coin coin-eth" alt="eth" />
+                    <img src="/img/coins/dai.png" className="demo-label-coin coin-dai" alt="eth" />
+                    <span className="demo-label-pair">ETH</span>
+                    <span className="demo-label-pair">/</span>
+                    <span className="demo-label-pair">DAI</span>
+                    <div className="demo-label-basis-points">30bps</div>
+                  </div>
+                  <Button className="explode-button" onClick={() => mint()}>Mint It!</Button>
+                </>
+              }
+            </div>
             <div className="demo-interactive-details">
               <div className="demo-interactive-details-left">
                 <div className="demo-interactive-details-title">{optionTypes[optionType].name}</div>
