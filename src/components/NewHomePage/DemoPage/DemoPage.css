@@ -188,9 +188,7 @@
   align-items: center;
   text-align: center;
   padding-top: 26px;
-  padding-left: calc(50% - 142.5);
   padding-bottom:  28px;
-  padding-right: calc(50% - 142.5);
 }
 
 .receipt-container {
