@@ -1,0 +1,11 @@
+.recharts-wrapper {
+  border-radius: 12px;
+}
+
+.recharts-surface {
+  border-radius: 12px;
+}
+
+.recharts-layer.recharts-cartesian-axis-line {
+  border-radius: 12px;
+}

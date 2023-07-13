@@ -86,6 +86,8 @@
   position: relative;
   background-color: #F3F3F3;
   border-radius: 12px;
+  width: 45vw;
+  height: 50vh;
   max-width: 617px;
 }
 
@@ -163,6 +165,25 @@
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.confirm-close-button {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50px;
+  border: 1.5px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirm-close-button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+  transition: transform 300ms ease, box-shadow 600ms 60ms ease, border-radius 600ms ease;
 }
 
 .explode-button {
@@ -305,6 +326,10 @@
 
 @media screen and (max-width: 1300px) { 
   .demo-interactive { 
+    max-width: 35vw; 
+  } 
+
+  .demo-interactive-body { 
     max-width: 35vw; 
   } 
 

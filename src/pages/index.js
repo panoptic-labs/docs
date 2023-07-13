@@ -1,5 +1,5 @@
 import "inter-ui/inter.css";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import Header from "../components/other/Header";
 import RecentUpdates from "../components/HomePage/RecentUpdates";
@@ -13,15 +13,22 @@ import FAQPage from '../components/NewHomePage/FAQPage/FAQPage';
 import LoadingScreen from '../components/NewHomePage/LoadingScreen/LoadingScreen'
 
 export default function Home() {
+  const [loadingScreen, setLoadingScreen] = useState(true)
   useEffect(() => {
     window.onunload = () => {
       window.scrollTo(0, 0);
     }
   })
 
+  useEffect(() => {
+    setTimeout(() => {
+      setLoadingScreen(false)
+    }, 2300)
+  })
+
   return (
     <>
-      <LoadingScreen/>
+      {loadingScreen && <LoadingScreen/>}
       <Header />
       <main className="bg-body">
         <TitlePage/>

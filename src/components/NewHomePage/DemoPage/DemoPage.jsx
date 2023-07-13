@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useRef, useState, useEffect } from "react"
 import PillText from "../PillText/PillText"
 import * as Dialog from '@radix-ui/react-dialog';
 import * as Popover from '@radix-ui/react-popover';
@@ -6,17 +6,36 @@ import useResponsive from "../../../hooks/useResponsive";
 import DemoChart from "../DemoChart/DemoChart"
 import ConfettiExplosion from 'react-confetti-explosion';
 import Button from "../Button/Button"
+import { LongCall } from "./long-call";
+import { LongStrangle } from "./long-strangle";
+import { JadeLizard } from "./jade-lizard";
 import "./DemoPage.css"
 import "./Select.css"
 import "./VideoDialog.css"
 
 const DemoPage = () => {
+  const demoInteractiveRef = useRef(null);
   const { is440 } = useResponsive();
   const [optionType, setOptionType] = useState("Jade Lizard") // "Jade Lizard" | "Long Call" | "Long Strangle"
   const [optionMenuOpen, setOptionMenuOpen] = useState(false)
   const [isExploding, setIsExploding] = useState(false);
   const [showReciept, setShowReciept] = useState(false)
   const [showConfirm, setShowConfirm] = useState(false)
+  const [chartSize, setChartSize] = useState({ width: 0, height: 0 });
+
+  useEffect(() => {
+    const handleResize = () => {
+      const { width, height } = demoInteractiveRef.current.getBoundingClientRect();
+      setChartSize({ width, height });
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const handleOptionTypeChange = (optionType) => {
     setOptionType(optionType)
@@ -44,19 +63,19 @@ const DemoPage = () => {
     "Long Call": {
       name: "Long Call",
       description: "Gives me right to purchase the asset for the strike price.",
-      tags: ["Risky", "Put"],
+      tags: ["Defined Risk"],
       image: "demo-graph-1",
     },
     "Jade Lizard": {
       name: "Jade Lizard",
-      description: "A strategy used to buy while the market is down, very little downsides in case of exit.",
-      tags: ["Defined-Risk"],
+      description: "Unlimited risk on the downside, defined risk on the upside.",
+      tags: ["Undefined Risk"],
       image: "demo-graph-2",
     },
     "Long Strangle": {
       name: "Long Strangle",
-      description: "A nondirectional bet on a large price move",
-      tags: ["Risky", "Call"],
+      description: "A nondirectional bet on a large price move (up or down).",
+      tags: ["Defined Risk"],
       image: "demo-graph-3",
     },
   }
@@ -101,9 +120,9 @@ const DemoPage = () => {
                 onOpenChange={setOptionMenuOpen}
               />
             </div>
-            <div className="demo-interactive-body">
+            <div className="demo-interactive-body" ref={demoInteractiveRef}>
             {isExploding && <ConfettiExplosion width={4000}/>}
-              <DemoChart optionType={optionTypes[optionType].name}/>
+              <DemoChart optionType={optionTypes[optionType].name} chartSize={chartSize}/>
               {/* <img src={`/img/new-home-page/${optionTypes[optionType].image}.svg`} className={showReciept || showConfirm ? 'demo-greyed-out demo-graph' : 'demo-graph'} alt="demo placeholder" /> */}
               {showReciept && 
                 <div className="demo-interactive-reciept">
@@ -135,6 +154,9 @@ const DemoPage = () => {
               {showConfirm && 
                 <div className="demo-interactive-reciept">
                   <div className="receipt-container">
+                    <button className="confirm-close-button" onClick={() => setShowConfirm(false)}>
+                      <img src="/img/icons/close.svg" alt="close" />
+                    </button>
                     <div className="receipt-title">New Position</div>
                     <div className="demo-confirm-label">
                       <img src="/img/coins/eth.png" className="demo-label-coin coin-eth" alt="eth" />
@@ -242,7 +264,9 @@ const OptionsPopover = ({handleOptionTypeChange, title, onOpenChange, open}) => 
       <Popover.Content className="PopoverContent" sideOffset={5}>
 
       <div className="select-item" onClick={() => handleOptionTypeChange("Long Call")}>
-        <div className="select-item-image"></div>
+        <div className="select-item-image">
+          <LongCall/>
+        </div>
         <div className="select-item-details">
           <div className="select-item-title">Long Call</div>
           <div className="select-item-subtitle">Gives me right to purchase the asset for the strike price.</div>
@@ -251,7 +275,9 @@ const OptionsPopover = ({handleOptionTypeChange, title, onOpenChange, open}) => 
       </div>
 
       <div className="select-item" onClick={() => handleOptionTypeChange("Jade Lizard")}>
-        <div className="select-item-image"></div>
+        <div className="select-item-image">
+          <JadeLizard/>
+        </div>
         <div className="select-item-details">
           <div className="select-item-title">Jade Lizard</div>
           <div className="select-item-subtitle">Unlimited risk on the downside, defined risk on the upside.</div>
@@ -260,17 +286,15 @@ const OptionsPopover = ({handleOptionTypeChange, title, onOpenChange, open}) => 
       </div>
 
       <div className="select-item last-item" onClick={() => handleOptionTypeChange("Long Strangle")}>
-        <div className="select-item-image"></div>
+        <div className="select-item-image">
+          <LongStrangle/>
+        </div>
         <div className="select-item-details">
           <div className="select-item-title">Long Strangle</div>
-          <div className="select-item-subtitle">A nondirectional bet on a large price move.</div>
-          <PillText className="pill">Undefined Risk</PillText>
+          <div className="select-item-subtitle">A nondirectional bet on a large price move (up or down).</div>
+          <PillText className="pill">Defined Risk</PillText>
         </div>
       </div>
-
-        <Popover.Close className="PopoverClose" aria-label="Close">
-          {/* <Cross2Icon /> */}
-        </Popover.Close>
         <Popover.Arrow className="PopoverArrow" />
       </Popover.Content>
     </Popover.Portal>

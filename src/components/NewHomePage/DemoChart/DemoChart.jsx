@@ -1,80 +1,93 @@
 import React, { PureComponent } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import "./DemoChart.css"
 
 const data1 = [
   {
+    name: 'Put 100',
+    price: -20,
+  },
+  {
     name: 'Put 200',
-    price: -60,
+    price: -20,
   },
   {
     name: 'Put 300',
-    price: -60,
+    price: -20,
   },
   {
     name: 'Put 400',
-    price: -50,
+    price: -20,
   },
   {
     name: 'Put 500',
-    price: -10,
+    price: 20,
   },
   {
     name: 'Call 500',
-    price: 40,
+    price: 70,
   },
   {
     name: 'Call 400',
-    price: 0,
+    price: 120,
   },
   {
     name: 'Call 300',
-    price: -60,
+    price: 170,
   },
 ];
 
 const data2 = [
   {
+    name: 'Put 100',
+    price: -110,
+  },
+  {
     name: 'Put 200',
-    price: -100,
+    price: -70,
   },
   {
     name: 'Put 300',
-    price: -80,
+    price: -30,
   },
   {
     name: 'Put 400',
-    price: -50,
+    price: 10,
   },
   {
     name: 'Put 500',
-    price: -10,
+    price: 10,
   },
   {
     name: 'Call 500',
-    price: 40,
+    price: -40,
   },
   {
     name: 'Call 400',
-    price: 40,
+    price: -40,
   },
   {
     name: 'Call 300',
-    price: -100,
+    price: -40,
   },
 ];
 
 const data3 = [
   {
+    name: 'Put 100',
+    price: 160,
+  },
+  {
     name: 'Put 200',
-    price: -100,
+    price: 100,
   },
   {
     name: 'Put 300',
-    price: -80,
+    price: 40,
   },
   {
     name: 'Put 400',
-    price: -50,
+    price: -10,
   },
   {
     name: 'Put 500',
@@ -86,11 +99,11 @@ const data3 = [
   },
   {
     name: 'Call 400',
-    price: 40,
+    price: 100,
   },
   {
     name: 'Call 300',
-    price: 40,
+    price: 160,
   },
 ];
 
@@ -114,18 +127,18 @@ const gradientOffset = (data) => {
   return dataMax / (dataMax - dataMin);
 };
 
-const DemoChart = ({optionType}) => {
+const DemoChart = ({optionType, chartSize}) => {
 
   const data = dataOptions[optionType]
 
   return (
     <AreaChart
-      width={617}
-      height={395}
+      width={chartSize.width} //{617}
+      height={chartSize.height} //{395}
       data={data}
       margin={{
-        top: 10,
-        right: 30,
+        top: 0,
+        right: 0,
         left: 0,
         bottom: 0
       }}
