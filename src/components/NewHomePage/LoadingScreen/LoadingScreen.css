@@ -21,7 +21,7 @@ html, body {
 }
 
 .curtain-left {
-  animation: swipe-left-with-skew 1500ms linear forwards;
+  animation: swipe-left-with-skew 1500ms linear;
 
 	width: 102vw;
   height: 80vh;
@@ -33,7 +33,7 @@ html, body {
 }
 
 .curtain-right-base {
-  animation: swipe-right 1500ms linear forwards;
+  animation: swipe-right 1500ms linear;
 
   width: 100vw;
   height: 21vh;
@@ -44,7 +44,7 @@ html, body {
 }
 
 .curtain-right-top {
-  animation: swipe-right 1500ms linear forwards;
+  animation: swipe-right 1500ms linear;
 
   position: absolute;
   right: 0;
