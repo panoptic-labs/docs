@@ -30,6 +30,7 @@ const FAQPage = () => {
               <AccordionContent>
                 Options in Panoptic differ slightly from conventional options. Instead of using a clearinghouse to settle options contracts, the Panoptic protocol uses Liquidity Provider (LP) positions in Uniswap v3 as a fundamental building block for trading long and short options. 
                 <br/>
+                <br/>
                 Panoptic allows users to access new and improved features when trading options:
                 <br/>
                 1) Panoptic options never expire and are perpetual.
