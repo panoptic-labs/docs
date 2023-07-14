@@ -1,0 +1,175 @@
+.title-page {
+  position: relative;
+  background-color: #F3F3F3;
+  display: flex;
+  height: calc(100vh - 83px);
+  min-height: 700px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.with-background {
+  background-image: url("/img/new-home-page/BackgroundLines.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.title-page-flex {
+  padding-top: 58px;
+  display: flex;
+  justify-content: space-between;
+  animation: fade-in-title 2300ms linear;
+}
+
+@keyframes fade-in-title {
+  0% {
+    opacity: 0%;
+  }
+
+  70% {
+    opacity: 0%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+.title-page-info {
+  margin-left: 96px;
+}
+
+.title {
+  font-family: Alice;
+  font-size: 92px;
+  font-weight: 400;
+  color: #4E14D0;
+  line-height: 110%;
+  margin-bottom: 40px;
+}
+
+.subtitles {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 46px;
+  line-height: 120%;
+  color: #4E14D0;
+}
+
+.checkmark {
+  margin-right: 5px;
+}
+
+.app-screenshot {
+  box-shadow: 0px 4px 180px 3px rgba(0, 0, 0, 0.30);
+  max-width: 735px;
+  width: 40vw;
+  height: auto;
+  border-radius: 8px 0px 0px 8px;
+  filter: grayscale(60%)
+}
+
+.join-button-text {
+  margin-right: 19px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 1400px) { 
+  .app-screenshot {
+    width: 35vw;
+  }
+  .screenshot-container { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  } 
+}
+
+@media screen and (max-width: 1200px) { 
+  .title {
+    font-size: 76px;
+  }
+  
+}
+
+@media screen and (max-width: 1050px) { 
+  .screenshot-container { 
+    display: none;
+  } 
+
+  .title {
+    font-size: 92px;
+  }
+}
+
+@media screen and (max-width: 1024px) { 
+  .title-page {
+    height: calc(100vh - 116px);
+  }
+}
+
+@media screen and (max-width: 815px) { 
+  .title {
+    font-size: 86px;
+  }
+}
+
+@media screen and (max-width: 767px) { 
+  .title-page {
+    height: calc(100vh - 106px);
+    min-height: 500px;
+  }
+
+  .title-page-info {
+    margin: 37px 40px 0 40px;
+  }
+
+  .title-page-flex {
+    padding-top: 8px;
+  }
+
+  .with-background {
+    background-position: bottom left;
+  }
+}
+
+@media screen and (max-width: 600px) { 
+  .title {
+    font-size: 64px;
+  }
+}
+
+@media screen and (max-width: 510px) { 
+  .title {
+    font-size: 48px;
+  }
+}
+
+@media screen and (max-width: 405px) { 
+  .title {
+    font-size: 38px;
+  } 
+
+  .join-button-text {
+    margin-right: 14px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 340px) { 
+  .title {
+    font-size: 34px;
+  } 
+
+  .subtitles {
+    font-size: 16px;
+  }
+
+  .join-button {
+    padding: 1px 20px;
+  }
+}

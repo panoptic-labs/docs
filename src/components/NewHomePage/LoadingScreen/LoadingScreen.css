@@ -1,0 +1,157 @@
+html, body {
+  overflow-x: hidden;
+}
+
+.loading-logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 41;
+  opacity: 0;
+  width: 280px;
+  animation: fade-in 1000ms linear;
+}
+
+.curtain {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 40;
+}
+
+.curtain-left {
+  animation: swipe-left-with-skew 1500ms linear forwards;
+
+  opacity: 0;
+	width: 102vw;
+  height: 80vh;
+  background-color: #4E14D0;
+  transform:skew(315deg);
+  position: absolute;
+  right: 39vh;
+  top: 0;
+}
+
+.curtain-right-base {
+  animation: swipe-right 1500ms linear forwards;
+
+  opacity: 0;
+  width: 100vw;
+  height: 21vh;
+  background-color: #4E14D0;
+  position: absolute;
+  top: 79vh;
+  border: none;
+}
+
+.curtain-right-top {
+  animation: swipe-right 1500ms linear forwards;
+
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 80vh solid #4E14D0;
+  border-left: 80vh solid transparent
+}
+
+@keyframes swipe-left-with-skew {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) skew(315deg);
+  }
+
+  75% {
+    opacity: 1;
+    transform: translate(0, 0) skew(315deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-100vw, -40vh) skew(315deg);
+  }
+}
+
+@keyframes swipe-left {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  75% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-100vw, -40vh);
+  }
+}
+
+@keyframes swipe-right {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  75% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(100vw, 40vh);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) { 
+  .curtain-left {
+    animation: swipe-left 1500ms linear forwards;
+
+    transform: none;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: transparent;
+
+    width: 0px;
+    height: 0px;
+
+    border-top: 100vh solid #4E14D0;
+    border-right: 101vw solid transparent;
+    border-bottom: none;
+    border-left: none;
+  }
+  
+  .curtain-right-base {
+    display: none;
+  
+  }
+  
+  .curtain-right-top {
+    position: absolute;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 100vh solid #4E14D0;
+    border-left: 100vw solid transparent
+  }
+}

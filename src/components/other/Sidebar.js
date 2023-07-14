@@ -3,9 +3,8 @@ import React, { useEffect, useRef } from "react";
 
 import "./Sidebar.css";
 import useResponsive from "../../hooks/useResponsive";
-import Button from "./Button";
+import Button from "../NewHomePage/Button/Button";
 import Link from "@docusaurus/Link";
-import ToggleTheme from "./ToggleTheme";
 
 const Sidebar = ({ isOpenedSidebar, onClose, onToggle }) => {
   const { isTabletWidth } = useResponsive();
@@ -13,13 +12,13 @@ const Sidebar = ({ isOpenedSidebar, onClose, onToggle }) => {
 
   useEffect(() => {
     if (isOpenedSidebar && isTabletWidth) {
-      document.documentElement.style.overflow = "hidden";
+      document.documentElement.style.overflowY = "hidden";
     } else {
-      document.documentElement.style.overflow = "auto";
+      document.documentElement.style.overflowY = "auto";
     }
 
     return () => {
-      document.documentElement.style.overflow = "auto";
+      document.documentElement.style.overflowY = "auto";
     };
   }, [isTabletWidth, isOpenedSidebar]);
 
@@ -54,26 +53,25 @@ const Sidebar = ({ isOpenedSidebar, onClose, onToggle }) => {
         })}
       >
         <div className="sidebar__nav__links">
-          <Link to="/" className="sidebar__nav__link">
-            Partners
+          <Link to="/docs/intro" className="sidebar__nav__link">
+            Docs
           </Link>
-          <Link to="/" className="sidebar__nav__link">
-            Features
+          <Link to="/blog" className="sidebar__nav__link">
+            Blog
           </Link>
-          <Link to="/" className="sidebar__nav__link">
+          <Link to="/research" className="sidebar__nav__link">
+            Research
+          </Link>
+          <Link to="/docs/faq/" className="sidebar__nav__link">
             FAQ
           </Link>
-          <Link to="/" className="sidebar__nav__link">
-            Recent Updates
+          <Link to="https://github.com/panoptic-labs" className="sidebar__nav__link">
+            Github
           </Link>
         </div>
         <div className="sidebar__nav__bottom-part">
-          <ToggleTheme />
           <div className="nav__bottom-part__buttons">
-            <Button href="/" variant="outlined">
-              Github
-            </Button>
-            <Button to="/">Launch app</Button>
+            <Button disabled={true}>App Coming Soon</Button>
           </div>
         </div>
       </nav>

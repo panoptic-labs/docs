@@ -1,0 +1,56 @@
+.partner-page {
+  background-color: #F3F3F3;
+  padding: 0 96px 30px;
+}
+
+.partner-text {
+  padding: 60px 0 40px 0;
+  color: black;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.investor {
+  margin: 0 12.5px 20px 12.5px;
+  width: 122px;
+  height: auto;
+  max-height: 56px;
+
+  mix-blend-mode: multiply;
+  filter: grayscale(100%)
+}
+
+.partner-logos-container {
+  display: flex;
+  justify-content: center;
+}
+
+.partner-logos {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1000px;
+}
+
+@media screen and (max-width: 767px) { 
+  .partner-page {
+    padding: 0 40px 30px;
+  }
+}
+
+@media screen and (max-width: 380px) { 
+  .partner-text {
+    font-size: 18px;
+  }
+
+  .investor {
+    margin: 0 4px 10px 6px;
+    height: 42px;
+  }
+}

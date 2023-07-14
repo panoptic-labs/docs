@@ -8,18 +8,37 @@ const Footer = () => {
 
   const renderCopyright = useCallback(
     () => (
-      <span className="logo-part__copyright">
+      <div className="logo-part__copyright">
         Copyright © {new Date().getFullYear()} Axicon Labs Inc. All Rights Reserved. Panoptic™ is a trademark of Axicon Labs Inc. All other trademarks and registered trademarks are the sole property of their respective owners.
-      </span>
+      </div>
     ),
     []
   );
 
   return (
     <footer className="custom-footer">
-      <div className="footer__blured-container">
-        <div className="footer__blured-circle_1" />
-        <div className="footer__blured-circle_2" />
+      <div className="footer-conversation-container footer-conversation-container-background">
+        <div className="footer-conversation-title">
+          <div>Join the</div>
+          <div>Conversation.</div>
+        </div>
+        <div className="footer-conversation-social">
+          <div className="footer-conversation-social-text">Find us on:</div>
+          <div >
+            <a className="footer-conversation-social-icon-link" href="https://discord.gg/7fE8SN9pRT" aria-label="Discord">
+              <img src={"/img/icons/discord.svg"} alt="discord" className="footer-conversation-social-icon ocial-icon-margin"></img>
+            </a>
+            <a className="footer-conversation-social-icon-link" href="https://twitter.com/panoptic_xyz" aria-label="Twitter">
+              <img src={"/img/icons/twitter.svg"} alt="Twitter" className="footer-conversation-social-icon ocial-icon-margin"></img>
+            </a>
+            <a className="footer-conversation-social-icon-link" href="https://t.me/panoptic" aria-label="Telegram">
+              <img src={"/img/icons/telegram-big.svg"} alt="telegram" className="footer-conversation-social-icon"></img>
+            </a>
+            <a className="footer-conversation-social-icon-link" href="https://www.linkedin.com/company/panoptic-xyz" aria-label="Linked In">
+              <img src={"/img/icons/linkedin.svg"} alt="Linked In" className="footer-conversation-social-icon ocial-icon-margin"></img>
+            </a>
+          </div>
+        </div>
       </div>
       <div className="footer__container">
         <div className="footer__container__logo-part">
@@ -31,32 +50,39 @@ const Footer = () => {
           {!isMobileWidth && renderCopyright()}
         </div>
         <div className="footer__container__learn-part">
-          <h4 className="learn-part__title">Learn</h4>
+          <div className="learn-part__title">Learn</div>
           <div className="learn-part__list">
             <a href="/docs/panoptic-protocol/overview">Protocol Overview</a>
             <a href="/docs/trading/basic-concepts">Options Trading 101</a>
+            <a href="https://paper.panoptic.xyz/" target="_blank">Whitepaper</a>
+            <a href="https://intro.panoptic.xyz/" target="_blank">Litepaper</a>
             <a href="/docs/developers/smart-contracts-overview">Developers</a>
             <a href="/docs/terms/glossary">Glossary</a>
           </div>
         </div>
         <div className="footer__container__community-and-more-part">
-          <h4 className="community-part__title">Community</h4>
-          <div className="community-part__links">
-            <a className="community-part__link" href="https://discord.gg/7fE8SN9pRT" aria-label="Discord" />
-            <a className="community-part__link" href="https://www.linkedin.com/company/panoptic-xyz" aria-label="Linked In" />
-            <a className="community-part__link" href="https://twitter.com/panoptic_xyz" aria-label="Twitter" />
+          <div className="community-part">
+            <div className="community-part__title">Community</div>
+            <div className="community-part__links">
+              <a className="community-part__link" href="https://discord.gg/7fE8SN9pRT" aria-label="Discord" />
+              <a className="community-part__link" href="https://twitter.com/panoptic_xyz" aria-label="Twitter" />
+              <a className="community-part__link" href="https://t.me/panoptic" aria-label="Telegram" />
+              <a className="community-part__link" href="https://www.linkedin.com/company/panoptic-xyz" aria-label="Linked In" />
+            </div>
           </div>
-          <h4 className="more-part__title">More</h4>
-          <div className="more-part__links">
-            <a className="more-part__link" target="_blank" href="https://github.com/panoptic-labs">
-              Github <i className="icon__external-link" />
-            </a>
-            <a className="more-part__link" target="_blank" href="https://research.panoptic.xyz/">
-              Research <i className="icon__external-link" />
-            </a>
-            <a className="more-part__link" target="_blank" href="https://blog.panoptic.xyz/">
-              Blog <i className="icon__external-link" />
-            </a>
+          <div className="more-part">
+            <div className="more-part__title">More</div>
+            <div className="more-part__links">
+              <a className="more-part__link" target="_blank" href="https://github.com/panoptic-labs">
+                Github <i className="icon__external-link" />
+              </a>
+              <a className="more-part__link" target="_blank" href="https://research.panoptic.xyz/">
+                Research <i className="icon__external-link" />
+              </a>
+              <a className="more-part__link" target="_blank" href="https://blog.panoptic.xyz/">
+                Blog <i className="icon__external-link" />
+              </a>
+            </div>
           </div>
         </div>
         {isMobileWidth && renderCopyright()}

@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "@docusaurus/Link";
+import "./Nav.css"
 
 const Nav = () => {
   return (
@@ -15,6 +16,12 @@ const Nav = () => {
       </Link>
       <Link to="/docs/faq/" className="nav__link">
         FAQ
+      </Link>
+      <Link to="https://github.com/panoptic-labs" className="nav__link">
+        Github
+        <span className="external-link-arrow">
+          <img src={"/img/new-home-page/external-link-arrow.svg"} alt="arrow"/>
+        </span>
       </Link>
     </nav>
   );

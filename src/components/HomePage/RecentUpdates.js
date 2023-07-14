@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import Slider from "react-slick";
-import Link from "@docusaurus/Link";
+import PillText from "../NewHomePage/PillText/PillText";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -67,46 +67,34 @@ const RecentUpdates = () => {
           <Slider {...settings} ref={slickRef}>
             {recentUpdates.map((post) => (
               <div className="recent-updates__card" key={post.id}>
-                <div className="recent-updates__card_top">
-                  <img
-                    className="recent-updates__card__image"
-                    src={post.image}
-                    alt={post.title}
-                  />
-                  <h4 className="recent-updates__card__title">{post.title}</h4>
-                  <p className="recent-updates__card__excerpt">
-                    {post.excerpt}
-                  </p>
-                </div>
-                <div className="recent-updates__card_bottom">
-                  <span className="recent-updates__card__date">
-                    {new Intl.DateTimeFormat("en-US", {
-                      month: "short",
-                      year: "numeric",
-                    })
-                      .format(new Date(post.date))
-                      .replace(/ /, ", ")}
-                  </span>
-                  <Link
-                    to={post.link}
-                    className="recent-updates__card__link with-icon"
-                  >
-                    Learn more
-                    <svg
-                      width="5"
-                      height="8"
-                      viewBox="0 0 5 8"
-                      fill="none"
-                      className="chevron-right"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M4.35355 3.51901C4.54882 3.71427 4.54882 4.03085 4.35355 4.22611L1.17157 7.40809C0.976311 7.60335 0.659728 7.60335 0.464466 7.40809C0.269204 7.21283 0.269204 6.89625 0.464466 6.70099L3.29289 3.87256L0.464466 1.04413C0.269204 0.848869 0.269204 0.532287 0.464466 0.337025C0.659728 0.141762 0.976311 0.141762 1.17157 0.337025L4.35355 3.51901ZM3 3.37256H4V4.37256H3V3.37256Z"
-                        fill="currentColor"
+                <a href={post.link}>
+                  <div className="recent-updates__card__content">
+                    <div className="recent-updates__card_top">
+                      <img
+                        className="recent-updates__card__image"
+                        src={post.image}
+                        alt={post.title}
                       />
-                    </svg>
-                  </Link>
-                </div>
+                      <div className="recent-updates__card__title">{post.title}</div>
+                      <p className="recent-updates__card__excerpt">
+                        {post.excerpt}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="recent-updates__card_bottom">
+                      <PillText grey={true}>
+                        <span className="recent-updates__card__date">
+                          {new Intl.DateTimeFormat("en-US", {
+                            month: "short",
+                            year: "numeric",
+                            day: "numeric",
+                          })
+                            .format(new Date(post.date))
+                            }
+                        </span>
+                      </PillText>
+                    </div>
+                  </a>
               </div>
             ))}
           </Slider>
@@ -133,7 +121,8 @@ const recentUpdates = [
     excerpt:
       "With our gated launch drawing near, we are delighted to announce the initiation of the Panoptic Ambassador Program. If you are looking to gain experience working with a cutting-edge, early-stage crypto protocol — and get compensated for it — this is your opportunity.",
     link: "https://panoptic.xyz/blog/panoptic-ambassador-program",
-    date: "2023/06/24 00:00:00",
+    date: "2023/06/24",
+    id: 1,
   },
   {
     title: "Welcome to the Panoptic Community",
@@ -141,7 +130,8 @@ const recentUpdates = [
     excerpt:
       "We are thrilled to announce the launch of our brand new community. This is your invitation to be a part of the future of decentralized options trading.",
     link: "https://panoptic.xyz/blog/panoptic-community-launch",
-    date: "2023/06/16 00:00:00",
+    date: "2023/06/16",
+    id: 2,
   },
   {
     title: "Reality Check: Retail Prefers 2x over 125x Leverage",
@@ -149,7 +139,8 @@ const recentUpdates = [
     excerpt:
       "In this post, we'll debunk the myth that crypto retail want max leverage.",
     link: "https://panoptic.xyz/research/retail-prefers-2x-over-125x-leverage",
-    date: "2023/06/14 00:00:00",
+    date: "2023/06/14",
+    id: 3,
   },
   {
     title: "Panoptic Partners with Three Sigma For Enhanced Economic Security",
@@ -157,7 +148,8 @@ const recentUpdates = [
     excerpt:
       "To further ensure we provide comprehensive security to our state-of-the-art options protocol, Panoptic is pleased to announce a partnership with Three Sigma, an organization that specializes in agent-based simulations and modeling.",
     link: "https://panoptic.xyz/blog/panoptic-three-sigma-partnership",
-    date: "2023/06/09 00:00:00",
+    date: "2023/06/09",
+    id: 4,
   },
   {
     title: "Why Options Will Overtake DeFi",
@@ -165,7 +157,8 @@ const recentUpdates = [
     excerpt:
       "With the increasing trend of retail options trading in TradFi, it's only a matter of time before this trend sweeps into DeFi. Here's 8 reasons why retail options will overtake DeFi and how Panoptic will be at the center of it all.",
     link: "https://panoptic.xyz/research/why-options-will-overtake-defi",
-    date: "2023/06/06 00:00:00",
+    date: "2023/06/06",
+    id: 5,
   },
   {
     title: "Democratizing DeFi Research Part III: Deep Dive into Backtesting Panoptions",
@@ -173,7 +166,8 @@ const recentUpdates = [
     excerpt:
       "To conclude our three-part Democratizing DeFi Research series, Brandon guides us through the Panoption backtester.",
     link: "https://panoptic.xyz/blog/democratizing-defi-options-research-backtest",
-    date: "2023/06/02 00:00:00",
+    date: "2023/06/02",
+    id: 6,
   },
   {
     title: "Democratizing DeFi Research Part II: Deep Dive into Implied Volatility",
@@ -181,7 +175,8 @@ const recentUpdates = [
     excerpt:
       "In this second installment of our three-part series on Democratizing DeFi Research, Doctor C gives us a deep dive into the open-source Python script used for studying implied volatility and volatility smiles of Uniswap Liquidity Providers (LPs).",
     link: "https://panoptic.xyz/blog/democratizing-defi-options-research-implied-volatility",
-    date: "2023-05-31 00:00:00",
+    date: "2023-05-31",
+    id: 7,
   },
 ];
 

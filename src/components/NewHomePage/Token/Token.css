@@ -1,0 +1,16 @@
+
+.token {
+  width: 40px;
+  filter: grayscale(100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+}
+
+.token-name {
+  margin-top: 10px;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 14px;
+}

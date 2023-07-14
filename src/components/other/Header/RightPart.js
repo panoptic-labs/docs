@@ -2,8 +2,7 @@ import Link from "@docusaurus/Link";
 import React from "react";
 
 import "./RightPart.css";
-import Button from "../Button";
-import ToggleTheme from "../ToggleTheme";
+import Button from "../../NewHomePage/Button/Button";
 import useResponsive from "../../../hooks/useResponsive";
 
 const RightPart = ({ onToggle }) => {
@@ -12,17 +11,11 @@ const RightPart = ({ onToggle }) => {
 
   return (
     <div className="right-part">
-      {!isMobileWidth && (
-        <>
-          <a href="https://github.com/panoptic-labs">
-            <Button variant="outlined">Github</Button>
-          </a>
-          <Button hasIcon disabled={appIsDisabled}>
-            {appIsDisabled ? "App Coming Soon" : "Launch App"}
-          </Button>
-        </>
+      {!isTabletWidth && (
+        <Button disabled={appIsDisabled}>
+          {appIsDisabled ? "App Coming Soon" : "Launch App"}
+        </Button>
       )}
-      {!isTabletWidth && <ToggleTheme />}
       {isTabletWidth && (
         <Button className="right-part__menu_button" onClick={onToggle}>
           <i className="icon__burger right-part__icon" />

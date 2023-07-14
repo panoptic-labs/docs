@@ -1,0 +1,80 @@
+.launch-page {
+  height: 352px;
+  background-color: #4E14D0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.launch-background {
+  background-image: url("/img/new-home-page/launch-background-vector.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+}
+
+.launch-text {
+  color: #F3F3F3;
+  text-align: center;
+  padding: 0 40px;
+}
+
+.launch-title {
+  font-size: 52px;
+  font-family: Alice;
+  line-height: 110%;
+  font-weight: 400;
+  margin-top: 7.75px;
+}
+
+.launch-subtitle {
+  font-size: 18px;
+}
+
+@media screen and (max-width: 1310px) { 
+  .launch-background { 
+    background-size: 100%; 
+  } 
+} 
+
+@media screen and (max-width: 950px) { 
+  .launch-background { 
+    background-size: 120%; 
+  } 
+  .launch-title {
+    max-width: 500px;
+  }
+} 
+
+@media screen and (max-width: 780px) { 
+  .launch-background { 
+    background-size: 150%; 
+  } 
+} 
+
+@media screen and (max-width: 640px) { 
+  .launch-background { 
+    background-size: 180%; 
+  } 
+} 
+
+@media screen and (max-width: 510px) { 
+  .launch-title {
+    font-size: 36px;
+  }
+
+  .launch-subtitle {
+    font-size: 16px;
+  }
+
+  .launch-page {
+    height: 300px;
+  }
+} 
+
+@media screen and (max-width: 370px) { 
+  .launch-title {
+    font-size: 28px;
+  }
+} 

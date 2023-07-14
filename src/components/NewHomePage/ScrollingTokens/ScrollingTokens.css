@@ -1,0 +1,35 @@
+.scrolling-tokens-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.scrolling-tokens {
+  display: flex;
+}
+
+.token-set {
+  display: flex;
+  margin: 0px 0 28px 0;
+  display: flex;
+  animation: swipe 24000ms linear infinite backwards;
+}
+
+.token-container {
+  margin: 0 45px 0 45px;
+}
+
+@keyframes swipe {
+  0% {
+    transform: translate(0);
+  }
+
+  100% {
+    transform: translate(-100%);
+  }
+}
+
+@media screen and (max-width: 767px) { 
+  .token-container {
+    margin: 0 28px 0 28px;
+  }
+}
