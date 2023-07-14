@@ -19,12 +19,14 @@
   z-index: 30;
   animation: animation-open 0.3s ease-out;
   backdrop-filter: blur(100px);
+  opacity: 1;
 }
 
 .sidebar_closed {
   animation: animation-close 0.3s ease-out;
   backdrop-filter: blur(0px);
   z-index: -1;
+  opacity: 0;
 }
 
 .sidebar__button {
