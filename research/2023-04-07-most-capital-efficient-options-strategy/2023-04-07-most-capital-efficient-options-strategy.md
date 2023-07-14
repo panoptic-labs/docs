@@ -147,10 +147,10 @@ Caveats:
 
 -   Collateral requirements above assume normal market conditions ("target pool utilization")
     
--   See more [here](https://docs.panoptic.xyz/docs/panoptic-protocol/buying-power)
+-   See more [here](https://panoptic.xyz/docs/panoptic-protocol/buying-power)
     
 
-For more examples of capital efficient strategies and Options Trading 101 basics, visit [here](https://docs.panoptic.xyz/docs/trading/capital-efficiency).
+For more examples of capital efficient strategies and Options Trading 101 basics, visit [here](https://panoptic.xyz/docs/trading/capital-efficiency).
 
 Question:
 

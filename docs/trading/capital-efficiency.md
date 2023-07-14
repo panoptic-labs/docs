@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Capital effiency
+# Capital efficiency
 In options trading, capital efficiency refers to the ability of an options strategy to control a maximum amount of funds with minimal capital investment. It is a measure of how effectively an options trader uses their available capital to achieve their desired trading objectives.
 
 For example, a capital-efficient options strategy may involve using options to gain exposure to a crypto asset while requiring less capital than buying the crypto asset outright. This can be achieved through strategies such as call options or options spreads.
@@ -42,6 +42,6 @@ Exposure to assets can be mimicked through options strategies that are more capi
 
 ![Synthetic Asset](https://user-images.githubusercontent.com/62954565/229919542-ccc6dae8-602d-4a7e-a212-f2e0c268fa15.png)
 
-For example, let's say that ETH is trading at $1,000. Buying ETH outright would require $1,000 (1x leverage). To create a synthetic long ETH position, one could sell an ATM put and buy an ATM call. Under normal circumstances in Panoptic, selling 1 ATM ETH put option would require $200 of collateral and buying 1 ATM ETH call option would require $100 of collateral, for a total required collateral of $300 (3.33x leverage).
+For example, let's say that ETH is trading at $1,000. Buying ETH outright would require $1,000 (1x leverage). To create a synthetic long ETH position, one could sell an ATM put and buy an ATM call. Under normal circumstances in Panoptic, selling 1 ATM ETH put option would require $200 of collateral and buying 1 ATM ETH call option would require $100 of collateral, for a total required collateral of $300 (3.33x leverage). However, the potential streamia owed on the long call position is partially offset by the potential streamia earned on the short put position. So Panoptic further relaxes this collateral requirement to just $200 (5x leverage)
 
-So for 3.33x less capital, one is able to get similar exposure (upside and downside) to the underlying asset.
+So for 5x less capital, one is able to get similar exposure (upside and downside) to the underlying asset.
