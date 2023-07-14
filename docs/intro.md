@@ -47,11 +47,4 @@ Users can access details about the security audits [here](./security/audits)
 - [Three Sigma: Options Series Part I - An Overview of the DeFi Options Landscape](https://threesigma.xyz/blog/defi-options-landscape)  
 - [Three Sigma: Options Series Part II - Exploring Different Pricing Approaches and Tokenomics](https://threesigma.xyz/blog/exploring-options-pricing-tokenomics)
 
-#### Quick links
-
-- [Twitter](https://twitter.com/panoptic_xyz)
-- [#ResearchBites](https://research.panoptic.xyz/)
-- [Blog](https://blog.panoptic.xyz/)
-- [Discord](https://discord.gg/7fE8SN9pRT)
-- [LinkedIn](https://www.linkedin.com/company/panoptic-xyz)
-- [Github](https://github.com/panoptic-labs/research)
+*Join the growing community of Panotimists and be the first to hear our latest updates by following us on our [social media platforms](https://linktr.ee/panopticxyz).*

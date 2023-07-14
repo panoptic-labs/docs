@@ -48,6 +48,11 @@ No. Panoptic does not have a token at this time.
 Testnet is scheduled for September 2023. Mainnet is scheduled for Q4 2023. See our <a href="https://panoptic.xyz/blog/panoptic-defi-options-protocol-roadmap">roadmap</a>.
 </details>
 
+<details>
+<summary>How does liquidity in Uniswap benefit Panoptic?</summary>
+Panoptic harnesses Uniswap's liquidity to enhance the user experience for options traders. High liquidity in Uniswap pools results in more stable options pricing, more predictable moneyness, and lower risks of liquidation or forced exercise in Panoptic. This allows for the creation of robust options markets from day one.
+</details>
+
 ## Perpetual Options
 <details>
 <summary>Do crypto users want options?</summary>
@@ -56,6 +61,13 @@ Options are extremely popular in traditional finance (TradFi), so much that <a h
 Crypto users, like investors in any other asset class, also express interest in options for a variety of reasons. These financial instruments allow for income generation, risk management, hedging, and speculation in <a href="https://twitter.com/Panoptic_xyz/status/1661114864386068480?s=20">more strategic and flexible</a> ways. However, their desire to use options is contingent upon a robust, transparent, and easy-to-use platform.
 <br /><br />
 Panoptic makes options easy for all users by providing a seamless, draggable interface for trading options. Panoptic solves the problem of illiquid, oracle-dependent, restrictive options in DeFi by reimagining options to work on-chain: options have no expiry and require no oracles, intermediaries, counterparties, or order books. The result is a permissionless, governance-minimized protocol with no liquidity fragmentation.
+</details>
+
+<details>
+<summary>Options are too complicated!</summary>
+Options trading doesn't have to be complicated. At Panoptic, we've created a <a href="https://www.youtube.com/watch?v=deqbeqjyKgg">novel UI</a> that allows anybody to easily and seamlessly trade options. 
+
+![UI Image](ui.png)
 </details>
 
 <details>
@@ -70,6 +82,15 @@ While perpetual futures often offer more leverage, perpetual options offer more 
 5) Custom probability of profit and profit potential<br />
 6) Dynamic delta and gamma
 </details>
+
+
+<details>
+<summary>Why should perp traders use Panoptic when options are so complicated?</summary>
+Options trading can offer a more retail-friendly approach than perpetual futures (perps). Users can buy puts/calls if they feel bearish/bullish, but without the risk of immediate liquidation. Even during market volatility, options holders won't face sudden liquidations from price wicks. While liquidation risk remains, it is linked to premium accumulation and is more predictable, giving traders several days to anticipate potential liquidation events.
+<br /><br />
+A misconception exists that retail traders desire +50x leverage, mainly achievable with perps. However, our research shows most perp traders on GMX use only <a href="https://panoptic.xyz/research/retail-prefers-2x-over-125x-leverage">2-3x leverage</a>. Panoptic offers up to 10x leverage on options, making it a suitable tool for retail traders looking for manageable leverage without sudden liquidation risks.
+</details>
+
 
 ## Traders
 
@@ -110,7 +131,7 @@ Yes.
 
 <details>
 <summary>Why should I sell an option on Panoptic when I can just LP directly on Uniswap?</summary>
-Selling an option on Panoptic has the same before-fees payoff as LPing on Uniswap. However, selling an option on Panoptic earns a premium (paid by the option buyer) that is strictly greater than the swap fees earned by an LP position due to the <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/premium#net-gross-and-owed-fees-with-spread">liquidity spread</a>.
+Selling an option on Panoptic has the same before-fees payoff as LPing on Uniswap. However, selling an option on Panoptic earns a premium (paid by the option buyer) that is strictly greater than the swap fees earned by an LP position due to the <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/premium#net-gross-and-owed-fees-with-spread">liquidity spread</a> and improved gas efficiency.
 </details>
 
 ## Liquidity Providers
