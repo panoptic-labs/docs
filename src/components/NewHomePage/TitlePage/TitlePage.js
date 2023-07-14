@@ -40,7 +40,7 @@ const TitlePage = () => {
           </Button>
         </div>
         <div className="screenshot-container">
-          <img src="/img/new-home-page/LaptopMockup.svg" alt="App Screenshot" className="app-screenshot"/>
+          <img src="/img/new-home-page/title-page-image.svg" alt="App Screenshot" className="app-screenshot"/>
         </div>
       </div>
       <ScrollingTokens/>
