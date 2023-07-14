@@ -35,7 +35,7 @@ const TitlePage = () => {
             </div>
           </div>
           <Button className="join-button" onClick={handleJoin}>
-            <span className="join-button-text">Join the Gated Launch</span>
+            <span className="join-button-text">Sign up for our beta launch</span>
             <img src={Arrow} alt="arrow" />
           </Button>
         </div>

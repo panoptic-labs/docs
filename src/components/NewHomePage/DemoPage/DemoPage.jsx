@@ -169,7 +169,7 @@ const DemoPage = () => {
                     <div className="reciept-flex">
                       <div>
                         <div className="reciept-detail-title"># of Contracts</div>
-                        <div className="reciept-detail">138,982</div>
+                        <div className="reciept-detail">1</div>
                       </div>
                       <div>
                         <div className="reciept-detail-title">Fee Tier</div>
@@ -179,11 +179,11 @@ const DemoPage = () => {
                     <div className="reciept-flex">
                       <div>
                         <div className="reciept-detail-title">P/L Open</div>
-                        <div className="reciept-detail">$988,476</div>
+                        <div className="reciept-detail">$200</div>
                       </div>
                       <div>
                         <div className="reciept-detail-title">Collateral Req.</div>
-                        <div className="reciept-detail">$723,251</div>
+                        <div className="reciept-detail">$200</div>
                       </div>
                     </div>
                     <Button onClick={() => confirm()}>Confirm Mint</Button>
