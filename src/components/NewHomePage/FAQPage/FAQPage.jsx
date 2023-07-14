@@ -1,6 +1,7 @@
 import React from "react"
 import * as Accordion from '@radix-ui/react-accordion';
 import Button from "../Button/Button";
+import Link from "@docusaurus/Link";
 import "./FAQPage.css"
 
 const FAQPage = () => {
@@ -55,7 +56,9 @@ const FAQPage = () => {
           </Accordion.Root>
         </div>
         <div className="faq-button-container">
-          <Button>More Questions?</Button>
+          <Link to="/docs/faq/">
+            <Button>More Questions?</Button>
+          </Link>
         </div>
       </div>
 
