@@ -69,26 +69,12 @@ button[class^="clean-btn"] {
   }
 }
 
-html, body {
-  animation: lock-scroll 2300ms;
-}
-
 html {
   overflow: hidden;
 }
 
 body {
   overflow-y: scroll;
-}
-
-@keyframes lock-scroll {
-  0% {
-    overflow-y: hidden;
-  }
-  
-  100% {
-    overflow-y: hidden;
-  }
 }
 
 .navbar--dark {
