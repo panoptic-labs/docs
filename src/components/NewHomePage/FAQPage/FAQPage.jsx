@@ -4,9 +4,6 @@ import Button from "../Button/Button";
 import "./FAQPage.css"
 
 const FAQPage = () => {
-
-  const content = "Lorem ipsum dolor sit amet consectetur. Faucibus ultricies sed neque id et. Consequat id maecenas in vitae. Donec curabitur scelerisque ut pellentesque odio amet at. Eu justo venenatis gravida cursus non turpis. Et eu sem gravida et quam eget aliquam malesuada. Aliquam molestie quisque morbi at vestibulum. Eu ut elementum erat viverra cursus orci. Aliquam quam sed sed quis eget hendrerit sit. Suspendisse tristique bibendum mauris ligula adipiscing donec mauris. Urna suspendisse malesuada sit neque vitae dis tortor elit vitae."
-
   return (
     <div className="faq-page">
       <div className="faq-content">
@@ -17,23 +14,43 @@ const FAQPage = () => {
           <Accordion.Root className="accordion-root" type="single" defaultValue="item-1" collapsible>
             <Accordion.Item className="accordion-item" value="item-1">
               <AccordionTrigger className="first-trigger">What is Panoptic?</AccordionTrigger>
-              <AccordionContent>{content}</AccordionContent>
+              <AccordionContent>
+                The Panoptic protocol enables the minting, trading, and market-making of perpetual put and call options. All smart contracts are available 24/7 and users can interact with the Panoptic protocol without the need for intermediaries like banks, brokerage firms, clearinghouses, market makers, or centralized exchanges.
+              </AccordionContent>
             </Accordion.Item>
             <Accordion.Item className="accordion-item" value="item-2">
-            <AccordionTrigger>How do I use Panoptic?</AccordionTrigger>
-              <AccordionContent>{content}</AccordionContent>
+            <AccordionTrigger>How can I use Panoptic?</AccordionTrigger>
+              <AccordionContent>
+                You can access Panoptic by connecting your wallet to the Panoptic App, which will be deployed on app.panoptic.xyz (COMING SOON...)
+              </AccordionContent>
             </Accordion.Item>
             <Accordion.Item className="accordion-item" value="item-3">
               <AccordionTrigger>What are the key benefits?</AccordionTrigger>
-              <AccordionContent>{content}</AccordionContent>
+              <AccordionContent>
+                Options in Panoptic differ slightly from conventional options. Instead of using a clearinghouse to settle options contracts, the Panoptic protocol uses Liquidity Provider (LP) positions in Uniswap v3 as a fundamental building block for trading long and short options. 
+                <br/>
+                Panoptic allows users to access new and improved features when trading options:
+                <br/>
+                1) Panoptic options never expire and are perpetual.
+                <br/>
+                2) Anybody can deploy an options market on any asset in a permissionless manner.
+                <br/>
+                3) Panoptic enables anyone to lend their capital to options traders as a liquidity provider.
+                <br/>
+                4) Pricing is path-dependent and does not involve counterparties (such as market makers).
+              </AccordionContent>
             </Accordion.Item>
             <Accordion.Item className="accordion-item" value="item-4">
             <AccordionTrigger>Which assets can I trade?</AccordionTrigger>
-              <AccordionContent>{content}</AccordionContent>
+              <AccordionContent>
+                Panoptic works on any ERC20 token. Panoptic users can create an options market on any token pair that exists on Uniswap V3.
+              </AccordionContent>
             </Accordion.Item>
             <Accordion.Item className="accordion-item" value="item-5">
-              <AccordionTrigger>What does it cost to trade?</AccordionTrigger>
-              <AccordionContent>{content}</AccordionContent>
+              <AccordionTrigger>Where will Panoptic launch?</AccordionTrigger>
+              <AccordionContent>
+                Panoptic will launch on Ethereum mainnet and all EVM-compatible layer 2's where the Uniswap v3 smart contracts have been deployed.
+              </AccordionContent>
             </Accordion.Item>
           </Accordion.Root>
         </div>

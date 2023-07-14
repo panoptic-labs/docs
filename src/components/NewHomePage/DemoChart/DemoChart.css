@@ -9,3 +9,11 @@
 .recharts-layer.recharts-cartesian-axis-line {
   border-radius: 12px;
 }
+
+.recharts-tooltip-wrapper {
+  color: black;
+}
+
+.recharts-default-tooltip {
+  border-radius: 12px;
+}

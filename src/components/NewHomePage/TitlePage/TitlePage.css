@@ -152,6 +152,11 @@
   .title {
     font-size: 38px;
   } 
+
+  .join-button-text {
+    margin-right: 14px;
+    font-size: 14px;
+  }
 }
 
 @media screen and (max-width: 340px) { 

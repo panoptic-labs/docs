@@ -1,109 +1,109 @@
 import React, { PureComponent } from 'react';
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip} from 'recharts';
 import "./DemoChart.css"
 
 const data1 = [
   {
-    name: 'Put 100',
-    price: -20,
+    price: '$10',
+    y: -20,
   },
   {
-    name: 'Put 200',
-    price: -20,
+    price: '$20',
+    y: -20,
   },
   {
-    name: 'Put 300',
-    price: -20,
+    price: '$30',
+    y: -20,
   },
   {
-    name: 'Put 400',
-    price: -20,
+    price: '$40',
+    y: -20,
   },
   {
-    name: 'Put 500',
-    price: 20,
+    price: '$50',
+    y: 20,
   },
   {
-    name: 'Call 500',
-    price: 70,
+    price: '$60',
+    y: 60,
   },
   {
-    name: 'Call 400',
-    price: 120,
+    price: '$70',
+    y: 100,
   },
   {
-    name: 'Call 300',
-    price: 170,
+    price: '$80',
+    y: 140,
   },
 ];
 
 const data2 = [
   {
-    name: 'Put 100',
-    price: -110,
+    price: '$10',
+    y: -110,
   },
   {
-    name: 'Put 200',
-    price: -70,
+    price: '$20',
+    y: -70,
   },
   {
-    name: 'Put 300',
-    price: -30,
+    price: '$30',
+    y: -30,
   },
   {
-    name: 'Put 400',
-    price: 10,
+    price: '$40',
+    y: 10,
   },
   {
-    name: 'Put 500',
-    price: 10,
+    price: '$50',
+    y: 10,
   },
   {
-    name: 'Call 500',
-    price: -40,
+    price: '$60',
+    y: -40,
   },
   {
-    name: 'Call 400',
-    price: -40,
+    price: '$70',
+    y: -40,
   },
   {
-    name: 'Call 300',
-    price: -40,
+    price: '$80',
+    y: -40,
   },
 ];
 
 const data3 = [
   {
-    name: 'Put 100',
-    price: 160,
+    price: '$10',
+    y: 80,
   },
   {
-    name: 'Put 200',
-    price: 100,
+    price: '$20',
+    y: 50,
   },
   {
-    name: 'Put 300',
-    price: 40,
+    price: '$30',
+    y: 20,
   },
   {
-    name: 'Put 400',
-    price: -10,
+    price: '$40',
+    y: -10,
   },
   {
-    name: 'Put 500',
-    price: -10,
+    price: '$50',
+    y: -10,
   },
   {
-    name: 'Call 500',
-    price: 40,
+    price: '$60',
+    y: 20,
   },
   {
-    name: 'Call 400',
-    price: 100,
+    price: '$70',
+    y: 50,
   },
   {
-    name: 'Call 300',
-    price: 160,
+    price: '$80',
+    y: 80,
   },
 ];
 
@@ -114,8 +114,8 @@ const dataOptions = {
 }
 
 const gradientOffset = (data) => {
-  const dataMax = Math.max(...data.map((i) => i.price));
-  const dataMin = Math.min(...data.map((i) => i.price));
+  const dataMax = Math.max(...data.map((i) => i.y));
+  const dataMin = Math.min(...data.map((i) => i.y));
 
   if (dataMax <= 0) {
     return 0;
@@ -144,9 +144,11 @@ const DemoChart = ({optionType, chartSize}) => {
       }}
     >
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" hide={true}/>
+      <XAxis dataKey="price" hide={true}/>
       <YAxis hide={true} />
-      <Tooltip />
+      <Tooltip
+        formatter={(value, name) => []}
+      />
       <defs>
         <linearGradient id="splitColorFill" x1="0" y1="0" x2="0" y2="1">
           <stop offset={gradientOffset(data)} stopColor="#12AD5033" stopOpacity={1} />
@@ -158,8 +160,8 @@ const DemoChart = ({optionType, chartSize}) => {
         </linearGradient>
       </defs>
       <Area
-        type="monotone"
-        dataKey="price"
+        type="linear"
+        dataKey="y"
         stroke="url(#splitColorStroke)"
         fill="url(#splitColorFill)"
       />
