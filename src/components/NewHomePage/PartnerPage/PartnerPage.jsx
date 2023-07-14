@@ -21,7 +21,7 @@ const PartnerPage = () => {
   return (
     <div className="partner-page">
       <div className="partner-text">
-        <div>Backed by a trusted team of Investors & Partners...</div>
+        <div>Backed by a trusted team of Investors & Partners</div>
       </div>
       <div className="partner-logos-container">
         <div className="partner-logos">

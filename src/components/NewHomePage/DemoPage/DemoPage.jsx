@@ -132,7 +132,7 @@ const DemoPage = () => {
                     <div className="reciept-flex">
                       <div className="receipt-subtitle">ETH/DAI</div>
                       <div className="receipt-subtitle">30bps</div>
-                      <div className="receipt-subtitle">0x0359087578839</div>
+                      <div className="receipt-subtitle">0x0359...8839</div>
                     </div>
                     <div className="reciept-flex">
                       <div>
@@ -212,7 +212,7 @@ const DemoPage = () => {
                 <div className="demo-interactive-details-title">{optionTypes[optionType].name}</div>
                 <div className="demo-interactive-details-tags">
                   {optionTypes[optionType].tags.map((tag) => (
-                    <PillText>{tag}</PillText>
+                    <PillText key="tag">{tag}</PillText>
                   ))}
                 </div>
               </div>
