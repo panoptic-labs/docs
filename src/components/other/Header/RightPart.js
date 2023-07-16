@@ -1,4 +1,3 @@
-import Link from "@docusaurus/Link";
 import React from "react";
 
 import "./RightPart.css";
@@ -17,7 +16,7 @@ const RightPart = ({ onToggle }) => {
         </Button>
       )}
       {isTabletWidth && (
-        <Button className="right-part__menu_button" onClick={onToggle}>
+        <Button disabled={false} className="right-part-mobile-button" onClick={onToggle}>
           <i className="icon__burger right-part__icon" />
         </Button>
       )}
