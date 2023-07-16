@@ -69,14 +69,6 @@ button[class^="clean-btn"] {
   }
 }
 
-html {
-  overflow: hidden;
-}
-
-body {
-  overflow-y: scroll;
-}
-
 .navbar--dark {
   box-shadow: 0 1px 2px 0 hsla(263, 100%, 100%, 0.9);
   background: radial-gradient(
