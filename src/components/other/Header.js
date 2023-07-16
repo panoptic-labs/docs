@@ -29,7 +29,6 @@ const Header = () => {
           </Link>
           {!isTabletWidth && <Nav />}
           <RightPart
-            isOpenedSidebar={isOpenedSidebar}
             onToggle={handleToggle}
           />
         </div>
