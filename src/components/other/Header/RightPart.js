@@ -15,7 +15,7 @@ const RightPart = ({ onToggle }) => {
         </Button>
       ) : (
         <Button disabled={true}>
-          {appIsDisabled ? "App Coming Soon" : "Launch App"}
+          {"App Coming Soon"}
         </Button>
       )}
     </div>
