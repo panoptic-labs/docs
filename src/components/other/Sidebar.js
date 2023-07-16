@@ -36,7 +36,7 @@ const Sidebar = ({ isOpenedSidebar, onClose, onToggle }) => {
       onClick={handleClose}
     >
       <Button
-        className="right-part__menu_button sidebar__button"
+        className="right-part-mobile-button sidebar__button"
         onClick={onToggle}
       >
         <i

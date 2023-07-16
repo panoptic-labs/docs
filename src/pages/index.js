@@ -32,7 +32,11 @@ export default function Home() {
       document.body.style.overflowY = "auto";
     }, 2300)
   })
-    
+
+  useEffect(() => {
+    const htmlElement = document.querySelector("html");
+    htmlElement.setAttribute("data-theme", "dark");
+  }, []);
 
   return (
     <>
