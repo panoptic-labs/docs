@@ -10,7 +10,7 @@ const RightPart = ({ onToggle }) => {
   return (
     <div className="right-part">
       {isTabletWidth ? (
-        <Button className="right-part-mobile-button" disabled={false} onClick={onToggle}>
+        <Button className="right-part-mobile-button" onClick={onToggle}>
           <i className="icon__burger right-part__icon" />
         </Button>
       ) : (
