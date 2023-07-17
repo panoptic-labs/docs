@@ -31,7 +31,7 @@ const Header = () => {
           {!isTabletWidth && <Nav />}
           <div className="right-part">
             {isTabletWidth ? (
-              <button className="right-part-mobile-button mobile-button" onClick={handleToggle}>
+              <button className="mobile-button" onClick={handleToggle}>
                 <i className="icon__burger right-part__icon" />
               </button>
             ) : (
