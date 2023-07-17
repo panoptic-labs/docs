@@ -103,6 +103,14 @@
   border: 1px solid #413755;
 }
 
+@media (min-width: 767px) {
+  .sidebar-button {
+    color: white !important;
+    border-color: white !important;
+    text-align: center;
+  }
+}
+
 @media (max-width: 767px) {
   .sidebar {
     background-color: #ffffff;
