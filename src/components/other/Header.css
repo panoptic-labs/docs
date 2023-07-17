@@ -10,6 +10,7 @@
   padding: 23px 96px 18px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   max-width: 1441px;
   width: 100%;
   margin: 0 auto;

@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import Link from "@docusaurus/Link";
 
-import RightPart from "./Header/RightPart";
 import useResponsive from "../../hooks/useResponsive";
 import "./Header.css";
+import "./Header/RightPart.css"
 import Nav from "./Header/Nav";
 import Sidebar from "./Sidebar";
+import Button from "../NewHomePage/Button/Button";
 
 const Header = () => {
   const [isOpenedSidebar, setOpenedSidebar] = useState(false);
@@ -28,9 +29,17 @@ const Header = () => {
             <img src={logoPath} alt="logo" />
           </Link>
           {!isTabletWidth && <Nav />}
-          <RightPart
-            onToggle={handleToggle}
-          />
+          <div className="right-part">
+            {isTabletWidth ? (
+              <Button className="right-part-mobile-button" onClick={handleToggle}>
+                <i className="icon__burger right-part__icon" />
+              </Button>
+            ) : (
+              <Button disabled={true}>
+                {"App Coming Soon"}
+              </Button>
+            )}
+          </div>
         </div>
       </header>
       {isTabletWidth && (
