@@ -6,7 +6,7 @@ const Button = ({children, className, onClick}) => {
   const buttonClass = classNames("primary-button", className);
 
   return (
-    <button className={buttonClass} onClick={onClick}>
+    <button className={buttonClass} disabled={true} onClick={onClick}>
       {children}
     </button>
   )
