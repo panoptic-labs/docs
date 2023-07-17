@@ -50,7 +50,7 @@ Testnet is scheduled for September 2023. Mainnet is scheduled for Q4 2023. See o
 
 <details>
 <summary>How does liquidity in Uniswap benefit Panoptic?</summary>
-Panoptic harnesses Uniswap's liquidity to enhance the user experience for options traders. High liquidity in Uniswap pools results in more stable options pricing, more predictable moneyness, and lower risks of liquidation or forced exercise in Panoptic. This allows for the creation of robust options markets from day one.
+Panoptic harnesses Uniswap's liquidity to enhance the user experience for options traders. High liquidity and volume in Uniswap pools benefit Panoptic by ensuring steady and predictable returns for options sellers, more stable options pricing, more predictable moneyness, and lower risks of liquidation or forced exercise. This allows for the creation of robust options markets from day one.
 </details>
 
 ## Perpetual Options
@@ -214,7 +214,7 @@ Furthermore, DeFi options vaults with publicly scheduled auctions may face the r
 
 <details>
 <summary>Are options for long-tail assets with low liquidity in Uniswap at risk of being manipulated on Panoptic?</summary>
-Every Panoptic pool relies on its Uniswap counterpart for key metrics such as pricing, moneyness, liquidations, and forced exercises. The downside is that if the Uniswap pool is illiquid, it may be easier to manipulate. Such manipulation could result in rapid streamia accumulation and premature liquidation for buyers, heightened liquidation risk for sellers, and forced exercises for ITM buyers temporarily pushed OTM.
+Every Panoptic pool relies on its Uniswap counterpart for key metrics such as pricing, moneyness, and liquidations. The downside is that if the Uniswap pool is illiquid, it may be easier to manipulate. Such manipulation could result in heightened liquidation risk for sellers and buying/selling of deep ITM options temporarily pushed OTM.
 <br /><br />
-However, price manipulation in Uniswap is costly due to fees paid to Uniswap LPs, which also serve as compensation for Panoptic options sellers. Panoptic further discourages manipulation by implementing Time-Weighted Average Price (TWAP) requirements, meaning manipulators must hold the price for several minutes, not just a single block. Additionally, Panoptic's gradual liquidation of long positions further deters manipulation due to the associated costs.
+Panoptic discourages manipulation by implementing Time-Weighted Average Price (TWAP) requirements, meaning manipulators must hold the price for several minutes &mdash; not just a single block &mdash; in order to exercise their ITM options or liquidate other users.
 </details>
