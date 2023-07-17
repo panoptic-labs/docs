@@ -6,7 +6,6 @@ import "./Header.css";
 import "./Header/RightPart.css"
 import Nav from "./Header/Nav";
 import Sidebar from "./Sidebar";
-import Button from "../NewHomePage/Button/Button";
 import DisabledButton from "../NewHomePage/Button/DisabledButton";
 
 const Header = () => {
@@ -32,9 +31,9 @@ const Header = () => {
           {!isTabletWidth && <Nav />}
           <div className="right-part">
             {isTabletWidth ? (
-              <Button className="right-part-mobile-button" onClick={handleToggle}>
+              <button className="right-part-mobile-button mobile-button" onClick={handleToggle}>
                 <i className="icon__burger right-part__icon" />
-              </Button>
+              </button>
             ) : (
               <DisabledButton>
                 {"App Coming Soon"}
