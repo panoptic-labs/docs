@@ -23,6 +23,9 @@
   padding: 1px 12px;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .mobile-button:hover {
