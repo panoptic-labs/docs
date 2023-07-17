@@ -30,11 +30,12 @@ const Header = () => {
           </Link>
           {!isTabletWidth && <Nav />}
           <div className="right-part">
-            {isTabletWidth ? (
+            {isTabletWidth && (
               <div className="mobile-button" onClick={handleToggle}>
                 <i className="icon__burger right-part__icon" />
               </div>
-            ) : (
+            )}
+            {!isTabletWidth && (
               <Button disabled={true}>
                 {"App Coming Soon"}
               </Button>
