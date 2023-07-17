@@ -14,7 +14,7 @@ The Panoptic subgraph is a comprehensive data schema designed to provide insight
 
 ### Entities
 
-`**Factory` (**Uniswap Factory Contract**)**
+**`Factory`** (Uniswap Factory Contract)
 
 -   **`id`** (Uniswap Factory’s address),
 -   **`poolCount`** (number of pools created),
@@ -22,7 +22,7 @@ The Panoptic subgraph is a comprehensive data schema designed to provide insight
 
 **`PanopticFactory`**: Panoptic Factory Contract responsible for creating PanopticPools.
 
-`**Bundle**` which is the price of Eth (The current price of Eth). Borrowed from Uniswap’s **`findEthPerToken`** function.
+**`Bundle`** which is the price of Eth (The current price of Eth). Borrowed from Uniswap’s **`findEthPerToken`** function.
 
 **`Account`**:
 
@@ -95,7 +95,7 @@ The Panoptic subgraph is a comprehensive data schema designed to provide insight
 -   **`legCount`**: The total count of legs with the same attributes.
 -   **`tokenIds`**: The list of **`TokenId`** entities associated with this leg. It is derived from the **`legs`** field in the **`TokenId`** entity.
 
-`**TokenID`:** The **`TokenId`** entity represents an ERC-1155 ID that identifies a position. It has the following relationships:
+**`TokenID`:** The **`TokenId`** entity represents an ERC-1155 ID that identifies a position. It has the following relationships:
 
 -   **`pool`**: The **`pool`** field represents the Pool to which the **`TokenId`** belongs. It refers to a **`Pool`** entity.
 -   **`tokenCount`**: The **`tokenCount`** field represents the number of instances of the **`TokenId`** that exist.
@@ -120,16 +120,16 @@ Fields include:
 -   **`panopticPool`**: The PanopticPool within which the forced exercise occurred.
 -   **`panopticPoolAccount`**: The PanopticPoolAccount affected by this forced exercise.
 
-`**Transaction**`: ****Represents a transaction within the Panoptic ecosystem.
+**`Transaction`**: Represents a transaction within the Panoptic ecosystem.
 
 -   **`id`**: This field represents the transaction hash, which uniquely identifies a transaction.
 -   **`blockNumber`**: It indicates the block number in which the transaction was included.
 -   **`timestamp`**: This field represents the timestamp when the transaction was confirmed.
 -   **`gasUsed`**: It specifies the amount of gas used during the execution of the transaction.
 -   **`gasPrice`**: This field represents the gas price at which the transaction was executed.
--   `**mints`, `collects`, `burns`**, `**rolls**`: These are arrays derived from `**Transaction**` entity representing the minting, collecting, and burning of tokens. Roll is specific to SFPM and represents the rolling of tokenized positions.
--   `**optionMints**`, `**optionBurns**`, `**optionRolls**`: These are arrays derived from `**Transaction**` entity representing the minting, burning, and rolling of Panoptic options (Panoptions).
--   `**liquidations**`: Array of **`Liquidation`** entities derived from the transaction, indicating the liquidation of an account.
+-   **`mints`**, **`collects`**, **`burns`**, **`rolls`**: These are arrays derived from **`Transaction`** entity representing the minting, collecting, and burning of tokens. Roll is specific to SFPM and represents the rolling of tokenized positions.
+-   **`optionMints`**, **`optionBurns`**, **`optionRolls`**: These are arrays derived from **`Transaction`** entity representing the minting, burning, and rolling of Panoptic options (Panoptions).
+-   **`liquidations`**: Array of **`Liquidation`** entities derived from the transaction, indicating the liquidation of an account.
 -   **`forcedExcercises`**: Array of **`ForcedExercise`** entities derived from the transaction, representing the forced exercise of an account.
 
 **`PanopticPool`** Represents a PanopticPool entity, which is a pool in the DeFi system. Fields include:
@@ -145,7 +145,7 @@ Fields include:
 
 In summary, a PanopticPool is a specific type of pool in the DeFi system built over the Uniswap V3 protocol. It allows users to trade and provide liquidity for a pair of tokens (**`token0`** and **`token1`**) while earning fees. The PanopticPool incorporates collateral entities, tracks transaction counts, and may be associated with a rare NFT with a specific rarity level.
 
-`**PoolDayData**`: Data accumulated and condensed into day stats for each pool.
+**`PoolDayData`**: Data accumulated and condensed into day stats for each pool.
 
 -   **`id`**: A unique identifier for each **`PoolDayData`** entity.
 -   **`pool`**: A reference to the corresponding **`Pool`** entity.
@@ -156,7 +156,7 @@ In summary, a PanopticPool is a specific type of pool in the DeFi system built o
 -   **`low`**: The lowest price of **`token0`** recorded during the day.
 -   **`close`**: The closing price of **`token0`** at the end of the day.
 
-`**PoolHourData**`: Data accumulated and condensed per hour stats for each pool.
+**`PoolHourData`**: Data accumulated and condensed per hour stats for each pool.
 
 -   **`id`**: A unique identifier for each **`PoolHourData`** entity.
 -   **`pool`**: A reference to the corresponding **`Pool`** entity.
@@ -167,9 +167,9 @@ In summary, a PanopticPool is a specific type of pool in the DeFi system built o
 -   **`txCount`**: The number of transactions that occurred during the specified hour.
 -   **`periodStartUnix`**: The Unix timestamp indicating the start of the hour.
 
-`**Mint`, `Collect`, `Burn`, `Roll`:** These entities represent different types of transactions related to liquidity management, such as minting, collecting, burning, and rolling liquidity. They contain information about the transaction ID, the amount of liquidity or tokens involved, the owner and sender of the transaction, associated chunks, the pool position, token0 and token1 indices, and the log index within the transaction.
+**`Mint`**, **`Collect`**, **`Burn`**, **`Roll`**: These entities represent different types of transactions related to liquidity management, such as minting, collecting, burning, and rolling liquidity. They contain information about the transaction ID, the amount of liquidity or tokens involved, the owner and sender of the transaction, associated chunks, the pool position, token0 and token1 indices, and the log index within the transaction.
 
-`**OptionMint`, `OptionBurn`, `OptionRoll`**: These entities represent transactions specific to options trading. They contain information such as the transaction ID, the owner and sender of the transaction, the TokenId of the option, the position size, the tick at which the option was minted or burnt, commission rates, pool utilization, premiums, and the log index within the transaction.
+**`OptionMint`**, **`OptionBurn`**, **`OptionRoll`**: These entities represent transactions specific to options trading. They contain information such as the transaction ID, the owner and sender of the transaction, the TokenId of the option, the position size, the tick at which the option was minted or burnt, commission rates, pool utilization, premiums, and the log index within the transaction.
 
 **`Collateral`** Represents a collateral entity associated with a PanopticPool. Fields include:
 
