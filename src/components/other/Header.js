@@ -6,7 +6,7 @@ import "./Header.css";
 import "./Header/RightPart.css"
 import Nav from "./Header/Nav";
 import Sidebar from "./Sidebar";
-import DisabledButton from "../NewHomePage/Button/DisabledButton";
+import Button from "../NewHomePage/Button/Button";
 
 const Header = () => {
   const [isOpenedSidebar, setOpenedSidebar] = useState(false);
@@ -35,9 +35,9 @@ const Header = () => {
                 <i className="icon__burger right-part__icon" />
               </div>
             ) : (
-              <DisabledButton>
+              <Button disabled={true}>
                 {"App Coming Soon"}
-              </DisabledButton>
+              </Button>
             )}
           </div>
         </div>
