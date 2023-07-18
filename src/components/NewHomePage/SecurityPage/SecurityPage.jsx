@@ -95,17 +95,17 @@ const SecurityPage = () => {
             </Tabs.List>
             <Tabs.Content className="tabs-content" value="tab1">
               {/* <p className="text"> */}
-              Employing cutting-edge tools, frameworks, and renowned security firms, we perform stringent audits on our blockchain smart contracts. Our approach integrates modern technologies with industry-best practices to scrutinize and optimize these contracts. The use of such avant-garde resources facilitates thorough audit processes, strengthening the integrity of our blockchain. Consequently, our resilient smart contracts are backed by rigorous audits, raising the bar for blockchain security and instilling unparalleled confidence among our users.
+              Employing cutting-edge tools, frameworks, and renowned security firms, we perform stringent audits on our blockchain smart contracts. Our approach integrates modern technologies with industry-best practices to scrutinize and optimize these contracts.
               {/* </p> */}
             </Tabs.Content>
             <Tabs.Content className="tabs-content" value="tab2">
               {/* <p className="text"> */}
-              Implementing revolutionary security measures, we conduct exhaustive audits on our frontend and backend systems. Through rigorous scrutiny of our entire protocol, we deliver all-encompassing protection. Our method extends beyond mere smart contract security, covering the full system scope. Our diligent audits target and address vulnerabilities in frontend and backend elements, bolstering our protocol against possible risks. Consequently, we’ve established a new gold standard for security, fostering unshakeable trust among our users.
+              Implementing revolutionary security measures, we conduct exhaustive audits on both our frontend and backend systems. Through rigorous scrutiny of our whole protocol, we deliver all-encompassing protection. Our audits target and address vulnerabilities in the entire stack, bolstering our protocol against a variety of risks. 
               {/* </p> */}
             </Tabs.Content>
             <Tabs.Content className="tabs-content" value="tab3">
               {/* <p className="text"> */}
-              Harnessing advanced simulations and agent-based modeling, we've meticulously optimized parameters to redefine economic dynamics. Our comprehensive approach unearths vulnerabilities, fortifying stability in varied market conditions. Our distinctive economic audit cultivates trust among users and investors. Built on a robust foundation, our protocol flourishes, attracting a community that values resilience.
+              Harnessing advanced simulations and agent-based modeling, we optimize our protocol parameters to ensure a robust and dynamic platform. Our comprehensive approach unearths vulnerabilities, fortifying stability even in extreme market conditions.
               {/* </p> */}
             </Tabs.Content>
           </Tabs.Root>
