@@ -71,7 +71,7 @@ const Sidebar = ({ isOpenedSidebar, onClose, onToggle }) => {
         </div>
         <div className="sidebar__nav__bottom-part">
           <div className="nav__bottom-part__buttons">
-            <Button disabled={true}>App Coming Soon</Button>
+            <Button className="sidebar-button" disabled={true}>App Coming Soon</Button>
           </div>
         </div>
       </nav>

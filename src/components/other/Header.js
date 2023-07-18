@@ -10,7 +10,7 @@ import Button from "../NewHomePage/Button/Button";
 
 const Header = () => {
   const [isOpenedSidebar, setOpenedSidebar] = useState(false);
-  const { isTabletWidth } = useResponsive();
+  const { loadedWidth, isTabletWidth } = useResponsive();
   const logoPath = `/img/logo-mono.svg`;
 
   const handleToggle = () => {
@@ -28,13 +28,14 @@ const Header = () => {
           <Link to="/" className="header__logo">
             <img src={logoPath} alt="logo" />
           </Link>
-          {!isTabletWidth && <Nav />}
+          {loadedWidth && !isTabletWidth && <Nav />}
           <div className="right-part">
-            {isTabletWidth ? (
+            {loadedWidth && isTabletWidth && (
               <div className="mobile-button" onClick={handleToggle}>
                 <i className="icon__burger right-part__icon" />
               </div>
-            ) : (
+            )}
+            {loadedWidth && !isTabletWidth && (
               <Button disabled={true}>
                 {"App Coming Soon"}
               </Button>
