@@ -30,7 +30,7 @@ export default function Home() {
     document.body.style.overflowY = "hidden";
     setTimeout(() => {
       document.body.style.overflowY = "auto";
-    }, 2300)
+    }, 1500)
   })
 
   useEffect(() => {
