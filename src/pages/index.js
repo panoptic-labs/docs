@@ -21,16 +21,11 @@ export default function Home() {
   })
 
   useEffect(() => {
-    setTimeout(() => {
-      setLoadingScreen(false)
-    }, 1500)
-  })
-
-  useEffect(() => {
     document.body.style.overflowY = "hidden";
     setTimeout(() => {
+      setLoadingScreen(false)
       document.body.style.overflowY = "auto";
-    }, 1500)
+    }, 1900)
   })
 
   useEffect(() => {

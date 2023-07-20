@@ -17,13 +17,13 @@ const settings = {
   prevArrow: <></>,
   responsive: [
     {
-      breakpoint: 1025,
+      breakpoint: 1175,
       settings: {
         slidesToShow: 2,
       },
     },
     {
-      breakpoint: 768,
+      breakpoint: 820,
       settings: {
         slidesToShow: 1,
       },
