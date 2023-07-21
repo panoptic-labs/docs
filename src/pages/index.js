@@ -21,10 +21,8 @@ export default function Home() {
   })
 
   useEffect(() => {
-    document.body.style.overflowY = "hidden";
     setTimeout(() => {
       setLoadingScreen(false)
-      document.body.style.overflowY = "auto";
     }, 1900)
   })
 
