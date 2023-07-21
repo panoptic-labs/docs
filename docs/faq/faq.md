@@ -77,7 +77,7 @@ Options trading doesn't have to be complicated. At Panoptic, we've created a <a 
 
 <details>
 <summary>How do Perpetual Options Compare to Perpetual Futures ("Perps")?</summary>
-Perpetual options and perpetual futures are non-expiring financial instruments. Panoptic's perpetual options provides option-like payoffs that are priced through <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/premium">streamia</a> (streaming premia), while perpetual futures offer long/short payoffs that are priced via a <a href="https://docs.panoptic.xyz/docs/trading/perpetual-options#how-do-perpetual-options-compare-to-perpetual-futures-perps">funding rate</a>.
+Perpetual options and perpetual futures are non-expiring financial instruments. Panoptic's perpetual options provides option-like payoffs that are priced through <a href="https://panoptic.xyz/docs/panoptic-protocol/premium">streamia</a> (streaming premia), while perpetual futures offer long/short payoffs that are priced via a <a href="https://panoptic.xyz/docs/trading/perpetual-options#how-do-perpetual-options-compare-to-perpetual-futures-perps">funding rate</a>.
 <br /><br />
 While perpetual futures often offer more leverage, perpetual options offer more <a href="https://twitter.com/Panoptic_xyz/status/1661114864386068480?s=20">flexibility</a> including:<br />
 1) No liquidation risk from single-wick fluctuations<br />
@@ -101,7 +101,7 @@ A misconception exists that retail traders desire +50x leverage, mainly achievab
 
 <details>
 <summary>Can I buy and sell options on leverage?</summary>
-Yes. Traders can buy options with up to 10x leverage and sell options with up to 5x leverage under normal market conditions. Please note that <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/buying-power">collateral requirements</a> are dynamic and change in response to pool utilization.
+Yes. Traders can buy options with up to 10x leverage and sell options with up to 5x leverage under normal market conditions. Please note that <a href="https://panoptic.xyz/docs/panoptic-protocol/buying-power">collateral requirements</a> are dynamic and change in response to pool utilization.
 </details>
 
 <details>
@@ -136,13 +136,13 @@ Yes.
 
 <details>
 <summary>Why should I sell an option on Panoptic when I can just LP directly on Uniswap?</summary>
-Selling an option on Panoptic has the same before-fees payoff as LPing on Uniswap. However, selling an option on Panoptic earns a premium (paid by the option buyer) that is strictly greater than the swap fees earned by an LP position due to the <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/premium#net-gross-and-owed-fees-with-spread">liquidity spread</a> and improved gas efficiency.
+Selling an option on Panoptic has the same before-fees payoff as LPing on Uniswap. However, selling an option on Panoptic earns a premium (paid by the option buyer) that is strictly greater than the swap fees earned by an LP position due to the <a href="https://panoptic.xyz/docs/panoptic-protocol/premium#net-gross-and-owed-fees-with-spread">liquidity spread</a> and improved gas efficiency.
 </details>
 
 <details>
 <summary>Uniswap LPs (and options sellers) are losing money!</summary>
 Uniswap is a <a href="https://panoptic.xyz/research/defi-put-options-uniswap-backtest">one-sided market</a> where perpetual options can only be sold but not bought. This leads to an oversupply of liquidity in Uniswap, resulting in lower returns for Uniswap LPs.
-
+<br /><br />
 Panoptic solves this by opening up a two-sided market, where perpetual options are bought and sold by lending and borrowing Uniswap LP tokens. Options buying is implemented through removing liquidity from Uniswap, which leads to higher Uniswap fees earned, higher streamia received, and increased returns to Uniswap LPs (and options sellers).
 </details>
 
@@ -159,7 +159,7 @@ Example B: Bob is an option seller for ETH-USDC options. After depositing some c
 
 <details>
 <summary>Do Panoptic liquidity providers (PLPs) suffer impermanent loss (IL)?</summary>
-No, Panoptic liquidity providers (PLPs) do not suffer IL from Uniswap LP positions. PLPs earn commission fees, and take on protocol risk (e.g. if the Panoptic pool accrues bad debt from <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/margin">failing to liquidate</a> on time, then PLPs can lose capital). However, protocol risk is minimized through a tried-and-true <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/liquidations#liquidation-bonus">decentralized liquidation network</a> just as Aave, Compound, and dYdX use to prevent protocol insolvency.
+No, Panoptic liquidity providers (PLPs) do not suffer IL from Uniswap LP positions. PLPs earn commission fees, and take on protocol risk (e.g. if the Panoptic pool accrues bad debt from <a href="https://panoptic.xyz/docs/panoptic-protocol/margin">failing to liquidate</a> on time, then PLPs can lose capital). However, protocol risk is minimized through a tried-and-true <a href="https://panoptic.xyz/docs/panoptic-protocol/liquidations#liquidation-bonus">decentralized liquidation network</a> just as Aave, Compound, and dYdX use to prevent protocol insolvency.
 </details>
 
 <details>
@@ -171,29 +171,42 @@ Yes, the capital of Panoptic Liquidity Providers (PLPs) can be locked under cert
 
 <details>
 <summary>What does it cost to sell an option?</summary>
-Selling an option costs a commission fee and gas fee. The commission fee is 0.2% to 0.6% of the notional value of the option position, depending on the <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/commission#commission-rate-and-pool-utilization">pool utilization</a> at the time of sell. There is no commission fee to close the position.
+Selling an option costs a commission fee and gas fee. The commission fee is 0.2% to 0.6% of the notional value of the option position, depending on the <a href="https://panoptic.xyz/docs/panoptic-protocol/commission#commission-rate-and-pool-utilization">pool utilization</a> at the time of sell. There is no commission fee to close the position.
 </details>
 
 <details>
 <summary>What does it cost to buy an option?</summary>
-Buying an option costs a commission fee, streamia (streaming premia), and gas fee. The commission fee is 0.2% to 0.6% of the notional value of the option position, depending on the <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/commission#commission-rate-and-pool-utilization">pool utilization</a> at the time of purchase. The streamia starts at 0, and accumulates while the underlying price remains in range. There is no commission fee to close the position.
+Buying an option costs a commission fee, streamia (streaming premia), and gas fee. The commission fee is 0.2% to 0.6% of the notional value of the option position, depending on the <a href="https://panoptic.xyz/docs/panoptic-protocol/commission#commission-rate-and-pool-utilization">pool utilization</a> at the time of purchase. The streamia starts at 0, and accumulates while the underlying price remains in range. There is no commission fee to close the position.
 </details>
 
 <details>
 <summary>What is the commission fee?</summary>
-This is the fee to mint an option. When an option seller or buyer opens their position, they pay a commission fee on the notional value of the position. The commission is paid to the PLPs. The commission fee percentage varies between 0.2% - 0.6% based on <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/commission#commission-rate-and-pool-utilization">pool utilization</a>.
+This is the fee to mint an option. When an option seller or buyer opens their position, they pay a commission fee on the notional value of the position. The commission is paid to the PLPs. The commission fee percentage varies between 0.2% - 0.6% based on <a href="https://panoptic.xyz/docs/panoptic-protocol/commission#commission-rate-and-pool-utilization">pool utilization</a>.
 </details>
 
 <details>
 <summary>How is the streaming premia (streamia) calculated?</summary>
-The <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/premium">streamia</a> is equal to the amount of swap fees the borrowed LP position would have earned in the Uniswap pool, multiplied by a spread multiplier.  
+The <a href="https://panoptic.xyz/docs/panoptic-protocol/premium">streamia</a> is equal to the amount of swap fees the borrowed LP position would have earned in the Uniswap pool, plus an additional <a href="https://panoptic.xyz/docs/panoptic-protocol/premium#net-gross-and-owed-fees-with-spread">liquidity spread</a>.  
 <br /><br />
 Example: Alice sells an out-of-the-money (OTM) ETH-USDC put Panoption, with strike = 1000 and width = ±10%. Bob buys the OTM put Panoption from Alice for 0 upfront premium. If the ETH-USDC price moves between 909 and 1100, the option is “in range” and would have earned swap fees from the Uniswap pool. If the ETH-USDC price is above 1100 or below 909, the option is “out of range” and would not have earned any swap fees. Bob owes the total amount of accumulated swap fees to Alice as premium.
 </details>
 
 <details>
+<summary>What is the "liquidity spread"</summary>
+The <a href="https://panoptic.xyz/docs/panoptic-protocol/premium#net-gross-and-owed-fees-with-spread">liquidity spread</a> is a floating rate paid by options buyers to options sellers, and is determined by the utilization ratio of each set of options. The spread prevents someone from buying all of the available options for sell.
+<br /><br />
+The spread is given by the formula 0.25 * buy/(sell-buy).
+<br /><br />
+Example 1: If Alice sells a 10 ETH call and Bob buys a 5 ETH call, then the <a href="https://panoptic.xyz/blog/black-scholes-streamia-defi-options-pricing-models">streamia</a> paid by Bob to Alice for holding the option is 25% greater than Alice's forgone Uniswap LP fees.
+<br /><br />
+Example 2: If Alice sells a 10 ETH call and Bob buys a 9 ETH call, then the streamia paid by Bob to Alice for holding the option is 325% greater than Alice's forgone Uniswap LP fees.
+<br /><br />
+For buyers, it is costly to purchase all available options. For sellers, it is profitable to identify popular options and strike prices to <a href="https://panoptic.xyz/research/options-market-making#market-making-in-panoptic">market make</a> on.
+</details>
+
+<details>
 <summary>Has a streaming premia (streamia) been used in practice before?</summary>
-No, Panoptic is a pioneer in introducing <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/premium">streamia</a> for options. While similar pricing mechanisms exist such as the <a href="https://docs.panoptic.xyz/docs/trading/perpetual-options#how-do-perpetual-options-compare-to-perpetual-futures-perps">funding rate</a> in perpetual futures (perps), Panoptic's streamia is unique and innovative.
+No, Panoptic is a pioneer in introducing <a href="https://panoptic.xyz/docs/panoptic-protocol/premium">streamia</a> for options. While similar pricing mechanisms exist such as the <a href="https://panoptic.xyz/docs/trading/perpetual-options#how-do-perpetual-options-compare-to-perpetual-futures-perps">funding rate</a> in perpetual futures (perps), Panoptic's streamia is unique and innovative.
 </details>
 
 <details>
