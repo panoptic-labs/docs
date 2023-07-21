@@ -116,6 +116,12 @@
     background-color: #ffffff;
   }
 
+  .sidebar__button {
+    height: 60px !important;
+    width: 60px;
+    padding: 0 !important;
+  }
+
   .sidebar__nav {
     max-width: calc(100% - 40px);
     width: 100%;
