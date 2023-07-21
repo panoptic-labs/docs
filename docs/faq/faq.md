@@ -53,6 +53,11 @@ Testnet is scheduled for September 2023. Mainnet is scheduled for Q4 2023. See o
 Panoptic harnesses Uniswap's liquidity to enhance the user experience for options traders. High liquidity and volume in Uniswap pools benefit Panoptic by ensuring steady and predictable returns for options sellers, more stable options pricing, more predictable moneyness, and lower risks of liquidation or forced exercise. This allows for the creation of robust options markets from day one.
 </details>
 
+<details>
+<summary>Are there any off-chain components?</summary>
+No.
+</details>
+
 ## Perpetual Options
 <details>
 <summary>Do crypto users want options?</summary>
@@ -132,6 +137,13 @@ Yes.
 <details>
 <summary>Why should I sell an option on Panoptic when I can just LP directly on Uniswap?</summary>
 Selling an option on Panoptic has the same before-fees payoff as LPing on Uniswap. However, selling an option on Panoptic earns a premium (paid by the option buyer) that is strictly greater than the swap fees earned by an LP position due to the <a href="https://docs.panoptic.xyz/docs/panoptic-protocol/premium#net-gross-and-owed-fees-with-spread">liquidity spread</a> and improved gas efficiency.
+</details>
+
+<details>
+<summary>Uniswap LPs (and options sellers) are losing money!</summary>
+Uniswap is a <a href="https://panoptic.xyz/research/defi-put-options-uniswap-backtest">one-sided market</a> where perpetual options can only be sold but not bought. This leads to an oversupply of liquidity in Uniswap, resulting in lower returns for Uniswap LPs.
+
+Panoptic solves this by opening up a two-sided market, where perpetual options are bought and sold by lending and borrowing Uniswap LP tokens. Options buying is implemented through removing liquidity from Uniswap, which leads to higher Uniswap fees earned, higher streamia received, and increased returns to Uniswap LPs (and options sellers).
 </details>
 
 ## Liquidity Providers
