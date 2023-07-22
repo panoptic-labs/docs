@@ -58,7 +58,26 @@ Panoptic harnesses Uniswap's liquidity to enhance the user experience for option
 No.
 </details>
 
+<details>
+<summary>How does the impending release of Uniswap v4 affect Panoptic?</summary>
+We are very excited for Uniswap's remarkable achievement! With Uniswap v4, Panoptic is set for an exciting journey:
+<br /><br />
+1️⃣ Panoptic will launch on Uniswap v3 🔜
+<br /><br />
+2️⃣ Being backed by <a href="https://blog.uniswap.org/ventures">Uniswap Labs Ventures</a>, Uniswap v4 has always been part of our growth map🗺️
+<br /><br />
+3️⃣ Uniswap v4 will supercharge Panoptic⚡
+<br /><br />
+Stay tuned...
+</details>
+
+
 ## Perpetual Options
+<details>
+<summary>Do Panoptic options (Panoptions) expire?</summary>
+No, Panoptions are perpetual and never expire. Buyers can hold Panoptions for an unlimited amount of time while potentially incurring <a href="https://panoptic.xyz/blog/black-scholes-streamia-defi-options-pricing-models">fees</a> for each block the Panoption is held. Note that buyers may be <a href="https://panoptic.xyz/docs/panoptic-protocol/forced-exercise">forcefully exercised</a>, but are compensated with fees should this occur.
+</details>
+
 <details>
 <summary>Do crypto users want options?</summary>
 Options are extremely popular in traditional finance (TradFi), so much that <a href="https://qz.com/2092197/options-trading-is-poised-to-overtake-the-stock-market">options actually overshadow stocks</a> in terms of volume.
@@ -87,7 +106,6 @@ While perpetual futures often offer more leverage, perpetual options offer more 
 5) Custom probability of profit and profit potential<br />
 6) Dynamic delta and gamma
 </details>
-
 
 <details>
 <summary>Why should perp traders use Panoptic when options are so complicated?</summary>
@@ -207,6 +225,15 @@ For buyers, it is costly to purchase all available options. For sellers, it is p
 <details>
 <summary>Has a streaming premia (streamia) been used in practice before?</summary>
 No, Panoptic is a pioneer in introducing <a href="https://panoptic.xyz/docs/panoptic-protocol/premium">streamia</a> for options. While similar pricing mechanisms exist such as the <a href="https://panoptic.xyz/docs/trading/perpetual-options#how-do-perpetual-options-compare-to-perpetual-futures-perps">funding rate</a> in perpetual futures (perps), Panoptic's streamia is unique and innovative.
+</details>
+
+<details>
+<summary>How can I manage risks associated with an unpredictable streaming premia (streamia)?</summary>
+Panoption streamia can be managed similar to <a href="https://panoptic.xyz/research/perpetual-futures-vs-options#what-are-perps">perp funding rates</a>, since both are unpredictable fees. Users should closely monitor their positions including their collateral amounts, intrinsic value, and owed fees. Users must maintain sufficient collateral to prevent liquidations, and should be prepared to close or exercise positions to secure profits or limit losses. Remember that options trading is not "set it and forget it"; it requires active management.
+<br /><br />
+Additionally, you will soon be able to view dashboards of historical streamia and fees to better inform you of potential costs.
+<br /><br />
+You can also think of Panoptions as a "perp-like" instrument where users purchase a perpetual call option to gain 10x leveraged exposure with a "funding rate" that adjusts at every block. But unlike perps, Panoptions have limited downside risk and are not subject to liquidation risk from price fluctuations. The only liquidation risk for buyers comes from the accumulation of streamia, which generally happens at a gradual, more manageable pace.
 </details>
 
 <details>
