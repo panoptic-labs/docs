@@ -9,7 +9,7 @@ You can find all of our resources related to our gated beta launch below.
 ### Sign Up
 Sign up for the gated launch [here](https://signup.panoptic.xyz).
 
-### Announcement
+### Announcements
 - Initial [announcement](https://panoptic.xyz/blog/gated-launch-sign-up)
 
 ### Videos
