@@ -43,10 +43,6 @@
   letter-spacing: -0.72px;
 }
 
-span {
-  white-space: nowrap;
-}
-
 p.no-break {
   display: inline;
   margin: 0; 

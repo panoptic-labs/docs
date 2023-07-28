@@ -26,7 +26,7 @@ const PartnerPage = () => {
       <div className="partner-logos-container">
         <div className="partner-logos">
           {investors.map((card) => (
-            <img key={card} src={`/img/partners/${card}.svg`} alt={card} className="investor"/>
+            <img key={card} src={`/img/partners/${card}.svg`} alt={card} className={`investor ${card}`}/>
           ))}
         </div>
       </div>

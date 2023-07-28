@@ -91,6 +91,12 @@
   max-width: 617px;
 }
 
+.chart-container {
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+}
+
 .demo-interactive-details {
   border: 2px solid #F3F3F3;
   border-radius: 8px;
