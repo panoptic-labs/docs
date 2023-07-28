@@ -2,9 +2,9 @@ import React, { useRef, useState, useEffect } from "react"
 import PillText from "../PillText/PillText"
 import * as Dialog from '@radix-ui/react-dialog';
 import * as Popover from '@radix-ui/react-popover';
-import useResponsive from "../../../hooks/useResponsive";
 import DemoChart from "../DemoChart/DemoChart"
 import ConfettiExplosion from 'react-confetti-explosion';
+import { useDraggable } from "react-use-draggable-scroll";
 import Button from "../Button/Button"
 import { LongCall } from "./long-call";
 import { LongStrangle } from "./long-strangle";
@@ -15,13 +15,14 @@ import "./VideoDialog.css"
 
 const DemoPage = () => {
   const demoInteractiveRef = useRef(null);
-  const { is440 } = useResponsive();
   const [optionType, setOptionType] = useState("Jade Lizard") // "Jade Lizard" | "Long Call" | "Long Strangle"
   const [optionMenuOpen, setOptionMenuOpen] = useState(false)
   const [isExploding, setIsExploding] = useState(false);
   const [showReciept, setShowReciept] = useState(false)
   const [showConfirm, setShowConfirm] = useState(false)
   const [chartSize, setChartSize] = useState({ width: 0, height: 0 });
+  const { events } = useDraggable(demoInteractiveRef);
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -37,9 +38,33 @@ const DemoPage = () => {
     };
   }, []);
 
+  useEffect(() => {
+    horizontallyCenterChart();
+  })
+
   const handleOptionTypeChange = (optionType) => {
     setOptionType(optionType)
     setOptionMenuOpen(false)
+    horizontallyCenterChart();
+    if (optionType === "Long Strangle" || optionType === "Long Call") {
+      verticallyAlignChartToEnd()
+    } else {
+      verticallyAlignChartToStart()
+    }
+  }
+
+  const horizontallyCenterChart = () => {
+    const centerScrollPoint = (demoInteractiveRef.current.scrollWidth - chartSize.width) / 2;
+    demoInteractiveRef.current.scrollLeft = centerScrollPoint;
+  }
+
+  const verticallyAlignChartToEnd = () => {
+    const endScrollPoint = demoInteractiveRef.current.scrollHeight;
+    demoInteractiveRef.current.scrollTop = endScrollPoint;
+  }
+
+  const verticallyAlignChartToStart = () => {
+    demoInteractiveRef.current.scrollTop = 0;
   }
 
   const mint = () => {
@@ -120,10 +145,19 @@ const DemoPage = () => {
                 onOpenChange={setOptionMenuOpen}
               />
             </div>
-            <div className="demo-interactive-body" ref={demoInteractiveRef}>
-            {isExploding && <ConfettiExplosion width={4000}/>}
-              <DemoChart optionType={optionTypes[optionType].name} chartSize={chartSize}/>
-              {/* <img src={`/img/new-home-page/${optionTypes[optionType].image}.svg`} className={showReciept || showConfirm ? 'demo-greyed-out demo-graph' : 'demo-graph'} alt="demo placeholder" /> */}
+            <div className="demo-interactive-body">
+              {isExploding && <ConfettiExplosion width={4000}/>}
+              <div 
+                className="chart-container" 
+                {...events}
+                ref={demoInteractiveRef}
+              >
+                <DemoChart 
+                  optionType={optionTypes[optionType].name} 
+                  chartSize={chartSize} 
+                  className="demo-interactive-chart"
+                />
+              </div>
               {showReciept && 
                 <div className="demo-interactive-reciept">
                   <div className="receipt-container">

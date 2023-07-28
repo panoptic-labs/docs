@@ -38,6 +38,14 @@
   max-width: 1000px;
 }
 
+.blizzard {
+  padding: 0 21px;
+}
+
+.big-brain {
+  padding: 0 16px;
+}
+
 @media screen and (max-width: 767px) { 
   .partner-page {
     padding: 0 40px 30px;
