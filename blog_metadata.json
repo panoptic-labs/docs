@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Streamia — DeFi-native Options Pricing",
+    "date": "2023-07-13",
+    "image": "/img/banners/streamia-defi-native-options-pricing.png",
+    "link": "https://panoptic.xyz/blog/streamia-defi-native-options-pricing",
+    "description": "En route to creating a transformative DeFi options protocol, Panoptic has made several industry-altering inventions including streamia, the future of DeFi options pricing. As explained in a [recent article](https://panoptic. xyz/blog/black-scholes-streamia-defi-options-pricing-models), streamia builds upon previous option pricing models to create a more secure and",
+    "id": 1
+  },
+  {
+    "title": "The Panoptic Gated Launch: Sign-Up",
+    "date": "2023-07-05",
+    "image": "/img/banners/gated-launch-sign-up.png",
+    "link": "https://panoptic.xyz/blog/gated-launch-sign-up",
+    "description": "The dawn of a new era in DeFi options begins with Panoptic’s gated, beta launch. Become one of the first users to trade perpetual options on Panoptic by participating in our trading competitions where we’re offering $100,000 in prizes to the top performers.",
+    "id": 2
+  },
+  {
+    "title": "Streamia vs. Black-Scholes Model (BSM): A Paradigm Shift in DeFi Options Pricing",
+    "date": "2023-06-28",
+    "image": "/img/banners/streamia-v-bsm-banner.png",
+    "link": "https://panoptic.xyz/blog/black-scholes-streamia-defi-options-pricing-models",
+    "description": "As a pioneering force in the options industry, Panoptic has introduced a new pricing model called streamia. Our groundbreaking approach aims to revolutionize decentralized finance (DeFi) options trading by introducing an innovative pricing model for a new type of financial instrument — perpetual",
+    "id": 3
+  },
+  {
+    "title": "Join the Panoptic Ambassador Program",
+    "date": "2023-06-24",
+    "image": "/img/banners/panoptic_ambassador_program_banner.png",
+    "link": "https://panoptic.xyz/blog/panoptic-ambassador-program",
+    "description": "With our gated launch drawing near, we are delighted to announce the initiation of the Panoptic Ambassador Program. If you are looking to gain experience working with a cutting-edge, early-stage crypto protocol — and get compensated for it — this is your opportunity.",
+    "id": 4
+  },
+  {
+    "title": "Welcome to the Panoptic Community",
+    "date": "2023-06-16",
+    "image": "/img/banners/panoptic_community_launch_banner.png",
+    "link": "https://panoptic.xyz/blog/panoptic-community-launch",
+    "description": "We are thrilled to announce the launch of our brand new community. This is your invitation to be a part of the future of decentralized options trading.  Panoptic is building the world’s premier perpetual, oracle-free options protocol. > Our goal: be the",
+    "id": 5
+  }
+]
