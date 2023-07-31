@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import PillText from "../NewHomePage/PillText/PillText";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import recentUpdates from '../../../blog_metadata.json';
+import recentUpdates from '../../../recentUpdates.json';
 
 import "./RecentUpdates.css";
 import useResponsive from "../../hooks/useResponsive";
