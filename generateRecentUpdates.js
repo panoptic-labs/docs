@@ -2,23 +2,42 @@ const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
 
-async function generateBlogMetadata() {
+async function generateRecentUpdates() {
   const blogDirectory = path.join(__dirname, './blog');
-  // Read all files in the blog directory
-  const files = fs.readdirSync(blogDirectory);
-  // Retrieve metadata for the 5 most recent blog posts
-  const recentPosts = files
-  // Filter out only subdirectories that follow the naming pattern YYYY-MM-DD-name
-  .filter(file => fs.statSync(path.join(blogDirectory, file)).isDirectory())
-  // Sort subdirectories in descending order based on date in the directory name
-  .sort((a, b) => {
-    const dateA = new Date(a.split('-').slice(0, 3).join('-'));
-    const dateB = new Date(b.split('-').slice(0, 3).join('-'));
+  const researchDirectory = path.join(__dirname, './research');
+  const blogFiles = fs.readdirSync(blogDirectory);
+  const researchFiles = fs.readdirSync(researchDirectory);
+  const recentPosts = [];
+
+  const blogPosts = generatePosts(blogFiles, blogDirectory, 'blog')
+  const researchPosts = generatePosts(researchFiles, researchDirectory, 'research')
+  const combinedPosts = [...blogPosts, ...researchPosts];
+  const sortedPosts = combinedPosts.sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
     return dateB.getTime() - dateA.getTime();
   })
-  // Get metadata for each .md file within the sorted subdirectories
+  const recentCombinedPosts = sortedPosts.slice(0, 5);
+
+  recentCombinedPosts.map((post) => post.id = generateId())
+  recentPosts.push(...recentCombinedPosts);
+
+  fs.writeFileSync('recentUpdates.json', JSON.stringify(recentPosts, null, 2));
+}
+
+function generatePosts(files, directory, type) {
+  return files
+  // Filter out only .md files
+  .filter(file => fs.statSync(path.join(directory, file)).isDirectory())
+  // Sort files in descending order based on last modified date
+  .sort((a, b) => {
+    const dateA = fs.statSync(path.join(directory, a)).mtime;
+    const dateB = fs.statSync(path.join(directory, b)).mtime;
+    return dateB.getTime() - dateA.getTime();
+  })
+
   .reduce((posts, subdirectory) => {
-    const filePath = path.join(blogDirectory, subdirectory);
+    const filePath = path.join(directory, subdirectory);
     const filesInSubdirectory = fs.readdirSync(filePath);
     const mdFile = filesInSubdirectory.find(file => file.endsWith('.md'));
 
@@ -27,19 +46,16 @@ async function generateBlogMetadata() {
       const title = getTitleFromFrontMatter(fullFilePath);
       const date = getDateFromFileName(mdFile);
       const image = getImageFromFrontMatter(fullFilePath);
-      const link = getLinkFromFrontMatter(fullFilePath);
+      const link = getLinkFromFrontMatter(fullFilePath, type);
       const description = getShortDescription(fullFilePath);
-      const id = generateId();
 
-      posts.push({ title, date, image, link, description, id });
+      posts.push({ title, date, image, link, description });
     }
 
     return posts;
   }, [])
   // Get the first 5 most recent posts
   .slice(0, 5);
-  // Write metadata to JSON file
-  fs.writeFileSync('blog_metadata.json', JSON.stringify(recentPosts, null, 2));
 }
 
 function getTitleFromFrontMatter(file) {
@@ -65,11 +81,12 @@ function generateId() {
   return ++postId;
 }
 
-function getLinkFromFrontMatter(file) {
+function getLinkFromFrontMatter(file, type) {
   const { data: frontMatter } = matter(fs.readFileSync(file, 'utf8'));
   const slug = frontMatter.slug;
-  return `https://panoptic.xyz/blog/${slug}`
+  return `https://panoptic.xyz/${type}/${slug}`
 }
+
 function getShortDescription(file) {
   const content = fs.readFileSync(file, 'utf8');
   const withoutFrontMatter = content.replace(/---[\s\S]*?---/, '');
@@ -83,4 +100,4 @@ function getShortDescription(file) {
   return shortWords.join(' ');
 }
 
-generateBlogMetadata();
+generateRecentUpdates();
