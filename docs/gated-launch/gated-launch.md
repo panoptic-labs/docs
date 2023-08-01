@@ -15,3 +15,6 @@ Sign up for the gated launch [here](https://signup.panoptic.xyz).
 
 ### Videos
 - Intro: [Join the Future of DeFi Options](https://www.youtube.com/watch?v=1wwF5_SH1Rc)
+
+### Feedback
+- General [feedback](https://feedback.panoptic.xyz/)
