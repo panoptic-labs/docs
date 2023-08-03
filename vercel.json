@@ -1,6 +1,6 @@
 {
   "crons": [{
     "path": "/generateRecentUpdates.js",
-    "schedule": "0 10 * * *"
+    "schedule": "0 21 * * *"
   }]
 }
