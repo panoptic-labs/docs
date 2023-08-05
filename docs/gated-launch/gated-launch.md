@@ -9,6 +9,9 @@ You can find all of our resources related to our gated beta launch below.
 ### Sign Up
 Sign up for the gated launch [here](https://signup.panoptic.xyz).
 
+### Roadmap
+- The [Road to Beta Launch](https://panoptic.xyz/docs/gated-launch/launch-roadmap)
+
 ### Announcements
 - Initial [announcement](https://panoptic.xyz/blog/gated-launch-sign-up) (July 5, 2023)
 - Pool [parameters](https://panoptic.xyz/blog/gated-launch-parameters) (July 28, 2023)
