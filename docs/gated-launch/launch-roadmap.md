@@ -60,7 +60,7 @@ Here's a quick look at the significant milestones we've reached on our path to t
 
 ## The Road Ahead
 
-While we're incredibly proud of our achievements, the journey is far from over. Here are the remaining milestones we're eager to reach:
+We're incredibly proud of our achievements to date, but our journey is just beginning. Here are the remaining milestones we're working towards to deliver the beta version of Panoptic's DeFi options trading platform:
 
   
 
