@@ -231,7 +231,7 @@ const DemoChart = ({optionType, chartSize}) => {
   return (
     <AreaChart
       width={2 * chartSize.width} //{617}
-      height={2 * chartSize.height} //{395}
+      height={chartSize.height - 8} //{395}
       data={data}
       margin={{
         top: 0,
@@ -240,7 +240,6 @@ const DemoChart = ({optionType, chartSize}) => {
         bottom: 0
       }}
     >
-      <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="price" hide={true}/>
       <YAxis hide={true} />
       <Tooltip

@@ -94,7 +94,16 @@
 .chart-container {
   height: 100%;
   width: 100%;
-  overflow: scroll;
+  overflow-x: scroll;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+  background-image: url("/img/new-home-page/background-grid.svg");
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.chart-container::-webkit-scrollbar {
+  display: none;
 }
 
 .demo-interactive-details {
@@ -135,6 +144,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  z-index: 2;
 }
 
 .demo-label-coin {
@@ -162,6 +172,33 @@
   border-radius: 6px;
   padding: 2px 4px;
   margin-left: 10px;
+}
+
+.price-label {
+  position: absolute;
+  top: 0px;
+  left: 43%;
+  font-size: 14px;
+  font-weight: 500;
+  color: #4E14D0;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.price-line {
+  position: absolute;
+  top: -5px;
+  left: 43.3%;
+  height: 100%;
+  margin: 5px 0;
+  width: 1.5px;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 3px,
+    #4E14D0 3px,
+    #4E14D0 13px
+  );
 }
 
 .demo-confirm-label {

@@ -46,25 +46,11 @@ const DemoPage = () => {
     setOptionType(optionType)
     setOptionMenuOpen(false)
     horizontallyCenterChart();
-    if (optionType === "Long Strangle" || optionType === "Long Call") {
-      verticallyAlignChartToEnd()
-    } else {
-      verticallyAlignChartToStart()
-    }
   }
 
   const horizontallyCenterChart = () => {
     const centerScrollPoint = (demoInteractiveRef.current.scrollWidth - chartSize.width) / 2;
     demoInteractiveRef.current.scrollLeft = centerScrollPoint;
-  }
-
-  const verticallyAlignChartToEnd = () => {
-    const endScrollPoint = demoInteractiveRef.current.scrollHeight;
-    demoInteractiveRef.current.scrollTop = endScrollPoint;
-  }
-
-  const verticallyAlignChartToStart = () => {
-    demoInteractiveRef.current.scrollTop = 0;
   }
 
   const mint = () => {
@@ -237,6 +223,8 @@ const DemoPage = () => {
                     <span className="demo-label-pair">DAI</span>
                     <div className="demo-label-basis-points">30bps</div>
                   </div>
+                  <div className="price-label">Current Price = $50</div>
+                  <div className="price-line"></div>
                   <Button className="explode-button" onClick={() => mint()}>Mint It!</Button>
                 </>
               }
