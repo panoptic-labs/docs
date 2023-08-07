@@ -1,6 +1,7 @@
 ---
 sidebar_position: 8
 sidebar_label: Roadmap
+image: /img/Roadmap.png
 sidebar_class_name: menu__list-item-collapsible
 ---
 
@@ -9,7 +10,7 @@ import DownloadButton from '../src/components/DownloadButton';
 # Panoptic’s V1 Roadmap
 As we near the end of the roadmap for releasing Panoptic V1 to mainnet in the fall of this year, we wanted to highlight a few key moments.
 
-As a reminder, this roadmap is a live document: We will make adjustments to months that are currently further in the future as we later gain clarity regarding the tasks required to attain each milestone.
+As a reminder, this roadmap is a live document. We will make adjustments as we attain each milestone.
 
 <DownloadButton imageUrl="https://raw.githubusercontent.com/panoptic-labs/docs/main/static/img/Roadmap.png" fileName="Panoptic_Roadmap_2023" />
 
