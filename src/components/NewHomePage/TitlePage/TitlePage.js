@@ -16,7 +16,7 @@ const TitlePage = () => {
       <div className="title-page-flex">
         <div className="title-page-info">
           <div className="title">
-            <div>Effortless option</div>
+            <div>Effortless options</div>
             <div>trading on any</div>
             <div>crypto asset</div>
           </div>
