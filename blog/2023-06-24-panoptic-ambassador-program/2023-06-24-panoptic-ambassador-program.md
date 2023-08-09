@@ -53,5 +53,5 @@ Our applications close on July 3 at 11:59 PM PST. From the pool of applicants, w
 
 On July 12, finalist candidates will receive a decision. Those chosen as Ambassadors will embark on their journey with us starting from July 17. Take the first step towards becoming a valued member of our Ambassador team. [Apply now](https://forms.gle/F7j2epQWesXsGAgt7)!
 
-Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](https://panoptic.xyz/docs/intro) and head to our [website](https://panoptic.xyz/).
+*Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](https://panoptic.xyz/docs/intro) and head to our [website](https://panoptic.xyz/).*
 
