@@ -80,6 +80,7 @@
   display: flex;
   line-height: 44px;
   margin-bottom: 14px;
+  white-space: nowrap;
 }
 
 .demo-interactive-body {
