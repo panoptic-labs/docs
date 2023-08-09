@@ -45,6 +45,8 @@ Please note that this does not mean that we are limiting our entire gated launch
   
 
 For those who are eager to know whether they've made it to the epoch 1 whitelist, you can connect your wallet to our [site](https://access.panoptic.xyz/) to check your status.
+
+![wallet-checker](./wallet-checker.png)
   
 
 If your wallet is eligible, you will need to confirm your participation before August 14, 2023, 16:00 UTC by following the instructions on the site.
