@@ -168,6 +168,6 @@ Streamia has four distinct advantages for DeFi options:
 This means that streamia is not a divergent step away from the BSM, but rather an adaptation of traditional options pricing. In short, streamia is built for pricing perpetual DeFi options. 
 
 
-_Join the growing community of Panotimists and be the first to hear our latest updates by following us on our[ social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our[ docs](https://panoptic.xyz/docs/intro) and head to our[ website](https://panoptic.xyz/)._
+_Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our[ social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our[ docs](https://panoptic.xyz/docs/intro) and head to our[ website](https://panoptic.xyz/)._
 
 
