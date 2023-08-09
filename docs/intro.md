@@ -43,4 +43,4 @@ The following sections will provide a brief overview of the _Panoptic protocol_.
 - [Three Sigma: Options Series Part I - An Overview of the DeFi Options Landscape](https://threesigma.xyz/blog/defi-options-landscape)  
 - [Three Sigma: Options Series Part II - Exploring Different Pricing Approaches and Tokenomics](https://threesigma.xyz/blog/exploring-options-pricing-tokenomics)
 
-*Join the growing community of Panotimists and be the first to hear our latest updates by following us on our [social media platforms](https://linktr.ee/panopticxyz).*
+*Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://linktr.ee/panopticxyz).*
