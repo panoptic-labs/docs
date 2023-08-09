@@ -6,7 +6,7 @@ sidebar_class_name: menu__list-item-collapsible
 
 # What is Panoptic?
 
-Panoptic is a perpetual, oracle-free options protocol built on the Ethereum blockchain. 
+Panoptic is the perpetual, oracle-free options protocol built on the Ethereum blockchain. 
 
 <video src="https://user-images.githubusercontent.com/62954565/223510059-8c057bc5-3957-466d-bbdd-27e2bdea02bb.mp4#t=0.55" preload="metadata" type="video/mp4" width="100%" height="auto" controls>
 </video>
