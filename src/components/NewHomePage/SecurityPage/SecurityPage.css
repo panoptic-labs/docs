@@ -4,20 +4,22 @@
 }
 
 .security-flex {
-  padding: 0 96px 40px;
+  padding: 96px;
   display: flex;
   justify-content: space-between;
 }
 
 .heading-section {
   color:white;
-  margin-bottom: 5px;
+  flex: 1;
+}
+
+.tab-section { 
+  flex: 1;
 }
 
 .header-border{ 
   display: inline-block;
-  margin-top: 121px;
-  margin-left: 9px;
 }
 
 .small-header {
@@ -52,29 +54,9 @@ h4 {
   text-transform: uppercase;
 }
 
-.arrow-container {
-  display: flex;
-  justify-content: center;
-}
-
-.arrow {
-  margin-top: 36px;
-}
-
-.hovering-arrow { 
-  animation: bounce 2000ms infinite; 
-}
-
-@keyframes bounce { 
-  0% { transform: translateY(0); } 
-  50% { transform: translateY(-10px); } 
-  100% { transform: translateY(0); } 
-}
-
 .scrolling-icons-border {
   height: 51px;
   width: 157px;
-  margin-top: 158px;
   border-radius: 12px;
   border-width: 3px;
   border-style: solid;
@@ -102,10 +84,6 @@ h4 {
   }
 }
 
-.tab-section {
-  height: 600px;
-}
-
 /* reset for tab */
 button,
 fieldset,
@@ -116,8 +94,6 @@ input {
 .tabs-root {
   display: flex;
   flex-direction: column;
-  height: 214px;
-  width: 617px;
   margin-top: 15px;
 }
 
@@ -172,10 +148,6 @@ input {
     font-size: 48px
   }
 
-  .tabs-root {
-    width: 530px;
-  }
-
   .tabs-trigger {
     font-size: 18px;
     margin-right: 18px;
@@ -184,23 +156,10 @@ input {
 
 @media screen and (max-width: 1170px) { 
   .security-flex {
+    padding: 40px;
     flex-direction: column;
+    gap: 64px;
   }
-  
-  .arrow-container {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 767px) { 
-  .security-flex {
-    padding: 0 40px 40px;
-  }
-
-  .tabs-root {
-    width: calc(100vw - 80px);
-  }
-  
 }
 
 @media screen and (max-width: 480px) { 

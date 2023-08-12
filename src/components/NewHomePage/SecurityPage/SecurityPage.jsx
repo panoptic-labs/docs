@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import DocumentIcon from "../Icons/Document";
 import AoIcon from "../Icons/Ao";
 import MagnifyingIcon from "../Icons/Magnifying";
-import ArrowIcon from "../Icons/Arrow";
 import PillText from "../PillText/PillText"
 
 const SecurityPage = () => {
@@ -62,11 +61,6 @@ const SecurityPage = () => {
             <p className="no-break">setting new </p>
             <p className="no-break">standards for </p>
             <p className="no-break">platform security</p>
-          </div>
-          <div className="arrow-container">
-            <div className="arrow hovering-arrow">
-              <ArrowIcon />
-            </div>
           </div>
         </div>
         <div className="tab-section">

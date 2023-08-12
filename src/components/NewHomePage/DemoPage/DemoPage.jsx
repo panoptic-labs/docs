@@ -253,7 +253,6 @@ const DemoPage = () => {
             PLAY
           </div>
         }></VideoDialog>
-        <img src={`/img/new-home-page/video-thumbnail.png`} alt="video-thumbnail" className="video-thumbnail"/>
       </div>
 
     </div>
