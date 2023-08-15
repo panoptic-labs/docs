@@ -3,17 +3,14 @@ import React, { useCallback } from "react";
 import "./Footer.css";
 import useResponsive from "../../hooks/useResponsive";
 
-const Footer = () => {
-  const { isMobileWidth } = useResponsive();
-
-  const renderCopyright = useCallback(
-    () => (
-      <div className="logo-part__copyright">
+function Copyright() {
+return <div className="logo-part__copyright">
         Copyright © {new Date().getFullYear()} Axicon Labs Inc. All Rights Reserved. Panoptic™ is a trademark of Axicon Labs Inc. All other trademarks and registered trademarks are the sole property of their respective owners.
       </div>
-    ),
-    []
-  );
+}
+
+const Footer = () => {
+  const { isMobileWidth } = useResponsive();
 
   return (
     <footer className="custom-footer">
@@ -47,7 +44,7 @@ const Footer = () => {
             src="/img/logo-dark.svg"
             alt="footer logo"
           />
-          {!isMobileWidth && renderCopyright()}
+          {!isMobileWidth && <Copyright />}
         </div>
         <div className="footer__container__learn-part">
           <div className="learn-part__title">Learn</div>
@@ -85,7 +82,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        {isMobileWidth && renderCopyright()}
+        {isMobileWidth && <Copyright />}
         <p className="footer__container__description-part">
           The content provided is for informational and educational purposes
           only and is not intended as, nor should it be construed as, financial,
