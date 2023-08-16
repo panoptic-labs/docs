@@ -70,7 +70,7 @@ const FAQPage = () => {
 const AccordionTrigger = ({children, className}) => (
   <Accordion.Header className="accordion-header">
     <Accordion.Trigger className={`accordion-trigger ${className}`}>
-      {children}
+      <span>{children}</span>
       <div className="faq-arrow-container">
         <img src={`/img/new-home-page/faq-arrow.svg`} alt="faq-arrow" className="faq-arrow"/>
       </div>

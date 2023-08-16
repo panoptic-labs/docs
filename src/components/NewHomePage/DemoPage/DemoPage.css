@@ -88,7 +88,7 @@
   background-color: #F3F3F3;
   border-radius: 12px;
   width: 45vw;
-  height: 50vh;
+  aspect-ratio: 1;
   max-width: 617px;
 }
 
@@ -319,23 +319,24 @@
 }
 
 .demo-video {
-  margin-top: -75px;
+  background-image: url(/img/new-home-page/video-thumbnail.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 500px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-items: space-around;
+  align-items: center;
 }
 
 .video-text {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 114%);
   font-weight: 700;
   font-size: 36px;
 }
 
 .play-button {
-  left: 50%;
-  transform: translate(-50%, 128%);
   border-radius: 50%;
-  position: absolute;
   width: 180.75px;
   height: 180.75px;
   background: rgba(0, 0, 0, 0.2);
@@ -352,7 +353,7 @@
 
 .play-button:hover {
   background: rgba(255, 255, 255, 0.4);
-  transform: translate(-50%, 128%) scale(1.05);
+  transform: scale(1.05);
   transition: transform 300ms ease, background 300ms ease;
 }
 
@@ -366,6 +367,10 @@
   .demo-interactive-text {
     font-size: 32px;
   }
+
+.demo-video {
+  height: 375px;
+}
 }
 
 @media screen and (max-width: 1300px) { 
@@ -381,12 +386,8 @@
     margin-left: -100px;
   }
 
-  .play-button {
-    transform: translate(-50%, 90%);
-  }
-
   .play-button:hover {
-    transform: translate(-50%, 90%) scale(1.05);
+    transform: scale(1.05);
   }
 
   .demo-interactive-reciept {
@@ -403,11 +404,10 @@
   .play-button {
     width: 100px;
     height: 100px;
-    transform: translate(-50%, 150%);
   }
 
   .play-button:hover {
-    transform: translate(-50%, 150%) scale(1.05);
+    transform: scale(1.05);
   }
 }
 
@@ -416,20 +416,12 @@
     padding: 0 40px;
   }
 
-  .demo-video {
-    margin-top: 20px;
-  }
-
   .video-text {
-    transform: translate(-50%, 0%);
     font-size: 24px;
-  }
-  .play-button {
-    transform: translate(-50%, 100%);
   }
 
   .play-button:hover {
-    transform: translate(-50%, 100%) scale(1.05);
+    transform: scale(1.05);
   }
 
   .demo-details {
@@ -454,15 +446,10 @@
   .demo-details {
     width: 355px;
   }
-  .play-button {
-    transform: translate(-50%, 70%);
-  }
 
   .play-button:hover {
-    transform: translate(-50%, 70%) scale(1.05);
+    transform: scale(1.05);
   }
-
-
 }
 
 @media screen and (max-width: 510px) { 

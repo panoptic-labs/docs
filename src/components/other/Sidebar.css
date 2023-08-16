@@ -20,6 +20,11 @@
   animation: animation-open 0.3s ease-out;
   backdrop-filter: blur(100px);
   opacity: 1;
+  background-color: #ffffff;
+}
+
+[data-theme="dark"] .sidebar {
+  background-color: #0f0426;
 }
 
 .sidebar_closed {
@@ -33,11 +38,11 @@
   position: absolute;
   top: var(--padding-top);
   right: var(--padding-right);
-  width: 48px;
-  height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 24px !important;
+  aspect-ratio: 1;
 }
 
 .sidebar__button > i {
@@ -112,14 +117,11 @@
 }
 
 @media (max-width: 767px) {
-  .sidebar {
-    background-color: #ffffff;
-  }
 
   .sidebar__button {
-    height: 60px !important;
+    /* height: 60px !important;
     width: 60px;
-    padding: 0 !important;
+    padding: 0 !important; */
   }
 
   .sidebar__nav {
@@ -127,10 +129,6 @@
     width: 100%;
     padding-left: calc((100% - 240px) / 2);
     padding-right: calc((100% - 240px) / 2);
-  }
-
-  [data-theme="dark"] .sidebar {
-    background-color: #0f0426;
   }
 }
 
