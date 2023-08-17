@@ -1,19 +1,22 @@
 import React, { useCallback } from "react";
+import Link from '@docusaurus/Link'
 
 import "./Footer.css";
 import useResponsive from "../../hooks/useResponsive";
+import Button from "./Button";
+
+function Copyright() {
+  return <div>
+    <div className="logo-part__copyright">
+      Copyright © {new Date().getFullYear()} Axicon Labs Inc. All Rights Reserved. Panoptic™ is a trademark of Axicon Labs Inc. All other trademarks and registered trademarks are the sole property of their respective owners.
+    </div>
+    <div className="policy-container">
+    </div>
+  </div>
+}
 
 const Footer = () => {
   const { isMobileWidth } = useResponsive();
-
-  const renderCopyright = useCallback(
-    () => (
-      <div className="logo-part__copyright">
-        Copyright © {new Date().getFullYear()} Axicon Labs Inc. All Rights Reserved. Panoptic™ is a trademark of Axicon Labs Inc. All other trademarks and registered trademarks are the sole property of their respective owners.
-      </div>
-    ),
-    []
-  );
 
   return (
     <footer className="custom-footer">
@@ -47,7 +50,7 @@ const Footer = () => {
             src="/img/logo-dark.svg"
             alt="footer logo"
           />
-          {!isMobileWidth && renderCopyright()}
+          {!isMobileWidth && <Copyright />}
         </div>
         <div className="footer__container__learn-part">
           <div className="learn-part__title">Learn</div>
@@ -58,6 +61,8 @@ const Footer = () => {
             <a href="https://intro.panoptic.xyz/" target="_blank">Litepaper</a>
             <a href="/docs/developers/smart-contracts-overview">Developers</a>
             <a href="/docs/terms/glossary">Glossary</a>
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/terms-of-use">Terms of use</a>
           </div>
         </div>
         <div className="footer__container__community-and-more-part">
@@ -85,7 +90,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        {isMobileWidth && renderCopyright()}
+        {isMobileWidth && <Copyright />}
         <p className="footer__container__description-part">
           The content provided is for informational and educational purposes
           only and is not intended as, nor should it be construed as, financial,

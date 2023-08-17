@@ -8,10 +8,11 @@ import Nav from "./Header/Nav";
 import Sidebar from "./Sidebar";
 import Button from "../NewHomePage/Button/Button";
 
+const logoPath = `/img/logo-mono.svg`;
+  
 const Header = () => {
   const [isOpenedSidebar, setOpenedSidebar] = useState(false);
   const { loadedWidth, isTabletWidth } = useResponsive();
-  const logoPath = `/img/logo-mono.svg`;
 
   const handleToggle = () => {
     setOpenedSidebar((state) => !state);
