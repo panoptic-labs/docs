@@ -2,16 +2,6 @@
     background-color: #F3F3F3;
     color: black;
     font-family: "Times New Roman";
-    display: flex;
-    justify-content: center;
-
-   /* prevents selecting/copying */
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
 }
 
 .policy-document iframe {
