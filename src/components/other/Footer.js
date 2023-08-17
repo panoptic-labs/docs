@@ -62,7 +62,7 @@ const Footer = () => {
             <a href="/docs/developers/smart-contracts-overview">Developers</a>
             <a href="/docs/terms/glossary">Glossary</a>
             <a href="/privacy-policy">Privacy Policy</a>
-            <a href="/terms-of-use">Terms of use</a>
+            <a href="/terms-of-use">Terms of Use</a>
           </div>
         </div>
         <div className="footer__container__community-and-more-part">
