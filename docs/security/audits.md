@@ -7,9 +7,9 @@ The Panoptic protocol is audited to the highest security standards by leading bl
 This ensures that our smart contracts are secure and reliable to the best possible standard.
 
 ## ABDK
-[ABDK audit begins](https://www.panoptic.xyz/blog-posts/panoptic-x-abdk)
+[ABDK audit begins](https://panoptic.xyz/blog/abdk-audits-panoptic-defi-protocol)
 
-[ABDK audit complete](https://www.panoptic.xyz/blog-posts/abdk-completes-panoptic-audit)
+[ABDK audit complete](https://panoptic.xyz/blog/abdk-audit-completion)
 
 ## OpenZeppelin
-[OpenZeppelin audit begins](https://www.panoptic.xyz/blog-posts/panoptic-x-openzeppelin)
+[OpenZeppelin audit begins](https://panoptic.xyz/blog/openzeppelin-audits-panoptic-defi-options-protocol)
