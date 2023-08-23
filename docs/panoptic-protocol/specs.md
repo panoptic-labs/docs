@@ -115,7 +115,7 @@ def _poolUtilization():
 ## Commission fee
 
 The commission fee is paid by the option traders whenever they sell or buy an option. 
-The commission fee is proportional to the notional value of the options and depends on the poolUtilization.
+The commission fee is proportional to the notional value of the options.
 
 In traditional brokerage firms, a fixed commission is charged when a position is opened AND closed. 
 While no commission is paid if the user allows the option to expire, a perhaps perverse incentive of this model is that users may keep their position open for longer because they do not want to pay that commission fee.
@@ -127,64 +127,6 @@ The value of the commission to be paid is the commission rate multiplied by the 
 Note that the commission will always be paid in terms of the `tokentype` of the position: it will be paid using `token0` for puts and `token1` for calls.
 
 `Commission fee = _commissionRate() * notionalValue`
-
-##### Parameters that can change:
-- `max_commission`
-- `min_commission`
-
-
-```python
-def _commissionRate():
-    # monotonically decreasing commission
-    #   (x0,y0)=(commissionStartUtilization,commissionFeeMax) (starts high at low utilization) to
-    #   (x1,y1)=(targetPoolUtilization,commission_fee_min)
-    #
-    #    COMMISSION
-    #    _RATE         ^
-    #                  |  max commission = 60bps
-    #         60bps  _ |__
-    #                  | .¯-_
-    #                  | .   ¯-_   min commission = 20bps
-    #         20bps  _ | .      ¯-_____________
-    #                  | .       .         .
-    #                  +-+-------+---------+--->  POOL_
-    #                   10%     50%      100%      UTILIZATION
-    #                   Umin    Umid      
-        
-    utilization = _poolUtilization() 
-    if utilization < Umin:
-        return max_commission
-    elif utilization > Umid:
-        return min_commission
-    else:
-        return max_commission - (max_commission - min_commission)*(utilization - Umin) / (Umid - Umin)  
-            
-
-        
-def mintPutOption(strike, positionSize, optionType):
-    
-    #do stuff
-    
-    # lock collected fees
-    fees = collect(strike) # collect all fees at that strike
-    
-    lockedFees += _fees
-    
-    # update inAMM
-    notionalValue = strike * positionSize
-    if optionType == 'short':
-        #do stuff
-        inAMM += notionalValue
-        
-    elif optionType == 'long':
-        #do stuff
-        inAMM += notionalValue        
-        
-    # Pay commission. 
-    # msg.sender is the address of the user that sold that option    
-    balanceOf[msg.sender] -= notionalValue*_commissionRate()
-    balanceOf[PanopticPool] += notionalValue*_commissionRate()    
-```
 
 ## Buying Power Requirement
 
@@ -370,7 +312,7 @@ The collateralization requirements follows the guidelines outlined by CBOE and F
 
 ### Maintenance margin requirement - short options
 
-The buying power requirement for SHORT options is initially be set by the pool utilization, but the requirement will change as the price changes and the position becomes in-the-money.
+The buying power requirement for SHORT options is initially set by the pool utilization, but the requirement will change as the price changes and the position becomes in-the-money.
 
 The expression for the `BUYING_POWER_REQUIREMENT` is given by:
 

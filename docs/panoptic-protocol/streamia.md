@@ -1,8 +1,9 @@
 ---
 sidebar_position: 5
+label: Streamia
 ---
 
-# Streaming Premium
+# Streamia (Streaming Premia)
 
 ## Fees tracking in Uniswap
 
@@ -39,9 +40,9 @@ def computeUniswapFees(tickLower, tickUpper, liquidity):
 ## Liquidity tracking in Panoptic
 
 ### Liquidity in "Chunks"
-Each option position in Panoptic is created by moving liquidity in or out of the `UniswapV3Pool.sol` smart contract. Each "chunk" of liquidity will have a few proporties associated with it: 
+Each option position in Panoptic is created by moving liquidity in or out of the `UniswapV3Pool.sol` smart contract. Each "chunk" of liquidity will have a few properties associated with it: 
 
-- tokenType
+- token type
 - lower tick
 - upper tick
 - liquidity
@@ -81,7 +82,7 @@ def getAccountLiquidity(univ3pool, owner, tokenType, tickLower, tickUpper):
 ## Fees tracking in Panoptic
 
 
-### Net, Gross and Owed fees (no spread)
+### Net, Gross, and Owed fees (no spread)
 
 
 Any liquidity that has been deposited in the AMM using the SFPM will collect fees over time, we call this the `gross` premia. If that liquidity has been removed, we also need to keep track of the amount of fees that *would have been collected*, and we call this the `owed` premia. The `gross` and `owed` premia are tracked per unit of liquidity by the `s_accountPremiumGross` and `s_accountPremiumOwed` accumulators. 
@@ -102,7 +103,7 @@ So we must keep track of fees for the shorted (ie. removed) liquidity `S` so tha
 
 `owed_feesCollectedX128 = feeGrowthX128 * S`
 
-### Net, Gross and Owed fees (with spread)
+### Net, Gross, and Owed fees (with spread)
 
 In addition to tracking the actual fees owed, we also want to include a small spread to be paid by the user that remove the liquidity. Specifically, we want:
 
