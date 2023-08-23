@@ -117,7 +117,7 @@ Once on Panoptic, the Panoption will accumulate streamia whenever a new block is
 The accumulated streamia is directly correlated to the reward for liquidity providing (LPing) the asset in Uniswap. If the buyer utilizes a large proportion of the available liquidity for sold options, then an additional liquidity spread fee is added to the streamia.
 
 
-Read more about exact calculations [here](https://panoptic.xyz/docs/panoptic-protocol/premium).
+Read more about exact calculations [here](https://panoptic.xyz/docs/panoptic-protocol/streamia).
 
 
 ## Streamia Accumulation Example
@@ -135,7 +135,7 @@ When a trader buys this put option, the funds for the option are moved from Unis
 If the price of ETH never exceeds $1818 (the lower bound of the put option) while the buyer holds the contract, no streamia will accumulate because the Panoption is OOR.
  
 
-If the price of ETH rises above $1818 (the lower bound) and remains below $2200 (the upper bound), then streamia will accumulate because the Panoption is IR. Learn more about the exact formula [here](https://panoptic.xyz/docs/panoptic-protocol/premium).
+If the price of ETH rises above $1818 (the lower bound) and remains below $2200 (the upper bound), then streamia will accumulate because the Panoption is IR. Learn more about the exact formula [here](https://panoptic.xyz/docs/panoptic-protocol/streamia).
 
 
 If the price of ETH skyrockets past $2200 (the upper bound of the put option), also known as going deep ITM, then no streamia will accumulate because the option is no longer IR. 
