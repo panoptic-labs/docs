@@ -290,4 +290,4 @@ While XPOs are more complicated products than perps, XPOs trading is made simple
 
 While perps and XPOs both have unique advantages to offer to the crypto markets, they are fundamentally different financial products each with their own role to play in decentralized finance (DeFi). A healthy and efficient market will be composed of both perpetual futures and perpetual options. As DeFi markets matured over the past few years, perps saw an explosive growth in volume. Now it’s time for XPOs to shine.
 
-_Join the growing community of Panotimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](https://panoptic.xyz/docs/intro)  and head to our [website](https://panoptic.xyz/)._
+_Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](https://panoptic.xyz/docs/intro)  and head to our [website](https://panoptic.xyz/)._
