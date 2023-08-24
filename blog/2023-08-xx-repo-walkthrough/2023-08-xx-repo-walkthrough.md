@@ -1,6 +1,6 @@
 ---
 slug: repo-walkthrough
-title: An introduction to the Panoptic V1 Smart Contracts
+title: Introducing Panoptic's Smart Contracts!
 tags: [Gated Launch, Smart Contracts, Technical]
 image: /img/banners/world-changing-ideas.png
 ---
