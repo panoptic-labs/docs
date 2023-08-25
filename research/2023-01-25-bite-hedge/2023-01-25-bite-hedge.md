@@ -45,7 +45,7 @@ And for Uni v3...
 
 ![img-2](./img-2.png)
  
-$V(S)=\frac{2\sqrt{K}r\left(\sqrt{S}-\sqrt{S_0}\right)-\left(S-S_0\right)}{r-1}+F,$
+$V(S)=\frac{2\sqrt{Kr}\left(\sqrt{S}-\sqrt{S_0}\right)-\left(S-S_0\right)}{r-1}+F,$
 
 where
 - $F\text{ = Accumulated fees},$

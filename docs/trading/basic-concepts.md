@@ -83,3 +83,7 @@ We will discuss these concepts in the following sections.
 #### Khan Academy - [Put and call options](https://www.khanacademy.org/economics-finance-domain/core-finance/derivative-securities/put-call-options/v/american-call-options) 👈
 
 #### Khan Academy - [Black-Scholes Formula](https://www.khanacademy.org/economics-finance-domain/core-finance/derivative-securities/black-scholes/v/introduction-to-the-black-scholes-formula) 👈
+
+### Intermediate Tutorials
+
+#### Panoptic Options Trading Strategies Series: [Part I — The Basics](https://medium.com/@jesperkristensen58/panoptic-options-trading-strategies-series-part-i-the-basics-db07a48be2c7) 👈

@@ -5,7 +5,7 @@
 }
 
 .faq-content {
-  padding-top: 112px;
+  padding-top: 32px;
   max-width: 780px;
   width: 85%;
 }
@@ -49,6 +49,7 @@
   width: 100%;
   padding: 18px 0 4px 0px;
   margin-top: 14px;
+  cursor: pointer;
 }
 
 .first-trigger {

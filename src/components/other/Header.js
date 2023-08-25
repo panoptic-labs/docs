@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import Link from "@docusaurus/Link";
-
-import RightPart from "./Header/RightPart";
+import clsx from "clsx";
 import useResponsive from "../../hooks/useResponsive";
 import "./Header.css";
+import "./Header/RightPart.css"
 import Nav from "./Header/Nav";
 import Sidebar from "./Sidebar";
+import Button from "../NewHomePage/Button/Button";
 
-const Header = () => {
+
+  
+const Header = ({purpleMode = false}) => {
   const [isOpenedSidebar, setOpenedSidebar] = useState(false);
-  const { isTabletWidth } = useResponsive();
-  const logoPath = `/img/logo-mono.svg`;
+  const { loadedWidth, isTabletWidth } = useResponsive();
 
   const handleToggle = () => {
     setOpenedSidebar((state) => !state);
@@ -20,18 +22,29 @@ const Header = () => {
     setOpenedSidebar(false);
   };
 
+  const logoPath = purpleMode ? `/img/logo-mono-white.svg` : `/img/logo-mono.svg`;
+
   return (
     <>
-      <header className="header">
+      <header className={clsx("header", {"purple-background": purpleMode})}>
         <div className="header-container">
           <Link to="/" className="header__logo">
             <img src={logoPath} alt="logo" />
           </Link>
-          {!isTabletWidth && <Nav />}
-          <RightPart
-            isOpenedSidebar={isOpenedSidebar}
-            onToggle={handleToggle}
-          />
+          {loadedWidth && !isTabletWidth && <Nav purpleMode={purpleMode}/>}
+          <div className="right-part">
+            {loadedWidth && isTabletWidth && (
+              <div className="mobile-button" onClick={handleToggle}>
+                <i className="icon__burger right-part__icon" />
+              </div>
+            )}
+            {loadedWidth && !isTabletWidth && (
+              <button disabled={true} className="app-coming-soon-button">
+                <img src={"/img/icons/loading-icon.svg"}></img>
+                {"App Coming Soon"}
+              </button>
+            )}
+          </div>
         </div>
       </header>
       {isTabletWidth && (

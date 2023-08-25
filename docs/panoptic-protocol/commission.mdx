@@ -15,7 +15,7 @@ In Panoptic, since options never expire, commissions are only paid when a new po
 We believe that this will eliminate the impact of the commission fee on the user's decision-making process when closing a position. 
 
 
-### Commission rate and pool utilization
+### Commission rate
 
 The value of the commission to be paid is the commission rate multiplied by the `notional value` of the option (i.e. the amount of token moved to/from the Uniswap pool).
 Note that the commission will always be paid in terms of the `tokentype` of the position: it will be paid using `token0` for puts and `token1` for calls.
@@ -23,22 +23,3 @@ Note that the commission will always be paid in terms of the `tokentype` of the 
 ```solidity
 commission = (notional value) * commissionRate()
 ```
-
-The commission fee starts at 60 bps when pool utilization is below 10%. The commission fee (linearly) decreases to 20 bps when pool utilization is at 50%. The commission fee remains at 20bps when pool utilization is above 50%.
-The reason why the commission is high at low pool utilizations is to ensure that Panoptic Liquidity Providers (PLPs) receive a reasonable yield even if there is low trading activity. 
-Keeping the commission rate constant above the target utilization rate of 50% also means traders will not be disincentivized to trade as market activity increases.
-
-```solidity
-COMMISSION
-_RATE         ^
-              |  max commission = 60bps
-     60bps  _ |__
-              | .¯-_
-              | .   ¯-_   min commission = 20bps
-     20bps  _ | .      ¯-_____________
-              | .       .         .
-              +-+-------+---------+--->  POOL_
-               10%     50%      100%      UTILIZATION
-
-```
-

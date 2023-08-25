@@ -1,0 +1,10 @@
+.policy-document {
+    background-color: #F3F3F3;
+    color: black;
+    font-family: "Times New Roman";
+}
+
+.policy-document iframe {
+    width: 100vw;
+    height: 100vh;
+}

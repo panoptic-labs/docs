@@ -1,15 +1,29 @@
-import { useMediaQuery } from 'react-responsive'
+import { useEffect, useState } from "react";
 
 const useResponsive = () => {
+  const [width, setWidth] = useState(1920);
+  const [loadedWidth, setLoadedWidth] = useState(false)
+  const isTabletWidth = width <= 1024;
+  const isMobileWidth = width <= 767;
 
-  const isTabletWidth = useMediaQuery({ query: '(max-width: 1024px)' })
-  const isMobileWidth = useMediaQuery({ query: '(max-width: 767px)' })
-  const is440 = useMediaQuery({ query: '(max-width: 440px)' })
+  useEffect(() => {
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    setLoadedWidth(true)
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return {
     isMobileWidth,
     isTabletWidth,
-    is440,
+    loadedWidth,
   };
 };
 

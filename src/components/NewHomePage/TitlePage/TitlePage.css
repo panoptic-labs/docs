@@ -45,7 +45,7 @@
   font-size: 92px;
   font-weight: 400;
   color: #4E14D0;
-  line-height: 110%;
+  line-height: 100%;
   margin-bottom: 40px;
 }
 
@@ -120,7 +120,7 @@
 
 @media screen and (max-width: 767px) { 
   .title-page {
-    height: calc(100vh - 106px);
+    height: calc(100vh - 91px);
     min-height: 500px;
   }
 
@@ -151,7 +151,7 @@
 
 @media screen and (max-width: 405px) { 
   .title {
-    font-size: 38px;
+    font-size: 44px;
   } 
 
   .join-button-text {
@@ -160,9 +160,22 @@
   }
 }
 
+@media screen and (max-width: 375px) { 
+  .title {
+    font-size: 40px;
+  } 
+}
+
+@media screen and (max-width: 350px) { 
+  .title {
+    font-size: 38px;
+  } 
+}
+
+
 @media screen and (max-width: 340px) { 
   .title {
-    font-size: 34px;
+    font-size: 35px;
   } 
 
   .subtitles {
