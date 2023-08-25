@@ -22,11 +22,11 @@ const Header = ({purpleMode = false}) => {
     setOpenedSidebar(false);
   };
 
-  const logoPath = purpleMode ? `/img/logo-mono-white.svg` : `/img/logo-mono.svg`;
+  const logoPath = purpleMode ? `/img/logo-dark.svg` : `/img/logo-mono.svg`;
 
   return (
     <>
-      <header className={clsx("header", {"purple-background": purpleMode})}>
+      <header className={clsx("header", "navbar", {"purple-background": purpleMode})}>
         <div className="header-container">
           <Link to="/" className="header__logo">
             <img src={logoPath} alt="logo" />

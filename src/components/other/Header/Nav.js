@@ -4,6 +4,11 @@ import Link from "@docusaurus/Link";
 import "./Nav.css"
 
 const Nav = ({purpleMode = false}) => {
+
+  const iconPath = purpleMode ? 
+    "/img/new-home-page/external-link-arrow-white.svg" : 
+    "/img/new-home-page/external-link-arrow.svg"
+
   return (
     <nav className="header__nav">
       <Link to="/docs/intro" className={clsx("nav__link", {"white-text": purpleMode})}>
@@ -21,7 +26,7 @@ const Nav = ({purpleMode = false}) => {
       <Link to="https://github.com/panoptic-labs" className={clsx("nav__link", {"white-text": purpleMode})}>
         Github
         <span className="external-link-arrow">
-          <img src={"/img/new-home-page/external-link-arrow.svg"} alt="arrow"/>
+          <img src={iconPath} alt="arrow"/>
         </span>
       </Link>
     </nav>
