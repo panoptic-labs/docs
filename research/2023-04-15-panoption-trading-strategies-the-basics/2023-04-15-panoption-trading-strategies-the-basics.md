@@ -2,7 +2,7 @@
 slug: panoption-trading-strategies-the-basics
 title: "Panoptic Options Trading Strategies Series: Part I — The Basics"
 tags: [Moneyness, Premium, Commission, Margin, Exercise, Assignment]
-# image: /img/research/demystifying-IL-LVR-JIT-MEV.jpg
+image: /img/research/panoption-trading-strategies-the-basics.webp
 description: "The basics of options trading and how options trading in the legacy system compares to the new decentralized world."
 authors: J
 ---
@@ -10,6 +10,8 @@ authors: J
 ![img-1](./img-1.webp)
 
 This blog post is the first in a series on options trading strategies. The series is based on the book “Options as a Strategic Investment” by McMillan.
+
+<!-- truncate -->
 
 Since 1973, when they were first used in Legacy Finance (aka Traditional Finance, TradFi),  _listed_  options markets have opened up new ways to invest.
 
