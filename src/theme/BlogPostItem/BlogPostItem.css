@@ -1,0 +1,11 @@
+
+.blog-post-item {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.blog-post-details {
+  display: flex;
+  flex-direction: column;
+}

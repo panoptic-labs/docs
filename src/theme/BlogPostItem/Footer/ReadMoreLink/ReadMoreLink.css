@@ -1,0 +1,25 @@
+
+.read-more-link {
+  display: flex;
+  margin: 8px;
+
+}
+
+.read-more-label {
+  color: var(--black, #040404);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.read-more-arrow {
+  padding-left: 10px;
+}
+
+.text-white {
+  color: #FFF;
+  fill: #FFF;
+  stroke: #FFF;
+}

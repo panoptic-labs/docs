@@ -219,7 +219,7 @@ const config = {
           blogDescription: 'All-Things DeFi Options',
           postsPerPage: 10,
           blogSidebarTitle: 'All posts',
-          blogSidebarCount: 'ALL',
+          blogSidebarCount: 0,
           showReadingTime: true,
           readingTime: ({content, frontMatter, defaultReadingTime}) =>
             defaultReadingTime({content, options: {wordsPerMinute: 300}}),
@@ -275,7 +275,7 @@ const config = {
         blogDescription: 'DeFi Options Research',
         postsPerPage: 10,
         blogSidebarTitle: 'All posts',
-        blogSidebarCount: 'ALL',
+        blogSidebarCount: 0,
         showReadingTime: true,
         readingTime: ({content, frontMatter, defaultReadingTime}) =>
           defaultReadingTime({content, options: {wordsPerMinute: 300}}),

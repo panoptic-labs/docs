@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Link from "@docusaurus/Link";
-
+import clsx from "clsx";
 import useResponsive from "../../hooks/useResponsive";
 import "./Header.css";
 import "./Header/RightPart.css"
@@ -8,9 +8,9 @@ import Nav from "./Header/Nav";
 import Sidebar from "./Sidebar";
 import Button from "../NewHomePage/Button/Button";
 
-const logoPath = `/img/logo-mono.svg`;
+
   
-const Header = () => {
+const Header = ({purpleMode = false}) => {
   const [isOpenedSidebar, setOpenedSidebar] = useState(false);
   const { loadedWidth, isTabletWidth } = useResponsive();
 
@@ -22,14 +22,16 @@ const Header = () => {
     setOpenedSidebar(false);
   };
 
+  const logoPath = purpleMode ? `/img/logo-mono-white.svg` : `/img/logo-mono.svg`;
+
   return (
     <>
-      <header className="header">
+      <header className={clsx("header", {"purple-background": purpleMode})}>
         <div className="header-container">
           <Link to="/" className="header__logo">
             <img src={logoPath} alt="logo" />
           </Link>
-          {loadedWidth && !isTabletWidth && <Nav />}
+          {loadedWidth && !isTabletWidth && <Nav purpleMode={purpleMode}/>}
           <div className="right-part">
             {loadedWidth && isTabletWidth && (
               <div className="mobile-button" onClick={handleToggle}>
@@ -37,9 +39,10 @@ const Header = () => {
               </div>
             )}
             {loadedWidth && !isTabletWidth && (
-              <Button disabled={true}>
+              <button disabled={true} className="app-coming-soon-button">
+                <img src={"/img/icons/loading-icon.svg"}></img>
                 {"App Coming Soon"}
-              </Button>
+              </button>
             )}
           </div>
         </div>

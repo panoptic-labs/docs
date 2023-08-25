@@ -1,9 +1,7 @@
-import React, { useCallback } from "react";
-import Link from '@docusaurus/Link'
+import React from "react";
 
 import "./Footer.css";
 import useResponsive from "../../hooks/useResponsive";
-import Button from "./Button";
 
 function Copyright() {
   return <div>
