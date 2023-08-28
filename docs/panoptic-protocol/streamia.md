@@ -58,23 +58,23 @@ The set of (`tokenType`, `tickLower`, `tickUpper`) defines a specific location i
 In Panoptic, we track two types of liquidity for each chunk: 
 
 - `netLiquidity`: Amount of liquidity currently sitting in Uniswap 
-- `shortLiquidity`: Amount of liquidity that has been removed from Uniswap through the minting of long options
+- `removeLiquidity`: Amount of liquidity that has been removed from Uniswap through the minting of long options
 
 Together, these two quantities can be combined to compute the amount of `totalLiquidity` that has been deposited to that chunk as:
 
-`totalLiquidity = netLiquidity + shortLiquidity`
+`totalLiquidity = netLiquidity + removeLiquidity`
 
 
 ```python
 _netLiquidity = {}
-_shortLiquidity = {}
+_removeLiquidity = {}
 
 def getAccountLiquidity(univ3pool, owner, tokenType, tickLower, tickUpper):
     
     positionKey = keccak256(abi.encodePacked(univ3pool, owner, tokenType, tickLower, tickUpper))
     
     netLiquidity = _netLiquidity[positionKey]
-    shortLiquidity = _shortLiquidity[positionKey]
+    removeLiquidity = _removeLiquidity[positionKey]
 
     
 ```
