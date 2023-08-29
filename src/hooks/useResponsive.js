@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 const useResponsive = () => {
   const [width, setWidth] = useState(1920);
   const [loadedWidth, setLoadedWidth] = useState(false)
+  const is1200 = width <= 1200;
   const isTabletWidth = width <= 1024;
   const isMobileWidth = width <= 767;
 
@@ -21,6 +22,7 @@ const useResponsive = () => {
   }, []);
 
   return {
+    is1200,
     isMobileWidth,
     isTabletWidth,
     loadedWidth,
