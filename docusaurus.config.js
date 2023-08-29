@@ -192,6 +192,10 @@ const config = {
         // Optional: path for search page that enabled by default (`false` to disable it)
         searchPagePath: 'search',
       },
+      tableOfContents: {
+        minHeadingLevel: 2,
+        maxHeadingLevel: 5,
+      },
     }),
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -217,9 +221,9 @@ const config = {
         blog: {
           blogTitle: 'Panoptic Blog',
           blogDescription: 'All-Things DeFi Options',
-          postsPerPage: 10,
+          postsPerPage: 9,
           blogSidebarTitle: 'All posts',
-          blogSidebarCount: 0,
+          blogSidebarCount: "ALL",
           showReadingTime: true,
           readingTime: ({content, frontMatter, defaultReadingTime}) =>
             defaultReadingTime({content, options: {wordsPerMinute: 300}}),
@@ -275,7 +279,7 @@ const config = {
         blogDescription: 'DeFi Options Research',
         postsPerPage: 10,
         blogSidebarTitle: 'All posts',
-        blogSidebarCount: 0,
+        blogSidebarCount: "ALL",
         showReadingTime: true,
         readingTime: ({content, frontMatter, defaultReadingTime}) =>
           defaultReadingTime({content, options: {wordsPerMinute: 300}}),

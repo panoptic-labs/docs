@@ -7,6 +7,10 @@
   padding: 16px 96px 16px;
 }
 
+.navbar {
+  box-shadow: none;
+}
+
 .purple-background {
   background: #4E14D0;
 }
@@ -39,6 +43,10 @@
   text-decoration: none;
 }
 
+.right-part {
+  align-items: center;
+}
+
 .app-coming-soon-button {
   padding: 8px 16px;
   align-items: center;
@@ -53,6 +61,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  height: 19px;
 }
 
 @media (max-width: 767px) {

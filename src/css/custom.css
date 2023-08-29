@@ -201,3 +201,8 @@ html[data-theme="light"] {
   gap: 15px;
   align-items: center;
 }
+
+h2 {
+  font-size: 32px;
+  font-weight: 600;
+}

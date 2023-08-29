@@ -1,0 +1,34 @@
+
+.blog-page-layout {
+  background-color: #F3F3F3;
+  margin-top: 0;
+  padding-top: 40px;
+}
+
+.blog-page-container {
+  display: flex;
+  padding: 0px 80px 40px 80px;
+  gap: 80px;
+}
+
+.blog-page-featured-tag-container {
+  margin: 0px 80px 16px 80px;
+}
+
+.blog-page-featured-tag {
+  border-radius: 100px;
+  border: 1px solid #E7E7E7;
+  background: #FFF;
+  padding: 6px 14px;
+
+  color: #000;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.blog-page-toc {
+  min-width: 300px;
+}

@@ -8,7 +8,6 @@ const BlogLandingPage = ({latestBlogPost}) => {
 
   const BlogPostContent =  latestBlogPost.content
   const metadata = latestBlogPost.content?.metadata
-  console.log(23, latestBlogPost)
   const imageUrl = metadata.frontMatter?.image;
   return (
     <div className="blog-landing-page">

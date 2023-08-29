@@ -7,7 +7,6 @@ export default function BlogPostItem({children, className}) {
   
   const metadata = children.type?.metadata
   const imageUrl = metadata.frontMatter?.image;
-  console.log(35, children)
   return (
     <div className="blog-post-item">
       <BlogPostImage imageUrl={imageUrl}/>
