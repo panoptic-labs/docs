@@ -8,7 +8,7 @@ import Button from "./Button";
 function Copyright() {
   return <div>
     <div className="logo-part__copyright">
-      Copyright © {new Date().getFullYear()} Axicon Labs Inc. All Rights Reserved. Panoptic™ is a trademark of Axicon Labs Inc. All other trademarks and registered trademarks are the sole property of their respective owners.
+      Copyright © {new Date().getFullYear()} Axicon Labs Limited. All Rights Reserved. Panoptic™ is a trademark of Axicon Labs Inc. All other trademarks and registered trademarks are the sole property of their respective owners.
     </div>
     <div className="policy-container">
     </div>
