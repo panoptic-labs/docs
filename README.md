@@ -1,5 +1,6 @@
 # Panoptic Documentation
 
+This is the main website of <a href="http://panoptic.xyz/">Panoptic</a>.
 
 ### Installation
 
