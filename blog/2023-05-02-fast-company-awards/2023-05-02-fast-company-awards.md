@@ -1,7 +1,7 @@
 ---
 slug: fast-company-awards-panoptic-defi-options-protocol
 title: Panoptic Named Honorable Mention in Fast Company’s 2023 World Changing Ideas Awards
-tags: [Awards, Press]
+tags: [Panoptimists, Awards, Press]
 image: /img/banners/world-changing-ideas.png
 ---
 ![world-changing-ideas](./world-changing-ideas.png)

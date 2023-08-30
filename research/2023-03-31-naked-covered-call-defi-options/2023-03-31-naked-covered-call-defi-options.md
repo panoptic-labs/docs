@@ -1,7 +1,7 @@
 ---
 slug: naked-covered-call-defi-options
 title: "Maximizing Profits: Naked Calls vs. Covered Calls"
-tags: [Call, Naked Call, Covered Call, Backtest]
+tags: [Uniswap LPs, Options Traders, Call, Naked Call, Covered Call, Backtest]
 authors: B
 ---
 

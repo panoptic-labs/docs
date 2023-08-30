@@ -1,7 +1,7 @@
 ---
 slug: whale-watching-uniswap-lps
 title: "Whale Watching - Uniswap v3 LPs"
-tags: [Uniswap v3, LP, Whales]
+tags: [Uniswap LPs, Uniswap v3, LP, Whales]
 authors: C
 ---
 ![img-1](./im1.jpeg)

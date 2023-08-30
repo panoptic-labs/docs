@@ -1,7 +1,7 @@
 ---
 slug: uniswap-lp-calculate-price-range
 title: How to Calculate your Price Range on Uniswap v3
-tags: [Uniswap, Uniswap v3, LP, Range]
+tags: [Uniswap LPs, Uniswap, Uniswap v3, LP, Range]
 authors: B
 ---
 

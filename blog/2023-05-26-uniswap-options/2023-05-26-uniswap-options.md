@@ -1,7 +1,7 @@
 ---
 slug: uniswap-options
 title: "Uniswap Options: Empowering Panoptic and the Future of DeFi Options"
-tags: [Uniswap, CLMM]
+tags: [Uniswap LPs, Options Traders, Uniswap, CLMM]
 image: /img/banners/Uniswap-Options-Blog-Banner.jpg
 ---
 ![Uniswap-Options-Blog-Banner](./Uniswap-Options-Blog-Banner.jpg)

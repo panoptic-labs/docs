@@ -1,7 +1,7 @@
 ---
 slug: greeks-series-beta
 title: "Understanding Financial Greeks: Beta"
-tags: [Greeks, Beta]
+tags: [Options Traders, Greeks, Beta]
 authors: C
 ---
 

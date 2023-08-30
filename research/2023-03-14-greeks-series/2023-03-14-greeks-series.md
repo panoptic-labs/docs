@@ -1,7 +1,7 @@
 ---
 slug: understanding-the-greeks-series
 title: "Understanding The Greeks of Options Trading"
-tags: [Greeks]
+tags: [Options Traders, Greeks]
 authors: C
 ---
 ![img-1](./img-1.gif)

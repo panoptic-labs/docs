@@ -1,7 +1,7 @@
 ---
 slug: panoption-trading-strategies-covered-call-rolling
 title: "Panoptic Options Trading Strategies Series: Part II — The Covered Call and Active Position Management"
-tags: [Covered Call, Rolling]
+tags: [Options Traders, Covered Call, Rolling]
 image: /img/research/panoption-trading-strategies-covered-call-rolling.png
 description: "The covered call strategy, actively managing your options position, and rolling options"
 authors: J

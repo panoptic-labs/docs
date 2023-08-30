@@ -1,7 +1,7 @@
 ---
 slug: streamia-panoptic-pricing-perpetual-options
 title: "Streamia: How Panoptic Prices Perpetual Options"
-tags: [Uniswap V3, Streaming Premia, Streamia]
+tags: [Uniswap LPs, Perps Traders, Options Traders, Uniswap V3, Streaming Premia, Streamia]
 authors: C
 ---
 
