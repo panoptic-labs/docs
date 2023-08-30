@@ -46,3 +46,7 @@ $ yarn docusaurus glossary
 ### Acknowledgements
 
 Built using [Docusaurus 2](https://docusaurus.io/).
+
+### Copyright
+
+Copyright © 2023 Axicon Labs Limited. All Rights Reserved. Panoptic™ is a trademark of Axicon Labs Inc. All other trademarks and registered trademarks are the sole property of their respective owners.
