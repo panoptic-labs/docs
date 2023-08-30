@@ -1,7 +1,7 @@
 ---
 slug: forward-testing-monte-carlo
 title: "Forward Testing with Monte Carlo"
-tags: [Simulation, Monte Carlo]
+tags: [Panoptimists, Options Traders, Perps Traders, Uniswap LPs, Simulation, Monte Carlo]
 authors: C
 ---
 

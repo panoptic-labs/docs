@@ -1,7 +1,7 @@
 ---
 slug: streamia-defi-native-options-pricing
 title: "Streamia — DeFi-native Options Pricing"
-tags: [Streamia, Premia, Pricing]
+tags: [Panoptimists, Uniswap LPs, Perps Traders, Options Traders, Streamia, Premia, Pricing]
 image: /img/banners/streamia-defi-native-options-pricing.png
 description: "The Future of DeFi Options Pricing"
 ---

@@ -1,7 +1,7 @@
 ---
 slug: panoption-trading-strategies-the-basics
 title: "Panoptic Options Trading Strategies Series: Part I — The Basics"
-tags: [Moneyness, Premium, Commission, Margin, Exercise, Assignment]
+tags: [Options Traders, Moneyness, Premium, Commission, Margin, Exercise, Assignment]
 image: /img/research/panoption-trading-strategies-the-basics.webp
 description: "The basics of options trading and how options trading in the legacy system compares to the new decentralized world."
 authors: J

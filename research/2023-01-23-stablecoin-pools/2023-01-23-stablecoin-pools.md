@@ -1,7 +1,7 @@
 ---
 slug: stablecoin-pools
 title: Stablepools Are Boring? You're Wrong.
-tags: [Stablecoins, GBM]
+tags: [Uniswap LPs, Stablecoins, GBM]
 authors: C
 ---
 Someone told us that stablecoin pools were boring 😬🤯

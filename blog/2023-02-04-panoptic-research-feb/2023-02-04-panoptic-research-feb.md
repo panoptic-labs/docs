@@ -1,7 +1,7 @@
 ---
 slug: panoptic-defi-options-research-feb-2023
 title: "Panoptic Research: A Month in Review"
-tags: [Research, Research Tutorials, Research Bites]
+tags: [Panoptimists, Research, Research Tutorials, Research Bites]
 image: /img/banners/Article_Panoptic_Research_Feb_2023.jpg
 ---
 ![panoptic-research-feb-2023-banner](./Article_Panoptic_Research_Feb_2023.jpg)

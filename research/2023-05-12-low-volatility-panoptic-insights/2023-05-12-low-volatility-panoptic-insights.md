@@ -1,7 +1,7 @@
 ---
 slug: low-volatility-panoptic-insights
 title: "Panoptic Insights: Betting on Volatility"
-tags: [Volatility, Backtest]
+tags: [Options Traders, Volatility, Backtest]
 authors: B
 ---
 ![img-1](./img-1.png)

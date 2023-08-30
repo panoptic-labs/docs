@@ -1,7 +1,7 @@
 ---
 slug: options-market-making
 title: "Options Market Making in Panoptic"
-tags: [Market Making, Straddle, Delta Neutral, Hedge, Streamia, Perps]
+tags: [Options Traders, Market Making, Straddle, Delta Neutral, Hedge, Streamia, Perps]
 image: /img/research/options-market-making.png
 description: "How Options Market Making Works in Panoptic"
 authors: B

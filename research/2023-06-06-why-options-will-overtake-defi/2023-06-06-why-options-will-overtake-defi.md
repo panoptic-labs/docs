@@ -1,7 +1,7 @@
 ---
 slug: why-options-will-overtake-defi
 title: "Why Options Will Overtake DeFi"
-tags: [Retail]
+tags: [Options Traders, Retail]
 authors: C
 ---
 ![img-1](./img-1.png)

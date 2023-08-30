@@ -1,7 +1,7 @@
 ---
 slug: panoptic-ambassador-program
 title: "Join the Panoptic Ambassador Program"
-tags: [Careers]
+tags: [Panoptimists, Careers]
 image: /img/banners/panoptic_ambassador_program_banner.png
 description: "Join the future of DeFi options trading"
 ---

@@ -1,7 +1,7 @@
 ---
 slug: liquidity-providing-risk-uniswap
 title: "HODL or LP - What's Riskier?"
-tags: [LP, Risk, Beta, VAR, CVAR]
+tags: [Uniswap LPs, LP, Risk, Beta, VAR, CVAR]
 authors: C
 ---
 
