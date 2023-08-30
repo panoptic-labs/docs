@@ -68,7 +68,7 @@
   width: 40vw;
   height: auto;
   border-radius: 8px 0px 0px 8px;
-  filter: grayscale(60%)
+  filter: grayscale(0%)
 }
 
 .join-button-text {
