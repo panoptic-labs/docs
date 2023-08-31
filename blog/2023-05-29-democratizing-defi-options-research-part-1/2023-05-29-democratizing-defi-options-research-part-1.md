@@ -1,7 +1,7 @@
 ---
 slug: democratizing-defi-options-research-part-1
 title: "Democratizing DeFi Research Part I: How to Use Panoptic Research’s GitHub Repository"
-tags: [Panoptimists, Uniswap LPs, Options Traders, Research, GitHub, Open Source, Democratizing DeFi Research]
+tags: [Panoptimists, LPs, Options Traders, Research, GitHub, Open Source, Democratizing DeFi Research]
 image: /img/banners/democratizing-defi-research-banner-1.jpg
 ---
 

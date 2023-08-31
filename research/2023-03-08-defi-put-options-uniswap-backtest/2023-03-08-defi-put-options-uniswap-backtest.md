@@ -1,7 +1,7 @@
 ---
 slug: defi-put-options-uniswap-backtest
 title: 'Maximizing Profits: Buying Put Options on 16 Uniswap Pools'
-tags: [Uniswap LPs, Options Traders, Uniswap, Put, Backtest]
+tags: [LPs, Options Traders, Uniswap, Put, Backtest]
 authors: B
 ---
 ![img-1](./img-1.png)

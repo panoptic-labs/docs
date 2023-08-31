@@ -1,7 +1,7 @@
 ---
 slug: concentrated-liquidity-options
 title: "8 Reasons Why Concentrated Liquidity (and Panoptic) is the FUTURE"
-tags: [Uniswap LPs, CLMM, Uniswap, Capital Efficient]
+tags: [LPs, CLMM, Uniswap, Capital Efficient]
 authors: B
 ---
 ![img-1](./img-1.gif)

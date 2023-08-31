@@ -1,7 +1,7 @@
 ---
 slug: democratizing-defi-options-research-implied-volatility
 title: "Democratizing DeFi Research Part II: Deep Dive into Implied Volatility"
-tags: [Uniswap LPs, Research, GitHub, Open Source, IV]
+tags: [LPs, Research, GitHub, Open Source, IV]
 image: /img/banners/democratizing-defi-research-banner-2.jpg
 ---
 
