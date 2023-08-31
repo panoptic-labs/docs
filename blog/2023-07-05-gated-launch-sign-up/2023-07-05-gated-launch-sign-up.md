@@ -1,7 +1,7 @@
 ---
 slug: gated-launch-sign-up
 title: "The Panoptic Gated Launch: Sign-Up"
-tags: [Panoptimists, Uniswap LPs, Perps Traders, Options Traders, Gated Launch]
+tags: [Panoptimists, LPs, Perps Traders, Options Traders, Gated Launch]
 image: /img/banners/gated-launch-sign-up.png
 description: "Sign Up for the Panoptic Gated Launch"
 ---

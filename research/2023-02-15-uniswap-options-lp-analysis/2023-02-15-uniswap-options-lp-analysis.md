@@ -1,7 +1,7 @@
 ---
 slug: uniswap-options-lp-analysis
 title: 'Good Pools and Bad Pools on Uniswap V3'
-tags: [Uniswap LPs, Uniswap, LP, Delta, Theta, Gamma, IV, Greeks]
+tags: [LPs, Uniswap, LP, Delta, Theta, Gamma, IV, Greeks]
 authors: B
 ---
 

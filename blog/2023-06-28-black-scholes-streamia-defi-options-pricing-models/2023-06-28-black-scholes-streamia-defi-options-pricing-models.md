@@ -1,7 +1,7 @@
 ---
 slug: black-scholes-streamia-defi-options-pricing-models
 title: "Streamia vs. Black-Scholes Model (BSM): A Paradigm Shift in DeFi Options Pricing"
-tags: [Panoptimists, Uniswap LPs, Perps Traders, Options Traders, Streamia, BSM]
+tags: [Panoptimists, LPs, Perps Traders, Options Traders, Streamia, BSM]
 image: /img/banners/streamia-v-bsm-banner.png
 description: "Learn how DeFi options are priced in Panoptic"
 ---

@@ -1,7 +1,7 @@
 ---
 slug: uniswap-v3-implied-volatility-smile
 title: "Implied Volatility and Volatility Smile in Uni v3"
-tags: [Uniswap LPs, Options Traders, Uniswap V3, CLMM, LP]
+tags: [LPs, Options Traders, Uniswap V3, CLMM, LP]
 authors: C
 ---
 

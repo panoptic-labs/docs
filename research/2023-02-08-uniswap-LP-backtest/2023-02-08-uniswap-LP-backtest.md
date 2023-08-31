@@ -1,7 +1,7 @@
 ---
 slug: uniswap-lp-backtest
 title: 'Maximizing Profits on Uniswap V3: 21 Popular Pools LPed'
-tags: [Uniswap LPs, Uniswap, LP, Backtest]
+tags: [LPs, Uniswap, LP, Backtest]
 authors: B
 ---
 
