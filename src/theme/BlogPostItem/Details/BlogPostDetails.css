@@ -35,3 +35,16 @@
 .text-white {
   color: #FFF;
 }
+
+@media screen and (max-width: 767px) { 
+  .blog-details-title {
+    font-size: 22px;
+  }
+
+  .blog-details-description {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 149.5%;
+  }
+}

@@ -4,7 +4,7 @@
   background: #f3f3f3;
   z-index: 20;
   align-items: center;
-  padding: 16px 96px 16px;
+  padding: 16px 80px 16px;
 }
 
 .navbar {
@@ -66,6 +66,6 @@
 
 @media (max-width: 767px) {
   .header {
-    padding: 16px 38px 16px;
+    padding: 16px;
   }
 }

@@ -17,7 +17,6 @@ function BlogPostPageContent({sidebar, children}) {
     toc_max_heading_level: tocMaxHeadingLevel,
   } = frontMatter;
 
-  console.log(234, !hideTableOfContents, toc.length)
   return (
     <BlogLayout
       toc={

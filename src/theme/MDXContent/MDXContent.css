@@ -5,7 +5,6 @@
   font-style: normal;
   font-weight: 400;
   line-height: 155%;
-  
 }
 
 .blog-p > blockquote {
@@ -20,4 +19,17 @@
 .blog-p > h2 {
   display: flex;
   margin: 40px 0 16px 0;
+}
+
+@media screen and (max-width: 767px) { 
+  .blog-p > p {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  .blog-p > h2 {
+    font-size: 24px;
+  }
 }

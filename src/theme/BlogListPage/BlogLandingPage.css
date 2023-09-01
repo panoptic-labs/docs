@@ -42,3 +42,29 @@
   font-weight: 600;
   line-height: normal;
 }
+
+@media screen and (max-width: 767px) { 
+  .blog-landing-page {
+    padding: 16px;
+  }
+
+  .blog-title {
+    font-size: 32px;
+    font-style: normal;
+    line-height: normal;
+    margin-bottom: 8px;
+  }
+
+  .blog-subtitle {
+    margin-bottom: 24px;
+    font-size: 16px;
+    font-style: normal;
+    line-height: normal;
+  }
+
+  .landing-page-blog-post {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}

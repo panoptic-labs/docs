@@ -22,3 +22,18 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+@media screen and (max-width: 767px) { 
+  .blog-post-items {
+    padding: 48px 16px;
+  }
+
+  .blog-post-row-of-2 {
+    flex-direction: column;
+  }
+  
+  .blog-post-rows-of-3 {
+    display: flex;
+    flex-direction: column;
+  }
+}

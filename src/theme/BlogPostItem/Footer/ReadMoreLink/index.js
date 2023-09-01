@@ -29,7 +29,7 @@ export default function BlogPostItemFooterReadMoreLink(props) {
       )}
       className="read-more-link"
       {...linkProps}>
-      <div>
+      <div className="read-more-button">
         <ReadMoreLabel whiteText={whiteText}/>
         {whiteText &&
           <img src={`/img/icons/read-more-arrow-white.svg`} alt="read-more-arrow" className="read-more-arrow"/>

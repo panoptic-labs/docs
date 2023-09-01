@@ -32,3 +32,13 @@
 .blog-page-toc {
   min-width: 300px;
 }
+
+@media screen and (max-width: 767px) { 
+  .blog-page-layout {
+    padding-top: 16px;
+  }
+
+  .blog-page-container {
+    padding: 0px 16px 40px 16px;
+  }
+}

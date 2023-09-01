@@ -5,6 +5,11 @@
 
 }
 
+.read-more-button {
+  display: flex;
+  align-items: center;
+}
+
 .read-more-label {
   color: var(--black, #040404);
   font-family: Inter;
