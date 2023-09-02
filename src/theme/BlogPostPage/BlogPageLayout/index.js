@@ -3,8 +3,9 @@ import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import './BlogPageLayout.css'
 import useResponsive from '../../../hooks/useResponsive';
-export default function BlogLayout(props) {
+import BlogPostRelatedPosts from '../BlogPostRelatedPosts';
 
+export default function BlogLayout(props) {
   const { isMobileWidth } = useResponsive();
   const {sidebar, toc, children, ...layoutProps} = props;
   return (
@@ -27,6 +28,7 @@ export default function BlogLayout(props) {
           {toc && !isMobileWidth && <div className="blog-page-toc">{toc}</div>}
         </div>
       </div>
+      <BlogPostRelatedPosts/>
     </Layout>
   );
 }

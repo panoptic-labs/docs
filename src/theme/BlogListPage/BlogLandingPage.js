@@ -9,6 +9,7 @@ const BlogLandingPage = ({latestBlogPost}) => {
   const BlogPostContent =  latestBlogPost.content
   const metadata = latestBlogPost.content?.metadata
   const imageUrl = metadata.frontMatter?.image;
+  const readingTime = metadata.readingTime
   return (
     <div className="blog-landing-page">
       <div className="blog-title">
@@ -22,7 +23,7 @@ const BlogLandingPage = ({latestBlogPost}) => {
         content={BlogPostContent}>
 
         <div className="landing-page-blog-post">
-          <BlogPostImage imageUrl={imageUrl}/>
+          <BlogPostImage imageUrl={imageUrl} readingTime={readingTime}/>
           <div className="landing-page-blog-details">
             <div className="featured-tag-container">
               <span className="featured-tag">Featured</span>

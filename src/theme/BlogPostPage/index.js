@@ -4,13 +4,12 @@ import {HtmlClassNameProvider, ThemeClassNames} from '@docusaurus/theme-common';
 import {BlogPostProvider, useBlogPost} from '@docusaurus/theme-common/internal';
 import BlogLayout from './BlogPageLayout';
 import BlogPostItem from './BlogPostItem';
-import BlogPostPaginator from '@theme/BlogPostPaginator';
 import BlogPostPageMetadata from '@theme/BlogPostPage/Metadata';
 import TOC from '@theme/TOC';
 
-function BlogPostPageContent({sidebar, children}) {
+function BlogPostPageContent({children}) {
   const {metadata, toc} = useBlogPost();
-  const {nextItem, prevItem, frontMatter} = metadata;
+  const {frontMatter} = metadata;
   const {
     hide_table_of_contents: hideTableOfContents,
     toc_min_heading_level: tocMinHeadingLevel,
@@ -29,10 +28,6 @@ function BlogPostPageContent({sidebar, children}) {
         ) : undefined
       }>
       <BlogPostItem>{children}</BlogPostItem>
-
-      {(nextItem || prevItem) && (
-        <BlogPostPaginator nextItem={nextItem} prevItem={prevItem} />
-      )}
     </BlogLayout>
   );
 }

@@ -28,6 +28,7 @@
   font-size: 64px;
   font-family: Alice;
   line-height: 100%;
+  color: #F3F3F3;
 }
 
 .footer-conversation-social-text {
@@ -35,6 +36,7 @@
   font-size: 24px;
   line-height: 100%;
   margin: 32px 0 15px 0;
+  color: #F3F3F3;
 }
 
 .footer-conversation-social-icon-link {
