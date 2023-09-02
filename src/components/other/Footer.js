@@ -81,11 +81,8 @@ const Footer = () => {
               <a className="more-part__link" target="_blank" href="https://github.com/panoptic-labs">
                 Github <i className="icon__external-link" />
               </a>
-              <a className="more-part__link" target="_blank" href="https://research.panoptic.xyz/">
-                Research <i className="icon__external-link" />
-              </a>
-              <a className="more-part__link" target="_blank" href="https://blog.panoptic.xyz/">
-                Blog <i className="icon__external-link" />
+              <a className="more-part__link" target="_blank" href="https://brand.panoptic.xyz/">
+                Brand Kit <i className="icon__external-link" />
               </a>
             </div>
           </div>
