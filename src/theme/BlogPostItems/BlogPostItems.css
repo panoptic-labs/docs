@@ -5,8 +5,8 @@
 }
 
 .blog-post-row-of-2 {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 48px;
 }
 

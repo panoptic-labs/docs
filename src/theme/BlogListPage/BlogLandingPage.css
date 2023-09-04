@@ -9,6 +9,7 @@
   font-size: 60px;
   font-weight: 400;
   font-family: Alice;
+  color: #FFFFFF;
 }
 
 .blog-subtitle {
@@ -16,6 +17,7 @@
   font-weight: 400;
   line-height: 115%;
   margin-bottom: 60px;
+  color: #FFFFFF;
 }
 
 .landing-page-blog-post {

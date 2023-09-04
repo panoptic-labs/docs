@@ -5,7 +5,11 @@ import ReadingTime from "./ReadingTime";
 const BlogPostImage = ({imageUrl, readingTime}) => {
   return (
     <div className="blog-post-image-container">
-      <img src={imageUrl} className="blog-post-image"></img>
+      {imageUrl ? (
+        <img src={imageUrl} className="blog-post-image"></img>
+      ) : (
+        <div className="blog-post-image-placeholder"/>
+      )}
       <div className="blog-post-image-read-time">
         <ReadingTime readingTime={readingTime}/>
       </div>

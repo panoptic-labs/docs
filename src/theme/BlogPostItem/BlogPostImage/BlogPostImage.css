@@ -10,6 +10,12 @@
   height: 100%;
 }
 
+.blog-post-image-placeholder {
+  aspect-ratio: 16 / 11;
+  background-color: #FFFFFF;
+  border-radius: 16px;
+}
+
 .blog-post-image-read-time {
   position: absolute;
   bottom: 16px;

@@ -277,7 +277,7 @@ const config = {
         path: 'research',
         blogTitle: 'Research',
         blogDescription: 'DeFi Options Research',
-        postsPerPage: 10,
+        postsPerPage: 9,
         blogSidebarTitle: 'All posts',
         blogSidebarCount: "ALL",
         showReadingTime: true,
