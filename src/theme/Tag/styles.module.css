@@ -2,7 +2,7 @@
   --docusaurus-tag-list-border: var(--ifm-color-emphasis-300);
 }
 
-ul, ol {
+ul {
   list-style-type: none;
 }
 
