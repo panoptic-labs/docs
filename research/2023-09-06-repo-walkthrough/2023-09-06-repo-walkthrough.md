@@ -1,12 +1,12 @@
 ---
-slug: introducing-panoptics-smart-contracts
+slug: introducing-panoptic-smart-contracts
 title: Introducing Panoptic's Smart Contracts
 tags: [Gated Launch, Smart Contracts, Technical, Dev Log, Code]
 image: /img/banners/smart-contracts-banner.png
 ---
 ![smart-contracts-banner](./smart-contracts-banner.png)
 
-In this post, we’ll delve into Panoptic and provide you with a comprehensive overview of our protocol’s general architecture. You’ll also learn how to install the codebase and mint your first option on Panoptic. So whether you're a seasoned developer or a retail trader, we’re certain you'll find something valuable here!
+In this post, we’ll delve into Panoptic and provide a comprehensive overview of our protocol’s general architecture. You’ll also learn how to install the codebase and mint your first option on Panoptic. So whether you're a seasoned developer or a retail trader, we’re certain you'll find something valuable here!
 
 ## What is Panoptic?
 
@@ -20,7 +20,7 @@ Similarly, options sellers can create both calls *and* puts by borrowing one of 
 
 In fact, our CEO and the inventor of the Panoptic Protocol, Guillaume Lambert, conceived of Panoptic through executing these very strategies. If you want to learn more about the concepts underlying Panoptic, we encourage you to read the [Panoptic’s Genesis blog post series](https://lambert-guillaume.medium.com).
 
-Panoptic takes these options strategies to the next level. We created integrated, undercollateralized, and capital-efficient lending infrastructure for both ordinary tokens and Uniswap v3 LPs that supports management of highly advanced, multi-leg positions. 
+Panoptic takes these options strategies to the next level. We created integrated, undercollateralized, and capital-efficient lending infrastructure for both ordinary tokens and Uniswap v3 LPs. This infrastructure supports the management of highly advanced multi-leg positions. 
 
 This enables several firsts in the DeFi space: 
 
@@ -37,21 +37,23 @@ Panoptic, like Uniswap, runs on [Ethereum’s EVM](https://ethereum.org/en/devel
 A quick note on licensing: Panoptic's proprietary code is licensed under the Business Use Source License (BUSL 1.1) for several years, after which it will convert to a General Public License (GPL). We also have some components licensed under GPL. You can find more details on this in our [LICENSE file](https://@TODO).
 
 ## Core Contracts
+[//]: # "@TODO add diagram"
 
 The Panoptic protocol is a system of contracts that can be deployed on top of any Uniswap v3 pool. There are three primary pillars that power Panoptic: 
 
 ### SemiFungiblePositionManager (SFPM) 
 
-Panoptic’s [SFPM](https://github.com/panoptic-labs/Panoptic/blob/main/contracts/SemiFungiblePositionManager.sol) is a gas-efficient alternative to Uniswap’s [NonFungiblePositionManager](https://docs.uniswap.org/contracts/v3/reference/periphery/NonfungiblePositionManager). Our SFPM manages complex, multi-leg Uniswap positions encoded in ERC-1155 token IDs, performs swaps allowing users to mint positions with only one type of token, and, most crucially, supports the minting of both typical LP positions where liquidity is added to Uniswap and long options positions where Uniswap liquidity is burnt. 
+Panoptic’s [SFPM](https://github.com/panoptic-labs/Panoptic/blob/main/contracts/SemiFungiblePositionManager.sol) is a gas-efficient alternative to Uniswap’s [NonFungiblePositionManager](https://docs.uniswap.org/contracts/v3/reference/periphery/NonfungiblePositionManager). Our SFPM manages complex, multi-leg Uniswap positions encoded in ERC-1155 token IDs and performs swaps allowing users to mint positions with only one type of token. Most crucially, it supports the minting of both typical LP positions where liquidity is added to Uniswap and long options positions where Uniswap liquidity is burnt.
 
-While the SFPM is enshrined as a core component of the protocol, and we consider it to be the “engine” of Panoptic, it is also a public good that we hope savvy Uniswap v3 LPs will grow to find is an essential upgrade for managing their liquidity.  
+While the SFPM is enshrined as a core component of the protocol, and we consider it to be the “engine” of Panoptic, it is also a public good that we hope savvy Uniswap v3 LPs will come to see as an essential upgrade for managing their liquidity.  
 
 
 ### CollateralTracker
 
 Our [CollateralTracker](https://github.com/panoptic-labs/Panoptic/blob/main/contracts/CollateralTracker.sol) is an ERC-4626 vault where token liquidity from passive Panoptic Liquidity Providers (PLPs) and collateral for option positions are deposited. CollateralTrackers are also responsible for:
+
 Calculating collateral requirements
-Paying out commission fees and options streamia
+Paying commission fees and options streamia
 Handling payments of intrinsic value for options
 Distributing profit and loss 
 Calculating liquidation bonuses
@@ -64,7 +66,7 @@ By far the most important functionality of the CollateralTracker is to calculate
 The [PanopticPool](https://github.com/panoptic-labs/Panoptic/blob/main/contracts/CollateralTracker.sol) 
 exposes the core functionality of the protocol. If the SFPM is the “engine” of Panoptic, the Panoptic Pool is the “conductor”. All interactions with the protocol, including minting, burning, rolling, liquidating, force exercising distressed accounts, or just checking position balances and accumulated streamia, originate in this contract. 
 
-The Panoptic Pool is responsible for orchestrating the required calls to the SFPM to create option positions in Uniswap, tracking user balances and accumulating the streamiaon those positions, and calling the CollateralTracker with the data it needs to settle position changes. 
+The Panoptic Pool is responsible for orchestrating the required calls to the SFPM to create option positions in Uniswap. It tracks user balances and accumulates the streamia on those positions. Also, it calls the CollateralTracker with the data it needs to settle position changes. 
 
 ## Architecture & Actors
 
@@ -74,9 +76,9 @@ Each instance of the Panoptic protocol on a Uniswap pool contains:
 
 One PanopticPool that orchestrates all interactions in the protocol
 Two CollateralTrackers, one for each constituent token0 and token1 in the Uniswap pool
-A canonical SFPM - the SFPM manages liquidity across every Panoptic Pool
+A canonical SFPM — the SFPM manages liquidity across every Panoptic Pool
 
-There are five primary roles assumed by actors in this Panoptic Ecosystem:
+Actors within the Panoptic Ecosystem take on five primary roles:
 
 ### 1. Panoptic Liquidity Providers (PLPs)
 
@@ -88,7 +90,7 @@ Users who deposit collateral but do not _trade_ on Panoptic can be considered as
 
 ### 2. Options Sellers
 
-Options sellers deposit liquidity into the Uniswap pool through Panoptic, making it available for options buyers to remove. This role is similar to providing liquidity directly to Uniswap v3, but offers numerous benefits including advanced tools to manage risky, complex positions and a multiplier on the fees (streamia) generated by their liquidity when it is removed by options buyers. 
+Options sellers deposit liquidity into the Uniswap pool through Panoptic, making it available for options buyers to remove. This role is similar to providing liquidity directly to Uniswap v3 but offers numerous benefits, including advanced tools to manage risky, complex positions and a multiplier on the fees (streamia) generated by their liquidity when it is removed by options buyers. 
 
 Remember, sold options positions on Panoptic have similar payoffs to traditional options.
 
@@ -102,17 +104,19 @@ Liquidators are responsible for liquidating distressed accounts that no longer m
 
 ### 5. Force Exercisors
 
-These are usually options sellers. They provide the required tokens and forcefully exercise long positions (belonging to options buyers) that are out of range and are no longer generating streamia, so the liquidity from those positions is added back to Uniswap and the sellers can exercise their positions (which involves burning that liquidity). The force exercisor pays a fee to the owner of the long option for the inconvenience caused by closing the position.
+Force exercisors are usually options sellers. They provide the required tokens and forcefully exercise long positions (belonging to options buyers) that are out of range and are no longer generating streamia, so the liquidity from those positions is added back to Uniswap and the sellers can exercise their positions (which involves burning that liquidity). The force exercisor pays a fee to the owner of the long option for the inconvenience caused by closing the position.
 
 ## Flow
-All protocol users first onboard by depositing tokens into one or both CollateralTracker vaults and being issued shares (becoming PLPs in the process). Panoptic’s CollateralTracker supports the full ERC-4626 interface, making deposits and withdrawals a simple and standardized process. Passive PLPs need not take any further actions. 
 
+All protocol users first onboard by depositing tokens into one or both CollateralTracker vaults and being issued shares (becoming PLPs in the process). Panoptic’s CollateralTracker supports the full ERC-4626 interface, making deposits and withdrawals a simple and standardized process. Passive PLPs need not take any further actions. 
 
 Once users have deposited, there are many options for the other actors in the protocol. Buyers and sellers can call: 
 
 `mintOptions` - create an option position with up to four distinct legs with a specially encoded positionID and tokenID, each of which is its own short (sold/added) or long (bought/removed) liquidity chunk.
+
 `burnOptions` - burn or exercise a position created through `mintOptions`.
-`rollOptions`- Modify the liquidity chunk (strike & width) of one or more legs in an existing position, transition it to a new ID — while retaining the same size — and only pay a commission fee on the intrinsic value. `rollOptions` only modifies the required legs and is significantly cheaper and more gas-efficient than burning and minting an entire position. This action enables the frequent position modification required to be an effective seller. 
+
+`rollOptions`- Modify the liquidity chunk (strike & width) of one or more legs in an existing position, transition it to a new ID — while retaining the same size — and only pay a commission fee on the intrinsic value. `rollOptions` only modifies the required legs and is significantly cheaper and more gas-efficient than burning and minting an entire position. This action enables the frequent position management required to be an effective seller. 
 
 Meanwhile, force exercisors and liquidators can perform their respective roles with the `forceExercise` and `liquidateAccount` functions.
 
@@ -126,18 +130,19 @@ Now, let’s briefly explore the rest of the codebase and learn how to mint our 
 
 Because Panoptic is built on top of Uniswap v3, we use several libraries from Uniswap to perform relevant calculations and interactions. All the libraries we use from Uniswap can be found in this folder. These versions of the libraries are the same time-tested ones used in Uniswap’s protocol but have been slightly modified to improve gas efficiency and compatibility with Solidity version 0.8.
 
-
 ### [contracts/types](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/types)
 
 Panoptic leverages several custom contract types to make code more efficient and concise. Generally, they pack multiple pieces of smaller data into 256-bit signed or unsigned integers.
 
 A [TickStateCallContext](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/types/TickStateCallContext.sol) contains a current tick, a median tick, and a caller address, and is frequently passed to the CollateralTracker from the PanopticPool — providing it with contextual information it needs to check and update collateral balances and requirements.
 
-A [LeftRight](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/types/TickStateCallContext.sol) stores two 128-bit signed or unsigned integers in a single 256-bit type. This is often useful in storing data about the tokens in the Uniswap v3 pool — such as a balance. Since there are two tokens in every Uniswap v3 pool, balances and other data for both of these tokens can naturally be stored in one of these containers.
+A [LeftRight](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/types/TickStateCallContext.sol) stores two 128-bit signed or unsigned integers in a single 256-bit type. This contract type is often useful in storing data about tokens in a Uniswap v3 pool — such as a balance. Since there are two tokens in every Uniswap v3 pool, balances and other data for both of these tokens can naturally be stored in one of these containers.
 
 A [LiquidityChunk](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/types/LiquidityChunk.sol) is how we represent a single Uniswap v3 liquidity chunk in Panoptic. It contains a lower tick (tickLower), an upper tick (tickUpper), and a size (amount) of liquidity. Each leg in a Panoptic position corresponds to one liquidity chunk in Uniswap.
 
-The [TokenId](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/types/TokenId.sol) type defines the encoding of a position in Panoptic and the SFPM. Each time a position is minted, an ERC-1155 token ID with this type of encoding is minted by the SFPM and stored by the PanopticPool. The token ID contains a unique 64-bit identifier that specifies what pool the position is to be minted on, as well as up to 4 “legs” each with the ability to specify a unique liquidity chunk, whether the leg is long or short, what token should be used to mint the position, its relative size compared to other legs, and more.    
+The [TokenId](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/types/TokenId.sol) type defines the encoding of a position in Panoptic and the SFPM. Each time a position is minted, an ERC-1155 token ID with this type of encoding is minted by the SFPM and stored by the PanopticPool. 
+
+This token ID contains a unique 64-bit identifier that specifies what pool the position is to be minted on, as well as up to four “legs” each with the ability to specify a unique liquidity chunk. This includes whether the leg is long or short, what token should be used to mint the position, its relative size compared to other legs, and more.    
 
 ### [contracts/libraries](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/libraries)
 
@@ -149,7 +154,9 @@ The [Errors](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/libra
 
 [InteractionHelper](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/libraries/InteractionHelper.sol) contains helpers to perform bytecode-size-heavy interactions with external contracts like batch approvals and metadata queries. 
 
-[Math](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/libraries/Math.sol) is a library of generic math functions including abs() and several optimized 512-bit mulDiv functions. PanopticMath is a library containing advanced Panoptic and Uniswap-specific functionality such as our time-weighted average price (TWAP), price conversions, and position sizing math.
+[Math](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/libraries/Math.sol) is a library of generic math functions including abs() and several optimized 512-bit mulDiv functions. 
+
+[PanopticMath](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/libraries/PanopticMath.sol) is a library containing advanced Panoptic and Uniswap-specific functionality such as our time-weighted average price (TWAP), price conversions, and position sizing math.
 
 [CallbackLib](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/libraries/CallbackLib.sol) helps validate Uniswap v3 mint and swap callbacks, verifying the identity and features of the calling pool.
 
@@ -164,7 +171,6 @@ Several of Panoptic’s contracts are also tokens! The SFPM issues ERC-1155 toke
 [ERC20Minimal](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/tokens/ERC20Minimal.sol) is a minimal implementation of the ERC-20 standard without metadata.
 
 The [IERC20Partial interface](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/tokens/interfaces/IERC20Partial.sol) folder contains several functions in the ERC-20 interface we call on tokens. The `success` return value from some of the functions, such as approve, is omitted in order to ensure support for certain noncompliant tokens, such as USDT, that do not return anything.   
-
 
 ### [contracts/multicall/Multicall.sol](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/multicall/Multicall.sol)
 
@@ -200,7 +206,7 @@ Now that everything has been installed correctly, we can finally mint our first 
 
 ### Deploying Panoptic
 
-Let’s get started by deploying a new instance of Panoptic on Sepolia, an Ethereum test network for developers to try their applications. You will need some Sepolia ETH from the [Alchemy Faucet](https://sepoliafaucet.com/) for gas. The deployment script for Panoptic needs to know the private key for your account and the address of the Uniswap v3 factory as well as the address for WETH. We need to export these as environment variables, as specified in the README. 
+Let’s get started by deploying a new instance of Panoptic on Sepolia, an Ethereum test network for developers to try their applications. You will need some Sepolia ETH from the [Alchemy Faucet](https://sepoliafaucet.com/) for gas. The deployment script for Panoptic needs to know the private key for your account and the address of the Uniswap V3 factory as well as the address for WETH. We need to export these as environment variables, as specified in the README. 
 
 ```bash
 export DEPLOYER_PRIVATE_KEY = 0xyourprivatekey
@@ -380,7 +386,7 @@ Sensitive values saved to: /home/dyed/Documents/Panoptic/cache/DeployProtocol.s.
 
 Make sure to save the addresses of your newly deployed `SemiFungiblePositionManager` and `PanopticFactory` (shown after [contract name]@ in the output). We will need this in the next step.
 
-### Deploying a new Panoptic Pool
+### Deploying A New Panoptic Pool
 To follow along, navigate to [examples/FirstPanoption.s.sol](https://github.com/panoptic-labs/Panoptic/examples/FirstPanoption.s.sol)
 
 You should see a template that looks a little bit like this:
@@ -389,7 +395,7 @@ contract FirstPanoption is Script {
     using TokenId for uint256;
 
     function run() public {
-        IUniswapV3Factory UNISWAP_V3_FACTORY = IUniswapv3Factory(
+        IUniswapV3Factory UNISWAP_V3_FACTORY = IUniswapV3Factory(
             vm.envAddress("UNISWAP_V3_FACTORY")
         );
 
@@ -397,8 +403,8 @@ contract FirstPanoption is Script {
 
         PanopticFactory PANOPTIC_FACTORY = PanopticFactory();
 
-        IERC20Partial WBTC = IERC20Partial(0xf864F011C5A97fD8Da79baEd78ba77b47112935a);
-        IERC20Partial DAI = IERC20Partial(0x68194a729C2450ad26072b3D33ADaCbcef39D574);
+        IERC20Partial WBTC = IERC20Partial(0x29f2D40B0605204364af54EC677bD022dA425d03);
+        IERC20Partial DAI = IERC20Partial(0xFF34B3d4Aee8ddCd6F9AFFFB6Fe49bD371b8a357);
 
         vm.startBroadcast(vm.envUint("DEPLOYER_PRIVATE_KEY"));
         // Here, deploy a Panoptic Pool and mint your first Panoption!
@@ -407,6 +413,7 @@ contract FirstPanoption is Script {
 }
 ```
 First, fill in the `SemiFungiblePositionManager` and `PanopticFactory` addresses you saved in the previous step.
+
 ```javascript
 SemiFungiblePositionManager SFPM = SemiFungiblePositionManager(0x0000000000000000000000000000000000000000);
 
@@ -414,7 +421,6 @@ PanopticFactory PANOPTIC_FACTORY = PanopticFactory(0x000000000000000000000000000
 ```
 
 Before we can do anything, we’ll need some testnet WBTC and DAI. We can grab these from the [AAVE Faucet](https://staging.aave.com/faucet/).
-
 
 We’re going to deploy a Panoptic Pool on the WBTC-DAI-5bps pair. To do this, we need to approve the Panoptic Factory that we deployed earlier to spend our WBTC and DAI. This allows the factory to perform an initial full-range liquidity deployment, then call `deployNewPool` with the addresses of the tokens, the fee of the pool (5bps = 500 / 100 basis points), and a *completely random salt* used while creating the PanopticPool. We can also vary the salt to mine a vanity Panoptic Pool address.
 
@@ -430,7 +436,7 @@ PanopticPool pp = PANOPTIC_FACTORY.deployNewPool({
 });
 ```
 
-### Minting a Panoption!
+### Minting A Panoption!
 
 Now, we’ll need to approve the respective `CollateralTrackers` for the tokens we’re going to deposit. The Panoptic Pool exposes the addresses of these collateral tokens.
 
@@ -485,13 +491,15 @@ Since we’re minting a put, we set the tokenType to 0. This means that we use D
 
 We set the risk partner to index 0 for this leg. The risk partner is used to specify defined risk positions, such as strangles, in order to calculate collateral requirements. 
 
-Some combinations of options have a lower risk when [the options] are combined, so the collateral requirement can be lowered in certain cases. The risk partner is set to the index of the other leg in the defined risk position and set to the index of its own leg if we are not taking advantage of that feature. 
+Some combinations of options have a lower risk when the options are combined, so the collateral requirement can be lowered in certain cases. The risk partner is set to the index of the other leg in a defined risk position or to its own leg's index if we're not using that feature. 
 
-We set the strike to tick 5000. Currently, the price in the WBTC-DAI pool is at tick -1700. Since price in Uniswap is represented as token1/token0, this means that the higher the tick is, the lower the price in DAI (token0) of WBTC (token1) is. We are minting an out-of-the-money option, so we want the WBTC price to be above our position. As we discussed, an option becomes in the money (ITM) when the price of WBTC falls below [the option’s] range. This means that we should pick a higher tick than -1700, and 5000 is one example of that.
+We set the strike to tick 5000. Currently, the price in the WBTC-DAI pool is at tick -1700. Since price in Uniswap is represented as token1/token0, this means that the higher the tick is, the lower the price in DAI (token0) of WBTC (token1) is. 
 
-We set the width to two. While Uniswap pool prices can be at any tick between the maximum and minimum ticks, most pools save for stablecoin-stablecoin pairs with a fee of 1 basis point have a tick spacing. This means the upper and lower ticks of LP positions can only be specified in increments of tickSpacing. 
+We are minting an out-of-the-money option, so we want the WBTC price to be above our position. As discussed, an option becomes in the money (ITM) when the price of WBTC falls below the option’s range. This means that we should pick a higher tick than -1700, and 5000 is one example of that.
 
-For 5bps pools like this one, the standard tick spacing is 10. We take this into account in our sizing system. The position width specified in the tokenId is multiplied by the tickSpacing of whatever pool the position is being minted on. This means that a tickSpacing of two, as we have specified, corresponds to a tickLower and tickUpper 20 ticks apart In this case, that corresponds to 4990 and 5010 — 10 ticks above and below the strike.  
+We set the width to two. While Uniswap pool prices can be at any tick between the maximum and minimum ticks, most pools except for stablecoin-stablecoin pairs with a fee of 1 basis point (0.01%) have a tick spacing. This means the upper and lower ticks of LP positions can only be specified in increments of tickSpacing. 
+
+For 5bps pools like this one, the standard tick spacing is 10. We take this into account in our sizing system. The position width specified in the tokenId is multiplied by the tickSpacing of whatever pool the position is being minted on. This means that a tickSpacing of two, as we have specified, corresponds to a tickLower and tickUpper 20 ticks apart. In this case, that corresponds to 4990 and 5010 — 10 ticks above and below the strike.  
 
 Finally, we can mint our Panoption:
 
@@ -541,7 +549,7 @@ contract FirstPanoption is Script {
     using TokenId for uint256;
 
     function run() public {
-        IUniswapV3Factory UNISWAP_V3_FACTORY = IUniswapv3Factory(
+        IUniswapV3Factory UNISWAP_V3_FACTORY = IUniswapV3Factory(
             vm.envAddress("UNISWAP_V3_FACTORY")
         );
 
@@ -553,8 +561,8 @@ contract FirstPanoption is Script {
             0x0000000000000000000000000000000000000000
         );
 
-        IERC20Partial WBTC = IERC20Partial(0xf864F011C5A97fD8Da79baEd78ba77b47112935a);
-        IERC20Partial DAI = IERC20Partial(0x68194a729C2450ad26072b3D33ADaCbcef39D574);
+        IERC20Partial WBTC = IERC20Partial(0x29f2D40B0605204364af54EC677bD022dA425d03);
+        IERC20Partial DAI = IERC20Partial(0xFF34B3d4Aee8ddCd6F9AFFFB6Fe49bD371b8a357);
 
         vm.startBroadcast(vm.envUint("DEPLOYER_PRIVATE_KEY"));
 
@@ -722,6 +730,7 @@ To view your option mint, paste your last transaction hash into the [Sepolia Exp
 Here's mine from the output above: [https://sepolia.etherscan.io/tx/0x9632bb13e1074b8414b1597b245668c1dfe081eb20a5f7a244975495d8fe7390](https://sepolia.etherscan.io/tx/0x9632bb13e1074b8414b1597b245668c1dfe081eb20a5f7a244975495d8fe7390).
 
 ## Conclusion
+
 Thank you for joining me today in this introductory exploration of Panoptic’s code. I hope you found it interesting and informative. We encourage you to check out our [website](https://panoptic.xyz) and [documentation](https://docs.panoptic.xyz) to learn more, and feel free to reach out to us on [Twitter/X](https://x.com/Panoptic_xyz) or [Discord](https://discord.gg/Panoptic) if you have any questions or feedback.
 
 Stay tuned for future posts and videos in this series, where we'll delve deeper into Panoptic's technology. Until then, happy trading, and see you next time!
