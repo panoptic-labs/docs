@@ -23,7 +23,12 @@ const BlogLandingPage = ({latestBlogPost}) => {
         content={BlogPostContent}>
 
         <div className="landing-page-blog-post">
-          <BlogPostImage imageUrl={imageUrl} readingTime={readingTime}/>
+          <div className="landing-image-container">
+            <BlogPostImage 
+              imageUrl={imageUrl} 
+              readingTime={readingTime}
+            />
+          </div>
           <div className="landing-page-blog-details">
             <div className="featured-tag-container">
               <span className="featured-tag">Featured</span>

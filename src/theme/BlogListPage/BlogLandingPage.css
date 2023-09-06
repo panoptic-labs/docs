@@ -2,7 +2,12 @@
 .blog-landing-page {
   background-color: #4E14D0;
   padding: 60px 80px;
-  height: calc(100vh - 60px);
+  min-height: calc(100vh - 60px);
+
+  background-image: url("/img/blog-landing-page-background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
 }
 
 .blog-title {
@@ -24,6 +29,15 @@
   gap: 48px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+}
+
+.landing-image-container img {
+  width: 100%;
+  transition: 0.2s all ease-in-out;
+}
+
+.landing-image-container:hover img {
+  transform: scale(1.1);
 }
 
 .landing-page-blog-details {

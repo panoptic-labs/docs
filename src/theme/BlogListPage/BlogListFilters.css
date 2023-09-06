@@ -1,0 +1,23 @@
+
+.blog-list-filters {
+  display: flex;
+  margin: 48px 80px 0px 80px;
+  border-bottom: 2px solid #E7E7E7;
+}
+
+.filter-item {
+  margin-right: 20px;
+  padding-bottom: 8px;
+  color: #8D8E94;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  cursor: pointer;
+}
+
+.filter-item-selected {
+  color: #040404;
+  border-bottom: 2px solid #4E14D0;
+}

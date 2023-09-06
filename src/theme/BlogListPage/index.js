@@ -11,6 +11,8 @@ import BlogListPaginator from '@theme/BlogListPaginator';
 import SearchMetadata from '@theme/SearchMetadata';
 import BlogPostItems from '@theme/BlogPostItems';
 import BlogLandingPage from './BlogLandingPage';
+import BlogListFilters from './BlogListFilters';
+import "./BlogListPage.css"
 
 function BlogListPageMetadata(props) {
   const {metadata} = props;
@@ -32,8 +34,11 @@ function BlogListPageContent(props) {
   return (
     <BlogLayout latestBlogPost={items[0]}>
       <BlogLandingPage latestBlogPost={items[0]}/>
+      <BlogListFilters/>
       <BlogPostItems items={items} />
-      <BlogListPaginator metadata={metadata} />
+      <div className="blog-list-page-paginator">
+        <BlogListPaginator metadata={metadata} />
+      </div>
     </BlogLayout>
   );
 }

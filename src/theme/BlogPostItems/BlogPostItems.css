@@ -29,6 +29,7 @@
   }
 
   .blog-post-row-of-2 {
+    display: flex;
     flex-direction: column;
   }
   

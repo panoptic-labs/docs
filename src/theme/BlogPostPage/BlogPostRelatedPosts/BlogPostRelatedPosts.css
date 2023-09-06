@@ -7,3 +7,10 @@
 .related-posts-title {
   color: black;
 }
+
+@media screen and (max-width: 767px) { 
+.blog-page-related-posts {
+  background-color: #F3F3F3;
+  padding: 20px 16px 32px 16px;
+}
+}

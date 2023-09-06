@@ -1,0 +1,10 @@
+
+.blog-list-page-paginator {
+  margin: 0px 80px 48px 80px;
+}
+
+@media screen and (max-width: 767px) { 
+  .blog-list-page-paginator {
+    margin: 0px 16px 48px 16px;
+  }
+}

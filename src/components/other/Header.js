@@ -35,7 +35,10 @@ const Header = ({purpleMode = false, children}) => {
           {children}
           {loadedWidth && isTabletWidth && (
             <div className="mobile-button" onClick={handleToggle}>
-              <i className="icon__burger right-part__icon" />
+              { purpleMode
+                ? <i className="icon__burger right-part__icon" />
+                : <img src={"/img/burger-purple.svg"}/>  
+              }
             </div>
           )}
           {showAppComingSoonButton && (

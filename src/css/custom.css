@@ -53,11 +53,15 @@
 }
 
 div[class^="announcementBar_"] {
-  background-color: #4E14D0;
+  background-color: #040404;
   height: 2.5em;
   font-family: var(--ifm-font-family-base), sans-serif;
   font-weight: var(--ifm-heading-font-weight);
   font-size: 1.25em;
+}
+
+div[class^="announcementBar_"] .close {
+  color: #FFF;
 }
 
 @media screen and (max-width: 767px) { 
