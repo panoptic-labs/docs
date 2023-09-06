@@ -204,7 +204,7 @@ Let’s get started by deploying a new instance of Panoptic on Sepolia, an Ether
 
 ```bash
 export DEPLOYER_PRIVATE_KEY = 0xyourprivatekey
-export UNISWAP_v3_FACTORY = 0x3220B52A7f878a9DA5bc54C224e1bd34642dF65B
+export UNISWAP_V3_FACTORY = 0x3220B52A7f878a9DA5bc54C224e1bd34642dF65B
 export WETH9 = 0x3BbCB7bB7606C7afAad97e2c5135a97e94103B6f
 ```
 Then, we can run the deployment script and deploy a new Panoptic factory.
@@ -219,7 +219,7 @@ Traces:
   [16238552] DeployProtocol::run() 
     ├─ [0] VM::envUint(DEPLOYER_PRIVATE_KEY) [staticcall]
     │   └─ ← <env var value>
-    ├─ [0] VM::envAddress(UNISWAP_v3_FACTORY) [staticcall]
+    ├─ [0] VM::envAddress(UNISWAP_V3_FACTORY) [staticcall]
     │   └─ ← <env var value>
     ├─ [0] VM::envAddress(WETH9) [staticcall]
     │   └─ ← <env var value>
@@ -389,8 +389,8 @@ contract FirstPanoption is Script {
     using TokenId for uint256;
 
     function run() public {
-        IUniswapv3Factory UNISWAP_v3_FACTORY = IUniswapv3Factory(
-            vm.envAddress("UNISWAP_v3_FACTORY")
+        IUniswapV3Factory UNISWAP_V3_FACTORY = IUniswapv3Factory(
+            vm.envAddress("UNISWAP_V3_FACTORY")
         );
 
         SemiFungiblePositionManager SFPM = SemiFungiblePositionManager();
@@ -522,8 +522,8 @@ pragma solidity =0.8.18;
 import "forge-std/Script.sol";
 // Interfaces
 import {IERC20Partial} from "@tokens/interfaces/IERC20Partial.sol";
-import {IUniswapv3Factory} from "univ3-core/interfaces/IUniswapv3Factory.sol";
-import {IUniswapv3Pool} from "univ3-core/interfaces/IUniswapv3Pool.sol";
+import {IUniswapV3Factory} from "univ3-core/interfaces/IUniswapV3Factory.sol";
+import {IUniswapV3Pool} from "univ3-core/interfaces/IUniswapV3Pool.sol";
 // Core contracts
 import {PanopticFactory} from "@contracts/PanopticFactory.sol";
 import {PanopticPool} from "@contracts/PanopticPool.sol";
@@ -541,8 +541,8 @@ contract FirstPanoption is Script {
     using TokenId for uint256;
 
     function run() public {
-        IUniswapv3Factory UNISWAP_v3_FACTORY = IUniswapv3Factory(
-            vm.envAddress("UNISWAP_v3_FACTORY")
+        IUniswapV3Factory UNISWAP_V3_FACTORY = IUniswapv3Factory(
+            vm.envAddress("UNISWAP_V3_FACTORY")
         );
 
         SemiFungiblePositionManager SFPM = SemiFungiblePositionManager(
