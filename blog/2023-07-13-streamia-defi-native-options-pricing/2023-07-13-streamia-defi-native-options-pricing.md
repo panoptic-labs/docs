@@ -1,7 +1,7 @@
 ---
 slug: streamia-defi-native-options-pricing
 title: "Streamia — DeFi-native Options Pricing"
-tags: [Streamia, Premia, Pricing]
+tags: [Panoptimists, LPs, Perps Traders, Options Traders, Streamia, Premia, Pricing]
 image: /img/banners/streamia-defi-native-options-pricing.png
 description: "The Future of DeFi Options Pricing"
 ---
@@ -20,6 +20,7 @@ As explained in a [recent article](https://panoptic.xyz/blog/black-scholes-strea
 
 ## What is Streamia? 
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Gfl-_yPGZyU?si=ObqvyrZ9ROhlDLIv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Streamia is the DeFi-native way to price perpetual options. The word derives its meaning from combining streaming and premia. 
 

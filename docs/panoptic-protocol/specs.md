@@ -4,89 +4,11 @@ sidebar_position: 6
 
 # Panoptic Specs
 
-## User Balances
-Funds are deposited by users in the Panoptic Pool. These funds will be used as collateral for writing/buying options.
-
-The balance of each "user", where "user" could also be the Panoptic Pool, is:
-
-
-```python
-balanceOf = {}
-
-def balanceOf(user='0x123'):
-    return balanceOf[user]
-
-```
-
 ## PanopticPool Balances
 
 The amount of funds deposited in the Panoptic pool can be used to buy and sell options. 
 Specifically, funds can be moved from the PanopticPool to the UniswapPool to create a short option payoff. 
 Funds in the Uniswap pool can be "shorted" and moved back to the PanopticPool to create a long option payoff.
-
-
-### Assets inside Uniswap v3 AMM
-
-The amount of funds moved between the Panoptic pool and the Uniswap pool is called the `notionalValue`.
-It is defined (for puts) as 
-
-`notionalValue = strike * positionSize`
-
-where `positionSize` is similar to the number of contracts for a regular option
-
-
-```python
-inAMM = 0
-def _inAMM():
-    return inAMM
-
-# Will only consider put options with token0
-def mintPutOption(strike, positionSize, optionType):
-    
-    #[...]
-    
-    # update inAMM
-    notionalValue = strike * positionSize
-    if optionType == 'short':
-        inAMM += notionalValue
-        
-    elif optionType == 'long':
-        inAMM -= notionalValue
-        
-  
-        
-        
-```
-
-### Locked Assets
-
-Liquidity that has been moved to Uniswap will collect fees from the trading activity. These fees are the option premium that will be distributed to the option sellers.
-
-When a user sells an option at a specific strike, liquidity is deployed to the Uniswap pool at a specific tick range and the smart contract starts recording the fees accumulated.
-
-If another user sells that *same* option at the same strike, the liquidity is also moved to the Uniswap pool. In addition, all fees accumulated at that position will be collected and moved to a "secure" location called `lockedFees` inside the PanopticPool. 
-
-Collecting fees every time a position is touched reduces the risks of the protocol becoming insolvent.
-
-
-```python
-lockedFees = 0
-
-def _lockedFees():
-    return lockedFees
-
-# Will only consider put options with token0
-def mintPutOption(strike, positionSize, optionType):
-    
-    #[...]
-    
-    # lock collected fees
-    fees = collect(strike) # collect all fees at that strike
-    lockedFees += _fees
-    
-    #[...]
-        
-```
 
 
 ### Total Assets
@@ -124,7 +46,7 @@ In Panoptic, since options never expire, commissions are only paid when a new po
 We believe that this will eliminate the impact of the commission fee on the user's decision-making process when closing a position.
 
 The value of the commission to be paid is the commission rate multiplied by the `notional value` of the option (i.e. the amount of token moved to/from the Uniswap pool).
-Note that the commission will always be paid in terms of the `tokentype` of the position: it will be paid using `token0` for puts and `token1` for calls.
+Note that the commission will always be paid in terms of the `tokentype` of the position.
 
 `Commission fee = _commissionRate() * notionalValue`
 
@@ -312,7 +234,7 @@ The collateralization requirements follows the guidelines outlined by CBOE and F
 
 ### Maintenance margin requirement - short options
 
-The buying power requirement for SHORT options is initially set by the pool utilization, but the requirement will change as the price changes and the position becomes in-the-money.
+The buying power requirement for SHORT options is initially set by the pool utilization, but the requirement will change as the price changes and the position becomes in-the-money.    
 
 The expression for the `BUYING_POWER_REQUIREMENT` is given by:
 

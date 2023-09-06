@@ -3,17 +3,12 @@
   top: 0;
   background: #f3f3f3;
   z-index: 20;
+  align-items: center;
+  padding: 16px 96px 16px;
 }
 
-
-.header-container {
-  padding: 23px 96px 18px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1441px;
-  width: 100%;
-  margin: 0 auto;
+.purple-background {
+  background: #4E14D0;
 }
 
 .header__logo {
@@ -44,8 +39,24 @@
   text-decoration: none;
 }
 
+.app-coming-soon-button {
+  padding: 8px 16px;
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  border-radius: 100px;
+  border: 1px solid #AC91EA;
+  background: #FFF;
+  color: #4E14D0;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
 @media (max-width: 767px) {
-  .header-container {
-    padding: 17px 40px 14px;
+  .header {
+    padding: 16px 38px 16px;
   }
 }

@@ -31,7 +31,7 @@ While users can already sell options by providing liquidity in the UniswapV3Pool
 At a core level, Panoptic has deployed a smart contract that replaces the `NonFungiblePositionManager.sol` (NFPM) smart contract from `v3-periphery`.
 This "new" smart contract, called the `SemiFungiblePositionMananger.sol` (SFPM), uses the `ERC1155` interface to track positions within Uniswap v3.
 
-The SFPM and the NFPM both interact with the `UniswapV3Pool.sol` smart contracts to deploy and track liquidity positions, with the SFPM replicating all the basic functionalities of the NFPM but with a 30% decrease in gas costs.
+The SFPM and the NFPM both interact with the `UniswapV3Pool.sol` smart contracts to deploy and track liquidity positions, with the SFPM replicating all the basic functionalities of the NFPM but with a significant decrease in gas costs.
 The Panoptic interface allows existing Uniswap v3 liquidity providers to easily migrate their positions from NFPM to SFPM. 
 
 ## Permissionless, Perpetual Options
@@ -63,7 +63,7 @@ This is to compensate PLPs for the increased risk of insolvency on options with 
 Several computed quantities are derived from the token balance in the Panoptic and Uniswap v3 pools.
 
 ### Total Balance
-The `totalBalance()` value is the amount of tokens inside the `PanopticPool` smart contract PLUS the amount that has already been moved to the Uniswap v3 pool MINUS the amount of fees that has been collected and "locked" until it needs to be paid to the options sellers.
+The `totalAssets()` value is the amount of tokens inside the `PanopticPool` smart contract PLUS the amount that has already been moved to the Uniswap v3 pool MINUS the amount of fees that has been collected and "locked" until it needs to be paid to the options sellers.
 This derived quantity is used to compute the collateral shares.
 
 ```solidity
@@ -72,7 +72,7 @@ This derived quantity is used to compute the collateral shares.
 >token0 = IERC20 interface of the collateral token                           | token0.balanceOf(pp) =
                                                                           _--| amount of token0 owned
                                                                          /   | by the Panoptic Pool
-    _----------------pp.totalBalance()---------------_                  /
+    _----------------pp.totalAssets()---------------_                  /
    /                                                  \                /
   |   _----pp.inAMM0()---_     _--------------token0.balanceOf(pp)---------------_
   |  /                    \   /                        |  _---pp.locked0()--_  \
@@ -88,13 +88,13 @@ This derived quantity is used to compute the collateral shares.
 ```
 
 ### Pool Utilization
-The pool utilization is a measure of the fraction of the `totalBalance()` which belongs to the Uniswap v3 pool.
+The pool utilization is a measure of the fraction of the `totalAssets()` which belongs to the Uniswap v3 pool.
 This parameter is computed whenever a position is minted to set the collateralization ratio of the position (calculations shown below).
 
 
 
 ```solidity
-poolUtilization = pp.inAMM() / pp.totalBalance();
+poolUtilization = pp.inAMM() / pp.totalAssets();
                 = pp.inAMM() / (pp.inAMM() + `free` token0)
                 = pp.inAMM() / (pp.inAMM() + token0.balanceOf(pp) - pp.locked())
 ```
@@ -106,7 +106,7 @@ First, the pool utilization is equal to 50%, the targeted equilibrium.
 When this happens, the seller collateralization ratio is at its minimum.
 ```solidity
 -Example 1: poolUtilization = 50%  (targeted equilibrium)
-   _------pp.totalBalance()--+----------------------_
+   _------pp.totalAssets()--+----------------------_
   /                          |                       \   COMMISSION_RATE       = 10bps
  |     pp.inAMM0()           |    `free` token0       |  BUY_COLLATERAL_RATIO  = 10%
   \                          |                       /   SELL_COLLATERAL_RATIO = 20%
@@ -117,7 +117,7 @@ If the pool utilization increases to 90% or more, then the protocol favors optio
 At the same time, the collateralization ratio required for selling an option increases to 100%, which means that all newly minted short options will not increase the pool utilization beyond 90%.
 ```solidity
 -Example 2: poolUtilization = 90% (favors buying)
-   _------pp.totalBalance()------------------+------_
+   _------pp.totalAssets()------------------+------_
   /                                          |       \   COMMISSION_RATE       = 10bps
  |                    pp.inAMM0()            | fT0    |  BUY_COLLATERAL_RATIO  = 5% <- favors buying
   \                                          |       /   SELL_COLLATERAL_RATIO = 100%
@@ -129,7 +129,7 @@ If the pool utilization decreases below 10%, then the pool likely has low tradin
 To compensate for this, the collateralization ratio for selling new options is at its minimum (20% of notional).
 ```solidity
 -Example 3: poolUtilization = 10% (favors selling)
-   _-----+-----pp.totalBalance()--------------------_
+   _-----+-----pp.totalAssets()--------------------_
   /      |                                           \   COMMISSION_RATE       = 10bps
  | inAMM0|            `free` token0                   |  BUY_COLLATERAL_RATIO  = 10%
   \      |                                           /   SELL_COLLATERAL_RATIO = 20% <- favors selling

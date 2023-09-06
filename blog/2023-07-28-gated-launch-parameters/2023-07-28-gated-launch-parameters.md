@@ -1,7 +1,7 @@
 ---
 slug: gated-launch-parameters
 title: "Panoptic Gated Launch Parameters"
-tags: [Gated Launch]
+tags: [Panoptimists, Gated Launch]
 image: /img/banners/panoptic-gated-launch-parameters-banner.png
 description: "Introduction to Panoptic Pool Parameters"
 ---

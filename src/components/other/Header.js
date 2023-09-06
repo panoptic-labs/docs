@@ -1,18 +1,16 @@
 import React, { useState } from "react";
 import Link from "@docusaurus/Link";
-
+import clsx from "clsx";
 import useResponsive from "../../hooks/useResponsive";
 import "./Header.css";
 import "./Header/RightPart.css"
 import Nav from "./Header/Nav";
 import Sidebar from "./Sidebar";
 import Button from "../NewHomePage/Button/Button";
-
-const logoPath = `/img/logo-mono.svg`;
   
-const Header = () => {
+const Header = ({purpleMode = false, children}) => {
   const [isOpenedSidebar, setOpenedSidebar] = useState(false);
-  const { loadedWidth, isTabletWidth } = useResponsive();
+  const { loadedWidth, isTabletWidth, is1200 } = useResponsive();
 
   const handleToggle = () => {
     setOpenedSidebar((state) => !state);
@@ -22,26 +20,30 @@ const Header = () => {
     setOpenedSidebar(false);
   };
 
+  const logoPath = purpleMode ? `/img/logo-dark.svg` : `/img/logo-mono.svg`;
+
+  const showAppComingSoonButton = loadedWidth && (!is1200 || !children) && !isTabletWidth
+
   return (
     <>
-      <header className="header">
-        <div className="header-container">
-          <Link to="/" className="header__logo">
-            <img src={logoPath} alt="logo" />
-          </Link>
-          {loadedWidth && !isTabletWidth && <Nav />}
-          <div className="right-part">
-            {loadedWidth && isTabletWidth && (
-              <div className="mobile-button" onClick={handleToggle}>
-                <i className="icon__burger right-part__icon" />
-              </div>
-            )}
-            {loadedWidth && !isTabletWidth && (
-              <Button disabled={true}>
-                {"App Coming Soon"}
-              </Button>
-            )}
-          </div>
+      <header className={clsx("header", "navbar", {"purple-background": purpleMode})}>
+        <Link to="/" className="header__logo">
+          <img src={logoPath} alt="logo" />
+        </Link>
+        {loadedWidth && !isTabletWidth && <Nav purpleMode={purpleMode}/>}
+        <div className="right-part">
+          {children}
+          {loadedWidth && isTabletWidth && (
+            <div className="mobile-button" onClick={handleToggle}>
+              <i className="icon__burger right-part__icon" />
+            </div>
+          )}
+          {showAppComingSoonButton && (
+            <button disabled={true} className="app-coming-soon-button">
+              <img src={"/img/icons/loading-icon.svg"}></img>
+              {"App Coming Soon"}
+            </button>
+          )}
         </div>
       </header>
       {isTabletWidth && (
