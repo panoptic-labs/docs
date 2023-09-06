@@ -509,7 +509,7 @@ First, we need to pass in a list of positions. The positionIdList contains a lis
 
 Then, we need to specify a position size. Since our position is out of the money (OTM), our tokenType is 0 (DAI), and we’re specifying the asset (value) in terms of DAI, putting this amount  here means that our position will be worth 10 * 10 **18 or 10 DAI. 
 
-The effective liquidity limit is an optional parameter that allows us to specify an upper bound on liquidity utilization for a certain chunk. Option buyers will set the limit to ensure the portion of liquidity they remove, and therefore their premia multiplier, stays below a certain threshold. Since we are selling options, we don’t need to worry about this and can leave it off.
+The effective liquidity limit is an optional parameter that allows us to specify an upper bound on liquidity utilization for a certain chunk. Option buyers will set the limit to ensure the portion of liquidity they remove, and therefore their streamia multiplier, stays below a certain threshold. Since we are selling options, we don’t need to worry about this and can leave it off.
 
 The tick limits allow us to specify a maximum slippage value, similar to Uniswap, and the tick at the end of the option mint is verified to be between these limits. We’re going to leave these off too since we’re not worried about slippage here.
 
