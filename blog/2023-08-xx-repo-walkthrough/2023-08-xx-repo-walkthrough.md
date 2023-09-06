@@ -34,7 +34,7 @@ A unique commission-based fee structure that options traders will find refreshin
 
 Panoptic, like Uniswap, runs on [Ethereum’s EVM](https://ethereum.org/en/developers/docs/evm/) and is written in Solidity 0.8. Our protocol leverages Foundry as a testing, fuzzing, and deployment framework.
 
-A quick note on licensing: Panoptic's proprietary code is licensed under the Business Use Source License (BUSL 1.1) for several years, after which it will convert to a General Public License (GPL). We also have some components licensed under GPL. You can find more details on this in our [LICENSE file](@TODO).
+A quick note on licensing: Panoptic's proprietary code is licensed under the Business Use Source License (BUSL 1.1) for several years, after which it will convert to a General Public License (GPL). We also have some components licensed under GPL. You can find more details on this in our [LICENSE file](https://@TODO).
 
 ## Core Contracts
 
@@ -176,7 +176,7 @@ Now, let’s wrap things up by learning how to install the codebase and mint a P
 
 ### Installation
 
-Let’s install the codebase by following the instructions in the [README](@TODO).
+Let’s install the codebase by following the instructions in the [README](https://@TODO).
 
 First, clone the git repo. Make sure you remember to pass the recurse-submodules flag, since some of our dependencies are in submodules.
 ```bash
