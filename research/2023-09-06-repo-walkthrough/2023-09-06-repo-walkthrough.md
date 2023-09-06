@@ -210,8 +210,8 @@ Let’s get started by deploying a new instance of Panoptic on Sepolia, an Ether
 
 ```bash
 export DEPLOYER_PRIVATE_KEY = 0xyourprivatekey
-export UNISWAP_V3_FACTORY = 0x3220B52A7f878a9DA5bc54C224e1bd34642dF65B
-export WETH9 = 0x3BbCB7bB7606C7afAad97e2c5135a97e94103B6f
+export UNISWAP_V3_FACTORY = 0x0227628f3f023bb0b980b67d528571c95c6dac1c
+export WETH9 = 0xfFf9976782d46CC05630D1f6eBAb18b2324d6B14
 ```
 Then, we can run the deployment script and deploy a new Panoptic factory.
 
