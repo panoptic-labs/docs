@@ -7,7 +7,7 @@ description: "Deep dive into Panoptic's code and architecture. Learn how to mint
 ---
 ![smart-contracts-banner](./smart-contracts-banner.png)
 
-In this post, we’ll delve into Panoptic and provide a comprehensive overview of our protocol’s general architecture. You’ll also learn how to install the codebase and mint your first option on Panoptic. So whether you're a seasoned developer or a retail trader, we’re certain you'll find something valuable here!
+In this post, we’ll delve into Panoptic and provide a comprehensive overview of our protocol’s general architecture. You’ll also learn how to install the [codebase](https://github.com/panoptic-labs/panoptic-v1-core) and mint your first option on Panoptic. So whether you're a seasoned developer or a retail trader, we’re certain you'll find something valuable here!
 
 <!-- truncate -->
 
