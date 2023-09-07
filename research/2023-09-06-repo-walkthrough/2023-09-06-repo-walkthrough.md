@@ -37,7 +37,7 @@ A unique commission-based fee structure that options traders will find refreshin
 
 Panoptic, like Uniswap, runs on [Ethereum’s EVM](https://ethereum.org/en/developers/docs/evm/) and is written in Solidity 0.8. Our protocol leverages Foundry as a testing, fuzzing, and deployment framework.
 
-A quick note on licensing: Panoptic's proprietary code is licensed under the Business Use Source License (BUSL 1.1) for several years, after which it will convert to a General Public License (GPL). We also have some components licensed under GPL. You can find more details on this in our [LICENSE file](https://@TODO).
+A quick note on licensing: Panoptic's proprietary code is licensed under the Business Use Source License (BUSL 1.1) for several years, after which it will convert to a General Public License (GPL). We also have some components licensed under GPL. You can find more details on this in our [LICENSE file](https://github.com/panoptic-labs/panoptic-v1-core/blob/main/LICENSE).
 
 ## Core Contracts
 [//]: # "@TODO add diagram"
@@ -46,14 +46,14 @@ The Panoptic protocol is a system of contracts that can be deployed on top of an
 
 ### SemiFungiblePositionManager (SFPM) 
 
-Panoptic’s [SFPM](https://github.com/panoptic-labs/Panoptic/blob/main/contracts/SemiFungiblePositionManager.sol) is a gas-efficient alternative to Uniswap’s [NonFungiblePositionManager](https://docs.uniswap.org/contracts/v3/reference/periphery/NonfungiblePositionManager). Our SFPM manages complex, multi-leg Uniswap positions encoded in ERC-1155 token IDs and performs swaps allowing users to mint positions with only one type of token. Most crucially, it supports the minting of both typical LP positions where liquidity is added to Uniswap and long options positions where Uniswap liquidity is burnt.
+Panoptic’s [SFPM](https://github.com/panoptic-labs/panoptic-v1-core/blob/main/contracts/SemiFungiblePositionManager.sol) is a gas-efficient alternative to Uniswap’s [NonFungiblePositionManager](https://docs.uniswap.org/contracts/v3/reference/periphery/NonfungiblePositionManager). Our SFPM manages complex, multi-leg Uniswap positions encoded in ERC-1155 token IDs and performs swaps allowing users to mint positions with only one type of token. Most crucially, it supports the minting of both typical LP positions where liquidity is added to Uniswap and long options positions where Uniswap liquidity is burnt.
 
 While the SFPM is enshrined as a core component of the protocol, and we consider it to be the “engine” of Panoptic, it is also a public good that we hope savvy Uniswap v3 LPs will come to see as an essential upgrade for managing their liquidity.  
 
 
 ### CollateralTracker
 
-Our [CollateralTracker](https://github.com/panoptic-labs/Panoptic/blob/main/contracts/CollateralTracker.sol) is an ERC-4626 vault where token liquidity from passive Panoptic Liquidity Providers (PLPs) and collateral for option positions are deposited. CollateralTrackers are also responsible for:
+Our [CollateralTracker](https://github.com/panoptic-labs/panoptic-v1-core/blob/main/contracts/CollateralTracker.sol) is an ERC-4626 vault where token liquidity from passive Panoptic Liquidity Providers (PLPs) and collateral for option positions are deposited. CollateralTrackers are also responsible for:
 
 Calculating collateral requirements
 Paying commission fees and options streamia
@@ -66,7 +66,7 @@ By far the most important functionality of the CollateralTracker is to calculate
 
 ### Panoptic Pool
 
-The [PanopticPool](https://github.com/panoptic-labs/Panoptic/blob/main/contracts/CollateralTracker.sol) 
+The [PanopticPool](https://github.com/panoptic-labs/panoptic-v1-core/blob/main/contracts/CollateralTracker.sol) 
 exposes the core functionality of the protocol. If the SFPM is the “engine” of Panoptic, the Panoptic Pool is the “conductor”. All interactions with the protocol, including minting, burning, rolling, liquidating, force exercising distressed accounts, or just checking position balances and accumulated streamia, originate in this contract. 
 
 The Panoptic Pool is responsible for orchestrating the required calls to the SFPM to create option positions in Uniswap. It tracks user balances and accumulates the streamia on those positions. Also, it calls the CollateralTracker with the data it needs to settle position changes. 
@@ -129,53 +129,53 @@ That completes an overview of Panoptic’s architecture. In future videos and bl
 
 Now, let’s briefly explore the rest of the codebase and learn how to mint our first Panoption!
 
-### [contracts/univ3-libraries](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/univ3-libraries)
+### [contracts/univ3-libraries](https://github.com/panoptic-labs/panoptic-v1-core/tree/main/contracts/univ3-libraries)
 
 Because Panoptic is built on top of Uniswap v3, we use several libraries from Uniswap to perform relevant calculations and interactions. All the libraries we use from Uniswap can be found in this folder. These versions of the libraries are the same time-tested ones used in Uniswap’s protocol but have been slightly modified to improve gas efficiency and compatibility with Solidity version 0.8.
 
-### [contracts/types](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/types)
+### [contracts/types](https://github.com/panoptic-labs/panoptic-v1-core/tree/main/contracts/types)
 
 Panoptic leverages several custom contract types to make code more efficient and concise. Generally, they pack multiple pieces of smaller data into 256-bit signed or unsigned integers.
 
-A [TickStateCallContext](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/types/TickStateCallContext.sol) contains a current tick, a median tick, and a caller address, and is frequently passed to the CollateralTracker from the PanopticPool — providing it with contextual information it needs to check and update collateral balances and requirements.
+A [TickStateCallContext](https://github.com/panoptic-labs/panoptic-v1-core/tree/main/contracts/types/TickStateCallContext.sol) contains a current tick, a median tick, and a caller address, and is frequently passed to the CollateralTracker from the PanopticPool — providing it with contextual information it needs to check and update collateral balances and requirements.
 
-A [LeftRight](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/types/TickStateCallContext.sol) stores two 128-bit signed or unsigned integers in a single 256-bit type. This contract type is often useful in storing data about tokens in a Uniswap v3 pool — such as a balance. Since there are two tokens in every Uniswap v3 pool, balances and other data for both of these tokens can naturally be stored in one of these containers.
+A [LeftRight](https://github.com/panoptic-labs/panoptic-v1-core/tree/main/contracts/types/TickStateCallContext.sol) stores two 128-bit signed or unsigned integers in a single 256-bit type. This contract type is often useful in storing data about tokens in a Uniswap v3 pool — such as a balance. Since there are two tokens in every Uniswap v3 pool, balances and other data for both of these tokens can naturally be stored in one of these containers.
 
-A [LiquidityChunk](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/types/LiquidityChunk.sol) is how we represent a single Uniswap v3 liquidity chunk in Panoptic. It contains a lower tick (tickLower), an upper tick (tickUpper), and a size (amount) of liquidity. Each leg in a Panoptic position corresponds to one liquidity chunk in Uniswap.
+A [LiquidityChunk](https://github.com/panoptic-labs/panoptic-v1-core/tree/main/contracts/types/LiquidityChunk.sol) is how we represent a single Uniswap v3 liquidity chunk in Panoptic. It contains a lower tick (tickLower), an upper tick (tickUpper), and a size (amount) of liquidity. Each leg in a Panoptic position corresponds to one liquidity chunk in Uniswap.
 
-The [TokenId](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/types/TokenId.sol) type defines the encoding of a position in Panoptic and the SFPM. Each time a position is minted, an ERC-1155 token ID with this type of encoding is minted by the SFPM and stored by the PanopticPool. 
+The [TokenId](https://github.com/panoptic-labs/panoptic-v1-core/tree/main/contracts/types/TokenId.sol) type defines the encoding of a position in Panoptic and the SFPM. Each time a position is minted, an ERC-1155 token ID with this type of encoding is minted by the SFPM and stored by the PanopticPool. 
 
 This token ID contains a unique 64-bit identifier that specifies what pool the position is to be minted on, as well as up to four “legs” each with the ability to specify a unique liquidity chunk. This includes whether the leg is long or short, what token should be used to mint the position, its relative size compared to other legs, and more.    
 
-### [contracts/libraries](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/libraries)
+### [contracts/libraries](https://github.com/panoptic-labs/panoptic-v1-core/tree/main/contracts/libraries)
 
 Panoptic’s contracts also make use of several libraries to help perform calculations and more.
 
-The [Errors](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/libraries/Errors.sol) library contains all custom errors used in Panoptic's core contracts.
+The [Errors](https://github.com/panoptic-labs/panoptic-v1-core/tree/main/contracts/libraries/Errors.sol) library contains all custom errors used in Panoptic's core contracts.
 
-[FeesCalc](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/libraries/FeesCalc.sol) is a utility for calculating up-to-date swap fees for a liquidity chunk. 
+[FeesCalc](https://github.com/panoptic-labs/panoptic-v1-core/tree/main/contracts/libraries/FeesCalc.sol) is a utility for calculating up-to-date swap fees for a liquidity chunk. 
 
-[InteractionHelper](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/libraries/InteractionHelper.sol) contains helpers to perform bytecode-size-heavy interactions with external contracts like batch approvals and metadata queries. 
+[InteractionHelper](https://github.com/panoptic-labs/panoptic-v1-core/tree/main/contracts/libraries/InteractionHelper.sol) contains helpers to perform bytecode-size-heavy interactions with external contracts like batch approvals and metadata queries. 
 
-[Math](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/libraries/Math.sol) is a library of generic math functions including abs() and several optimized 512-bit mulDiv functions. 
+[Math](https://github.com/panoptic-labs/panoptic-v1-core/tree/main/contracts/libraries/Math.sol) is a library of generic math functions including abs() and several optimized 512-bit mulDiv functions. 
 
-[PanopticMath](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/libraries/PanopticMath.sol) is a library containing advanced Panoptic and Uniswap-specific functionality such as our time-weighted average price (TWAP), price conversions, and position sizing math.
+[PanopticMath](https://github.com/panoptic-labs/panoptic-v1-core/tree/main/contracts/libraries/PanopticMath.sol) is a library containing advanced Panoptic and Uniswap-specific functionality such as our time-weighted average price (TWAP), price conversions, and position sizing math.
 
-[CallbackLib](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/libraries/CallbackLib.sol) helps validate Uniswap v3 mint and swap callbacks, verifying the identity and features of the calling pool.
+[CallbackLib](https://github.com/panoptic-labs/panoptic-v1-core/tree/main/contracts/libraries/CallbackLib.sol) helps validate Uniswap v3 mint and swap callbacks, verifying the identity and features of the calling pool.
 
-[SafeTransferLib](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/libraries/SafeTransferLib.sol) is a safe ERC-20 transfer library that we use for all token transfers. It gracefully handles noncompliant tokens that may be missing return values on transfers, such as USDT.
+[SafeTransferLib](https://github.com/panoptic-labs/panoptic-v1-core/tree/main/contracts/libraries/SafeTransferLib.sol) is a safe ERC-20 transfer library that we use for all token transfers. It gracefully handles noncompliant tokens that may be missing return values on transfers, such as USDT.
 
-### [contracts/tokens](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/tokens)
+### [contracts/tokens](https://github.com/panoptic-labs/panoptic-v1-core/tree/main/contracts/tokens)
 
 Several of Panoptic’s contracts are also tokens! The SFPM issues ERC-1155 tokens to represent Uniswap positions, and the CollateralTracker, being an ERC-4626 vault, issues ERC-20 tokens to represent shares of collateral. Both the SFPM and the CollateralTracker inherit from the contracts in this folder, which are minimal implementations of the relevant token standards without metadata (this is specified in the inheriting contracts).
 
-[ERC1155Minimal](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/tokens/ERC1155Minimal.sol) is a minimal implementation of the ERC-1155 standard without metadata.
+[ERC1155Minimal](https://github.com/panoptic-labs/panoptic-v1-core/tree/main/contracts/tokens/ERC1155Minimal.sol) is a minimal implementation of the ERC-1155 standard without metadata.
 
-[ERC20Minimal](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/tokens/ERC20Minimal.sol) is a minimal implementation of the ERC-20 standard without metadata.
+[ERC20Minimal](https://github.com/panoptic-labs/panoptic-v1-core/tree/main/contracts/tokens/ERC20Minimal.sol) is a minimal implementation of the ERC-20 standard without metadata.
 
-The [IERC20Partial interface](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/tokens/interfaces/IERC20Partial.sol) folder contains several functions in the ERC-20 interface we call on tokens. The `success` return value from some of the functions, such as approve, is omitted in order to ensure support for certain noncompliant tokens, such as USDT, that do not return anything.   
+The [IERC20Partial interface](https://github.com/panoptic-labs/panoptic-v1-core/tree/main/contracts/tokens/interfaces/IERC20Partial.sol) folder contains several functions in the ERC-20 interface we call on tokens. The `success` return value from some of the functions, such as approve, is omitted in order to ensure support for certain noncompliant tokens, such as USDT, that do not return anything.   
 
-### [contracts/multicall/Multicall.sol](https://github.com/panoptic-labs/Panoptic/tree/main/contracts/multicall/Multicall.sol)
+### [contracts/multicall/Multicall.sol](https://github.com/panoptic-labs/panoptic-v1-core/tree/main/contracts/multicall/Multicall.sol)
 
 Finally, this multicall contract is inherited by all of our core contracts and allows users to batch multiple calls to a contract in a single transaction by passing the calldata as an array. For example, you could use the multicall feature on PanopticPool to mint five different positions simultaneously, saving gas and time.
 
@@ -185,11 +185,12 @@ Now, let’s wrap things up by learning how to install the codebase and mint a P
 
 ### Installation
 
-Let’s install the codebase by following the instructions in the [README](https://@TODO).
+Let’s install the codebase by following the instructions in the [README](https://github.com/panoptic-labs/panoptic-v1-core/blob/main/README.md).
 
 First, clone the git repo. Make sure you remember to pass the recurse-submodules flag, since some of our dependencies are in submodules.
 ```bash
-git clone https://github.com/panoptic-labs/Panoptic.git --recurse-submodules
+git clone https://github.com/panoptic-labs/panoptic-v1-core.git --recurse-submodules
+cd panoptic-v1-core
 ```
 
 Then, install prettier and our pre-commit hooks by installing with npm. Every time you commit, your code will be linted automatically. 
@@ -390,7 +391,7 @@ Sensitive values saved to: /home/dyed/Documents/Panoptic/cache/DeployProtocol.s.
 Make sure to save the addresses of your newly deployed `SemiFungiblePositionManager` and `PanopticFactory` (shown after [contract name]@ in the output). We will need this in the next step.
 
 ### Deploying A New Panoptic Pool
-To follow along, navigate to [examples/FirstPanoption.s.sol](https://github.com/panoptic-labs/Panoptic/examples/FirstPanoption.s.sol)
+To follow along, navigate to [examples/FirstPanoption.s.sol](https://github.com/panoptic-labs/panoptic-v1-core/blob/main/examples/FirstPanoption.s.sol)
 
 You should see a template that looks a little bit like this:
 ```javascript
