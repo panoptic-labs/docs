@@ -2,11 +2,13 @@
 slug: introducing-panoptic-smart-contracts
 title: Introducing Panoptic's Smart Contracts
 tags: [Gated Launch, Smart Contracts, Technical, Dev Log, Code]
-image: /img/banners/smart-contracts-banner.png
+image: /img/research/smart-contracts-banner.png
 ---
 ![smart-contracts-banner](./smart-contracts-banner.png)
 
 In this post, we’ll delve into Panoptic and provide a comprehensive overview of our protocol’s general architecture. You’ll also learn how to install the codebase and mint your first option on Panoptic. So whether you're a seasoned developer or a retail trader, we’re certain you'll find something valuable here!
+
+<!-- truncate -->
 
 A video walkthrough is also available:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/tOfImvHouUw?si=O319Em2m4c8Gb3pD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -27,9 +29,9 @@ Panoptic takes these options strategies to the next level. We created integrated
 
 This enables several firsts in the DeFi space: 
 
-Leveraged options selling and Uniswap liquidity provision
-Leveraged options buying 
-A unique commission-based fee structure that options traders will find refreshingly familiar
+1. Leveraged options selling and Uniswap liquidity provision
+2. Leveraged options buying 
+3. A unique commission-based fee structure that options traders will find refreshingly familiar
 
 ## Tech and Licensing
 
@@ -55,12 +57,12 @@ While the SFPM is enshrined as a core component of the protocol, and we consider
 
 Our [CollateralTracker](https://github.com/panoptic-labs/panoptic-v1-core/blob/main/contracts/CollateralTracker.sol) is an ERC-4626 vault where token liquidity from passive Panoptic Liquidity Providers (PLPs) and collateral for option positions are deposited. CollateralTrackers are also responsible for:
 
-Calculating collateral requirements
-Paying commission fees and options streamia
-Handling payments of intrinsic value for options
-Distributing profit and loss 
-Calculating liquidation bonuses
-Determining costs for forcefully exercising another user’s options
+- Calculating collateral requirements
+- Paying commission fees and options streamia
+- Handling payments of intrinsic value for options
+- Distributing profit and loss 
+- Calculating liquidation bonuses
+- Determining costs for forcefully exercising another user’s options
 
 By far the most important functionality of the CollateralTracker is to calculate the collateral requirement for every account and position. Each time positions are minted, burned, or rolled in Panoptic, the CollateralTracker updates the collateral balances and provides information on the collateral requirement to ensure that the protocol remains solvent and retains the ability to liquidate distressed positions. 
 
@@ -77,9 +79,9 @@ As we’ve discussed, Panoptic contains an advanced and capital-efficient lendin
 
 Each instance of the Panoptic protocol on a Uniswap pool contains:
 
-One PanopticPool that orchestrates all interactions in the protocol
-Two CollateralTrackers, one for each constituent token0 and token1 in the Uniswap pool
-A canonical SFPM — the SFPM manages liquidity across every Panoptic Pool
+- One PanopticPool that orchestrates all interactions in the protocol
+- Two CollateralTrackers, one for each constituent token0 and token1 in the Uniswap pool
+- A canonical SFPM — the SFPM manages liquidity across every Panoptic Pool
 
 Actors within the Panoptic Ecosystem take on five primary roles:
 
