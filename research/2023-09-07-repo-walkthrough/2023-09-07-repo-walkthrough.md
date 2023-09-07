@@ -3,6 +3,7 @@ slug: introducing-panoptic-smart-contracts
 title: Introducing Panoptic's Smart Contracts
 tags: [Gated Launch, Smart Contracts, Technical, Dev Log, Code]
 image: /img/research/smart-contracts-banner.png
+description: "Deep dive into Panoptic's code and architecture. Learn how to mint your first option on Panoptic directly with our smart contracts!"
 ---
 ![smart-contracts-banner](./smart-contracts-banner.png)
 
