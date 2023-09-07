@@ -8,6 +8,9 @@ image: /img/banners/smart-contracts-banner.png
 
 In this post, we’ll delve into Panoptic and provide a comprehensive overview of our protocol’s general architecture. You’ll also learn how to install the codebase and mint your first option on Panoptic. So whether you're a seasoned developer or a retail trader, we’re certain you'll find something valuable here!
 
+A video walkthrough is also available:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tOfImvHouUw?si=O319Em2m4c8Gb3pD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## What is Panoptic?
 
 Panoptic is a decentralized and permissionless options trading protocol built on Uniswap v3. We’ve taken a new and innovative approach that allows us to adapt a novel form of perpetual options into a DeFi protocol with oracle-free settlement. Instead of relying on thin and centralized order books, Panoptic takes the form of an advanced lending market for Uniswap positions. 
