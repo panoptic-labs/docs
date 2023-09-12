@@ -397,6 +397,11 @@ Make sure to save the addresses of your newly deployed `SemiFungiblePositionMana
 To follow along, navigate to [examples/FirstPanoption.s.sol](https://github.com/panoptic-labs/panoptic-v1-core/blob/main/examples/FirstPanoption.s.sol)
 
 You should see a template that looks a little bit like this:
+
+Note that whenever you see `vm.envAddress("varName")` in the code
+ it should be left as is. This function
+reads the values from
+the environment variables that we exported earlier.
 ```javascript
 contract FirstPanoption is Script {
     using TokenId for uint256;
@@ -448,19 +453,19 @@ PanopticPool pp = PANOPTIC_FACTORY.deployNewPool({
 Now, we’ll need to approve the respective `CollateralTrackers` for the tokens we’re going to deposit. The Panoptic Pool exposes the addresses of these collateral tokens.
 
 ```javascript
-DAI.approve({spender: address(pp.collateralToken0()), amount: type(uint256).max});
-WBTC.approve({spender: address(pp.collateralToken1()), amount: type(uint256).max});
+WBTC.approve({spender: address(pp.collateralToken0()), amount: type(uint256).max});
+DAI.approve({spender: address(pp.collateralToken1()), amount: type(uint256).max});
 ```
 
 Let’s deposit 1 WBTC and 100 DAI as collateral:
 
 ```javascript
 pp.collateralToken0().deposit({
-    assets: 100 * 10 ** 18,
+    assets: 10**8,
     receiver: vm.addr(vm.envUint("DEPLOYER_PRIVATE_KEY"))
 });
 pp.collateralToken1().deposit({
-    assets: 10 ** 7,
+    assets: 100 * 10**18,
     receiver: vm.addr(vm.envUint("DEPLOYER_PRIVATE_KEY"))
 });
 ```
@@ -474,11 +479,11 @@ positionIdList[0] = uint256(0)
     .addLeg({
         legIndex: 0,
         _optionRatio: 1,
-        _asset: 0,
+        _asset: 1,
         _isLong: 0,
-        _tokenType: 0,
+        _tokenType: 1,
         _riskPartner: 0,
-        _strike: 5000,
+        _strike: -5000,
         _width: 2
     });
 ```
