@@ -33,6 +33,16 @@
   min-width: 300px;
 }
 
+@media screen and (max-width: 996px) { 
+  .blog-page-toc {
+    min-width: 0px;
+  }
+
+  .blog-page-container {
+    gap: 0px;
+  }
+}
+
 @media screen and (max-width: 767px) { 
   .blog-page-layout {
     padding-top: 16px;

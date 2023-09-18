@@ -5,7 +5,6 @@ import styles from './styles.module.css';
 export default function Tag({permalink, label, count}) {
   return (
     <Link
-      href={permalink}
       className={clsx(
         styles.tag,
         count ? styles.tagWithCount : styles.tagRegular,

@@ -1,0 +1,9 @@
+
+.pagination-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-one {
+  justify-content: end;
+}

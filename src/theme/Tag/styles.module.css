@@ -23,8 +23,8 @@ ul {
 }
 
 .tag:hover {
-  --docusaurus-tag-list-border: var(--ifm-link-color);
-  text-decoration: none;
+  color: black;
+  cursor: auto;
 }
 
 /* .tagRegular {

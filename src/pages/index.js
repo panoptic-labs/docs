@@ -21,11 +21,6 @@ export default function Home() {
     }, 1900)
   })
 
-  useEffect(() => {
-    const htmlElement = document.querySelector("html");
-    htmlElement.setAttribute("data-theme", "dark");
-  }, []);
-
   return (
     <>
       {loadingScreen && <LoadingScreen/>}

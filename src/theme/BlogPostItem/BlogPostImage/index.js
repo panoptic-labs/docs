@@ -2,14 +2,10 @@ import React from "react";
 import './BlogPostImage.css';
 import ReadingTime from "./ReadingTime";
 
-const BlogPostImage = ({imageUrl, readingTime}) => {
+const BlogPostImage = ({imageUrl = "/img/research-placeholder.png", readingTime}) => {
   return (
     <div className="blog-post-image-container">
-      {imageUrl ? (
-        <img src={imageUrl} className="blog-post-image"></img>
-      ) : (
-        <div className="blog-post-image-placeholder"/>
-      )}
+      <img src={imageUrl} className="blog-post-image"></img>
       <div className="blog-post-image-read-time">
         <ReadingTime readingTime={readingTime}/>
       </div>

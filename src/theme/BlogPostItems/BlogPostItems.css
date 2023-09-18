@@ -23,10 +23,7 @@
   text-overflow: ellipsis;
 }
 
-@media screen and (max-width: 767px) { 
-  .blog-post-items {
-    padding: 48px 16px;
-  }
+@media screen and (max-width: 1024px) { 
 
   .blog-post-row-of-2 {
     display: flex;
@@ -37,4 +34,10 @@
     display: flex;
     flex-direction: column;
   }
+}
+
+@media screen and (max-width: 767px) { 
+.blog-post-items {
+  padding: 48px 16px;
+}
 }

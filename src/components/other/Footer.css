@@ -8,7 +8,7 @@
 
 .footer-conversation-container {
   background-color: #4E14D0;
-  margin: 73px 96px;
+  margin: 73px 80px;
   display: flex;
   border-radius: 10px;
   padding: 34px 67px 48px 55px;
@@ -55,7 +55,7 @@
 }
 
 .footer__container {
-  padding: 40px 96px 60px;
+  padding: 40px 80px 60px;
   width: 100%;
   height: 100%;
   display: flex;

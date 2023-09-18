@@ -5,7 +5,6 @@ import {BlogPostProvider} from '@docusaurus/theme-common/internal';
 import BlogPostItem from '@theme/BlogPostItem';
 export default function BlogPostPaginator(props) {
   const {nextItem, prevItem} = props;
-  console.log(34, nextItem)
   return (
     <nav
       className="pagination-nav docusaurus-mt-lg"
@@ -27,13 +26,6 @@ export default function BlogPostPaginator(props) {
         />
       )}
       {nextItem && (
-        // <BlogPostProvider
-        //   key={nextItem.permalink}
-        //   content={nextItem}>
-        //   <BlogPostItem>
-        //     <nextItem />
-        //   </BlogPostItem>
-        // </BlogPostProvider>
         <PaginatorNavLink
           {...nextItem}
           subLabel={

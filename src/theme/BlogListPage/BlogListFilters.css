@@ -1,8 +1,12 @@
+.blog-list-filters-container {
+  background-color: #F3F3F3;
+}
 
 .blog-list-filters {
   display: flex;
   margin: 48px 80px 0px 80px;
   border-bottom: 2px solid #E7E7E7;
+  white-space: nowrap;
 }
 
 .filter-item {
@@ -20,4 +24,17 @@
 .filter-item-selected {
   color: #040404;
   border-bottom: 2px solid #4E14D0;
+}
+
+@media screen and (max-width: 1024px) { 
+  .blog-list-filters-container {
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 767px) { 
+  .blog-list-filters {
+    overflow: scroll;
+    margin: 48px 16px 0px 16px;
+  }
 }

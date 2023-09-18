@@ -10,6 +10,7 @@
     justify-content: center;
     transition: background-color var(--ifm-transition-fast) ease;
     background-color: var(--docusaurus-collapse-button-bg);
+    /* padding: 16px; */
   }
 
   .expandButton:hover,
@@ -19,6 +20,7 @@
 
   .expandButtonIcon {
     transform: rotate(0);
+    filter: brightness(0) saturate(100%);
   }
 
   [dir='rtl'] .expandButtonIcon {

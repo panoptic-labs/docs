@@ -1,7 +1,8 @@
 
-.blog-page-related-posts {
+.adjacent-posts {
   background-color: #F3F3F3;
-  padding: 20px 80px 48px 80px;
+  padding: 20px 0px 0px 0px;
+  cursor: pointer;
 }
 
 .related-posts-title {

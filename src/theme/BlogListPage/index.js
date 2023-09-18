@@ -34,7 +34,7 @@ function BlogListPageContent(props) {
   return (
     <BlogLayout latestBlogPost={items[0]}>
       <BlogLandingPage latestBlogPost={items[0]}/>
-      <BlogListFilters/>
+      {/* <BlogListFilters/> */}
       <BlogPostItems items={items} />
       <div className="blog-list-page-paginator">
         <BlogListPaginator metadata={metadata} />

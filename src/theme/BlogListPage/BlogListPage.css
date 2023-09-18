@@ -1,10 +1,11 @@
 
 .blog-list-page-paginator {
-  margin: 0px 80px 48px 80px;
+  padding: 0px 80px 48px 80px;
+  background-color: #F3F3F3;
 }
 
 @media screen and (max-width: 767px) { 
   .blog-list-page-paginator {
-    margin: 0px 16px 48px 16px;
+    padding: 0px 16px 48px 16px;
   }
 }

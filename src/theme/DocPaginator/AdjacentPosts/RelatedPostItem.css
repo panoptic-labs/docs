@@ -1,0 +1,22 @@
+
+.related-adjacent-post-item {
+  border: 1px solid #E7E7E7;
+  background-color: #FFF;
+  border-radius: 16px;
+  padding: 16px;
+  height: 130px;
+  width: 250px;
+}
+
+.related-post-item:hover {
+  color: #4E14D0;
+  cursor: pointer;
+}
+
+.related-post-item-sublabel {
+  padding: 0 26px;
+}
+
+.nextContainer {
+  justify-content: end;
+}

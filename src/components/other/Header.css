@@ -39,8 +39,9 @@
 }
 
 .nav__link:hover {
-  color: inherit;
+  color: black;
   text-decoration: none;
+  opacity: 0.5;
 }
 
 .right-part {

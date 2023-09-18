@@ -1,11 +1,12 @@
 import React from 'react';
-import clsx from 'clsx';
-import Button from '../../components/UIKit/Button';
+import {useBlogPost} from '@docusaurus/theme-common/internal';
+import "./RelatedPostItem.css"
 import { useHistory } from 'react-router-dom';
-import "./PaginatorNavLink.css"
+import clsx from 'clsx';
 
-export default function PaginatorNavLink(props) {
+export default function RelatedPostItem(props) {
   const {permalink, title, subLabel, isNext} = props;
+  
   const history = useHistory();
 
   const handleClick = () => {
@@ -13,15 +14,15 @@ export default function PaginatorNavLink(props) {
   };
 
   return (
-    <Button 
+    <div 
       onClick={handleClick}
       className={clsx(
-        'pagination-nav__link',
+        'related-post-item',
         isNext ? 'pagination-nav__link--next' : 'pagination-nav__link--prev',
       )}
     >
       {subLabel && 
-        <div className="pagination-nav__sublabel">{subLabel}</div>
+        <div className="related-post-item-sublabel">{subLabel}</div>
       }
       <div className="pagination-label-container">
         {!isNext && <img src={`/img/icons/read-more-arrow.svg`} alt="read-more-arrow" className="page-back-arrow"/>}
@@ -29,6 +30,6 @@ export default function PaginatorNavLink(props) {
         {isNext && <img src={`/img/icons/read-more-arrow.svg`} alt="read-more-arrow" className="page-forward-arrow"/>}
       </div>
 
-    </Button>
+    </div>
   );
 }

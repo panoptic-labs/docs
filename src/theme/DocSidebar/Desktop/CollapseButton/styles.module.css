@@ -22,6 +22,7 @@
   .collapseSidebarButtonIcon {
     transform: rotate(180deg);
     margin-top: 4px;
+    filter: brightness(0) saturate(100%);
   }
 
   [dir='rtl'] .collapseSidebarButtonIcon {
