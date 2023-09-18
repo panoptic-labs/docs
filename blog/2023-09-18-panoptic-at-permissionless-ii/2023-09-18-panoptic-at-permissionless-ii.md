@@ -1,5 +1,5 @@
 ---
-slug: panoptic-at-permissionless-ii.md
+slug: panoptic-at-permissionless-ii
 title: "Panoptic at Permissionless II"
 tags: [Conference, Perpetual Option]
 image: /img/banners/panoptic-at-permissionless.png
