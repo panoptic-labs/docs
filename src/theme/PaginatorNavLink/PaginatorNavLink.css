@@ -1,0 +1,28 @@
+
+
+.pagination-nav__link {
+  width:max-content;
+  padding: 6px 16px;
+  font-size: 24px;
+}
+
+.pagination-nav__link--next .pagination-nav__label::after {
+  content: '';
+}
+
+.pagination-nav__link--prev .pagination-nav__label::before {
+  content: '';
+}
+
+.pagination-label-container {
+  display: flex;
+}
+
+.page-back-arrow {
+  transform: rotate(180deg);
+  padding-left: 8px;
+}
+
+.page-forward-arrow {
+  padding-left: 8px;
+}

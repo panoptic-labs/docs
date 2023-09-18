@@ -1,0 +1,16 @@
+.docPage {
+  display: flex;
+  width: 100%;
+  flex: 1 0;
+  background-color: #F3F3F3;
+}
+
+.docsWrapper {
+  display: flex;
+  flex: 1 0 auto;
+}
+
+* li * {
+  color: black;
+}
+

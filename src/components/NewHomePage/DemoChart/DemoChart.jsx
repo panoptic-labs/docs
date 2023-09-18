@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip} from 'recharts';
 import "./DemoChart.css"
 
@@ -21,53 +21,117 @@ const data1 = [
   },
   {
     price: '$50',
-    y: 20,
+    y: -20,
   },
   {
     price: '$60',
-    y: 60,
+    y: -20,
   },
   {
     price: '$70',
-    y: 100,
+    y: -20,
   },
   {
     price: '$80',
+    y: -20,
+  },
+  {
+    price: '$90',
+    y: 20,
+  },
+  {
+    price: '$100',
+    y: 60,
+  },
+  {
+    price: '$110',
+    y: 100,
+  },
+  {
+    price: '$120',
     y: 140,
+  },
+  {
+    price: '$130',
+    y: 180,
+  },
+  {
+    price: '$140',
+    y: 220,
+  },
+  {
+    price: '$150',
+    y: 260,
+  },
+  {
+    price: '$160',
+    y: 300,
   },
 ];
 
 const data2 = [
   {
     price: '$10',
-    y: -110,
+    y: -270,
   },
   {
     price: '$20',
-    y: -70,
+    y: -230,
   },
   {
     price: '$30',
-    y: -30,
+    y: -190,
   },
   {
     price: '$40',
-    y: 10,
+    y: -150,
   },
   {
     price: '$50',
-    y: 10,
+    y: -110,
   },
   {
     price: '$60',
-    y: -40,
+    y: -70,
   },
   {
     price: '$70',
-    y: -40,
+    y: -30,
   },
   {
     price: '$80',
+    y: 10,
+  },
+  {
+    price: '$90',
+    y: 10,
+  },
+  {
+    price: '$100',
+    y: -40,
+  },
+  {
+    price: '$110',
+    y: -40,
+  },
+  {
+    price: '$120',
+    y: -40,
+  },
+  {
+    price: '$130',
+    y: -40,
+  },
+  {
+    price: '$140',
+    y: -40,
+  },
+  {
+    price: '$150',
+    y: -40,
+  },
+  {
+    price: '$160',
     y: -40,
   },
 ];
@@ -75,36 +139,69 @@ const data2 = [
 const data3 = [
   {
     price: '$10',
-    y: 80,
+    y: 200,
   },
   {
     price: '$20',
-    y: 50,
+    y: 170,
   },
   {
     price: '$30',
-    y: 20,
+    y: 140,
   },
   {
     price: '$40',
-    y: -10,
+    y: 110,
   },
   {
     price: '$50',
-    y: -10,
+    y: 80,
   },
   {
     price: '$60',
-    y: 20,
-  },
-  {
-    price: '$70',
     y: 50,
   },
   {
+    price: '$70',
+    y: 20,
+  },
+  {
     price: '$80',
+    y: -10,
+  },
+  {
+    price: '$90',
+    y: -10,
+  },
+  {
+    price: '$100',
+    y: 20,
+  },
+  {
+    price: '$110',
+    y: 50,
+  },
+  {
+    price: '$120',
     y: 80,
   },
+  {
+    price: '$130',
+    y: 110,
+  },
+  {
+    price: '$140',
+    y: 140,
+  },
+  {
+    price: '$150',
+    y: 170,
+  },
+  {
+    price: '$160',
+    y: 200,
+  },
+
 ];
 
 const dataOptions = {
@@ -133,8 +230,8 @@ const DemoChart = ({optionType, chartSize}) => {
 
   return (
     <AreaChart
-      width={chartSize.width} //{617}
-      height={chartSize.height} //{395}
+      width={2 * chartSize.width} //{617}
+      height={chartSize.height - 8} //{395}
       data={data}
       margin={{
         top: 0,
@@ -143,7 +240,6 @@ const DemoChart = ({optionType, chartSize}) => {
         bottom: 0
       }}
     >
-      <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="price" hide={true}/>
       <YAxis hide={true} />
       <Tooltip

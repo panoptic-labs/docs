@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Panoptic Awarded Grant from Alchemy's WAGBI Developer Program",
+    "date": "2023-08-12",
+    "image": "/img/banners/alchemy-grant-award.jpg",
+    "link": "https://panoptic.xyz/blog/panoptic-awarded-alchemy-grant",
+    "description": "Panoptic is thrilled to announce that we have been awarded a grant as part of [Alchemy's WAGBI (We're All Gonna Build It 👷🛠️) developer program](https://www. alchemy. com/developer-grant-program). The grant acknowledges our persistent endeavors in the web3 domain, and Alchemy's endorsement marks a significant",
+    "id": 1
+  },
+  {
+    "title": "Panoptic Beta Launch: Epoch 1 Participants",
+    "date": "2023-08-08",
+    "image": "/img/banners/Epoch-1-Participants.png",
+    "link": "https://panoptic.xyz/blog/epoch-1-participants",
+    "description": "We are excited to announce the selection of participants for the first epoch of our [gated, beta launch](https://panoptic. xyz/blog/gated-launch-sign-up). Our beta launch is structured as multiple epochs, or rounds, of trading competitions where participants use real assets to buy and sell DeFi-native options.",
+    "id": 2
+  },
+  {
+    "title": "Panoptic Gated Launch Parameters",
+    "date": "2023-07-28",
+    "image": "/img/banners/panoptic-gated-launch-parameters-banner.png",
+    "link": "https://panoptic.xyz/blog/gated-launch-parameters",
+    "description": "With more than 4,000 users already signed up, we’re excited by our approaching gated, beta launch. Presently our team is hard at work to ensure we do our due diligence to deliver a secure and optimized experience for all participants.  Our [beta",
+    "id": 3
+  },
+  {
+    "title": "Options Market Making in Panoptic",
+    "date": "2023-07-20",
+    "image": "/img/research/options-market-making.png",
+    "link": "https://panoptic.xyz/research/options-market-making",
+    "description": "Market making is a core component of any financial system. In Panoptic, it's a unique and critical element of our platform that empowers the future of options trading by removing intermediaries, counterparty pricing, and order books.  To fully comprehend how market making",
+    "id": 4
+  },
+  {
+    "title": "Streamia — DeFi-native Options Pricing",
+    "date": "2023-07-13",
+    "image": "/img/banners/streamia-defi-native-options-pricing.png",
+    "link": "https://panoptic.xyz/blog/streamia-defi-native-options-pricing",
+    "description": "En route to creating a transformative DeFi options protocol, Panoptic has made several industry-altering inventions including streamia, the future of DeFi options pricing. As explained in a [recent article](https://panoptic. xyz/blog/black-scholes-streamia-defi-options-pricing-models), streamia builds upon previous option pricing models to create a more secure and",
+    "id": 5
+  }
+]

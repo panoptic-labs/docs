@@ -8,7 +8,7 @@ import React from "react";
 const TitlePage = () => {
 
   const handleJoin = () => {
-    window.open("https://jcpus0zj96h.typeform.com/to/oD5JRttA");
+    window.open("https://signup.panoptic.xyz/");
   }
 
   return (
@@ -16,7 +16,7 @@ const TitlePage = () => {
       <div className="title-page-flex">
         <div className="title-page-info">
           <div className="title">
-            <div>Effortless option</div>
+            <div>Effortless options</div>
             <div>trading on any</div>
             <div>crypto asset</div>
           </div>

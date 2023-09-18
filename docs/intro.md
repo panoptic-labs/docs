@@ -6,7 +6,7 @@ sidebar_class_name: menu__list-item-collapsible
 
 # What is Panoptic?
 
-Panoptic is a perpetual, oracle-free options protocol built on the Ethereum blockchain. 
+Panoptic is the perpetual, oracle-free options protocol built on the Ethereum blockchain. 
 
 <video src="https://user-images.githubusercontent.com/62954565/223510059-8c057bc5-3957-466d-bbdd-27e2bdea02bb.mp4#t=0.55" preload="metadata" type="video/mp4" width="100%" height="auto" controls>
 </video>
@@ -32,26 +32,15 @@ The following sections will provide a brief overview of the _Panoptic protocol_.
 ---
 
 ## Resources
-
-#### Developers
-Users can access the developers docs [here](./developers/smart-contracts-overview)
-
-#### Whitepaper
-Users can access the whitepaper [here](./whitepaper.pdf)
-
-#### Security 
-Users can access details about the security audits [here](./security/audits)
+- [Linktree](https://links.panoptic.xyz/all)
+- [Developers](./developers/smart-contracts-overview)
+- [Litepaper](https://intro.panoptic.xyz/)
+- [Whitepaper](https://paper.panoptic.xyz/)
+- [Security audits](./security/audits)
 
 #### 10,000-Foot View of Panoptic and the DeFi Options Landscape
 - [Panoptic - The Most Detailed Exposition To Date](https://blog.panoptic.xyz/panoptic-483c6de77a0e)  
 - [Three Sigma: Options Series Part I - An Overview of the DeFi Options Landscape](https://threesigma.xyz/blog/defi-options-landscape)  
 - [Three Sigma: Options Series Part II - Exploring Different Pricing Approaches and Tokenomics](https://threesigma.xyz/blog/exploring-options-pricing-tokenomics)
 
-#### Quick links
-
-- [Twitter](https://twitter.com/panoptic_xyz)
-- [#ResearchBites](https://research.panoptic.xyz/)
-- [Blog](https://blog.panoptic.xyz/)
-- [Discord](https://discord.gg/7fE8SN9pRT)
-- [LinkedIn](https://www.linkedin.com/company/panoptic-xyz)
-- [Github](https://github.com/panoptic-labs/research)
+*Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://linktr.ee/panopticxyz).*

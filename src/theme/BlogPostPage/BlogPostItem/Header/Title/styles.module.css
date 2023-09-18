@@ -1,0 +1,14 @@
+.title {
+  font-size: 3rem;
+  color: black;
+  margin-bottom: 0px;
+}
+
+/**
+  Blog post title should be smaller on smaller devices
+**/
+@media (max-width: 576px) {
+  .title {
+    font-size: 2rem;
+  }
+}

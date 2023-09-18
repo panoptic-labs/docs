@@ -1,0 +1,39 @@
+.blog-post-image-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 9 / 16 * 100% = 56.25% */
+  height: 0;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.blog-post-image {
+  border-radius: 16px;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.blog-post-image-placeholder {
+  aspect-ratio: 16 / 9;
+  background-color: #FFFFFF;
+  border-radius: 16px;
+}
+
+.blog-post-image-read-time {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+
+  background-color: #FFF;
+  border-radius: 100px;
+  border: 1px solid #E7E7E7;
+  padding: 6px 14px;
+  color: black;
+
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+}

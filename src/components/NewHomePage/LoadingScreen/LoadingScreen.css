@@ -21,7 +21,7 @@ html, body {
 }
 
 .curtain-left {
-  animation: swipe-left-with-skew 1500ms linear forwards;
+  animation: swipe-left-with-skew 1900ms linear forwards;
 
   opacity: 0;
 	width: 102vw;
@@ -34,7 +34,7 @@ html, body {
 }
 
 .curtain-right-base {
-  animation: swipe-right 1500ms linear forwards;
+  animation: swipe-right 1900ms linear forwards;
 
   opacity: 0;
   width: 100vw;
@@ -46,7 +46,7 @@ html, body {
 }
 
 .curtain-right-top {
-  animation: swipe-right 1500ms linear forwards;
+  animation: swipe-right 1900ms linear forwards;
 
   opacity: 0;
   position: absolute;
@@ -124,7 +124,7 @@ html, body {
 
 @media screen and (max-width: 767px) { 
   .curtain-left {
-    animation: swipe-left 1500ms linear forwards;
+    animation: swipe-left 1900ms linear forwards;
 
     transform: none;
     position: absolute;

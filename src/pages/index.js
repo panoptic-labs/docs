@@ -14,25 +14,12 @@ import LoadingScreen from '../components/NewHomePage/LoadingScreen/LoadingScreen
 
 export default function Home() {
   const [loadingScreen, setLoadingScreen] = useState(true)
-  useEffect(() => {
-    window.onunload = () => {
-      window.scrollTo(0, 0);
-    }
-  })
 
   useEffect(() => {
     setTimeout(() => {
       setLoadingScreen(false)
-    }, 1500)
+    }, 1900)
   })
-
-  useEffect(() => {
-    document.body.style.overflowY = "hidden";
-    setTimeout(() => {
-      document.body.style.overflowY = "auto";
-    }, 2300)
-  })
-    
 
   return (
     <>

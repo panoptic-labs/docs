@@ -15,7 +15,7 @@ Launching this new research program is crucial for several reasons. First, it fo
 
 Our objective is to deliver weekly educational content on DeFi options and blockchain technology.
 
-Panoptic was [founded on research](https://lambert-guillaume.medium.com/) and continues to play a pivotal role within our organization and community. As [previously mentioned](https://www.panoptic.xyz/blog-posts/panoptic-x-simtopia), we are eager to establish collaborations with academic and business partners.
+Panoptic was [founded on research](https://lambert-guillaume.medium.com/) and continues to play a pivotal role within our organization and community. As [previously mentioned](https://panoptic.xyz/blog/simtopia-partnership-panoptic-defi-options), we are eager to establish collaborations with academic and business partners.
 
 > "Our research program will also contribute to developing our organization's skills and capacities, providing opportunities for learning and expansion. Additionally, we intend to demonstrate our dedication to continual development and thought leadership. We believe that with careful design and execution, this new research program will have a substantial and long-lasting impact on our core business and the community at large," said Jesper Kristensen, Panoptic’s COO.
 

@@ -21,3 +21,11 @@
   align-items: center;
   justify-content: center;
 }
+
+html {
+  overflow: hidden;
+}
+
+body {
+  overflow-y: scroll;
+}

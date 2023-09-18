@@ -2,10 +2,11 @@
   background-color: #F3F3F3;
   display: flex;
   justify-content: center;
+  padding-top: 80px;
 }
 
 .faq-content {
-  padding-top: 112px;
+  padding-top: 32px;
   max-width: 780px;
   width: 85%;
 }
@@ -49,6 +50,7 @@
   width: 100%;
   padding: 18px 0 4px 0px;
   margin-top: 14px;
+  cursor: pointer;
 }
 
 .first-trigger {
@@ -121,4 +123,10 @@
   padding-bottom: 18px;
   line-height: 150%;
   width: 89%;
+}
+
+@media screen and (max-width: 767px) { 
+  .faq-page {
+    padding-top: 0px;
+  }
 }

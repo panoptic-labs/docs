@@ -140,8 +140,8 @@ const config = {
         darkTheme: darkCodeTheme,
       },
       colorMode: {
-        defaultMode: 'dark',
-        disableSwitch: false,
+        defaultMode: 'light',
+        disableSwitch: true,
         respectPrefersColorScheme: false,
       },
       docs: {
@@ -165,7 +165,7 @@ const config = {
       announcementBar: {
         id: "ETH_Denver_2023",
         content:
-          "Don't miss our first-ever live product demo at ETH Denver 2023! Watch our COO's <a href=\"https://docs.panoptic.xyz/docs/faq/ask-the-founder#eth-denver-2023---the-panoptic-protocol-a-new-defi-options-paradigm\">presentation</a> 👈🏾",
+          "📢 The Panoptic gated launch sign-up list is officially open! <a href=\"https://signup.panoptic.xyz\">Sign up now</a>.",
         textColor: "#FFFFFF",
         isCloseable: true,
       },
@@ -192,6 +192,10 @@ const config = {
         // Optional: path for search page that enabled by default (`false` to disable it)
         searchPagePath: 'search',
       },
+      tableOfContents: {
+        minHeadingLevel: 2,
+        maxHeadingLevel: 5,
+      },
     }),
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -217,9 +221,9 @@ const config = {
         blog: {
           blogTitle: 'Panoptic Blog',
           blogDescription: 'All-Things DeFi Options',
-          postsPerPage: 10,
+          postsPerPage: 9,
           blogSidebarTitle: 'All posts',
-          blogSidebarCount: 'ALL',
+          blogSidebarCount: "ALL",
           showReadingTime: true,
           readingTime: ({content, frontMatter, defaultReadingTime}) =>
             defaultReadingTime({content, options: {wordsPerMinute: 300}}),
@@ -273,9 +277,9 @@ const config = {
         path: 'research',
         blogTitle: 'Research',
         blogDescription: 'DeFi Options Research',
-        postsPerPage: 10,
+        postsPerPage: 9,
         blogSidebarTitle: 'All posts',
-        blogSidebarCount: 'ALL',
+        blogSidebarCount: "ALL",
         showReadingTime: true,
         readingTime: ({content, frontMatter, defaultReadingTime}) =>
           defaultReadingTime({content, options: {wordsPerMinute: 300}}),

@@ -24,7 +24,7 @@ const Token = ({ tokenName }) => {
   const imageSrc = tokenImages[tokenName];
 
   return (
-    <div className="token">
+    <div className="token-icon">
       <img src={imageSrc} alt="token"/>
       <div className="token-name">
         {tokenName}
