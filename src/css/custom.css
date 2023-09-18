@@ -31,6 +31,8 @@
   --ifm-alert-padding-vertical: 12px;
   --doc-sidebar-width: 400px;
   --ifm-menu-link-sublist-icon: url("/img/icons/chevron-up-black.svg");
+  --ifm-spacing-horizontal: 16px;
+  --ifm-link-decoration: none;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -96,8 +98,12 @@ div[class^="announcementBar_"] .close {
 }
 
 .menu__list-item-collapsible {
-  font-weight: 600;
-  text-transform: uppercase;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.menu__list-item-collapsible * {
+  font-size: 18px;
 }
 
 .footer {
