@@ -5,7 +5,11 @@ import Header from '../../components/other/Header';
 
 export default function Navbar({purpleMode = true}) {
 
-  const currentPath = window.location.pathname;
+  let currentPath = '';
+
+  if (typeof window !== 'undefined') {
+    currentPath = window.location.pathname;
+  }
   const firstPartOfPath = currentPath.split('/')[1];
   const docsActive = firstPartOfPath === 'docs' || firstPartOfPath === 'faq'
 
