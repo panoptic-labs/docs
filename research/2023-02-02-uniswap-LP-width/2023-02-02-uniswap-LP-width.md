@@ -1,7 +1,7 @@
 ---
 slug: uniswap-lp-width
 title: Optimal LP Width in Bull/Bear Markets
-tags: [Uniswap, LP, Bull, Bear]
+tags: [LPs, Uniswap, LP, Bull, Bear]
 authors: B
 ---
 

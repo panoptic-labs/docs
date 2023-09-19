@@ -1,7 +1,7 @@
 ---
 slug: defi-option-straddle-backtest
 title: "Maximizing Profits: Long vs. Short Straddles"
-tags: [Straddle, Volatility, Capital Efficient, Backtest]
+tags: [Options Traders, Straddle, Volatility, Capital Efficient, Backtest]
 authors: B
 ---
 ### Panoptic Straddles

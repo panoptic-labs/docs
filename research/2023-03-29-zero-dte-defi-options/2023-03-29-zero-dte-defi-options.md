@@ -1,7 +1,7 @@
 ---
 slug: zero-dte-defi-options
 title: "Panoptic: Unleashing the Power of 0DTE Options"
-tags: [Strategies, 0DTE]
+tags: [Options Traders, Strategies, 0DTE]
 authors: C
 ---
 

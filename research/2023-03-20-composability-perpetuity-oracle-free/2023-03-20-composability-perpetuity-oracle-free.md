@@ -1,7 +1,7 @@
 ---
 slug: composability-perpetuity-oracle-free
 title: "Composability, Perpetuity, and Oracle-Freeness in Panoptic"
-tags: [Composable, Perpetual, Oracle-Free]
+tags: [Panoptimists, Composable, Perpetual, Oracle-Free]
 authors: C
 ---
 

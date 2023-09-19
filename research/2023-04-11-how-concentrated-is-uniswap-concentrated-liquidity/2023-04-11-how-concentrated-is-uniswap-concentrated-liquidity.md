@@ -1,7 +1,7 @@
 ---
 slug: how-concentrated-is-uniswap-concentrated-liquidity
 title: "How Concentrated is Concentrated Liquidity in Uniswap V3"
-tags: [Uniswap V3, LP, CLMM]
+tags: [LPs, Uniswap V3, LP, CLMM]
 authors: C
 ---
 

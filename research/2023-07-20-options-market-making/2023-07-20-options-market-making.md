@@ -1,7 +1,7 @@
 ---
 slug: options-market-making
 title: "Options Market Making in Panoptic"
-tags: [Market Making, Straddle, Delta Neutral, Hedge, Streamia, Perps]
+tags: [Options Traders, Market Making, Straddle, Delta Neutral, Hedge, Streamia, Perps]
 image: /img/research/options-market-making.png
 description: "How Options Market Making Works in Panoptic"
 authors: B
@@ -60,7 +60,7 @@ Panoptic is a revolutionary options trading platform that introduces perpetual o
 
   
 
-Unlike traditional market making, there is no bid or ask price on Panoptic. The protocol determines the fair price based on Uniswap’s spot trading activity, eliminating the traditional bid-ask spread and replacing it with a [liquidity spread](https://panoptic.xyz/docs/panoptic-protocol/premium#net-gross-and-owed-fees-with-spread). Liquidity spreads are determined by the ratio of buyers to sellers for each perpetual option in Panoptic. Therefore, more buyers in Panoptic translates to higher streamia for sellers.
+Unlike traditional market making, there is no bid or ask price on Panoptic. The protocol determines the fair price based on Uniswap’s spot trading activity, eliminating the traditional bid-ask spread and replacing it with a [liquidity spread](https://panoptic.xyz/docs/panoptic-protocol/streamia#net-gross-and-owed-fees-with-spread). Liquidity spreads are determined by the ratio of buyers to sellers for each perpetual option in Panoptic. Therefore, more buyers in Panoptic translates to higher streamia for sellers.
 
   
 
