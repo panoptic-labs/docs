@@ -1,7 +1,7 @@
 ---
 slug: perpetual-options-derivatives-vs-spot
 title: "The Evolution of Financial Systems: From Spot to Derivatives and Beyond"
-tags: [Perps, Perpetual Future, XPO, Perpetual Option, Spot, Derivative, NFT]
+tags: [Perps Traders, Options Traders, Perps, Perpetual Future, XPO, Perpetual Option, Spot, Derivative, NFT]
 authors: B
 ---
 

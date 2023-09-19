@@ -60,7 +60,7 @@ const Sidebar = ({ isOpenedSidebar, onClose, onToggle }) => {
             Blog
           </Link>
           <Link to="/research" className="sidebar__nav__link">
-            Research
+            Deep Dive
           </Link>
           <Link to="/docs/faq/" className="sidebar__nav__link">
             FAQ

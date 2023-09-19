@@ -1,7 +1,7 @@
 ---
 slug: defi-option-strangle-straddle
 title: "Volatility Bets - Straddles vs. Strangles"
-tags: [Straddle, Strangle, Volatility, Capital Efficient, POP]
+tags: [Options Traders, Straddle, Strangle, Volatility, Capital Efficient, POP]
 authors: B
 ---
 ### Straddles vs. Strangles

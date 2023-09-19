@@ -1,7 +1,7 @@
 ---
 slug: panoptic-awarded-alchemy-grant
 title: "Panoptic Awarded Grant from Alchemy's WAGBI Developer Program"
-tags: [Grant]
+tags: [Panoptimists, Grant]
 image: /img/banners/alchemy-grant-award.jpg
 description: "Panoptic awarded grant from Alchemy's WAGBI (We're All Gonna Build It) developer program"
 ---

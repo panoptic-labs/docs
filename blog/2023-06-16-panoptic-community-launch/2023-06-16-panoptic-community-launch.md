@@ -1,7 +1,7 @@
 ---
 slug: panoptic-community-launch
 title: "Welcome to the Panoptic Community"
-tags: [Resource, Community]
+tags: [Panoptimists, Resource, Community]
 image: /img/banners/panoptic_community_launch_banner.png
 description: "Join the future of DeFi options trading"
 ---

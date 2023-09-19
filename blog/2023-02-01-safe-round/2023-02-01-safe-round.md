@@ -1,7 +1,7 @@
 ---
 slug: defi-options-protocol-safe-round
 title: Panoptic Raises $4.5M SAFE Round
-tags: [Funding, Raise, SAFE]
+tags: [Panoptimists, Funding, Raise, SAFE]
 date: 2023-02-01T00:00
 image: /img/banners/panoptic-safe-round-banner-02-01-2023.jpg
 ---

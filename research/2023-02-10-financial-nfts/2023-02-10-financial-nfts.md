@@ -1,7 +1,7 @@
 ---
 slug: reasons-bullish-financial-nfts
 title: "8 Reasons to Be Bullish on Financial NFTs"
-tags: [NFT]
+tags: [Panoptimists, LPs, NFT]
 authors: G
 ---
 ![img-1](./img-1.jpg)

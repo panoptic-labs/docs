@@ -1,7 +1,7 @@
 ---
 slug: defi-option-straddle-101
 title: "Options Trading 101: Straddles"
-tags: [Straddle, Volatility, Capital Efficient]
+tags: [Options Traders, Straddle, Volatility, Capital Efficient]
 authors: B
 ---
 ### Straddles 🤸🏽‍♂️

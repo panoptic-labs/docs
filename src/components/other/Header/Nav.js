@@ -18,7 +18,7 @@ const Nav = ({purpleMode = false}) => {
         Blog
       </Link>
       <Link to="/research" className={clsx("nav__link", {"white-text": purpleMode})}>
-        Research
+        Deep Dive
       </Link>
       <Link to="/docs/faq/" className={clsx("nav__link", {"white-text": purpleMode})}>
         FAQ
