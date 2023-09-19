@@ -21,6 +21,7 @@
 
 .header__logo img {
   display: inherit;
+  width: 144px;
   margin-right: 42px;
 }
 
