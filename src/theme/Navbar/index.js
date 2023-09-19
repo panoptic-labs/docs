@@ -16,7 +16,7 @@ export default function Navbar({purpleMode = true}) {
   const Search = () => {
     return (
       <NavbarSearch>
-        {docsActive && <SearchBar />}
+        <SearchBar />
       </NavbarSearch>
     )
   }
@@ -24,7 +24,7 @@ export default function Navbar({purpleMode = true}) {
 
   return (
     <Header purpleMode={purpleMode}>
-      <Search/>
+      {docsActive && <Search/>}
     </Header>
   );
 }
