@@ -1,7 +1,7 @@
 ---
 slug: essential-options-strategies-to-know
 title: '18 Options Strategies Every Trader Should Know (With Emojis)'
-tags: [Options, Put, Call, Straddle, Strangle, Jade Lizard, Spread, Iron Condor]
+tags: [Options Traders, Options, Put, Call, Straddle, Strangle, Jade Lizard, Spread, Iron Condor]
 authors: B
 ---
 ![img-1](./img-1.jpg)

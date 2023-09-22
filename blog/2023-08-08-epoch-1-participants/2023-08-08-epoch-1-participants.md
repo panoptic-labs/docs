@@ -1,7 +1,7 @@
 ---
 slug: epoch-1-participants
 title: "Panoptic Beta Launch: Epoch 1 Participants"
-tags: [Gated Launch, Epoch 1]
+tags: [Panoptimists, Gated Launch, Epoch 1]
 image: /img/banners/Epoch-1-Participants.png
 description: "Participants selected for Epoch 1"
 ---

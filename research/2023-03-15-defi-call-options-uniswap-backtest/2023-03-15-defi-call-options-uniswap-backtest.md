@@ -1,7 +1,7 @@
 ---
 slug: defi-call-options-uniswap-backtest
 title: 'Maximizing Profits: Buying ETH Call Options on Uniswap'
-tags: [Uniswap, Call, Backtest]
+tags: [LPs, Options Traders, Uniswap, Call, Backtest]
 authors: B
 ---
 HODL vs. LP vs. Calls — which one's best?

@@ -34,7 +34,7 @@ Funds can be deposited into Panoptic pools at any ratio.
 />
 
 Panoptic Liquidity Providers (PLPs) will provide liquidity to the Panoptic smart contract by depositing assets into the option pool in the form of a single type.
-They will receive an ERC20 receipt for their deposited liquidity, and their portion of collateral inside the Panoptic pool will be tracked using a shares model.
+They will receive [ERC-20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) shares for their deposited liquidity, and their portion of collateral inside the Panoptic pool will be tracked using a shares model from the [ERC-4626](https://ethereum.org/en/developers/docs/standards/tokens/erc-4626/) standard.
 
 The role of PLPs in Panoptic differs somewhat from that of LPs in Uni v3. The net goal of PLPs is *not* to deploy liquidity within a specific range of a Uni v3 pool.
 Rather, PLPs generate yield by providing liquidity that can be borrowed and relocated to a Uni v3 pool by options sellers for a fixed commission fee.
@@ -116,7 +116,10 @@ Once again, a similar process happens when buying a call at say 2000: the user w
 
 ## Liquidators
 Ensure the health of the protocol by liquidating accounts whose collateral balance falls below the margin requirements.
-Liquidators will receive a bonus proportional to the amount of funds necessary to cover the distressed positions. 
+Liquidators will receive a [bonus](https://panoptic.xyz/docs/panoptic-protocol/liquidations#liquidation-bonus) proportional to:
+1. The amount of funds necessary to cover the distressed positions
+2. The distance between the strike and the current price
+3. The in-the-money amount (intrinsic value)
 
 **Typical users**: Pro-tail, Market makers, MEV seekers.
 

@@ -2,7 +2,7 @@
 slug: retail-prefers-2x-over-125x-leverage
 title: "Reality Check: Retail Prefers 2x over 125x Leverage"
 image: /img/research/max-leverage.png
-tags: [Perps, Perpetual Future, Leverage]
+tags: [Perps Traders, Perps, Perpetual Future, Leverage]
 authors: B
 ---
 ![meme.png](./meme.png)

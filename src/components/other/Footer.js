@@ -6,7 +6,7 @@ import useResponsive from "../../hooks/useResponsive";
 function Copyright() {
   return <div>
     <div className="logo-part__copyright">
-      Copyright © {new Date().getFullYear()} Axicon Labs Inc. All Rights Reserved. Panoptic™ is a trademark of Axicon Labs Inc. All other trademarks and registered trademarks are the sole property of their respective owners.
+      Copyright © {new Date().getFullYear()} Axicon Labs Limited. All Rights Reserved. Panoptic™ is a trademark of Axicon Labs Inc. All other trademarks and registered trademarks are the sole property of their respective owners.
     </div>
     <div className="policy-container">
     </div>
@@ -79,11 +79,8 @@ const Footer = () => {
               <a className="more-part__link" target="_blank" href="https://github.com/panoptic-labs">
                 Github <i className="icon__external-link" />
               </a>
-              <a className="more-part__link" target="_blank" href="https://research.panoptic.xyz/">
-                Research <i className="icon__external-link" />
-              </a>
-              <a className="more-part__link" target="_blank" href="https://blog.panoptic.xyz/">
-                Blog <i className="icon__external-link" />
+              <a className="more-part__link" target="_blank" href="https://brand.panoptic.xyz/">
+                Brand Kit <i className="icon__external-link" />
               </a>
             </div>
           </div>

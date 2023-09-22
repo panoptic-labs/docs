@@ -1,7 +1,7 @@
 ---
 slug: loan-shark-with-put-call-parity
 title: "The 'Father of Options': How Illicit Moneylending via Put-Call Parity Made a Millionaire"
-tags: [Put Call Parity, Bonds, Interest Rate, Put, Call]
+tags: [Options Traders, Put Call Parity, Bonds, Interest Rate, Put, Call]
 authors: B
 ---
 ![img-1](./img-1.jpg)

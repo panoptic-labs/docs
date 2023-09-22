@@ -45,6 +45,9 @@ Jesper holds a Ph.D. in Applied Physics and Computer Science from Cornell Univer
 
 ## Podcasts
 
+- How Panoptic is Taking DeFi Options To The Next Level
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BqC9vZVj2jE?si=nJX70lRi8sU2bMWh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 - [Deal Flow - Decentralized Revolution: Exploring Panoptic, Novel Options Protocol](https://twitter.com/i/spaces/1MYGNgjYwDZJw?s=20) 
 
 - Foot Guns - Uniswap and Panoptic Options
