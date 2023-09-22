@@ -10,9 +10,7 @@ export default function MDXDetails(props) {
   const children = <>{items.filter((item) => item !== summary)}</>;
   return (
     <div>
-      HERRRO
     <Details {...props} summary={summary}>
-      hello
       {children}
     </Details>
     </div>

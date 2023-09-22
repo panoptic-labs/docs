@@ -4,6 +4,7 @@
   height: 0;
   overflow: hidden;
   border-radius: 16px;
+  cursor: pointer;
 }
 
 .blog-post-image {
