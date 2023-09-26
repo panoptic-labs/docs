@@ -10,13 +10,25 @@ const BlogLandingPage = ({latestBlogPost}) => {
   const metadata = latestBlogPost.content?.metadata
   const imageUrl = metadata.frontMatter?.image;
   const readingTime = metadata.readingTime
+
+  let currentPath = '';
+
+  if (typeof window !== 'undefined') {
+    currentPath = window.location.pathname;
+  }
+  const firstPartOfPath = currentPath.split('/')[1];
+  const researchActive = firstPartOfPath === 'research'
+
   return (
     <div className="blog-landing-page">
       <div className="blog-title">
-        Panoptic Blog
+        {researchActive ? `Panoptic Deep Dive` : `Panoptic Blog`}
       </div>
       <div className="blog-subtitle">
-        Discover the latest product features, cutting-edge technology, solutions, and news on our blog!
+        {researchActive ? 
+          `Explore the latest research on perpetual options and all things DeFi.` : 
+          `Discover the latest product features, cutting-edge technology, solutions, and news on our blog!`
+        }
       </div>
       <BlogPostProvider
         key={metadata.permalink}
