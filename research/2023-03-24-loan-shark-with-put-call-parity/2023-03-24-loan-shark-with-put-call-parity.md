@@ -1,6 +1,8 @@
 ---
 slug: loan-shark-with-put-call-parity
 title: "The 'Father of Options': How Illicit Moneylending via Put-Call Parity Made a Millionaire"
+image: /img/research/loan-shark-with-put-call-parity.jpg
+description: "The fascinating story of how Russell Sage leveraged put-call parity to become a millionaire, and how put-call-LP parity revolutionizes DeFi options"
 tags: [Options Traders, Put Call Parity, Bonds, Interest Rate, Put, Call]
 authors: B
 ---

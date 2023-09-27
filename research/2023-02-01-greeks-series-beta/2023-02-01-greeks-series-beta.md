@@ -1,6 +1,8 @@
 ---
 slug: greeks-series-beta
 title: "Understanding Financial Greeks: Beta"
+image: /img/research/greeks-series-beta.png
+description: "How to compute and use beta to hedge your portfolio."
 tags: [Options Traders, Greeks, Beta]
 authors: C
 ---

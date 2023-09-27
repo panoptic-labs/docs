@@ -1,6 +1,8 @@
 ---
 slug: uniswap-lp-calculate-price-range
 title: How to Calculate your Price Range on Uniswap v3
+image: /img/research/uniswap-lp-calculate-price-range.png
+description: "What is the width of an LP position? We explain."
 tags: [LPs, Uniswap, Uniswap v3, LP, Range]
 authors: B
 ---

@@ -3,7 +3,7 @@ slug: demystifying-IL-LVR-JIT-MEV
 title: "Demystifying IL, LVR, JIT, and MEV"
 tags: [LPs, Options Traders, IL, LVR, JIT, MEV, Gamma, Delta, 0DTE]
 image: /img/research/demystifying-IL-LVR-JIT-MEV.jpg
-description: "Demystifying impermanent loss, loss versus rebalancing, just in time liquidity, and maximal extractable value through the lens of Uniswap LPing as options selling"
+description: "Demystifying impermanent loss, loss versus rebalancing, just in time liquidity, and maximal extractable value through the lens of Uniswap LPing as options selling."
 authors: G
 ---
 

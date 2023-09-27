@@ -1,6 +1,8 @@
 ---
 slug: stay-in-range-uniswap-v3
 title: "LP Profits: Staying 'In Range' on Uniswap v3"
+image: /img/research/stay-in-range-uniswap-v3.png
+description: "How long does price remain within a given range on Uniswap?"
 tags: [LPs, Uniswap, In Range, LP]
 authors: G
 ---

@@ -1,6 +1,8 @@
 ---
 slug: streamia-panoptic-pricing-perpetual-options
 title: "Streamia: How Panoptic Prices Perpetual Options"
+image: /img/research/streamia-panoptic-pricing-perpetual-options.png
+description: "Streamia (Streaming + Premia) aims to make options trading more accessible, capital efficient, and secure."
 tags: [LPs, Perps Traders, Options Traders, Uniswap V3, Streaming Premia, Streamia]
 authors: C
 ---

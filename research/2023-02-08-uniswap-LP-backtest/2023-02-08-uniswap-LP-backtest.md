@@ -1,6 +1,8 @@
 ---
 slug: uniswap-lp-backtest
 title: 'Maximizing Profits on Uniswap V3: 21 Popular Pools LPed'
+image: /img/research/uniswap-lp-backtest.png
+description: "We simulated LP performance for 21 popular Uni V3 pools. The results will surprise you."
 tags: [LPs, Uniswap, LP, Backtest]
 authors: B
 ---

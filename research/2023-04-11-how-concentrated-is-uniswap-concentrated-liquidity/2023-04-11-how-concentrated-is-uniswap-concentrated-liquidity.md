@@ -1,6 +1,8 @@
 ---
 slug: how-concentrated-is-uniswap-concentrated-liquidity
 title: "How Concentrated is Concentrated Liquidity in Uniswap V3"
+image: /img/research/how-concentrated-is-uniswap-concentrated-liquidity.png
+description: "The pareto principle applies to Uniswap, too."
 tags: [LPs, Uniswap V3, LP, CLMM]
 authors: C
 ---

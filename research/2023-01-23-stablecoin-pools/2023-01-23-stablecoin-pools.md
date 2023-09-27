@@ -1,6 +1,8 @@
 ---
 slug: stablecoin-pools
 title: Stablepools Are Boring? You're Wrong.
+image: /img/research/stablecoin-pools.png
+description: "When stablecoins aren't stable..."
 tags: [LPs, Stablecoins, GBM]
 authors: C
 ---

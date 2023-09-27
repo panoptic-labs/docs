@@ -1,6 +1,8 @@
 ---
 slug: retail-options-volume
 title: "How Much Options Trading Volume Is Retail?"
+image: /img/research/retail-options-volume.png
+description: "You'd be surprised."
 tags: [Options Traders, Retail]
 authors: C
 ---
