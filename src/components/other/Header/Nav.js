@@ -1,6 +1,5 @@
 import React from "react";
 import clsx from "clsx";
-import Link from "@docusaurus/Link";
 import "./Nav.css"
 import { useHistory } from 'react-router-dom';
 

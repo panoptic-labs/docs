@@ -1,5 +1,4 @@
 import React from 'react';
-import {useBlogPost} from '@docusaurus/theme-common/internal';
 import "./BlogPostRelatedPosts.css"
 import Translate, {translate} from '@docusaurus/Translate';
 import RelatedPostItem from './RelatedPostItem';
