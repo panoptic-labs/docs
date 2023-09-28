@@ -20,11 +20,11 @@ ul {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  cursor: pointer;;
 }
 
 .tag:hover {
   color: black;
-  cursor: auto;
 }
 
 /* .tagRegular {

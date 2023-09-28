@@ -7,8 +7,8 @@ export default function BlogPostItems({
   component: BlogPostItemComponent = BlogPostItem,
 }) {
 
-  const rowOf2 = items.slice(1, 3)
-  const rowsOf3 = items.slice(3)
+  const rowOf2 = items.slice(0, 2)
+  const rowsOf3 = items.slice(2)
 
   return (
     <div className="blog-post-items">

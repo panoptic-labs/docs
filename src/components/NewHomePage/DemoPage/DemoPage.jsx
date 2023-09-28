@@ -114,7 +114,7 @@ const DemoPage = () => {
             <div className="text-purple">performance.</div>
           </div>
           <div className="demo-details">
-            Immerse yourself in a thrilling financial revolution powered by our integration with <PillText>Uniswap v3</PillText> - the largest of Ethereum-based decentralized exchanges. Embrace complete autonomy with the ability to seamlessly swap assets and options, fully liquid, like never before.                  
+            Immerse yourself in a thrilling financial revolution powered by our integration with <PillText>Uniswap v3</PillText> - the largest Ethereum-based decentralized exchange. Embrace complete autonomy with the ability to seamlessly swap assets and options, fully liquid, like never before.                  
           </div>
           <div className="hovering-arrow-container">
             <img src={`/img/new-home-page/hovering-arrow.svg`} alt="hovering-arrow" className="hovering-arrow"/>
