@@ -65,13 +65,13 @@ function BlogTagsPostsPageContent({tag, items, sidebar, listMetadata}) {
       <header className="tag-posts-header">
         <h1>{title}</h1>
 
-        <Link href={GetAllPostsPath()}>
+        <div onClick={GetAllPostsPath}>
           <Translate
             id="theme.tags.tagsPageLink"
             description="The label of the link targeting the tag list page">
             View All Posts
           </Translate>
-        </Link>
+        </div>
       </header>
       <BlogPostItems items={items} />
       <BlogListPaginator metadata={listMetadata} />
