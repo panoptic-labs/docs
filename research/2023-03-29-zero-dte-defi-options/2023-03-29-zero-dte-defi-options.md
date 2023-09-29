@@ -1,7 +1,9 @@
 ---
 slug: zero-dte-defi-options
 title: "Panoptic: Unleashing the Power of 0DTE Options"
-tags: [Strategies, 0DTE]
+image: /img/research/zero-dte-defi-options.png
+description: "One of the most intriguing aspects of Panoptic is its ability to facilitate 0DTE (zero days to expiry) strategies, which we'll explore in this blog post."
+tags: [Options Traders, Strategies, 0DTE]
 authors: C
 ---
 

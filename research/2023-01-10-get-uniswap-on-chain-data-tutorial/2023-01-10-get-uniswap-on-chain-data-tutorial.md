@@ -1,7 +1,9 @@
 ---
 slug: get-uniswap-on-chain-data-tutorial
 title: Pulling Uniswap V3 On-Chain Swap Data
-tags: [Uniswap, Data, Tutorial]
+image: /img/research/get-uniswap-on-chain-data-tutorial.png
+description: "Here's how you can pull on-chain data to DYOR."
+tags: [LPs, Uniswap, Data, Tutorial]
 authors: C
 ---
 Have you ever wondered how to obtain historical Uni V3 data? 🧵

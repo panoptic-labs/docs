@@ -2,7 +2,8 @@
 slug: perpetual-futures-vs-options
 title: "Expirationless Options (XPOs) – Will They Replace Perps In Crypto?"
 image: /img/research/perpetual-futures-vs-options.png
-tags: [Perps, Perpetual Future, XPO, Perpetual Option, Panoption]
+description: "Perpetual options are the next big thing - here's why."
+tags: [Perps Traders, Options Traders, Perps, Perpetual Future, XPO, Perpetual Option, Panoption]
 authors: B
 ---
 

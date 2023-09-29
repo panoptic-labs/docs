@@ -1,7 +1,9 @@
 ---
 slug: stay-in-range-uniswap-v3
 title: "LP Profits: Staying 'In Range' on Uniswap v3"
-tags: [Uniswap, In Range, LP]
+image: /img/research/stay-in-range-uniswap-v3.png
+description: "How long does price remain within a given range on Uniswap?"
+tags: [LPs, Uniswap, In Range, LP]
 authors: G
 ---
 Liquidity provider positions in UniV3 only collect fees when the price is within that position's range. How long does the price remain within a given range? Let's find out! (Caution: contains math 🤓)

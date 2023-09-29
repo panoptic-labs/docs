@@ -1,7 +1,9 @@
 ---
 slug: why-options-will-overtake-defi
 title: "Why Options Will Overtake DeFi"
-tags: [Retail]
+image: /img/research/why-options-will-overtake-defi.png
+description: "With the increasing trend of retail options trading in TradFi, it's only a matter of time before retail options sweeps into DeFi."
+tags: [Options Traders, Retail]
 authors: C
 ---
 ![img-1](./img-1.png)

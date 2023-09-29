@@ -6,8 +6,8 @@ import "./Nav.css"
 const Nav = ({purpleMode = false}) => {
 
   const iconPath = purpleMode ? 
-    "/img/new-home-page/external-link-arrow-white.svg" : 
-    "/img/new-home-page/external-link-arrow.svg"
+  "/img/new-home-page/external-link-arrow-white.svg" : 
+  "/img/new-home-page/external-link-arrow.svg"
 
   return (
     <nav className="header__nav">
@@ -18,7 +18,7 @@ const Nav = ({purpleMode = false}) => {
         Blog
       </Link>
       <Link to="/research" className={clsx("nav__link", {"white-text": purpleMode})}>
-        Research
+        Deep Dive
       </Link>
       <Link to="/docs/faq/" className={clsx("nav__link", {"white-text": purpleMode})}>
         FAQ

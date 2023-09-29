@@ -1,7 +1,9 @@
 ---
 slug: whale-watching-uniswap-lps
 title: "Whale Watching - Uniswap v3 LPs"
-tags: [Uniswap v3, LP, Whales]
+image: /img/research/whale-watching-uniswap-lps.jpeg
+description: "WE take a closer look at whale behavior in Uniswap v3, examine the top 5 positions in popular pools, and explore how this information can be valuable for other investors."
+tags: [LPs, Uniswap v3, LP, Whales]
 authors: C
 ---
 ![img-1](./im1.jpeg)

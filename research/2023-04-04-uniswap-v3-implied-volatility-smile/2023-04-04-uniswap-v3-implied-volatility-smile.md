@@ -1,7 +1,9 @@
 ---
 slug: uniswap-v3-implied-volatility-smile
 title: "Implied Volatility and Volatility Smile in Uni v3"
-tags: [Uniswap V3, CLMM, LP]
+image: /img/research/uniswap-v3-implied-volatility-smile.png
+description: "Implied volatility and volatility smile are two concepts that underlie how the market prices options and perceives risk. In this post, we'll explore what they are, how they work, and what their role is in Panoptions."
+tags: [LPs, Options Traders, Uniswap V3, CLMM, LP]
 authors: C
 ---
 

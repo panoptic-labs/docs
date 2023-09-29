@@ -1,7 +1,7 @@
 ---
 slug: democratizing-defi-options-research-backtest
 title: "Democratizing DeFi Research Part III: Deep Dive into Backtesting Panoptions"
-tags: [Research, GitHub, Open Source, Backtest]
+tags: [LPs, Options Traders, Research, GitHub, Open Source, Backtest]
 image: /img/banners/banner-democratizing-research-part-3-backtest.jpg
 ---
 ![banner-democratizing-research-part-3-backtest.jpg](./banner-democratizing-research-part-3-backtest.jpg)

@@ -1,7 +1,10 @@
 ---
 slug: defi-advantages-over-traditional-finance
 title: "8 Advantages of DeFi over TradFi"
-tags: [DeFi, TradFi, Retail]
+tags: [Panoptimists, Options Traders, DeFi, TradFi, Retail]
+image: /img/research/defi-advantages-over-traditional-finance.png
+description: "How does retail option trading in TradFi compare to DeFi?"
+
 authors: C
 ---
 ![img-1](./img-1.png)

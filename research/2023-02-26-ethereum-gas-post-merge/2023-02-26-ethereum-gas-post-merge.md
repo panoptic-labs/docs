@@ -1,7 +1,9 @@
 ---
 slug: ethereum-gas-post-merge
 title: "How 'The Merge' Impacted Ethereum's Gas Fee Market"
-tags: [Ethereum, Gas, Merge]
+image: /img/research/ethereum-gas-post-merge.webp
+description: "Examining how The Merge impacted Ethereum's gas fee market."
+tags: [Panoptimists, Ethereum, Gas, Merge]
 authors: C
 ---
 We will examine how The Merge impacted Ethereum's gas fee market.

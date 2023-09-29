@@ -1,7 +1,9 @@
 ---
 slug: concentrated-liquidity-options
 title: "8 Reasons Why Concentrated Liquidity (and Panoptic) is the FUTURE"
-tags: [CLMM, Uniswap, Capital Efficient]
+image: /img/research/concentrated-liquidity-options.png
+description: "Uniswap v3's business license expired, sparking a massive wave of interest in Concentrated Liquidity Market Makers (CLMM). Here's why concentrated liquidity is here to stay."
+tags: [LPs, CLMM, Uniswap, Capital Efficient]
 authors: B
 ---
 ![img-1](./img-1.gif)

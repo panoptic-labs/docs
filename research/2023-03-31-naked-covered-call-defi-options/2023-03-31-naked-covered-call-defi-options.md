@@ -1,7 +1,9 @@
 ---
 slug: naked-covered-call-defi-options
 title: "Maximizing Profits: Naked Calls vs. Covered Calls"
-tags: [Call, Naked Call, Covered Call, Backtest]
+image: /img/research/naked-covered-call-defi-options.png
+description: "If you're looking for a way to earn extra income, selling call options can be a powerful strategy. But beware: selling naked calls can be risky. Here's what you need to know."
+tags: [LPs, Options Traders, Call, Naked Call, Covered Call, Backtest]
 authors: B
 ---
 

@@ -1,7 +1,9 @@
 ---
 slug: defi-put-options-uniswap-backtest
 title: 'Maximizing Profits: Buying Put Options on 16 Uniswap Pools'
-tags: [Uniswap, Put, Backtest]
+image: /img/research/defi-put-options-uniswap-backtest.png
+description: "What if users could SHORT LP tokens and effectively BUY options...?"
+tags: [LPs, Options Traders, Uniswap, Put, Backtest]
 authors: B
 ---
 ![img-1](./img-1.png)

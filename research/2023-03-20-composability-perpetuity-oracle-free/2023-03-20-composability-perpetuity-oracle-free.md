@@ -1,7 +1,9 @@
 ---
 slug: composability-perpetuity-oracle-free
 title: "Composability, Perpetuity, and Oracle-Freeness in Panoptic"
-tags: [Composable, Perpetual, Oracle-Free]
+image: /img/research/composability-perpetuity-oracle-free.png
+description: "Panoptic is a completely DeFi-native options protocol."
+tags: [Panoptimists, Composable, Perpetual, Oracle-Free]
 authors: C
 ---
 

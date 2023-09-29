@@ -58,7 +58,7 @@ Panoptic harnesses Uniswap's liquidity to enhance the user experience for option
 No.
 </details>
 
-<details id="how-does-the-impending-release-ofuniswap-v4-affect-panoptic">
+<details id="how-does-the-impending-release-of-uniswap-v4-affect-panoptic">
 <summary>How does the impending release of Uniswap v4 affect Panoptic?</summary>
 We are very excited for Uniswap's remarkable achievement! With Uniswap v4, Panoptic is set for an exciting journey:
 <br /><br />
@@ -96,7 +96,7 @@ Options trading doesn't have to be complicated. At Panoptic, we've created a <a 
 
 <details id="how-do-perpetual-options-compare-to-perpetual-futures">
 <summary>How do Perpetual Options Compare to Perpetual Futures ("Perps")?</summary>
-Perpetual options and perpetual futures are non-expiring financial instruments. Panoptic's perpetual options provides option-like payoffs that are priced through <a href="https://panoptic.xyz/docs/panoptic-protocol/premium">streamia</a> (streaming premia), while perpetual futures offer long/short payoffs that are priced via a <a href="https://panoptic.xyz/docs/trading/perpetual-options#how-do-perpetual-options-compare-to-perpetual-futures-perps">funding rate</a>.
+Perpetual options and perpetual futures are non-expiring financial instruments. Panoptic's perpetual options provides option-like payoffs that are priced through <a href="https://panoptic.xyz/docs/panoptic-protocol/streamia">streamia</a> (streaming premia), while perpetual futures offer long/short payoffs that are priced via a <a href="https://panoptic.xyz/docs/trading/perpetual-options#how-do-perpetual-options-compare-to-perpetual-futures-perps">funding rate</a>.
 <br /><br />
 While perpetual futures often offer more leverage, perpetual options offer more <a href="https://twitter.com/Panoptic_xyz/status/1661114864386068480?s=20">flexibility</a> including:<br />
 1) No liquidation risk from single-wick fluctuations<br />
@@ -154,7 +154,7 @@ Yes.
 
 <details id="why-should-i-sell-an-option-on-Panoptic">
 <summary>Why should I sell an option on Panoptic when I can just LP directly on Uniswap?</summary>
-Selling an option on Panoptic has the same before-fees payoff as LPing on Uniswap. However, selling an option on Panoptic earns a premium (paid by the option buyer) that is strictly greater than the swap fees earned by an LP position due to the <a href="https://panoptic.xyz/docs/panoptic-protocol/premium#net-gross-and-owed-fees-with-spread">liquidity spread</a> and improved gas efficiency.
+Selling an option on Panoptic has the same before-fees payoff as LPing on Uniswap. However, selling an option on Panoptic earns a premium (paid by the option buyer) that is strictly greater than the swap fees earned by an LP position due to the <a href="https://panoptic.xyz/docs/panoptic-protocol/streamia#net-gross-and-owed-fees-with-spread">liquidity spread</a> and improved gas efficiency.
 </details>
 
 <details id="uniswap-lps-are-losing-money">
@@ -204,14 +204,14 @@ This is the fee to mint an option. When an option seller or buyer opens their po
 
 <details id="how-is-the-streamia-calculated">
 <summary>How is the streaming premia (streamia) calculated?</summary>
-The <a href="https://panoptic.xyz/docs/panoptic-protocol/premium">streamia</a> is equal to the amount of swap fees the borrowed LP position would have earned in the Uniswap pool, plus an additional <a href="https://panoptic.xyz/docs/panoptic-protocol/premium#net-gross-and-owed-fees-with-spread">liquidity spread</a>.  
+The <a href="https://panoptic.xyz/docs/panoptic-protocol/streamia">streamia</a> is equal to the amount of swap fees the borrowed LP position would have earned in the Uniswap pool, plus an additional <a href="https://panoptic.xyz/docs/panoptic-protocol/streamia#net-gross-and-owed-fees-with-spread">liquidity spread</a>.  
 <br /><br />
 Example: Alice sells an out-of-the-money (OTM) ETH-USDC put Panoption, with strike = 1000 and width = ±10%. Bob buys the OTM put Panoption from Alice for 0 upfront premium. If the ETH-USDC price moves between 909 and 1100, the option is “in range” and would have earned swap fees from the Uniswap pool. If the ETH-USDC price is above 1100 or below 909, the option is “out of range” and would not have earned any swap fees. Bob owes the total amount of accumulated swap fees to Alice as premium.
 </details>
 
 <details id="what-is-the-liquidity-spread">
 <summary>What is the "liquidity spread"</summary>
-The <a href="https://panoptic.xyz/docs/panoptic-protocol/premium#net-gross-and-owed-fees-with-spread">liquidity spread</a> is a floating rate paid by options buyers to options sellers, and is determined by the utilization ratio of each set of options. The spread prevents someone from buying all of the available options for sell.
+The <a href="https://panoptic.xyz/docs/panoptic-protocol/streamia#net-gross-and-owed-fees-with-spread">liquidity spread</a> is a floating rate paid by options buyers to options sellers, and is determined by the utilization ratio of each set of options. The spread prevents someone from buying all of the available options for sell.
 <br /><br />
 The spread is given by the formula 0.25 * buy/(sell-buy).
 <br /><br />
@@ -224,7 +224,7 @@ For buyers, it is costly to purchase all available options. For sellers, it is p
 
 <details id="has-a-streamia-been-used-in-practice-before">
 <summary>Has a streaming premia (streamia) been used in practice before?</summary>
-No, Panoptic is a pioneer in introducing <a href="https://panoptic.xyz/docs/panoptic-protocol/premium">streamia</a> for options. While similar pricing mechanisms exist such as the <a href="https://panoptic.xyz/docs/trading/perpetual-options#how-do-perpetual-options-compare-to-perpetual-futures-perps">funding rate</a> in perpetual futures (perps), Panoptic's streamia is unique and innovative.
+No, Panoptic is a pioneer in introducing <a href="https://panoptic.xyz/docs/panoptic-protocol/streamia">streamia</a> for options. While similar pricing mechanisms exist such as the <a href="https://panoptic.xyz/docs/trading/perpetual-options#how-do-perpetual-options-compare-to-perpetual-futures-perps">funding rate</a> in perpetual futures (perps), Panoptic's streamia is unique and innovative.
 </details>
 
 <details id="how-can-i-manage-risks-associated-with-streamia">

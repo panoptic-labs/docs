@@ -66,6 +66,22 @@
   height: 19px;
 }
 
+.app-coming-soon-button {
+  padding: 8px 16px;
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  border-radius: 100px;
+  border: 1px solid #AC91EA;
+  background: #FFF;
+  color: #4E14D0;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
 @media (max-width: 767px) {
   .header {
     padding: 16px;

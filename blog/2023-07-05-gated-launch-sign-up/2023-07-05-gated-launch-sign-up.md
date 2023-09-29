@@ -1,7 +1,7 @@
 ---
 slug: gated-launch-sign-up
 title: "The Panoptic Gated Launch: Sign-Up"
-tags: [Gated Launch]
+tags: [Panoptimists, LPs, Perps Traders, Options Traders, Gated Launch]
 image: /img/banners/gated-launch-sign-up.png
 description: "Sign Up for the Panoptic Gated Launch"
 ---
@@ -44,7 +44,7 @@ Our gated launch will contain several epochs, or rounds, of trading competitions
 
 ### **Start Date**
 
-\[Update: we’ve taken some extra time to make sure we’re not rushing through any part of the platform’s development process. Our [target launch date](https://panoptic.xyz/blog/gated-launch-parameters) is now in August.\]
+\[Update: we’ve taken some extra time to make sure we’re not rushing through any part of the platform’s development process. Our [target launch date](https://panoptic.xyz/blog/gated-launch-parameters) is now in October.\]
 
 Currently, we’re on track to begin our gated launch at the end of July 2023. However, unforeseen delays can occur when developing a new product.
 

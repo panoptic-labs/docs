@@ -1,7 +1,9 @@
 ---
 slug: low-volatility-panoptic-insights
 title: "Panoptic Insights: Betting on Volatility"
-tags: [Volatility, Backtest]
+image: /img/research/low-volatility-panoptic-insights.png
+description: "We analyze how straddles perform when volatility is low."
+tags: [Options Traders, Volatility, Backtest]
 authors: B
 ---
 ![img-1](./img-1.png)

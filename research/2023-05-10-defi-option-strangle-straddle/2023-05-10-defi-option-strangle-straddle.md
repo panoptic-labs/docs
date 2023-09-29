@@ -1,7 +1,9 @@
 ---
 slug: defi-option-strangle-straddle
 title: "Volatility Bets - Straddles vs. Strangles"
-tags: [Straddle, Strangle, Volatility, Capital Efficient, POP]
+image: /img/research/defi-option-strangle-straddle.jpg
+description: "Straddles and strangles are options strategies that let you bet on volatility. Here's how they differ."
+tags: [Options Traders, Straddle, Strangle, Volatility, Capital Efficient, POP]
 authors: B
 ---
 ### Straddles vs. Strangles
