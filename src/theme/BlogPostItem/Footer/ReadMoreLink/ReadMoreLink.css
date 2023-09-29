@@ -2,6 +2,7 @@
 .read-more-link {
   display: flex;
   margin: 8px;
+  cursor: pointer;
 
 }
 
