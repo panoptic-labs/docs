@@ -1,6 +1,6 @@
 import React from 'react';
 import Translate, {translate} from '@docusaurus/Translate';
-import Link from '@docusaurus/Link';
+import { useHistory } from 'react-router-dom';
 import clsx from 'clsx';
 import "./ReadMoreLink.css"
 function ReadMoreLabel({whiteText = false}) {
@@ -16,6 +16,7 @@ function ReadMoreLabel({whiteText = false}) {
 }
 export default function BlogPostItemFooterReadMoreLink(props) {
   const {blogPostTitle, whiteText, to, ...linkProps} = props;
+  const history = useHistory();
 
   const handleClick = (permalink) => {
     history.push(permalink);
