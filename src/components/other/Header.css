@@ -4,7 +4,11 @@
   background: #f3f3f3;
   z-index: 20;
   align-items: center;
-  padding: 16px 96px 16px;
+  padding: 16px 80px 16px;
+}
+
+.navbar {
+  box-shadow: none;
 }
 
 .purple-background {
@@ -17,6 +21,7 @@
 
 .header__logo img {
   display: inherit;
+  width: 144px;
   margin-right: 42px;
 }
 
@@ -35,8 +40,30 @@
 }
 
 .nav__link:hover {
-  color: inherit;
+  color: black;
   text-decoration: none;
+  opacity: 0.5;
+}
+
+.right-part {
+  align-items: center;
+}
+
+.app-coming-soon-button {
+  padding: 8px 16px;
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  border-radius: 100px;
+  border: 1px solid #AC91EA;
+  background: #FFF;
+  color: #4E14D0;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  height: 19px;
 }
 
 .app-coming-soon-button {
@@ -57,6 +84,6 @@
 
 @media (max-width: 767px) {
   .header {
-    padding: 16px 38px 16px;
+    padding: 16px;
   }
 }

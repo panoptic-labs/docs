@@ -6,17 +6,19 @@
 .demo-flex {
   display: flex;
   justify-content: space-between;
-  padding: 0 96px;
+  padding: 0 80px;
 }
 
 .demo-text {
   padding-top: 168px;
+  color: #F3F3F3;
 }
 
 .demo-title {
   font-size: 64px;
   font-weight: 800;
   line-height: 110%;
+  color: #F3F3F3;
 }
 
 .demo-subtitle {
@@ -24,6 +26,7 @@
   font-weight: 700;
   line-height: 120%;
   padding-top: 1px;
+  color: #F3F3F3;
 }
 
 .demo-details {
@@ -33,6 +36,7 @@
   padding-top: 15px;
   width: 490px;
   max-width: 100%;
+  color: #F3F3F3;
 }
 
 .text-green {
@@ -81,6 +85,7 @@
   line-height: 44px;
   margin-bottom: 14px;
   white-space: nowrap;
+  color: #F3F3F3;
 }
 
 .demo-interactive-body {
@@ -88,7 +93,7 @@
   background-color: #F3F3F3;
   border-radius: 12px;
   width: 45vw;
-  aspect-ratio: 1;
+  height: 50vh;
   max-width: 617px;
 }
 
@@ -116,6 +121,7 @@
   align-items: center;
   max-width: 622px;
   line-height: 130%;
+  color: #F3F3F3;
 }
 
 .demo-interactive-details-left {
@@ -235,7 +241,7 @@
   right: 20px;
   font-size: 20px;
   font-weight: 500;
-  bottom: 30px;
+  bottom: 20px;
 }
 
 .demo-greyed-out {
@@ -333,6 +339,12 @@
 .video-text {
   font-weight: 700;
   font-size: 36px;
+
+  position: absolute;
+  left: auto;
+  right: auto;
+  top: calc(50% - 180px);
+  color: #F3F3F3;
 }
 
 .play-button {
@@ -343,11 +355,19 @@
   border: 3px solid #F3F3F3;
   backdrop-filter: blur(4px);
   text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: #F3F3F3;
+
+  position: absolute;
+  left: auto;
+  right: auto;
+  top: calc(50% - 90px);
+
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px;
-  font-weight: 600;
+
   cursor: pointer;
 }
 
@@ -401,11 +421,6 @@
     display: none;
   } 
 
-  .play-button {
-    width: 100px;
-    height: 100px;
-  }
-
   .play-button:hover {
     transform: scale(1.05);
   }
@@ -418,10 +433,17 @@
 
   .video-text {
     font-size: 24px;
+    top: calc(50% - 120px);
   }
 
   .play-button:hover {
     transform: scale(1.05);
+  }
+
+  .play-button {
+    width: 120px;
+    height: 120px;
+    top: calc(50% - 50px);
   }
 
   .demo-details {

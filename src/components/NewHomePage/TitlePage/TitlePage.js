@@ -23,15 +23,15 @@ const TitlePage = () => {
           <div className="subtitles">
             <div>
               <img src={CheckMark} alt="Checkmark" className="checkmark"/>
-              <span className="subtitle">Oracle-free</span>
+              <span className="subtitle">Any Token</span>
             </div>
             <div>
               <img src={CheckMark} alt="Checkmark" className="checkmark"/>
-              <span className="subtitle">Permissionless</span>
+              <span className="subtitle">Any Strike</span>
             </div>
             <div>
               <img src={CheckMark} alt="Checkmark" className="checkmark"/>
-              <span className="subtitle">No Liquidity Fragmentation</span>
+              <span className="subtitle">Any Size</span>
             </div>
           </div>
           <Button className="join-button" onClick={handleJoin}>

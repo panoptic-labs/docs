@@ -3,7 +3,7 @@ import NavbarSearch from '@theme/Navbar/Search';
 import SearchBar from '@theme/SearchBar';
 import Header from '../../components/other/Header';
 
-export default function Navbar() {
+export default function Navbar({purpleMode = true}) {
 
   const Search = () => {
     return (
@@ -13,9 +13,8 @@ export default function Navbar() {
     )
   }
 
-
   return (
-    <Header purpleMode={true}>
+    <Header purpleMode={purpleMode}>
       <Search/>
     </Header>
   );

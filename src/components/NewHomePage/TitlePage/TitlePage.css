@@ -37,7 +37,7 @@
 }
 
 .title-page-info {
-  margin-left: 96px;
+  margin-left: 80px;
 }
 
 .title {
@@ -51,7 +51,7 @@
 
 .subtitles {
   font-family: Inter;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 500;
   margin-bottom: 46px;
   line-height: 120%;
@@ -60,6 +60,7 @@
 
 .checkmark {
   margin-right: 5px;
+  width: 18px;
 }
 
 .app-screenshot {
@@ -134,6 +135,12 @@
 
   .with-background {
     background-position: bottom left;
+  }
+}
+
+@media screen and (max-width: 650px) { 
+  .title {
+    font-size: 72px;
   }
 }
 

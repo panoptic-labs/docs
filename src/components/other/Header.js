@@ -20,7 +20,7 @@ const Header = ({purpleMode = false, children}) => {
     setOpenedSidebar(false);
   };
 
-  const logoPath = purpleMode ? `/img/logo-dark.svg` : `/img/logo-mono.svg`;
+  const logoPath = purpleMode ? `/img/logo-mono-white.svg` : `/img/logo-mono.svg`;
 
   const showAppComingSoonButton = loadedWidth && (!is1200 || !children) && !isTabletWidth
 
@@ -35,7 +35,10 @@ const Header = ({purpleMode = false, children}) => {
           {children}
           {loadedWidth && isTabletWidth && (
             <div className="mobile-button" onClick={handleToggle}>
-              <i className="icon__burger right-part__icon" />
+              { purpleMode
+                ? <i className="icon__burger right-part__icon" />
+                : <img src={"/img/burger-purple.svg"}/>  
+              }
             </div>
           )}
           {showAppComingSoonButton && (

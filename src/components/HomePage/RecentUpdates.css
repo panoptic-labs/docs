@@ -3,7 +3,7 @@
 }
 
 .recent-updates__container {
-  padding: 42px 96px 77px 96px;
+  padding: 42px 80px 77px 80px;
   max-width: 1441px;
   width: 100%;
   margin: 0 auto;
@@ -62,18 +62,16 @@
   background-color: #4E14D0;
 }
 
-.recent-updates__cards {
-  margin: 0 -20px;
-}
-
 .recent-updates__card {
   display: inline-block;
   flex-direction: column;
   justify-content: space-between;
-  width: 320px;
   padding: 0 20px;
   cursor: pointer;
   padding: 5px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 a:hover {
@@ -89,17 +87,22 @@ a:hover {
 
 .recent-updates__card__content {
   height: 366px;
+  width: fit-content;
+  margin: auto;
 }
 
 .recent-updates__card_top {
   display: flex;
   flex-direction: column;
-  width: 320px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .recent-updates__card_bottom {
   display: flex;
   justify-content: space-between;
+  width: fit-content;
 }
 
 .recent-updates__card__title {

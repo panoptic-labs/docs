@@ -81,8 +81,7 @@ const RecentUpdates = () => {
                         {post.description}
                       </p>
                     </div>
-                  </div>
-                  <div className="recent-updates__card_bottom">
+                    <div className="recent-updates__card_bottom">
                       <PillText grey={true}>
                         <span className="recent-updates__card__date">
                           {new Intl.DateTimeFormat("en-US", {
@@ -95,7 +94,8 @@ const RecentUpdates = () => {
                         </span>
                       </PillText>
                     </div>
-                  </a>
+                  </div>
+                </a>
               </div>
             ))}
           </Slider>

@@ -12,7 +12,7 @@ Panoptic is thrilled to announce that we have been awarded a grant as part of [A
 
 <!-- truncate -->
 
-# About Alchemy
+## About Alchemy
 
 Alchemy is a premier blockchain development platform, providing tools for software developers to build apps for blockchains.
 
@@ -28,7 +28,7 @@ The company’s mission is to leverage massively scalable infrastructure, AI, an
 
 With a team rich in experience from tech giants like Google, Microsoft, and Facebook, and endorsements from Stanford University, Coinbase, and key industry leaders, Alchemy powers innovation across 197 countries and facilitates billions in transactions globally.
 
-# About Panoptic
+## About Panoptic
 
 Panoptic is building the future of DeFi options by developing a seamless protocol that will allow anyone to permissionlessly trade options on any crypto token with no expiration date.
 

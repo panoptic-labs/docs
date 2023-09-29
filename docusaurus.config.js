@@ -140,8 +140,8 @@ const config = {
         darkTheme: darkCodeTheme,
       },
       colorMode: {
-        defaultMode: 'dark',
-        disableSwitch: false,
+        defaultMode: 'light',
+        disableSwitch: true,
         respectPrefersColorScheme: false,
       },
       docs: {
@@ -192,6 +192,10 @@ const config = {
         // Optional: path for search page that enabled by default (`false` to disable it)
         searchPagePath: 'search',
       },
+      tableOfContents: {
+        minHeadingLevel: 2,
+        maxHeadingLevel: 5,
+      },
     }),
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -217,9 +221,9 @@ const config = {
         blog: {
           blogTitle: 'Panoptic Blog',
           blogDescription: 'All-Things DeFi Options',
-          postsPerPage: 10,
+          postsPerPage: 9,
           blogSidebarTitle: 'All posts',
-          blogSidebarCount: 'ALL',
+          blogSidebarCount: "ALL",
           showReadingTime: true,
           readingTime: ({content, frontMatter, defaultReadingTime}) =>
             defaultReadingTime({content, options: {wordsPerMinute: 300}}),
@@ -273,9 +277,9 @@ const config = {
         path: 'research',
         blogTitle: 'Research',
         blogDescription: 'DeFi Options Research',
-        postsPerPage: 10,
+        postsPerPage: 9,
         blogSidebarTitle: 'All posts',
-        blogSidebarCount: 'ALL',
+        blogSidebarCount: "ALL",
         showReadingTime: true,
         readingTime: ({content, frontMatter, defaultReadingTime}) =>
           defaultReadingTime({content, options: {wordsPerMinute: 300}}),

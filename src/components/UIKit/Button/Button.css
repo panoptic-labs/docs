@@ -1,0 +1,31 @@
+.uikit-button {
+  padding: 8px 32px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  line-height: 100%;
+
+  color: black;
+  border-radius: 100px;
+  border: 1px solid #E7E7E7;
+  background: #FFF;
+}
+
+.uikit-button:hover:not([disabled]) {
+  border: 1px solid #4E14D0;
+  background: #4E14D0;
+  color: #FFF;
+}
+
+.uikit-button:active:not([disabled]) {
+  border: 1px solid #3D10A1;
+  background: #3D10A1;
+  color: #FFF;
+}
+
+.uikit-button:disabled,
+.uikit-button[disabled]{
+  border: 1px solid #E7E7E7;
+  background: #E7E7E7;
+  color: #393B43;
+  cursor: auto;
+}

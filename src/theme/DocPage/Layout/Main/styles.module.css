@@ -1,0 +1,35 @@
+.docMainContainer {
+  display: flex;
+  width: 100%;
+}
+
+@media (min-width: 997px) {
+  .docMainContainer {
+    flex-grow: 1;
+    max-width: calc(100% - var(--doc-sidebar-width));
+  }
+
+  .docMainContainerEnhanced {
+    max-width: calc(100% - var(--doc-sidebar-hidden-width));
+  }
+
+  .docItemWrapperEnhanced {
+    max-width: calc(
+      var(--ifm-container-width) + var(--doc-sidebar-width)
+    ) !important;
+  }
+}
+
+blockquote {
+  color: black;
+  border-left: 2px solid #4E14D0;
+  padding: 0 16px;
+}
+
+h3, h4 {
+  display: flex;
+}
+
+* .breadcrumbs * {
+  columns: black;
+}

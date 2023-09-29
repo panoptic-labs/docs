@@ -1,5 +1,6 @@
 .nav__link {
   display: flex;
+  cursor: pointer;
 }
 
 .external-link-arrow {
@@ -10,5 +11,5 @@
 }
 
 .white-text {
-  color: #FFF;
+  color: #FFF !important;
 }

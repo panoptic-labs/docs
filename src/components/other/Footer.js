@@ -1,9 +1,7 @@
-import React, { useCallback } from "react";
-import Link from '@docusaurus/Link'
+import React from "react";
 
 import "./Footer.css";
 import useResponsive from "../../hooks/useResponsive";
-import Button from "./Button";
 
 function Copyright() {
   return <div>
@@ -50,7 +48,7 @@ const Footer = () => {
             src="/img/logo-dark.svg"
             alt="footer logo"
           />
-          {!isMobileWidth && <Copyright />}
+          <Copyright />
         </div>
         <div className="footer__container__learn-part">
           <div className="learn-part__title">Learn</div>
@@ -87,7 +85,6 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        {isMobileWidth && <Copyright />}
         <p className="footer__container__description-part">
           The content provided is for informational and educational purposes
           only and is not intended as, nor should it be construed as, financial,
