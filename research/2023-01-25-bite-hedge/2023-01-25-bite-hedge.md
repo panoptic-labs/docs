@@ -1,6 +1,8 @@
 ---
 slug: hedge-with-panoptic-options
 title: How to hedge ANYTHING (including Uni v3 LP positions) with options
+image: /img/research/hedge-with-panoptic-options.png
+description: "Learn how to hedge with options."
 tags: [LPs, Hedge, LP, Put, Strangle]
 authors: B
 ---

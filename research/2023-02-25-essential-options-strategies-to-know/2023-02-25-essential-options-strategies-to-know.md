@@ -1,6 +1,8 @@
 ---
 slug: essential-options-strategies-to-know
 title: '18 Options Strategies Every Trader Should Know (With Emojis)'
+image: /img/research/essential-options-strategies-to-know.jpg
+description: "Every trader should know how to create these 18 options strategies in Panoptic for any crypto asset, any strike, any size."
 tags: [Options Traders, Options, Put, Call, Straddle, Strangle, Jade Lizard, Spread, Iron Condor]
 authors: B
 ---

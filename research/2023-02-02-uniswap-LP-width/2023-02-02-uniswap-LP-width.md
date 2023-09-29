@@ -1,6 +1,8 @@
 ---
 slug: uniswap-lp-width
 title: Optimal LP Width in Bull/Bear Markets
+image: /img/research/uniswap-lp-width.png
+description: "We analyzed LP performance on the ETH-USDC 0.3% pool. The results will surprise you."
 tags: [LPs, Uniswap, LP, Bull, Bear]
 authors: B
 ---

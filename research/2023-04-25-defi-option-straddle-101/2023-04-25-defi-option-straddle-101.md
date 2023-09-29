@@ -1,6 +1,8 @@
 ---
 slug: defi-option-straddle-101
 title: "Options Trading 101: Straddles"
+image: /img/research/defi-option-straddle-101.jpg
+description: "Did you know that you can profit from the price moving both up AND down? Here's how."
 tags: [Options Traders, Straddle, Volatility, Capital Efficient]
 authors: B
 ---

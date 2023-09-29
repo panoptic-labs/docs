@@ -1,6 +1,8 @@
 ---
 slug: forward-testing-monte-carlo
 title: "Forward Testing with Monte Carlo"
+image: /img/research/forward-testing-monte-carlo.jpg
+description: "How to simulate the future price of ETH."
 tags: [Panoptimists, Options Traders, Perps Traders, LPs, Simulation, Monte Carlo]
 authors: C
 ---

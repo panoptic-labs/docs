@@ -1,6 +1,8 @@
 ---
 slug: understanding-the-greeks-series
 title: "Understanding The Greeks of Options Trading"
+image: /img/research/understanding-the-greeks-series.png
+description: "Breaking down Delta, Gamma, Theta, Vega, & Rho and how they can help you make more informed decisions when trading Panoptions."
 tags: [Options Traders, Greeks]
 authors: C
 ---

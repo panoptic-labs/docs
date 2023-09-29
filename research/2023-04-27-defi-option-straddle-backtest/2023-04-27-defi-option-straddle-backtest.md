@@ -1,6 +1,8 @@
 ---
 slug: defi-option-straddle-backtest
 title: "Maximizing Profits: Long vs. Short Straddles"
+image: /img/research/defi-option-straddle-backtest.jpg
+description: "We backtest straddles on Uniswap v3."
 tags: [Options Traders, Straddle, Volatility, Capital Efficient, Backtest]
 authors: B
 ---

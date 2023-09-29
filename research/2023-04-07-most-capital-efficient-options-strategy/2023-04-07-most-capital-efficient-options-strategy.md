@@ -1,6 +1,8 @@
 ---
 slug: most-capital-efficient-options-strategy
 title: "What's the Most Capital Efficient Options Selling Strategy?"
+image: /img/research/most-capital-efficient-options-strategy.png
+description: "Maximizing your potential returns with minimal capital? It's not magic, it's capital efficiency!"
 tags: [Options Traders, Covered Call, Naked Call, PMCC, Straddle]
 authors: B
 ---

@@ -1,6 +1,8 @@
 ---
 slug: defi-call-options-uniswap-backtest
 title: 'Maximizing Profits: Buying ETH Call Options on Uniswap'
+image: /img/research/defi-call-options-uniswap-backtest.png
+description: "How DeFi call options perform against HODLing."
 tags: [LPs, Options Traders, Uniswap, Call, Backtest]
 authors: B
 ---
