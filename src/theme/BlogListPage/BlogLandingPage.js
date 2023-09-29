@@ -19,6 +19,8 @@ const BlogLandingPage = ({latestBlogPost}) => {
   const firstPartOfPath = currentPath.split('/')[1];
   const researchActive = firstPartOfPath === 'research'
 
+  const pageOne = !/\/page\/[2-9][0-9]*$/.test(currentPath);
+
   return (
     <div className="blog-landing-page">
       <div className="blog-title">
@@ -42,9 +44,9 @@ const BlogLandingPage = ({latestBlogPost}) => {
             />
           </div>
           <div className="landing-page-blog-details">
-            <div className="featured-tag-container">
+            {pageOne && <div className="featured-tag-container">
               <span className="featured-tag">Featured</span>
-            </div>
+            </div>}
             <BlogPostDetails whiteText={true}/>
           </div>
         </div>
