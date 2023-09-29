@@ -15,9 +15,16 @@ function ReadMoreLabel({whiteText = false}) {
   );
 }
 export default function BlogPostItemFooterReadMoreLink(props) {
-  const {blogPostTitle, whiteText, ...linkProps} = props;
+  const {blogPostTitle, whiteText, to, ...linkProps} = props;
+
+  const handleClick = (permalink) => {
+    history.push(permalink);
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  };
+
   return (
-    <Link
+    <div
       aria-label={translate(
         {
           message: 'Read more about {title}',
@@ -28,6 +35,7 @@ export default function BlogPostItemFooterReadMoreLink(props) {
         {title: blogPostTitle},
       )}
       className="read-more-link"
+      onClick={() => handleClick(to)}
       {...linkProps}>
       <div className="read-more-button">
         <ReadMoreLabel whiteText={whiteText}/>
@@ -38,6 +46,6 @@ export default function BlogPostItemFooterReadMoreLink(props) {
           <img src={`/img/icons/read-more-arrow.svg`} alt="read-more-arrow" className="read-more-arrow"/>
         }
       </div>
-    </Link>
+    </div>
   );
 }
