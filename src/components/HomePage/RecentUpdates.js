@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import PillText from "../NewHomePage/PillText/PillText";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ReactMarkdown from "react-markdown";
 import recentUpdates from '../../../recentUpdates.json';
 
 import "./RecentUpdates.css";
@@ -78,7 +79,7 @@ const RecentUpdates = () => {
                       />
                       <div className="recent-updates__card__title">{post.title}</div>
                       <p className="recent-updates__card__excerpt">
-                        {post.description}
+                        <ReactMarkdown>{post.description}</ReactMarkdown>
                       </p>
                     </div>
                     <div className="recent-updates__card_bottom">
