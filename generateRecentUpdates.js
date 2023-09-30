@@ -94,7 +94,7 @@ function getShortDescription(file) {
   const withoutIframes = withoutImages.replace(/<iframe[^>]*>[^<]*<\/iframe>/g, '');
   const withoutComments = withoutIframes.replace(/<!--[\s\S]*?-->/g, '');
   const withoutNewLines = withoutComments.replace(/^\s+|\n/g, '');
-  const withSpacesAfterPeriods = withoutNewLines.replace(/\.(?! )/g, '. ');
+  const withSpacesAfterPeriods = withoutNewLines.replace(/\.([A-Z]|$)/g, '. $1');
   const words = withSpacesAfterPeriods.split(' ');
   const shortWords = words.slice(0, 43);
   return shortWords.join(' ');

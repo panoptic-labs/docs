@@ -1,42 +1,42 @@
 [
   {
-    "title": "Panoptic Awarded Grant from Alchemy's WAGBI Developer Program",
-    "date": "2023-08-12",
-    "image": "/img/banners/alchemy-grant-award.jpg",
-    "link": "https://panoptic.xyz/blog/panoptic-awarded-alchemy-grant",
-    "description": "Panoptic is thrilled to announce that we have been awarded a grant as part of [Alchemy's WAGBI (We're All Gonna Build It 👷🛠️) developer program](https://www.alchemy.com/developer-grant-program). The grant acknowledges our persistent endeavors in the web3 domain, and Alchemy's endorsement marks a significant",
+    "title": "Panoptic at Permissionless II",
+    "date": "2023-09-18",
+    "image": "/img/banners/panoptic-at-permissionless.png",
+    "link": "https://panoptic.xyz/blog/panoptic-at-permissionless-ii",
+    "description": "It's Monday in Austin, Texas. The heat is sweltering in triple digit humidity, but not inside the Austin Convention Center where over 5,000 crypto connoisseurs, hobbyists, and professionals will meet. The second [Permissionless](https://twitter. com/Permissionless) conference, hosted by [Blockworks](https://twitter. com/Blockworks_), brings together some of",
     "id": 1
   },
   {
-    "title": "Panoptic Beta Launch: Epoch 1 Participants",
-    "date": "2023-08-08",
-    "image": "/img/banners/Epoch-1-Participants.png",
-    "link": "https://panoptic.xyz/blog/epoch-1-participants",
-    "description": "We are excited to announce the selection of participants for the first epoch of our [gated, beta launch](https://panoptic.xyz/blog/gated-launch-sign-up). Our beta launch is structured as multiple epochs, or rounds, of trading competitions where participants use real assets to buy and sell DeFi-native options.",
+    "title": "Panoptic Insights: September Newsletter",
+    "date": "2023-09-15",
+    "image": "/img/banners/panoptic-newsletter-blog.png",
+    "link": "https://panoptic.xyz/blog/panoptic-september-2023-newsletter",
+    "description": "Welcome Panoptimists to the first edition of the Panoptic Newsletter where we provide industry insights, research recaps, and Panoptic-specific content to keep you updated on our DeFi-native options platform. If you’re interested in having future newsletters sent directly to your email, [sign up",
     "id": 2
   },
   {
-    "title": "Panoptic Gated Launch Parameters",
-    "date": "2023-07-28",
-    "image": "/img/banners/panoptic-gated-launch-parameters-banner.png",
-    "link": "https://panoptic.xyz/blog/gated-launch-parameters",
-    "description": "With more than 4,000 users already signed up, we’re excited by our approaching gated, beta launch. Presently our team is hard at work to ensure we do our due diligence to deliver a secure and optimized experience for all participants.  Our [beta",
+    "title": "Panoptic Releases Smart Contract Code",
+    "date": "2023-09-07",
+    "image": "/img/banners/smart-contracts-public-release.png",
+    "link": "https://panoptic.xyz/blog/panoptic-releases-smart-contract-code",
+    "description": "Today marks a significant milestone in Panoptic's ongoing mission to revolutionize DeFi options as we publicly release our smart contract code. This major [milestone](https://panoptic. xyz/docs/gated-launch/launch-roadmap) underscores our commitment to transparency, security, and community involvement.    Can’t wait to explore our code?",
     "id": 3
   },
   {
-    "title": "Options Market Making in Panoptic",
-    "date": "2023-07-20",
-    "image": "/img/research/options-market-making.png",
-    "link": "https://panoptic.xyz/research/options-market-making",
-    "description": "Market making is a core component of any financial system. In Panoptic, it's a unique and critical element of our platform that empowers the future of options trading by removing intermediaries, counterparty pricing, and order books.  To fully comprehend how market making",
+    "title": "Introducing Panoptic's Smart Contracts",
+    "date": "2023-09-07",
+    "image": "/img/research/smart-contracts-banner.png",
+    "link": "https://panoptic.xyz/research/introducing-panoptic-smart-contracts",
+    "description": "In this post, we’ll delve into Panoptic and provide a comprehensive overview of our protocol’s general architecture. You’ll also learn how to install the [codebase](https://github. com/panoptic-labs/panoptic-v1-core) and mint your first option on Panoptic. So whether you're a seasoned developer or a retail trader,",
     "id": 4
   },
   {
-    "title": "Streamia — DeFi-native Options Pricing",
-    "date": "2023-07-13",
-    "image": "/img/banners/streamia-defi-native-options-pricing.png",
-    "link": "https://panoptic.xyz/blog/streamia-defi-native-options-pricing",
-    "description": "En route to creating a transformative DeFi options protocol, Panoptic has made several industry-altering inventions including streamia, the future of DeFi options pricing. As explained in a [recent article](https://panoptic. xyz/blog/black-scholes-streamia-defi-options-pricing-models), streamia builds upon previous option pricing models to create a more secure and",
+    "title": "Panoptic Options Trading Strategies Series: Part II — The Covered Call and Active Position Management",
+    "date": "2023-08-21",
+    "image": "/img/research/panoption-trading-strategies-covered-call-rolling.png",
+    "link": "https://panoptic.xyz/research/panoption-trading-strategies-covered-call-rolling",
+    "description": "In Part II of the [series](https://panoptic. xyz/research/panoption-trading-strategies-the-basics), we will cover two main parts:1.  Explaining what the covered call strategy is2.  Explaining what actively managing your options position and what “rolling options” mean## The Covered Call—Why?Let’s say you own 1 ETH. Let’s",
     "id": 5
   }
 ]
