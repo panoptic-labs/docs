@@ -82,7 +82,6 @@ a:hover {
 }
 
 .recent-updates__card {
-  border-radius: 50px;
   overflow: hidden;
   transition: transform 300ms ease, box-shadow 600ms 60ms ease, border-radius 600ms ease;
 }
