@@ -17,7 +17,6 @@
 }
 
 .recent-updates__card__image {
-  width: 320px;
   height: 180px;
   border-radius: 12px;
 }
@@ -78,15 +77,22 @@ a:hover {
   text-decoration: none;
 }
 
-.recent-updates__card:hover  .recent-updates__card__image{
-  transform: scale(1.05);
-  cursor: pointer;
+.recent-updates__card__image {
+  object-fit: contain; /* or 'contain' depending on your needs */
+}
+
+.recent-updates__card {
   border-radius: 50px;
+  overflow: hidden;
   transition: transform 300ms ease, box-shadow 600ms 60ms ease, border-radius 600ms ease;
 }
 
+.recent-updates__card:hover {
+  transform: scale(1.05);
+}
+
 .recent-updates__card__content {
-  height: 366px;
+  height: 400px;
   width: fit-content;
   margin: auto;
 }
