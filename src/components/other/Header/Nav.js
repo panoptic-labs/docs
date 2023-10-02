@@ -8,10 +8,15 @@ const Nav = ({purpleMode = false}) => {
   const history = useHistory();
 
   const handleClick = (permalink) => {
-    history.push(permalink);
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    if (permalink.startsWith('http')) {
+      window.location.href = permalink; // For external links
+    } else {
+      history.push(permalink); // For internal links
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+    }
   };
+  
 
   const iconPath = purpleMode ? 
   "/img/new-home-page/external-link-arrow-white.svg" : 
