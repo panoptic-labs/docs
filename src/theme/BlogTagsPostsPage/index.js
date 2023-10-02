@@ -7,12 +7,12 @@ import {
   ThemeClassNames,
   usePluralForm,
 } from '@docusaurus/theme-common';
-import Link from '@docusaurus/Link';
 import BlogLayout from '@theme/BlogLayout';
 import BlogListPaginator from '@theme/BlogListPaginator';
 import SearchMetadata from '@theme/SearchMetadata';
 import BlogPostItems from '@theme/BlogPostItems';
 import "./BlogTagsPostsPage.css"
+import { useHistory } from 'react-router-dom';
 // Very simple pluralization: probably good enough for now
 function useBlogPostsPlural() {
   const {selectMessage} = usePluralForm();
@@ -50,28 +50,35 @@ function BlogTagsPostsPageMetadata({tag}) {
     </>
   );
 }
-function GetAllPostsPath() {
-  let currentPath = '';
-  if (typeof window !== 'undefined') {
-    currentPath = window.location.pathname;
-  }
-  const firstPartOfPath = currentPath.split('/')[1];
-  return `/${firstPartOfPath}`;
-}
 function BlogTagsPostsPageContent({tag, items, sidebar, listMetadata}) {
   const title = useBlogTagsPostsPageTitle(tag);
+  const history = useHistory();
+
+  const handleClick = () => {
+  
+    let currentPath = '';
+    if (typeof window !== 'undefined') {
+      currentPath = window.location.pathname;
+    }
+    const firstPartOfPath = currentPath.split('/')[1];
+  
+    history.push(`/${firstPartOfPath}`);
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
+
   return (
     <BlogLayout sidebar={sidebar}>
       <header className="tag-posts-header">
         <h1>{title}</h1>
 
-        <Link to={GetAllPostsPath()}>
+        <div className="view-all-posts" onClick={() => handleClick()}>
           <Translate
             id="theme.tags.tagsPageLink"
             description="The label of the link targeting the tag list page">
             View All Posts
           </Translate>
-        </Link>
+        </div>
       </header>
       <BlogPostItems items={items} />
       <BlogListPaginator metadata={listMetadata} />
