@@ -21,10 +21,10 @@ export default function BlogPostDetails({whiteText = false}) {
         {formattedDate}
       </div>
       <div className={clsx("blog-details-title", {"text-white": whiteText})}>
-        {title}.
+        {title}
       </div>
       <div className={clsx("blog-details-description", {"text-white": whiteText})}>
-        {description}.
+        {description}
       </div>
       {tagsExists && (
         <div className="blog-details-tag-list">
