@@ -60,16 +60,12 @@ div[class^="announcementBar_"] {
   font-family: var(--ifm-font-family-base), sans-serif;
   font-weight: var(--ifm-heading-font-weight);
   font-size: 1.25em;
+  height: fit-content;
+  padding: 5px;
 }
 
 div[class^="announcementBar_"] .close {
   color: #FFF;
-}
-
-@media screen and (max-width: 767px) { 
-  div[class^="announcementBar_"] {
-    display: none;
-  }
 }
 
 .navbar--dark {

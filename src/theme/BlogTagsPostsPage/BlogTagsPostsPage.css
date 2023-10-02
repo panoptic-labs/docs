@@ -2,3 +2,8 @@
 .tag-posts-header {
   margin: 80px 80px 0px;
 }
+
+.view-all-posts {
+  cursor: pointer;
+  color: #4E14D0;
+}
