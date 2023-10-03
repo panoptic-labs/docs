@@ -205,18 +205,6 @@ const config = {
     defaultLocale: "en",
     locales: ["en"],
   },
-
-  presets: [
-    [
-      '@docusaurus/preset-classic',
-      {
-        gtag: {
-          trackingID: 'G-999X9XX9XX',
-          anonymizeIP: true,
-        },
-      },
-    ],
-  ],
   presets: [
     [
       "classic",
