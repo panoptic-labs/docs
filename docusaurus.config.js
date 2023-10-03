@@ -208,6 +208,17 @@ const config = {
 
   presets: [
     [
+      '@docusaurus/preset-classic',
+      {
+        gtag: {
+          trackingID: 'G-999X9XX9XX',
+          anonymizeIP: true,
+        },
+      },
+    ],
+  ],
+  presets: [
+    [
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
@@ -244,6 +255,10 @@ const config = {
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
+        },
+        gtag: {
+          trackingID: 'G-L8XETHMC9F',
+          anonymizeIP: true,
         },
       }),
     ],
@@ -307,24 +322,6 @@ const config = {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
       },
-    },
-    {
-      tagName: 'script',
-      attributes: {
-        async: "true",
-        src: "https://www.googletagmanager.com/gtag/js?id=G-L8XETHMC9F",
-      },
-    },
-    {
-      tagName: 'script',
-      attributes: {},
-      innerHTML: `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-L8XETHMC9F');
-      `,
     },
   ],
 };
