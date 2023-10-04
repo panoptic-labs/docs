@@ -24,19 +24,10 @@ jobs:
     - name: Generate recent updates
       run: node generateRecentUpdates.js
 
-    - name: Commit and push updates
+    - name: Commit updates (+ trigger Vercel deploy)
       run: |
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
         git add .
         git commit -m "Update recent posts"
         git push
-
-    - name: Deploy to Vercel
-      uses: amondnet/vercel-action@v19
-      with:
-        vercel-token: ${{ secrets.VERCEL_TOKEN }} # Set this in your repo's secrets
-        github-token: ${{ secrets.GITHUB_TOKEN }} # Provided by Actions, do not need to set
-        vercel-org-id: ${{ secrets.VERCEL_ORG_ID }} # Set this in your repo's secrets
-        vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }} # Set this in your repo's secrets
-        vercel-args: '--prod'
