@@ -4,7 +4,7 @@
     "date": "2023-09-18",
     "image": "/img/banners/panoptic-at-permissionless.png",
     "link": "https://panoptic.xyz/blog/panoptic-at-permissionless-ii",
-    "description": "It's Monday in Austin, Texas. The heat is sweltering in triple digit humidity, but not inside the Austin Convention Center where over 5,000 crypto connoisseurs, hobbyists, and professionals will meet. The second [Permissionless](https://twitter. com/Permissionless) conference, hosted by [Blockworks](https://twitter. com/Blockworks_), brings together some of",
+    "description": "It's Monday in Austin, Texas. The heat is sweltering in triple digit humidity, but not inside the Austin Convention Center where over 5,000 crypto connoisseurs, hobbyists, and professionals will meet. The second [Permissionless](https://twitter.com/Permissionless) conference, hosted by [Blockworks](https://twitter.com/Blockworks_), brings together some of the most",
     "id": 1
   },
   {
@@ -20,7 +20,7 @@
     "date": "2023-09-07",
     "image": "/img/banners/smart-contracts-public-release.png",
     "link": "https://panoptic.xyz/blog/panoptic-releases-smart-contract-code",
-    "description": "Today marks a significant milestone in Panoptic's ongoing mission to revolutionize DeFi options as we publicly release our smart contract code. This major [milestone](https://panoptic. xyz/docs/gated-launch/launch-roadmap) underscores our commitment to transparency, security, and community involvement.    Can’t wait to explore our code?",
+    "description": "Today marks a significant milestone in Panoptic's ongoing mission to revolutionize DeFi options as we publicly release our smart contract code. This major [milestone](https://panoptic.xyz/docs/gated-launch/launch-roadmap) underscores our commitment to transparency, security, and community involvement.    Can’t wait to explore our code? Get",
     "id": 3
   },
   {
@@ -28,7 +28,7 @@
     "date": "2023-09-07",
     "image": "/img/research/smart-contracts-banner.png",
     "link": "https://panoptic.xyz/research/introducing-panoptic-smart-contracts",
-    "description": "In this post, we’ll delve into Panoptic and provide a comprehensive overview of our protocol’s general architecture. You’ll also learn how to install the [codebase](https://github. com/panoptic-labs/panoptic-v1-core) and mint your first option on Panoptic. So whether you're a seasoned developer or a retail trader,",
+    "description": "In this post, we’ll delve into Panoptic and provide a comprehensive overview of our protocol’s general architecture. You’ll also learn how to install the [codebase](https://github.com/panoptic-labs/panoptic-v1-core) and mint your first option on Panoptic. So whether you're a seasoned developer or a retail trader, we’re",
     "id": 4
   },
   {
@@ -36,7 +36,7 @@
     "date": "2023-08-21",
     "image": "/img/research/panoption-trading-strategies-covered-call-rolling.png",
     "link": "https://panoptic.xyz/research/panoption-trading-strategies-covered-call-rolling",
-    "description": "In Part II of the [series](https://panoptic. xyz/research/panoption-trading-strategies-the-basics), we will cover two main parts:1.  Explaining what the covered call strategy is2.  Explaining what actively managing your options position and what “rolling options” mean## The Covered Call—Why?Let’s say you own 1 ETH. Let’s",
+    "description": "In Part II of the [series](https://panoptic.xyz/research/panoption-trading-strategies-the-basics), we will cover two main parts:1.  Explaining what the covered call strategy is2.  Explaining what actively managing your options position and what “rolling options” mean## The Covered Call—Why?Let’s say you own 1 ETH. Let’s say",
     "id": 5
   }
 ]
