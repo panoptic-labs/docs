@@ -3,6 +3,7 @@ slug: panoptic-defi-options-protocol-introduction
 title: "Panoptic 101: An Introduction to the DeFi Options Protocol" 
 tags: [LPs, Options Traders, Overview, Explainer, Introduction]
 image: /img/banners/panoptic-banner.jpg
+description: "Our most detailed exposition on the Panoptic protocol to date"
 ---
 ![panoptic-banner](./panoptic-banner.jpg)
 

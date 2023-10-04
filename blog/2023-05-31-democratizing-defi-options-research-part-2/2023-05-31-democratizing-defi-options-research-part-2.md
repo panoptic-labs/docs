@@ -3,6 +3,7 @@ slug: democratizing-defi-options-research-implied-volatility
 title: "Democratizing DeFi Research Part II: Deep Dive into Implied Volatility"
 tags: [LPs, Research, GitHub, Open Source, IV]
 image: /img/banners/democratizing-defi-research-banner-2.jpg
+description: "A research deep dive into the Uniswap volatility smile code"
 ---
 
 ![democratizing-defi-research-banner-2.jpg](./democratizing-defi-research-banner-2.jpg)

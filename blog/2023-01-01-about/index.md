@@ -3,6 +3,7 @@ slug: about-panoptic-the-perpetual-options-protocol
 title: About
 authors: []
 tags: [Blog, Crypto, DeFi, Options]
+description: "Announcements, product updates, and roadmaps"
 ---
 import ThemedImage from '@theme/ThemedImage';
 import useBaseUrl from '@docusaurus/useBaseUrl';

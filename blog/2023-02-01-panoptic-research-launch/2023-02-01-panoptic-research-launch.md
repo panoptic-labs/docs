@@ -4,6 +4,7 @@ title: The Launch of Panoptic Research
 tags: [Panoptimists, Research, Research Bites]
 date: 2023-02-01T04:00
 image: /img/banners/Panoptic_Research_1.jpg
+description: "Panoptic opens research arm to explore perpetual options in DeFi"
 ---
 ![panoptic-research](./Panoptic_Research_1.jpg)
 

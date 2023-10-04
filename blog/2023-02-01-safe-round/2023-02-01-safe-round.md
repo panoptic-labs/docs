@@ -4,6 +4,7 @@ title: Panoptic Raises $4.5M SAFE Round
 tags: [Panoptimists, Funding, Raise, SAFE]
 date: 2023-02-01T00:00
 image: /img/banners/panoptic-safe-round-banner-02-01-2023.jpg
+description: "From leading industry investors like gCC, Uniswap, Coinbase, and Jane Street"
 ---
 ![panoptic-safe-round-banner](./panoptic-safe-round-banner.jpg)
 We are pleased to announce that the Panoptic team has raised $4.5M in SAFE funding!

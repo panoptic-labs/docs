@@ -4,6 +4,7 @@ title: Panoptic Partners with Simtopia.ai to Analyze and Optimize Risk Parameter
 tags: [Panoptimists, Partnerships, AI, ML, Research, Risk]
 date: 2023-02-01T03:00
 image: /img/banners/Panoptic-Simtopia.ai-Partnership-Banner.jpg
+description: "Panoptic protocol economics analyzed by risk management firm Simtopia"
 ---
 
 ![simtopia-partnership-banner](./Panoptic-Simtopia.ai-Partnership-Banner.jpg)

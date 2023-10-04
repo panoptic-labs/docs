@@ -3,6 +3,7 @@ slug: panoptic-defi-options-at-eth-denver
 title: ETH Denver 2023–A Recap
 tags: [Panoptimists, ETH Denver, Conference]
 image: /img/banners/panoptic-eth-denver-banner.jpg
+description: "Panoptic at ETHDenver"
 ---
 ![panoptic-eth-denver-banner](./panoptic-eth-denver-banner.jpg)
 

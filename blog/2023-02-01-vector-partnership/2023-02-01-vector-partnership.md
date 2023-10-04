@@ -4,6 +4,7 @@ title: "Panoptic Partners with Vector to Develop End-to-End UX/UI"
 tags: [Panoptimists, Partnerships, UX/UI]
 date: 2023-02-01T02:00
 image: /img/banners/Panoptic-Vector-Parnership-Banner.jpg
+description: "Panoptic UI begins development with designers at Vector DAO"
 ---
 
 ![vector-partnership-banner](./Panoptic-Vector-Parnership-Banner.jpg)

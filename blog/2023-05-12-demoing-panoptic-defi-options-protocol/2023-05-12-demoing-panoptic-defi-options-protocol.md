@@ -3,6 +3,7 @@ slug: demoing-panoptic-defi-options-protocol
 title: "Demoing Panoptic’s Protocol: The Future of DeFi Options"
 tags: [Panoptimists, Options Traders, LPs, Perp Traders, Conference, UI/UX, Event]
 image: /img/banners/panoptic-product-demo.jpg
+description: "A first look at Panoptic's options platform"
 ---
 ![panoptic-product-demo](./panoptic-product-demo.jpg)
 

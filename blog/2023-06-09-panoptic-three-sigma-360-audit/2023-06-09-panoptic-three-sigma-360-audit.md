@@ -3,6 +3,7 @@ slug: panoptic-three-sigma-partnership
 title: "Panoptic Partners with Three Sigma For Enhanced Economic Security"
 tags: [Panoptimists, Audit, Security, Three Sigma, ABDK, OpenZeppelin]
 image: /img/banners/panotic_three_sigma_partnership_banner.png
+description: "Panoptic partners with Three Sigma for an economic audit."
 ---
 ![panotic_three_sigma_partnership_banner.png](./panotic_three_sigma_partnership_banner.png)
 
