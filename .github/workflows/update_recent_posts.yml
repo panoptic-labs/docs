@@ -24,6 +24,14 @@ jobs:
     - name: Generate recent updates
       run: node generateRecentUpdates.js
 
+    - name: Commit and push updates
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+        git add .
+        git commit -m "Update recent posts"
+        git push
+
     - name: Deploy to Vercel
       uses: amondnet/vercel-action@v19
       with:
