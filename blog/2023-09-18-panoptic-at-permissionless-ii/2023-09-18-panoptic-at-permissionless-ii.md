@@ -16,11 +16,13 @@ The Panoptic team came prepared with an exhibition booth to meet conference atte
 
   
 
-![](./Pemissionless-II-Booth-a.jpg)
+![](./panoptic-at-permissionless_1.png)
 
   
 
 Despite the current bear market, the conference was teeming with passionate crypto founders, VCs, builders, traders, and enthusiasts who visited our booth to be one of the first pioneers to try our platform and mint an option to celebrate the alpha launch of Panoptic's perpetual options platform. People were very excited to experience the options trading platform and couldn't wait to use it themselves to unlock the power of perpetual options.
+
+![](./Pemissionless-II-Booth.jpg)
 
   
 
