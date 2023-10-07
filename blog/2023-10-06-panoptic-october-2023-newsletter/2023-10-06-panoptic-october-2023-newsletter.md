@@ -8,10 +8,6 @@ description: "The second edition of the Panoptic Newsletter!"
 
 ![img](./panoptic-newsletter-blog.png)
 
-
-# Panoptic Insights: October Newsletter
-
-
 Welcome Panoptimists to the second edition of the Panoptic Newsletter where we provide industry insights, research recaps, and Panoptic-specific content to keep you updated on our DeFi-native options platform.
 
 If you want future newsletters sent directly to your email, [sign up here](https://forms.gle/2CAA9hgVGwn2YdXP6)!
