@@ -17,7 +17,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   }}
 />
 
-### Guillaume Lambert (CEO) <a href="https://www.linkedin.com/in/guillaume-lambert-686591a0/"><img src="/img/linkedin.png" alt="icon | LinkedIn" width="21px"/>  </a> <a href="https://twitter.com/guil_lambert"><img src="/img/twitter.png" alt="icon | Twitter" width="21px"/></a>
+### Guillaume Lambert (CEO) <a href="https://www.linkedin.com/in/guillaume-lambert-686591a0/"><img src="/img/linkedin.png" alt="icon | LinkedIn" width="21px"/></a> <a href="https://twitter.com/guil_lambert"><img src="/img/twitter.png" alt="icon | Twitter" width="21px"/></a>
     
 Guillaume draws on his extensive background as a world-renowned expert and Professor in Applied Physics at Cornell University, with a focus on Biophysics, whose mathematical foundations are strikingly similar to those of options.
 
