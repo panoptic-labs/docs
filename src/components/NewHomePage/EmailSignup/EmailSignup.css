@@ -26,3 +26,9 @@
   background-color: #6536d3; /* You can change this to your preferred color */
   color: white;
 }
+
+@media screen and (max-width: 768px) {
+  .email-input, .thank-you-message {
+    width: 100%;
+  }
+}
