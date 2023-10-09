@@ -23,7 +23,7 @@ September was largely uneventful in terms of price action, with the market tradi
 ![img](./volmex-october.png)
 
 
-### **Notable Days in September:**
+### **Notable Days in September**
 
 
 On Sept. 11, BTC and ETH were down to $25.1k and $1,555 respectively, with altcoins like XRP, SOL, DOT, and MATIC also experiencing declines. This occurred despite positive economic indicators in the U.S. The market was also awaiting the release of CPI inflation data, which traders were assessing for its potential impact on the Federal Reserve's rate decisions.
@@ -38,13 +38,13 @@ On the 12th, BTC and ETH recovered their losses, trading above $26.2k and $1.6k 
 Leading up to the FOMC meeting, the S&P 500's VIX was in its longest streak of trading under 19 since 2020. Despite this, [expectations for further rate hikes by the FOMC were extremely low](https://www.forbes.com/sites/simonmoore/2023/09/18/no-change-in-rates-expected-at-feds-september-meeting/?sh=2ac56f5d347e), given the current inflationary pressures.
 
 
-### **Post FOMC Meeting:**
+### **Post FOMC Meeting**
 
 
 The market remained stable even after [hawkish surprises from the FOMC Dots](https://www.bankrate.com/banking/federal-reserve/how-to-read-fed-dot-plot-explained/#key-benefits-of-reading-the-fed-s-dot-plot) and a [delay announcement by Mt. Gox](https://cointelegraph.com/news/mt-gox-bitcoin-repayment-delay). This stability was interpreted as a sign of light market positioning, reducing the likelihood of sharp near-term moves. However, key levels were broken in U.S. equity and rates markets, suggesting that bearish trends could seep into the crypto markets.
 
 
-### **Market Indicators:**
+### **Market Indicators**
 
 
 ![img](./btc-skew-october.png)
@@ -53,7 +53,7 @@ The market remained stable even after [hawkish surprises from the FOMC Dots](htt
 ![img](./btc-oct-term-structure-comparison.png)
 
 
-### **Regulatory and Legal News:**
+### **Regulatory and Legal News**
 
 
 **[Gary Gensler Case:](https://www.coindesk.com/policy/2023/09/27/secs-gensler-throws-more-crypto-punches-in-congressional-hearing/)**
@@ -62,19 +62,19 @@ The market remained stable even after [hawkish surprises from the FOMC Dots](htt
 SEC Chair Gary Gensler continued his combative stance against the crypto industry in a congressional testimony. He criticized crypto companies for their management of customer assets and remained tight-lipped about the SEC's future actions regarding bitcoin ETFs.
 
 
-**[Galaxy Expansion into Europe:](https://www.coindesk.com/business/2023/09/21/galaxy-digital-eyes-european-expansion-with-new-regional-ceo/)**
+**[Galaxy Expansion into Europe](https://www.coindesk.com/business/2023/09/21/galaxy-digital-eyes-european-expansion-with-new-regional-ceo/)**
 
 
 Galaxy Digital is looking to [expand its operations in Europe](https://www.reuters.com/technology/novogratzs-galaxy-digital-seeks-grow-critically-important-european-market-2023-09-21/), citing the region's commitment to creating necessary regulatory frameworks for the digital asset industry.
 
 
-**[Coinbase's DC Push:](https://finance.yahoo.com/news/coinbase-ceo-brian-armstrong-leads-crypto-dc-push-for-new-rules-warning-jobs-will-go-overseas-213140099.html?guccounter=1)**
+**[Coinbase's DC Push](https://finance.yahoo.com/news/coinbase-ceo-brian-armstrong-leads-crypto-dc-push-for-new-rules-warning-jobs-will-go-overseas-213140099.html?guccounter=1)**
 
 
 Coinbase CEO Brian Armstrong led a crypto industry push in Washington, warning lawmakers that without new industry-friendly regulation, jobs would move overseas. Armstrong criticized the SEC's approach to crypto regulation calling it hostile and unsustainable.
 
 
-### **Current Market Conditions:**
+### **Current Market Conditions**
 
 
 As of the end of September, BTC was trading around $26,961 (now $27,468), and ETH was around $1,671 (now $1,616). The market was also closely watching oil prices, as a break of $100 could trigger a broader risk sell-off. [Rumors of a Mt. Gox delay to 2024 were cited as a reason for a market bounce](https://www.coindesk.com/business/2023/09/21/mt-gox-pushes-repayments-by-a-year/), although any such spikes were expected to quickly fade due to global risks weighing on crypto markets into Q4.
