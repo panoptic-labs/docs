@@ -1,0 +1,34 @@
+.email-signup-form {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: auto;
+  border: 2px solid #4E14D0;
+  border-radius: 20px; 
+  overflow: hidden;
+}
+
+.email-input, .thank-you-message {
+  padding: 0 20px;
+  border: none;
+  font-weight: 500;
+}
+
+.signup-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #4E14D0; /* You can change this to your preferred color */
+  color: white;
+  cursor: pointer;
+}
+
+.signup-button:hover {
+  background-color: #6536d3; /* You can change this to your preferred color */
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .email-input, .thank-you-message {
+    width: 100%;
+  }
+}

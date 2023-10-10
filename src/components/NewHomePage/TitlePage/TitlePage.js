@@ -1,7 +1,6 @@
 import "./TitlePage.css"
 import CheckMark from "/img/new-home-page/CheckMark.png"
-import Button from "../Button/Button"
-import Arrow from "/img/new-home-page/Arrow.png"
+import EmailSignUp from "../EmailSignup/EmailSignup";
 import ScrollingTokens from "../ScrollingTokens/ScrollingTokens"
 import React from "react";
 
@@ -34,10 +33,7 @@ const TitlePage = () => {
               <span className="subtitle">Any Size</span>
             </div>
           </div>
-          <Button className="join-button" onClick={handleJoin}>
-            <span className="join-button-text">Sign up for our beta launch</span>
-            <img src={Arrow} alt="arrow" />
-          </Button>
+          <EmailSignUp />
         </div>
         <div className="screenshot-container">
           <img src="/img/new-home-page/title-page-image.svg" alt="App Screenshot" className="app-screenshot"/>

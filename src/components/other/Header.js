@@ -8,6 +8,8 @@ import Nav from "./Header/Nav";
 import Sidebar from "./Sidebar";
 import Button from "../NewHomePage/Button/Button";
   
+const APP_LINK = "https://beta.panoptic.xyz/"
+
 const Header = ({purpleMode = false, children}) => {
   const [isOpenedSidebar, setOpenedSidebar] = useState(false);
   const { loadedWidth, isTabletWidth, is1200 } = useResponsive();
@@ -42,10 +44,11 @@ const Header = ({purpleMode = false, children}) => {
             </div>
           )}
           {showAppComingSoonButton && (
-            <button disabled={true} className="app-coming-soon-button">
-              <img src={"/img/icons/loading-icon.svg"}></img>
-              {"App Coming Soon"}
+            <Link to={APP_LINK}>
+            <button className="enter-app-button">
+              Enter App
             </button>
+            </Link>
           )}
         </div>
       </header>

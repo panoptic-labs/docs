@@ -37,6 +37,10 @@
 }
 
 .title-page-info {
+  flex-direction: column;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
   margin-left: 80px;
 }
 
