@@ -1,11 +1,19 @@
 [
   {
+    "title": "0DTEs on Uniswap – Insights from On-Chain LP data",
+    "date": "2023-10-11",
+    "image": "/img/research/zero-dtes-on-uniswap.png",
+    "link": "https://panoptic.xyz/research/zero-dtes-on-uniswap",
+    "description": "While Uniswap began as a spot market, its [LP properties](https://lambert-guillaume.medium.com/uniswap-v3-lp-tokens-as-perpetual-put-and-call-options-5b66219db827) mimic those of an options market. This article delves into the patterns of Uniswap LPs, focusing on how holding times and widths align with option expiry behavior. Our investigation zooms in on the",
+    "id": 1
+  },
+  {
     "title": "The Start of Panoptic’s Beta Launch: Epoch 1",
     "date": "2023-10-10",
     "image": "/img/banners/epoch-1-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-beta-launch-epoch-one",
     "description": "Panoptic’s goal is to revolutionize derivatives trading by creating a DeFi-native options platform that’s easy and intuitive for all traders. The vision for this goal becomes a reality when we start Epoch 1 — the first round of our beta launch’s trading competition.",
-    "id": 1
+    "id": 2
   },
   {
     "title": "Panoptic Insights: October Newsletter",
@@ -13,7 +21,7 @@
     "image": "/img/banners/panoptic-newsletter-blog.png",
     "link": "https://panoptic.xyz/blog/panoptic-october-2023-newsletter",
     "description": "Welcome Panoptimists to the second edition of the Panoptic Newsletter where we provide industry insights, research recaps, and Panoptic-specific content to keep you updated on our DeFi-native options platform. If you want future newsletters sent directly to your email, [sign up here](https://forms.gle/2CAA9hgVGwn2YdXP6)!## Market",
-    "id": 2
+    "id": 3
   },
   {
     "title": "Panoptic at Permissionless II",
@@ -21,7 +29,7 @@
     "image": "/img/banners/panoptic-at-permissionless.png",
     "link": "https://panoptic.xyz/blog/panoptic-at-permissionless-ii",
     "description": "It's Monday in Austin, Texas. The heat is sweltering in triple digit humidity, but not inside the Austin Convention Center where over 5,000 crypto connoisseurs, hobbyists, and professionals will meet. The second [Permissionless](https://twitter.com/Permissionless) conference, hosted by [Blockworks](https://twitter.com/Blockworks_), brings together some of the most",
-    "id": 3
+    "id": 4
   },
   {
     "title": "Panoptic Insights: September Newsletter",
@@ -29,14 +37,6 @@
     "image": "/img/banners/panoptic-newsletter-blog.png",
     "link": "https://panoptic.xyz/blog/panoptic-september-2023-newsletter",
     "description": "Welcome Panoptimists to the first edition of the Panoptic Newsletter where we provide industry insights, research recaps, and Panoptic-specific content to keep you updated on our DeFi-native options platform. If you’re interested in having future newsletters sent directly to your email, [sign up",
-    "id": 4
-  },
-  {
-    "title": "Panoptic Releases Smart Contract Code",
-    "date": "2023-09-07",
-    "image": "/img/banners/smart-contracts-public-release.png",
-    "link": "https://panoptic.xyz/blog/panoptic-releases-smart-contract-code",
-    "description": "Today marks a significant milestone in Panoptic's ongoing mission to revolutionize DeFi options as we publicly release our smart contract code. This major [milestone](https://panoptic.xyz/docs/gated-launch/launch-roadmap) underscores our commitment to transparency, security, and community involvement.    Can’t wait to explore our code? Get",
     "id": 5
   }
 ]
