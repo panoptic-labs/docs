@@ -103,7 +103,7 @@ const DemoPage = () => {
           </div>
           <div className="demo-subtitle">
             <div>
-              enabling both 
+              Enabling both 
               <span className="text-green"> out-of-the-</span>
             </div>
             <div>
