@@ -114,108 +114,74 @@ const DemoPage = () => {
             <div className="text-purple">performance.</div>
           </div>
           <div className="demo-details">
-            Immerse yourself in a thrilling financial revolution powered by our integration with <PillText>Uniswap v3</PillText> - the largest Ethereum-based decentralized exchange. Embrace complete autonomy with the ability to seamlessly swap assets and options, fully liquid, like never before.                  
+            Immerse yourself in a thrilling financial revolution powered by our integration with <strong>Uniswap v3</strong>, the largest Ethereum-based decentralized exchange. Embrace complete autonomy with the ability to seamlessly swap assets and options, fully liquid, like never before.                  
           </div>
-          <div className="hovering-arrow-container">
-            <img src={`/img/new-home-page/hovering-arrow.svg`} alt="hovering-arrow" className="hovering-arrow"/>
+          <div className="demo-video">
+            <VideoDialog trigger={
+              <div className="play-button">
+                Watch Demo
+              </div>
+            }></VideoDialog>
           </div>
         </div>
         <div className="demo-interactive">
-          <div>
-            <div className="demo-interactive-text">
-              <span>{"Create a"}&#160;</span>
-              <OptionsPopover 
-                title={optionTypes[optionType].name} 
-                handleOptionTypeChange={handleOptionTypeChange} 
-                open={optionMenuOpen} 
-                onOpenChange={setOptionMenuOpen}
+          <div className="demo-interactive-text">
+            <span>{"Create a"}&#160;</span>
+            <OptionsPopover 
+              title={optionTypes[optionType].name} 
+              handleOptionTypeChange={handleOptionTypeChange} 
+              open={optionMenuOpen} 
+              onOpenChange={setOptionMenuOpen}
+            />
+          </div>
+          <div className="demo-interactive-body">
+            {isExploding && <ConfettiExplosion width={4000}/>}
+            <div 
+              className="chart-container" 
+              {...events}
+              ref={demoInteractiveRef}
+            >
+              <DemoChart 
+                optionType={optionTypes[optionType].name} 
+                chartSize={chartSize} 
+                className="demo-interactive-chart"
               />
             </div>
-            <div className="demo-interactive-body">
-              {isExploding && <ConfettiExplosion width={4000}/>}
-              <div 
-                className="chart-container" 
-                {...events}
-                ref={demoInteractiveRef}
-              >
-                <DemoChart 
-                  optionType={optionTypes[optionType].name} 
-                  chartSize={chartSize} 
-                  className="demo-interactive-chart"
-                />
+            {showReciept && 
+              <div className="demo-interactive-reciept">
+                <div className="receipt-container">
+                  <img src={`/img/new-home-page/receipt-checkmark.svg`} className="receipt-checkmark" alt="Check Mark" />
+                  <div className="receipt-title">Option Minted on Chain!</div>
+                  <div className="reciept-flex">
+                    <div className="receipt-subtitle">ETH/DAI</div>
+                    <div className="receipt-subtitle">30bps</div>
+                    <div className="receipt-subtitle">0x0359...8839</div>
+                  </div>
+                  <div className="reciept-flex">
+                    <div>
+                      <div className="reciept-detail-title">Network</div>
+                      <div className="reciept-detail">Ethereum</div>
+                    </div>
+                    <div>
+                      <div className="reciept-detail-title">Network Fee</div>
+                      <div className="reciept-detail">.0000014 ETH</div>
+                    </div>
+                  </div>
+                  <Button onClick={() => mintAnother()}>Mint another option!</Button>
+                  <div className="receipt-note">
+                    Note: this demo is for informational purposes only, no real funds are used
+                  </div>
+                </div>
               </div>
-              {showReciept && 
-                <div className="demo-interactive-reciept">
-                  <div className="receipt-container">
-                    <img src={`/img/new-home-page/receipt-checkmark.svg`} className="receipt-checkmark" alt="Check Mark" />
-                    <div className="receipt-title">Option Minted on Chain!</div>
-                    <div className="reciept-flex">
-                      <div className="receipt-subtitle">ETH/DAI</div>
-                      <div className="receipt-subtitle">30bps</div>
-                      <div className="receipt-subtitle">0x0359...8839</div>
-                    </div>
-                    <div className="reciept-flex">
-                      <div>
-                        <div className="reciept-detail-title">Network</div>
-                        <div className="reciept-detail">Ethereum</div>
-                      </div>
-                      <div>
-                        <div className="reciept-detail-title">Network Fee</div>
-                        <div className="reciept-detail">.0000014 ETH</div>
-                      </div>
-                    </div>
-                    <Button onClick={() => mintAnother()}>Mint another option!</Button>
-                    <div className="receipt-note">
-                      Note: this demo is for informational purposes only, no real funds are used
-                    </div>
-                  </div>
-                </div>
-              }
-              {showConfirm && 
-                <div className="demo-interactive-reciept">
-                  <div className="receipt-container">
-                    <button className="confirm-close-button" onClick={() => setShowConfirm(false)}>
-                      <img src="/img/icons/close.svg" alt="close" />
-                    </button>
-                    <div className="receipt-title">New Position</div>
-                    <div className="demo-confirm-label">
-                      <img src="/img/coins/eth.png" className="demo-label-coin coin-eth" alt="eth" />
-                      <img src="/img/coins/dai.png" className="demo-label-coin coin-dai" alt="eth" />
-                      <span className="demo-label-pair">ETH</span>
-                      <span className="demo-label-pair">/</span>
-                      <span className="demo-label-pair">DAI</span>
-                      <div className="demo-label-basis-points">30bps</div>
-                    </div>
-                    <div className="reciept-flex">
-                      <div>
-                        <div className="reciept-detail-title"># of Contracts</div>
-                        <div className="reciept-detail">1</div>
-                      </div>
-                      <div>
-                        <div className="reciept-detail-title">Timescale</div>
-                        <div className="reciept-detail">1 week</div>
-                      </div>
-                    </div>
-                    <div className="reciept-flex">
-                      <div>
-                        <div className="reciept-detail-title">P/L Open</div>
-                        <div className="reciept-detail">$200</div>
-                      </div>
-                      <div>
-                        <div className="reciept-detail-title">Collateral Req.</div>
-                        <div className="reciept-detail">$200</div>
-                      </div>
-                    </div>
-                    <Button onClick={() => confirm()}>Confirm Mint</Button>
-                    <div className="receipt-note">
-                      Note: this demo is for informational purposes only, no real funds are used
-                    </div>
-                  </div>
-                </div>
-              }
-              {!showReciept && !showConfirm && 
-                <>
-                  <div className="demo-interactive-label">
+            }
+            {showConfirm && 
+              <div className="demo-interactive-reciept">
+                <div className="receipt-container">
+                  <button className="confirm-close-button" onClick={() => setShowConfirm(false)}>
+                    <img src="/img/icons/close.svg" alt="close" />
+                  </button>
+                  <div className="receipt-title">New Position</div>
+                  <div className="demo-confirm-label">
                     <img src="/img/coins/eth.png" className="demo-label-coin coin-eth" alt="eth" />
                     <img src="/img/coins/dai.png" className="demo-label-coin coin-dai" alt="eth" />
                     <span className="demo-label-pair">ETH</span>
@@ -223,38 +189,65 @@ const DemoPage = () => {
                     <span className="demo-label-pair">DAI</span>
                     <div className="demo-label-basis-points">30bps</div>
                   </div>
-                  <div className="price-label">Current Price = $50</div>
-                  <div className="price-line"></div>
-                  <Button className="explode-button" onClick={() => mint()}>Mint It!</Button>
-                </>
-              }
-            </div>
-            <div className="demo-interactive-details">
-              <div className="demo-interactive-details-left">
-                <div className="demo-interactive-details-title">{optionTypes[optionType].name}</div>
-                <div className="demo-interactive-details-tags">
-                  {optionTypes[optionType].tags.map((tag) => (
-                    <PillText key="tag">{tag}</PillText>
-                  ))}
+                  <div className="reciept-flex">
+                    <div>
+                      <div className="reciept-detail-title"># of Contracts</div>
+                      <div className="reciept-detail">1</div>
+                    </div>
+                    <div>
+                      <div className="reciept-detail-title">Timescale</div>
+                      <div className="reciept-detail">1 week</div>
+                    </div>
+                  </div>
+                  <div className="reciept-flex">
+                    <div>
+                      <div className="reciept-detail-title">P/L Open</div>
+                      <div className="reciept-detail">$200</div>
+                    </div>
+                    <div>
+                      <div className="reciept-detail-title">Collateral Req.</div>
+                      <div className="reciept-detail">$200</div>
+                    </div>
+                  </div>
+                  <Button onClick={() => confirm()}>Confirm Mint</Button>
+                  <div className="receipt-note">
+                    Note: this demo is for informational purposes only, no real funds are used
+                  </div>
                 </div>
               </div>
-              <div className="demo-interactive-details-right">
-                {optionTypes[optionType].description}
+            }
+            {!showReciept && !showConfirm && 
+              <>
+                <div className="demo-interactive-label">
+                  <img src="/img/coins/eth.png" className="demo-label-coin coin-eth" alt="eth" />
+                  <img src="/img/coins/dai.png" className="demo-label-coin coin-dai" alt="eth" />
+                  <span className="demo-label-pair">ETH</span>
+                  <span className="demo-label-pair">/</span>
+                  <span className="demo-label-pair">DAI</span>
+                  <div className="demo-label-basis-points">30bps</div>
+                </div>
+                <div className="price-label">Current Price = $50</div>
+                <div className="price-line"></div>
+                <Button className="explode-button" onClick={() => mint()}>Mint It!</Button>
+              </>
+            }
+          </div>
+          <div className="demo-interactive-details">
+            <div className="demo-interactive-details-left">
+              <div className="demo-interactive-details-title">{optionTypes[optionType].name}</div>
+              <div className="demo-interactive-details-tags">
+                {optionTypes[optionType].tags.map((tag) => (
+                  <PillText key="tag">{tag}</PillText>
+                ))}
               </div>
-              
             </div>
+            <div className="demo-interactive-details-right">
+              {optionTypes[optionType].description}
+            </div>
+            
           </div>
         </div>
       </div>
-      <div className="demo-video">
-        <div className="video-text">Just watch the Demo</div>
-        <VideoDialog trigger={
-          <div className="play-button">
-            PLAY
-          </div>
-        }></VideoDialog>
-      </div>
-
     </div>
   )
 }

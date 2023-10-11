@@ -19,13 +19,10 @@ const Footer = () => {
   return (
     <footer className="custom-footer">
       <div className="footer-conversation-container footer-conversation-container-background">
-        <div className="footer-conversation-title">
-          <div>Join the</div>
-          <div>Conversation.</div>
-        </div>
+        <div className="footer-conversation-title">Join the conversation</div>
         <div className="footer-conversation-social">
           <div className="footer-conversation-social-text">Find us on:</div>
-          <div >
+          <div className="footer-conversation-social-icon-container">
             <a className="footer-conversation-social-icon-link" href="https://discord.gg/7fE8SN9pRT" aria-label="Discord">
               <img src={"/img/icons/discord.svg"} alt="discord" className="footer-conversation-social-icon ocial-icon-margin"></img>
             </a>

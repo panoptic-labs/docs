@@ -5,18 +5,22 @@
 
 .demo-flex {
   display: flex;
-  justify-content: space-between;
-  padding: 0 80px;
+  justify-content: center;
+  gap: 200px;
+  padding: 120px;
 }
 
 .demo-text {
-  padding-top: 168px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
   color: #F3F3F3;
 }
 
 .demo-title {
   font-size: 64px;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 110%;
   color: #F3F3F3;
 }
@@ -68,8 +72,10 @@
 }
 
 .demo-interactive {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   max-width: 45vw;
-  margin-top: 106px;
 }
 
 .demo-graph {
@@ -113,23 +119,33 @@
 }
 
 .demo-interactive-details {
-  border: 2px solid #F3F3F3;
-  border-radius: 8px;
-  margin-top: 27px;
-  padding: 11px 27px;
+  border: 1px solid #F3F3F3;
+  border-radius: 20px;
+  padding: 20px;
   display: flex;
+  gap: 20px;
   align-items: center;
   max-width: 622px;
   line-height: 130%;
   color: #F3F3F3;
+  font-size: 20px;
 }
 
 .demo-interactive-details-left {
-  margin-right: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
+  gap: 6px;
+}
+
+.demo-interactive-details-right {
+  flex: 2;
 }
 
 .demo-interactive-details-title {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
   white-space: nowrap;
   line-height: 130%;
@@ -138,6 +154,7 @@
 
 .demo-interactive-details-tags {
   display: flex;
+  justify-content: center;
   gap: 8px;
 }
 
@@ -324,46 +341,35 @@
 
 }
 
-.demo-video {
+/* .demo-video {
   background-image: url(/img/new-home-page/video-thumbnail.png);
   background-position: center;
   background-repeat: no-repeat;
   height: 500px;
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-items: space-around;
   align-items: center;
-}
+} */
 
 .video-text {
   font-weight: 700;
   font-size: 36px;
-
-  position: absolute;
-  left: auto;
-  right: auto;
-  top: calc(50% - 180px);
   color: #F3F3F3;
 }
 
 .play-button {
-  border-radius: 50%;
-  width: 180.75px;
-  height: 180.75px;
+  border-radius: 40px;
   background: rgba(0, 0, 0, 0.2);
-  border: 3px solid #F3F3F3;
+  border: 2px solid #F3F3F3;
   backdrop-filter: blur(4px);
   text-align: center;
   font-size: 24px;
   font-weight: 600;
   color: #F3F3F3;
-
-  position: absolute;
-  left: auto;
-  right: auto;
-  top: calc(50% - 90px);
-
+  padding: 10px 20px;
+  margin: 20px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -458,7 +464,7 @@
   }
 
   .demo-title {
-    font-size: 48px;
+    font-size: 64px;
   }
   
   .demo-subtitle {

@@ -4,14 +4,19 @@
   position: relative;
   padding: 0;
   box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .footer-conversation-container {
   background-color: #4E14D0;
-  margin: 73px 80px;
+  margin: 80px;
+  gap: 80px;
   display: flex;
-  border-radius: 10px;
-  padding: 34px 67px 48px 55px;
+  align-items: center;
+  border-radius: 15px;
+  padding: 48px;
   justify-content: space-between;
 }
 
@@ -24,25 +29,37 @@
 }
 
 .footer-conversation-title {
-  font-weight: 400;
+  font-weight: 700;
   font-size: 64px;
   font-family: Inter;
   line-height: 100%;
   color: #F3F3F3;
 }
 
+.footer-conversation-social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
 .footer-conversation-social-text {
-  font-weight: 800;
+  font-weight: 600;
   font-size: 24px;
   line-height: 100%;
-  margin: 32px 0 15px 0;
   color: #F3F3F3;
+}
+
+.footer-conversation-social-icon-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 16px;
+  align-items: center;
 }
 
 .footer-conversation-social-icon-link {
   width: 56px;
   height: 56px;
-  margin-right: 14px;
 }
 
 .footer-conversation-social-icon {
@@ -258,12 +275,10 @@
 }
 
 @media screen and (max-width: 900px) { 
-  .footer-conversation-title {
-    margin-bottom: 24px;
-  }
 
   .footer-conversation-container {
     flex-direction: column;
+    gap: 30px;
   }
 
   .footer-conversation-social-text {
@@ -279,11 +294,16 @@
 }
 
 @media (max-width: 767px) {
+  .footer-conversation-title {
+    font-size: 36px;
+  }
 
   .footer-conversation-container {
-    margin: 16px 16px 24px 16px;
-    padding: 16px;
+    margin: 32px;
+    padding: 32px;
+    align-items: flex-start;
   }
+
 
   .footer__container {
     padding: 0 16px 16px 16px;
@@ -328,28 +348,31 @@
 
 @media screen and (max-width: 400px) { 
   .footer-conversation-title {
-    font-size: 44px;
+    font-size: 36px;
   }
 
   .footer-conversation-social-icon-link {
-    width: 56px;
-    height: 56px;
+    width: 42px;
+    height: 42px;
   }
   
   .footer-conversation-social-icon {
-    width: 56px;
-    height: 56px;
+    width: 42px;
+    height: 42px;
   }
 }
 
 @media screen and (max-width: 376px) { 
+  .footer-conversation-title {
+    font-size: 24px;
+  }
   .footer-conversation-social-icon-link {
-    width: 48px;
-    height: 48px;
+    width: 36px;
+    height: 36px;
   }
   
   .footer-conversation-social-icon {
-    width: 48px;
-    height: 48px;
+    width: 36px;
+    height: 36px;
   }
 }
