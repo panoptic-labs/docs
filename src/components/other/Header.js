@@ -46,7 +46,7 @@ const Header = ({purpleMode = false, children}) => {
           {showAppComingSoonButton && (
             <Link to={APP_LINK}>
             <button className="enter-app-button">
-              Enter App
+              Launch App
             </button>
             </Link>
           )}
