@@ -6,9 +6,7 @@ import "./Header.css";
 import "./Header/RightPart.css"
 import Nav from "./Header/Nav";
 import Sidebar from "./Sidebar";
-import Button from "../NewHomePage/Button/Button";
-  
-const APP_LINK = "https://beta.panoptic.xyz/"
+import { APP_LINK } from "../../constants";
 
 const Header = ({purpleMode = false, children}) => {
   const [isOpenedSidebar, setOpenedSidebar] = useState(false);
@@ -46,7 +44,7 @@ const Header = ({purpleMode = false, children}) => {
           {showAppComingSoonButton && (
             <Link to={APP_LINK}>
             <button className="enter-app-button">
-              Enter App
+              Launch App
             </button>
             </Link>
           )}

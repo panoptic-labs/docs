@@ -5,6 +5,7 @@ import "./Sidebar.css";
 import useResponsive from "../../hooks/useResponsive";
 import Button from "../NewHomePage/Button/Button";
 import Link from "@docusaurus/Link";
+import { APP_LINK } from "../../constants";
 
 const Sidebar = ({ isOpenedSidebar, onClose, onToggle }) => {
   const { isTabletWidth } = useResponsive();
@@ -71,7 +72,9 @@ const Sidebar = ({ isOpenedSidebar, onClose, onToggle }) => {
         </div>
         <div className="sidebar__nav__bottom-part">
           <div className="nav__bottom-part__buttons">
-            <Button className="sidebar-button" disabled={true}>App Coming Soon</Button>
+            <Link to={APP_LINK} className="sidebar-button">
+              <Button className="sidebar-button">Launch App</Button>
+            </Link>
           </div>
         </div>
       </nav>
