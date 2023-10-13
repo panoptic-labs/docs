@@ -24,19 +24,24 @@ const EmailSignUp = () => {
     });
   };
 
-  return submitted ? (
-      <p className="thank-you-message">Thanks for subscribing!</p>
-    ) : (
-      <form onSubmit={handleSubmit} className='email-signup-form'>
-        <input 
-          type="email" 
-          className="email-input" 
-          placeholder="Enter your email" 
-          value={email} 
-          onChange={(e) => setEmail(e.target.value)} 
-        />
-        <button type="submit" disabled={submitted} className="signup-button">{submitted ? "Done" : "Submit"}</button>
-      </form>
+  return (
+      <div>
+        <p className="email-signup-header">Get the latest updates</p>
+        {submitted ? (
+        <p className="thank-you-message">Thanks for subscribing!</p>
+        ) : (
+            <form onSubmit={handleSubmit} className='email-signup-form'>
+              <input 
+                type="email" 
+                className="email-input" 
+                placeholder="Enter your email" 
+                value={email} 
+                onChange={(e) => setEmail(e.target.value)} 
+              />
+              <button type="submit" disabled={submitted} className="signup-button">{submitted ? "Done" : "Submit"}</button>
+            </form>
+        )}
+      </div>
     )
 }
 
