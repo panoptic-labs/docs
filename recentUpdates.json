@@ -1,11 +1,19 @@
 [
   {
+    "title": "Panoptic Community Program",
+    "date": "2023-10-14",
+    "image": "/img/banners/panoptic-community-program.png",
+    "link": "https://panoptic.xyz/blog/panoptic-community-program",
+    "description": "Community lies at the heart of DeFi and Panoptic. Panoptimists are helping launch a DeFi options revolution. To foster and find a new way to say thank you for your loyal support, we are proud to launch our [community program](https://galxe.com/panoptic). Through the program,",
+    "id": 1
+  },
+  {
     "title": "Perpetual Options Pioneer Launches Beta Platform",
     "date": "2023-10-13",
     "image": "/img/banners/epoch-1-begins-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-beta-launch-official",
     "description": "Panoptic, a decentralized options protocol, launched its beta platform today. With its launch, select members of the public became the first people to trade a brand new DeFi-native derivative: perpetual options. As the name suggests, perpetual options have the same financial functionality as",
-    "id": 1
+    "id": 2
   },
   {
     "title": "0DTEs on Uniswap – Insights from On-Chain LP data",
@@ -13,7 +21,7 @@
     "image": "/img/research/zero-dtes-on-uniswap.png",
     "link": "https://panoptic.xyz/research/zero-dtes-on-uniswap",
     "description": "While Uniswap began as a spot market, its [LP properties](https://lambert-guillaume.medium.com/uniswap-v3-lp-tokens-as-perpetual-put-and-call-options-5b66219db827) mimic those of an options market. This article delves into the patterns of Uniswap LPs, focusing on how holding times and widths align with option expiry behavior. Our investigation zooms in on the",
-    "id": 2
+    "id": 3
   },
   {
     "title": "The Start of Panoptic’s Beta Launch: Epoch 1",
@@ -21,7 +29,7 @@
     "image": "/img/banners/epoch-1-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-beta-launch-epoch-one",
     "description": "Panoptic’s goal is to revolutionize derivatives trading by creating a DeFi-native options platform that’s easy and intuitive for all traders. The vision for this goal becomes a reality when we start Epoch 1 — the first round of our beta launch’s trading competition.",
-    "id": 3
+    "id": 4
   },
   {
     "title": "Panoptic Insights: October Newsletter",
@@ -29,14 +37,6 @@
     "image": "/img/banners/panoptic-newsletter-blog.png",
     "link": "https://panoptic.xyz/blog/panoptic-october-2023-newsletter",
     "description": "Welcome Panoptimists to the second edition of the Panoptic Newsletter where we provide industry insights, research recaps, and Panoptic-specific content to keep you updated on our DeFi-native options platform. If you want future newsletters sent directly to your email, [sign up here](https://forms.gle/2CAA9hgVGwn2YdXP6)!## Market",
-    "id": 4
-  },
-  {
-    "title": "Panoptic at Permissionless II",
-    "date": "2023-09-18",
-    "image": "/img/banners/panoptic-at-permissionless.png",
-    "link": "https://panoptic.xyz/blog/panoptic-at-permissionless-ii",
-    "description": "It's Monday in Austin, Texas. The heat is sweltering in triple digit humidity, but not inside the Austin Convention Center where over 5,000 crypto connoisseurs, hobbyists, and professionals will meet. The second [Permissionless](https://twitter.com/Permissionless) conference, hosted by [Blockworks](https://twitter.com/Blockworks_), brings together some of the most",
     "id": 5
   }
 ]
