@@ -433,6 +433,11 @@
 }
 
 @media screen and (max-width: 767px) { 
+
+  .demo-text {
+    padding-top: 84px;
+  }
+
   .demo-flex {
     padding: 0 40px;
   }
