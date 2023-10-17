@@ -4,7 +4,7 @@
 }
 
 .security-flex {
-  padding: 80px;
+  padding: 120px;
   display: flex;
   justify-content: space-between;
 }
@@ -24,7 +24,7 @@
 
 .small-header {
   display: inline-block;
-  margin: 0;
+  margin-bottom: 20px;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
@@ -39,7 +39,7 @@
   margin-top: 6px;
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 64px;
   line-height: 110%;
   letter-spacing: -0.72px;

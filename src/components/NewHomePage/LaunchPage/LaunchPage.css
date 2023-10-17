@@ -15,17 +15,22 @@
 }
 
 .launch-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
   color: #F3F3F3;
-  text-align: center;
-  padding: 0 40px;
 }
 
 .launch-title {
   font-size: 52px;
-  font-family: Alice;
+  font-family: Inter;
   line-height: 110%;
-  font-weight: 400;
+  font-weight: 700;
   margin-top: 7.75px;
+  padding: 0 20px;
+  text-align: center;
 }
 
 .launch-subtitle {

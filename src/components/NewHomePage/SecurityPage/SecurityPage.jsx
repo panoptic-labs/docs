@@ -58,8 +58,8 @@ const SecurityPage = () => {
             <span>
               Our <span style={{ color: "#28CB95" }}>360° Audit:</span>{" "}
             </span>
-            <p className="no-break">setting new </p>
-            <p className="no-break">standards for </p>
+            <p className="no-break">Setting new standards</p>
+            <p className="no-break">standards for</p>
             <p className="no-break">platform security</p>
           </div>
         </div>
