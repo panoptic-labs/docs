@@ -68,9 +68,10 @@
   color: #4E14D0;
 }
 
-.checkmark {
-  margin-right: 5px;
-  width: 18px;
+.subtitle-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .app-screenshot {
