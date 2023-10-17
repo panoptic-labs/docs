@@ -1,8 +1,8 @@
 import "./TitlePage.css"
-import CheckMark from "/img/new-home-page/CheckMark.png"
 import EmailSignUp from "../EmailSignup/EmailSignup";
 import ScrollingTokens from "../ScrollingTokens/ScrollingTokens"
 import React from "react";
+import CheckIcon from '../../icons/CheckIcon'
 
 const TitlePage = () => {
 
@@ -18,16 +18,16 @@ const TitlePage = () => {
             <div>Effortless options trading on any crypto asset</div>
           </div>
           <div className="subtitles">
-            <div>
-              <img src={CheckMark} alt="Checkmark" className="checkmark"/>
+            <div className="subtitle-with-icon">
+              <CheckIcon/>
               <span className="subtitle">Any Token</span>
             </div>
-            <div>
-              <img src={CheckMark} alt="Checkmark" className="checkmark"/>
+            <div className="subtitle-with-icon">
+              <CheckIcon/>
               <span className="subtitle">Any Strike</span>
             </div>
-            <div>
-              <img src={CheckMark} alt="Checkmark" className="checkmark"/>
+            <div className="subtitle-with-icon">
+            <CheckIcon/>  
               <span className="subtitle">Any Size</span>
             </div>
           </div>
