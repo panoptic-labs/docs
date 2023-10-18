@@ -1,6 +1,7 @@
 .scrolling-tokens-container {
   width: 100%;
   overflow: hidden;
+  padding-bottom: 60px;
 }
 
 .scrolling-tokens {
