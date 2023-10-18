@@ -43,4 +43,8 @@
   .email-input, .thank-you-message {
     width: 100%;
   }
+
+  .email-signup-header {
+    font-size: 20px;
+  }
 }
