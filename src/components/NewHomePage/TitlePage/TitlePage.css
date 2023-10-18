@@ -42,14 +42,14 @@
   flex-direction: column;
   display: flex;
   align-items: flex-start;
-  gap: 20px;
+  gap: 16px;
   margin-left: 80px;
   padding-right: 80px;
 }
 
 .title {
   font-family: Inter;
-  font-size: 92px;
+  font-size: 80px;
   font-weight: 500;
   color: #4E14D0;
   line-height: 100%;
