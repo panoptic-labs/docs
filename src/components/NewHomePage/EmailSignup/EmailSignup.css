@@ -1,3 +1,7 @@
+.email-signup {
+  flex: 1
+}
+
 .email-signup-form {
   display: flex;
   justify-content: flex-start;

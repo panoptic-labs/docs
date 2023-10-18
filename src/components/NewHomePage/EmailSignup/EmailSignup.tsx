@@ -25,7 +25,7 @@ const EmailSignUp = () => {
   };
 
   return (
-      <div>
+      <div className="email-signup">
         <p className="email-signup-header">Get the latest updates</p>
         {submitted ? (
         <p className="thank-you-message">Thanks for subscribing!</p>
