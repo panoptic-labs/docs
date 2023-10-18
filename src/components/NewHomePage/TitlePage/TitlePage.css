@@ -122,13 +122,13 @@
   } 
 
   .title {
-    font-size: 60px;
+    font-size: 80px;
   }
 }
 
 @media screen and (max-width: 815px) { 
   .title {
-    font-size: 86px;
+    font-size: 80px;
   }
 }
 
@@ -164,7 +164,7 @@
 
 @media screen and (max-width: 510px) { 
   .title {
-    font-size: 60px;
+    font-size: 64px;
   }
 }
 
