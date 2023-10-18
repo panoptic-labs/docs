@@ -3,7 +3,7 @@
   background-color: #F3F3F3;
   display: flex;
   height: calc(100vh - var(--ifm-navbar-height));
-  min-height: 700px;
+  min-height: 860px;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -122,7 +122,7 @@
   } 
 
   .title {
-    font-size: 92px;
+    font-size: 60px;
   }
 }
 
@@ -134,7 +134,7 @@
 
 @media screen and (max-width: 767px) { 
   .title-page {
-    min-height: 500px;
+    min-height: 800px;
   }
 
   .title-page-info {
