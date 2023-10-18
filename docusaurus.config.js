@@ -162,13 +162,6 @@ const config = {
             "https://raw.githubusercontent.com/panoptic-labs/docs/main/static/img/website-banner.png",
         },
       ],
-      announcementBar: {
-        id: "ETH_Denver_2023",
-        content:
-          "📢 The Panoptic gated launch sign-up list is officially open! <a href=\"https://signup.panoptic.xyz\">Sign up now</a>.",
-        textColor: "#FFFFFF",
-        isCloseable: true,
-      },
       image:
         "https://raw.githubusercontent.com/panoptic-labs/docs/main/static/img/website-banner.png",
       algolia: {
