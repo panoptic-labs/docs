@@ -4,7 +4,7 @@
     "date": "2023-10-20",
     "image": "/img/banners/epoch-1-closed-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-beta-launch-epoch-one-closed",
-    "description": "After one week of trading perpetual options, Epoch 1 of Panoptic's beta launch concluded. We are extremely appreciative of everyone who took part in the event, and we look forward to expanding the number of participants in Epoch 2.  We saw tremendous",
+    "description": "Panoptic announces the close of its first trading competition during its beta DeFi options platform launch.",
     "id": 1
   },
   {
@@ -12,7 +12,7 @@
     "date": "2023-10-14",
     "image": "/img/banners/panoptic-community-program.png",
     "link": "https://panoptic.xyz/blog/panoptic-community-program",
-    "description": "Community lies at the heart of DeFi and Panoptic. Panoptimists are helping launch a DeFi options revolution. To foster and find a new way to say thank you for your loyal support, we are proud to launch our [community program](https://galxe.com/panoptic). Through the program,",
+    "description": "Panoptic launches its community program to reward early contributors",
     "id": 2
   },
   {
@@ -20,7 +20,7 @@
     "date": "2023-10-13",
     "image": "/img/banners/epoch-1-begins-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-beta-launch-official",
-    "description": "Panoptic, a decentralized options protocol, launched its beta platform today. With its launch, select members of the public became the first people to trade a brand new DeFi-native derivative: perpetual options. As the name suggests, perpetual options have the same financial functionality as",
+    "description": "Panoptic's beta launch officially begins now!",
     "id": 3
   },
   {
@@ -28,7 +28,7 @@
     "date": "2023-10-11",
     "image": "/img/research/zero-dtes-on-uniswap.png",
     "link": "https://panoptic.xyz/research/zero-dtes-on-uniswap",
-    "description": "While Uniswap began as a spot market, its [LP properties](https://lambert-guillaume.medium.com/uniswap-v3-lp-tokens-as-perpetual-put-and-call-options-5b66219db827) mimic those of an options market. This article delves into the patterns of Uniswap LPs, focusing on how holding times and widths align with option expiry behavior. Our investigation zooms in on the",
+    "description": "LP positions are held for a short period of time – typically less than a day. We explore widths and holding time from the POV that LPs are option sellers with an implied expiry date.",
     "id": 4
   },
   {
@@ -36,7 +36,7 @@
     "date": "2023-10-10",
     "image": "/img/banners/epoch-1-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-beta-launch-epoch-one",
-    "description": "Panoptic’s goal is to revolutionize derivatives trading by creating a DeFi-native options platform that’s easy and intuitive for all traders. The vision for this goal becomes a reality when we start Epoch 1 — the first round of our beta launch’s trading competition.",
+    "description": "Panoptic announces the launch of its beta DeFi options platform and trading competition.",
     "id": 5
   }
 ]

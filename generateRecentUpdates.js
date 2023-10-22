@@ -47,7 +47,7 @@ function generatePosts(files, directory, type) {
       const date = getDateFromFileName(mdFile);
       const image = getImageFromFrontMatter(fullFilePath);
       const link = getLinkFromFrontMatter(fullFilePath, type);
-      const description = getShortDescription(fullFilePath);
+      const description = getDescriptionFromFrontMatter(fullFilePath);
 
       posts.push({ title, date, image, link, description });
     }
@@ -85,6 +85,11 @@ function getLinkFromFrontMatter(file, type) {
   const { data: frontMatter } = matter(fs.readFileSync(file, 'utf8'));
   const slug = frontMatter.slug;
   return `https://panoptic.xyz/${type}/${slug}`
+}
+
+function getDescriptionFromFrontMatter(file) {
+  const { data: frontMatter } = matter(fs.readFileSync(file, 'utf8'));
+  return frontMatter.description;
 }
 
 function getShortDescription(file) {
