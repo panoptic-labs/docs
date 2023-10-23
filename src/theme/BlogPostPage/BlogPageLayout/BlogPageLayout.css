@@ -11,6 +11,10 @@
   gap: 80px;
 }
 
+.blog-page-content {
+  width: 100%;
+}
+
 .blog-page-featured-tag-container {
   margin: 0px 80px 16px 80px;
 }

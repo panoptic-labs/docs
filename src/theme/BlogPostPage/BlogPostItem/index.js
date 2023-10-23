@@ -9,7 +9,7 @@ import BlogPostItemFooter from './Footer';
 // apply a bottom margin in list view
 function useContainerClassName() {
   const {isBlogPostPage} = useBlogPost();
-  return !isBlogPostPage ? 'margin-bottom--xl' : undefined;
+  return !isBlogPostPage ? 'margin-bottom--xl' : 'blog-page-content';
 }
 export default function BlogPostItem({children, className}) {
   const containerClassName = useContainerClassName();

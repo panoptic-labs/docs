@@ -18,13 +18,10 @@ export default function BlogLayout(props) {
             </span>
           </div>
         }
-        <div className="blog-page-container">
-          <main
-            className={clsx()}
-            itemScope
-            itemType="http://schema.org/Blog">
+        <div className="blog-page-container" >
+          <div className="blog-page-content" itemScope itemType="http://schema.org/Blog">
             {children}
-          </main>
+          </div>
           {toc && !isMobileWidth && <div className="blog-page-toc">{toc}</div>}
         </div>
       </div>
