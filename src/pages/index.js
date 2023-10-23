@@ -10,6 +10,7 @@ import SecurityPage from '../components/NewHomePage/SecurityPage/SecurityPage';
 import FAQPage from '../components/NewHomePage/FAQPage/FAQPage';
 import LoadingScreen from '../components/NewHomePage/LoadingScreen/LoadingScreen'
 import Layout from '@theme/Layout';
+import VerticalsSection from '../components/NewHomePage/VerticalsSection/VerticalsSection';
 
 export default function Home() {
   const [loadingScreen, setLoadingScreen] = useState(true)
@@ -26,6 +27,7 @@ export default function Home() {
       <Layout purpleMode={false}>
         <main className="bg-body">
           <TitlePage/>
+          <VerticalsSection/>
           <DemoPage/>
           <LaunchPage/>
           <PartnerPage/>
