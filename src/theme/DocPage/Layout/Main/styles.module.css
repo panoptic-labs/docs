@@ -27,7 +27,7 @@ blockquote {
 }
 
 h3, h4 {
-  display: flex;
+  /* display: flex; */
 }
 
 * .breadcrumbs * {
