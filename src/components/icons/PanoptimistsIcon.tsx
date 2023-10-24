@@ -3,6 +3,6 @@ import React from "react";
 
 export default function PanoptimistsIcon() {
   return (
-    <img src="./img/icons/panoptimists.png" alt="Panoptimists Icon" />
+    <img src="./img/logo.svg" alt="Panoptimists Icon" />
   )
 }
