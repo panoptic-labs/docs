@@ -6,9 +6,9 @@ description: "The roadmap to our gated, beta launch"
 image: /img/launch-roadmap.png
 ---
 
-# The Road to Beta Launch
+_Update: This roadmap was completed on [October 13, 2023](https://panoptic.xyz/blog/panoptic-beta-launch-official)._
 
-As we move closer to our gated, [beta launch](https://panoptic.xyz/blog/gated-launch-sign-up), we invite you to see how we got here and where we hope to go. Right now, we have more than 4,000 users [signed up](http://signup.panoptic.xyz) to participate in our upcoming launch, and this energetic response from our community is a testament to the widespread interest in our DeFi options platform.
+As we move closer to our gated, [beta launch](https://panoptic.xyz/blog/gated-launch-sign-up), we invite you to see how we got here and where we hope to go. Right now, we have more than 5,000 users [signed up](http://signup.panoptic.xyz) to participate in our upcoming launch, and this energetic response from our community is a testament to the widespread interest in our DeFi options platform.
 
   
 
