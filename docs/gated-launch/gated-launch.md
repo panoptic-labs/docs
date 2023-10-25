@@ -6,6 +6,10 @@ label: "Resources"
 
 You can find all of our resources related to our gated beta launch below.
 
+### App
+- [Alpha](https://alpha.panoptic.xyz)
+- [Beta](https://beta.panoptic.xyz/) (whitelisted users only, sign up below)
+
 ### Sign Up
 Sign up for the gated launch [here](https://signup.panoptic.xyz).
 
@@ -18,9 +22,24 @@ Sign up for the gated launch [here](https://signup.panoptic.xyz).
 - Initial [announcement](https://panoptic.xyz/blog/gated-launch-sign-up) (July 5, 2023)
 - Pool [parameters](https://panoptic.xyz/blog/gated-launch-parameters) (July 28, 2023)
 - Epoch 1 [participants](https://panoptic.xyz/blog/epoch-1-participants) (August 8, 2023)
+- [Smart contracts](https://panoptic.xyz/blog/panoptic-releases-smart-contract-code) released (September 7, 2023)
+- Official [beta launch](https://panoptic.xyz/blog/panoptic-beta-launch-official) (October 13, 2023)
+- [Community program](https://panoptic.xyz/blog/panoptic-community-program) launch (October 14, 2023)
+
+### Epoch 1
+- Epoch 1 [Begins](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-one) (October 13, 2023)
+- Epoch 1 [Ends](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-one-closed) (October 20, 2023)
+
+### Epoch 2
+Coming Soon...
 
 ### Videos
-- Intro: [Join the Future of DeFi Options](https://www.youtube.com/watch?v=1wwF5_SH1Rc) (July 5, 2023)
+- Intro: [Join the Future of DeFi Options](https://www.youtube.com/watch?v=1wwF5_SH1Rc)
+- [How to Deposit Liquidity on Panoptic](https://www.youtube.com/watch?v=iVfeZUVBN7E&list=PLB5qwiSwzT_rgH-HvQtDaWTe48xPaF6se)
+- [How to Create an Option on Panoptic](https://www.youtube.com/watch?v=UoBYtC3fe64&list=PLB5qwiSwzT_rgH-HvQtDaWTe48xPaF6se&index=2)
+- [How to Trade an Option on Panoptic](https://www.youtube.com/watch?v=4rZrp7tzyjY&list=PLB5qwiSwzT_rgH-HvQtDaWTe48xPaF6se&index=3)
+- [Cross Collateralization on Panoptic](https://www.youtube.com/watch?v=35sE_VwRfRE&list=PLB5qwiSwzT_rgH-HvQtDaWTe48xPaF6se&index=4)
+- [Leveraged Options on Panoptic](https://www.youtube.com/watch?v=CtzyhZsvGp4&list=PLB5qwiSwzT_rgH-HvQtDaWTe48xPaF6se&index=5)
 
 ### Feedback
 - General [feedback](https://feedback.panoptic.xyz/)
