@@ -53,7 +53,7 @@ Panoptic eliminates counterparties, such as market makers, from pricing options 
 The streamia is equal to the amount of swap fees the borrowed Uniswap LP token would have earned in the Uniswap pool had it not been removed by the buyer plus an additional Panoptic liquidity spread. Thus, Panoptic options sellers earn better returns than LPing in Uniswap for the same positions.
 
 
-Moreover, [Panoptic liquidity provides](https://panoptic.xyz/docs/panoptic-protocol/protocol-roles#panoptic-liquidity-providers-plps) (PLPs) play a similar role to traditional LPs by providing liquidity to facilitate trades. However, on Panoptic, PLPs do not need to choose a price range and can supply either one or two tokens in any ratio. This opens up single-sided and brings back fungible LPing, allowing passive investors to participate in the market again. 
+Moreover, [Panoptic liquidity provides](https://docs.panoptic.xyz/docs/panoptic-protocol/protocol-roles#panoptic-liquidity-providers-plps) (PLPs) play a similar role to traditional LPs by providing liquidity to facilitate trades. However, on Panoptic, PLPs do not need to choose a price range and can supply either one or two tokens in any ratio. This opens up single-sided and brings back fungible LPing, allowing passive investors to participate in the market again. 
 
 
 Our PLPs earn rewards proportional to the amount of options trading volume in Panoptic without having to worry about price exposure or impermanent loss!

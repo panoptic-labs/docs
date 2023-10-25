@@ -40,7 +40,7 @@ Strategy:
 -   Pay LP fees as premia
     
 
-Note: Here’s [how Panoptic creates a call option](https://panoptic.xyz/docs/panoptic-protocol/option-properties#creating-a-call-option)
+Note: Here’s [how Panoptic creates a call option](https://docs.panoptic.xyz/docs/panoptic-protocol/option-properties#creating-a-call-option)
 
 ![img-1](./img-1.png)
 
