@@ -133,10 +133,6 @@
 }
 
 @media screen and (max-width: 767px) { 
-  .title-page {
-    min-height: 800px;
-  }
-
   .title-page-info {
     margin: 37px 40px 0 40px;
   }
