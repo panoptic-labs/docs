@@ -52,7 +52,7 @@ type CardProps = {
 };
 
 const Card: React.FC<CardProps> = ({ title, description, icon }) => (
-    <div onClick={() => window.location.href="/blog"} className="group p-4 flex flex-col justify-between shadow-lg text-left flex-1 rounded-xl border-2 border-gray-300 hover:cursor-pointer  hover:bg-panoptic-purple hover:text-white">
+    <div onClick={() => window.location.href="/blog"} className="group p-4 flex flex-col justify-between shadow-lg text-left flex-1 rounded-xl border-2 border-gray-300 hover:cursor-pointer  hover:bg-panoptic-purple hover:text-white hover:scale-105 transition-transform duration-300">
       <div>
         <div className="w-16 h-16 p-2 flex items-center justify-center group-hover:text-white text-panoptic-purple hover:text-white ">
           {icon}
