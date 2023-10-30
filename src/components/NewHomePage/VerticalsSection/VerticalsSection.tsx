@@ -15,21 +15,25 @@ export default function VerticalsSection() {
           icon={<LiquidityIcon />}
           title="Uniswap Liquidity Providers"
           description="Increased yield, impermanent loss (IL) mitigation, advanced strategies, and risk management"
+          url="/docs/getting-started/liquidity-providers"
         />
         <Card
           icon={<PerpetualsIcon />}
           title="Perps Traders"
           description="Trade any token permissionlessly with leverage, capped downside, no liquidation risk, and no expiries in the non-custodial, oracle-free options platform."
+          url="/docs/getting-started/perps-traders"
         />
         <Card
           icon={<OptionsIcon />}
           title="Options Traders"
           description="A full-featured options trading platform – buy and sell capital-efficient, multi-legged options strategies on any token at any strike price."
+          url="/docs/getting-started/options-traders"
         />
         <Card
           icon={<PanoptimistsIcon />}
           title="Panoptimists"
           description="A robust online community of Panoptimists who value innovative advancements in blockchain, Decentralized Finance (DeFi), and financial instruments."
+          url="/docs/getting-started/panoptimists"
         />
       </div>
 
@@ -49,19 +53,21 @@ type CardProps = {
   title: string;
   description: string;
   icon: React.ReactNode;
+  url: string;
 };
 
-const Card: React.FC<CardProps> = ({ title, description, icon }) => (
-    <div onClick={() => window.location.href="/blog"} className="group p-4 flex flex-col justify-between shadow-lg text-left flex-1 rounded-xl border-2 border-gray-300 hover:cursor-pointer  hover:bg-panoptic-purple hover:text-white hover:scale-105 transition-transform duration-300">
-      <div>
-        <div className="w-16 h-16 p-2 flex items-center justify-center group-hover:text-white text-panoptic-purple hover:text-white ">
-          {icon}
-        </div>
-        <h2 className="text-2xl font-bold mt-2">{title}</h2>
-        <p className="mt-2">{description}</p>
+const Card: React.FC<CardProps> = ({ title, description, icon, url }) => (
+  <div onClick={() => window.location.href = url} // Use the url here
+       className="group p-4 flex flex-col justify-between shadow-lg text-left flex-1 rounded-xl border-2 border-gray-300 hover:cursor-pointer  hover:bg-panoptic-purple hover:text-white hover:scale-105 transition-transform duration-300">
+    <div>
+      <div className="w-16 h-16 p-2 flex items-center justify-center group-hover:text-white text-panoptic-purple hover:text-white ">
+        {icon}
       </div>
-      <div>
-        Read more →
-      </div>
+      <h2 className="text-2xl font-bold mt-2">{title}</h2>
+      <p className="mt-2">{description}</p>
     </div>
+    <div>
+      Read more →
+    </div>
+  </div>
 );
