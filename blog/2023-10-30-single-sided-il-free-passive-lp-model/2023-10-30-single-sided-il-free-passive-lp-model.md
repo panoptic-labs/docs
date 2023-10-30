@@ -64,7 +64,7 @@ LPing on Panoptic, or being a Panoptic Liquidity Provider (PLP), introduces seve
     
 2.  Select a fee tier
     
-3.  Deposit either token (you don’t have to deposit both!) into a Panoptic liquidity pool
+3.  Deposit either token (you don't have to deposit both) into a Panoptic liquidity pool
     
 
   
