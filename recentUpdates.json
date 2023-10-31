@@ -1,11 +1,19 @@
 [
   {
+    "title": "How does LPing in Uniswap V3 compare to selling options in Panoptic?",
+    "date": "2023-10-31",
+    "image": "/img/research/weth_price_and_pos_range.png",
+    "link": "https://panoptic.xyz/research/uniswap_vs_panoptic",
+    "description": "Have you ever wondered how deploying a liquidity position in Uniswap V3 compares to selling Panoptic options? Spolier alert: you'd be better off with Panoptic",
+    "id": 1
+  },
+  {
     "title": "Better Liquidity Provisioning: Panoptic's Single-Sided, IL-Free, Passive LP Model",
     "date": "2023-10-30",
     "image": "/img/banners/better-liquidity-provisioning.png",
     "link": "https://panoptic.xyz/blog/better-liquidity-provisioning",
     "description": "Discover the advantages of Panoptic's innovative approach to liquidity providing, offering a single-sided, no impermanent loss, passive model that simplifies earnings for liquidity providers in the evolving world of decentralized exchanges.",
-    "id": 1
+    "id": 2
   },
   {
     "title": "Epoch 1 Closed",
@@ -13,7 +21,7 @@
     "image": "/img/banners/epoch-1-closed-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-beta-launch-epoch-one-closed",
     "description": "Panoptic announces the close of its first trading competition during its beta DeFi options platform launch.",
-    "id": 2
+    "id": 3
   },
   {
     "title": "Panoptic Community Program",
@@ -21,7 +29,7 @@
     "image": "/img/banners/panoptic-community-program.png",
     "link": "https://panoptic.xyz/blog/panoptic-community-program",
     "description": "Panoptic launches its community program to reward early contributors",
-    "id": 3
+    "id": 4
   },
   {
     "title": "Perpetual Options Pioneer Launches Beta Platform",
@@ -29,14 +37,6 @@
     "image": "/img/banners/epoch-1-begins-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-beta-launch-official",
     "description": "Panoptic's beta launch officially begins now!",
-    "id": 4
-  },
-  {
-    "title": "0DTEs on Uniswap – Insights from On-Chain LP data",
-    "date": "2023-10-11",
-    "image": "/img/research/zero-dtes-on-uniswap.png",
-    "link": "https://panoptic.xyz/research/zero-dtes-on-uniswap",
-    "description": "LP positions are held for a short period of time – typically less than a day. We explore widths and holding time from the POV that LPs are option sellers with an implied expiry date.",
     "id": 5
   }
 ]
