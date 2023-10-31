@@ -21,6 +21,10 @@
   margin: 40px 0 16px 0;
 }
 
+.blog-p li {
+  list-style-type: disc;
+}
+
 @media screen and (max-width: 1024px) { 
   .blog-p > p {
     font-size: 16px;
