@@ -35,6 +35,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0px;
 }
 
-li {
-  list-style-type: disc;
+h3, h4 {
+  display: flex;
+  margin-bottom: 10px;
 }
