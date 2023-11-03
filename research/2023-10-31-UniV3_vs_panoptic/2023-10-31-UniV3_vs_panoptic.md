@@ -19,7 +19,7 @@ In this deep dive, we will:
 
 * Analyze and calculate fees from a Uniswap V3 liquidity position, extracting relevant data from that protocol.
 
-* Compare these findings with the [stremia](https://panoptic.xyz/blog/streamia-defi-native-options-pricing) model used by Panoptic.
+* Compare these findings with the [streamia](https://panoptic.xyz/blog/streamia-defi-native-options-pricing) model used by Panoptic.
 
 * Compare to a similar vanilla European position, priced via the Black-Scholes Model.
 
@@ -256,7 +256,7 @@ d_2 = d_1 - \sigma \sqrt{T-t}
 $$
 Here, $r$ represents the *risk-free rate*, and $N(\cdot)$ is the cumulative distribution function of a standard normal distribution.
 
-Utilizing the formula above, we can compare the premia derived from the BSM with those obtained through Panoptic's Streaming Premia Fee Model (SFPM or *Stremia*). However, there's an important caveat to consider: the BSM formula is tailored for *vanilla* European options with a fixed expiration time of $T$. In contrast, Panoptions are perpetual options. So, how does this comparison remain valid?
+Utilizing the formula above, we can compare the premia derived from the BSM with those obtained through Panoptic's Streaming Premia Fee Model (SFPM or *Streamia*). However, there's an important caveat to consider: the BSM formula is tailored for *vanilla* European options with a fixed expiration time of $T$. In contrast, Panoptions are perpetual options. So, how does this comparison remain valid?
 
 Interestingly, it was shown by Guillaume Lambert (our Founder! 😎) [in a series of medium articles](https://lambert-guillaume.medium.com/understanding-the-value-of-uniswap-v3-liquidity-positions-cdaaee127fe7) that the time to expiration of an *in the money,* vanilla, European option is related to the tick ratio of a Uniswap V3 position by:
 
