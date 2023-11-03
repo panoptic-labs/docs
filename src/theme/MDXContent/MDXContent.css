@@ -21,7 +21,7 @@
   margin: 40px 0 16px 0;
 }
 
-.blog-p li {
+.blog-p ul > li {
   list-style-type: disc;
 }
 
