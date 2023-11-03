@@ -62,6 +62,8 @@ If you were not selected for this epoch, you may still be chosen for the future 
   
 
 The top 3 qualifying traders will receive:
+
+
     1st Place: $150 USDbC
     2nd Place: $100 USDbC
     3rd Place: $50 USDbC
