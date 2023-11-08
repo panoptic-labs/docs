@@ -7,7 +7,7 @@ label: "Resources"
 You can find all of our resources related to our gated beta launch below.
 
 ### App
-- [Alpha](https://alpha.panoptic.xyz)
+- [Demo](https://demo.panoptic.xyz)
 - [Beta](https://beta.panoptic.xyz/) (whitelisted users only, sign up below)
 
 ### Sign Up
@@ -31,7 +31,7 @@ Sign up for the gated launch [here](https://signup.panoptic.xyz).
 - Epoch 1 [Ends](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-one-closed) (October 20, 2023)
 
 ### Epoch 2
-Coming Soon...
+- Epoch 2 [Begins](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-two)
 
 ### Videos
 - Intro: [Join the Future of DeFi Options](https://www.youtube.com/watch?v=1wwF5_SH1Rc)
