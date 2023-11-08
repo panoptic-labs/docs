@@ -14,7 +14,13 @@ The Panoptic protocol enables the minting, trading, and market-making of perpetu
 
 <details id="how-can-i-use-panoptic">
 <summary>How can I use Panoptic?</summary>
-You can access Panoptic by connecting your wallet to the Panoptic App, which will be deployed on app.panoptic.xyz (COMING SOON...)
+To explore the Panoptic App, you will need to connect your digital wallet. There are currently two versions available for users:
+<br /><br />
+1) Beta Version: This version is accessible for users who have been whitelisted. You can visit and join the beta experience at <a href="https://beta.panoptic.xyz">beta.panoptic.xyz</a>.
+<br />
+2) Demo Version: If you're looking to practice your trading without risking real funds, our paper trading platform is available on the Sepolia network. You can try it out at <a href="https://demo.panoptic.xyz">demo.panoptic.xyz</a>.
+<br /><br />
+Connect and discover the forefront of DeFi options with Panoptic.
 </details>
 
 <details id="what-are-the-key-benefits">
