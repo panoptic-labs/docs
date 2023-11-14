@@ -1,11 +1,19 @@
 [
   {
+    "title": "Panoptic Perpetual Mixer",
+    "date": "2023-11-14",
+    "image": "/img/banners/panoptic-speakeasy-mixer-photos.png",
+    "link": "https://panoptic.xyz/blog/panoptic-perpetual-mixer",
+    "description": "Recapping the Panoptic Perpetual Mixer community event in NYC.",
+    "id": 1
+  },
+  {
     "title": "Panoptic Insights: November Newsletter",
     "date": "2023-11-08",
     "image": "/img/banners/panoptic-newsletter-blog.png",
     "link": "https://panoptic.xyz/blog/panoptic-november-2023-newsletter",
     "description": "Explore the latest DeFi insights and updates with Panoptic's November Newsletter, offering a deep dive into market trends, industry research, community highlights, and the evolution of our options platform.",
-    "id": 1
+    "id": 2
   },
   {
     "title": "Options 101",
@@ -13,7 +21,7 @@
     "image": "/img/banners/crypto-and-options-101.png",
     "link": "https://panoptic.xyz/blog/crypto-and-options-101",
     "description": "Explore the versatile world of financial trading with our comprehensive guide to options, including traditional assets and innovative on-chain Panoptions, for strategies that cater to every trader's needs.",
-    "id": 2
+    "id": 3
   },
   {
     "title": "Beta Launch: Epoch 2",
@@ -21,7 +29,7 @@
     "image": "/img/banners/epoch-2-open-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-beta-launch-epoch-two",
     "description": "Panoptic announces the launch of its second trading competition on the beta DeFi options platform.",
-    "id": 3
+    "id": 4
   },
   {
     "title": "The Case Against Perpetual Futures",
@@ -29,14 +37,6 @@
     "image": "/img/banners/perps-and-panoptic-banner.png",
     "link": "https://panoptic.xyz/blog/case-against-perpetual-futures",
     "description": "Exploring the limitations of perpetual futures in DeFi and how Panoptic's perpetual options present a more adaptable and efficient alternative for traders.",
-    "id": 4
-  },
-  {
-    "title": "How does LPing in Uniswap V3 compare to selling options in Panoptic?",
-    "date": "2023-10-31",
-    "image": "/img/research/weth_price_and_pos_range.png",
-    "link": "https://panoptic.xyz/research/uniswap_vs_panoptic",
-    "description": "Have you ever wondered how deploying a liquidity position in Uniswap V3 compares to selling Panoptic options? Spolier alert: you'd be better off with Panoptic",
     "id": 5
   }
 ]
