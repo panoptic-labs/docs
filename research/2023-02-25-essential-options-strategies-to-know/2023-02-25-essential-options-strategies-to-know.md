@@ -58,7 +58,7 @@ We'll cover:
     
 
 ----------
-### 1. Put ⤵️
+### Put ⤵️
 Think HEX is worthless?
 
 "Put" your money where your mouth is. Buy a "put"⤵️ Panoption!
@@ -74,7 +74,7 @@ Short LP position
 
 ![img-2](./img-2.png)
 
-### 2. Call 📞
+### Call 📞
 Want to make a "call" that APE will go up?
 
 Buy a "call"📞 Panoption!
@@ -90,7 +90,7 @@ Short LP position + long asset
 
 ![img-3](./img-3.png)
 
-### 3. Straddle 🤸🏽‍♂️
+### Straddle 🤸🏽‍♂️
 "Straddling" the line b/c you can't tell if BLUR is going to go ⬆️ or ⬇️?
 
 Buy a "straddle"🤸🏽‍♂️ on Panoptic!
@@ -106,7 +106,7 @@ Call + Put (same strike)
 ![img-4](./img-4.png)
 
 
-### 4. Strangle 🙅‍♀️😵
+### Strangle 🙅‍♀️😵
 Feel like you're being strangled by excessive market volatility on SHIB?
 
 Buy a "strangle"🙅‍♀️😵 on Panoptic!
@@ -121,7 +121,7 @@ Buy a "strangle"🙅‍♀️😵 on Panoptic!
 
 Call (higher strike) + Put (lower strike)
 
-### 5. Jade Lizard 💎🦎
+### Jade Lizard 💎🦎
 Feeling a "little" bullish on UNI?
 
 How about a "jade lizard" 💎🦎
@@ -136,7 +136,7 @@ How about a "jade lizard" 💎🦎
 Short strangle + long OTM call
 ![img-6](./img-6.png)
 
-### 6. Big Lizard 🦖
+### Big Lizard 🦖
 A variation of 💎🦎 is the "big lizard" 🦖
 
 Sell a straddle instead of a strangle on Panoptic! Useful when you believe the price will hover around the current price.
@@ -151,7 +151,7 @@ Sell a straddle instead of a strangle on Panoptic! Useful when you believe the p
 Short straddle + long OTM call
 ![img-7](./img-7.png)
 
-### 7. Iron Butterfly 🥌🦋
+### Iron Butterfly 🥌🦋
 Think LINK will stay rangebound?
 
 Float like an "iron butterfly"! 🥌🦋
@@ -168,7 +168,7 @@ Like a 🦖, except you're protected on both sides.
 Short straddle + long strangle
 ![img-8](./img-8.png)
 
-### 8. Call Spread 📞🧈
+### Call Spread 📞🧈
 Bullish on ETH but don't expect a huge surge?
 
 Buy a "call spread" on Panoptic! 📞🧈
@@ -183,7 +183,7 @@ Buy a "call spread" on Panoptic! 📞🧈
 Long call (lower strike) + short call (higher strike)
 ![img-9](./img-9.png)
 
-### 9. Super Bull 🦸‍♂️🐂
+### Super Bull 🦸‍♂️🐂
 Are you hoping for a "Better Tomorrow"?
 
 How about a "Super Bull"? 🦸‍♂️🐂
@@ -200,7 +200,7 @@ Like a 📞🧈, but for the more bullish among us.
 Long call spread + short OTM put
 ![img-10](./img-10.png)
 
-### 10. Put Spread ⤵️🧈
+### Put Spread ⤵️🧈
 Anon "spreading" rumors that USDC is in trouble, but don't expect a huge drop?
 
 Buy a put "spread" on Panoptic! ⤵️🧈
@@ -215,7 +215,7 @@ Buy a put "spread" on Panoptic! ⤵️🧈
 Long put (higher strike) + short put (lower strike)
 ![img-11](./img-11.png)
 
-### 11. Super Bear 🦸‍♂️🐻
+### Super Bear 🦸‍♂️🐻
 Look! Up in the sky! It's a bird! It's a plane!
 
 It's "Super Bear"! 🦸‍♂️🐻
@@ -232,7 +232,7 @@ Like a ⤵️🧈, but for the more bearish among us.
 Long put spread + short OTM call
 ![img-12](./img-12.png)
 
-### 12. Iron Condor 🥌🦅
+### Iron Condor 🥌🦅
 Think an "upcoming announcement" is gonna be a nothingburger? 🚫🍔
 
 Take flight with a short "iron condor"! 🥌🦅
@@ -247,7 +247,7 @@ Take flight with a short "iron condor"! 🥌🦅
 Short call spread + short put spread
 ![img-13](./img-13.png)
 
-### 13. Call Calendar Spread 📞📅🧈
+### Call Calendar Spread 📞📅🧈
 Long-term bullish on ETH but need more capital?
 
 Buy a "call calendar spread" on Panoptic! 📞📅🧈
@@ -262,7 +262,7 @@ Buy a "call calendar spread" on Panoptic! 📞📅🧈
 Long long-term call + short short-term call (same strike)
 ![img-14](./img-14.png)
 
-### How Panoptic's Perpetual Options Have Effective DTEs
+#### How Panoptic's Perpetual Options Have Effective DTEs
 Panoptic mimics payoffs from long-term expiries through wide-ranged LP positions.
 
 For example:
@@ -275,7 +275,7 @@ For example:
 (Assuming 100% annual volatility)
 ![img-15](./img-15.gif)
 
-### 14. Diagonal Spread ↗️🧈
+### Diagonal Spread ↗️🧈
 A variation of 📅🧈 is the "diagonal spread" ↗️🧈
 
 Also called a "Poor Man's Covered call" — useful when you expect minor price movement.
@@ -290,7 +290,7 @@ Also called a "Poor Man's Covered call" — useful when you expect minor price m
 Long long-term call + short short-term call (different strikes)
 ![img-16](./img-16.png)
 
-### 15. Call Ratio Spread 📞⚖️🧈
+### Call Ratio Spread 📞⚖️🧈
 Neutral-to-bullish, with a price target for WBTC in mind?
 
 Buy a "Call Ratio Spread" on Panoptic! 📞⚖️🧈
@@ -320,7 +320,7 @@ Try "BATMAN" 🦇
 Call ratio spread + put ratio spread
 ![img-18](./img-18.png)
 
-### 17. ZEBRA Spread 🦓
+### ZEBRA Spread 🦓
 Want to go long?
 
 A "ZEBRA spread" may be what you're looking for! 🦓
@@ -339,7 +339,7 @@ A synthetic replacement for longs: ~100 delta position with very low capital req
 2 ITM long calls + 1 ATM short call
 ![img-19](./img-19.png)
 
-### 18. ZEEHBS
+### ZEEHBS
 Bullish, but want to hedge downside tail risk?
 
 Try "ZEEHBS"! 🦓🦓🦓
