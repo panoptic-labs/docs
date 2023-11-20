@@ -1,6 +1,6 @@
 ---
 slug: panoptic-beta-launch-epoch-two-closed
-title: "Epoch 2 Closed - Get Ready for Epoch 3!"
+title: "Epoch 2 Closed — Get Ready for Epoch 3"
 tags: [Gated Launch, Epoch 2]
 image: /img/banners/epoch-2-closed-banner.png
 description: "Panoptic wraps up its second epoch of beta testing with a DeFi options trading competition. Discover the winners, learn about the upcoming Epoch 3, and join our growing community of Panoptimists."
