@@ -4,6 +4,7 @@ title: "Panoptic's Demo Platform"
 tags: [Community, Rewards, Paper Trade]
 image: /img/banners/panoptic-demo-platform-banner.png
 description: "Discover Panoptic's innovative demo platform for paper trading perpetual options. Experience risk-free trading, enhance your skills, and participate in our community quest for exclusive rewards."
+date: 2023-11-20T15:00
 ---
 
 
