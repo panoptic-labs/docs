@@ -1,11 +1,19 @@
 [
   {
+    "title": "Beta Launch: Epoch 3",
+    "date": "2023-11-22",
+    "image": "/img/banners/epoch-3-opens-banner.png",
+    "link": "https://panoptic.xyz/blog/panoptic-beta-launch-epoch-three",
+    "description": "Join Epoch 3 of Panoptic's Beta Launch, an expanded DeFi options trading competition with increased markets and lucrative rewards for top traders.",
+    "id": 1
+  },
+  {
     "title": "Panoptic's Demo Platform",
     "date": "2023-11-20",
     "image": "/img/banners/panoptic-demo-platform-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-demo-launch",
     "description": "Discover Panoptic's innovative demo platform for paper trading perpetual options. Experience risk-free trading, enhance your skills, and participate in our community quest for exclusive rewards.",
-    "id": 1
+    "id": 2
   },
   {
     "title": "Epoch 2 Closed — Get Ready for Epoch 3",
@@ -13,7 +21,7 @@
     "image": "/img/banners/epoch-2-closed-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-beta-launch-epoch-two-closed",
     "description": "Panoptic wraps up its second epoch of beta testing with a DeFi options trading competition. Discover the winners, learn about the upcoming Epoch 3, and join our growing community of Panoptimists.",
-    "id": 2
+    "id": 3
   },
   {
     "title": "Panoptic Perpetual Mixer",
@@ -21,7 +29,7 @@
     "image": "/img/banners/panoptic-speakeasy-mixer-photos.png",
     "link": "https://panoptic.xyz/blog/panoptic-perpetual-mixer",
     "description": "Recapping the Panoptic Perpetual Mixer community event in NYC.",
-    "id": 3
+    "id": 4
   },
   {
     "title": "Panoptic Insights: November Newsletter",
@@ -29,14 +37,6 @@
     "image": "/img/banners/panoptic-newsletter-blog.png",
     "link": "https://panoptic.xyz/blog/panoptic-november-2023-newsletter",
     "description": "Explore the latest DeFi insights and updates with Panoptic's November Newsletter, offering a deep dive into market trends, industry research, community highlights, and the evolution of our options platform.",
-    "id": 4
-  },
-  {
-    "title": "Options 101",
-    "date": "2023-11-07",
-    "image": "/img/banners/crypto-and-options-101.png",
-    "link": "https://panoptic.xyz/blog/crypto-and-options-101",
-    "description": "Explore the versatile world of financial trading with our comprehensive guide to options, including traditional assets and innovative on-chain Panoptions, for strategies that cater to every trader's needs.",
     "id": 5
   }
 ]
