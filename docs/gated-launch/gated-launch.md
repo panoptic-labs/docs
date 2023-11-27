@@ -26,6 +26,7 @@ Sign up for the gated launch [here](https://signup.panoptic.xyz).
 - Official [beta launch](https://panoptic.xyz/blog/panoptic-beta-launch-official) (October 13, 2023)
 - [Community program](https://panoptic.xyz/blog/panoptic-community-program) launches (October 14, 2023)
 - Panoptic's [Demo](https://panoptic.xyz/blog/panoptic-demo-launch) platform launches (November 20, 2023)
+- Code4rena [audit](https://code4rena.com/contests/2023-11-panoptic) on the semi-fungible position manager (SFPM) launches (November 27, 2023)
 
 ### Epoch 1
 - Epoch 1 [Begins](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-one) (October 13, 2023)
@@ -36,7 +37,7 @@ Sign up for the gated launch [here](https://signup.panoptic.xyz).
 - Epoch 2 [Ends](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-two-closed) (November 20, 2023)
 
 ### Epoch 3
-- Epoch 3 [Begins](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-two-closed) (November 27, 2023)
+- Epoch 3 [Begins](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-two-closed) (November 28, 2023)
 
 ### Videos
 - Intro: [Join the Future of DeFi Options](https://www.youtube.com/watch?v=1wwF5_SH1Rc)
