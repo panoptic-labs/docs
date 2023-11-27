@@ -8,7 +8,7 @@ description: "Join Epoch 3 of Panoptic's Beta Launch, an expanded DeFi options t
 
 ![](./epoch-3-opens-banner.png)
 
-Next Monday, November 27, Panoptic is rolling out Epoch 3 with some changes that will spice up our trading competition. Most notably, we’re increasing access, doubling the available markets to trade on, and giving out more money.
+Next Tuesday, November 28, Panoptic is rolling out Epoch 3 with some changes that will spice up our trading competition. Most notably, we’re increasing access, doubling the available markets to trade on, and giving out more money.
 
   
 
@@ -70,7 +70,7 @@ If you were not selected for this epoch, you may still be chosen for the future 
   
 
 ### Timeline
-    Start Date: November 27, 17:00 UTC
+    Start Date: November 28, 17:00 UTC
     End Date: December 11, 17:00 UTC
 
   
@@ -162,7 +162,7 @@ If you’ve been selected to participate in Epoch 3, and confirmed it with our [
         
     Obtaining BALD on Base: [Swap](https://app.uniswap.org/swap?outputCurrency=0x27D2DECb4bFC9C76F0309b8E88dec3a601Fe25a8&chain=base) some of your ETH for BALD.
     
-5.  Buy or sell options between November 27 (17:00 UTC) and December 11 (17:00 UTC). Check out our [leaderboard](https://beta.panoptic.xyz/leaderboard) to see where you stand in comparison to other traders.
+5.  Buy or sell options between November 28 (17:00 UTC) and December 11 (17:00 UTC). Check out our [leaderboard](https://beta.panoptic.xyz/leaderboard) to see where you stand in comparison to other traders.
     
 
 Winners will have their prizes distributed at the end of the competition period.
