@@ -1,11 +1,10 @@
 ---
 slug: streamia-vs-black-scholes
-title: Streamia vs. Black-Scholes Model: A Comparative Study  
+title: "Streamia vs. Black-Scholes Model: A Comparative Study"
 tags: [Options Traders, LPs, Strategies, Black Scholes, Uniswap v3, Range]
 image: /img/research/usdc_weth_comparison.png
 description: "Have you ever wondered how selling traditional options priced via the Black-Scholes model compare to selling Panoptic options? We analyze hundreds of real LP positions across multiple Uniswap pools to find out."
 ---
-
 
 
 > Find the code base associated to this dive [here](https://github.com/panoptic-labs/research/tree/jp_20231120/_research-bites/20231120).  
