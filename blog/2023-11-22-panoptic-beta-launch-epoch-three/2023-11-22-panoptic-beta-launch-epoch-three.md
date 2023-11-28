@@ -109,10 +109,10 @@ Remember: traders at the bottom of the competition are at risk of being excluded
     Chain: Base
 
     Pool 1: WETH-USDbC, 0.05%
-    Deposit Amount: 5 USDbC and ~0.0025 WETH.
+    Deposit Amount: 5 USDbC and 0.0025 WETH.
 
     Pool 2: BALD-WETH, 1%
-    Deposit Amount: ~900 BALD and ~0.0025 WETH.
+    Deposit Amount: 300 BALD and 0.0025 WETH.
 
 Please note that you must deposit the required amount to participate, and that the exact amount can be found on the onboarding modal of the [app](https://beta.panoptic.xyz/) at the start of the competition.
 
