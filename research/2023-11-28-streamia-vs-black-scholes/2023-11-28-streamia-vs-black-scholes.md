@@ -12,11 +12,11 @@ description: "Have you ever wondered how selling traditional options priced via 
 
 ## Introduction
 
-This report presents a thorough investigation of Panoptic's perpetual options pricing model, [*Stremia*](https://panoptic.xyz/blog/streamia-defi-native-options-pricing), and its comparative performance against the established [Black-Scholes Model](https://panoptic.xyz/blog/black-scholes-streamia-defi-options-pricing-models) (BSM). Based on Uniswap's Non-Fungible Position Manager (NFPM), Panoptic's *Semi-Fungible Position Manager*, or SFPM, introduces a dynamic framework where, instead of options buyers paying for the contract up-front, option buyers and sellers transact premia continuously (provided that the position is *in range*), marking a departure from BSM's upfront premium structure. Ultimately, our goal is to address a pivotal question: *In what scenarios does Panoptic's SFPM prove superior to the traditional BSM for an options seller?*
+This report presents a thorough investigation of Panoptic's perpetual options pricing model, [*Streamia*](https://panoptic.xyz/blog/streamia-defi-native-options-pricing), and its comparative performance against the established [Black-Scholes Model](https://panoptic.xyz/blog/black-scholes-streamia-defi-options-pricing-models) (BSM). Based on Uniswap's Non-Fungible Position Manager (NFPM), Panoptic's *Semi-Fungible Position Manager*, or SFPM, introduces a dynamic framework where, instead of options buyers paying for the contract up-front, option buyers and sellers transact premia continuously (provided that the position is *in range*), marking a departure from BSM's upfront premium structure. Ultimately, our goal is to address a pivotal question: *In what scenarios does Panoptic's SFPM prove superior to the traditional BSM for an options seller?*
 
 Our approach involves an extensive analysis of Liquidity Provider (LP) positions in various Uniswap V3 pools. Specifically, we compare the fees generated from these positions, indicative of SFPM's baseline, with those derived from the BSM methodology.
 
-Our experiements suggest that positions with smaller $r$ factors ($r$ = square root of the ratio of the upper and lower prices) tend to collect larger fees via the Streaming Fee Premia Model (also abbreviated as SFPM) when compared to an equivalent options position priced via the Black-Scholes model.
+Our experiments suggest that positions with smaller $r$ factors ($r$ = square root of the ratio of the upper and lower prices) tend to collect larger fees via the Streaming Fee Premia Model (also abbreviated as SFPM) when compared to an equivalent options position priced via the Black-Scholes model.
 
 ## Experimental Setup. 
 
