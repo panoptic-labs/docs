@@ -27,7 +27,7 @@ The liquidation bot is a crucial component of Panoptic. It continuously monitors
 Upon identifying a liquidatable account, the bot triggers an alert. Liquidators can then engage by interacting directly with the smart contracts governing the pool. This direct interaction facilitates the liquidation of underwater accounts, thereby mitigating risk and preserving the integrity of the pool.
 
 ### Open Source
-Panoptics will make the liquidation bot open source, allowing anyone to use it. This bot is written in [coding language], and by making it publicly available, Panoptic aims to encourage widespread participation. Users can run the bot on pools they are interested in, which serves a dual purpose: helping protect the protocol and allowing users to earn a liquidation bonus.
+Panoptics will make the liquidation bot open source, allowing anyone to use it. This bot is written in Typescript, and by making it publicly available, Panoptic aims to encourage widespread participation. Users can run the bot by hosting it on cloud platforms like AWS, Azure, or Google Cloud. When operated on a supported blockchain, the bot not only contributes to the protection of the protocol but also offers users the opportunity to earn a liquidation bonus, thus aligning individual incentives with the overall health of the system.
 
 ### What's Next
 
