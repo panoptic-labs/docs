@@ -32,11 +32,11 @@
     "id": 4
   },
   {
-    "title": "Epoch 2 Closed — Get Ready for Epoch 3",
-    "date": "2023-11-20",
-    "image": "/img/banners/epoch-2-closed-banner.png",
-    "link": "https://panoptic.xyz/blog/panoptic-beta-launch-epoch-two-closed",
-    "description": "Panoptic wraps up its second epoch of beta testing with a DeFi options trading competition. Discover the winners, learn about the upcoming Epoch 3, and join our growing community of Panoptimists.",
+    "title": "How does LPing in Uniswap V3 compare to selling options in Panoptic?",
+    "date": "2023-10-31",
+    "image": "/img/research/weth_price_and_pos_range.png",
+    "link": "https://panoptic.xyz/research/uniswap_vs_panoptic",
+    "description": "Have you ever wondered how deploying a liquidity position in Uniswap V3 compares to selling Panoptic options? Spolier alert: you'd be better off with Panoptic",
     "id": 5
   }
 ]
