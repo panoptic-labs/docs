@@ -6,6 +6,8 @@ image: /img/banners/newsletter-banner.webp
 description: "The December Edition of the Panoptic Newsletter"
 ---
 
+![](./newsletter-banner.webp)
+
 Welcome Panoptimists to the December edition of the Panoptic Newsletter, where we provide industry insights, research recaps, and Panoptic-specific content to keep you updated on our DeFi-native options platform.
 
 
