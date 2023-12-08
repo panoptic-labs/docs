@@ -1,6 +1,6 @@
 ---
 slug: opening-a-position-on-panoptic
-title: "Opening a Position on Panoptic"
+title: "How To Open a Position on Panoptic"
 tags: [Tutorial]
 image: /img/research/opening-a-position.png
 description: "Discover how to navigate the world of DeFi options trading with Panoptic, a comprehensive guide for beginners and advanced traders alike, covering everything from connecting your wallet to executing sophisticated trading strategies."
