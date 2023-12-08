@@ -27,6 +27,9 @@ Jesper holds a Ph.D. in Applied Physics and Computer Science from Cornell Univer
 
 ## Presentations
 
+### Ava Labs - Oracle Free Options Trading
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ikV4nKlW8pc?si=7FUEgVVfwKk6Lx2z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ### ETHCC 2023 - Automated Market Makers and the Future of Perpetual Options: A New Era in DeFi
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9ubpnQRvxY8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
