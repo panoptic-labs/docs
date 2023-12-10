@@ -66,17 +66,7 @@ The multi-leg option also aids in the specialized treatment of defined or limite
 
 ### Ease of Linking
 
-When you have multiple legs in a transaction, your portfolio risk is easier to understand. Multi-leg options eliminates the need to craft complex solutions to trade defined risk positions, saving traders both time and effort.
-
-  
-
-Advanced Trading Strategies on Panoptic
-
-  
-
-Traders can choose from pre-configured strategies or customize their own. For example, a Long Strangle involves adding a Call and a Put leg. The payoff curve on Panoptic’s dashboard changes accordingly, allowing traders to visually gauge the potential outcomes.
-
-  
+When you have multiple legs in a transaction, your portfolio risk is easier to understand. Multi-leg options eliminates the need to craft complex solutions to trade defined risk positions, saving traders both time and effort.  
 
 ### How to add a leg on Panoptic
 
