@@ -7,16 +7,16 @@ label: "Resources"
 You can find all of our resources related to our gated beta launch below.
 
 ### App
-- [Beta](https://beta.panoptic.xyz/) (whitelisted users only, sign up below)
+- [Beta](https://beta.panoptic.xyz/)
 - [Demo](https://demo.panoptic.xyz)
 
-### Sign Up
+<!-- ### Sign Up
 Sign up for the gated launch [here](https://signup.panoptic.xyz).
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">🎉 We&#39;ve hit 11,000 signups for our beta launch!<br/><br/>Thank you to our incredible community for your support! The journey is just beginning, and we can&#39;t wait to bring perpetual options to you all 📈 <a href="https://t.co/1uC2pyXDTj">pic.twitter.com/1uC2pyXDTj</a></p>&mdash; Panoptic (@Panoptic_xyz) <a href="https://twitter.com/Panoptic_xyz/status/1718055031835091451?ref_src=twsrc%5Etfw">October 28, 2023</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">🎉 We&#39;ve hit 11,000 signups for our beta launch!<br/><br/>Thank you to our incredible community for your support! The journey is just beginning, and we can&#39;t wait to bring perpetual options to you all 📈 <a href="https://t.co/1uC2pyXDTj">pic.twitter.com/1uC2pyXDTj</a></p>&mdash; Panoptic (@Panoptic_xyz) <a href="https://twitter.com/Panoptic_xyz/status/1718055031835091451?ref_src=twsrc%5Etfw">October 28, 2023</a></blockquote> -->
 
-### Roadmap
-- The [Road to Beta Launch](https://panoptic.xyz/docs/gated-launch/launch-roadmap)
+<!-- ### Roadmap
+- The [Road to Beta Launch](https://panoptic.xyz/docs/gated-launch/launch-roadmap) -->
 
 ### Announcements
 - Initial [announcement](https://panoptic.xyz/blog/gated-launch-sign-up) (July 5, 2023)
@@ -37,7 +37,11 @@ Sign up for the gated launch [here](https://signup.panoptic.xyz).
 - Epoch 2 [Ends](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-two-closed) (November 20, 2023)
 
 ### Epoch 3
-- Epoch 3 [Begins](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-two-closed) (November 28, 2023)
+- Epoch 3 [Begins](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-three) (November 28, 2023)
+- Epoch 3 [Ends](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-three-closed) (December 11, 2023)
+
+### Epoch 4
+- Epoch 4 Begins (December 18, 2023)
 
 ### Videos
 - Intro: [Join the Future of DeFi Options](https://www.youtube.com/watch?v=1wwF5_SH1Rc)
