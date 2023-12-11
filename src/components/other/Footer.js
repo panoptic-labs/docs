@@ -35,7 +35,7 @@ const Footer = () => {
             <a className="footer-conversation-social-icon-link" href="https://www.linkedin.com/company/panoptic-xyz" aria-label="Linked In">
               <img src={"/img/icons/linkedin.svg"} alt="Linked In" className="footer-conversation-social-icon ocial-icon-margin"></img>
             </a>
-            <a className="footer-conversation-social-icon-link" href="https://poap.family/events/151512,156764,156765" aria-label="POAP">
+            <a className="footer-conversation-social-icon-link" href="https://poap.family/events/151512,156764,156765,159354,159355,165545,165546" aria-label="POAP">
               <img src={"/img/icons/poap.svg"} alt="POAP" className="footer-conversation-social-icon ocial-icon-margin"></img>
             </a>
           </div>
