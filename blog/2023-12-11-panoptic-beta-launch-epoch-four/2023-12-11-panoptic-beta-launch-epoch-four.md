@@ -35,9 +35,9 @@ Epoch 4 sees Panoptic's beta options protocol launch on [Avalanche](https://www.
 
 Epoch 4 introduces new options markets to DeFi. Participants now have the opportunity to trade perpetual options in three distinct markets:
 
-    1. Avax options
-    2. [Joe](https://traderjoexyz.com/avalanche) options
-    3. [Shrap](https://www.shrapnel.com/) options
+1. Avax options
+2. [Joe](https://traderjoexyz.com/avalanche) options
+3. [Shrap](https://www.shrapnel.com/) options
 
 Each market offers rewards for top traders, with a total prize pool of $1,000.
 
