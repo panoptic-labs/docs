@@ -96,7 +96,7 @@ Feedback is an essential part of our beta launch. If you encounter any bugs or h
 
 Are you an LP on Uniswap/Trader Joe, market maker, or experienced trader? If so, you might qualify for VIP access to our beta platform for trading DeFi options.
 
-To apply, fill out our form [here]([https://forms.gle/urdAPEmRid7zzz3T7](https://docs.google.com/forms/d/e/1FAIpQLSeggT7ad9NvJ9LPW5thzwWBLvj35nr5Sg7rzp4xs4kUK932ag/viewform).
+To apply, fill out our form [here](https://docs.google.com/forms/d/e/1FAIpQLSeggT7ad9NvJ9LPW5thzwWBLvj35nr5Sg7rzp4xs4kUK932ag/viewform).
 
 
 ## How to Participate in Epoch 4
