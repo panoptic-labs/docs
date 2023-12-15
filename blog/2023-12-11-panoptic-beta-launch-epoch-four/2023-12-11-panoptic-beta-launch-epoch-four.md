@@ -33,11 +33,10 @@ Epoch 4 sees Panoptic's beta options protocol launch on [Avalanche](https://www.
 
 ### New Markets
 
-Epoch 4 introduces new options markets to DeFi. Participants now have the opportunity to trade perpetual options in three distinct markets:
+Epoch 4 introduces new options markets to DeFi. Participants now have the opportunity to trade perpetual options in two new markets:
 
 1. Avax options
 2. [Joe](https://traderjoexyz.com/avalanche) options
-3. [Shrap](https://www.shrapnel.com/) options
 
 Each market offers rewards for top traders, with a total prize pool of $1,000.
 
@@ -58,22 +57,15 @@ The top qualifying traders of each market will receive:
    
 WAVAX-USDC 0.05%:
 
-    1st Place: $250 USDC
-    2nd Place: $100 USDC
-    3rd Place: $50 USDC
+    1st Place: $400 USDC
+    2nd Place: $175 USDC
+    3rd Place: $100 USDC
 
 JOE-WAVAX 0.3%:
 
     1st Place: $200 USDC
     2nd Place: $75 USDC
-    3rd Place: $25 USDC
-
-    
-SHRAP-USDC 1%:
-
-    1st Place: $200 USDC
-    2nd Place: $75 USDC
-    3rd Place: $25 USDC
+    3rd Place: $50 USDC
     
 To qualify, participants must place a minimum of three (3) trades, open a new position on at least three (3) different days (24 hour periods), and have positive profit and loss (PnL) at the end of the snapshot.
 
@@ -91,9 +83,6 @@ The ranking metrics are based on profit and loss (PnL) calculated in terms of th
     Pool 2: JOE-WAVAX, 0.3%
     Deposit Amount: ~0.15 WAVAX and ~8 JOE
 
-    Pool 3: SHRAP-USDC, 1%
-    Deposit Amount: 5 USDC and ~16 SHRAP
-
 Please note that you must deposit the required amount to participate, and that the exact amount can be found on the onboarding modal of the [app](https://beta.panoptic.xyz/) once the competition starts.
 
 
@@ -107,7 +96,7 @@ Feedback is an essential part of our beta launch. If you encounter any bugs or h
 
 Are you an LP on Uniswap/Trader Joe, market maker, or experienced trader? If so, you might qualify for VIP access to our beta platform for trading DeFi options.
 
-To apply, fill out our form [here](https://forms.gle/urdAPEmRid7zzz3T7).
+To apply, fill out our form [here]([https://forms.gle/urdAPEmRid7zzz3T7](https://docs.google.com/forms/d/e/1FAIpQLSeggT7ad9NvJ9LPW5thzwWBLvj35nr5Sg7rzp4xs4kUK932ag/viewform).
 
 
 ## How to Participate in Epoch 4
@@ -124,7 +113,7 @@ Here are the steps you need to take to join the competition:
         
     Obtain AVAX on Avalanche: [Send](https://support.avax.network/en/articles/6079875-core-extension-how-do-i-send-and-receive-assets) funds directly from an exchange or [bridge](https://support.avax.network/en/articles/6657391-how-to-use-the-avalanche-bridge-core-app-bridge) your funds from another chain.
 
-    Obtaining other tokens on Avalanche: Swap your funds on Avalanche for WAVAX, USDC, Joe, or Shrap via the [Uniswap](https://app.uniswap.org/swap?chain=avalanche) or [Trader Joe](https://traderjoexyz.com/avalanche/trade) interface.
+    Obtaining other tokens on Avalanche: Swap your funds on Avalanche for WAVAX, USDC, or Joe via the [Uniswap](https://app.uniswap.org/swap?chain=avalanche) or [Trader Joe](https://traderjoexyz.com/avalanche/trade) interface.
     
 5.  Buy or sell options between December 18 (17:00 UTC) and January 3 (17:00 UTC). Check out our [leaderboard](https://beta.panoptic.xyz/leaderboard) to see where you stand in comparison to other traders.
     
