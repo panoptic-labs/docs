@@ -1,9 +1,9 @@
 ---
-slug: synth_perps_1
-title: Synthetic Perpetual Futures in Panoptic, part I. An In-Depth Exploration  
-tags: [Options Traders, Perps traders, Strategies, perps, synthetics]
+slug: introduction-synthetic-perps
+title: Introduction to Synthetic Perpetual Futures
+tags: [Options Traders, Perps Traders, Strategies, Perps, Synthetics]
 image: /img/research/long.png
-description: "In this series, we embark on an in-depth exploration of perps (perpetual futures) and their unique implementation within the Panoptic options-trading protocol"
+description: "In this series, we embark on an in-depth exploration of perps (perpetual futures) and their unique implementation within the Panoptic options trading protocol"
 ---
 
 # Synthetic Perpetual Futures in Panoptic, part I: An In-Depth Exploration
@@ -20,14 +20,14 @@ In this series, we embark on an in-depth exploration of perps (perpetual futures
 
 ## Introduction to Perps.
 
-Before diving into *perps*, we first present a brief recap of what a *futures contract* is.  A futures contract is a standardized financial agreement or contract between two parties -- typically referred to as the "buyer" and the "seller" -- to buy or sell a specified asset (i.e., a token in the case of crypto) at a predetermined settlement price (the "futures price") on a specified future date. Contrary to options, both parties in the contract have the **obligation** to carry out the deal. Futures contracts are widely used in financial markets to hedge against price fluctuations, speculate on future price movements, and manage risk.
+Before diving into *perps*, we first present a brief recap of what a *futures contract* is.  A futures contract is a standardized financial agreement or contract between two parties &mdash; typically referred to as the "buyer" and the "seller" &mdash; to buy or sell a specified asset (i.e., a token in the case of crypto) at a predetermined settlement price (the "futures price") on a specified future date. Contrary to options, both parties in the contract have the **obligation** to carry out the deal. Futures contracts are widely used in financial markets to hedge against price fluctuations, speculate on future price movements, and manage risk.
 
-Perps -- a variation on futures contracts -- offer a revolutionary approach in crypto derivatives trading, blending elements of traditional finance with the digital realm. Key characteristics of perps include:
+Perps &mdash; a variation on futures contracts &mdash; offer a revolutionary approach in crypto derivatives trading, blending elements of traditional finance with the digital realm. Key characteristics of perps include:
 
 - Indefinite Duration: Unlike standard futures, perps have no expiration date, offering continuous exposure to asset price movements.
 - Funding Rate Mechanism: Instead of a fixed settlement price, perps use a 'funding rate' to align their price with the underlying asset.
 
-Furthermore, perps are primarily traded on crypto assets. There is no other major asset on which perps are traded. **At the time of writing, there's over $1 Billion USD locked in perpetual protocols across DeFi (see [here](https://defillama.com/protocols/Derivatives))** 
+Furthermore, perps are primarily traded on crypto assets. There is no other major asset on which perps are traded. **At the time of writing, [there's over $1 Billion USD locked in perpetual protocols across DeFi](https://defillama.com/protocols/Derivatives)**. 
 
 Despite perps taking off in the crypto markets, the concept of perpetual futures is not new. In fact, they were originally propose by [Shiller (1993)](https://www.nber.org/papers/t0131) with the aim of creating an enduring entitlement to the cash flows of an asset that lacked liquidity. 
 
@@ -51,13 +51,13 @@ Having provided a brief overview of perps and their purpose, we now delve into a
 1. Entry into the contract is free of charge.
 2. Either party can terminate the contract unilaterally at any point in time $t$.
 2. Prior to termination, the party holding a long position compensates the short position according to the formula:
-\begin{align}
+$$
 \rho_\tau\mathrm{d}\tau:=k(F_\tau-S_\tau)\mathrm{d\tau}+iS_\tau\mathrm{d}\tau, \quad k,i\in\mathbb{R}+,
-\end{align}
+$$
 This compensation is calculated for each (infinitesimal) unit of time $\mathrm{d}\tau$ that the contract remains active. Here, $k$ represents a constant that modifies the funding rate, and $i$ signifies an interest rate. Consequently, the cumulative payment from longs to shorts over the period $[0,t]$ is expressed as:
-\begin{align}
+$$
 P_t=\int_0^t\rho_\tau\mathrm{d}\tau=\int_0^t\left(k(F_\tau-S_\tau)+iS_\tau \right)\mathrm{d\tau}.
-\end{align}
+$$
 It is noteworthy that $P_t$ can be a negative value, implying a reversal in the payment direction where the shorts compensate the longs.
 
 The **funding rate**, denoted by $\rho_t$, is arguably the most critical aspect of a perp. Ideally, this rate should hover around zero, ensuring that $F_t$ remains in proximity to $S_t$. If this balance is not maintained, the incentive for parties to enter positions could be adversely affected. The adjustment of $F_t$ to reflect supply and demand dynamics is a universal feature across different protocols, although the exact mechanism may vary.
@@ -101,22 +101,22 @@ These synthetic perps diverge from standard perps in two significant ways:
 
 Although synthetic perps in Panoptic mirror the payoff curves of standard perps, their funding rate mechanism differs. In Panoptic, the fee structure for perpetual option transactions includes trading fees akin to those in Uniswap, augmented by an inflation factor termed vegoid. The fee computation is as follows:
 
-\begin{align}
+$$
 \mathsf{PanoptionFees}(t_0,t,j)=\mathsf{UniswapV3Fees}(t_0,t,j)\underbrace{\left(1+\frac{\nu_0 B(j,t)}{T(j,t)-B(j,t)}\right)}_\text{:=vegoid},
-\end{align}
+$$
 
 where $\mathsf{UniswapV3Fees}(t_0,t,j)$ represent the fees collected by Uniswap at tick $j$ between times $t_0$ and $t$. The protocol parameter $\nu_0$, currently set at 0.25 and within the range $(0,1)$, along with the amounts of bought ($B(j,t)$) and total liquidity ($T(j,t)$) at tick $j$ at time $t$, define vegoid:
 
-\begin{align}
+$$
 \mathsf{vegoid}(j,t):=\left(1+\frac{\nu_0 B(j,t)}{T(j,t)-B(j,t)}\right). 
-\end{align}
+$$
 
 Notice that such an amount needs to be paid periodically, and will also depend on the amount of demand and supply of the assets in the pool. Given this, we can define the following: 
 
 >**Formal Definition of Synthetic Perp Funding Rate**. The funding rate of a synthetic perp on Panoptic is given by: 
->\begin{align}
+$$
 \rho_t^\text{synthetic perp}=\mathsf{vegoid}_\text{call}(j,t)-\mathsf{vegoid}_\text{put}(j,t)
-\end{align}
+$$
 
 ### How can I trade them? 
 The process of creating synthetic perps on Panoptic is streamlined, thanks to the one-click strategy templates.  Indeed, one can simply follow the tutorial guide on [*how to open a position*](https://panoptic.xyz/research/opening-a-position-on-panoptic). The main steps are: 
@@ -148,4 +148,4 @@ This piece highlights the innovative intersection of traditional finance and DeF
 
 Lastly, in closing this discussion on perps and their unique implementation in Panoptic, it's evident that the literature on this subject, particularly perps, is somewhat sparse. Existing resources often cover only the basic protocols, leaving out intricate details that might be crucial for a deeper understanding. This gap in comprehensive material is particularly noticeable for those seeking a more mathematical and analytical perspective on the topic. Therefore, for readers looking to delve deeper into the complexities of perps, exploring more specialized and academically oriented resources is recommended. These might offer the detailed insights and rigorous analysis necessary to fully grasp the nuances of perps and their applications in platforms like Panoptic.
 1. He, S., Manela, A., Ross, O., & von Wachter, V. (2022). *Fundamentals of Perpetual Futures*. arXiv preprint arXiv:2212.06888.
-2. Ackerer, Damien,  Hugonnier J, & Jermann U. (2023) *Perpetual Futures Pricing*. arXiv preprint arXiv:2310.11771.
+2. Ackerer, Damien,  Hugonnier J, & Jermann U. (2023). *Perpetual Futures Pricing*. arXiv preprint arXiv:2310.11771.
