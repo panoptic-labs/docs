@@ -9,7 +9,7 @@ description: "Join Epoch 4 of Panoptic's Beta Launch, an expanded DeFi options t
 ![](./epoch-4-opens-banner.png)
 
 **UPDATE**
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">📢 Delay of Trading Competition<br/><br/>Due to the recent surge in gas prices and limitations posed by the low beta deposit size, we are postponing Epoch 4. We want to ensure a fair and accessible experience for all.<br><br>Stay tuned for updates when the on-chain weather improves ❄️</p>&mdash; Panoptic (@Panoptic_xyz) <a href="https://twitter.com/Panoptic_xyz/status/1736777353945354623?ref_src=twsrc%5Etfw">December 18, 2023</a></blockquote>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">📢 Delay of Trading Competition<br/><br/>Due to the recent surge in gas prices and limitations posed by the low beta deposit size, we are postponing Epoch 4. We want to ensure a fair and accessible experience for all.<br/><br/>Stay tuned for updates when the on-chain weather improves ❄️</p>&mdash; Panoptic (@Panoptic_xyz) <a href="https://twitter.com/Panoptic_xyz/status/1736777353945354623?ref_src=twsrc%5Etfw">December 18, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Next Monday, December 18, Panoptic is rolling out Epoch 4 with some changes that will spice up our trading competition. Most notably, we're launching on a new chain, expanding the available markets to trade on, and giving out more prizes.
 
