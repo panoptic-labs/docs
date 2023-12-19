@@ -41,7 +41,7 @@ Sign up for the gated launch [here](https://signup.panoptic.xyz).
 - Epoch 3 [Ends](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-three-closed) (December 11, 2023)
 
 ### Epoch 4
-- Epoch 4 Begins (December 18, 2023)
+- Epoch 4 [Begins](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-four)
 
 ### Videos
 - Intro: [Join the Future of DeFi Options](https://www.youtube.com/watch?v=1wwF5_SH1Rc)
