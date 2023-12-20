@@ -1,18 +1,18 @@
 [
   {
+    "title": "December Nutcracker Trading Competition",
+    "date": "2023-12-19",
+    "image": "/img/banners/december-nutcracker.jpg",
+    "link": "https://panoptic.xyz/blog/december-nutcracker",
+    "description": "Join Panoptic's December Nutcracker perpetual options trading competition by claiming, depositing, and trading free tokens daily for a chance to win exciting mystery prizes.",
+    "id": 1
+  },
+  {
     "title": "Introduction to Synthetic Perpetual Futures",
     "date": "2023-12-18",
     "image": "/img/research/long.png",
     "link": "https://panoptic.xyz/research/introduction-synthetic-perps",
     "description": "In this series, we embark on an in-depth exploration of perps (perpetual futures) and their unique implementation within the Panoptic options trading protocol",
-    "id": 1
-  },
-  {
-    "title": "Buying Power, Collateral, and Leverage",
-    "date": "2023-12-12",
-    "image": "/img/research/buying-power-collateral-banner.png",
-    "link": "https://panoptic.xyz/research/buying-power-collateral-leverage",
-    "description": "Explore how buying power and collateral shape capital efficiency and leverage for perpetual options trading on Panoptic.",
     "id": 2
   },
   {
@@ -24,19 +24,19 @@
     "id": 3
   },
   {
-    "title": "Beta Launch: Epoch 4",
-    "date": "2023-12-11",
-    "image": "/img/banners/epoch-4-opens-banner.png",
-    "link": "https://panoptic.xyz/blog/panoptic-beta-launch-epoch-four",
-    "description": "Join Epoch 4 of Panoptic's Beta Launch, an expanded DeFi options trading competition with a new chain, more markets, and more prizes!",
+    "title": "Streamia vs. Black-Scholes Model: A Comparative Study",
+    "date": "2023-11-28",
+    "image": "/img/research/usdc_weth_comparison.png",
+    "link": "https://panoptic.xyz/research/streamia-vs-black-scholes",
+    "description": "Have you ever wondered how selling traditional options priced via the Black-Scholes model compare to selling Panoptic options? We analyze hundreds of real LP positions across multiple Uniswap pools to find out.",
     "id": 4
   },
   {
-    "title": "Beta Launch: Epoch 3",
-    "date": "2023-11-22",
-    "image": "/img/banners/epoch-3-opens-banner.png",
-    "link": "https://panoptic.xyz/blog/panoptic-beta-launch-epoch-three",
-    "description": "Join Epoch 3 of Panoptic's Beta Launch, an expanded DeFi options trading competition with increased markets and lucrative rewards for top traders.",
+    "title": "Code4rena Audit",
+    "date": "2023-11-27",
+    "image": "/img/banners/code4rena-audit-banner.png",
+    "link": "https://panoptic.xyz/blog/panoptic-code4rena-audit",
+    "description": "To bolster platform security, Panoptic launches its audit with Code4rena.",
     "id": 5
   }
 ]
