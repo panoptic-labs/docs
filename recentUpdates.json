@@ -32,11 +32,11 @@
     "id": 4
   },
   {
-    "title": "Beta Launch: Epoch 4",
-    "date": "2023-12-11",
-    "image": "/img/banners/epoch-4-opens-banner.png",
-    "link": "https://panoptic.xyz/blog/panoptic-beta-launch-epoch-four",
-    "description": "Join Epoch 4 of Panoptic's Beta Launch, an expanded DeFi options trading competition with a new chain, more markets, and more prizes!",
+    "title": "Code4rena Audit",
+    "date": "2023-11-27",
+    "image": "/img/banners/code4rena-audit-banner.png",
+    "link": "https://panoptic.xyz/blog/panoptic-code4rena-audit",
+    "description": "To bolster platform security, Panoptic launches its audit with Code4rena.",
     "id": 5
   }
 ]
