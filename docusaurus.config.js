@@ -165,7 +165,7 @@ const config = {
       announcementBar: {
         id: "ETH_Denver_2023",
         content:
-          "📢 The Panoptic gated launch sign-up list is officially open! <a href=\"https://signup.panoptic.xyz\">Sign up now</a>.",
+          "📢 The <a href=\"https://panoptic.xyz/blog/december-nutcracker\">December Nutcracker</a> holiday trading competition is live, with mystery prizes awaiting. <a href=\"https://beta.panoptic.xyz\">Join now</a>!",
         textColor: "#FFFFFF",
         isCloseable: true,
       },
