@@ -24,7 +24,7 @@ How long are Uniswap LPs selling options for? Are short-term 0DTEs (zero days to
 
 We answer all these questions, and more, in our research deep dive below.
 
-# How long are Uniswap LPs selling options for?
+## How long are Uniswap LPs selling options for?
 
 Surprisingly, LP positions have a short shelf life. Data reveals that a significant number of LP positions last merely a few days.
 
@@ -42,7 +42,7 @@ A closer inspection reveals a staggering fact - the bulk of LP positions are act
 
   
 
-# Which is more popular – 0DTEs or LEAPS?
+## Which is more popular – 0DTEs or LEAPS?
 
   
 
@@ -52,7 +52,7 @@ Grouping LP durations as less than one day, one week, one month, or one year, un
 
   
 
-# What does the width of an LP position say about its “expiry”?
+## What does the width of an LP position say about its “expiry”?
 
 An LP position's width pertains to the price range selected for liquidity provision on Uniswap v3. For example, an LP providing liquidity between $1400-$1401 is narrow, whereas providing liquidity between $1400-$2000 is considerably wider. For an in-depth understanding of position width, read our [research bite](https://panoptic.xyz/research/uniswap-lp-calculate-price-range) on LP price ranges.
 
@@ -72,7 +72,7 @@ However, there is a caveat. LP positions are not exactly like traditional option
 
 While the concept of an implied time horizon of an LP can be shown theoretically, analyzing on-chain data can help us assess the concept in practice. Our previous findings drew [parallels](https://panoptic.xyz/research/zero-dte-defi-options) between LP position widths and option expiration dates. But to what extent do current LP positions’ widths correlate to their holding duration?
 
-# How do widths relate to LP position “expiries”?
+## How do widths relate to LP position “expiries”?
 
 We find a correlation coefficient of 0.28 (excluding outliers) between holding time and position width, signifying that wider positions are generally held for extended periods. While this positive correlation exists, its moderate magnitude indicates other variables are potentially in play — such as passive liquidity management or the expectation of price reversal.
 
@@ -90,7 +90,7 @@ As the holding time increases, we see that the distribution of widths becomes mo
 
 ![](./Time_vs_width.png)
 
-# Future Research
+## Future Research
 
 While this analysis considered all LP positions with equal weighting, the fact remains that a single wallet might hold multiple LP positions, potentially influencing our results. Furthermore, the significance of LP positions varies in terms of their size, which means smaller, shorter-term positions might be overrepresented.
 
