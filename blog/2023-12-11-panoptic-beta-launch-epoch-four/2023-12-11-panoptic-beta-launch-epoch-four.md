@@ -8,10 +8,7 @@ description: "Join Epoch 4 of Panoptic's Beta Launch, an expanded DeFi options t
 
 ![](./epoch-4-opens-banner.png)
 
-**UPDATE**
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">📢 Delay of Trading Competition<br/><br/>Due to the recent surge in gas prices and limitations posed by the low beta deposit size, we are postponing Epoch 4. We want to ensure a fair and accessible experience for all.<br/><br/>Stay tuned for updates when the on-chain weather improves ❄️</p>&mdash; Panoptic (@Panoptic_xyz) <a href="https://twitter.com/Panoptic_xyz/status/1736777353945354623?ref_src=twsrc%5Etfw">December 18, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-Next Monday, December 18, Panoptic is rolling out Epoch 4 with some changes that will spice up our trading competition. Most notably, we're launching on a new chain, expanding the available markets to trade on, and giving out more prizes.
+Next Wednesday, January 10, Panoptic is rolling out Epoch 4 with some changes that will spice up our trading competition. Most notably, we're launching on a new chain, expanding the available markets to trade on, and giving out more prizes.
 
 
 In the past we've limited our Epochs to a select list of individuals, but this time we're expanding access: **anyone will be able to join the trading competition**. Additionally, the first 100 depositors will be eligible to claim the Epoch 4 POAP.
@@ -50,8 +47,8 @@ In addition to the monetary prizes, exclusive NFTs will be awarded to the top fi
     Eligibility: Verification via X (formerly Twitter)
 
 ### Timeline
-    Start Date: December 18, 17:00 UTC
-    End Date: January 3, 17:00 UTC
+    Start Date: January 10, 17:00 UTC
+    End Date: January 24, 17:00 UTC
 
 ### Prizes
 
@@ -81,12 +78,12 @@ The ranking metrics are based on profit and loss (PnL) calculated in terms of th
     Chain: Avalanche C-Chain
 
     Pool 1: WAVAX-USDC, 0.05%
-    Deposit Amount: 5 USDC and ~0.15 WAVAX.
+    Deposit Amount: 25 USDC and ~0.75 WAVAX.
 
     Pool 2: JOE-WAVAX, 0.3%
-    Deposit Amount: ~0.15 WAVAX and ~8 JOE
+    Deposit Amount: ~0.75 WAVAX and ~45 JOE
 
-Please note that you must deposit the required amount to participate, and that the exact amount can be found on the onboarding modal of the [app](https://beta.panoptic.xyz/) once the competition starts.
+The deposit limit for each user will be ~$50 per pool. Please note that you must deposit the required amount to participate, and that the exact amount can be found on the onboarding modal of the [app](https://beta.panoptic.xyz/) once the competition starts.
 
 
 ### Feedback
@@ -118,7 +115,7 @@ Here are the steps you need to take to join the competition:
 
     Obtaining other tokens on Avalanche: Swap your funds on Avalanche for WAVAX, USDC, or Joe via the [Uniswap](https://app.uniswap.org/swap?chain=avalanche) or [Trader Joe](https://traderjoexyz.com/avalanche/trade) interface.
     
-5.  Buy or sell options between December 18 (17:00 UTC) and January 3 (17:00 UTC). Check out our [leaderboard](https://beta.panoptic.xyz/leaderboard) to see where you stand in comparison to other traders.
+5.  Buy or sell options between January 10 (17:00 UTC) and January 24 (17:00 UTC). Check out our [leaderboard](https://beta.panoptic.xyz/leaderboard) to see where you stand in comparison to other traders.
     
 
 Winners will have their prizes distributed at the end of the competition period.
