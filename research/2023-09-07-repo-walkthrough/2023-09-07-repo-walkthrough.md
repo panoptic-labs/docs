@@ -12,7 +12,7 @@ In this post, we’ll delve into Panoptic and provide a comprehensive overview o
 <!-- truncate -->
 
 A video walkthrough is also available:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tOfImvHouUw?si=O319Em2m4c8Gb3pD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Z9iTU1CC38U?si=D2ifx1KBU4h-AapZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## What is Panoptic?
 
