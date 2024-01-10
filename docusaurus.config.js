@@ -165,7 +165,7 @@ const config = {
       announcementBar: {
         id: "ETH_Denver_2023",
         content:
-          "📢 Our trading competition on Avalanche is live. A <a href=\"https://panoptic.xyz/blog/panoptic-beta-launch-epoch-four">$1,000 prize pool</a> awaits! Also, the <a href=\"https://panoptic.xyz/blog/december-nutcracker\">December Nutcracker</a> competition is underway on Base, with mystery prizes in store. <a href=\"https://beta.panoptic.xyz\">Join now</a>!",
+          "📢 Our trading competition on Avalanche is live. A <a href=\"https://panoptic.xyz/blog/panoptic-beta-launch-epoch-four\">$1,000 prize pool</a> awaits! Also, the <a href=\"https://panoptic.xyz/blog/december-nutcracker\">December Nutcracker</a> competition is underway on Base, with mystery prizes in store. <a href=\"https://beta.panoptic.xyz\">Join now</a>!",
         textColor: "#FFFFFF",
         isCloseable: true,
       },
