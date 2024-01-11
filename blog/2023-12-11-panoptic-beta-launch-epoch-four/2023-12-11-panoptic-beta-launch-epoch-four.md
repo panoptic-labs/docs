@@ -105,7 +105,7 @@ Here are the steps you need to take to join the competition:
 
 1.  Navigate to the beta version of the [Panoptic app](http://beta.panoptic.xyz/)
 2.  Connect your wallet to [Avalanche](https://subnets.avax.network/c-chain). If you’re unfamiliar with how to do this, follow the instructions [here](https://support.avax.network/en/articles/4626956-how-to-connect-metamask-to-avalanche).
-3.  You may participate in any of the three available options markets. To begin trading, follow these steps:
+3.  You may participate in any of the available options markets. To begin trading, follow these steps:
 
     Deposit required funds on Panoptic by following the onboarding instructions on the [Panoptic app](http://beta.panoptic.xyz/).
     
