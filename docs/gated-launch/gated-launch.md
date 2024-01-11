@@ -40,8 +40,16 @@ Sign up for the gated launch [here](https://signup.panoptic.xyz).
 - Epoch 3 [Begins](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-three) (November 28, 2023)
 - Epoch 3 [Ends](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-three-closed) (December 11, 2023)
 
+### December Nutcracker
+- December Nutcracker [Begins](https://panoptic.xyz/blog/december-nutcracker) (December 19, 2023)
+- December Nutcracker Ends (TBA)
+
 ### Epoch 4
-- Epoch 4 [Begins](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-four)
+- Epoch 4 [Begins](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-four) (January 10, 2024)
+- Epoch 4 Ends (January 24, 2024)
+
+### Epoch 5
+- Epoch 5 Begins (TBA)
 
 ### Videos
 - Intro: [Join the Future of DeFi Options](https://www.youtube.com/watch?v=1wwF5_SH1Rc)
