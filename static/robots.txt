@@ -1,1 +1,2 @@
-Disallow: /.well_known
+User-agent: *
+Disallow: /.well_known/
