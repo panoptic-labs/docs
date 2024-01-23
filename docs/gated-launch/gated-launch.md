@@ -42,14 +42,15 @@ Sign up for the gated launch [here](https://signup.panoptic.xyz).
 
 ### December Nutcracker
 - December Nutcracker [Begins](https://panoptic.xyz/blog/december-nutcracker) (December 19, 2023)
-- December Nutcracker Ends (TBA)
+- December Nutcracker Ends (Feb 22)
 
 ### Epoch 4
 - Epoch 4 [Begins](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-four) (January 10, 2024)
 - Epoch 4 Ends (January 24, 2024)
 
 ### Epoch 5
-- Epoch 5 Begins (TBA)
+- Epoch 5 [Begins](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-five) (January 25, 2024)
+- Epoch 5 Ends (February 8, 2024)
 
 ### Videos
 - Intro: [Join the Future of DeFi Options](https://www.youtube.com/watch?v=1wwF5_SH1Rc)
