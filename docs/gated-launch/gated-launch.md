@@ -46,7 +46,7 @@ Sign up for the gated launch [here](https://signup.panoptic.xyz).
 
 ### Epoch 4
 - Epoch 4 [Begins](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-four) (January 10, 2024)
-- Epoch 4 Ends (January 24, 2024)
+- Epoch 4 [Ends](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-four-closed) (January 24, 2024)
 
 ### Epoch 5
 - Epoch 5 [Begins](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-five) (January 25, 2024)
