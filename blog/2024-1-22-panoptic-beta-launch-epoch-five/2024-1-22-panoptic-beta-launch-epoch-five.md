@@ -64,7 +64,7 @@ tBTC-USDbC 0.05%:
     3rd Place: $200 USDC
 
 
-To qualify, participants must place a minimum of three (3) trades and open a new position on at least three (3) different days (24 hour periods). The ranking metrics are based on profit and loss (PnL) calculated in terms of the account's value at the end of the epoch. 
+The ranking metrics are based on profit and loss (PnL) calculated in terms of the account's value at the end of the epoch. 
 
 For Epoch 5, the first 100 participants will receive an Epoch 5 POAP that is custom designed by the Panoptic team. The top five traders of each market will be eligible for a Top Trader POAP.
 
