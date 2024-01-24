@@ -66,8 +66,6 @@ JOE-WAVAX 0.3%:
     1st Place: $200 USDC
     2nd Place: $75 USDC
     3rd Place: $50 USDC
-    
-To qualify, participants must place a minimum of three (3) trades, open a new position on at least three (3) different days (24 hour periods), and have positive profit and loss (PnL) at the end of the snapshot.
 
 For Epoch 4, the first 100 participants will receive an Epoch 4 POAP that is custom designed by the Panoptic team. The top five traders of each market will be eligible for a Top Trader POAP.
   
