@@ -73,12 +73,12 @@ For Epoch 5, the first 100 participants will receive an Epoch 5 POAP that is cus
     Chain 1: Optimism Mainnet
 
     Pool: OP-USDC.e, 0.3%
-    Deposit Amount: ~9 OP and 25 USDC.e.
+    Deposit Amount: 9 OP and 25 USDC.e.
 
     Chain 2: Base
 
     Pool: tBTC-USDbC, 0.05%
-    Deposit Amount: ~0.00062 tBTC and 25 USDbC.
+    Deposit Amount: 0.00062 tBTC and 25 USDbC.
 
 
 The deposit limit for each user will be ~$50/market. Please note that you must deposit the required amount to participate, and that the exact amount can be found on the onboarding modal of the [app](https://beta.panoptic.xyz/) once the competition starts.
