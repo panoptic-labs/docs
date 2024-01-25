@@ -1,18 +1,18 @@
 [
   {
+    "title": "December Nutcracker Trading Competition",
+    "date": "2023-12-19",
+    "image": "/img/banners/december-nutcracker.jpg",
+    "link": "https://panoptic.xyz/blog/december-nutcracker",
+    "description": "Join Panoptic's December Nutcracker perpetual options trading competition by claiming, depositing, and trading free tokens daily for a chance to win exciting mystery prizes.",
+    "id": 1
+  },
+  {
     "title": "Introduction to Synthetic Perpetual Futures",
     "date": "2023-12-18",
     "image": "/img/research/long.png",
     "link": "https://panoptic.xyz/research/introduction-synthetic-perps",
     "description": "In this series, we embark on an in-depth exploration of perps (perpetual futures) and their unique implementation within the Panoptic options trading protocol",
-    "id": 1
-  },
-  {
-    "title": "Epoch 3 Concludes — Epoch 4 Awaits",
-    "date": "2023-12-11",
-    "image": "/img/banners/epoch-three-closed.png",
-    "link": "https://panoptic.xyz/blog/panoptic-beta-launch-epoch-three-closed",
-    "description": "Panoptic wraps up its third epoch of beta testing and DeFi options trading competition. Discover the winners, learn about the upcoming Epoch 4, and join our growing community of Panoptimists.",
     "id": 2
   },
   {
@@ -24,19 +24,19 @@
     "id": 3
   },
   {
-    "title": "Beta Launch: Epoch 5",
+    "title": "Epoch 4 Concludes",
     "date": null,
-    "image": "/img/banners/epoch-5-opens-banner.png",
-    "link": "https://panoptic.xyz/blog/panoptic-beta-launch-epoch-five",
-    "description": "Join Epoch 5 of Panoptic's Beta Launch, an expanded DeFi options trading competition with a new chain, more markets, and more prizes!",
+    "image": "/img/banners/epoch-four-closed.png",
+    "link": "https://panoptic.xyz/blog/panoptic-beta-launch-epoch-four-closed",
+    "description": "Panoptic wraps up its fourth epoch of beta testing on Avalanche. Discover the winners and learn about upcoming trading contests.",
     "id": 4
   },
   {
-    "title": "Panoptic Insights: December Newsletter",
+    "title": "Epoch 2: Trade Analysis",
     "date": null,
-    "image": "/img/banners/newsletter-banner.webp",
-    "link": "https://panoptic.xyz/blog/panoptic-december-2023-newsletter",
-    "description": "The December Edition of the Panoptic Newsletter",
+    "image": "/img/banners/top-trades-of-epoch-2-banner.png",
+    "link": "https://panoptic.xyz/blog/epoch-2-top-trades",
+    "description": "Explore the top trading strategies and gains from Panoptic's Epoch 2, highlighting how traders leveraged ETH options amid market shifts influenced by Blackrock's Ethereum ETF filing.",
     "id": 5
   }
 ]
