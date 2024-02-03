@@ -32,11 +32,11 @@
     "id": 4
   },
   {
-    "title": "Epoch 2: Trade Analysis",
+    "title": "Beta Launch: Epoch 5",
     "date": null,
-    "image": "/img/banners/top-trades-of-epoch-2-banner.png",
-    "link": "https://panoptic.xyz/blog/epoch-2-top-trades",
-    "description": "Explore the top trading strategies and gains from Panoptic's Epoch 2, highlighting how traders leveraged ETH options amid market shifts influenced by Blackrock's Ethereum ETF filing.",
+    "image": "/img/banners/epoch-5-opens-banner.png",
+    "link": "https://panoptic.xyz/blog/panoptic-beta-launch-epoch-five",
+    "description": "Join Epoch 5 of Panoptic's Beta Launch, an expanded DeFi options trading competition with a new chain, more markets, and more prizes!",
     "id": 5
   }
 ]
