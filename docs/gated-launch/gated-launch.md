@@ -60,5 +60,14 @@ Sign up for the gated launch [here](https://signup.panoptic.xyz).
 - [Cross Collateralization on Panoptic](https://www.youtube.com/watch?v=35sE_VwRfRE&list=PLB5qwiSwzT_rgH-HvQtDaWTe48xPaF6se&index=4)
 - [Leveraged Options on Panoptic](https://www.youtube.com/watch?v=CtzyhZsvGp4&list=PLB5qwiSwzT_rgH-HvQtDaWTe48xPaF6se&index=5)
 
+### Tutorials
+- [Options 101](https://panoptic.xyz/blog/crypto-and-options-101)
+- [How To Open a Position on Panoptic](https://panoptic.xyz/research/opening-a-position-on-panoptic)
+- [Panoptic’s Markets](https://panoptic.xyz/research/panoptics-markets)
+- [Option Legs: The Building Blocks of Advanced Strategies](https://panoptic.xyz/research/panoptic-option-legs)
+- [Buying Power, Collateral, and Leverage](https://panoptic.xyz/research/buying-power-collateral-leverage)
+- [Leverage](https://panoptic.xyz/research/panoptic-leverage)
+- [Streamia (Streaming Premia)](https://panoptic.xyz/research/streamia-101)
+
 ### Feedback
 - General [feedback](https://feedback.panoptic.xyz/)
