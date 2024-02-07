@@ -42,14 +42,15 @@ Sign up for the gated launch [here](https://signup.panoptic.xyz).
 
 ### December Nutcracker
 - December Nutcracker [Begins](https://panoptic.xyz/blog/december-nutcracker) (December 19, 2023)
-- December Nutcracker Ends (TBA)
+- December Nutcracker Ends (Feb 22)
 
 ### Epoch 4
 - Epoch 4 [Begins](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-four) (January 10, 2024)
-- Epoch 4 Ends (January 24, 2024)
+- Epoch 4 [Ends](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-four-closed) (January 24, 2024)
 
 ### Epoch 5
-- Epoch 5 Begins (TBA)
+- Epoch 5 [Begins](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-five) (January 25, 2024)
+- Epoch 5 Ends (February 8, 2024)
 
 ### Videos
 - Intro: [Join the Future of DeFi Options](https://www.youtube.com/watch?v=1wwF5_SH1Rc)
@@ -58,6 +59,15 @@ Sign up for the gated launch [here](https://signup.panoptic.xyz).
 - [How to Trade an Option on Panoptic](https://www.youtube.com/watch?v=4rZrp7tzyjY&list=PLB5qwiSwzT_rgH-HvQtDaWTe48xPaF6se&index=3)
 - [Cross Collateralization on Panoptic](https://www.youtube.com/watch?v=35sE_VwRfRE&list=PLB5qwiSwzT_rgH-HvQtDaWTe48xPaF6se&index=4)
 - [Leveraged Options on Panoptic](https://www.youtube.com/watch?v=CtzyhZsvGp4&list=PLB5qwiSwzT_rgH-HvQtDaWTe48xPaF6se&index=5)
+
+### Tutorials
+- [Options 101](https://panoptic.xyz/blog/crypto-and-options-101)
+- [How To Open a Position on Panoptic](https://panoptic.xyz/research/opening-a-position-on-panoptic)
+- [Panoptic’s Markets](https://panoptic.xyz/research/panoptics-markets)
+- [Option Legs: The Building Blocks of Advanced Strategies](https://panoptic.xyz/research/panoptic-option-legs)
+- [Buying Power, Collateral, and Leverage](https://panoptic.xyz/research/buying-power-collateral-leverage)
+- [Leverage](https://panoptic.xyz/research/panoptic-leverage)
+- [Streamia (Streaming Premia)](https://panoptic.xyz/research/streamia-101)
 
 ### Feedback
 - General [feedback](https://feedback.panoptic.xyz/)
