@@ -167,7 +167,7 @@ const config = {
       announcementBar: {
         id: "ETH_Denver_2023",
         content:
-          "📢 Our trading competition on Optimism and Threshold BTC begins on Jan 25. A <a href=\"https://panoptic.xyz/blog/panoptic-beta-launch-epoch-five\">$2,000 prize pool</a> awaits! Also, the <a href=\"https://panoptic.xyz/blog/december-nutcracker\">December Nutcracker</a> competition is underway on Base, with >$10K prizes in MiLadies, Lil Pudgies, and mfers. <a href=\"https://beta.panoptic.xyz\">Join now</a>!",
+          "The <a href=\"https://panoptic.xyz/blog/december-nutcracker\">December Nutcracker</a> competition is underway on Base, with >$10K prizes in MiLadies, Lil Pudgies, and mfers. <a href=\"https://beta.panoptic.xyz\">Join now</a>!",
         textColor: "#FFFFFF",
         isCloseable: true,
       },
