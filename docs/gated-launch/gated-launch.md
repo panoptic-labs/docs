@@ -50,7 +50,11 @@ Sign up for the gated launch [here](https://signup.panoptic.xyz).
 
 ### Epoch 5
 - Epoch 5 [Begins](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-five) (January 25, 2024)
-- Epoch 5 Ends (February 8, 2024)
+- Epoch 5 [Ends](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-five-closed) (February 8, 2024)
+
+### Epoch 6
+- Epoch 6 [Begins](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-six) (February 13, 2024)
+- Epoch 6 Ends (February 23, 2024)
 
 ### Videos
 - Intro: [Join the Future of DeFi Options](https://www.youtube.com/watch?v=1wwF5_SH1Rc)
