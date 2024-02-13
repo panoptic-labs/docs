@@ -62,7 +62,7 @@ For Epoch 6, the first 100 participants will receive an Epoch 6 POAP that is cus
     Chain: Polygon PoS
 
     Pool: WMATIC-USDC.e, 0.05%
-    Deposit Amount: ~30 WMATIC and 25 USDC.e.
+    Deposit Amount: 29 WMATIC and 25 USDC.e.
 
 
 The deposit limit for each user will be ~$50/market. Please note that you must deposit the required amount to participate, and that the exact amount can be found on the onboarding modal of the [app](https://beta.panoptic.xyz/) once the competition starts.
