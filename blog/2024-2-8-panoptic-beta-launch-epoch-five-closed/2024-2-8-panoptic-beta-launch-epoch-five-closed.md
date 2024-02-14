@@ -34,7 +34,7 @@ Congratulations to the top traders!
 ### tBTC Options Contest
 -   🥇 1st Place: fiari.eth ($500 + Top Trader POAP)
 -   🥈 2nd Place: 0xcc9f20a8d46ba531f9e29c751821294265ffff17 ($300 + Top Trader POAP)
--   🥉 3rd Place: scaloneta.eth ($200 + Top Trader POAP)
+-   🥉 3rd Place: 0x9C2b07Dd951eDAE10fbf58bB98a1448cDe417F58 ($200 + Top Trader POAP)
 -   4️⃣ 4th Place: ozy4211.eth (Top Trader POAP)
 -   5️⃣ 5th Place: johnnysack.eth (Top Trader POAP)
 
