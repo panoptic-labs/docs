@@ -128,8 +128,11 @@ Based on this calculation, an account can be liquidated if `Total value of colla
 ### Liquidation Bonus
 
 The liquidation bonus for liquidating an account is determined by two factors:  
-i) The distance between the strike and the current price  
-ii) The in-the-money amount 
+i) The collateral balance of the account to be liquidated
+ii) The insolvency of the account to be liquidated
+
+The formula for calculating the liquidation bonus is as follows:
+`Bonus = min{Collateral Balance / 2, Collateral Requirement at TWAP - Collateral Balance at TWAP}`
 
 It is worth revisiting the figure shown in the [Margin](/docs/panoptic-protocol/margin) page, where the size of the bonus and the amount of loss incurred by the protocol is highlighted.
 
