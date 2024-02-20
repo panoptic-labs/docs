@@ -20,7 +20,7 @@ Everyone can claim free tokens daily. Here's how you can get started:
 
 ### Visit the onboarding page
 
-Navigate to Panoptic’s [app](http://beta.panoptic.xyz) to view the onboarding guide.
+Navigate to Panoptic’s [app](http://deeznuts.panoptic.xyz) to view the onboarding guide.
 
 ### Claim Daily
 
@@ -140,7 +140,7 @@ The competition concludes on February 22. To avoid the concentration of incentiv
 
   
 
-Ready to join the holiday fun? Start trading [now](http://beta.panoptic.xyz).
+Ready to join the holiday fun? Start trading [now](http://deeznuts.panoptic.xyz).
 
   
 *Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](https://panoptic.xyz/docs/intro) and head to our [website](https://panoptic.xyz/).*
