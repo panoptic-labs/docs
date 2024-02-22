@@ -32,11 +32,11 @@
     "id": 4
   },
   {
-    "title": "Epoch 4 Concludes",
+    "title": "Beta Launch: Epoch 5",
     "date": null,
-    "image": "/img/banners/epoch-four-closed.png",
-    "link": "https://panoptic.xyz/blog/panoptic-beta-launch-epoch-four-closed",
-    "description": "Panoptic wraps up its fourth epoch of beta testing on Avalanche. Discover the winners and learn about upcoming trading contests.",
+    "image": "/img/banners/epoch-5-opens-banner.png",
+    "link": "https://panoptic.xyz/blog/panoptic-beta-launch-epoch-five",
+    "description": "Join Epoch 5 of Panoptic's Beta Launch, an expanded DeFi options trading competition with a new chain, more markets, and more prizes!",
     "id": 5
   }
 ]
