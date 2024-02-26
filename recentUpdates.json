@@ -8,12 +8,20 @@
     "id": 1
   },
   {
+    "title": "Epoch 6 Concludes",
+    "date": null,
+    "image": "/img/banners/epoch-six-closed.png",
+    "link": "https://panoptic.xyz/blog/panoptic-beta-launch-epoch-six-closed",
+    "description": "Panoptic wraps up its sixth epoch of beta testing on Polygon. Here's the results.",
+    "id": 2
+  },
+  {
     "title": "Panoptic Insights: February Newsletter",
     "date": null,
     "image": "/img/banners/newsletter-banner.webp",
     "link": "https://panoptic.xyz/blog/panoptic-newsletter-february",
     "description": "Explore the latest in DeFi options: BTC ETF approvals, volatility compression, and explosive growth in DeFi options trading volume.",
-    "id": 2
+    "id": 3
   },
   {
     "title": "Panoptic Insights: January Newsletter",
@@ -21,7 +29,7 @@
     "image": "/img/banners/newsletter-banner.webp",
     "link": "https://panoptic.xyz/blog/panoptic-newsletter-january",
     "description": "Explore the top trading strategies and gains on Panoptic’s DeFi options platform. We highlight Panoptic’s trading competitions, DeFi and options trends, and our media recap.",
-    "id": 3
+    "id": 4
   },
   {
     "title": "Beta Launch: Epoch 6",
@@ -29,14 +37,6 @@
     "image": "/img/banners/epoch-6-opens-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-beta-launch-epoch-six",
     "description": "Join Epoch 6 of Panoptic's Beta Launch as we launch on Polygon!",
-    "id": 4
-  },
-  {
-    "title": "Epoch 4 Concludes",
-    "date": null,
-    "image": "/img/banners/epoch-four-closed.png",
-    "link": "https://panoptic.xyz/blog/panoptic-beta-launch-epoch-four-closed",
-    "description": "Panoptic wraps up its fourth epoch of beta testing on Avalanche. Discover the winners and learn about upcoming trading contests.",
     "id": 5
   }
 ]
