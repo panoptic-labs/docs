@@ -54,7 +54,10 @@ Sign up for the gated launch [here](https://signup.panoptic.xyz).
 
 ### Epoch 6
 - Epoch 6 [Begins](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-six) (February 13, 2024)
-- Epoch 6 Ends (February 23, 2024)
+- Epoch 6 [Ends](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-six-closed) (February 23, 2024)
+
+### Epoch 7
+- COMING SOON...
 
 ### Videos
 - Intro: [Join the Future of DeFi Options](https://www.youtube.com/watch?v=1wwF5_SH1Rc)
@@ -72,6 +75,7 @@ Sign up for the gated launch [here](https://signup.panoptic.xyz).
 - [Buying Power, Collateral, and Leverage](https://panoptic.xyz/research/buying-power-collateral-leverage)
 - [Leverage](https://panoptic.xyz/research/panoptic-leverage)
 - [Streamia (Streaming Premia)](https://panoptic.xyz/research/streamia-101)
+- Liquidity [Spread](https://panoptic.xyz/research/liquidity-spread)
 
 ### Feedback
 - General [feedback](https://feedback.panoptic.xyz/)
