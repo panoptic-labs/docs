@@ -14,7 +14,7 @@ Following our [earlier announcement](https://panoptic.xyz/blog/panoptic-beta-lau
 
 ## Epoch 6's Winners
 
-We're excited to announce the winners of our Epoch 6 trading competition. A total of $1,000 in prizes will be distributed to the best traders. Additionally, the top five traders of each market will each receive the prestigious Top Trader POAP.
+We're excited to announce the winners of our Epoch 6 trading competition. A total of $1,000 in prizes will be distributed to the best traders. Additionally, the top five traders will each receive the prestigious Top Trader POAP.
 
 Congratulations to the top traders!
 
