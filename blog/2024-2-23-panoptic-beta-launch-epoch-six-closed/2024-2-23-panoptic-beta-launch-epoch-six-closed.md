@@ -27,6 +27,8 @@ Congratulations to the top traders!
 
 ![](./leaderboard.png)
 
+Check out the full leaderboard and trader stats [here](https://beta6.panoptic.xyz/leaderboard).
+
 Winners, claim your POAP [here](https://poap.delivery/panoptic-epoch-6-top-trader)! Additionally, the first 100 Epoch 6 participants can grab their Epoch 6 POAP [here](https://poap.delivery/panoptic-epoch-6). 
  
 
