@@ -167,7 +167,7 @@ const config = {
       announcementBar: {
         id: "ETH_Denver_2023",
         content:
-          "Panoptic is hosting the premiere Derivatives event on March 1 in Denver! <a href=\"https://defisummit.panoptic.xyz\">RSVP</a>now!",
+          "Try out our live beta on <a href=\"https://deeznuts.panoptic.xyz/\">Base</a>!",
         textColor: "#FFFFFF",
         isCloseable: true,
       },
