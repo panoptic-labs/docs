@@ -15,31 +15,25 @@ The long awaited [December Nutcracker](https://panoptic.xyz/blog/december-nutcra
 ## Best Naughty Trader
 [Milady](https://opensea.io/collection/milady) 2447 goes to the best naughty trader: 0x955916640f96efcd66f4aee595e0a44700a57868!  
 
+![](./2.png)
+
 0x9559 rapidly [opened and exercised](https://deeznuts.panoptic.xyz/?view_as=0x955916640f96efcd66f4aee595e0a44700a57868) many long options for quick profits while manipulating the Uniswap price with their alt account. They hid their profits by withdrawing, and then proceeded to re-deposit them right before the last day.
 
 The actual competition end time was around 12 hours later. To keep the competition fair, the end time was kept secret with the hash posted on our [blog](https://panoptic.xyz/blog/december-nutcracker). The hash can be verified using [this](https://emn178.github.io/online-tools/sha256.html?input_type=utf-8&input=Thursday%2C%20February%2022%2C%2011%3A38%20am%20EST%20Salt%3AWzzPwF(_yEg*K4Jvx4D%3BU%5DW!J%3DLX%40T&hmac_input_type=utf-8)) preimage.
 
-![](./2.png)
-
 ## Best Nice Trader
-[Lil Pudgy](https://opensea.io/collection/lilpudgys) #16930 goes to the best nice trader: 0xe86d4e36124ecc84760cdc2eb2e0e7c9728c4ff0!
+[Lil Pudgy](https://opensea.io/collection/lilpudgys) #16930 goes to the best nice trader: 0x2513aa49e95dc6368618f20e2cf75146178c94e0!
   
-0xe86d [sold](https://deeznuts.panoptic.xyz/?view_as=0xe86d4e36124ecc84760cdc2eb2e0e7c9728c4ff0) many large strangles, incidentally benefiting from the extreme volatility caused by naughty swappers
-
-Looking back, selling wide options was the best strategy to safely profit off the extreme PA
-
 ![](./3.png)
 
-To avoid liquidations, option sellers had to sell wide 1M (one month) timescales and also keep their collateral balances topped up. Daily claims and deposits as well as keeping buying power usage relatively low was essential to staying on top.
-
-![](./4.png)
+0x2513 [sold](https://deeznuts.panoptic.xyz/?view_as=0x2513aa49e95dc6368618f20e2cf75146178c94e0) many puts and calls, incidentally benefiting from the extreme volatility caused by naughty swappers.
 
 ## Best Trade for Streamia
 [mfer](https://opensea.io/collection/mfers) #5997 goes to the highest streamia trader: 0x1f2aac54e7f2d001572571980664aa2185aff164!
 
-0x1f2a [sold](https://deeznuts.panoptic.xyz/positions/0x10002bc002a03e6726b3160690?view_as=0x1f2aac54e7f2d001572571980664aa2185aff164) a 1D call at the 1.07 strike for over a month. This call incidentally benefitted from naughty swapping activity between the 1.06 and 1.08 price range.
-
 ![](./5.png)
+
+0x1f2a [sold](https://deeznuts.panoptic.xyz/positions/0x10002bc002a03e6726b3160690?view_as=0x1f2aac54e7f2d001572571980664aa2185aff164) a 1D call at the 1.07 strike for over a month. This call incidentally benefitted from naughty swapping activity between the 1.06 and 1.08 price range.
 
 Congratulations to the winners of the December Nutcracker trading contest, and thank you to all who participated! Prizes will be distributed at the end of the week.
 
