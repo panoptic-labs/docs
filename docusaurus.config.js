@@ -167,7 +167,7 @@ const config = {
       announcementBar: {
         id: "ETH_Denver_2023",
         content:
-          "Try out our live beta on <a href=\"https://deeznuts.panoptic.xyz/\">Base</a>!",
+          "Try our beta that's live on <a href=\"https://deeznuts.panoptic.xyz/\">Base</a>!",
         textColor: "#FFFFFF",
         isCloseable: true,
       },
