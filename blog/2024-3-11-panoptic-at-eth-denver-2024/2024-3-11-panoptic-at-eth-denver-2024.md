@@ -2,7 +2,7 @@
 slug: panoptic-at-eth-denver-2024
 title: "Panoptic at ETH Denver 2024"
 tags: [ETH Denver, DeFi Derivatives, Conference]
-images: /img/banners/panoptic-at-eth-denver-2024.png
+image: /img/banners/panoptic-at-eth-denver-2024.png
 description: "Read our ETH Denver 2024 recap. Panoptic hosted the DeFi Derivatives Summit where thought leaders from dYdX, Aevo, Wintermute, GSR, zkSync, and others spoke on the future of derivatives."
 ---
 
