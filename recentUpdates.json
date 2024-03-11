@@ -16,12 +16,20 @@
     "id": 2
   },
   {
+    "title": "Panoptic at ETH Denver 2024",
+    "date": null,
+    "image": "/img/banners/panoptic-at-eth-denver-2024.png",
+    "link": "https://panoptic.xyz/blog/panoptic-at-eth-denver-2024",
+    "description": "Read our ETH Denver 2024 recap. Panoptic hosted the DeFi Derivatives Summit where thought leaders from dYdX, Aevo, Wintermute, GSR, zkSync, and others spoke on the future of derivatives.",
+    "id": 3
+  },
+  {
     "title": "Epoch 5 Concludes",
     "date": null,
     "image": "/img/banners/epoch-five-closed.png",
     "link": "https://panoptic.xyz/blog/panoptic-beta-launch-epoch-five-closed",
     "description": "Panoptic wraps up its fifth epoch of beta testing on the Optimism and Threshold Bitcoin markets. Here's the winners.",
-    "id": 3
+    "id": 4
   },
   {
     "title": "Epoch 6 Concludes",
@@ -29,14 +37,6 @@
     "image": "/img/banners/epoch-six-closed.png",
     "link": "https://panoptic.xyz/blog/panoptic-beta-launch-epoch-six-closed",
     "description": "Panoptic wraps up its sixth epoch of beta testing on Polygon. Here's the results.",
-    "id": 4
-  },
-  {
-    "title": "Panoptic Insights: February Newsletter",
-    "date": null,
-    "image": "/img/banners/newsletter-banner.webp",
-    "link": "https://panoptic.xyz/blog/panoptic-newsletter-february",
-    "description": "Explore the latest in DeFi options: BTC ETF approvals, volatility compression, and explosive growth in DeFi options trading volume.",
     "id": 5
   }
 ]
