@@ -5,6 +5,7 @@ import "./PartnerPage.css"
 const PartnerPage = () => {
 
   const investors = [
+    "greenfield",
     "gumi-crypos",
     "uniswap",
     "coinbase",
@@ -16,7 +17,6 @@ const PartnerPage = () => {
     "zee-drime-capital",
     "mh",
     "big-brain",
-    "greenfield",
     "hashkey",
     "l1d",
     "heartcore",
