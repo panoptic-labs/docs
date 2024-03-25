@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 28.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+  y="0px" viewBox="0 0 116.16 68.69" style="enable-background:new 0 0 116.16 68.69;" xml:space="preserve">
+  <style type="text/css">
+    /* .st0{fill:#231F20;} */
+
+
+    .st2 {
+      enable-background: new;
+    }
+
+    .st3 {
+      fill: #FEFEFE;
+    }
+
+    .st4 {
+      fill: #B2B2B2;
+    }
+
+    .st5 {
+      fill: #E7E7E7;
+    }
+
+    .st6 {
+      fill: #FCFCFC;
+    }
+
+    .st7 {
+      fill: #FBFBFB;
+    }
+
+    .st8 {
+      fill: #F9F9F9;
+    }
+
+    .st9 {
+      fill: #FAFAFA;
+    }
+
+    .st10 {
+      fill: #E9E9E9;
+    }
+
+    .st11 {
+      fill: #E1E1E1;
+    }
+
+    .st12 {
+      fill: #CECECE;
+    }
+
+    .st13 {
+      fill: #070707;
+    }
+
+    .st14 {
+      fill: #121212;
+    }
+
+    .st15 {
+      fill: #0A0A0A;
+    }
+
+    .st16 {
+      fill: #191919;
+    }
+
+    .st17 {
+      fill: #181818;
+    }
+
+    .st18 {
+      fill: #FFFFFF;
+    }
+
+    .st19 {
+      fill: #ffffff;
+    }
+
+    .st22 {
+      fill: #00000;
+    }
+
+    .st23 {
+      opacity: 0.972;
+      fill-rule: evenodd;
+      clip-rule: evenodd;
+      enable-background: new;
+    }
+
+    .st24 {
+      opacity: 0.977;
+      fill-rule: evenodd;
+      clip-rule: evenodd;
+      enable-background: new;
+    }
+
+    .st25 {
+      opacity: 0.971;
+      fill-rule: evenodd;
+      clip-rule: evenodd;
+      enable-background: new;
+    }
+
+    .st26 {
+      opacity: 0.984;
+      fill-rule: evenodd;
+      clip-rule: evenodd;
+      enable-background: new;
+    }
+
+    .st27 {
+      opacity: 0.975;
+      fill-rule: evenodd;
+      clip-rule: evenodd;
+      enable-background: new;
+    }
+
+    .st28 {
+      opacity: 0.987;
+      fill-rule: evenodd;
+      clip-rule: evenodd;
+      enable-background: new;
+    }
+
+    .st29 {
+      opacity: 0.979;
+      fill-rule: evenodd;
+      clip-rule: evenodd;
+      enable-background: new;
+    }
+
+    .st30 {
+      opacity: 0.978;
+      fill-rule: evenodd;
+      clip-rule: evenodd;
+      enable-background: new;
+    }
+
+    .st31 {
+      opacity: 0.921;
+      fill-rule: evenodd;
+      clip-rule: evenodd;
+      enable-background: new;
+    }
+
+    .st32 {
+      opacity: 0.92;
+      fill-rule: evenodd;
+      clip-rule: evenodd;
+      enable-background: new;
+    }
+
+    .st33 {
+      opacity: 0.95;
+      fill-rule: evenodd;
+      clip-rule: evenodd;
+      enable-background: new;
+    }
+
+    .st34 {
+      opacity: 0.964;
+      fill-rule: evenodd;
+      clip-rule: evenodd;
+      enable-background: new;
+    }
+
+    .st35 {
+      opacity: 0.945;
+      fill-rule: evenodd;
+      clip-rule: evenodd;
+      enable-background: new;
+    }
+
+    .st36 {
+      opacity: 0.959;
+      fill-rule: evenodd;
+      clip-rule: evenodd;
+      enable-background: new;
+    }
+
+    .st37 {
+      opacity: 0.948;
+      fill-rule: evenodd;
+      clip-rule: evenodd;
+      enable-background: new;
+    }
+
+    .st38 {
+      fill-rule: evenodd;
+      clip-rule: evenodd;
+      fill: #24201D;
+    }
+
+    .st39 {
+      fill: #24201D;
+    }
+
+    .st40 {
+      fill: #105AF4;
+    }
+
+    .st41 {
+      fill: #4393F1;
+    }
+
+    .st42 {
+      fill: #98C6FB;
+    }
+
+    .st43 {
+      fill: #90C8FD;
+    }
+
+    .st44 {
+      fill: #80889E;
+    }
+
+    .st45 {
+      fill: #80879E;
+    }
+
+    .st46 {
+      fill: #C5CAD6;
+    }
+
+    .st47 {
+      fill: #2A2F59;
+    }
+
+    .st48 {
+      fill: #525E81;
+    }
+
+    .st49 {
+      fill: #7F889E;
+    }
+
+    .st50 {
+      fill: #242744;
+    }
+
+    .st51 {
+      fill: #7F879E;
+    }
+
+    .st52 {
+      fill: #525E80;
+    }
+
+    .st53 {
+      fill: #242644;
+    }
+
+    .st54 {
+      fill: #242743;
+    }
+
+    .st55 {
+      fill: #252744;
+    }
+
+    .st56 {
+      fill: #252845;
+    }
+
+    .st57 {
+      fill: #252844;
+    }
+
+    .st58 {
+      fill: #252644;
+    }
+
+    .st59 {
+      fill: #FDFEFD;
+    }
+
+    .st60 {
+      fill: #FDFDFD;
+    }
+
+    .st61 {
+      fill: #FCFCFB;
+    }
+
+    .st62 {
+      fill: #FDFEFE;
+    }
+
+    .st63 {
+      fill: #252F38;
+    }
+
+    .st64 {
+      fill: #A6493A;
+    }
+
+    .st65 {
+      fill: #A7493A;
+    }
+
+    .st66 {
+      fill: #A74A3B;
+    }
+
+    .st67 {
+      fill: #A74B3C;
+    }
+
+    .st68 {
+      fill: #FEFDFD;
+    }
+  </style>
+  <g>
+    <rect class="st19" width="116.16" height="68.69" />
+    <g>
+      <g id="Landing_Page__x28_Desktop_x29_">
+        <g id="Group_3384">
+          <g id="Group_3385">
+            <g id="Group">
+
+              <linearGradient id="Vector_00000103259018303127700060000012907296891609295763_"
+                gradientUnits="userSpaceOnUse" x1="46.017" y1="-173.43" x2="71.8622" y2="-210.508"
+                gradientTransform="matrix(1 0 0 -1 0 -169.6649)">
+                <stop offset="0" style="stop-color:#E4DABD" />
+                <stop offset="1" style="stop-color:#928138" />
+              </linearGradient>
+              <path id="Vector" style="fill:url(#Vector_00000103259018303127700060000012907296891609295763_);" d="M81.15,33.08H70.92
+							c-0.98,0-1.94,0.26-2.78,0.75l-9.08,5.26L56.6,40.5l-1.56,0.9c-0.47,0.27-0.99,0.4-1.51,0.4s-1.04-0.13-1.51-0.4l-14.38-8.32
+							c-0.93-0.54-1.51-1.54-1.51-2.62V13.81c0-1.08,0.58-2.08,1.51-2.62l14.38-8.32c0.47-0.27,0.99-0.4,1.51-0.4
+							s1.04,0.13,1.51,0.4l1.56,0.9l2.45,1.42l9.08,5.26c0.85,0.49,1.81,0.75,2.78,0.75h10.23c1.16,0,1.57-1.53,0.57-2.11
+							l-0.03-0.02L67.32,0.73c-1.59-0.92-3.54-0.96-5.17-0.15l3.94,2.28l10.13,5.86h-6.13l-8.57-4.96l-2.45-1.42l-2.78-1.61
+							c-1.69-0.98-3.79-0.98-5.47,0L36.42,9.06c-1.69,0.98-2.74,2.79-2.74,4.75v16.65c0,1.96,1.04,3.77,2.74,4.75l14.38,8.32
+							c1.69,0.98,3.79,0.98,5.47,0l2.78-1.61l2.45-1.42l8.57-4.96h6.13L66.09,41.4l-3.94,2.28c1.63,0.81,3.58,0.77,5.17-0.15
+							l14.38-8.32l0.03-0.02C82.72,34.61,82.31,33.08,81.15,33.08L81.15,33.08z" />
+
+              <linearGradient id="Vector_2_00000086685964569973126480000000091028351612365243_"
+                gradientUnits="userSpaceOnUse" x1="41.8134" y1="-176.3582" x2="67.6601" y2="-213.4362"
+                gradientTransform="matrix(1 0 0 -1 0 -169.6649)">
+                <stop offset="0" style="stop-color:#E4DABD" />
+                <stop offset="1" style="stop-color:#928138" />
+              </linearGradient>
+              <path id="Vector_2" style="fill:url(#Vector_2_00000086685964569973126480000000091028351612365243_);" d="M47.18,30.45V13.81
+							c0-1.08,0.58-2.08,1.51-2.62l7.92-4.58l-2.45-1.42l-6.69,3.87c-1.69,0.98-2.74,2.79-2.74,4.75v16.65
+							c0,1.96,1.04,3.77,2.74,4.75l6.69,3.87l2.45-1.42l-7.92-4.58C47.75,32.54,47.18,31.54,47.18,30.45L47.18,30.45z" />
+            </g>
+            <g id="Group_2">
+              <path id="Vector_3" class="st22" d="M11.06,67.65c0,0-1.6,1.04-4.11,1.04c-4.18,0-6.95-2.74-6.95-6.4c0-3.66,3-6.39,6.65-6.39
+							c2.7,0,4.35,1,4.35,1l-0.75,1.87c0,0-1.63-0.81-3.23-0.81c-2.9,0-4.67,1.83-4.67,4.36c0,2.53,1.9,4.31,4.46,4.31
+							c2.09,0,3.58-0.84,3.58-0.84L11.06,67.65z" />
+              <path id="Vector_4" class="st22" d="M20.57,55.89c3.83,0,6.6,2.69,6.6,6.39c0,3.69-2.83,6.39-6.6,6.39s-6.58-2.73-6.58-6.39
+							C13.98,58.62,16.86,55.89,20.57,55.89z M20.58,66.75c2.39,0,4.25-1.92,4.25-4.43c0-2.52-1.77-4.45-4.25-4.45
+							s-4.25,1.92-4.25,4.45C16.34,64.85,18.2,66.75,20.58,66.75z" />
+              <path id="Vector_5" class="st22"
+                d="M31.48,56.04h0.68L39.8,64v-7.9h2.18v12.46h-0.58l-7.74-7.76v7.67h-2.18V56.04z" />
+              <path id="Vector_6" class="st22" d="M45.53,56.11h10.37v2h-4.05v10.36h-2.19V58.11h-4.12V56.11z" />
+              <path id="Vector_7" class="st22" d="M59.22,68.47h-2.28L62.73,56h0.49l5.79,12.47h-2.33l-1.09-2.46h-5.3L59.22,68.47
+							L59.22,68.47z M61.06,64.27h3.76l-1.88-4.26L61.06,64.27z" />
+              <path id="Vector_8" class="st22"
+                d="M72.61,56.04h0.69L80.93,64v-7.9h2.18v12.46h-0.58l-7.74-7.76v7.67h-2.18V56.04z" />
+              <path id="Vector_9" class="st22" d="M99.14,61.98v5.3c0,0-1.84,1.41-4.77,1.41c-4.18,0-6.95-2.74-6.95-6.4
+							c0-3.66,3-6.39,6.65-6.39c2.76,0,4.35,1,4.35,1l-0.75,1.87c0,0-1.6-0.81-3.23-0.81c-2.9,0-4.67,1.83-4.67,4.36
+							c0,2.53,1.9,4.31,4.46,4.31c1.14,0,2.14-0.25,2.81-0.49v-2.2H93.6v-1.95H99.14L99.14,61.98z" />
+              <path id="Vector_10" class="st22" d="M109.37,55.89c3.83,0,6.6,2.69,6.6,6.39c0,3.69-2.83,6.39-6.6,6.39
+							c-3.77,0-6.58-2.73-6.58-6.39C102.79,58.62,105.67,55.89,109.37,55.89z M109.39,66.75c2.39,0,4.25-1.92,4.25-4.43
+							c0-2.52-1.77-4.45-4.25-4.45c-2.47,0-4.25,1.92-4.25,4.45C105.14,64.85,107,66.75,109.39,66.75z" />
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
