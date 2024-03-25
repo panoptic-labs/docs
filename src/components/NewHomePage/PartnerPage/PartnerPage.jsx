@@ -16,6 +16,17 @@ const PartnerPage = () => {
     "zee-drime-capital",
     "mh",
     "big-brain",
+    "greenfield",
+    "hashkey",
+    "l1d",
+    "heartcore",
+    "comma3",
+    "apollo",
+    "bing-ventures",
+    "contango",
+    "distributed-capital-partners",
+    "keyrock",
+    "viden"
   ];
 
   return (
