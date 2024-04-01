@@ -26,7 +26,8 @@ Sign up for the gated launch [here](https://signup.panoptic.xyz).
 - Official [beta launch](https://panoptic.xyz/blog/panoptic-beta-launch-official) (October 13, 2023)
 - [Community program](https://panoptic.xyz/blog/panoptic-community-program) launches (October 14, 2023)
 - Panoptic's [Demo](https://panoptic.xyz/blog/panoptic-demo-launch) platform launches (November 20, 2023)
-- Code4rena [audit](https://code4rena.com/contests/2023-11-panoptic) on the semi-fungible position manager (SFPM) launches (November 27, 2023)
+- Code4rena [audit](https://panoptic.xyz/blog/panoptic-code4rena-audit) on the semi-fungible position manager (SFPM) launches (November 27, 2023)
+- Code4rena comprehensive [audit](https://panoptic.xyz/blog/panoptic-code4rena-comprehensive-audit) launches (April 1, 2024)
 
 ### Epoch 1
 - Epoch 1 [Begins](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-one) (October 13, 2023)
