@@ -1,14 +1,14 @@
 ---
 slug: panoptic-code4rena-comprehensive-audit
 title: "Panoptic Launches Comprehensive Code4rena Audit for Enhanced Security"
-tags: [Audit, Security, Bug Bounty]
+tags: [Audit, Security]
 image: /img/banners/code4rena-comprehensive-audit-banner.png
 description: "Panoptic launches its second audit with Code4rena to secure the DeFi options protocol."
 ---
 
 ![](1.png)
 
-To bolster the security of our protocol, Panoptic embarks on a second audit with Code4rena. All auditors from coding experts to engaged community members are welcome to participate in this bug bounty program where $120,000 will be given to contributors. The audit will begin on April 1, 2024 and run until April 22, 2024.
+To bolster the security of our protocol, Panoptic embarks on a second audit with Code4rena. All auditors from coding experts to engaged community members are welcome to participate in this competitive audit where $120,000 will be given to contributors. The audit will begin on April 1, 2024 and run until April 22, 2024.
 
 Auditors from the [previous audit](https://panoptic.xyz/blog/panoptic-code4rena-audit) are encouraged to participate again and new participants can register [here](https://code4rena.com/register).
 

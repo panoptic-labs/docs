@@ -1,7 +1,7 @@
 ---
 slug: panoptic-code4rena-audit
 title: "Code4rena Audit"
-tags: [Audit, Security, Bug Bounty]
+tags: [Audit, Security]
 image: /img/banners/code4rena-audit-banner.png
 description: "To bolster platform security, Panoptic launches its audit with Code4rena."
 ---
