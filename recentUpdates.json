@@ -17,7 +17,7 @@
   },
   {
     "title": "Position Management",
-    "date": "2024-3-18",
+    "date": "2024-03-18",
     "image": "/img/research/position-management.png",
     "link": "https://panoptic.xyz/research/position-management",
     "description": "Learn how to effectively manage open positions on Panoptic, including understanding position metrics, making strategic decisions for closing positions, avoiding liquidations, and capturing profits while minimizing risks in options trading.",
@@ -33,7 +33,7 @@
   },
   {
     "title": "Understanding Delta Risk",
-    "date": "2024-3-11",
+    "date": "2024-03-11",
     "image": "/img/research/understanding-delta-risk.png",
     "link": "https://panoptic.xyz/research/understanding-delta-risk",
     "description": "Explore the critical role of delta in options trading for risk management and master delta-neutral strategies with Panoptic to navigate market volatility effectively.",
