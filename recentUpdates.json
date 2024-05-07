@@ -1,11 +1,27 @@
 [
   {
+    "title": "Panoptic Insights: May Newsletter",
+    "date": "2024-05-07",
+    "image": "/img/banners/newsletter-banner.webp",
+    "link": "https://panoptic.xyz/blog/panoptic-newsletter-may-2024",
+    "description": "Explore the May edition of the Panoptic Newsletter for insights into DeFi-native options, the uptick in BTC option trades, volatility implied by Uniswap liquidity, and more!",
+    "id": 1
+  },
+  {
+    "title": "Closing a Position",
+    "date": "2024-05-01",
+    "image": "/img/research/closing-a-position.png",
+    "link": "https://panoptic.xyz/research/closing-a-position",
+    "description": "This guide provides insights on efficiently closing positions in Panoptic, covering when to close, how to do it, and troubleshooting issues to secure gains or limit losses in DeFi options trading.",
+    "id": 2
+  },
+  {
     "title": "Panoptic Insights: April Newsletter",
     "date": "2024-04-03",
     "image": "/img/banners/newsletter-banner.webp",
     "link": "https://panoptic.xyz/blog/panoptic-newsletter-april-2024",
     "description": "Upcoming Bitcoin ETF options approval, key expiry dates, highlights from the ETH Denver summit, and more!",
-    "id": 1
+    "id": 3
   },
   {
     "title": "Panoptic Launches Comprehensive Code4rena Audit for Enhanced Security",
@@ -13,7 +29,7 @@
     "image": "/img/banners/code4rena-comprehensive-audit-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-code4rena-comprehensive-audit",
     "description": "Panoptic launches its second audit with Code4rena to secure the DeFi options protocol.",
-    "id": 2
+    "id": 4
   },
   {
     "title": "Panoptic at ETH Denver 2024",
@@ -21,22 +37,6 @@
     "image": "/img/banners/panoptic-at-eth-denver-2024.png",
     "link": "https://panoptic.xyz/blog/panoptic-at-eth-denver-2024",
     "description": "Read our ETH Denver 2024 recap. Panoptic hosted the DeFi Derivatives Summit where thought leaders from dYdX, Aevo, Wintermute, GSR, zkSync, and others spoke on the future of derivatives.",
-    "id": 3
-  },
-  {
-    "title": "Panoptic Insights: March Newsletter",
-    "date": "2024-03-05",
-    "image": "/img/banners/newsletter-banner.webp",
-    "link": "https://panoptic.xyz/blog/panoptic-newsletter-march-2024",
-    "description": "Explore the latest news and trends in DeFi options including high performing trades, massive BTC inflows, sustained options volume growth, and unmet Uniswap LP needs.",
-    "id": 4
-  },
-  {
-    "title": "December Nutcracker Ends",
-    "date": "2024-03-04",
-    "image": "/img/banners/december-nutcracker-concludes.png",
-    "link": "https://panoptic.xyz/blog/december-nutcracker-contest-winners",
-    "description": "The results are in. Find out how the naughty and nice traders scored top NFT prizes including a Milady and Lil Pudgy.",
     "id": 5
   }
 ]
