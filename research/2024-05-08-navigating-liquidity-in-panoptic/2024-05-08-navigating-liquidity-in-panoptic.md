@@ -112,3 +112,6 @@ If reducing the size of your position does not suffice, you might need to select
 ![](./05.gif)
 
 By following these steps, traders can adapt their strategies to the available liquidity, enhancing market execution.
+
+*Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](https://panoptic.xyz/docs/intro) and head to our [website](https://panoptic.xyz/).*
+
