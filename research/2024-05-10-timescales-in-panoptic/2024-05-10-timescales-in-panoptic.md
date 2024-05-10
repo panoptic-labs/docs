@@ -82,4 +82,4 @@ Streamia is accumulated when in range. The longer the timescale, the wider the r
 | 1W        | Average                      | Average                         |
 | 1M        | More likely to stay in range | Less fees earned while in range |
  
-
+*Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](https://panoptic.xyz/docs/intro) and head to our [website](https://panoptic.xyz/).*
