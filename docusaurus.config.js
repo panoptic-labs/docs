@@ -264,7 +264,19 @@ const config = {
 
   plugins: [
     "@docusaurus-terminology/parser",
-
+    [
+    "@graphql-markdown/docusaurus",
+      {
+        schema: "https://api.goldsky.com/api/public/project_cl9gc21q105380hxuh8ks53k3/subgraphs/panoptic-subgraph-sepolia/beta7-prod/gn",
+        rootPath: "./docs",
+        baseURL: "subgraph-generated",
+        loaders: {
+          UrlLoader: {
+            module: "@graphql-tools/url-loader",
+          },
+        },
+      },
+    ],
     [
       '@docusaurus/plugin-content-blog',
       {
