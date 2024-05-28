@@ -17,7 +17,7 @@ Following our [earlier announcement](https://panoptic.xyz/blog/panoptic-beta-lau
 
 ### Engage Now
 
-Don't hold off until Epoch 5! Participate in our [December Nutcracker](https://panoptic.xyz/blog/panoptic-demo-launch) competition on Base now. There's over $10,000 in NFT prizes including a MiLady, Lil Pudgy, and mfer. [Join](https://beta.panoptic.xyz) now!
+Don't hold off until Epoch 5! Participate in our [December Nutcracker](https://panoptic.xyz/blog/panoptic-demo-launch) competition on Base now. There's over $10,000 in NFT prizes including a Milady, Lil Pudgy, and mfer. [Join](https://beta.panoptic.xyz) now!
 
 ## Epoch 4's Winners
 

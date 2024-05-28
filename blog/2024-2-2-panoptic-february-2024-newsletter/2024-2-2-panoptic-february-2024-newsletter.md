@@ -41,7 +41,7 @@ As we closed the chapter on Epoch 4 of Panoptic's beta launch, we extend our hea
 
 ### December Nutcracker Trading Competition 🎄
 
-The curtain rises on the highly anticipated [December Nutcracker](https://x.com/Panoptic_xyz/status/1747694450544111768?s=20) event prizes, and Panoptic is proud to reveal an array of NFT rewards! Join the competition on Base at [beta.panoptic.xyz](http://beta.panoptic.xyz), engage in perpetual options trading, and stand a chance to win a part of the over $10,000 NFT treasure trove, including illustrious pieces from MiLady, Lil Pudgy, and mfer collections. Don't miss your shot!
+The curtain rises on the highly anticipated [December Nutcracker](https://x.com/Panoptic_xyz/status/1747694450544111768?s=20) event prizes, and Panoptic is proud to reveal an array of NFT rewards! Join the competition on Base at [beta.panoptic.xyz](http://beta.panoptic.xyz), engage in perpetual options trading, and stand a chance to win a part of the over $10,000 NFT treasure trove, including illustrious pieces from Milady, Lil Pudgy, and mfer collections. Don't miss your shot!
 
   
 
@@ -112,7 +112,7 @@ Epoch 5's Trading Competition has kicked off! Hosted on the Optimism and tBTC ma
 
 ### December Nutcracker
 
-The December Nutcracker trading competition extends until February 22. To encourage adversarial behavior for protocol robustness testing, we have created a “naughty/nice” system of rewards. There are prizes for nice users that adhere strictly to fair play: a Lil Pudgy for the best performer and a mfer for the best option seller. For naughty accounts, the reward is a MiLady. Learn more [here](https://panoptic.xyz/blog/december-nutcracker#naughty-or-nice)!
+The December Nutcracker trading competition extends until February 22. To encourage adversarial behavior for protocol robustness testing, we have created a “naughty/nice” system of rewards. There are prizes for nice users that adhere strictly to fair play: a Lil Pudgy for the best performer and a mfer for the best option seller. For naughty accounts, the reward is a Milady. Learn more [here](https://panoptic.xyz/blog/december-nutcracker#naughty-or-nice)!
 
   
 
