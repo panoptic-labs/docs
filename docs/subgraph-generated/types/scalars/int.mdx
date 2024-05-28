@@ -1,0 +1,59 @@
+---
+id: int
+title: Int
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
+
+
+```graphql
+scalar Int
+```
+
+
+
+
+
+
+
+
+### Member Of
+
+[`_Block_`](/docs/subgraph-generated/types/objects/block)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`AccountBalance_filter`](/docs/subgraph-generated/types/inputs/account-balance-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`AccountBalance`](/docs/subgraph-generated/types/objects/account-balance)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`AccountLiquidated_filter`](/docs/subgraph-generated/types/inputs/account-liquidated-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`AccountLiquidated`](/docs/subgraph-generated/types/objects/account-liquidated)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`BlockChangedFilter`](/docs/subgraph-generated/types/inputs/block-changed-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Burn_filter`](/docs/subgraph-generated/types/inputs/burn-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Burn`](/docs/subgraph-generated/types/objects/burn)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`CollateralDayData_filter`](/docs/subgraph-generated/types/inputs/collateral-day-data-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`CollateralDayData`](/docs/subgraph-generated/types/objects/collateral-day-data)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Collect_filter`](/docs/subgraph-generated/types/inputs/collect-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Collect`](/docs/subgraph-generated/types/objects/collect)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`ForcedExercise_filter`](/docs/subgraph-generated/types/inputs/forced-exercise-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`ForcedExercise`](/docs/subgraph-generated/types/objects/forced-exercise)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Leg_filter`](/docs/subgraph-generated/types/inputs/leg-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Leg`](/docs/subgraph-generated/types/objects/leg)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Mint_filter`](/docs/subgraph-generated/types/inputs/mint-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Mint`](/docs/subgraph-generated/types/objects/mint)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`OptionBurn_filter`](/docs/subgraph-generated/types/inputs/option-burn-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`OptionBurn`](/docs/subgraph-generated/types/objects/option-burn)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`OptionMint_filter`](/docs/subgraph-generated/types/inputs/option-mint-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`OptionMint`](/docs/subgraph-generated/types/objects/option-mint)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`OptionRoll_filter`](/docs/subgraph-generated/types/inputs/option-roll-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`OptionRoll`](/docs/subgraph-generated/types/objects/option-roll)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PanopticPoolAccount_filter`](/docs/subgraph-generated/types/inputs/panoptic-pool-account-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`PanopticPoolAccount`](/docs/subgraph-generated/types/objects/panoptic-pool-account)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PoolDayData_filter`](/docs/subgraph-generated/types/inputs/pool-day-data-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`PoolDayData`](/docs/subgraph-generated/types/objects/pool-day-data)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PoolHourData_filter`](/docs/subgraph-generated/types/inputs/pool-hour-data-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`PoolHourData`](/docs/subgraph-generated/types/objects/pool-hour-data)  <Badge class="badge badge--secondary" text="object"/>
+

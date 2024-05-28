@@ -1,0 +1,2668 @@
+---
+id: subscription
+title: Subscription
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+type Subscription {
+  factory(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): Factory
+  factories(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: Factory_orderBy
+    orderDirection: OrderDirection
+    where: Factory_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [Factory!]!
+  panopticFactory(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): PanopticFactory
+  panopticFactories(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: PanopticFactory_orderBy
+    orderDirection: OrderDirection
+    where: PanopticFactory_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [PanopticFactory!]!
+  bundle(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): Bundle
+  bundles(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: Bundle_orderBy
+    orderDirection: OrderDirection
+    where: Bundle_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [Bundle!]!
+  account(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): Account
+  accounts(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: Account_orderBy
+    orderDirection: OrderDirection
+    where: Account_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [Account!]!
+  accountBalance(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): AccountBalance
+  accountBalances(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: AccountBalance_orderBy
+    orderDirection: OrderDirection
+    where: AccountBalance_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [AccountBalance!]!
+  panopticPoolAccount(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): PanopticPoolAccount
+  panopticPoolAccounts(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: PanopticPoolAccount_orderBy
+    orderDirection: OrderDirection
+    where: PanopticPoolAccount_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [PanopticPoolAccount!]!
+  token(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): Token
+  tokens(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: Token_orderBy
+    orderDirection: OrderDirection
+    where: Token_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [Token!]!
+  pool(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): Pool
+  pools(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: Pool_orderBy
+    orderDirection: OrderDirection
+    where: Pool_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [Pool!]!
+  chunk(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): Chunk
+  chunks(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: Chunk_orderBy
+    orderDirection: OrderDirection
+    where: Chunk_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [Chunk!]!
+  leg(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): Leg
+  legs(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: Leg_orderBy
+    orderDirection: OrderDirection
+    where: Leg_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [Leg!]!
+  legLiquidities(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: LegLiquidities_orderBy
+    orderDirection: OrderDirection
+    where: LegLiquidities_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [LegLiquidities!]!
+  tokenId(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): TokenId
+  tokenIds(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: TokenId_orderBy
+    orderDirection: OrderDirection
+    where: TokenId_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [TokenId!]!
+  collateral(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): Collateral
+  collaterals(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: Collateral_orderBy
+    orderDirection: OrderDirection
+    where: Collateral_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [Collateral!]!
+  panopticPool(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): PanopticPool
+  panopticPools(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: PanopticPool_orderBy
+    orderDirection: OrderDirection
+    where: PanopticPool_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [PanopticPool!]!
+  poolDayData(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): PoolDayData
+  poolDayDatas(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: PoolDayData_orderBy
+    orderDirection: OrderDirection
+    where: PoolDayData_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [PoolDayData!]!
+  collateralDayData(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): CollateralDayData
+  collateralDayDatas(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: CollateralDayData_orderBy
+    orderDirection: OrderDirection
+    where: CollateralDayData_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [CollateralDayData!]!
+  poolHourData(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): PoolHourData
+  poolHourDatas(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: PoolHourData_orderBy
+    orderDirection: OrderDirection
+    where: PoolHourData_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [PoolHourData!]!
+  mint(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): Mint
+  mints(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: Mint_orderBy
+    orderDirection: OrderDirection
+    where: Mint_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [Mint!]!
+  burn(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): Burn
+  burns(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: Burn_orderBy
+    orderDirection: OrderDirection
+    where: Burn_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [Burn!]!
+  collect(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): Collect
+  collects(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: Collect_orderBy
+    orderDirection: OrderDirection
+    where: Collect_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [Collect!]!
+  tokenizedPositionBurnt(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): TokenizedPositionBurnt
+  tokenizedPositionBurnts(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: TokenizedPositionBurnt_orderBy
+    orderDirection: OrderDirection
+    where: TokenizedPositionBurnt_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [TokenizedPositionBurnt!]!
+  tokenizedPositionMinted(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): TokenizedPositionMinted
+  tokenizedPositionMinteds(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: TokenizedPositionMinted_orderBy
+    orderDirection: OrderDirection
+    where: TokenizedPositionMinted_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [TokenizedPositionMinted!]!
+  tokenizedPositionRolled(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): TokenizedPositionRolled
+  tokenizedPositionRolleds(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: TokenizedPositionRolled_orderBy
+    orderDirection: OrderDirection
+    where: TokenizedPositionRolled_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [TokenizedPositionRolled!]!
+  collateralDeposit(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): CollateralDeposit
+  collateralDeposits(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: CollateralDeposit_orderBy
+    orderDirection: OrderDirection
+    where: CollateralDeposit_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [CollateralDeposit!]!
+  collateralWithdraw(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): CollateralWithdraw
+  collateralWithdraws(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: CollateralWithdraw_orderBy
+    orderDirection: OrderDirection
+    where: CollateralWithdraw_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [CollateralWithdraw!]!
+  optionMint(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): OptionMint
+  optionMints(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: OptionMint_orderBy
+    orderDirection: OrderDirection
+    where: OptionMint_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [OptionMint!]!
+  optionBurn(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): OptionBurn
+  optionBurns(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: OptionBurn_orderBy
+    orderDirection: OrderDirection
+    where: OptionBurn_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [OptionBurn!]!
+  optionRoll(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): OptionRoll
+  optionRolls(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: OptionRoll_orderBy
+    orderDirection: OrderDirection
+    where: OptionRoll_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [OptionRoll!]!
+  accountLiquidated(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): AccountLiquidated
+  accountLiquidateds(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: AccountLiquidated_orderBy
+    orderDirection: OrderDirection
+    where: AccountLiquidated_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [AccountLiquidated!]!
+  forcedExercise(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): ForcedExercise
+  forcedExercises(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: ForcedExercise_orderBy
+    orderDirection: OrderDirection
+    where: ForcedExercise_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [ForcedExercise!]!
+  premiumSettled(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): PremiumSettled
+  premiumSettleds(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: PremiumSettled_orderBy
+    orderDirection: OrderDirection
+    where: PremiumSettled_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [PremiumSettled!]!
+  event(
+    id: ID!
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): Event
+  events(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: Event_orderBy
+    orderDirection: OrderDirection
+    where: Event_filter
+    block: Block_height
+    subgraphError: _SubgraphErrorPolicy_! = deny
+  ): [Event!]!
+  _meta(
+    block: Block_height
+  ): _Meta_
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>factory</b></code>](#)<Bullet />[`Factory`](/docs/subgraph-generated/types/objects/factory) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.factory.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.factory.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.factory.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>factories</b></code>](#)<Bullet />[`[Factory!]!`](/docs/subgraph-generated/types/objects/factory) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.factories.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.factories.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.factories.<b>orderBy</b></code>](#)<Bullet />[`Factory_orderBy`](/docs/subgraph-generated/types/enums/factory-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.factories.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.factories.<b>where</b></code>](#)<Bullet />[`Factory_filter`](/docs/subgraph-generated/types/inputs/factory-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.factories.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.factories.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>panopticFactory</b></code>](#)<Bullet />[`PanopticFactory`](/docs/subgraph-generated/types/objects/panoptic-factory) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticFactory.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticFactory.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticFactory.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>panopticFactories</b></code>](#)<Bullet />[`[PanopticFactory!]!`](/docs/subgraph-generated/types/objects/panoptic-factory) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticFactories.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticFactories.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticFactories.<b>orderBy</b></code>](#)<Bullet />[`PanopticFactory_orderBy`](/docs/subgraph-generated/types/enums/panoptic-factory-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticFactories.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticFactories.<b>where</b></code>](#)<Bullet />[`PanopticFactory_filter`](/docs/subgraph-generated/types/inputs/panoptic-factory-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticFactories.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticFactories.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>bundle</b></code>](#)<Bullet />[`Bundle`](/docs/subgraph-generated/types/objects/bundle) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.bundle.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.bundle.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.bundle.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>bundles</b></code>](#)<Bullet />[`[Bundle!]!`](/docs/subgraph-generated/types/objects/bundle) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.bundles.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.bundles.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.bundles.<b>orderBy</b></code>](#)<Bullet />[`Bundle_orderBy`](/docs/subgraph-generated/types/enums/bundle-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.bundles.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.bundles.<b>where</b></code>](#)<Bullet />[`Bundle_filter`](/docs/subgraph-generated/types/inputs/bundle-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.bundles.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.bundles.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>account</b></code>](#)<Bullet />[`Account`](/docs/subgraph-generated/types/objects/account) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.account.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.account.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.account.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>accounts</b></code>](#)<Bullet />[`[Account!]!`](/docs/subgraph-generated/types/objects/account) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.accounts.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.accounts.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.accounts.<b>orderBy</b></code>](#)<Bullet />[`Account_orderBy`](/docs/subgraph-generated/types/enums/account-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.accounts.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.accounts.<b>where</b></code>](#)<Bullet />[`Account_filter`](/docs/subgraph-generated/types/inputs/account-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.accounts.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.accounts.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>accountBalance</b></code>](#)<Bullet />[`AccountBalance`](/docs/subgraph-generated/types/objects/account-balance) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.accountBalance.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.accountBalance.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.accountBalance.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>accountBalances</b></code>](#)<Bullet />[`[AccountBalance!]!`](/docs/subgraph-generated/types/objects/account-balance) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.accountBalances.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.accountBalances.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.accountBalances.<b>orderBy</b></code>](#)<Bullet />[`AccountBalance_orderBy`](/docs/subgraph-generated/types/enums/account-balance-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.accountBalances.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.accountBalances.<b>where</b></code>](#)<Bullet />[`AccountBalance_filter`](/docs/subgraph-generated/types/inputs/account-balance-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.accountBalances.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.accountBalances.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>panopticPoolAccount</b></code>](#)<Bullet />[`PanopticPoolAccount`](/docs/subgraph-generated/types/objects/panoptic-pool-account) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticPoolAccount.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticPoolAccount.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticPoolAccount.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>panopticPoolAccounts</b></code>](#)<Bullet />[`[PanopticPoolAccount!]!`](/docs/subgraph-generated/types/objects/panoptic-pool-account) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticPoolAccounts.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticPoolAccounts.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticPoolAccounts.<b>orderBy</b></code>](#)<Bullet />[`PanopticPoolAccount_orderBy`](/docs/subgraph-generated/types/enums/panoptic-pool-account-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticPoolAccounts.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticPoolAccounts.<b>where</b></code>](#)<Bullet />[`PanopticPoolAccount_filter`](/docs/subgraph-generated/types/inputs/panoptic-pool-account-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticPoolAccounts.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticPoolAccounts.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>token</b></code>](#)<Bullet />[`Token`](/docs/subgraph-generated/types/objects/token) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.token.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.token.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.token.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>tokens</b></code>](#)<Bullet />[`[Token!]!`](/docs/subgraph-generated/types/objects/token) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokens.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokens.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokens.<b>orderBy</b></code>](#)<Bullet />[`Token_orderBy`](/docs/subgraph-generated/types/enums/token-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokens.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokens.<b>where</b></code>](#)<Bullet />[`Token_filter`](/docs/subgraph-generated/types/inputs/token-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokens.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokens.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>pool</b></code>](#)<Bullet />[`Pool`](/docs/subgraph-generated/types/objects/pool) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.pool.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.pool.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.pool.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>pools</b></code>](#)<Bullet />[`[Pool!]!`](/docs/subgraph-generated/types/objects/pool) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.pools.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.pools.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.pools.<b>orderBy</b></code>](#)<Bullet />[`Pool_orderBy`](/docs/subgraph-generated/types/enums/pool-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.pools.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.pools.<b>where</b></code>](#)<Bullet />[`Pool_filter`](/docs/subgraph-generated/types/inputs/pool-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.pools.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.pools.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>chunk</b></code>](#)<Bullet />[`Chunk`](/docs/subgraph-generated/types/objects/chunk) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.chunk.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.chunk.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.chunk.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>chunks</b></code>](#)<Bullet />[`[Chunk!]!`](/docs/subgraph-generated/types/objects/chunk) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.chunks.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.chunks.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.chunks.<b>orderBy</b></code>](#)<Bullet />[`Chunk_orderBy`](/docs/subgraph-generated/types/enums/chunk-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.chunks.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.chunks.<b>where</b></code>](#)<Bullet />[`Chunk_filter`](/docs/subgraph-generated/types/inputs/chunk-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.chunks.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.chunks.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>leg</b></code>](#)<Bullet />[`Leg`](/docs/subgraph-generated/types/objects/leg) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.leg.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.leg.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.leg.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>legs</b></code>](#)<Bullet />[`[Leg!]!`](/docs/subgraph-generated/types/objects/leg) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.legs.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.legs.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.legs.<b>orderBy</b></code>](#)<Bullet />[`Leg_orderBy`](/docs/subgraph-generated/types/enums/leg-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.legs.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.legs.<b>where</b></code>](#)<Bullet />[`Leg_filter`](/docs/subgraph-generated/types/inputs/leg-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.legs.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.legs.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>legLiquidities</b></code>](#)<Bullet />[`[LegLiquidities!]!`](/docs/subgraph-generated/types/objects/leg-liquidities) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.legLiquidities.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.legLiquidities.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.legLiquidities.<b>orderBy</b></code>](#)<Bullet />[`LegLiquidities_orderBy`](/docs/subgraph-generated/types/enums/leg-liquidities-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.legLiquidities.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.legLiquidities.<b>where</b></code>](#)<Bullet />[`LegLiquidities_filter`](/docs/subgraph-generated/types/inputs/leg-liquidities-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.legLiquidities.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.legLiquidities.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>tokenId</b></code>](#)<Bullet />[`TokenId`](/docs/subgraph-generated/types/objects/token-id) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenId.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenId.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenId.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>tokenIds</b></code>](#)<Bullet />[`[TokenId!]!`](/docs/subgraph-generated/types/objects/token-id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenIds.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenIds.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenIds.<b>orderBy</b></code>](#)<Bullet />[`TokenId_orderBy`](/docs/subgraph-generated/types/enums/token-id-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenIds.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenIds.<b>where</b></code>](#)<Bullet />[`TokenId_filter`](/docs/subgraph-generated/types/inputs/token-id-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenIds.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenIds.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>collateral</b></code>](#)<Bullet />[`Collateral`](/docs/subgraph-generated/types/objects/collateral) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateral.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateral.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateral.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>collaterals</b></code>](#)<Bullet />[`[Collateral!]!`](/docs/subgraph-generated/types/objects/collateral) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.collaterals.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collaterals.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collaterals.<b>orderBy</b></code>](#)<Bullet />[`Collateral_orderBy`](/docs/subgraph-generated/types/enums/collateral-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collaterals.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collaterals.<b>where</b></code>](#)<Bullet />[`Collateral_filter`](/docs/subgraph-generated/types/inputs/collateral-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collaterals.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collaterals.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>panopticPool</b></code>](#)<Bullet />[`PanopticPool`](/docs/subgraph-generated/types/objects/panoptic-pool) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticPool.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticPool.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticPool.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>panopticPools</b></code>](#)<Bullet />[`[PanopticPool!]!`](/docs/subgraph-generated/types/objects/panoptic-pool) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticPools.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticPools.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticPools.<b>orderBy</b></code>](#)<Bullet />[`PanopticPool_orderBy`](/docs/subgraph-generated/types/enums/panoptic-pool-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticPools.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticPools.<b>where</b></code>](#)<Bullet />[`PanopticPool_filter`](/docs/subgraph-generated/types/inputs/panoptic-pool-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticPools.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.panopticPools.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>poolDayData</b></code>](#)<Bullet />[`PoolDayData`](/docs/subgraph-generated/types/objects/pool-day-data) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.poolDayData.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.poolDayData.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.poolDayData.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>poolDayDatas</b></code>](#)<Bullet />[`[PoolDayData!]!`](/docs/subgraph-generated/types/objects/pool-day-data) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.poolDayDatas.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.poolDayDatas.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.poolDayDatas.<b>orderBy</b></code>](#)<Bullet />[`PoolDayData_orderBy`](/docs/subgraph-generated/types/enums/pool-day-data-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.poolDayDatas.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.poolDayDatas.<b>where</b></code>](#)<Bullet />[`PoolDayData_filter`](/docs/subgraph-generated/types/inputs/pool-day-data-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.poolDayDatas.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.poolDayDatas.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>collateralDayData</b></code>](#)<Bullet />[`CollateralDayData`](/docs/subgraph-generated/types/objects/collateral-day-data) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralDayData.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralDayData.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralDayData.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>collateralDayDatas</b></code>](#)<Bullet />[`[CollateralDayData!]!`](/docs/subgraph-generated/types/objects/collateral-day-data) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralDayDatas.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralDayDatas.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralDayDatas.<b>orderBy</b></code>](#)<Bullet />[`CollateralDayData_orderBy`](/docs/subgraph-generated/types/enums/collateral-day-data-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralDayDatas.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralDayDatas.<b>where</b></code>](#)<Bullet />[`CollateralDayData_filter`](/docs/subgraph-generated/types/inputs/collateral-day-data-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralDayDatas.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralDayDatas.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>poolHourData</b></code>](#)<Bullet />[`PoolHourData`](/docs/subgraph-generated/types/objects/pool-hour-data) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.poolHourData.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.poolHourData.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.poolHourData.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>poolHourDatas</b></code>](#)<Bullet />[`[PoolHourData!]!`](/docs/subgraph-generated/types/objects/pool-hour-data) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.poolHourDatas.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.poolHourDatas.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.poolHourDatas.<b>orderBy</b></code>](#)<Bullet />[`PoolHourData_orderBy`](/docs/subgraph-generated/types/enums/pool-hour-data-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.poolHourDatas.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.poolHourDatas.<b>where</b></code>](#)<Bullet />[`PoolHourData_filter`](/docs/subgraph-generated/types/inputs/pool-hour-data-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.poolHourDatas.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.poolHourDatas.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>mint</b></code>](#)<Bullet />[`Mint`](/docs/subgraph-generated/types/objects/mint) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.mint.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.mint.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.mint.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>mints</b></code>](#)<Bullet />[`[Mint!]!`](/docs/subgraph-generated/types/objects/mint) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.mints.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.mints.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.mints.<b>orderBy</b></code>](#)<Bullet />[`Mint_orderBy`](/docs/subgraph-generated/types/enums/mint-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.mints.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.mints.<b>where</b></code>](#)<Bullet />[`Mint_filter`](/docs/subgraph-generated/types/inputs/mint-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.mints.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.mints.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>burn</b></code>](#)<Bullet />[`Burn`](/docs/subgraph-generated/types/objects/burn) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.burn.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.burn.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.burn.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>burns</b></code>](#)<Bullet />[`[Burn!]!`](/docs/subgraph-generated/types/objects/burn) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.burns.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.burns.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.burns.<b>orderBy</b></code>](#)<Bullet />[`Burn_orderBy`](/docs/subgraph-generated/types/enums/burn-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.burns.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.burns.<b>where</b></code>](#)<Bullet />[`Burn_filter`](/docs/subgraph-generated/types/inputs/burn-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.burns.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.burns.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>collect</b></code>](#)<Bullet />[`Collect`](/docs/subgraph-generated/types/objects/collect) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.collect.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collect.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collect.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>collects</b></code>](#)<Bullet />[`[Collect!]!`](/docs/subgraph-generated/types/objects/collect) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.collects.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collects.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collects.<b>orderBy</b></code>](#)<Bullet />[`Collect_orderBy`](/docs/subgraph-generated/types/enums/collect-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collects.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collects.<b>where</b></code>](#)<Bullet />[`Collect_filter`](/docs/subgraph-generated/types/inputs/collect-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collects.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collects.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>tokenizedPositionBurnt</b></code>](#)<Bullet />[`TokenizedPositionBurnt`](/docs/subgraph-generated/types/objects/tokenized-position-burnt) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionBurnt.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionBurnt.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionBurnt.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>tokenizedPositionBurnts</b></code>](#)<Bullet />[`[TokenizedPositionBurnt!]!`](/docs/subgraph-generated/types/objects/tokenized-position-burnt) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionBurnts.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionBurnts.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionBurnts.<b>orderBy</b></code>](#)<Bullet />[`TokenizedPositionBurnt_orderBy`](/docs/subgraph-generated/types/enums/tokenized-position-burnt-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionBurnts.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionBurnts.<b>where</b></code>](#)<Bullet />[`TokenizedPositionBurnt_filter`](/docs/subgraph-generated/types/inputs/tokenized-position-burnt-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionBurnts.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionBurnts.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>tokenizedPositionMinted</b></code>](#)<Bullet />[`TokenizedPositionMinted`](/docs/subgraph-generated/types/objects/tokenized-position-minted) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionMinted.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionMinted.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionMinted.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>tokenizedPositionMinteds</b></code>](#)<Bullet />[`[TokenizedPositionMinted!]!`](/docs/subgraph-generated/types/objects/tokenized-position-minted) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionMinteds.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionMinteds.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionMinteds.<b>orderBy</b></code>](#)<Bullet />[`TokenizedPositionMinted_orderBy`](/docs/subgraph-generated/types/enums/tokenized-position-minted-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionMinteds.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionMinteds.<b>where</b></code>](#)<Bullet />[`TokenizedPositionMinted_filter`](/docs/subgraph-generated/types/inputs/tokenized-position-minted-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionMinteds.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionMinteds.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>tokenizedPositionRolled</b></code>](#)<Bullet />[`TokenizedPositionRolled`](/docs/subgraph-generated/types/objects/tokenized-position-rolled) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionRolled.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionRolled.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionRolled.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>tokenizedPositionRolleds</b></code>](#)<Bullet />[`[TokenizedPositionRolled!]!`](/docs/subgraph-generated/types/objects/tokenized-position-rolled) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionRolleds.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionRolleds.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionRolleds.<b>orderBy</b></code>](#)<Bullet />[`TokenizedPositionRolled_orderBy`](/docs/subgraph-generated/types/enums/tokenized-position-rolled-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionRolleds.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionRolleds.<b>where</b></code>](#)<Bullet />[`TokenizedPositionRolled_filter`](/docs/subgraph-generated/types/inputs/tokenized-position-rolled-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionRolleds.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.tokenizedPositionRolleds.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>collateralDeposit</b></code>](#)<Bullet />[`CollateralDeposit`](/docs/subgraph-generated/types/objects/collateral-deposit) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralDeposit.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralDeposit.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralDeposit.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>collateralDeposits</b></code>](#)<Bullet />[`[CollateralDeposit!]!`](/docs/subgraph-generated/types/objects/collateral-deposit) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralDeposits.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralDeposits.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralDeposits.<b>orderBy</b></code>](#)<Bullet />[`CollateralDeposit_orderBy`](/docs/subgraph-generated/types/enums/collateral-deposit-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralDeposits.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralDeposits.<b>where</b></code>](#)<Bullet />[`CollateralDeposit_filter`](/docs/subgraph-generated/types/inputs/collateral-deposit-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralDeposits.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralDeposits.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>collateralWithdraw</b></code>](#)<Bullet />[`CollateralWithdraw`](/docs/subgraph-generated/types/objects/collateral-withdraw) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralWithdraw.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralWithdraw.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralWithdraw.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>collateralWithdraws</b></code>](#)<Bullet />[`[CollateralWithdraw!]!`](/docs/subgraph-generated/types/objects/collateral-withdraw) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralWithdraws.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralWithdraws.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralWithdraws.<b>orderBy</b></code>](#)<Bullet />[`CollateralWithdraw_orderBy`](/docs/subgraph-generated/types/enums/collateral-withdraw-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralWithdraws.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralWithdraws.<b>where</b></code>](#)<Bullet />[`CollateralWithdraw_filter`](/docs/subgraph-generated/types/inputs/collateral-withdraw-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralWithdraws.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.collateralWithdraws.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>optionMint</b></code>](#)<Bullet />[`OptionMint`](/docs/subgraph-generated/types/objects/option-mint) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionMint.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionMint.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionMint.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>optionMints</b></code>](#)<Bullet />[`[OptionMint!]!`](/docs/subgraph-generated/types/objects/option-mint) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionMints.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionMints.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionMints.<b>orderBy</b></code>](#)<Bullet />[`OptionMint_orderBy`](/docs/subgraph-generated/types/enums/option-mint-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionMints.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionMints.<b>where</b></code>](#)<Bullet />[`OptionMint_filter`](/docs/subgraph-generated/types/inputs/option-mint-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionMints.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionMints.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>optionBurn</b></code>](#)<Bullet />[`OptionBurn`](/docs/subgraph-generated/types/objects/option-burn) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionBurn.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionBurn.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionBurn.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>optionBurns</b></code>](#)<Bullet />[`[OptionBurn!]!`](/docs/subgraph-generated/types/objects/option-burn) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionBurns.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionBurns.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionBurns.<b>orderBy</b></code>](#)<Bullet />[`OptionBurn_orderBy`](/docs/subgraph-generated/types/enums/option-burn-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionBurns.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionBurns.<b>where</b></code>](#)<Bullet />[`OptionBurn_filter`](/docs/subgraph-generated/types/inputs/option-burn-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionBurns.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionBurns.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>optionRoll</b></code>](#)<Bullet />[`OptionRoll`](/docs/subgraph-generated/types/objects/option-roll) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionRoll.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionRoll.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionRoll.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>optionRolls</b></code>](#)<Bullet />[`[OptionRoll!]!`](/docs/subgraph-generated/types/objects/option-roll) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionRolls.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionRolls.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionRolls.<b>orderBy</b></code>](#)<Bullet />[`OptionRoll_orderBy`](/docs/subgraph-generated/types/enums/option-roll-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionRolls.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionRolls.<b>where</b></code>](#)<Bullet />[`OptionRoll_filter`](/docs/subgraph-generated/types/inputs/option-roll-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionRolls.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.optionRolls.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>accountLiquidated</b></code>](#)<Bullet />[`AccountLiquidated`](/docs/subgraph-generated/types/objects/account-liquidated) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.accountLiquidated.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.accountLiquidated.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.accountLiquidated.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>accountLiquidateds</b></code>](#)<Bullet />[`[AccountLiquidated!]!`](/docs/subgraph-generated/types/objects/account-liquidated) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.accountLiquidateds.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.accountLiquidateds.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.accountLiquidateds.<b>orderBy</b></code>](#)<Bullet />[`AccountLiquidated_orderBy`](/docs/subgraph-generated/types/enums/account-liquidated-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.accountLiquidateds.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.accountLiquidateds.<b>where</b></code>](#)<Bullet />[`AccountLiquidated_filter`](/docs/subgraph-generated/types/inputs/account-liquidated-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.accountLiquidateds.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.accountLiquidateds.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>forcedExercise</b></code>](#)<Bullet />[`ForcedExercise`](/docs/subgraph-generated/types/objects/forced-exercise) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.forcedExercise.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.forcedExercise.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.forcedExercise.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>forcedExercises</b></code>](#)<Bullet />[`[ForcedExercise!]!`](/docs/subgraph-generated/types/objects/forced-exercise) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.forcedExercises.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.forcedExercises.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.forcedExercises.<b>orderBy</b></code>](#)<Bullet />[`ForcedExercise_orderBy`](/docs/subgraph-generated/types/enums/forced-exercise-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.forcedExercises.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.forcedExercises.<b>where</b></code>](#)<Bullet />[`ForcedExercise_filter`](/docs/subgraph-generated/types/inputs/forced-exercise-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.forcedExercises.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.forcedExercises.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>premiumSettled</b></code>](#)<Bullet />[`PremiumSettled`](/docs/subgraph-generated/types/objects/premium-settled) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.premiumSettled.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.premiumSettled.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.premiumSettled.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>premiumSettleds</b></code>](#)<Bullet />[`[PremiumSettled!]!`](/docs/subgraph-generated/types/objects/premium-settled) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.premiumSettleds.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.premiumSettleds.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.premiumSettleds.<b>orderBy</b></code>](#)<Bullet />[`PremiumSettled_orderBy`](/docs/subgraph-generated/types/enums/premium-settled-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.premiumSettleds.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.premiumSettleds.<b>where</b></code>](#)<Bullet />[`PremiumSettled_filter`](/docs/subgraph-generated/types/inputs/premium-settled-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.premiumSettleds.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.premiumSettleds.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>event</b></code>](#)<Bullet />[`Event`](/docs/subgraph-generated/types/interfaces/event) <Badge class="badge badge--secondary" text="interface"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.event.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.event.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.event.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>events</b></code>](#)<Bullet />[`[Event!]!`](/docs/subgraph-generated/types/interfaces/event) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="interface"/> 
+> 
+> 
+> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription.events.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.events.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.events.<b>orderBy</b></code>](#)<Bullet />[`Event_orderBy`](/docs/subgraph-generated/types/enums/event-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.events.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.events.<b>where</b></code>](#)<Bullet />[`Event_filter`](/docs/subgraph-generated/types/inputs/event-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.events.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Subscription.events.<b>subgraphError</b></code>](#)<Bullet />[`_SubgraphErrorPolicy_!`](/docs/subgraph-generated/types/enums/subgraph-error-policy) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Subscription.<b>_meta</b></code>](#)<Bullet />[`_Meta_`](/docs/subgraph-generated/types/objects/meta) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> Access to subgraph metadata
+> ##### [<code style={{ fontWeight: 'normal' }}>Subscription._meta.<b>block</b></code>](#)<Bullet />[`Block_height`](/docs/subgraph-generated/types/inputs/block-height) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+
+
+
+

@@ -1,0 +1,215 @@
+---
+id: chunk
+title: Chunk
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+ A chunk of liquidity. Used to track liquidity available in Uniswap, as well as liquidity removed from Uniswap for use in PanopticPools. 
+
+
+```graphql
+type Chunk {
+  id: ID!
+  owner: Account!
+  manager: Account!
+  tickLower: BigInt!
+  tickUpper: BigInt!
+  strike: BigInt!
+  width: BigInt!
+  tokenType: BigInt!
+  pool: Pool!
+  panopticPool: PanopticPool
+  netLiquidity: BigInt!
+  shortLiquidity: BigInt!
+  longLiquidity: BigInt!
+  shortCounts: BigInt!
+  longCounts: BigInt!
+  totalLiquidity: BigInt!
+  legs(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: Leg_orderBy
+    orderDirection: OrderDirection
+    where: Leg_filter
+  ): [Leg!]!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>Chunk.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  ID is a concatenated string of: owner + '#' + manager + '#' + poolAddress + '#' + tokenType + '#' + lowerTick + '#' + upperTick 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Chunk.<b>owner</b></code>](#)<Bullet />[`Account!`](/docs/subgraph-generated/types/objects/account) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  TokenizedPositionMinted.caller if mint routes through SFPM. Otherwise, same as manager (will be a PanopticPool address for option mints/burns/rolls). 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Chunk.<b>manager</b></code>](#)<Bullet />[`Account!`](/docs/subgraph-generated/types/objects/account) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  Mint.sender / Burn.owner on Uniswap pool event 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Chunk.<b>tickLower</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Lower tick of the position 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Chunk.<b>tickUpper</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Upper tick of the position 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Chunk.<b>strike</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Avg. of tickLower & tickUpper 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Chunk.<b>width</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  (tickUpper - tickLower) / pool.tickSpacing 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Chunk.<b>tokenType</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Which token is moved when deployed (0 -&#x003E; token0, 1 -&#x003E; token1). When minted through Uniswap's NFPM, tokenType is always 1 (for put). 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Chunk.<b>pool</b></code>](#)<Bullet />[`Pool!`](/docs/subgraph-generated/types/objects/pool) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  Pool where this chunk exists 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Chunk.<b>panopticPool</b></code>](#)<Bullet />[`PanopticPool`](/docs/subgraph-generated/types/objects/panoptic-pool) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  If owned by a PanopticPool, PanopticPool that owns this chunk 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Chunk.<b>netLiquidity</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Net liquidity in chunk 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Chunk.<b>shortLiquidity</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Short liquidity in chunk 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Chunk.<b>longLiquidity</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Long liquidity in chunk 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Chunk.<b>shortCounts</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Total long positions in chunk 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Chunk.<b>longCounts</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Total short positions in chunk 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Chunk.<b>totalLiquidity</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Total liquidity in chunk 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Chunk.<b>legs</b></code>](#)<Bullet />[`[Leg!]!`](/docs/subgraph-generated/types/objects/leg) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  Legs created on this chunk of liquidity 
+> ##### [<code style={{ fontWeight: 'normal' }}>Chunk.legs.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Chunk.legs.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Chunk.legs.<b>orderBy</b></code>](#)<Bullet />[`Leg_orderBy`](/docs/subgraph-generated/types/enums/leg-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Chunk.legs.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Chunk.legs.<b>where</b></code>](#)<Bullet />[`Leg_filter`](/docs/subgraph-generated/types/inputs/leg-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+
+
+
+
+### Member Of
+
+[`Leg`](/docs/subgraph-generated/types/objects/leg)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`LegLiquidities`](/docs/subgraph-generated/types/objects/leg-liquidities)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PanopticPool`](/docs/subgraph-generated/types/objects/panoptic-pool)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Query`](/docs/subgraph-generated/types/objects/query)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Subscription`](/docs/subgraph-generated/types/objects/subscription)  <Badge class="badge badge--secondary" text="object"/>
+

@@ -1,0 +1,160 @@
+---
+id: pool-hour-data
+title: PoolHourData
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+type PoolHourData {
+  id: ID!
+  pool: Pool!
+  txCount: BigInt!
+  liquidity: BigInt!
+  token0Price: BigDecimal!
+  token1Price: BigDecimal!
+  volumeToken0: BigDecimal!
+  volumeToken1: BigDecimal!
+  volumeUSD: BigDecimal!
+  open: BigDecimal!
+  high: BigDecimal!
+  low: BigDecimal!
+  close: BigDecimal!
+  periodStartUnix: Int!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>PoolHourData.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Format: &#x003C;pool address&#x003E;#&#x003C;timestamp&#x003E; 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PoolHourData.<b>pool</b></code>](#)<Bullet />[`Pool!`](/docs/subgraph-generated/types/objects/pool) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  Pointer to pool 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PoolHourData.<b>txCount</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Number of transactions during period 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PoolHourData.<b>liquidity</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  In range liquidity at end of period 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PoolHourData.<b>token0Price</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Price of token0 - derived from sqrtPrice 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PoolHourData.<b>token1Price</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Price of token1 - derived from sqrtPrice 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PoolHourData.<b>volumeToken0</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Volume in token0 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PoolHourData.<b>volumeToken1</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Volume in token1 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PoolHourData.<b>volumeUSD</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Volume in USD 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PoolHourData.<b>open</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Opening price of token0 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PoolHourData.<b>high</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  High price of token0 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PoolHourData.<b>low</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Low price of token0 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PoolHourData.<b>close</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Close price of token0 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PoolHourData.<b>periodStartUnix</b></code>](#)<Bullet />[`Int!`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Unix timestamp for start of hour 
+> 
+
+
+
+
+
+### Member Of
+
+[`Pool`](/docs/subgraph-generated/types/objects/pool)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Query`](/docs/subgraph-generated/types/objects/query)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Subscription`](/docs/subgraph-generated/types/objects/subscription)  <Badge class="badge badge--secondary" text="object"/>
+

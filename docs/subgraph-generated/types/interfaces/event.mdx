@@ -1,0 +1,143 @@
+---
+id: event
+title: Event
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+interface Event {
+  id: ID!
+  hash: String!
+  logIndex: BigInt!
+  from: String!
+  to: String!
+  blockNumber: BigInt!
+  timestamp: BigInt!
+  gasUsed: BigInt!
+  gasPrice: BigInt!
+  eventType: EventType!
+  pool: Pool!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>Event.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Txn hash + '#' + log index 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Event.<b>hash</b></code>](#)<Bullet />[`String!`](/docs/subgraph-generated/types/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Txn hash of the transaction emitting this event 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Event.<b>logIndex</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Event log index 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Event.<b>from</b></code>](#)<Bullet />[`String!`](/docs/subgraph-generated/types/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Sender of transaction 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Event.<b>to</b></code>](#)<Bullet />[`String!`](/docs/subgraph-generated/types/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Receiver of transaction 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Event.<b>blockNumber</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Block txn was included in 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Event.<b>timestamp</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Timestamp txn was confirmed 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Event.<b>gasUsed</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Gas used during txn execution 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Event.<b>gasPrice</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Gas price during txn execution 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Event.<b>eventType</b></code>](#)<Bullet />[`EventType!`](/docs/subgraph-generated/types/enums/event-type) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+>  Type of event. The Graph doesn't allow filtering by __typename meta so it's explicitly required here 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Event.<b>pool</b></code>](#)<Bullet />[`Pool!`](/docs/subgraph-generated/types/objects/pool) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  Uniswap Pool the event happened within, or the underlying Uniswap Pool for a PanopticPool event. Needed to show all transactions within a pool from a certain account because The Graph doesn't have the ability to add custom filters. 
+> 
+
+
+
+
+
+### Member Of
+
+[`AccountBalance`](/docs/subgraph-generated/types/objects/account-balance)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Query`](/docs/subgraph-generated/types/objects/query)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Subscription`](/docs/subgraph-generated/types/objects/subscription)  <Badge class="badge badge--secondary" text="object"/>
+
+### Implemented By
+
+[`AccountLiquidated`](/docs/subgraph-generated/types/objects/account-liquidated)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Burn`](/docs/subgraph-generated/types/objects/burn)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`CollateralDeposit`](/docs/subgraph-generated/types/objects/collateral-deposit)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`CollateralWithdraw`](/docs/subgraph-generated/types/objects/collateral-withdraw)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Collect`](/docs/subgraph-generated/types/objects/collect)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`ForcedExercise`](/docs/subgraph-generated/types/objects/forced-exercise)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Mint`](/docs/subgraph-generated/types/objects/mint)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`OptionBurn`](/docs/subgraph-generated/types/objects/option-burn)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`OptionMint`](/docs/subgraph-generated/types/objects/option-mint)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`OptionRoll`](/docs/subgraph-generated/types/objects/option-roll)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PremiumSettled`](/docs/subgraph-generated/types/objects/premium-settled)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TokenizedPositionBurnt`](/docs/subgraph-generated/types/objects/tokenized-position-burnt)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TokenizedPositionMinted`](/docs/subgraph-generated/types/objects/tokenized-position-minted)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TokenizedPositionRolled`](/docs/subgraph-generated/types/objects/tokenized-position-rolled)  <Badge class="badge badge--secondary" text="object"/>
+

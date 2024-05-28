@@ -1,0 +1,104 @@
+---
+id: collateral-day-data
+title: CollateralDayData
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+ Data accumulated and condensed into day stats for each collateral 
+
+
+```graphql
+type CollateralDayData {
+  id: ID!
+  collateral: Collateral!
+  date: Int!
+  totalShares: BigInt!
+  totalAssets: BigInt!
+  sharePrice: BigDecimal!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Timestamp rounded to current day by dividing by 86400 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData.<b>collateral</b></code>](#)<Bullet />[`Collateral!`](/docs/subgraph-generated/types/objects/collateral) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  Pointer to Collateral 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData.<b>date</b></code>](#)<Bullet />[`Int!`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Timestamp rounded to current day by dividing by 86400 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData.<b>totalShares</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Shares 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData.<b>totalAssets</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Assets 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData.<b>sharePrice</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Share price (assets/shares) 
+> 
+
+
+
+
+
+### Member Of
+
+[`Collateral`](/docs/subgraph-generated/types/objects/collateral)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Query`](/docs/subgraph-generated/types/objects/query)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Subscription`](/docs/subgraph-generated/types/objects/subscription)  <Badge class="badge badge--secondary" text="object"/>
+

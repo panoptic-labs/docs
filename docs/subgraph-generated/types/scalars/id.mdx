@@ -1,0 +1,59 @@
+---
+id: id
+title: ID
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+The `ID` scalar type represents a unique identifier, often used to refetch an object or as key for a cache. The ID type appears in a JSON response as a String; however, it is not intended to be human-readable. When expected as an input type, any string (such as `"4"`) or integer (such as `4`) input value will be accepted as an ID.
+
+
+```graphql
+scalar ID
+```
+
+
+
+
+
+
+
+
+### Member Of
+
+[`Account_filter`](/docs/subgraph-generated/types/inputs/account-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Account`](/docs/subgraph-generated/types/objects/account)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`AccountBalance_filter`](/docs/subgraph-generated/types/inputs/account-balance-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`AccountBalance`](/docs/subgraph-generated/types/objects/account-balance)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`AccountLiquidated_filter`](/docs/subgraph-generated/types/inputs/account-liquidated-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`AccountLiquidated`](/docs/subgraph-generated/types/objects/account-liquidated)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Bundle_filter`](/docs/subgraph-generated/types/inputs/bundle-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Bundle`](/docs/subgraph-generated/types/objects/bundle)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Burn_filter`](/docs/subgraph-generated/types/inputs/burn-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Burn`](/docs/subgraph-generated/types/objects/burn)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Chunk_filter`](/docs/subgraph-generated/types/inputs/chunk-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Chunk`](/docs/subgraph-generated/types/objects/chunk)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Collateral_filter`](/docs/subgraph-generated/types/inputs/collateral-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Collateral`](/docs/subgraph-generated/types/objects/collateral)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`CollateralDayData_filter`](/docs/subgraph-generated/types/inputs/collateral-day-data-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`CollateralDayData`](/docs/subgraph-generated/types/objects/collateral-day-data)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`CollateralDeposit_filter`](/docs/subgraph-generated/types/inputs/collateral-deposit-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`CollateralDeposit`](/docs/subgraph-generated/types/objects/collateral-deposit)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`CollateralWithdraw_filter`](/docs/subgraph-generated/types/inputs/collateral-withdraw-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`CollateralWithdraw`](/docs/subgraph-generated/types/objects/collateral-withdraw)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Collect_filter`](/docs/subgraph-generated/types/inputs/collect-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Collect`](/docs/subgraph-generated/types/objects/collect)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Event_filter`](/docs/subgraph-generated/types/inputs/event-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Event`](/docs/subgraph-generated/types/interfaces/event)  <Badge class="badge badge--secondary" text="interface"/><Bullet />[`Factory_filter`](/docs/subgraph-generated/types/inputs/factory-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Factory`](/docs/subgraph-generated/types/objects/factory)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`ForcedExercise_filter`](/docs/subgraph-generated/types/inputs/forced-exercise-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`ForcedExercise`](/docs/subgraph-generated/types/objects/forced-exercise)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Leg_filter`](/docs/subgraph-generated/types/inputs/leg-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Leg`](/docs/subgraph-generated/types/objects/leg)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`LegLiquidities_filter`](/docs/subgraph-generated/types/inputs/leg-liquidities-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`LegLiquidities`](/docs/subgraph-generated/types/objects/leg-liquidities)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Mint_filter`](/docs/subgraph-generated/types/inputs/mint-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Mint`](/docs/subgraph-generated/types/objects/mint)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`OptionBurn_filter`](/docs/subgraph-generated/types/inputs/option-burn-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`OptionBurn`](/docs/subgraph-generated/types/objects/option-burn)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`OptionMint_filter`](/docs/subgraph-generated/types/inputs/option-mint-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`OptionMint`](/docs/subgraph-generated/types/objects/option-mint)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`OptionRoll_filter`](/docs/subgraph-generated/types/inputs/option-roll-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`OptionRoll`](/docs/subgraph-generated/types/objects/option-roll)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PanopticFactory_filter`](/docs/subgraph-generated/types/inputs/panoptic-factory-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`PanopticFactory`](/docs/subgraph-generated/types/objects/panoptic-factory)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PanopticPool_filter`](/docs/subgraph-generated/types/inputs/panoptic-pool-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`PanopticPool`](/docs/subgraph-generated/types/objects/panoptic-pool)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PanopticPoolAccount_filter`](/docs/subgraph-generated/types/inputs/panoptic-pool-account-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`PanopticPoolAccount`](/docs/subgraph-generated/types/objects/panoptic-pool-account)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Pool_filter`](/docs/subgraph-generated/types/inputs/pool-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Pool`](/docs/subgraph-generated/types/objects/pool)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PoolDayData_filter`](/docs/subgraph-generated/types/inputs/pool-day-data-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`PoolDayData`](/docs/subgraph-generated/types/objects/pool-day-data)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PoolHourData_filter`](/docs/subgraph-generated/types/inputs/pool-hour-data-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`PoolHourData`](/docs/subgraph-generated/types/objects/pool-hour-data)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PremiumSettled_filter`](/docs/subgraph-generated/types/inputs/premium-settled-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`PremiumSettled`](/docs/subgraph-generated/types/objects/premium-settled)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Token_filter`](/docs/subgraph-generated/types/inputs/token-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Token`](/docs/subgraph-generated/types/objects/token)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TokenId_filter`](/docs/subgraph-generated/types/inputs/token-id-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`TokenId`](/docs/subgraph-generated/types/objects/token-id)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TokenizedPositionBurnt_filter`](/docs/subgraph-generated/types/inputs/tokenized-position-burnt-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`TokenizedPositionBurnt`](/docs/subgraph-generated/types/objects/tokenized-position-burnt)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TokenizedPositionMinted_filter`](/docs/subgraph-generated/types/inputs/tokenized-position-minted-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`TokenizedPositionMinted`](/docs/subgraph-generated/types/objects/tokenized-position-minted)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TokenizedPositionRolled_filter`](/docs/subgraph-generated/types/inputs/tokenized-position-rolled-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`TokenizedPositionRolled`](/docs/subgraph-generated/types/objects/tokenized-position-rolled)  <Badge class="badge badge--secondary" text="object"/>
+

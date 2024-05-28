@@ -1,0 +1,90 @@
+---
+id: leg-liquidities
+title: LegLiquidities
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+ Currently only for Panoptic TokenIds (not synthetic tokenIds created from uniswap positions), stores the liquidity underlying each instance of a leg. While multiple legs may exist with the same ID, each instance of a leg controls a fixed amount of liquidity when active. Can also think of these as the 'operators' of a given chunk. Don't directly own the liquidity (like PanopticPool) or manage it (like SFPM), but the account that owns this Leg has the right to instruct the manager on how to manage the underlying liquidity. The 'operator' wasn't added to Chunk IDs to avoid fragmentation of the entities - we would quickly reach the 1000 query limit otherwise. Maybe this will be removed in favor of a simple 'operator' field in Chunk in the future. 
+
+
+```graphql
+type LegLiquidities {
+  id: ID!
+  leg: Leg!
+  chunk: Chunk!
+  liquidity: BigInt!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  leg id + '#' + txnHash + '#' + logIndex 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities.<b>leg</b></code>](#)<Bullet />[`Leg!`](/docs/subgraph-generated/types/objects/leg) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities.<b>chunk</b></code>](#)<Bullet />[`Chunk!`](/docs/subgraph-generated/types/objects/chunk) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities.<b>liquidity</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+
+
+
+
+### Member Of
+
+[`AccountBalance`](/docs/subgraph-generated/types/objects/account-balance)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Query`](/docs/subgraph-generated/types/objects/query)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Subscription`](/docs/subgraph-generated/types/objects/subscription)  <Badge class="badge badge--secondary" text="object"/>
+

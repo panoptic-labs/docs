@@ -17,7 +17,7 @@ const config = {
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
 
-  staticDirectories: ['static'],
+  staticDirectories: ["static"],
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -41,14 +41,14 @@ const config = {
             label: "Docs",
           },
           {
-            to: 'blog',
-            label: 'Blog',
-            position: 'left'
+            to: "blog",
+            label: "Blog",
+            position: "left",
           },
           {
-            to: 'research',
-            label: 'Research',
-            position: 'left'
+            to: "research",
+            label: "Research",
+            position: "left",
           },
           {
             type: "doc",
@@ -142,7 +142,7 @@ const config = {
         darkTheme: darkCodeTheme,
       },
       colorMode: {
-        defaultMode: 'light',
+        defaultMode: "light",
         disableSwitch: true,
         respectPrefersColorScheme: false,
       },
@@ -167,32 +167,32 @@ const config = {
       announcementBar: {
         id: "ETH_Denver_2023",
         content:
-          "Panoptic's Beta launches on Polygon! Join the <a href=\"https://panoptic.xyz/blog/panoptic-beta-launch-epoch-six\">trading competition</a> starting Feb 13. The <a href=\"https://panoptic.xyz/blog/december-nutcracker\">December Nutcracker</a> competition is also underway on Base, with >$10K prizes in Miladies, Lil Pudgies, and mfers. <a href=\"https://beta4.panoptic.xyz\">Join now</a>!",
+          'Panoptic\'s Beta launches on Polygon! Join the <a href="https://panoptic.xyz/blog/panoptic-beta-launch-epoch-six">trading competition</a> starting Feb 13. The <a href="https://panoptic.xyz/blog/december-nutcracker">December Nutcracker</a> competition is also underway on Base, with >$10K prizes in Miladies, Lil Pudgies, and mfers. <a href="https://beta4.panoptic.xyz">Join now</a>!',
         textColor: "#FFFFFF",
         isCloseable: true,
       },
       image:
         "https://raw.githubusercontent.com/panoptic-labs/docs/main/static/img/website-banner.png",
       algolia: {
-        appId: '8ICJTW297L',
+        appId: "8ICJTW297L",
         // Public API key: it is safe to commit it
-        apiKey: '5274a086bb1beb9f844aa87f71435c7b',
-        indexName: 'panoptic',
+        apiKey: "5274a086bb1beb9f844aa87f71435c7b",
+        indexName: "panoptic",
         contextualSearch: true,
         // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
         // externalUrlRegex: 'external\\.com|domain\\.com',
-  
+
         // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
         // replaceSearchResultPathname: {
         //   from: '/docs/', // or as RegExp: /\/docs\//
         //   to: '/',
         // },
-  
+
         // Optional: Algolia search parameters
         searchParameters: {},
-  
+
         // Optional: path for search page that enabled by default (`false` to disable it)
-        searchPagePath: 'search',
+        searchPagePath: "search",
       },
       tableOfContents: {
         minHeadingLevel: 2,
@@ -221,19 +221,19 @@ const config = {
           // Remove this to remove the "edit this page" links.
         },
         blog: {
-          blogTitle: 'Panoptic Blog',
-          blogDescription: 'All-Things DeFi Options',
+          blogTitle: "Panoptic Blog",
+          blogDescription: "All-Things DeFi Options",
           postsPerPage: 9,
-          blogSidebarTitle: 'All posts',
+          blogSidebarTitle: "All posts",
           blogSidebarCount: "ALL",
           showReadingTime: true,
-          readingTime: ({content, frontMatter, defaultReadingTime}) =>
-            defaultReadingTime({content, options: {wordsPerMinute: 300}}),
+          readingTime: ({ content, frontMatter, defaultReadingTime }) =>
+            defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
           feedOptions: {
-            type: 'all',
+            type: "all",
             copyright: `Copyright © ${new Date().getFullYear()} 2023 Axicon Labs Limited. All Rights Reserved. Panoptic™ is a trademark of Axicon Labs Inc. All other trademarks and registered trademarks are the sole property of their respective owners.`,
             createFeedItems: async (params) => {
-              const {blogPosts, defaultCreateFeedItems, ...rest} = params;
+              const { blogPosts, defaultCreateFeedItems, ...rest } = params;
               return defaultCreateFeedItems({
                 // keep only the 10 most recent blog posts in the feed
                 blogPosts: blogPosts.filter((item, index) => index < 10),
@@ -248,7 +248,7 @@ const config = {
           customCss: require.resolve("./src/css/custom.css"),
         },
         gtag: {
-          trackingID: 'G-L8XETHMC9F',
+          trackingID: "G-L8XETHMC9F",
           anonymizeIP: true,
         },
       }),
@@ -265,47 +265,69 @@ const config = {
   plugins: [
     "@docusaurus-terminology/parser",
     [
-    "@graphql-markdown/docusaurus",
+      "@graphql-markdown/docusaurus",
       {
-        schema: "https://api.goldsky.com/api/public/project_cl9gc21q105380hxuh8ks53k3/subgraphs/panoptic-subgraph-sepolia/beta7-prod/gn",
         rootPath: "./docs",
-        baseURL: "subgraph-generated",
+        baseURL: "/subgraph-generated",
+        homepage: "./docs/subgraph-generated/generated.md",
+        linkRoot: "/docs",
+
+        // Load remote schema through introspection query
+        // TODO: still creates extra Filter directories which I don't need. Try loading local schema to fix that
+        schema: "https://api.goldsky.com/api/public/project_cl9gc21q105380hxuh8ks53k3/subgraphs/panoptic-subgraph-sepolia/beta7-prod/gn",
         loaders: {
           UrlLoader: {
             module: "@graphql-tools/url-loader",
+            options: {
+              rootTypes: {
+                subscription: "", // disable Subscription type
+                mutation: "", // disable mutation type
+              },
+            },
           },
         },
+
+        // Load schema through local schema file
+        // schema: "./schema.graphql",
+        // loaders: {
+        //   GraphQLFileLoader: "@graphql-tools/graphql-file-loader",
+        // },
+
+        docOptions: {
+          index: true,
+        },
+        tmpDir: "./tmp",
       },
     ],
     [
-      '@docusaurus/plugin-content-blog',
+      "@docusaurus/plugin-content-blog",
       {
         /**
          * Required for any multi-instance plugin
          */
-        id: 'research',
+        id: "research",
         /**
          * URL route for the blog section of your site.
          * *DO NOT* include a trailing slash.
          */
-        routeBasePath: 'research',
+        routeBasePath: "research",
         /**
          * Path to data on filesystem relative to site dir.
          */
-        path: 'research',
-        blogTitle: 'Research',
-        blogDescription: 'DeFi Options Research',
+        path: "research",
+        blogTitle: "Research",
+        blogDescription: "DeFi Options Research",
         postsPerPage: 9,
-        blogSidebarTitle: 'All posts',
+        blogSidebarTitle: "All posts",
         blogSidebarCount: "ALL",
         showReadingTime: true,
-        readingTime: ({content, frontMatter, defaultReadingTime}) =>
-          defaultReadingTime({content, options: {wordsPerMinute: 300}}),
+        readingTime: ({ content, frontMatter, defaultReadingTime }) =>
+          defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
         feedOptions: {
-          type: 'all',
+          type: "all",
           copyright: `Copyright © ${new Date().getFullYear()} 2023 Axicon Labs Limited. All Rights Reserved. Panoptic™ is a trademark of Axicon Labs Inc. All other trademarks and registered trademarks are the sole property of their respective owners.`,
           createFeedItems: async (params) => {
-            const {blogPosts, defaultCreateFeedItems, ...rest} = params;
+            const { blogPosts, defaultCreateFeedItems, ...rest } = params;
             return defaultCreateFeedItems({
               // keep only the 10 most recent blog posts in the feed
               blogPosts: blogPosts.filter((item, index) => index < 10),
@@ -331,10 +353,11 @@ const config = {
   ],
   headTags: [
     {
-      tagName: 'meta',
+      tagName: "meta",
       attributes: {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
+        name: "viewport",
+        content:
+          "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0",
       },
     },
   ],

@@ -1,0 +1,237 @@
+---
+id: account-liquidated
+title: AccountLiquidated
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+type AccountLiquidated implements Event {
+  id: ID!
+  hash: String!
+  logIndex: BigInt!
+  eventType: EventType!
+  from: String!
+  to: String!
+  blockNumber: BigInt!
+  timestamp: BigInt!
+  gasUsed: BigInt!
+  gasPrice: BigInt!
+  pool: Pool!
+  liquidator: Account!
+  liquidatee: Account!
+  bonusAmounts: BigInt!
+  liquidationBonus0: BigInt!
+  liquidationBonus1: BigInt!
+  tickAt: Int!
+  panopticPool: PanopticPool!
+  optionBurns(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: OptionBurn_orderBy
+    orderDirection: OrderDirection
+    where: OptionBurn_filter
+  ): [OptionBurn!]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountLiquidated.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountLiquidated.<b>hash</b></code>](#)<Bullet />[`String!`](/docs/subgraph-generated/types/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountLiquidated.<b>logIndex</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountLiquidated.<b>eventType</b></code>](#)<Bullet />[`EventType!`](/docs/subgraph-generated/types/enums/event-type) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountLiquidated.<b>from</b></code>](#)<Bullet />[`String!`](/docs/subgraph-generated/types/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountLiquidated.<b>to</b></code>](#)<Bullet />[`String!`](/docs/subgraph-generated/types/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountLiquidated.<b>blockNumber</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountLiquidated.<b>timestamp</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountLiquidated.<b>gasUsed</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountLiquidated.<b>gasPrice</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountLiquidated.<b>pool</b></code>](#)<Bullet />[`Pool!`](/docs/subgraph-generated/types/objects/pool) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountLiquidated.<b>liquidator</b></code>](#)<Bullet />[`Account!`](/docs/subgraph-generated/types/objects/account) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  Address that liquidates the distressed account 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountLiquidated.<b>liquidatee</b></code>](#)<Bullet />[`Account!`](/docs/subgraph-generated/types/objects/account) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  Address of the distressed/liquidated account 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountLiquidated.<b>bonusAmounts</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  LeftRight encoding for the the bonus paid for token 0 (right slot) and 1 (left slot) from the Panoptic Pool to the liquidator. See liquidationBonus0 and liquidationBonus1 for the unpacked token values. 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountLiquidated.<b>liquidationBonus0</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  The amount of bonus paid for token0 for this liquidation. 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountLiquidated.<b>liquidationBonus1</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  The amount of bonus paid for token1 for this liquidation. 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountLiquidated.<b>tickAt</b></code>](#)<Bullet />[`Int!`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Tick when the position was liquidated 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountLiquidated.<b>panopticPool</b></code>](#)<Bullet />[`PanopticPool!`](/docs/subgraph-generated/types/objects/panoptic-pool) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  The PanopticPool this liquidation happened in (from event.address) 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountLiquidated.<b>optionBurns</b></code>](#)<Bullet />[`[OptionBurn!]`](/docs/subgraph-generated/types/objects/option-burn) <Badge class="badge badge--secondary" text="list"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  List of OptionBurn events resulting from this Liquidation 
+> ##### [<code style={{ fontWeight: 'normal' }}>AccountLiquidated.optionBurns.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>AccountLiquidated.optionBurns.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>AccountLiquidated.optionBurns.<b>orderBy</b></code>](#)<Bullet />[`OptionBurn_orderBy`](/docs/subgraph-generated/types/enums/option-burn-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>AccountLiquidated.optionBurns.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>AccountLiquidated.optionBurns.<b>where</b></code>](#)<Bullet />[`OptionBurn_filter`](/docs/subgraph-generated/types/inputs/option-burn-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+### Interfaces
+
+#### [`Event`](/docs/subgraph-generated/types/interfaces/event) <Badge class="badge badge--secondary" text="interface"/> 
+> 
+> 
+> 
+> 
+
+
+
+
+
+### Member Of
+
+[`OptionBurn`](/docs/subgraph-generated/types/objects/option-burn)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Query`](/docs/subgraph-generated/types/objects/query)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Subscription`](/docs/subgraph-generated/types/objects/subscription)  <Badge class="badge badge--secondary" text="object"/>
+

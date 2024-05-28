@@ -6,7 +6,8 @@
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
-    "graphql-to-doc": "docusaurus graphql-to-doc",
+    "graphql-to-doc": "docusaurus graphql-to-doc && yarn clean-graphql-to-doc",
+    "clean-graphql-to-doc": "find ./docs/subgraph-generated/* -type d ! -name generated.md ! -path ./docs/subgraph-generated/types ! -name objects ! -name interfaces ! -name scalars -exec rimraf {} \\; 2>/dev/null || true;",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -54,6 +55,7 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^2.2.0",
+    "@graphql-tools/graphql-file-loader": "^8.0.1",
     "graphql-config": "^5.0.3"
   },
   "browserslist": {

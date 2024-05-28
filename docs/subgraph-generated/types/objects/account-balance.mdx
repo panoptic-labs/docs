@@ -1,0 +1,194 @@
+---
+id: account-balance
+title: AccountBalance
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+ The AccountBalance entity represents how many of a specific TokenId an Account holds 
+
+
+```graphql
+type AccountBalance {
+  id: ID!
+  owner: Account!
+  sender: Account!
+  tokenId: TokenId!
+  legLiquidities(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: LegLiquidities_orderBy
+    orderDirection: OrderDirection
+    where: LegLiquidities_filter
+  ): [LegLiquidities!]!
+  tokenCount: BigInt!
+  positionSize: BigInt!
+  panopticPoolAccount: PanopticPoolAccount
+  txnOpened: Event!
+  txnClosed: Event
+  isOpen: Int!
+  createdTimestamp: BigInt!
+  createdBlockNumber: BigInt!
+  closedTimestamp: BigInt
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Sender (e.g. user address) + '#' + tokenId, to distinguish NFPM positions from PanopticPool positions 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance.<b>owner</b></code>](#)<Bullet />[`Account!`](/docs/subgraph-generated/types/objects/account) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  Creator of this AccountToken balance (e.g. NFPM Account, SFPM Account, PanopticPool) 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance.<b>sender</b></code>](#)<Bullet />[`Account!`](/docs/subgraph-generated/types/objects/account) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  Initiator of this txn (account responsible) 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance.<b>tokenId</b></code>](#)<Bullet />[`TokenId!`](/docs/subgraph-generated/types/objects/token-id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  The ERC1155 TokenId held by this Account 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance.<b>legLiquidities</b></code>](#)<Bullet />[`[LegLiquidities!]!`](/docs/subgraph-generated/types/objects/leg-liquidities) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  The Legs and associated liquidity amounts of this AccountBalance's TokenId 
+> ##### [<code style={{ fontWeight: 'normal' }}>AccountBalance.legLiquidities.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>AccountBalance.legLiquidities.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>AccountBalance.legLiquidities.<b>orderBy</b></code>](#)<Bullet />[`LegLiquidities_orderBy`](/docs/subgraph-generated/types/enums/leg-liquidities-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>AccountBalance.legLiquidities.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>AccountBalance.legLiquidities.<b>where</b></code>](#)<Bullet />[`LegLiquidities_filter`](/docs/subgraph-generated/types/inputs/leg-liquidities-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance.<b>tokenCount</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Amount of TokenId held by this Account 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance.<b>positionSize</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Position size expressed in terms of the asset 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance.<b>panopticPoolAccount</b></code>](#)<Bullet />[`PanopticPoolAccount`](/docs/subgraph-generated/types/objects/panoptic-pool-account) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  The associated PanopticPoolAccount IF the TokenId exists within a PanopticPool. Null if the tokenId exists outside of a PanopticPool, like an LP position created through direct interaction with the SFPM / NFPM. 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance.<b>txnOpened</b></code>](#)<Bullet />[`Event!`](/docs/subgraph-generated/types/interfaces/event) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="interface"/> 
+> 
+> 
+>  ID of the event that created account balance 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance.<b>txnClosed</b></code>](#)<Bullet />[`Event`](/docs/subgraph-generated/types/interfaces/event) <Badge class="badge badge--secondary" text="interface"/> 
+> 
+> 
+>  ID of the event that closed account balance 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance.<b>isOpen</b></code>](#)<Bullet />[`Int!`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Open state of this Position. Will be 0 if closed, 1 if open, and 2 if there is another closed copy of this account balance and this instance is just a placeholder waiting to get overwritten.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance.<b>createdTimestamp</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Creation timestamp 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance.<b>createdBlockNumber</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Creation block number 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance.<b>closedTimestamp</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Closed timestamp 
+> 
+
+
+
+
+
+### Member Of
+
+[`Account`](/docs/subgraph-generated/types/objects/account)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PanopticPoolAccount`](/docs/subgraph-generated/types/objects/panoptic-pool-account)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Query`](/docs/subgraph-generated/types/objects/query)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Subscription`](/docs/subgraph-generated/types/objects/subscription)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TokenId`](/docs/subgraph-generated/types/objects/token-id)  <Badge class="badge badge--secondary" text="object"/>
+

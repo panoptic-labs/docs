@@ -1,0 +1,59 @@
+---
+id: big-decimal
+title: BigDecimal
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+scalar BigDecimal
+```
+
+
+
+
+
+
+
+
+### Member Of
+
+[`Bundle_filter`](/docs/subgraph-generated/types/inputs/bundle-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Bundle`](/docs/subgraph-generated/types/objects/bundle)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Burn_filter`](/docs/subgraph-generated/types/inputs/burn-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Burn`](/docs/subgraph-generated/types/objects/burn)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Collateral_filter`](/docs/subgraph-generated/types/inputs/collateral-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Collateral`](/docs/subgraph-generated/types/objects/collateral)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`CollateralDayData_filter`](/docs/subgraph-generated/types/inputs/collateral-day-data-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`CollateralDayData`](/docs/subgraph-generated/types/objects/collateral-day-data)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`CollateralDeposit_filter`](/docs/subgraph-generated/types/inputs/collateral-deposit-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`CollateralDeposit`](/docs/subgraph-generated/types/objects/collateral-deposit)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`CollateralWithdraw_filter`](/docs/subgraph-generated/types/inputs/collateral-withdraw-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`CollateralWithdraw`](/docs/subgraph-generated/types/objects/collateral-withdraw)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Collect_filter`](/docs/subgraph-generated/types/inputs/collect-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Collect`](/docs/subgraph-generated/types/objects/collect)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Mint_filter`](/docs/subgraph-generated/types/inputs/mint-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Mint`](/docs/subgraph-generated/types/objects/mint)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PanopticPool_filter`](/docs/subgraph-generated/types/inputs/panoptic-pool-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`PanopticPool`](/docs/subgraph-generated/types/objects/panoptic-pool)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PanopticPoolAccount_filter`](/docs/subgraph-generated/types/inputs/panoptic-pool-account-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`PanopticPoolAccount`](/docs/subgraph-generated/types/objects/panoptic-pool-account)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Pool_filter`](/docs/subgraph-generated/types/inputs/pool-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Pool`](/docs/subgraph-generated/types/objects/pool)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PoolDayData_filter`](/docs/subgraph-generated/types/inputs/pool-day-data-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`PoolDayData`](/docs/subgraph-generated/types/objects/pool-day-data)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PoolHourData_filter`](/docs/subgraph-generated/types/inputs/pool-hour-data-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`PoolHourData`](/docs/subgraph-generated/types/objects/pool-hour-data)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Token_filter`](/docs/subgraph-generated/types/inputs/token-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Token`](/docs/subgraph-generated/types/objects/token)  <Badge class="badge badge--secondary" text="object"/>
+

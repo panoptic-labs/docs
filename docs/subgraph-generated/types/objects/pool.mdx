@@ -1,0 +1,277 @@
+---
+id: pool
+title: Pool
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+ Underlying pool (e.g. Uniswap V3 Pool) 
+
+
+```graphql
+type Pool {
+  id: ID!
+  poolId: String
+  feeTier: BigInt!
+  tickSpacing: BigInt!
+  token0: Token!
+  token1: Token!
+  txCount: BigInt!
+  liquidity: BigInt!
+  sqrtPrice: BigInt!
+  tick: BigInt
+  tickLastUpdateTimestamp: BigInt!
+  tickLastUpdateBlockNumber: BigInt!
+  poolHourData(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: PoolHourData_orderBy
+    orderDirection: OrderDirection
+    where: PoolHourData_filter
+  ): [PoolHourData!]!
+  poolDayData(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: PoolDayData_orderBy
+    orderDirection: OrderDirection
+    where: PoolDayData_filter
+  ): [PoolDayData!]!
+  token0Price: BigDecimal!
+  token1Price: BigDecimal!
+  totalValueLockedToken0: BigDecimal!
+  totalValueLockedToken1: BigDecimal!
+  totalValueLockedETH: BigDecimal!
+  totalValueLockedUSD: BigDecimal!
+  panopticPool: PanopticPool
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Pool address 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool.<b>poolId</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Panoptic identifier of uniswap pool 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool.<b>feeTier</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Fee amount 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool.<b>tickSpacing</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Min space between ticks 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool.<b>token0</b></code>](#)<Bullet />[`Token!`](/docs/subgraph-generated/types/objects/token) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  Token0 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool.<b>token1</b></code>](#)<Bullet />[`Token!`](/docs/subgraph-generated/types/objects/token) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  Token1 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool.<b>txCount</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Total transaction count 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool.<b>liquidity</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  In range liquidity 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool.<b>sqrtPrice</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Current price tracker 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool.<b>tick</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Current tick. May be null if pool has not been initialized. 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool.<b>tickLastUpdateTimestamp</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Timestamp of the last time this tick was updated 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool.<b>tickLastUpdateBlockNumber</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Block number of the last time this tick was updated 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool.<b>poolHourData</b></code>](#)<Bullet />[`[PoolHourData!]!`](/docs/subgraph-generated/types/objects/pool-hour-data) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  Snapshots of PoolHourData 
+> ##### [<code style={{ fontWeight: 'normal' }}>Pool.poolHourData.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Pool.poolHourData.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Pool.poolHourData.<b>orderBy</b></code>](#)<Bullet />[`PoolHourData_orderBy`](/docs/subgraph-generated/types/enums/pool-hour-data-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Pool.poolHourData.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Pool.poolHourData.<b>where</b></code>](#)<Bullet />[`PoolHourData_filter`](/docs/subgraph-generated/types/inputs/pool-hour-data-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool.<b>poolDayData</b></code>](#)<Bullet />[`[PoolDayData!]!`](/docs/subgraph-generated/types/objects/pool-day-data) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  Snapshots of PoolDayData 
+> ##### [<code style={{ fontWeight: 'normal' }}>Pool.poolDayData.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Pool.poolDayData.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Pool.poolDayData.<b>orderBy</b></code>](#)<Bullet />[`PoolDayData_orderBy`](/docs/subgraph-generated/types/enums/pool-day-data-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Pool.poolDayData.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Pool.poolDayData.<b>where</b></code>](#)<Bullet />[`PoolDayData_filter`](/docs/subgraph-generated/types/inputs/pool-day-data-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool.<b>token0Price</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  token0 per token1 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool.<b>token1Price</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Token1 per token0 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool.<b>totalValueLockedToken0</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Total token 0 across all ticks 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool.<b>totalValueLockedToken1</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Total token 1 across all ticks 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool.<b>totalValueLockedETH</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Tvl derived ETH (necessary for tvlUSD using uni's implementation) 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool.<b>totalValueLockedUSD</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Tvl USD 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool.<b>panopticPool</b></code>](#)<Bullet />[`PanopticPool`](/docs/subgraph-generated/types/objects/panoptic-pool) <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  Associated PanopticPool. Null if not created yet 
+> 
+
+
+
+
+
+### Member Of
+
+[`AccountLiquidated`](/docs/subgraph-generated/types/objects/account-liquidated)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Burn`](/docs/subgraph-generated/types/objects/burn)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Chunk`](/docs/subgraph-generated/types/objects/chunk)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`CollateralDeposit`](/docs/subgraph-generated/types/objects/collateral-deposit)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`CollateralWithdraw`](/docs/subgraph-generated/types/objects/collateral-withdraw)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Collect`](/docs/subgraph-generated/types/objects/collect)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Event`](/docs/subgraph-generated/types/interfaces/event)  <Badge class="badge badge--secondary" text="interface"/><Bullet />[`ForcedExercise`](/docs/subgraph-generated/types/objects/forced-exercise)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Leg`](/docs/subgraph-generated/types/objects/leg)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Mint`](/docs/subgraph-generated/types/objects/mint)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`OptionBurn`](/docs/subgraph-generated/types/objects/option-burn)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`OptionMint`](/docs/subgraph-generated/types/objects/option-mint)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`OptionRoll`](/docs/subgraph-generated/types/objects/option-roll)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PanopticPool`](/docs/subgraph-generated/types/objects/panoptic-pool)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PoolDayData`](/docs/subgraph-generated/types/objects/pool-day-data)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PoolHourData`](/docs/subgraph-generated/types/objects/pool-hour-data)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PremiumSettled`](/docs/subgraph-generated/types/objects/premium-settled)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Query`](/docs/subgraph-generated/types/objects/query)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Subscription`](/docs/subgraph-generated/types/objects/subscription)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Token`](/docs/subgraph-generated/types/objects/token)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TokenId`](/docs/subgraph-generated/types/objects/token-id)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TokenizedPositionBurnt`](/docs/subgraph-generated/types/objects/tokenized-position-burnt)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TokenizedPositionMinted`](/docs/subgraph-generated/types/objects/tokenized-position-minted)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TokenizedPositionRolled`](/docs/subgraph-generated/types/objects/tokenized-position-rolled)  <Badge class="badge badge--secondary" text="object"/>
+

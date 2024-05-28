@@ -1,0 +1,215 @@
+---
+id: panoptic-pool-account
+title: PanopticPoolAccount
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+ Tracks Panoption & PLP activity (collateral withdrawals and deposits) for a given Account & PanopticPool the Account has interacted with. 
+
+
+```graphql
+type PanopticPoolAccount {
+  id: ID!
+  panopticPool: PanopticPool!
+  account: Account!
+  collateral0: Collateral!
+  collateral0Shares: BigInt!
+  collateral0Assets: BigInt!
+  collateral1: Collateral!
+  collateral1Shares: BigInt!
+  collateral1Assets: BigInt!
+  commissions0: BigDecimal!
+  commissions1: BigDecimal!
+  sharePriceAtLastTransfer0: BigDecimal!
+  sharePriceAtLastTransfer1: BigDecimal!
+  commissionsSinceLastTransfer0: BigDecimal!
+  commissionsSinceLastTransfer1: BigDecimal!
+  isLiquidated: Int!
+  accountBalances(
+    skip: Int = 0
+    first: Int = 100
+    orderBy: AccountBalance_orderBy
+    orderDirection: OrderDirection
+    where: AccountBalance_filter
+  ): [AccountBalance!]!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Address of account + '#' + address of panoptic pool 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount.<b>panopticPool</b></code>](#)<Bullet />[`PanopticPool!`](/docs/subgraph-generated/types/objects/panoptic-pool) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  Panoptic pool address 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount.<b>account</b></code>](#)<Bullet />[`Account!`](/docs/subgraph-generated/types/objects/account) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  Account address 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount.<b>collateral0</b></code>](#)<Bullet />[`Collateral!`](/docs/subgraph-generated/types/objects/collateral) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  Collateral contract for Token0 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount.<b>collateral0Shares</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Number of collateral shares Collateral0 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount.<b>collateral0Assets</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Number of collateral assets Collateral0 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount.<b>collateral1</b></code>](#)<Bullet />[`Collateral!`](/docs/subgraph-generated/types/objects/collateral) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  Collateral contract for Token1 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount.<b>collateral1Shares</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Number of collateral shares Collateral1 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount.<b>collateral1Assets</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Number of collateral assets Collateral1 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount.<b>commissions0</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  All time commissions paid to PLPs in Collateral0. Commissions increase with every OptionMint and collateral deposit. 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount.<b>commissions1</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  All time commissions paid to PLPs in Collateral1. 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount.<b>sharePriceAtLastTransfer0</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Collateral0 share price at time of last transfer (an internal bookeeping mechanism to keep track of total commissions this account has earned as a PLP). 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount.<b>sharePriceAtLastTransfer1</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  See sharePriceAtLastTransfer0. 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount.<b>commissionsSinceLastTransfer0</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Commissions earned in token0 since this account's last share transfer event (shares get transferred when depositing or withdrawing collateral, burning or minting an option, or directly sending share tokens). 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount.<b>commissionsSinceLastTransfer1</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Same as `commissionsSinceLastTransfer`, but in token1. 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount.<b>isLiquidated</b></code>](#)<Bullet />[`Int!`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+>  Whether or not the user has been liquidated for this pool & not opened new positions (1 if true) 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount.<b>accountBalances</b></code>](#)<Bullet />[`[AccountBalance!]!`](/docs/subgraph-generated/types/objects/account-balance) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+> 
+> 
+>  TokenId balances that this PanopticPoolAccount is responsible for 
+> ##### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount.accountBalances.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount.accountBalances.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount.accountBalances.<b>orderBy</b></code>](#)<Bullet />[`AccountBalance_orderBy`](/docs/subgraph-generated/types/enums/account-balance-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount.accountBalances.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+> 
+> 
+> 
+> 
+
+##### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount.accountBalances.<b>where</b></code>](#)<Bullet />[`AccountBalance_filter`](/docs/subgraph-generated/types/inputs/account-balance-filter) <Badge class="badge badge--secondary" text="input"/> 
+> 
+> 
+> 
+> 
+
+
+
+
+
+### Member Of
+
+[`Account`](/docs/subgraph-generated/types/objects/account)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`AccountBalance`](/docs/subgraph-generated/types/objects/account-balance)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Query`](/docs/subgraph-generated/types/objects/query)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Subscription`](/docs/subgraph-generated/types/objects/subscription)  <Badge class="badge badge--secondary" text="object"/>
+
