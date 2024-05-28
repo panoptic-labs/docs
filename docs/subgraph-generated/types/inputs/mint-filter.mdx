@@ -1,0 +1,1882 @@
+---
+id: mint-filter
+title: Mint_filter
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+input Mint_filter {
+  id: ID
+  id_not: ID
+  id_gt: ID
+  id_lt: ID
+  id_gte: ID
+  id_lte: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  hash: String
+  hash_not: String
+  hash_gt: String
+  hash_lt: String
+  hash_gte: String
+  hash_lte: String
+  hash_in: [String!]
+  hash_not_in: [String!]
+  hash_contains: String
+  hash_contains_nocase: String
+  hash_not_contains: String
+  hash_not_contains_nocase: String
+  hash_starts_with: String
+  hash_starts_with_nocase: String
+  hash_not_starts_with: String
+  hash_not_starts_with_nocase: String
+  hash_ends_with: String
+  hash_ends_with_nocase: String
+  hash_not_ends_with: String
+  hash_not_ends_with_nocase: String
+  logIndex: BigInt
+  logIndex_not: BigInt
+  logIndex_gt: BigInt
+  logIndex_lt: BigInt
+  logIndex_gte: BigInt
+  logIndex_lte: BigInt
+  logIndex_in: [BigInt!]
+  logIndex_not_in: [BigInt!]
+  eventType: EventType
+  eventType_not: EventType
+  eventType_in: [EventType!]
+  eventType_not_in: [EventType!]
+  from: String
+  from_not: String
+  from_gt: String
+  from_lt: String
+  from_gte: String
+  from_lte: String
+  from_in: [String!]
+  from_not_in: [String!]
+  from_contains: String
+  from_contains_nocase: String
+  from_not_contains: String
+  from_not_contains_nocase: String
+  from_starts_with: String
+  from_starts_with_nocase: String
+  from_not_starts_with: String
+  from_not_starts_with_nocase: String
+  from_ends_with: String
+  from_ends_with_nocase: String
+  from_not_ends_with: String
+  from_not_ends_with_nocase: String
+  to: String
+  to_not: String
+  to_gt: String
+  to_lt: String
+  to_gte: String
+  to_lte: String
+  to_in: [String!]
+  to_not_in: [String!]
+  to_contains: String
+  to_contains_nocase: String
+  to_not_contains: String
+  to_not_contains_nocase: String
+  to_starts_with: String
+  to_starts_with_nocase: String
+  to_not_starts_with: String
+  to_not_starts_with_nocase: String
+  to_ends_with: String
+  to_ends_with_nocase: String
+  to_not_ends_with: String
+  to_not_ends_with_nocase: String
+  blockNumber: BigInt
+  blockNumber_not: BigInt
+  blockNumber_gt: BigInt
+  blockNumber_lt: BigInt
+  blockNumber_gte: BigInt
+  blockNumber_lte: BigInt
+  blockNumber_in: [BigInt!]
+  blockNumber_not_in: [BigInt!]
+  timestamp: BigInt
+  timestamp_not: BigInt
+  timestamp_gt: BigInt
+  timestamp_lt: BigInt
+  timestamp_gte: BigInt
+  timestamp_lte: BigInt
+  timestamp_in: [BigInt!]
+  timestamp_not_in: [BigInt!]
+  gasUsed: BigInt
+  gasUsed_not: BigInt
+  gasUsed_gt: BigInt
+  gasUsed_lt: BigInt
+  gasUsed_gte: BigInt
+  gasUsed_lte: BigInt
+  gasUsed_in: [BigInt!]
+  gasUsed_not_in: [BigInt!]
+  gasPrice: BigInt
+  gasPrice_not: BigInt
+  gasPrice_gt: BigInt
+  gasPrice_lt: BigInt
+  gasPrice_gte: BigInt
+  gasPrice_lte: BigInt
+  gasPrice_in: [BigInt!]
+  gasPrice_not_in: [BigInt!]
+  pool: String
+  pool_not: String
+  pool_gt: String
+  pool_lt: String
+  pool_gte: String
+  pool_lte: String
+  pool_in: [String!]
+  pool_not_in: [String!]
+  pool_contains: String
+  pool_contains_nocase: String
+  pool_not_contains: String
+  pool_not_contains_nocase: String
+  pool_starts_with: String
+  pool_starts_with_nocase: String
+  pool_not_starts_with: String
+  pool_not_starts_with_nocase: String
+  pool_ends_with: String
+  pool_ends_with_nocase: String
+  pool_not_ends_with: String
+  pool_not_ends_with_nocase: String
+  pool_: Pool_filter
+  sender: String
+  sender_not: String
+  sender_gt: String
+  sender_lt: String
+  sender_gte: String
+  sender_lte: String
+  sender_in: [String!]
+  sender_not_in: [String!]
+  sender_contains: String
+  sender_contains_nocase: String
+  sender_not_contains: String
+  sender_not_contains_nocase: String
+  sender_starts_with: String
+  sender_starts_with_nocase: String
+  sender_not_starts_with: String
+  sender_not_starts_with_nocase: String
+  sender_ends_with: String
+  sender_ends_with_nocase: String
+  sender_not_ends_with: String
+  sender_not_ends_with_nocase: String
+  sender_: Account_filter
+  owner: String
+  owner_not: String
+  owner_gt: String
+  owner_lt: String
+  owner_gte: String
+  owner_lte: String
+  owner_in: [String!]
+  owner_not_in: [String!]
+  owner_contains: String
+  owner_contains_nocase: String
+  owner_not_contains: String
+  owner_not_contains_nocase: String
+  owner_starts_with: String
+  owner_starts_with_nocase: String
+  owner_not_starts_with: String
+  owner_not_starts_with_nocase: String
+  owner_ends_with: String
+  owner_ends_with_nocase: String
+  owner_not_ends_with: String
+  owner_not_ends_with_nocase: String
+  owner_: Account_filter
+  tickLower: Int
+  tickLower_not: Int
+  tickLower_gt: Int
+  tickLower_lt: Int
+  tickLower_gte: Int
+  tickLower_lte: Int
+  tickLower_in: [Int!]
+  tickLower_not_in: [Int!]
+  tickUpper: Int
+  tickUpper_not: Int
+  tickUpper_gt: Int
+  tickUpper_lt: Int
+  tickUpper_gte: Int
+  tickUpper_lte: Int
+  tickUpper_in: [Int!]
+  tickUpper_not_in: [Int!]
+  amount: BigInt
+  amount_not: BigInt
+  amount_gt: BigInt
+  amount_lt: BigInt
+  amount_gte: BigInt
+  amount_lte: BigInt
+  amount_in: [BigInt!]
+  amount_not_in: [BigInt!]
+  amount0: BigDecimal
+  amount0_not: BigDecimal
+  amount0_gt: BigDecimal
+  amount0_lt: BigDecimal
+  amount0_gte: BigDecimal
+  amount0_lte: BigDecimal
+  amount0_in: [BigDecimal!]
+  amount0_not_in: [BigDecimal!]
+  amount1: BigDecimal
+  amount1_not: BigDecimal
+  amount1_gt: BigDecimal
+  amount1_lt: BigDecimal
+  amount1_gte: BigDecimal
+  amount1_lte: BigDecimal
+  amount1_in: [BigDecimal!]
+  amount1_not_in: [BigDecimal!]
+  token0: String
+  token0_not: String
+  token0_gt: String
+  token0_lt: String
+  token0_gte: String
+  token0_lte: String
+  token0_in: [String!]
+  token0_not_in: [String!]
+  token0_contains: String
+  token0_contains_nocase: String
+  token0_not_contains: String
+  token0_not_contains_nocase: String
+  token0_starts_with: String
+  token0_starts_with_nocase: String
+  token0_not_starts_with: String
+  token0_not_starts_with_nocase: String
+  token0_ends_with: String
+  token0_ends_with_nocase: String
+  token0_not_ends_with: String
+  token0_not_ends_with_nocase: String
+  token0_: Token_filter
+  token1: String
+  token1_not: String
+  token1_gt: String
+  token1_lt: String
+  token1_gte: String
+  token1_lte: String
+  token1_in: [String!]
+  token1_not_in: [String!]
+  token1_contains: String
+  token1_contains_nocase: String
+  token1_not_contains: String
+  token1_not_contains_nocase: String
+  token1_starts_with: String
+  token1_starts_with_nocase: String
+  token1_not_starts_with: String
+  token1_not_starts_with_nocase: String
+  token1_ends_with: String
+  token1_ends_with_nocase: String
+  token1_not_ends_with: String
+  token1_not_ends_with_nocase: String
+  token1_: Token_filter
+  _change_block: BlockChangedFilter
+  and: [Mint_filter]
+  or: [Mint_filter]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>id</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>id_not</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>id_gt</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>id_lt</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>id_gte</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>id_lte</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>id_in</b></code>](#)<Bullet />[`[ID!]`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>id_not_in</b></code>](#)<Bullet />[`[ID!]`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>hash</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>hash_not</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>hash_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>hash_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>hash_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>hash_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>hash_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>hash_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>hash_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>hash_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>hash_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>hash_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>hash_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>hash_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>hash_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>hash_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>hash_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>hash_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>hash_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>hash_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>logIndex</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>logIndex_not</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>logIndex_gt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>logIndex_lt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>logIndex_gte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>logIndex_lte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>logIndex_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>logIndex_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>eventType</b></code>](#)<Bullet />[`EventType`](/docs/subgraph-generated/types/enums/event-type)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>eventType_not</b></code>](#)<Bullet />[`EventType`](/docs/subgraph-generated/types/enums/event-type)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>eventType_in</b></code>](#)<Bullet />[`[EventType!]`](/docs/subgraph-generated/types/enums/event-type)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>eventType_not_in</b></code>](#)<Bullet />[`[EventType!]`](/docs/subgraph-generated/types/enums/event-type)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>from</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>from_not</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>from_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>from_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>from_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>from_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>from_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>from_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>from_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>from_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>from_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>from_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>from_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>from_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>from_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>from_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>from_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>from_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>from_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>from_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>to</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>to_not</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>to_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>to_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>to_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>to_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>to_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>to_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>to_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>to_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>to_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>to_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>to_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>to_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>to_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>to_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>to_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>to_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>to_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>to_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>blockNumber</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>blockNumber_not</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>blockNumber_gt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>blockNumber_lt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>blockNumber_gte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>blockNumber_lte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>blockNumber_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>blockNumber_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>timestamp</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>timestamp_not</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>timestamp_gt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>timestamp_lt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>timestamp_gte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>timestamp_lte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>timestamp_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>timestamp_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>gasUsed</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>gasUsed_not</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>gasUsed_gt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>gasUsed_lt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>gasUsed_gte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>gasUsed_lte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>gasUsed_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>gasUsed_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>gasPrice</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>gasPrice_not</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>gasPrice_gt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>gasPrice_lt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>gasPrice_gte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>gasPrice_lte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>gasPrice_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>gasPrice_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>pool</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>pool_not</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>pool_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>pool_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>pool_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>pool_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>pool_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>pool_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>pool_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>pool_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>pool_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>pool_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>pool_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>pool_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>pool_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>pool_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>pool_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>pool_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>pool_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>pool_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>pool_</b></code>](#)<Bullet />[`Pool_filter`](/docs/subgraph-generated/types/inputs/pool-filter)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>sender</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>sender_not</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>sender_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>sender_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>sender_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>sender_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>sender_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>sender_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>sender_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>sender_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>sender_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>sender_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>sender_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>sender_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>sender_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>sender_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>sender_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>sender_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>sender_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>sender_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>sender_</b></code>](#)<Bullet />[`Account_filter`](/docs/subgraph-generated/types/inputs/account-filter)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>owner</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>owner_not</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>owner_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>owner_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>owner_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>owner_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>owner_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>owner_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>owner_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>owner_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>owner_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>owner_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>owner_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>owner_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>owner_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>owner_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>owner_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>owner_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>owner_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>owner_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>owner_</b></code>](#)<Bullet />[`Account_filter`](/docs/subgraph-generated/types/inputs/account-filter)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>tickLower</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>tickLower_not</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>tickLower_gt</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>tickLower_lt</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>tickLower_gte</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>tickLower_lte</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>tickLower_in</b></code>](#)<Bullet />[`[Int!]`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>tickLower_not_in</b></code>](#)<Bullet />[`[Int!]`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>tickUpper</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>tickUpper_not</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>tickUpper_gt</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>tickUpper_lt</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>tickUpper_gte</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>tickUpper_lte</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>tickUpper_in</b></code>](#)<Bullet />[`[Int!]`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>tickUpper_not_in</b></code>](#)<Bullet />[`[Int!]`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>amount</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>amount_not</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>amount_gt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>amount_lt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>amount_gte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>amount_lte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>amount_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>amount_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>amount0</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>amount0_not</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>amount0_gt</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>amount0_lt</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>amount0_gte</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>amount0_lte</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>amount0_in</b></code>](#)<Bullet />[`[BigDecimal!]`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>amount0_not_in</b></code>](#)<Bullet />[`[BigDecimal!]`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>amount1</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>amount1_not</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>amount1_gt</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>amount1_lt</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>amount1_gte</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>amount1_lte</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>amount1_in</b></code>](#)<Bullet />[`[BigDecimal!]`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>amount1_not_in</b></code>](#)<Bullet />[`[BigDecimal!]`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token0</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token0_not</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token0_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token0_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token0_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token0_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token0_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token0_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token0_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token0_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token0_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token0_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token0_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token0_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token0_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token0_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token0_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token0_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token0_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token0_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token0_</b></code>](#)<Bullet />[`Token_filter`](/docs/subgraph-generated/types/inputs/token-filter)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token1</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token1_not</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token1_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token1_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token1_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token1_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token1_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token1_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token1_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token1_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token1_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token1_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token1_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token1_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token1_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token1_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token1_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token1_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token1_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token1_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>token1_</b></code>](#)<Bullet />[`Token_filter`](/docs/subgraph-generated/types/inputs/token-filter)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>_change_block</b></code>](#)<Bullet />[`BlockChangedFilter`](/docs/subgraph-generated/types/inputs/block-changed-filter)  
+> 
+> 
+> Filter for the block changed event.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>and</b></code>](#)<Bullet />[`[Mint_filter]`](/docs/subgraph-generated/types/inputs/mint-filter)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Mint_filter.<b>or</b></code>](#)<Bullet />[`[Mint_filter]`](/docs/subgraph-generated/types/inputs/mint-filter)  
+> 
+> 
+> 
+> 
+
+
+
+
+
+### Member Of
+
+[`Mint_filter`](/docs/subgraph-generated/types/inputs/mint-filter)  <Badge class="badge badge--secondary" text="input"/>
+

@@ -1,0 +1,415 @@
+---
+id: account-balance-order-by
+title: AccountBalance_orderBy
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum AccountBalance_orderBy {
+  id
+  owner
+  owner__id
+  sender
+  sender__id
+  tokenId
+  tokenId__id
+  tokenId__idHexString
+  tokenId__tokenCount
+  legLiquidities
+  tokenCount
+  positionSize
+  panopticPoolAccount
+  panopticPoolAccount__id
+  panopticPoolAccount__collateral0Shares
+  panopticPoolAccount__collateral0Assets
+  panopticPoolAccount__collateral1Shares
+  panopticPoolAccount__collateral1Assets
+  panopticPoolAccount__commissions0
+  panopticPoolAccount__commissions1
+  panopticPoolAccount__sharePriceAtLastTransfer0
+  panopticPoolAccount__sharePriceAtLastTransfer1
+  panopticPoolAccount__commissionsSinceLastTransfer0
+  panopticPoolAccount__commissionsSinceLastTransfer1
+  panopticPoolAccount__isLiquidated
+  txnOpened
+  txnOpened__id
+  txnOpened__hash
+  txnOpened__logIndex
+  txnOpened__from
+  txnOpened__to
+  txnOpened__blockNumber
+  txnOpened__timestamp
+  txnOpened__gasUsed
+  txnOpened__gasPrice
+  txnOpened__eventType
+  txnClosed
+  txnClosed__id
+  txnClosed__hash
+  txnClosed__logIndex
+  txnClosed__from
+  txnClosed__to
+  txnClosed__blockNumber
+  txnClosed__timestamp
+  txnClosed__gasUsed
+  txnClosed__gasPrice
+  txnClosed__eventType
+  isOpen
+  createdTimestamp
+  createdBlockNumber
+  closedTimestamp
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>owner</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>owner__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>sender</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>sender__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>tokenId</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>tokenId__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>tokenId__idHexString</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>tokenId__tokenCount</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>legLiquidities</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>tokenCount</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>positionSize</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>panopticPoolAccount</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>panopticPoolAccount__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>panopticPoolAccount__collateral0Shares</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>panopticPoolAccount__collateral0Assets</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>panopticPoolAccount__collateral1Shares</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>panopticPoolAccount__collateral1Assets</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>panopticPoolAccount__commissions0</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>panopticPoolAccount__commissions1</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>panopticPoolAccount__sharePriceAtLastTransfer0</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>panopticPoolAccount__sharePriceAtLastTransfer1</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>panopticPoolAccount__commissionsSinceLastTransfer0</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>panopticPoolAccount__commissionsSinceLastTransfer1</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>panopticPoolAccount__isLiquidated</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>txnOpened</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>txnOpened__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>txnOpened__hash</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>txnOpened__logIndex</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>txnOpened__from</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>txnOpened__to</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>txnOpened__blockNumber</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>txnOpened__timestamp</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>txnOpened__gasUsed</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>txnOpened__gasPrice</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>txnOpened__eventType</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>txnClosed</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>txnClosed__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>txnClosed__hash</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>txnClosed__logIndex</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>txnClosed__from</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>txnClosed__to</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>txnClosed__blockNumber</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>txnClosed__timestamp</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>txnClosed__gasUsed</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>txnClosed__gasPrice</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>txnClosed__eventType</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>isOpen</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>createdTimestamp</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>createdBlockNumber</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_orderBy.<b>closedTimestamp</b></code>](#)  
+> 
+> 
+> 
+> 
+
+
+
+
+

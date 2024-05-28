@@ -1,0 +1,195 @@
+---
+id: bundle-filter
+title: Bundle_filter
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+input Bundle_filter {
+  id: ID
+  id_not: ID
+  id_gt: ID
+  id_lt: ID
+  id_gte: ID
+  id_lte: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  ethPriceUSD: BigDecimal
+  ethPriceUSD_not: BigDecimal
+  ethPriceUSD_gt: BigDecimal
+  ethPriceUSD_lt: BigDecimal
+  ethPriceUSD_gte: BigDecimal
+  ethPriceUSD_lte: BigDecimal
+  ethPriceUSD_in: [BigDecimal!]
+  ethPriceUSD_not_in: [BigDecimal!]
+  _change_block: BlockChangedFilter
+  and: [Bundle_filter]
+  or: [Bundle_filter]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>Bundle_filter.<b>id</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Bundle_filter.<b>id_not</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Bundle_filter.<b>id_gt</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Bundle_filter.<b>id_lt</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Bundle_filter.<b>id_gte</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Bundle_filter.<b>id_lte</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Bundle_filter.<b>id_in</b></code>](#)<Bullet />[`[ID!]`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Bundle_filter.<b>id_not_in</b></code>](#)<Bullet />[`[ID!]`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Bundle_filter.<b>ethPriceUSD</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Bundle_filter.<b>ethPriceUSD_not</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Bundle_filter.<b>ethPriceUSD_gt</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Bundle_filter.<b>ethPriceUSD_lt</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Bundle_filter.<b>ethPriceUSD_gte</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Bundle_filter.<b>ethPriceUSD_lte</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Bundle_filter.<b>ethPriceUSD_in</b></code>](#)<Bullet />[`[BigDecimal!]`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Bundle_filter.<b>ethPriceUSD_not_in</b></code>](#)<Bullet />[`[BigDecimal!]`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Bundle_filter.<b>_change_block</b></code>](#)<Bullet />[`BlockChangedFilter`](/docs/subgraph-generated/types/inputs/block-changed-filter)  
+> 
+> 
+> Filter for the block changed event.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Bundle_filter.<b>and</b></code>](#)<Bullet />[`[Bundle_filter]`](/docs/subgraph-generated/types/inputs/bundle-filter)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Bundle_filter.<b>or</b></code>](#)<Bullet />[`[Bundle_filter]`](/docs/subgraph-generated/types/inputs/bundle-filter)  
+> 
+> 
+> 
+> 
+
+
+
+
+
+### Member Of
+
+[`Bundle_filter`](/docs/subgraph-generated/types/inputs/bundle-filter)  <Badge class="badge badge--secondary" text="input"/>
+

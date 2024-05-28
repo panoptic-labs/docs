@@ -1,0 +1,510 @@
+---
+id: collateral-day-data-filter
+title: CollateralDayData_filter
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+input CollateralDayData_filter {
+  id: ID
+  id_not: ID
+  id_gt: ID
+  id_lt: ID
+  id_gte: ID
+  id_lte: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  collateral: String
+  collateral_not: String
+  collateral_gt: String
+  collateral_lt: String
+  collateral_gte: String
+  collateral_lte: String
+  collateral_in: [String!]
+  collateral_not_in: [String!]
+  collateral_contains: String
+  collateral_contains_nocase: String
+  collateral_not_contains: String
+  collateral_not_contains_nocase: String
+  collateral_starts_with: String
+  collateral_starts_with_nocase: String
+  collateral_not_starts_with: String
+  collateral_not_starts_with_nocase: String
+  collateral_ends_with: String
+  collateral_ends_with_nocase: String
+  collateral_not_ends_with: String
+  collateral_not_ends_with_nocase: String
+  collateral_: Collateral_filter
+  date: Int
+  date_not: Int
+  date_gt: Int
+  date_lt: Int
+  date_gte: Int
+  date_lte: Int
+  date_in: [Int!]
+  date_not_in: [Int!]
+  totalShares: BigInt
+  totalShares_not: BigInt
+  totalShares_gt: BigInt
+  totalShares_lt: BigInt
+  totalShares_gte: BigInt
+  totalShares_lte: BigInt
+  totalShares_in: [BigInt!]
+  totalShares_not_in: [BigInt!]
+  totalAssets: BigInt
+  totalAssets_not: BigInt
+  totalAssets_gt: BigInt
+  totalAssets_lt: BigInt
+  totalAssets_gte: BigInt
+  totalAssets_lte: BigInt
+  totalAssets_in: [BigInt!]
+  totalAssets_not_in: [BigInt!]
+  sharePrice: BigDecimal
+  sharePrice_not: BigDecimal
+  sharePrice_gt: BigDecimal
+  sharePrice_lt: BigDecimal
+  sharePrice_gte: BigDecimal
+  sharePrice_lte: BigDecimal
+  sharePrice_in: [BigDecimal!]
+  sharePrice_not_in: [BigDecimal!]
+  _change_block: BlockChangedFilter
+  and: [CollateralDayData_filter]
+  or: [CollateralDayData_filter]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>id</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>id_not</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>id_gt</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>id_lt</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>id_gte</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>id_lte</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>id_in</b></code>](#)<Bullet />[`[ID!]`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>id_not_in</b></code>](#)<Bullet />[`[ID!]`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>collateral</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>collateral_not</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>collateral_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>collateral_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>collateral_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>collateral_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>collateral_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>collateral_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>collateral_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>collateral_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>collateral_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>collateral_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>collateral_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>collateral_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>collateral_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>collateral_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>collateral_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>collateral_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>collateral_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>collateral_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>collateral_</b></code>](#)<Bullet />[`Collateral_filter`](/docs/subgraph-generated/types/inputs/collateral-filter)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>date</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>date_not</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>date_gt</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>date_lt</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>date_gte</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>date_lte</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>date_in</b></code>](#)<Bullet />[`[Int!]`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>date_not_in</b></code>](#)<Bullet />[`[Int!]`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>totalShares</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>totalShares_not</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>totalShares_gt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>totalShares_lt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>totalShares_gte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>totalShares_lte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>totalShares_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>totalShares_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>totalAssets</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>totalAssets_not</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>totalAssets_gt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>totalAssets_lt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>totalAssets_gte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>totalAssets_lte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>totalAssets_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>totalAssets_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>sharePrice</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>sharePrice_not</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>sharePrice_gt</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>sharePrice_lt</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>sharePrice_gte</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>sharePrice_lte</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>sharePrice_in</b></code>](#)<Bullet />[`[BigDecimal!]`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>sharePrice_not_in</b></code>](#)<Bullet />[`[BigDecimal!]`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>_change_block</b></code>](#)<Bullet />[`BlockChangedFilter`](/docs/subgraph-generated/types/inputs/block-changed-filter)  
+> 
+> 
+> Filter for the block changed event.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>and</b></code>](#)<Bullet />[`[CollateralDayData_filter]`](/docs/subgraph-generated/types/inputs/collateral-day-data-filter)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDayData_filter.<b>or</b></code>](#)<Bullet />[`[CollateralDayData_filter]`](/docs/subgraph-generated/types/inputs/collateral-day-data-filter)  
+> 
+> 
+> 
+> 
+
+
+
+
+
+### Member Of
+
+[`Collateral_filter`](/docs/subgraph-generated/types/inputs/collateral-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`CollateralDayData_filter`](/docs/subgraph-generated/types/inputs/collateral-day-data-filter)  <Badge class="badge badge--secondary" text="input"/>
+

@@ -6,7 +6,7 @@
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
-    "graphql-to-doc": "docusaurus graphql-to-doc && yarn clean-graphql-to-doc",
+    "graphql-to-doc": "docusaurus graphql-to-doc",
     "clean-graphql-to-doc": "find ./docs/subgraph-generated/* -type d ! -name generated.md ! -path ./docs/subgraph-generated/types ! -name objects ! -name interfaces ! -name scalars -exec rimraf {} \\; 2>/dev/null || true;",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",

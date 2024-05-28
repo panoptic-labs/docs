@@ -1,0 +1,8 @@
+label: Api
+position: 1
+className: graphql-markdown-api-section
+link: 
+  type: generated-index
+  title: 'Api overview'
+collapsible: false
+collapsed: false

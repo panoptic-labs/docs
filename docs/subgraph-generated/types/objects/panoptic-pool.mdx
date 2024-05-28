@@ -71,107 +71,107 @@ type PanopticPool {
 
 ### Fields
 
-#### [<code style={{ fontWeight: 'normal' }}>PanopticPool.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPool.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id)  
 > 
 > 
 >  Pool address 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>PanopticPool.<b>txCount</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPool.<b>txCount</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int)  
 > 
 > 
 >  Total transaction count 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>PanopticPool.<b>token0</b></code>](#)<Bullet />[`Token!`](/docs/subgraph-generated/types/objects/token) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPool.<b>token0</b></code>](#)<Bullet />[`Token!`](/docs/subgraph-generated/types/objects/token)  
 > 
 > 
 >  Token0 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>PanopticPool.<b>token1</b></code>](#)<Bullet />[`Token!`](/docs/subgraph-generated/types/objects/token) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPool.<b>token1</b></code>](#)<Bullet />[`Token!`](/docs/subgraph-generated/types/objects/token)  
 > 
 > 
 >  Token1 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>PanopticPool.<b>feeTier</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPool.<b>feeTier</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int)  
 > 
 > 
 >  Fee amount 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>PanopticPool.<b>collateral0</b></code>](#)<Bullet />[`Collateral!`](/docs/subgraph-generated/types/objects/collateral) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPool.<b>collateral0</b></code>](#)<Bullet />[`Collateral!`](/docs/subgraph-generated/types/objects/collateral)  
 > 
 > 
 >  Vault for token 0 collateral 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>PanopticPool.<b>collateral1</b></code>](#)<Bullet />[`Collateral!`](/docs/subgraph-generated/types/objects/collateral) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPool.<b>collateral1</b></code>](#)<Bullet />[`Collateral!`](/docs/subgraph-generated/types/objects/collateral)  
 > 
 > 
 >  Vault for token 1 collateral 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>PanopticPool.<b>underlyingPool</b></code>](#)<Bullet />[`Pool!`](/docs/subgraph-generated/types/objects/pool) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPool.<b>underlyingPool</b></code>](#)<Bullet />[`Pool!`](/docs/subgraph-generated/types/objects/pool)  
 > 
 > 
 >  Underlying pool 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>PanopticPool.<b>commissions0</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPool.<b>commissions0</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal)  
 > 
 > 
 >  All time commissions earned from Collateral0. Commissions increase with every OptionMint and collateral deposit. They may decrease in case of protocol loss, which gets realized as part of a liquidation. 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>PanopticPool.<b>commissions1</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPool.<b>commissions1</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal)  
 > 
 > 
 >  All time commissions earned from Collateral1. 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>PanopticPool.<b>protocolLoss0</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPool.<b>protocolLoss0</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal)  
 > 
 > 
 >  The protocol loss in token0. Protocol loss is the value of shares added to the supply in the event of liquidation of bad debt. 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>PanopticPool.<b>protocolLoss1</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPool.<b>protocolLoss1</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal)  
 > 
 > 
 >  The protocol loss in token1.
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>PanopticPool.<b>chunks</b></code>](#)<Bullet />[`[Chunk!]!`](/docs/subgraph-generated/types/objects/chunk) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPool.<b>chunks</b></code>](#)<Bullet />[`[Chunk!]!`](/docs/subgraph-generated/types/objects/chunk)  
 > 
 > 
 >  Link to all chunks of liquidity that are valid for options buying from this PanopticPool 
-> ##### [<code style={{ fontWeight: 'normal' }}>PanopticPool.chunks.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> ##### [<code style={{ fontWeight: 'normal' }}>PanopticPool.chunks.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
 > 
 > 
 > 
 > 
 
-##### [<code style={{ fontWeight: 'normal' }}>PanopticPool.chunks.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+##### [<code style={{ fontWeight: 'normal' }}>PanopticPool.chunks.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
 > 
 > 
 > 
 > 
 
-##### [<code style={{ fontWeight: 'normal' }}>PanopticPool.chunks.<b>orderBy</b></code>](#)<Bullet />[`Chunk_orderBy`](/docs/subgraph-generated/types/enums/chunk-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+##### [<code style={{ fontWeight: 'normal' }}>PanopticPool.chunks.<b>orderBy</b></code>](#)<Bullet />[`Chunk_orderBy`](/docs/subgraph-generated/types/enums/chunk-order-by)  
 > 
 > 
 > 
 > 
 
-##### [<code style={{ fontWeight: 'normal' }}>PanopticPool.chunks.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+##### [<code style={{ fontWeight: 'normal' }}>PanopticPool.chunks.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction)  
 > 
 > 
 > 
 > 
 
-##### [<code style={{ fontWeight: 'normal' }}>PanopticPool.chunks.<b>where</b></code>](#)<Bullet />[`Chunk_filter`](/docs/subgraph-generated/types/inputs/chunk-filter) <Badge class="badge badge--secondary" text="input"/> 
+##### [<code style={{ fontWeight: 'normal' }}>PanopticPool.chunks.<b>where</b></code>](#)<Bullet />[`Chunk_filter`](/docs/subgraph-generated/types/inputs/chunk-filter)  
 > 
 > 
 > 

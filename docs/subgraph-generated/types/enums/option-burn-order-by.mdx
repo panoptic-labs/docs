@@ -1,0 +1,709 @@
+---
+id: option-burn-order-by
+title: OptionBurn_orderBy
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum OptionBurn_orderBy {
+  id
+  hash
+  logIndex
+  eventType
+  from
+  to
+  blockNumber
+  timestamp
+  gasUsed
+  gasPrice
+  pool
+  pool__id
+  pool__poolId
+  pool__feeTier
+  pool__tickSpacing
+  pool__txCount
+  pool__liquidity
+  pool__sqrtPrice
+  pool__tick
+  pool__tickLastUpdateTimestamp
+  pool__tickLastUpdateBlockNumber
+  pool__token0Price
+  pool__token1Price
+  pool__totalValueLockedToken0
+  pool__totalValueLockedToken1
+  pool__totalValueLockedETH
+  pool__totalValueLockedUSD
+  recipient
+  recipient__id
+  positionSize
+  tokenId
+  tokenId__id
+  tokenId__idHexString
+  tokenId__tokenCount
+  tickAt
+  premia
+  panopticPool
+  panopticPool__id
+  panopticPool__txCount
+  panopticPool__feeTier
+  panopticPool__commissions0
+  panopticPool__commissions1
+  panopticPool__protocolLoss0
+  panopticPool__protocolLoss1
+  premium0
+  premium1
+  txnOpened
+  txnOpened__id
+  txnOpened__hash
+  txnOpened__logIndex
+  txnOpened__eventType
+  txnOpened__from
+  txnOpened__to
+  txnOpened__blockNumber
+  txnOpened__timestamp
+  txnOpened__gasUsed
+  txnOpened__gasPrice
+  txnOpened__positionSize
+  txnOpened__tickAt
+  txnOpened__poolUtilizations
+  txnOpened__poolUtilization0
+  txnOpened__poolUtilization1
+  forcedExercise
+  forcedExercise__id
+  forcedExercise__hash
+  forcedExercise__logIndex
+  forcedExercise__eventType
+  forcedExercise__from
+  forcedExercise__to
+  forcedExercise__blockNumber
+  forcedExercise__timestamp
+  forcedExercise__gasUsed
+  forcedExercise__gasPrice
+  forcedExercise__tokenId
+  forcedExercise__exerciseFee
+  forcedExercise__exerciseFee0
+  forcedExercise__exerciseFee1
+  forcedExercise__tickAt
+  accountLiquidated
+  accountLiquidated__id
+  accountLiquidated__hash
+  accountLiquidated__logIndex
+  accountLiquidated__eventType
+  accountLiquidated__from
+  accountLiquidated__to
+  accountLiquidated__blockNumber
+  accountLiquidated__timestamp
+  accountLiquidated__gasUsed
+  accountLiquidated__gasPrice
+  accountLiquidated__bonusAmounts
+  accountLiquidated__liquidationBonus0
+  accountLiquidated__liquidationBonus1
+  accountLiquidated__tickAt
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>hash</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>logIndex</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>eventType</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>from</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>to</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>blockNumber</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>timestamp</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>gasUsed</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>gasPrice</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>pool</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>pool__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>pool__poolId</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>pool__feeTier</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>pool__tickSpacing</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>pool__txCount</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>pool__liquidity</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>pool__sqrtPrice</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>pool__tick</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>pool__tickLastUpdateTimestamp</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>pool__tickLastUpdateBlockNumber</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>pool__token0Price</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>pool__token1Price</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>pool__totalValueLockedToken0</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>pool__totalValueLockedToken1</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>pool__totalValueLockedETH</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>pool__totalValueLockedUSD</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>recipient</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>recipient__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>positionSize</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>tokenId</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>tokenId__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>tokenId__idHexString</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>tokenId__tokenCount</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>tickAt</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>premia</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>panopticPool</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>panopticPool__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>panopticPool__txCount</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>panopticPool__feeTier</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>panopticPool__commissions0</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>panopticPool__commissions1</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>panopticPool__protocolLoss0</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>panopticPool__protocolLoss1</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>premium0</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>premium1</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>txnOpened</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>txnOpened__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>txnOpened__hash</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>txnOpened__logIndex</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>txnOpened__eventType</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>txnOpened__from</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>txnOpened__to</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>txnOpened__blockNumber</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>txnOpened__timestamp</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>txnOpened__gasUsed</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>txnOpened__gasPrice</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>txnOpened__positionSize</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>txnOpened__tickAt</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>txnOpened__poolUtilizations</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>txnOpened__poolUtilization0</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>txnOpened__poolUtilization1</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>forcedExercise</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>forcedExercise__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>forcedExercise__hash</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>forcedExercise__logIndex</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>forcedExercise__eventType</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>forcedExercise__from</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>forcedExercise__to</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>forcedExercise__blockNumber</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>forcedExercise__timestamp</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>forcedExercise__gasUsed</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>forcedExercise__gasPrice</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>forcedExercise__tokenId</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>forcedExercise__exerciseFee</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>forcedExercise__exerciseFee0</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>forcedExercise__exerciseFee1</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>forcedExercise__tickAt</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>accountLiquidated</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>accountLiquidated__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>accountLiquidated__hash</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>accountLiquidated__logIndex</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>accountLiquidated__eventType</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>accountLiquidated__from</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>accountLiquidated__to</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>accountLiquidated__blockNumber</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>accountLiquidated__timestamp</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>accountLiquidated__gasUsed</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>accountLiquidated__gasPrice</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>accountLiquidated__bonusAmounts</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>accountLiquidated__liquidationBonus0</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>accountLiquidated__liquidationBonus1</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>OptionBurn_orderBy.<b>accountLiquidated__tickAt</b></code>](#)  
+> 
+> 
+> 
+> 
+
+
+
+
+

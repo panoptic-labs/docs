@@ -1,0 +1,160 @@
+---
+id: event-type
+title: EventType
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum EventType {
+  Mint
+  Burn
+  Collect
+  TokenizedPositionBurnt
+  TokenizedPositionMinted
+  TokenizedPositionRolled
+  Deposit
+  Withdraw
+  OptionMint
+  OptionBurn
+  OptionRoll
+  AccountLiquidated
+  ForcedExercised
+  PremiumSettled
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>EventType.<b>Mint</b></code>](#)  
+> 
+> 
+>  UniswapPool 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EventType.<b>Burn</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EventType.<b>Collect</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EventType.<b>TokenizedPositionBurnt</b></code>](#)  
+> 
+> 
+>  SemiFungiblePositionManager 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EventType.<b>TokenizedPositionMinted</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EventType.<b>TokenizedPositionRolled</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EventType.<b>Deposit</b></code>](#)  
+> 
+> 
+>  CollateralTracker 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EventType.<b>Withdraw</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EventType.<b>OptionMint</b></code>](#)  
+> 
+> 
+>  PanopticPool 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EventType.<b>OptionBurn</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EventType.<b>OptionRoll</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EventType.<b>AccountLiquidated</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EventType.<b>ForcedExercised</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>EventType.<b>PremiumSettled</b></code>](#)  
+> 
+> 
+> 
+> 
+
+
+
+
+
+### Member Of
+
+[`AccountLiquidated_filter`](/docs/subgraph-generated/types/inputs/account-liquidated-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`AccountLiquidated`](/docs/subgraph-generated/types/objects/account-liquidated)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Burn_filter`](/docs/subgraph-generated/types/inputs/burn-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Burn`](/docs/subgraph-generated/types/objects/burn)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`CollateralDeposit_filter`](/docs/subgraph-generated/types/inputs/collateral-deposit-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`CollateralDeposit`](/docs/subgraph-generated/types/objects/collateral-deposit)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`CollateralWithdraw_filter`](/docs/subgraph-generated/types/inputs/collateral-withdraw-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`CollateralWithdraw`](/docs/subgraph-generated/types/objects/collateral-withdraw)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Collect_filter`](/docs/subgraph-generated/types/inputs/collect-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Collect`](/docs/subgraph-generated/types/objects/collect)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Event_filter`](/docs/subgraph-generated/types/inputs/event-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Event`](/docs/subgraph-generated/types/interfaces/event)  <Badge class="badge badge--secondary" text="interface"/><Bullet />[`ForcedExercise_filter`](/docs/subgraph-generated/types/inputs/forced-exercise-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`ForcedExercise`](/docs/subgraph-generated/types/objects/forced-exercise)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`Mint_filter`](/docs/subgraph-generated/types/inputs/mint-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`Mint`](/docs/subgraph-generated/types/objects/mint)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`OptionBurn_filter`](/docs/subgraph-generated/types/inputs/option-burn-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`OptionBurn`](/docs/subgraph-generated/types/objects/option-burn)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`OptionMint_filter`](/docs/subgraph-generated/types/inputs/option-mint-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`OptionMint`](/docs/subgraph-generated/types/objects/option-mint)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`OptionRoll_filter`](/docs/subgraph-generated/types/inputs/option-roll-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`OptionRoll`](/docs/subgraph-generated/types/objects/option-roll)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`PremiumSettled_filter`](/docs/subgraph-generated/types/inputs/premium-settled-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`PremiumSettled`](/docs/subgraph-generated/types/objects/premium-settled)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TokenizedPositionBurnt_filter`](/docs/subgraph-generated/types/inputs/tokenized-position-burnt-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`TokenizedPositionBurnt`](/docs/subgraph-generated/types/objects/tokenized-position-burnt)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TokenizedPositionMinted_filter`](/docs/subgraph-generated/types/inputs/tokenized-position-minted-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`TokenizedPositionMinted`](/docs/subgraph-generated/types/objects/tokenized-position-minted)  <Badge class="badge badge--secondary" text="object"/><Bullet />[`TokenizedPositionRolled_filter`](/docs/subgraph-generated/types/inputs/tokenized-position-rolled-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`TokenizedPositionRolled`](/docs/subgraph-generated/types/objects/tokenized-position-rolled)  <Badge class="badge badge--secondary" text="object"/>
+

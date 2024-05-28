@@ -70,94 +70,94 @@ type TokenId {
 
 ### Fields
 
-#### [<code style={{ fontWeight: 'normal' }}>TokenId.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>TokenId.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id)  
 > 
 > 
 > The ERC-1155 TokenId for this position. See the TokenId.sol for more information on its structure.
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>TokenId.<b>idHexString</b></code>](#)<Bullet />[`String!`](/docs/subgraph-generated/types/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>TokenId.<b>idHexString</b></code>](#)<Bullet />[`String!`](/docs/subgraph-generated/types/scalars/string)  
 > 
 > 
 >  Hex stringified tokenId 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>TokenId.<b>pool</b></code>](#)<Bullet />[`Pool!`](/docs/subgraph-generated/types/objects/pool) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+#### [<code style={{ fontWeight: 'normal' }}>TokenId.<b>pool</b></code>](#)<Bullet />[`Pool!`](/docs/subgraph-generated/types/objects/pool)  
 > 
 > 
 >  Pool position is within 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>TokenId.<b>tokenCount</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>TokenId.<b>tokenCount</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int)  
 > 
 > 
 >  Also known as positionSize, the total net number of contracts for this tokenId, expressed in terms of the asset 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>TokenId.<b>accountBalances</b></code>](#)<Bullet />[`[AccountBalance!]!`](/docs/subgraph-generated/types/objects/account-balance) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+#### [<code style={{ fontWeight: 'normal' }}>TokenId.<b>accountBalances</b></code>](#)<Bullet />[`[AccountBalance!]!`](/docs/subgraph-generated/types/objects/account-balance)  
 > 
 > 
 >  AccountBalances that own an instance of this TokenId
-> ##### [<code style={{ fontWeight: 'normal' }}>TokenId.accountBalances.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TokenId.accountBalances.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
 > 
 > 
 > 
 > 
 
-##### [<code style={{ fontWeight: 'normal' }}>TokenId.accountBalances.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+##### [<code style={{ fontWeight: 'normal' }}>TokenId.accountBalances.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
 > 
 > 
 > 
 > 
 
-##### [<code style={{ fontWeight: 'normal' }}>TokenId.accountBalances.<b>orderBy</b></code>](#)<Bullet />[`AccountBalance_orderBy`](/docs/subgraph-generated/types/enums/account-balance-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+##### [<code style={{ fontWeight: 'normal' }}>TokenId.accountBalances.<b>orderBy</b></code>](#)<Bullet />[`AccountBalance_orderBy`](/docs/subgraph-generated/types/enums/account-balance-order-by)  
 > 
 > 
 > 
 > 
 
-##### [<code style={{ fontWeight: 'normal' }}>TokenId.accountBalances.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+##### [<code style={{ fontWeight: 'normal' }}>TokenId.accountBalances.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction)  
 > 
 > 
 > 
 > 
 
-##### [<code style={{ fontWeight: 'normal' }}>TokenId.accountBalances.<b>where</b></code>](#)<Bullet />[`AccountBalance_filter`](/docs/subgraph-generated/types/inputs/account-balance-filter) <Badge class="badge badge--secondary" text="input"/> 
+##### [<code style={{ fontWeight: 'normal' }}>TokenId.accountBalances.<b>where</b></code>](#)<Bullet />[`AccountBalance_filter`](/docs/subgraph-generated/types/inputs/account-balance-filter)  
 > 
 > 
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>TokenId.<b>legs</b></code>](#)<Bullet />[`[Leg!]!`](/docs/subgraph-generated/types/objects/leg) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+#### [<code style={{ fontWeight: 'normal' }}>TokenId.<b>legs</b></code>](#)<Bullet />[`[Leg!]!`](/docs/subgraph-generated/types/objects/leg)  
 > 
 > 
 >  Legs in this tokenId 
-> ##### [<code style={{ fontWeight: 'normal' }}>TokenId.legs.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> ##### [<code style={{ fontWeight: 'normal' }}>TokenId.legs.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
 > 
 > 
 > 
 > 
 
-##### [<code style={{ fontWeight: 'normal' }}>TokenId.legs.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+##### [<code style={{ fontWeight: 'normal' }}>TokenId.legs.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
 > 
 > 
 > 
 > 
 
-##### [<code style={{ fontWeight: 'normal' }}>TokenId.legs.<b>orderBy</b></code>](#)<Bullet />[`Leg_orderBy`](/docs/subgraph-generated/types/enums/leg-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+##### [<code style={{ fontWeight: 'normal' }}>TokenId.legs.<b>orderBy</b></code>](#)<Bullet />[`Leg_orderBy`](/docs/subgraph-generated/types/enums/leg-order-by)  
 > 
 > 
 > 
 > 
 
-##### [<code style={{ fontWeight: 'normal' }}>TokenId.legs.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+##### [<code style={{ fontWeight: 'normal' }}>TokenId.legs.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction)  
 > 
 > 
 > 
 > 
 
-##### [<code style={{ fontWeight: 'normal' }}>TokenId.legs.<b>where</b></code>](#)<Bullet />[`Leg_filter`](/docs/subgraph-generated/types/inputs/leg-filter) <Badge class="badge badge--secondary" text="input"/> 
+##### [<code style={{ fontWeight: 'normal' }}>TokenId.legs.<b>where</b></code>](#)<Bullet />[`Leg_filter`](/docs/subgraph-generated/types/inputs/leg-filter)  
 > 
 > 
 > 

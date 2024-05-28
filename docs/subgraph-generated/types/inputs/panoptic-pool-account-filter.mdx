@@ -1,0 +1,1350 @@
+---
+id: panoptic-pool-account-filter
+title: PanopticPoolAccount_filter
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+input PanopticPoolAccount_filter {
+  id: ID
+  id_not: ID
+  id_gt: ID
+  id_lt: ID
+  id_gte: ID
+  id_lte: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  panopticPool: String
+  panopticPool_not: String
+  panopticPool_gt: String
+  panopticPool_lt: String
+  panopticPool_gte: String
+  panopticPool_lte: String
+  panopticPool_in: [String!]
+  panopticPool_not_in: [String!]
+  panopticPool_contains: String
+  panopticPool_contains_nocase: String
+  panopticPool_not_contains: String
+  panopticPool_not_contains_nocase: String
+  panopticPool_starts_with: String
+  panopticPool_starts_with_nocase: String
+  panopticPool_not_starts_with: String
+  panopticPool_not_starts_with_nocase: String
+  panopticPool_ends_with: String
+  panopticPool_ends_with_nocase: String
+  panopticPool_not_ends_with: String
+  panopticPool_not_ends_with_nocase: String
+  panopticPool_: PanopticPool_filter
+  account: String
+  account_not: String
+  account_gt: String
+  account_lt: String
+  account_gte: String
+  account_lte: String
+  account_in: [String!]
+  account_not_in: [String!]
+  account_contains: String
+  account_contains_nocase: String
+  account_not_contains: String
+  account_not_contains_nocase: String
+  account_starts_with: String
+  account_starts_with_nocase: String
+  account_not_starts_with: String
+  account_not_starts_with_nocase: String
+  account_ends_with: String
+  account_ends_with_nocase: String
+  account_not_ends_with: String
+  account_not_ends_with_nocase: String
+  account_: Account_filter
+  collateral0: String
+  collateral0_not: String
+  collateral0_gt: String
+  collateral0_lt: String
+  collateral0_gte: String
+  collateral0_lte: String
+  collateral0_in: [String!]
+  collateral0_not_in: [String!]
+  collateral0_contains: String
+  collateral0_contains_nocase: String
+  collateral0_not_contains: String
+  collateral0_not_contains_nocase: String
+  collateral0_starts_with: String
+  collateral0_starts_with_nocase: String
+  collateral0_not_starts_with: String
+  collateral0_not_starts_with_nocase: String
+  collateral0_ends_with: String
+  collateral0_ends_with_nocase: String
+  collateral0_not_ends_with: String
+  collateral0_not_ends_with_nocase: String
+  collateral0_: Collateral_filter
+  collateral0Shares: BigInt
+  collateral0Shares_not: BigInt
+  collateral0Shares_gt: BigInt
+  collateral0Shares_lt: BigInt
+  collateral0Shares_gte: BigInt
+  collateral0Shares_lte: BigInt
+  collateral0Shares_in: [BigInt!]
+  collateral0Shares_not_in: [BigInt!]
+  collateral0Assets: BigInt
+  collateral0Assets_not: BigInt
+  collateral0Assets_gt: BigInt
+  collateral0Assets_lt: BigInt
+  collateral0Assets_gte: BigInt
+  collateral0Assets_lte: BigInt
+  collateral0Assets_in: [BigInt!]
+  collateral0Assets_not_in: [BigInt!]
+  collateral1: String
+  collateral1_not: String
+  collateral1_gt: String
+  collateral1_lt: String
+  collateral1_gte: String
+  collateral1_lte: String
+  collateral1_in: [String!]
+  collateral1_not_in: [String!]
+  collateral1_contains: String
+  collateral1_contains_nocase: String
+  collateral1_not_contains: String
+  collateral1_not_contains_nocase: String
+  collateral1_starts_with: String
+  collateral1_starts_with_nocase: String
+  collateral1_not_starts_with: String
+  collateral1_not_starts_with_nocase: String
+  collateral1_ends_with: String
+  collateral1_ends_with_nocase: String
+  collateral1_not_ends_with: String
+  collateral1_not_ends_with_nocase: String
+  collateral1_: Collateral_filter
+  collateral1Shares: BigInt
+  collateral1Shares_not: BigInt
+  collateral1Shares_gt: BigInt
+  collateral1Shares_lt: BigInt
+  collateral1Shares_gte: BigInt
+  collateral1Shares_lte: BigInt
+  collateral1Shares_in: [BigInt!]
+  collateral1Shares_not_in: [BigInt!]
+  collateral1Assets: BigInt
+  collateral1Assets_not: BigInt
+  collateral1Assets_gt: BigInt
+  collateral1Assets_lt: BigInt
+  collateral1Assets_gte: BigInt
+  collateral1Assets_lte: BigInt
+  collateral1Assets_in: [BigInt!]
+  collateral1Assets_not_in: [BigInt!]
+  commissions0: BigDecimal
+  commissions0_not: BigDecimal
+  commissions0_gt: BigDecimal
+  commissions0_lt: BigDecimal
+  commissions0_gte: BigDecimal
+  commissions0_lte: BigDecimal
+  commissions0_in: [BigDecimal!]
+  commissions0_not_in: [BigDecimal!]
+  commissions1: BigDecimal
+  commissions1_not: BigDecimal
+  commissions1_gt: BigDecimal
+  commissions1_lt: BigDecimal
+  commissions1_gte: BigDecimal
+  commissions1_lte: BigDecimal
+  commissions1_in: [BigDecimal!]
+  commissions1_not_in: [BigDecimal!]
+  sharePriceAtLastTransfer0: BigDecimal
+  sharePriceAtLastTransfer0_not: BigDecimal
+  sharePriceAtLastTransfer0_gt: BigDecimal
+  sharePriceAtLastTransfer0_lt: BigDecimal
+  sharePriceAtLastTransfer0_gte: BigDecimal
+  sharePriceAtLastTransfer0_lte: BigDecimal
+  sharePriceAtLastTransfer0_in: [BigDecimal!]
+  sharePriceAtLastTransfer0_not_in: [BigDecimal!]
+  sharePriceAtLastTransfer1: BigDecimal
+  sharePriceAtLastTransfer1_not: BigDecimal
+  sharePriceAtLastTransfer1_gt: BigDecimal
+  sharePriceAtLastTransfer1_lt: BigDecimal
+  sharePriceAtLastTransfer1_gte: BigDecimal
+  sharePriceAtLastTransfer1_lte: BigDecimal
+  sharePriceAtLastTransfer1_in: [BigDecimal!]
+  sharePriceAtLastTransfer1_not_in: [BigDecimal!]
+  commissionsSinceLastTransfer0: BigDecimal
+  commissionsSinceLastTransfer0_not: BigDecimal
+  commissionsSinceLastTransfer0_gt: BigDecimal
+  commissionsSinceLastTransfer0_lt: BigDecimal
+  commissionsSinceLastTransfer0_gte: BigDecimal
+  commissionsSinceLastTransfer0_lte: BigDecimal
+  commissionsSinceLastTransfer0_in: [BigDecimal!]
+  commissionsSinceLastTransfer0_not_in: [BigDecimal!]
+  commissionsSinceLastTransfer1: BigDecimal
+  commissionsSinceLastTransfer1_not: BigDecimal
+  commissionsSinceLastTransfer1_gt: BigDecimal
+  commissionsSinceLastTransfer1_lt: BigDecimal
+  commissionsSinceLastTransfer1_gte: BigDecimal
+  commissionsSinceLastTransfer1_lte: BigDecimal
+  commissionsSinceLastTransfer1_in: [BigDecimal!]
+  commissionsSinceLastTransfer1_not_in: [BigDecimal!]
+  isLiquidated: Int
+  isLiquidated_not: Int
+  isLiquidated_gt: Int
+  isLiquidated_lt: Int
+  isLiquidated_gte: Int
+  isLiquidated_lte: Int
+  isLiquidated_in: [Int!]
+  isLiquidated_not_in: [Int!]
+  accountBalances_: AccountBalance_filter
+  _change_block: BlockChangedFilter
+  and: [PanopticPoolAccount_filter]
+  or: [PanopticPoolAccount_filter]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>id</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>id_not</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>id_gt</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>id_lt</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>id_gte</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>id_lte</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>id_in</b></code>](#)<Bullet />[`[ID!]`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>id_not_in</b></code>](#)<Bullet />[`[ID!]`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>panopticPool</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>panopticPool_not</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>panopticPool_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>panopticPool_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>panopticPool_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>panopticPool_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>panopticPool_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>panopticPool_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>panopticPool_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>panopticPool_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>panopticPool_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>panopticPool_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>panopticPool_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>panopticPool_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>panopticPool_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>panopticPool_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>panopticPool_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>panopticPool_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>panopticPool_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>panopticPool_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>panopticPool_</b></code>](#)<Bullet />[`PanopticPool_filter`](/docs/subgraph-generated/types/inputs/panoptic-pool-filter)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>account</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>account_not</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>account_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>account_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>account_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>account_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>account_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>account_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>account_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>account_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>account_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>account_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>account_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>account_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>account_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>account_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>account_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>account_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>account_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>account_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>account_</b></code>](#)<Bullet />[`Account_filter`](/docs/subgraph-generated/types/inputs/account-filter)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0_not</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0_</b></code>](#)<Bullet />[`Collateral_filter`](/docs/subgraph-generated/types/inputs/collateral-filter)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0Shares</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0Shares_not</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0Shares_gt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0Shares_lt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0Shares_gte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0Shares_lte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0Shares_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0Shares_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0Assets</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0Assets_not</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0Assets_gt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0Assets_lt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0Assets_gte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0Assets_lte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0Assets_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral0Assets_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1_not</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1_</b></code>](#)<Bullet />[`Collateral_filter`](/docs/subgraph-generated/types/inputs/collateral-filter)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1Shares</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1Shares_not</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1Shares_gt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1Shares_lt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1Shares_gte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1Shares_lte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1Shares_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1Shares_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1Assets</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1Assets_not</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1Assets_gt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1Assets_lt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1Assets_gte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1Assets_lte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1Assets_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>collateral1Assets_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissions0</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissions0_not</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissions0_gt</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissions0_lt</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissions0_gte</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissions0_lte</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissions0_in</b></code>](#)<Bullet />[`[BigDecimal!]`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissions0_not_in</b></code>](#)<Bullet />[`[BigDecimal!]`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissions1</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissions1_not</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissions1_gt</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissions1_lt</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissions1_gte</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissions1_lte</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissions1_in</b></code>](#)<Bullet />[`[BigDecimal!]`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissions1_not_in</b></code>](#)<Bullet />[`[BigDecimal!]`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>sharePriceAtLastTransfer0</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>sharePriceAtLastTransfer0_not</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>sharePriceAtLastTransfer0_gt</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>sharePriceAtLastTransfer0_lt</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>sharePriceAtLastTransfer0_gte</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>sharePriceAtLastTransfer0_lte</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>sharePriceAtLastTransfer0_in</b></code>](#)<Bullet />[`[BigDecimal!]`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>sharePriceAtLastTransfer0_not_in</b></code>](#)<Bullet />[`[BigDecimal!]`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>sharePriceAtLastTransfer1</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>sharePriceAtLastTransfer1_not</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>sharePriceAtLastTransfer1_gt</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>sharePriceAtLastTransfer1_lt</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>sharePriceAtLastTransfer1_gte</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>sharePriceAtLastTransfer1_lte</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>sharePriceAtLastTransfer1_in</b></code>](#)<Bullet />[`[BigDecimal!]`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>sharePriceAtLastTransfer1_not_in</b></code>](#)<Bullet />[`[BigDecimal!]`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissionsSinceLastTransfer0</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissionsSinceLastTransfer0_not</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissionsSinceLastTransfer0_gt</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissionsSinceLastTransfer0_lt</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissionsSinceLastTransfer0_gte</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissionsSinceLastTransfer0_lte</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissionsSinceLastTransfer0_in</b></code>](#)<Bullet />[`[BigDecimal!]`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissionsSinceLastTransfer0_not_in</b></code>](#)<Bullet />[`[BigDecimal!]`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissionsSinceLastTransfer1</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissionsSinceLastTransfer1_not</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissionsSinceLastTransfer1_gt</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissionsSinceLastTransfer1_lt</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissionsSinceLastTransfer1_gte</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissionsSinceLastTransfer1_lte</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissionsSinceLastTransfer1_in</b></code>](#)<Bullet />[`[BigDecimal!]`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>commissionsSinceLastTransfer1_not_in</b></code>](#)<Bullet />[`[BigDecimal!]`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>isLiquidated</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>isLiquidated_not</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>isLiquidated_gt</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>isLiquidated_lt</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>isLiquidated_gte</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>isLiquidated_lte</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>isLiquidated_in</b></code>](#)<Bullet />[`[Int!]`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>isLiquidated_not_in</b></code>](#)<Bullet />[`[Int!]`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>accountBalances_</b></code>](#)<Bullet />[`AccountBalance_filter`](/docs/subgraph-generated/types/inputs/account-balance-filter)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>_change_block</b></code>](#)<Bullet />[`BlockChangedFilter`](/docs/subgraph-generated/types/inputs/block-changed-filter)  
+> 
+> 
+> Filter for the block changed event.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>and</b></code>](#)<Bullet />[`[PanopticPoolAccount_filter]`](/docs/subgraph-generated/types/inputs/panoptic-pool-account-filter)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PanopticPoolAccount_filter.<b>or</b></code>](#)<Bullet />[`[PanopticPoolAccount_filter]`](/docs/subgraph-generated/types/inputs/panoptic-pool-account-filter)  
+> 
+> 
+> 
+> 
+
+
+
+
+
+### Member Of
+
+[`Account_filter`](/docs/subgraph-generated/types/inputs/account-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`AccountBalance_filter`](/docs/subgraph-generated/types/inputs/account-balance-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`PanopticPoolAccount_filter`](/docs/subgraph-generated/types/inputs/panoptic-pool-account-filter)  <Badge class="badge badge--secondary" text="input"/>
+

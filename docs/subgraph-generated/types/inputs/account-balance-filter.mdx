@@ -1,0 +1,1406 @@
+---
+id: account-balance-filter
+title: AccountBalance_filter
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+input AccountBalance_filter {
+  id: ID
+  id_not: ID
+  id_gt: ID
+  id_lt: ID
+  id_gte: ID
+  id_lte: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  owner: String
+  owner_not: String
+  owner_gt: String
+  owner_lt: String
+  owner_gte: String
+  owner_lte: String
+  owner_in: [String!]
+  owner_not_in: [String!]
+  owner_contains: String
+  owner_contains_nocase: String
+  owner_not_contains: String
+  owner_not_contains_nocase: String
+  owner_starts_with: String
+  owner_starts_with_nocase: String
+  owner_not_starts_with: String
+  owner_not_starts_with_nocase: String
+  owner_ends_with: String
+  owner_ends_with_nocase: String
+  owner_not_ends_with: String
+  owner_not_ends_with_nocase: String
+  owner_: Account_filter
+  sender: String
+  sender_not: String
+  sender_gt: String
+  sender_lt: String
+  sender_gte: String
+  sender_lte: String
+  sender_in: [String!]
+  sender_not_in: [String!]
+  sender_contains: String
+  sender_contains_nocase: String
+  sender_not_contains: String
+  sender_not_contains_nocase: String
+  sender_starts_with: String
+  sender_starts_with_nocase: String
+  sender_not_starts_with: String
+  sender_not_starts_with_nocase: String
+  sender_ends_with: String
+  sender_ends_with_nocase: String
+  sender_not_ends_with: String
+  sender_not_ends_with_nocase: String
+  sender_: Account_filter
+  tokenId: String
+  tokenId_not: String
+  tokenId_gt: String
+  tokenId_lt: String
+  tokenId_gte: String
+  tokenId_lte: String
+  tokenId_in: [String!]
+  tokenId_not_in: [String!]
+  tokenId_contains: String
+  tokenId_contains_nocase: String
+  tokenId_not_contains: String
+  tokenId_not_contains_nocase: String
+  tokenId_starts_with: String
+  tokenId_starts_with_nocase: String
+  tokenId_not_starts_with: String
+  tokenId_not_starts_with_nocase: String
+  tokenId_ends_with: String
+  tokenId_ends_with_nocase: String
+  tokenId_not_ends_with: String
+  tokenId_not_ends_with_nocase: String
+  tokenId_: TokenId_filter
+  legLiquidities: [String!]
+  legLiquidities_not: [String!]
+  legLiquidities_contains: [String!]
+  legLiquidities_contains_nocase: [String!]
+  legLiquidities_not_contains: [String!]
+  legLiquidities_not_contains_nocase: [String!]
+  legLiquidities_: LegLiquidities_filter
+  tokenCount: BigInt
+  tokenCount_not: BigInt
+  tokenCount_gt: BigInt
+  tokenCount_lt: BigInt
+  tokenCount_gte: BigInt
+  tokenCount_lte: BigInt
+  tokenCount_in: [BigInt!]
+  tokenCount_not_in: [BigInt!]
+  positionSize: BigInt
+  positionSize_not: BigInt
+  positionSize_gt: BigInt
+  positionSize_lt: BigInt
+  positionSize_gte: BigInt
+  positionSize_lte: BigInt
+  positionSize_in: [BigInt!]
+  positionSize_not_in: [BigInt!]
+  panopticPoolAccount: String
+  panopticPoolAccount_not: String
+  panopticPoolAccount_gt: String
+  panopticPoolAccount_lt: String
+  panopticPoolAccount_gte: String
+  panopticPoolAccount_lte: String
+  panopticPoolAccount_in: [String!]
+  panopticPoolAccount_not_in: [String!]
+  panopticPoolAccount_contains: String
+  panopticPoolAccount_contains_nocase: String
+  panopticPoolAccount_not_contains: String
+  panopticPoolAccount_not_contains_nocase: String
+  panopticPoolAccount_starts_with: String
+  panopticPoolAccount_starts_with_nocase: String
+  panopticPoolAccount_not_starts_with: String
+  panopticPoolAccount_not_starts_with_nocase: String
+  panopticPoolAccount_ends_with: String
+  panopticPoolAccount_ends_with_nocase: String
+  panopticPoolAccount_not_ends_with: String
+  panopticPoolAccount_not_ends_with_nocase: String
+  panopticPoolAccount_: PanopticPoolAccount_filter
+  txnOpened: String
+  txnOpened_not: String
+  txnOpened_gt: String
+  txnOpened_lt: String
+  txnOpened_gte: String
+  txnOpened_lte: String
+  txnOpened_in: [String!]
+  txnOpened_not_in: [String!]
+  txnOpened_contains: String
+  txnOpened_contains_nocase: String
+  txnOpened_not_contains: String
+  txnOpened_not_contains_nocase: String
+  txnOpened_starts_with: String
+  txnOpened_starts_with_nocase: String
+  txnOpened_not_starts_with: String
+  txnOpened_not_starts_with_nocase: String
+  txnOpened_ends_with: String
+  txnOpened_ends_with_nocase: String
+  txnOpened_not_ends_with: String
+  txnOpened_not_ends_with_nocase: String
+  txnOpened_: Event_filter
+  txnClosed: String
+  txnClosed_not: String
+  txnClosed_gt: String
+  txnClosed_lt: String
+  txnClosed_gte: String
+  txnClosed_lte: String
+  txnClosed_in: [String!]
+  txnClosed_not_in: [String!]
+  txnClosed_contains: String
+  txnClosed_contains_nocase: String
+  txnClosed_not_contains: String
+  txnClosed_not_contains_nocase: String
+  txnClosed_starts_with: String
+  txnClosed_starts_with_nocase: String
+  txnClosed_not_starts_with: String
+  txnClosed_not_starts_with_nocase: String
+  txnClosed_ends_with: String
+  txnClosed_ends_with_nocase: String
+  txnClosed_not_ends_with: String
+  txnClosed_not_ends_with_nocase: String
+  txnClosed_: Event_filter
+  isOpen: Int
+  isOpen_not: Int
+  isOpen_gt: Int
+  isOpen_lt: Int
+  isOpen_gte: Int
+  isOpen_lte: Int
+  isOpen_in: [Int!]
+  isOpen_not_in: [Int!]
+  createdTimestamp: BigInt
+  createdTimestamp_not: BigInt
+  createdTimestamp_gt: BigInt
+  createdTimestamp_lt: BigInt
+  createdTimestamp_gte: BigInt
+  createdTimestamp_lte: BigInt
+  createdTimestamp_in: [BigInt!]
+  createdTimestamp_not_in: [BigInt!]
+  createdBlockNumber: BigInt
+  createdBlockNumber_not: BigInt
+  createdBlockNumber_gt: BigInt
+  createdBlockNumber_lt: BigInt
+  createdBlockNumber_gte: BigInt
+  createdBlockNumber_lte: BigInt
+  createdBlockNumber_in: [BigInt!]
+  createdBlockNumber_not_in: [BigInt!]
+  closedTimestamp: BigInt
+  closedTimestamp_not: BigInt
+  closedTimestamp_gt: BigInt
+  closedTimestamp_lt: BigInt
+  closedTimestamp_gte: BigInt
+  closedTimestamp_lte: BigInt
+  closedTimestamp_in: [BigInt!]
+  closedTimestamp_not_in: [BigInt!]
+  _change_block: BlockChangedFilter
+  and: [AccountBalance_filter]
+  or: [AccountBalance_filter]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>id</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>id_not</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>id_gt</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>id_lt</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>id_gte</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>id_lte</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>id_in</b></code>](#)<Bullet />[`[ID!]`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>id_not_in</b></code>](#)<Bullet />[`[ID!]`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>owner</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>owner_not</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>owner_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>owner_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>owner_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>owner_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>owner_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>owner_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>owner_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>owner_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>owner_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>owner_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>owner_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>owner_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>owner_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>owner_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>owner_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>owner_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>owner_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>owner_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>owner_</b></code>](#)<Bullet />[`Account_filter`](/docs/subgraph-generated/types/inputs/account-filter)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>sender</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>sender_not</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>sender_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>sender_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>sender_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>sender_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>sender_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>sender_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>sender_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>sender_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>sender_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>sender_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>sender_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>sender_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>sender_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>sender_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>sender_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>sender_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>sender_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>sender_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>sender_</b></code>](#)<Bullet />[`Account_filter`](/docs/subgraph-generated/types/inputs/account-filter)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenId</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenId_not</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenId_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenId_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenId_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenId_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenId_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenId_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenId_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenId_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenId_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenId_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenId_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenId_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenId_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenId_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenId_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenId_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenId_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenId_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenId_</b></code>](#)<Bullet />[`TokenId_filter`](/docs/subgraph-generated/types/inputs/token-id-filter)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>legLiquidities</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>legLiquidities_not</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>legLiquidities_contains</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>legLiquidities_contains_nocase</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>legLiquidities_not_contains</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>legLiquidities_not_contains_nocase</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>legLiquidities_</b></code>](#)<Bullet />[`LegLiquidities_filter`](/docs/subgraph-generated/types/inputs/leg-liquidities-filter)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenCount</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenCount_not</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenCount_gt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenCount_lt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenCount_gte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenCount_lte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenCount_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>tokenCount_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>positionSize</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>positionSize_not</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>positionSize_gt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>positionSize_lt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>positionSize_gte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>positionSize_lte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>positionSize_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>positionSize_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>panopticPoolAccount</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>panopticPoolAccount_not</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>panopticPoolAccount_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>panopticPoolAccount_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>panopticPoolAccount_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>panopticPoolAccount_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>panopticPoolAccount_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>panopticPoolAccount_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>panopticPoolAccount_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>panopticPoolAccount_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>panopticPoolAccount_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>panopticPoolAccount_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>panopticPoolAccount_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>panopticPoolAccount_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>panopticPoolAccount_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>panopticPoolAccount_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>panopticPoolAccount_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>panopticPoolAccount_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>panopticPoolAccount_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>panopticPoolAccount_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>panopticPoolAccount_</b></code>](#)<Bullet />[`PanopticPoolAccount_filter`](/docs/subgraph-generated/types/inputs/panoptic-pool-account-filter)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnOpened</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnOpened_not</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnOpened_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnOpened_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnOpened_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnOpened_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnOpened_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnOpened_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnOpened_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnOpened_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnOpened_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnOpened_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnOpened_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnOpened_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnOpened_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnOpened_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnOpened_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnOpened_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnOpened_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnOpened_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnOpened_</b></code>](#)<Bullet />[`Event_filter`](/docs/subgraph-generated/types/inputs/event-filter)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnClosed</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnClosed_not</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnClosed_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnClosed_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnClosed_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnClosed_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnClosed_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnClosed_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnClosed_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnClosed_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnClosed_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnClosed_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnClosed_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnClosed_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnClosed_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnClosed_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnClosed_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnClosed_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnClosed_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnClosed_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>txnClosed_</b></code>](#)<Bullet />[`Event_filter`](/docs/subgraph-generated/types/inputs/event-filter)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>isOpen</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>isOpen_not</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>isOpen_gt</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>isOpen_lt</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>isOpen_gte</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>isOpen_lte</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>isOpen_in</b></code>](#)<Bullet />[`[Int!]`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>isOpen_not_in</b></code>](#)<Bullet />[`[Int!]`](/docs/subgraph-generated/types/scalars/int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>createdTimestamp</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>createdTimestamp_not</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>createdTimestamp_gt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>createdTimestamp_lt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>createdTimestamp_gte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>createdTimestamp_lte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>createdTimestamp_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>createdTimestamp_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>createdBlockNumber</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>createdBlockNumber_not</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>createdBlockNumber_gt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>createdBlockNumber_lt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>createdBlockNumber_gte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>createdBlockNumber_lte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>createdBlockNumber_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>createdBlockNumber_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>closedTimestamp</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>closedTimestamp_not</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>closedTimestamp_gt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>closedTimestamp_lt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>closedTimestamp_gte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>closedTimestamp_lte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>closedTimestamp_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>closedTimestamp_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>_change_block</b></code>](#)<Bullet />[`BlockChangedFilter`](/docs/subgraph-generated/types/inputs/block-changed-filter)  
+> 
+> 
+> Filter for the block changed event.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>and</b></code>](#)<Bullet />[`[AccountBalance_filter]`](/docs/subgraph-generated/types/inputs/account-balance-filter)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountBalance_filter.<b>or</b></code>](#)<Bullet />[`[AccountBalance_filter]`](/docs/subgraph-generated/types/inputs/account-balance-filter)  
+> 
+> 
+> 
+> 
+
+
+
+
+
+### Member Of
+
+[`Account_filter`](/docs/subgraph-generated/types/inputs/account-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`AccountBalance_filter`](/docs/subgraph-generated/types/inputs/account-balance-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`PanopticPoolAccount_filter`](/docs/subgraph-generated/types/inputs/panoptic-pool-account-filter)  <Badge class="badge badge--secondary" text="input"/><Bullet />[`TokenId_filter`](/docs/subgraph-generated/types/inputs/token-id-filter)  <Badge class="badge badge--secondary" text="input"/>
+

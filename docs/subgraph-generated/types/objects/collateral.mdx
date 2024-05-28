@@ -67,83 +67,83 @@ type Collateral {
 
 ### Fields
 
-#### [<code style={{ fontWeight: 'normal' }}>Collateral.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>Collateral.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id)  
 > 
 > 
 >  Address of CollateralTracker for pool 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>Collateral.<b>token</b></code>](#)<Bullet />[`Token!`](/docs/subgraph-generated/types/objects/token) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+#### [<code style={{ fontWeight: 'normal' }}>Collateral.<b>token</b></code>](#)<Bullet />[`Token!`](/docs/subgraph-generated/types/objects/token)  
 > 
 > 
 >  Address of underlying token 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>Collateral.<b>totalAssets</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>Collateral.<b>totalAssets</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int)  
 > 
 > 
 >  Token asset supply 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>Collateral.<b>totalShares</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>Collateral.<b>totalShares</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int)  
 > 
 > 
 >  Total shares supply (receipts to claim assets) 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>Collateral.<b>inAMM</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>Collateral.<b>inAMM</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int)  
 > 
 > 
 >  Tokens in AMM 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>Collateral.<b>panopticPool</b></code>](#)<Bullet />[`PanopticPool!`](/docs/subgraph-generated/types/objects/panoptic-pool) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+#### [<code style={{ fontWeight: 'normal' }}>Collateral.<b>panopticPool</b></code>](#)<Bullet />[`PanopticPool!`](/docs/subgraph-generated/types/objects/panoptic-pool)  
 > 
 > 
 >  The PanopticPool being collateralized 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>Collateral.<b>index</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>Collateral.<b>index</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int)  
 > 
 > 
 >  Index of 0 or 1, indicating if this is collateralTracker0 or collateralTracker1 in its parent PanopticPool 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>Collateral.<b>collateralDayData</b></code>](#)<Bullet />[`[CollateralDayData!]!`](/docs/subgraph-generated/types/objects/collateral-day-data) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+#### [<code style={{ fontWeight: 'normal' }}>Collateral.<b>collateralDayData</b></code>](#)<Bullet />[`[CollateralDayData!]!`](/docs/subgraph-generated/types/objects/collateral-day-data)  
 > 
 > 
 >  Snapshots of CollateralDayData 
-> ##### [<code style={{ fontWeight: 'normal' }}>Collateral.collateralDayData.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+> ##### [<code style={{ fontWeight: 'normal' }}>Collateral.collateralDayData.<b>skip</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
 > 
 > 
 > 
 > 
 
-##### [<code style={{ fontWeight: 'normal' }}>Collateral.collateralDayData.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int) <Badge class="badge badge--secondary" text="scalar"/> 
+##### [<code style={{ fontWeight: 'normal' }}>Collateral.collateralDayData.<b>first</b></code>](#)<Bullet />[`Int`](/docs/subgraph-generated/types/scalars/int)  
 > 
 > 
 > 
 > 
 
-##### [<code style={{ fontWeight: 'normal' }}>Collateral.collateralDayData.<b>orderBy</b></code>](#)<Bullet />[`CollateralDayData_orderBy`](/docs/subgraph-generated/types/enums/collateral-day-data-order-by) <Badge class="badge badge--secondary" text="enum"/> 
+##### [<code style={{ fontWeight: 'normal' }}>Collateral.collateralDayData.<b>orderBy</b></code>](#)<Bullet />[`CollateralDayData_orderBy`](/docs/subgraph-generated/types/enums/collateral-day-data-order-by)  
 > 
 > 
 > 
 > 
 
-##### [<code style={{ fontWeight: 'normal' }}>Collateral.collateralDayData.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction) <Badge class="badge badge--secondary" text="enum"/> 
+##### [<code style={{ fontWeight: 'normal' }}>Collateral.collateralDayData.<b>orderDirection</b></code>](#)<Bullet />[`OrderDirection`](/docs/subgraph-generated/types/enums/order-direction)  
 > 
 > 
 > 
 > 
 
-##### [<code style={{ fontWeight: 'normal' }}>Collateral.collateralDayData.<b>where</b></code>](#)<Bullet />[`CollateralDayData_filter`](/docs/subgraph-generated/types/inputs/collateral-day-data-filter) <Badge class="badge badge--secondary" text="input"/> 
+##### [<code style={{ fontWeight: 'normal' }}>Collateral.collateralDayData.<b>where</b></code>](#)<Bullet />[`CollateralDayData_filter`](/docs/subgraph-generated/types/inputs/collateral-day-data-filter)  
 > 
 > 
 > 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>Collateral.<b>previousSharePrice</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>Collateral.<b>previousSharePrice</b></code>](#)<Bullet />[`BigDecimal!`](/docs/subgraph-generated/types/scalars/big-decimal)  
 > 
 > 
 >  Share price before most recent transfer event. Useful for calculating commissions. 

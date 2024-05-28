@@ -1,0 +1,1735 @@
+---
+id: collateral-deposit-filter
+title: CollateralDeposit_filter
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+input CollateralDeposit_filter {
+  id: ID
+  id_not: ID
+  id_gt: ID
+  id_lt: ID
+  id_gte: ID
+  id_lte: ID
+  id_in: [ID!]
+  id_not_in: [ID!]
+  hash: String
+  hash_not: String
+  hash_gt: String
+  hash_lt: String
+  hash_gte: String
+  hash_lte: String
+  hash_in: [String!]
+  hash_not_in: [String!]
+  hash_contains: String
+  hash_contains_nocase: String
+  hash_not_contains: String
+  hash_not_contains_nocase: String
+  hash_starts_with: String
+  hash_starts_with_nocase: String
+  hash_not_starts_with: String
+  hash_not_starts_with_nocase: String
+  hash_ends_with: String
+  hash_ends_with_nocase: String
+  hash_not_ends_with: String
+  hash_not_ends_with_nocase: String
+  logIndex: BigInt
+  logIndex_not: BigInt
+  logIndex_gt: BigInt
+  logIndex_lt: BigInt
+  logIndex_gte: BigInt
+  logIndex_lte: BigInt
+  logIndex_in: [BigInt!]
+  logIndex_not_in: [BigInt!]
+  eventType: EventType
+  eventType_not: EventType
+  eventType_in: [EventType!]
+  eventType_not_in: [EventType!]
+  from: String
+  from_not: String
+  from_gt: String
+  from_lt: String
+  from_gte: String
+  from_lte: String
+  from_in: [String!]
+  from_not_in: [String!]
+  from_contains: String
+  from_contains_nocase: String
+  from_not_contains: String
+  from_not_contains_nocase: String
+  from_starts_with: String
+  from_starts_with_nocase: String
+  from_not_starts_with: String
+  from_not_starts_with_nocase: String
+  from_ends_with: String
+  from_ends_with_nocase: String
+  from_not_ends_with: String
+  from_not_ends_with_nocase: String
+  to: String
+  to_not: String
+  to_gt: String
+  to_lt: String
+  to_gte: String
+  to_lte: String
+  to_in: [String!]
+  to_not_in: [String!]
+  to_contains: String
+  to_contains_nocase: String
+  to_not_contains: String
+  to_not_contains_nocase: String
+  to_starts_with: String
+  to_starts_with_nocase: String
+  to_not_starts_with: String
+  to_not_starts_with_nocase: String
+  to_ends_with: String
+  to_ends_with_nocase: String
+  to_not_ends_with: String
+  to_not_ends_with_nocase: String
+  blockNumber: BigInt
+  blockNumber_not: BigInt
+  blockNumber_gt: BigInt
+  blockNumber_lt: BigInt
+  blockNumber_gte: BigInt
+  blockNumber_lte: BigInt
+  blockNumber_in: [BigInt!]
+  blockNumber_not_in: [BigInt!]
+  timestamp: BigInt
+  timestamp_not: BigInt
+  timestamp_gt: BigInt
+  timestamp_lt: BigInt
+  timestamp_gte: BigInt
+  timestamp_lte: BigInt
+  timestamp_in: [BigInt!]
+  timestamp_not_in: [BigInt!]
+  gasUsed: BigInt
+  gasUsed_not: BigInt
+  gasUsed_gt: BigInt
+  gasUsed_lt: BigInt
+  gasUsed_gte: BigInt
+  gasUsed_lte: BigInt
+  gasUsed_in: [BigInt!]
+  gasUsed_not_in: [BigInt!]
+  gasPrice: BigInt
+  gasPrice_not: BigInt
+  gasPrice_gt: BigInt
+  gasPrice_lt: BigInt
+  gasPrice_gte: BigInt
+  gasPrice_lte: BigInt
+  gasPrice_in: [BigInt!]
+  gasPrice_not_in: [BigInt!]
+  pool: String
+  pool_not: String
+  pool_gt: String
+  pool_lt: String
+  pool_gte: String
+  pool_lte: String
+  pool_in: [String!]
+  pool_not_in: [String!]
+  pool_contains: String
+  pool_contains_nocase: String
+  pool_not_contains: String
+  pool_not_contains_nocase: String
+  pool_starts_with: String
+  pool_starts_with_nocase: String
+  pool_not_starts_with: String
+  pool_not_starts_with_nocase: String
+  pool_ends_with: String
+  pool_ends_with_nocase: String
+  pool_not_ends_with: String
+  pool_not_ends_with_nocase: String
+  pool_: Pool_filter
+  sender: String
+  sender_not: String
+  sender_gt: String
+  sender_lt: String
+  sender_gte: String
+  sender_lte: String
+  sender_in: [String!]
+  sender_not_in: [String!]
+  sender_contains: String
+  sender_contains_nocase: String
+  sender_not_contains: String
+  sender_not_contains_nocase: String
+  sender_starts_with: String
+  sender_starts_with_nocase: String
+  sender_not_starts_with: String
+  sender_not_starts_with_nocase: String
+  sender_ends_with: String
+  sender_ends_with_nocase: String
+  sender_not_ends_with: String
+  sender_not_ends_with_nocase: String
+  sender_: Account_filter
+  owner: String
+  owner_not: String
+  owner_gt: String
+  owner_lt: String
+  owner_gte: String
+  owner_lte: String
+  owner_in: [String!]
+  owner_not_in: [String!]
+  owner_contains: String
+  owner_contains_nocase: String
+  owner_not_contains: String
+  owner_not_contains_nocase: String
+  owner_starts_with: String
+  owner_starts_with_nocase: String
+  owner_not_starts_with: String
+  owner_not_starts_with_nocase: String
+  owner_ends_with: String
+  owner_ends_with_nocase: String
+  owner_not_ends_with: String
+  owner_not_ends_with_nocase: String
+  owner_: Account_filter
+  assets: BigInt
+  assets_not: BigInt
+  assets_gt: BigInt
+  assets_lt: BigInt
+  assets_gte: BigInt
+  assets_lte: BigInt
+  assets_in: [BigInt!]
+  assets_not_in: [BigInt!]
+  shares: BigInt
+  shares_not: BigInt
+  shares_gt: BigInt
+  shares_lt: BigInt
+  shares_gte: BigInt
+  shares_lte: BigInt
+  shares_in: [BigInt!]
+  shares_not_in: [BigInt!]
+  collateral: String
+  collateral_not: String
+  collateral_gt: String
+  collateral_lt: String
+  collateral_gte: String
+  collateral_lte: String
+  collateral_in: [String!]
+  collateral_not_in: [String!]
+  collateral_contains: String
+  collateral_contains_nocase: String
+  collateral_not_contains: String
+  collateral_not_contains_nocase: String
+  collateral_starts_with: String
+  collateral_starts_with_nocase: String
+  collateral_not_starts_with: String
+  collateral_not_starts_with_nocase: String
+  collateral_ends_with: String
+  collateral_ends_with_nocase: String
+  collateral_not_ends_with: String
+  collateral_not_ends_with_nocase: String
+  collateral_: Collateral_filter
+  tickAtDeposit: BigInt
+  tickAtDeposit_not: BigInt
+  tickAtDeposit_gt: BigInt
+  tickAtDeposit_lt: BigInt
+  tickAtDeposit_gte: BigInt
+  tickAtDeposit_lte: BigInt
+  tickAtDeposit_in: [BigInt!]
+  tickAtDeposit_not_in: [BigInt!]
+  tokenDerivedEthAtDeposit: BigDecimal
+  tokenDerivedEthAtDeposit_not: BigDecimal
+  tokenDerivedEthAtDeposit_gt: BigDecimal
+  tokenDerivedEthAtDeposit_lt: BigDecimal
+  tokenDerivedEthAtDeposit_gte: BigDecimal
+  tokenDerivedEthAtDeposit_lte: BigDecimal
+  tokenDerivedEthAtDeposit_in: [BigDecimal!]
+  tokenDerivedEthAtDeposit_not_in: [BigDecimal!]
+  ethPriceUSDAtDeposit: BigDecimal
+  ethPriceUSDAtDeposit_not: BigDecimal
+  ethPriceUSDAtDeposit_gt: BigDecimal
+  ethPriceUSDAtDeposit_lt: BigDecimal
+  ethPriceUSDAtDeposit_gte: BigDecimal
+  ethPriceUSDAtDeposit_lte: BigDecimal
+  ethPriceUSDAtDeposit_in: [BigDecimal!]
+  ethPriceUSDAtDeposit_not_in: [BigDecimal!]
+  _change_block: BlockChangedFilter
+  and: [CollateralDeposit_filter]
+  or: [CollateralDeposit_filter]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>id</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>id_not</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>id_gt</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>id_lt</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>id_gte</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>id_lte</b></code>](#)<Bullet />[`ID`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>id_in</b></code>](#)<Bullet />[`[ID!]`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>id_not_in</b></code>](#)<Bullet />[`[ID!]`](/docs/subgraph-generated/types/scalars/id)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>hash</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>hash_not</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>hash_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>hash_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>hash_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>hash_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>hash_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>hash_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>hash_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>hash_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>hash_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>hash_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>hash_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>hash_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>hash_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>hash_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>hash_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>hash_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>hash_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>hash_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>logIndex</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>logIndex_not</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>logIndex_gt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>logIndex_lt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>logIndex_gte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>logIndex_lte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>logIndex_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>logIndex_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>eventType</b></code>](#)<Bullet />[`EventType`](/docs/subgraph-generated/types/enums/event-type)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>eventType_not</b></code>](#)<Bullet />[`EventType`](/docs/subgraph-generated/types/enums/event-type)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>eventType_in</b></code>](#)<Bullet />[`[EventType!]`](/docs/subgraph-generated/types/enums/event-type)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>eventType_not_in</b></code>](#)<Bullet />[`[EventType!]`](/docs/subgraph-generated/types/enums/event-type)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>from</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>from_not</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>from_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>from_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>from_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>from_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>from_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>from_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>from_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>from_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>from_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>from_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>from_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>from_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>from_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>from_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>from_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>from_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>from_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>from_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>to</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>to_not</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>to_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>to_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>to_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>to_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>to_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>to_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>to_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>to_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>to_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>to_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>to_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>to_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>to_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>to_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>to_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>to_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>to_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>to_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>blockNumber</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>blockNumber_not</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>blockNumber_gt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>blockNumber_lt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>blockNumber_gte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>blockNumber_lte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>blockNumber_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>blockNumber_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>timestamp</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>timestamp_not</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>timestamp_gt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>timestamp_lt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>timestamp_gte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>timestamp_lte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>timestamp_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>timestamp_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>gasUsed</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>gasUsed_not</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>gasUsed_gt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>gasUsed_lt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>gasUsed_gte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>gasUsed_lte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>gasUsed_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>gasUsed_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>gasPrice</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>gasPrice_not</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>gasPrice_gt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>gasPrice_lt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>gasPrice_gte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>gasPrice_lte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>gasPrice_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>gasPrice_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>pool</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>pool_not</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>pool_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>pool_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>pool_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>pool_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>pool_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>pool_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>pool_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>pool_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>pool_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>pool_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>pool_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>pool_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>pool_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>pool_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>pool_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>pool_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>pool_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>pool_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>pool_</b></code>](#)<Bullet />[`Pool_filter`](/docs/subgraph-generated/types/inputs/pool-filter)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>sender</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>sender_not</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>sender_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>sender_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>sender_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>sender_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>sender_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>sender_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>sender_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>sender_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>sender_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>sender_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>sender_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>sender_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>sender_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>sender_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>sender_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>sender_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>sender_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>sender_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>sender_</b></code>](#)<Bullet />[`Account_filter`](/docs/subgraph-generated/types/inputs/account-filter)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>owner</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>owner_not</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>owner_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>owner_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>owner_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>owner_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>owner_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>owner_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>owner_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>owner_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>owner_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>owner_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>owner_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>owner_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>owner_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>owner_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>owner_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>owner_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>owner_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>owner_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>owner_</b></code>](#)<Bullet />[`Account_filter`](/docs/subgraph-generated/types/inputs/account-filter)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>assets</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>assets_not</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>assets_gt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>assets_lt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>assets_gte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>assets_lte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>assets_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>assets_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>shares</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>shares_not</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>shares_gt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>shares_lt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>shares_gte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>shares_lte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>shares_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>shares_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>collateral</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>collateral_not</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>collateral_gt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>collateral_lt</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>collateral_gte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>collateral_lte</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>collateral_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>collateral_not_in</b></code>](#)<Bullet />[`[String!]`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>collateral_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>collateral_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>collateral_not_contains</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>collateral_not_contains_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>collateral_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>collateral_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>collateral_not_starts_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>collateral_not_starts_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>collateral_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>collateral_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>collateral_not_ends_with</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>collateral_not_ends_with_nocase</b></code>](#)<Bullet />[`String`](/docs/subgraph-generated/types/scalars/string)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>collateral_</b></code>](#)<Bullet />[`Collateral_filter`](/docs/subgraph-generated/types/inputs/collateral-filter)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>tickAtDeposit</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>tickAtDeposit_not</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>tickAtDeposit_gt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>tickAtDeposit_lt</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>tickAtDeposit_gte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>tickAtDeposit_lte</b></code>](#)<Bullet />[`BigInt`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>tickAtDeposit_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>tickAtDeposit_not_in</b></code>](#)<Bullet />[`[BigInt!]`](/docs/subgraph-generated/types/scalars/big-int)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>tokenDerivedEthAtDeposit</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>tokenDerivedEthAtDeposit_not</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>tokenDerivedEthAtDeposit_gt</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>tokenDerivedEthAtDeposit_lt</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>tokenDerivedEthAtDeposit_gte</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>tokenDerivedEthAtDeposit_lte</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>tokenDerivedEthAtDeposit_in</b></code>](#)<Bullet />[`[BigDecimal!]`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>tokenDerivedEthAtDeposit_not_in</b></code>](#)<Bullet />[`[BigDecimal!]`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>ethPriceUSDAtDeposit</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>ethPriceUSDAtDeposit_not</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>ethPriceUSDAtDeposit_gt</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>ethPriceUSDAtDeposit_lt</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>ethPriceUSDAtDeposit_gte</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>ethPriceUSDAtDeposit_lte</b></code>](#)<Bullet />[`BigDecimal`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>ethPriceUSDAtDeposit_in</b></code>](#)<Bullet />[`[BigDecimal!]`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>ethPriceUSDAtDeposit_not_in</b></code>](#)<Bullet />[`[BigDecimal!]`](/docs/subgraph-generated/types/scalars/big-decimal)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>_change_block</b></code>](#)<Bullet />[`BlockChangedFilter`](/docs/subgraph-generated/types/inputs/block-changed-filter)  
+> 
+> 
+> Filter for the block changed event.
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>and</b></code>](#)<Bullet />[`[CollateralDeposit_filter]`](/docs/subgraph-generated/types/inputs/collateral-deposit-filter)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_filter.<b>or</b></code>](#)<Bullet />[`[CollateralDeposit_filter]`](/docs/subgraph-generated/types/inputs/collateral-deposit-filter)  
+> 
+> 
+> 
+> 
+
+
+
+
+
+### Member Of
+
+[`CollateralDeposit_filter`](/docs/subgraph-generated/types/inputs/collateral-deposit-filter)  <Badge class="badge badge--secondary" text="input"/>
+

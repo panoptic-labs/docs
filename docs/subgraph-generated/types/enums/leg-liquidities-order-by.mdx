@@ -1,0 +1,247 @@
+---
+id: leg-liquidities-order-by
+title: LegLiquidities_orderBy
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum LegLiquidities_orderBy {
+  id
+  leg
+  leg__id
+  leg__index
+  leg__idHexString
+  leg__optionRatio
+  leg__asset
+  leg__tokenType
+  leg__isLong
+  leg__riskPartner
+  leg__strike
+  leg__width
+  leg__legCount
+  chunk
+  chunk__id
+  chunk__tickLower
+  chunk__tickUpper
+  chunk__strike
+  chunk__width
+  chunk__tokenType
+  chunk__netLiquidity
+  chunk__shortLiquidity
+  chunk__longLiquidity
+  chunk__shortCounts
+  chunk__longCounts
+  chunk__totalLiquidity
+  liquidity
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities_orderBy.<b>id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities_orderBy.<b>leg</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities_orderBy.<b>leg__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities_orderBy.<b>leg__index</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities_orderBy.<b>leg__idHexString</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities_orderBy.<b>leg__optionRatio</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities_orderBy.<b>leg__asset</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities_orderBy.<b>leg__tokenType</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities_orderBy.<b>leg__isLong</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities_orderBy.<b>leg__riskPartner</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities_orderBy.<b>leg__strike</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities_orderBy.<b>leg__width</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities_orderBy.<b>leg__legCount</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities_orderBy.<b>chunk</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities_orderBy.<b>chunk__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities_orderBy.<b>chunk__tickLower</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities_orderBy.<b>chunk__tickUpper</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities_orderBy.<b>chunk__strike</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities_orderBy.<b>chunk__width</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities_orderBy.<b>chunk__tokenType</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities_orderBy.<b>chunk__netLiquidity</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities_orderBy.<b>chunk__shortLiquidity</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities_orderBy.<b>chunk__longLiquidity</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities_orderBy.<b>chunk__shortCounts</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities_orderBy.<b>chunk__longCounts</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities_orderBy.<b>chunk__totalLiquidity</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>LegLiquidities_orderBy.<b>liquidity</b></code>](#)  
+> 
+> 
+> 
+> 
+
+
+
+
+

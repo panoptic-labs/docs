@@ -1,0 +1,359 @@
+---
+id: collateral-deposit-order-by
+title: CollateralDeposit_orderBy
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum CollateralDeposit_orderBy {
+  id
+  hash
+  logIndex
+  eventType
+  from
+  to
+  blockNumber
+  timestamp
+  gasUsed
+  gasPrice
+  pool
+  pool__id
+  pool__poolId
+  pool__feeTier
+  pool__tickSpacing
+  pool__txCount
+  pool__liquidity
+  pool__sqrtPrice
+  pool__tick
+  pool__tickLastUpdateTimestamp
+  pool__tickLastUpdateBlockNumber
+  pool__token0Price
+  pool__token1Price
+  pool__totalValueLockedToken0
+  pool__totalValueLockedToken1
+  pool__totalValueLockedETH
+  pool__totalValueLockedUSD
+  sender
+  sender__id
+  owner
+  owner__id
+  assets
+  shares
+  collateral
+  collateral__id
+  collateral__totalAssets
+  collateral__totalShares
+  collateral__inAMM
+  collateral__index
+  collateral__previousSharePrice
+  tickAtDeposit
+  tokenDerivedEthAtDeposit
+  ethPriceUSDAtDeposit
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>hash</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>logIndex</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>eventType</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>from</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>to</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>blockNumber</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>timestamp</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>gasUsed</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>gasPrice</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>pool</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>pool__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>pool__poolId</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>pool__feeTier</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>pool__tickSpacing</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>pool__txCount</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>pool__liquidity</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>pool__sqrtPrice</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>pool__tick</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>pool__tickLastUpdateTimestamp</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>pool__tickLastUpdateBlockNumber</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>pool__token0Price</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>pool__token1Price</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>pool__totalValueLockedToken0</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>pool__totalValueLockedToken1</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>pool__totalValueLockedETH</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>pool__totalValueLockedUSD</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>sender</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>sender__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>owner</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>owner__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>assets</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>shares</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>collateral</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>collateral__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>collateral__totalAssets</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>collateral__totalShares</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>collateral__inAMM</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>collateral__index</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>collateral__previousSharePrice</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>tickAtDeposit</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>tokenDerivedEthAtDeposit</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>CollateralDeposit_orderBy.<b>ethPriceUSDAtDeposit</b></code>](#)  
+> 
+> 
+> 
+> 
+
+
+
+
+

@@ -1,0 +1,366 @@
+---
+id: premium-settled-order-by
+title: PremiumSettled_orderBy
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum PremiumSettled_orderBy {
+  id
+  hash
+  logIndex
+  eventType
+  from
+  to
+  blockNumber
+  timestamp
+  gasUsed
+  gasPrice
+  pool
+  pool__id
+  pool__poolId
+  pool__feeTier
+  pool__tickSpacing
+  pool__txCount
+  pool__liquidity
+  pool__sqrtPrice
+  pool__tick
+  pool__tickLastUpdateTimestamp
+  pool__tickLastUpdateBlockNumber
+  pool__token0Price
+  pool__token1Price
+  pool__totalValueLockedToken0
+  pool__totalValueLockedToken1
+  pool__totalValueLockedETH
+  pool__totalValueLockedUSD
+  user
+  user__id
+  tokenId
+  tokenId__id
+  tokenId__idHexString
+  tokenId__tokenCount
+  settledAmounts
+  settledAmount0
+  settledAmount1
+  panopticPool
+  panopticPool__id
+  panopticPool__txCount
+  panopticPool__feeTier
+  panopticPool__commissions0
+  panopticPool__commissions1
+  panopticPool__protocolLoss0
+  panopticPool__protocolLoss1
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>hash</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>logIndex</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>eventType</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>from</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>to</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>blockNumber</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>timestamp</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>gasUsed</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>gasPrice</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>pool</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>pool__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>pool__poolId</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>pool__feeTier</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>pool__tickSpacing</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>pool__txCount</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>pool__liquidity</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>pool__sqrtPrice</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>pool__tick</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>pool__tickLastUpdateTimestamp</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>pool__tickLastUpdateBlockNumber</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>pool__token0Price</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>pool__token1Price</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>pool__totalValueLockedToken0</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>pool__totalValueLockedToken1</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>pool__totalValueLockedETH</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>pool__totalValueLockedUSD</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>user</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>user__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>tokenId</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>tokenId__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>tokenId__idHexString</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>tokenId__tokenCount</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>settledAmounts</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>settledAmount0</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>settledAmount1</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>panopticPool</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>panopticPool__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>panopticPool__txCount</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>panopticPool__feeTier</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>panopticPool__commissions0</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>panopticPool__commissions1</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>panopticPool__protocolLoss0</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>PremiumSettled_orderBy.<b>panopticPool__protocolLoss1</b></code>](#)  
+> 
+> 
+> 
+> 
+
+
+
+
+

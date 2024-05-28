@@ -63,67 +63,67 @@ interface Event {
 
 ### Fields
 
-#### [<code style={{ fontWeight: 'normal' }}>Event.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>Event.<b>id</b></code>](#)<Bullet />[`ID!`](/docs/subgraph-generated/types/scalars/id)  
 > 
 > 
 >  Txn hash + '#' + log index 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>Event.<b>hash</b></code>](#)<Bullet />[`String!`](/docs/subgraph-generated/types/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>Event.<b>hash</b></code>](#)<Bullet />[`String!`](/docs/subgraph-generated/types/scalars/string)  
 > 
 > 
 >  Txn hash of the transaction emitting this event 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>Event.<b>logIndex</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>Event.<b>logIndex</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int)  
 > 
 > 
 >  Event log index 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>Event.<b>from</b></code>](#)<Bullet />[`String!`](/docs/subgraph-generated/types/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>Event.<b>from</b></code>](#)<Bullet />[`String!`](/docs/subgraph-generated/types/scalars/string)  
 > 
 > 
 >  Sender of transaction 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>Event.<b>to</b></code>](#)<Bullet />[`String!`](/docs/subgraph-generated/types/scalars/string) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>Event.<b>to</b></code>](#)<Bullet />[`String!`](/docs/subgraph-generated/types/scalars/string)  
 > 
 > 
 >  Receiver of transaction 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>Event.<b>blockNumber</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>Event.<b>blockNumber</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int)  
 > 
 > 
 >  Block txn was included in 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>Event.<b>timestamp</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>Event.<b>timestamp</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int)  
 > 
 > 
 >  Timestamp txn was confirmed 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>Event.<b>gasUsed</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>Event.<b>gasUsed</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int)  
 > 
 > 
 >  Gas used during txn execution 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>Event.<b>gasPrice</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="scalar"/> 
+#### [<code style={{ fontWeight: 'normal' }}>Event.<b>gasPrice</b></code>](#)<Bullet />[`BigInt!`](/docs/subgraph-generated/types/scalars/big-int)  
 > 
 > 
 >  Gas price during txn execution 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>Event.<b>eventType</b></code>](#)<Bullet />[`EventType!`](/docs/subgraph-generated/types/enums/event-type) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="enum"/> 
+#### [<code style={{ fontWeight: 'normal' }}>Event.<b>eventType</b></code>](#)<Bullet />[`EventType!`](/docs/subgraph-generated/types/enums/event-type)  
 > 
 > 
 >  Type of event. The Graph doesn't allow filtering by __typename meta so it's explicitly required here 
 > 
 
-#### [<code style={{ fontWeight: 'normal' }}>Event.<b>pool</b></code>](#)<Bullet />[`Pool!`](/docs/subgraph-generated/types/objects/pool) <Badge class="badge badge--secondary" text="non-null"/> <Badge class="badge badge--secondary" text="object"/> 
+#### [<code style={{ fontWeight: 'normal' }}>Event.<b>pool</b></code>](#)<Bullet />[`Pool!`](/docs/subgraph-generated/types/objects/pool)  
 > 
 > 
 >  Uniswap Pool the event happened within, or the underlying Uniswap Pool for a PanopticPool event. Needed to show all transactions within a pool from a certain account because The Graph doesn't have the ability to add custom filters. 

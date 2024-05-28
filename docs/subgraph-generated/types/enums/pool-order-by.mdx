@@ -1,0 +1,352 @@
+---
+id: pool-order-by
+title: Pool_orderBy
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+enum Pool_orderBy {
+  id
+  poolId
+  feeTier
+  tickSpacing
+  token0
+  token0__id
+  token0__decimals
+  token0__name
+  token0__symbol
+  token0__totalSupply
+  token0__txCount
+  token0__derivedETH
+  token1
+  token1__id
+  token1__decimals
+  token1__name
+  token1__symbol
+  token1__totalSupply
+  token1__txCount
+  token1__derivedETH
+  txCount
+  liquidity
+  sqrtPrice
+  tick
+  tickLastUpdateTimestamp
+  tickLastUpdateBlockNumber
+  poolHourData
+  poolDayData
+  token0Price
+  token1Price
+  totalValueLockedToken0
+  totalValueLockedToken1
+  totalValueLockedETH
+  totalValueLockedUSD
+  panopticPool
+  panopticPool__id
+  panopticPool__txCount
+  panopticPool__feeTier
+  panopticPool__commissions0
+  panopticPool__commissions1
+  panopticPool__protocolLoss0
+  panopticPool__protocolLoss1
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>poolId</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>feeTier</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>tickSpacing</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>token0</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>token0__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>token0__decimals</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>token0__name</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>token0__symbol</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>token0__totalSupply</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>token0__txCount</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>token0__derivedETH</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>token1</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>token1__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>token1__decimals</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>token1__name</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>token1__symbol</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>token1__totalSupply</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>token1__txCount</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>token1__derivedETH</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>txCount</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>liquidity</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>sqrtPrice</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>tick</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>tickLastUpdateTimestamp</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>tickLastUpdateBlockNumber</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>poolHourData</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>poolDayData</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>token0Price</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>token1Price</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>totalValueLockedToken0</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>totalValueLockedToken1</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>totalValueLockedETH</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>totalValueLockedUSD</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>panopticPool</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>panopticPool__id</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>panopticPool__txCount</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>panopticPool__feeTier</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>panopticPool__commissions0</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>panopticPool__commissions1</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>panopticPool__protocolLoss0</b></code>](#)  
+> 
+> 
+> 
+> 
+
+#### [<code style={{ fontWeight: 'normal' }}>Pool_orderBy.<b>panopticPool__protocolLoss1</b></code>](#)  
+> 
+> 
+> 
+> 
+
+
+
+
+
