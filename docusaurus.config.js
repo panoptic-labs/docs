@@ -271,8 +271,18 @@ const config = {
         baseURL: "/subgraph-generated",
         homepage: "./docs/subgraph-generated/generated.md",
         linkRoot: "/docs",
+        onlyDocDirective: ['@entity'], // default []
 
-        // Load remote schema through introspection query
+        printTypeOptions: {
+          typeBadges: false, // add field type attributes badges. default: true. setting to false cleans up out docs a lot.
+        },
+
+        docOptions: {
+          index: true,
+        },
+        tmpDir: "./tmp",
+
+        /* Load remote schema through introspection query */
         // TODO: still creates extra Filter directories which I don't need. Try loading local schema to fix that
         schema: "https://api.goldsky.com/api/public/project_cl9gc21q105380hxuh8ks53k3/subgraphs/panoptic-subgraph-sepolia/beta7-prod/gn",
         loaders: {
@@ -287,16 +297,12 @@ const config = {
           },
         },
 
-        // Load schema through local schema file
+
+        /* Load schema through local schema file */
         // schema: "./schema.graphql",
         // loaders: {
         //   GraphQLFileLoader: "@graphql-tools/graphql-file-loader",
         // },
-
-        docOptions: {
-          index: true,
-        },
-        tmpDir: "./tmp",
       },
     ],
     [
