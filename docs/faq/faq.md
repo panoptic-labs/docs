@@ -9,16 +9,16 @@ There's a good chance it's been asked before :)
 
 <details id="what-is-panoptic">
 <summary>What is Panoptic?</summary>
-The Panoptic protocol enables the minting, trading, and market-making of perpetual put and call options. All smart contracts are available 24/7 and users can interact with the Panoptic protocol without the need for intermediaries like banks, brokerage firms, clearinghouses, market makers, or centralized exchanges. 
+Panoptic is a permissionless way to trade crypto options. We enable options trading on any token, any strike, any size. Our options are perpetual – they never expire.
 </details>
 
 <details id="how-can-i-use-panoptic">
 <summary>How can I use Panoptic?</summary>
 To explore the Panoptic App, you will need to connect your digital wallet. There are currently two versions available for users:
 <br /><br />
-1) Beta Version: This version is accessible for users who have been whitelisted. You can visit and join the beta experience at <a href="https://beta.panoptic.xyz">beta.panoptic.xyz</a>.
+1) Beta Version: This version is accessible for previous participants in our beta tests. You can visit and join the beta experience at <a href="https://beta.panoptic.xyz">beta.panoptic.xyz</a>.
 <br />
-2) Demo Version: If you're looking to practice your trading without risking real funds, our paper trading platform is available on the Sepolia network. You can try it out at <a href="https://demo.panoptic.xyz">demo.panoptic.xyz</a>.
+2) Demo Version: If you're looking to practice your trading without risking real funds, our paper trading platform is available on the Sepolia network. You can try it out at <a href="https://deeznuts.panoptic.xyz">deeznuts.panoptic.xyz</a>.
 <br /><br />
 Connect and discover the forefront of DeFi options with Panoptic.
 </details>
@@ -36,12 +36,12 @@ Panoptic allows users to access new and improved features when options trading:<
 
 <details id="which-assets-can-i-trade">
 <summary>Which assets can I trade?</summary>
-Panoptic works on any ERC20 token. Panoptic users can create an options market on any token pair that exists on Uniswap V3.
+Panoptic works on any ERC20 token. Panoptic users can create an options market on any token pair that exists on Uniswap v3.
 </details>
 
 <details id="where-will-panoptic-launch">
 <summary>Where will Panoptic launch?</summary>
-Panoptic will launch on Ethereum mainnet and all EVM-compatible layer 2's where the Uniswap v3 smart contracts have been deployed.
+Panoptic will launch on Ethereum mainnet, followed by EVM-compatible chains where Uniswap v3 is deployed.
 </details>
 
 <details id="is-there-a-token">
@@ -49,9 +49,14 @@ Panoptic will launch on Ethereum mainnet and all EVM-compatible layer 2's where 
 No. Panoptic does not have a token at this time. 
 </details>
 
+<details id="is-there-a-points-program">
+<summary>Is there a points program?</summary>
+Yes, depositors and traders can earn Panoptic incentive points (Pips). For more details, visit <a href="https://pips.panoptic.xyz">pips.panoptic.xyz</a>.
+</details>
+
 <details id="wen-launch">
 <summary>Wen launch?</summary>
-Testnet is scheduled for September 2023. Mainnet is scheduled for Q4 2023. See our <a href="https://panoptic.xyz/blog/panoptic-defi-options-protocol-roadmap">roadmap</a>.
+Panoptic is launching on Ethereum mainnet the summer of 2024, followed by other EVM-compatible chains. See our <a href="https://panoptic.xyz/docs/roadmap">roadmap</a>.
 </details>
 
 <details id="how-does-liquidity-in-uniswap-benefit-panoptic">
@@ -102,7 +107,7 @@ Options trading doesn't have to be complicated. At Panoptic, we've created a <a 
 
 <details id="how-do-perpetual-options-compare-to-perpetual-futures">
 <summary>How do Perpetual Options Compare to Perpetual Futures ("Perps")?</summary>
-Perpetual options and perpetual futures are non-expiring financial instruments. Panoptic's perpetual options provides option-like payoffs that are priced through <a href="https://panoptic.xyz/docs/panoptic-protocol/streamia">streamia</a> (streaming premia), while perpetual futures offer long/short payoffs that are priced via a <a href="https://panoptic.xyz/docs/trading/perpetual-options#how-do-perpetual-options-compare-to-perpetual-futures-perps">funding rate</a>.
+Perpetual options and perpetual futures are non-expiring financial instruments. Panoptic's perpetual options provides option-like payoffs that are priced through <a href="https://panoptic.xyz/research/streamia-101">streamia</a> (streaming premia), while perpetual futures offer long/short payoffs that are priced via a <a href="https://panoptic.xyz/docs/trading/perpetual-options#how-do-perpetual-options-compare-to-perpetual-futures-perps">funding rate</a>.
 <br /><br />
 While perpetual futures often offer more leverage, perpetual options offer more <a href="https://twitter.com/Panoptic_xyz/status/1661114864386068480?s=20">flexibility</a> including:<br />
 1) No liquidation risk from single-wick fluctuations<br />
@@ -173,8 +178,8 @@ Panoptic solves this by opening up a two-sided market, where perpetual options a
 ## Liquidity Providers
 
 <details id="what-is-the-plp-role">
-<summary>What is the Panoptic liquidity provider (PLP) role? How is this different from the option seller?</summary>
-The Panoptic liquidity provider (PLP) passively provides fungible liquidity to the Panoptic pool and receives commission fees in return. This differs from the liquidity provider (LP) who deploys liquidity in a Uniswap V3 pool and receives swap fees in return. The option seller borrows liquidity from the PLP to deploy in a Uniswap V3 pool as an LP. This act of moving liquidity from the Panoptic pool to the Uniswap pool constitutes selling an option.   
+<summary>What is the passive liquidity provider (PLP) role? How is this different from the option seller?</summary>
+The passive liquidity provider (PLP) passively provides fungible liquidity to the Panoptic pool and receives commission fees in return. This differs from the liquidity provider (LP) who deploys liquidity in a Uniswap V3 pool and receives swap fees in return. The option seller borrows liquidity from the PLP to deploy in a Uniswap V3 pool as an LP. This act of moving liquidity from the Panoptic pool to the Uniswap pool constitutes selling an option.   
 <br /><br />
 Example A: Alice is a PLP for the ETH-USDC pool on Panoptic. She can deposit ETH, USDC, or both ETH & USDC into the pool. She receives a share of commission fees in return.  
 <br /><br />
@@ -182,12 +187,12 @@ Example B: Bob is an option seller for ETH-USDC options. After depositing some c
 </details>
 
 <details id="do-plps-suffer-il">
-<summary>Do Panoptic liquidity providers (PLPs) suffer impermanent loss (IL)?</summary>
-No, Panoptic liquidity providers (PLPs) do not suffer IL from Uniswap LP positions. PLPs earn commission fees, and take on protocol risk (e.g. if the Panoptic pool accrues bad debt from <a href="https://panoptic.xyz/docs/panoptic-protocol/margin">failing to liquidate</a> on time, then PLPs can lose capital). However, protocol risk is minimized through a tried-and-true <a href="https://panoptic.xyz/docs/panoptic-protocol/liquidations#liquidation-bonus">decentralized liquidation network</a> just as Aave, Compound, and dYdX use to prevent protocol insolvency.
+<summary>Do passive liquidity providers (PLPs) suffer impermanent loss (IL)?</summary>
+No, passive liquidity providers (PLPs) do not suffer IL from Uniswap LP positions. PLPs earn commission fees, and take on protocol risk (e.g. if the Panoptic pool accrues bad debt from <a href="https://panoptic.xyz/docs/panoptic-protocol/margin">failing to liquidate</a> on time, then PLPs can lose capital). However, protocol risk is minimized through a tried-and-true <a href="https://panoptic.xyz/docs/panoptic-protocol/liquidations#liquidation-bonus">decentralized liquidation network</a> just as Aave, Compound, and dYdX use to prevent protocol insolvency.
 </details>
 
 <details id="is-the-capital-deposited-by-plps-locked">
-<summary>Is the capital deposited by Panoptic liquidity providers (PLP) locked when they are utilized by traders in Panoptic?</summary>
+<summary>Is the capital deposited by passive liquidity providers (PLP) locked when they are utilized by traders in Panoptic?</summary>
 Yes, the capital of Panoptic Liquidity Providers (PLPs) can be locked under certain conditions. PLPs play a more passive role in which they deposit their tokens and earn yield from commissions. However, if 100% of PLP capital has been utilized by options sellers, then PLPs may have to wait to withdraw their capital. This is similar to what happens in lending protocols when they reach 100% utilization and withdrawals are temporarily locked. Note that options buyers in Panoptic actually reduce pool utilization by returning liquidity to the Panoptic pool, freeing up capital that PLPs can withdraw.
 </details>
 
@@ -210,14 +215,14 @@ This is the fee to mint an option. When an option seller or buyer opens their po
 
 <details id="how-is-the-streamia-calculated">
 <summary>How is the streaming premia (streamia) calculated?</summary>
-The <a href="https://panoptic.xyz/docs/panoptic-protocol/streamia">streamia</a> is equal to the amount of swap fees the borrowed LP position would have earned in the Uniswap pool, plus an additional <a href="https://panoptic.xyz/docs/panoptic-protocol/streamia#net-gross-and-owed-fees-with-spread">liquidity spread</a>.  
+The <a href="https://panoptic.xyz/research/streamia-101">streamia</a> is equal to the amount of swap fees the borrowed LP position would have earned in the Uniswap pool, plus an additional <a href="https://panoptic.xyz/research/liquidity-spread">liquidity spread</a>.  
 <br /><br />
 Example: Alice sells an out-of-the-money (OTM) ETH-USDC put Panoption, with strike = 1000 and width = ±10%. Bob buys the OTM put Panoption from Alice for 0 upfront premium. If the ETH-USDC price moves between 909 and 1100, the option is “in range” and would have earned swap fees from the Uniswap pool. If the ETH-USDC price is above 1100 or below 909, the option is “out of range” and would not have earned any swap fees. Bob owes the total amount of accumulated swap fees to Alice as premium.
 </details>
 
 <details id="what-is-the-liquidity-spread">
 <summary>What is the "liquidity spread"</summary>
-The <a href="https://panoptic.xyz/docs/panoptic-protocol/streamia#net-gross-and-owed-fees-with-spread">liquidity spread</a> is a floating rate paid by options buyers to options sellers, and is determined by the utilization ratio of each set of options. The spread prevents someone from buying all of the available options for sell.
+The <a href="https://panoptic.xyz/research/liquidity-spread">liquidity spread</a> is a floating rate paid by options buyers to options sellers, and is determined by the utilization ratio of each set of options. The spread prevents someone from buying all of the available options for sell.
 <br /><br />
 The spread is given by the formula 0.25 * buy/(sell-buy).
 <br /><br />
@@ -230,7 +235,7 @@ For buyers, it is costly to purchase all available options. For sellers, it is p
 
 <details id="has-a-streamia-been-used-in-practice-before">
 <summary>Has a streaming premia (streamia) been used in practice before?</summary>
-No, Panoptic is a pioneer in introducing <a href="https://panoptic.xyz/docs/panoptic-protocol/streamia">streamia</a> for options. While similar pricing mechanisms exist such as the <a href="https://panoptic.xyz/docs/trading/perpetual-options#how-do-perpetual-options-compare-to-perpetual-futures-perps">funding rate</a> in perpetual futures (perps), Panoptic's streamia is unique and innovative.
+No, Panoptic is a pioneer in introducing <a href="https://panoptic.xyz/research/streamia-101">streamia</a> for options. While similar pricing mechanisms exist such as the <a href="https://panoptic.xyz/docs/trading/perpetual-options#how-do-perpetual-options-compare-to-perpetual-futures-perps">funding rate</a> in perpetual futures (perps), Panoptic's streamia is unique and innovative.
 </details>
 
 <details id="how-can-i-manage-risks-associated-with-streamia">
@@ -255,7 +260,7 @@ For a detailed explanation of the differences and advantages of streamia, you ca
 ## Security
 <details id="will-there-be-an-audit">
 <summary>Will there be an audit?</summary>
-Yes. Panoptic's smart contracts were audited by <a href="https://panoptic.xyz/blog/abdk-audit-completion">ABDK</a> and is currently undergoing an audit with <a href="https://panoptic.xyz/blog/openzeppelin-audits-panoptic-defi-options-protocol">OpenZeppelin</a>. There are multiple other audits scheduled to ensure the holistic, end-to-end security of Panoptic. This includes a smart contract audit by Code4rena, economic audits by <a href="https://panoptic.xyz/blog/panoptic-three-sigma-partnership">Three Sigma</a> and <a href="https://panoptic.xyz/blog/simtopia-partnership-panoptic-defi-options">Simtopia</a>, and more to come. See our <a href="https://panoptic.xyz/blog/panoptic-defi-options-protocol-roadmap">roadmap</a>.
+Yes. Panoptic's smart contracts has undergone multiple audits by industry leading firms, including Trail of Bits, Code4rena, <a href="https://panoptic.xyz/blog/openzeppelin-audits-panoptic-defi-options-protocol">OpenZeppelin</a>, <a href="https://panoptic.xyz/blog/abdk-audit-completion">ABDK</a>, <a href="https://panoptic.xyz/blog/panoptic-three-sigma-partnership">Three Sigma</a>, and <a href="https://panoptic.xyz/blog/simtopia-partnership-panoptic-defi-options">Simtopia</a>.
 </details>
 
 <details id="why-is-panoptic-oracle-free">
