@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-slug: opening-a-position-on-panoptic
+slug: opening-a-position
 title: "Opening a Position"
 tags: [Tutorial]
 image: /img/research/opening-a-position.png
@@ -8,7 +8,7 @@ description: "Discover how to navigate the world of DeFi options trading with Pa
 ---
   
 
-![](./1.png)
+![](./opening-a-position/1.png)
   
 
 ## Overview
@@ -31,46 +31,26 @@ Trading perpetual options (or Panoptions) on Panoptic is permissionless. Before 
 
   
 
-When accessing the Panoptic platform, users will find the “connect wallet” button in the top right corner of the screen. Once clicked, users can connect to the platform through their preferred wallet from the listed options. Keep in mind, Panoptic is currently built for desktop, with mobile support coming soon.
+When accessing the Panoptic platform, users will find the “connect wallet” button in the top right corner of the screen. Once clicked, users can connect to the platform through their preferred wallet from the listed options. Keep in mind, Panoptic is currently built for desktop.
 
-  
-  
 
-![](./2.png)
-  
+![](./opening-a-position/2.png)  
+
+## Selecting A Market
+
+Traders can select a [market](/docs/product/markets), which is a trading pair of two tokens used to create an option position, such as ETH-USDC.
 
 ## Onboarding
 
-  
+To get started, traders must deposit collateral. Users may deposit either one of the two assets in a trading pair. Approve and deposit any amount of tokens into the selected market to begin trading.  
 
-To get started, traders must click the "Onboarding" button at the bottom right corner of the Panoptic app. Traders can then follow the onboarding modal to deposit collateral.
-
-  
-
-Remember that collateral deposits must be one of two assets in a trading pair. Later in the article, we will explain more on adding collateral.
-
-  
-
-![](./3.png)
-  
-
-Learn more about onboarding and depositing collateral [here](https://www.youtube.com/watch?v=iVfeZUVBN7E).
-
-  
-
-## Selecting Assets
-
-  
-
-Once onboarded, traders can select a trading pair, which are the two tokens used to create an option position, such as USDC-ETH. The trading pair represents the Uniswap pool Panoptic interacts with.
-
+![](./opening-a-position/3.png)
   
 
 ## Fee Tiers
 
-  
 
-![](./4.png)
+![](./opening-a-position/4.png)
   
 
 The trading pair pool fee is shown next to the trading pair represented as 5 basis points (bps) in this example. 5 bps, or 0.05% since one basis point is 0.01%, is the fee associated with the Uniswap pool from which the trading pair was derived.
@@ -83,7 +63,7 @@ Uniswap employs a proportional fee model, including 100, 30, and 5 basis point f
   
   
 
-![](./5.png)
+![](./opening-a-position/5.png)
   
 
 ## Selecting a Strategy
@@ -137,14 +117,14 @@ Depending on the type of option and the selected strike price, the payoff curve 
 
   
 
-![](./6.png)
+![](./opening-a-position/6.png)
   
 
 ## Selecting a Leg
 
   
 
-Once traders have selected a strategy, the option will appear as a new leg. Legs are components of an option strategy. A long call is considered as one leg. Advanced traders might add multiple legs to form a more complicated strategy.
+Once traders have selected a strategy, the option will appear as a new leg. [Legs](/docs/product/option-legs) are components of an option strategy. A long call is considered as one leg. Advanced traders might add multiple legs to form a more complicated strategy.
 
   
 
@@ -171,7 +151,7 @@ For advanced traders, multiple legs can be added by using the “+ Leg” button
 
   
 
-![](./7.png)
+![](./opening-a-position/7.png)
   
 
 ### Selecting a Strike Price
@@ -194,7 +174,7 @@ Understanding when [streamia](https://panoptic.xyz/blog/streamia-defi-native-opt
 
   
 
-![](./8.png)
+![](./opening-a-position/8.png)
   
 
 ## Selecting a Number of Contracts
@@ -221,7 +201,7 @@ For example, suppose a trader has $100 worth of USDC collateral and can buy up t
 
   
 
-![](./9.png)
+![](./opening-a-position/9.png)
   
 
 Note: users cannot buy/sell options in excess of their buying power, otherwise they will receive the following error message:
@@ -235,22 +215,13 @@ Available collateral balance exceeded! Please lower your contract amount.
 
 ## Managing and Adding Collateral
 
-  
-
-In the collateral section, traders can use the toggle to view collateral details in terms of either asset. For example, if traders are dealing with an ETH-USDbC pair, the toggle allows them to view collateral requirements in terms of either ETH or USDbC.
-
-  
+Traders can use the currency toggle to view position requirements and account details in terms of either asset. For example, if traders are dealing with an ETH-USDbC pair, the toggle allows them to view collateral requirements in terms of either ETH or USDbC.
 
 Note that toggling the collateral details does not change the type of collateral being provided. Rather, positions in Panoptic are cross-collateralized so that users can deposit collateral in either token. That said, settlement requires payment in a specific token. For example, commissions, in-the-money (ITM) spreads, and the intrinsic value of an option must be paid in the specified token.
 
-  
+Within the interface, traders can view how much collateral is needed for the position and how much buying power they currently have in Panoptic.
 
-Within the interface, traders can view how much collateral is needed for the  position and how much collateral they currently have in Panoptic.
-
-  
-  
-
-![](./10.png)
+![](./opening-a-position/10.png)
   
 
 ## Liquidity
@@ -265,7 +236,7 @@ Options in Panoptic are unique because traders can sell any amount of options an
 
   
 
-![](./11.png)
+![](./opening-a-position/11.png)
   
   
 
@@ -277,7 +248,7 @@ Insufficient liquidity deployed at the strike! Please lower your contract amount
 
   
 
-![](./12.png)
+![](./opening-a-position/12.png)
   
 
 ## Reviewing a Position
@@ -286,7 +257,7 @@ Insufficient liquidity deployed at the strike! Please lower your contract amount
 
 Once all the core inputs are confirmed, traders will need to submit their order to be added onto the blockchain which confirms the trade. Within the Review Position interface, traders can confirm the trading pair, strike, pool fee, delta, max loss, buying power, payoff curve, and selected legs.
 
-![](./13.png)
+![](./opening-a-position/13.png)
   
 
 If traders find they want to alter any of these inputs, they can close the confirmation screen and edit their trade inputs.
@@ -317,7 +288,7 @@ Note: the spread tolerance has no effect after the position is opened. If the sp
 
   
 
-![](./14.png)
+![](./opening-a-position/14.png)
   
 
 ## Conclusion
@@ -328,7 +299,7 @@ Once traders confirm and create their position, they can manage and monitor the 
 
   
 
-![](./15.png)
+![](./opening-a-position/15.png)
   
 
 Congratulations, you are officially a Panoptic Trader! To monitor your positions, click the “Positions” button at the top left of your screen.
