@@ -36,7 +36,7 @@ The following sections will provide a brief overview of the _Panoptic protocol_.
 - [Developers](./developers/smart-contracts-overview)
 - [Litepaper](https://intro.panoptic.xyz/)
 - [Whitepaper](https://paper.panoptic.xyz/)
-- [Security audits](./security/audits)
+- [Security audits](./security/security_audits)
 
 #### 10,000-Foot View of Panoptic and the DeFi Options Landscape
 - [Panoptic - The Most Detailed Exposition To Date](https://blog.panoptic.xyz/panoptic-483c6de77a0e)  
