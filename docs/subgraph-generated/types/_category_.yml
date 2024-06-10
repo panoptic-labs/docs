@@ -1,8 +1,9 @@
 label: Types
-position: 1
+position: 2
 className: graphql-markdown-api-section
-link: 
-  type: generated-index
-  title: 'Types overview'
+# link: 
+#   type: generated-index
+#   title: 'Types overview'
+link: null
 collapsible: false
 collapsed: false

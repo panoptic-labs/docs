@@ -1,8 +1,9 @@
 label: Api
-position: 1
-className: graphql-markdown-api-section
-link: 
-  type: generated-index
-  title: 'Api overview'
+position: 3
+# className: graphql-markdown-api-section
+className: "hidden"
+# link: 
+#   type: generated-index
+#   title: 'Api overview'
 collapsible: false
 collapsed: false

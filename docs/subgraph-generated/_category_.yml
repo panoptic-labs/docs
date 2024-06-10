@@ -1,0 +1,7 @@
+label: Subgraph Schema
+position: 6
+# For showing generated index page when clicking dropdown. a bit confusing because it links out to hidden sidebar items
+# link: 
+#   type: generated-index
+#   title: 'Schema'
+link: null

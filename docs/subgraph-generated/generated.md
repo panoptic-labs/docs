@@ -1,6 +1,5 @@
 ---
 id: schema
-slug: /subgraph-generated
 title: Schema Documentation
 sidebar_position: 1
 hide_table_of_contents: true
