@@ -1,0 +1,8 @@
+label: Entities
+position: 0
+link: 
+  type: generated-index
+  title: 'Entities overview'
+  description: "Here are all the entities you are able to query in the Panoptic Subgraph. You can use it to access data related to Panoptic pools, accounts, positions, and more!"
+collapsible: true
+collapsed: true
