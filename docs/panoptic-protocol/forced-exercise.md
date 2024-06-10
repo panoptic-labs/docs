@@ -24,35 +24,37 @@ For multi-leg positions, force exercising must close all legs of the position.
 ```solidity
 
 EXERCISE
-_COST         ^   max cost = 10.24%
- 1024bps _ |____
-  512bps _ |    |____
-  256bps _ |    .    |____
-  128bps _ |    .    .    |____
-   64bps _ |    .    .    .    |____
-   32bps _ |    .    .    .    .    |____
-   16bps _ |    .    .    .    .    .    |____
-    8bps _ |    .    .    .    .    .    .    |____
-    4bps _ |    .    .    .    .    .    .    .    |____
-    2bps _ |    .    .    .    .    .    .    .    .    |____    min cost = 0.01%
-     1bp _ |    .    .    .    .    .    .    .    .    .    |____
+_COST         ^   max cost = 1.28%
+  128bps _ |____
+   64bps _ |    |____
+   32bps _ |    .    |____
+   16bps _ |    .    .    |____
+    8bps _ |    .    .    .    |____
+    4bps _ |    .    .    .    .    |____
+    2bps _ |    .    .    .    .    .    |____
+     1bp _ |    .    .    .    .    .    .    |____
+  0.5bps _ |    .    .    .    .    .    .    .    |____
+ 0.25bps _ |    .    .    .    .    .    .    .    .    |____    min cost = 0.00125%
+0.125bps _ |    .    .    .    .    .    .    .    .    .    |____
               +----+----+----+----+----+----+----+----+----+----+--->
                   1x   2x   3x   4x   5x   6x   7x   8x   9x  10x    DISTANCE_FROM_STRIKE
                                                                       (number of "widths")
 
 ```
 
-'Width' is characterized by the tick spacing of the underlying Uniswap pool, which differs depending on each Uniswap pool's fee tier. This is illustrated by the following relationships:
+The width is defined by the position's lower and upper price range. For example, one contract of a one-month (1M) AVAX put option with a lower price of $33.52 and upper price of $37.80 has a width of $4.28 ($4.28 = $37.80 - $33.52).
 
-- For a fee tier of 1 basis point (bp): width = 1 tick.
-- For a fee tier of 5 basis points (bps), width = 10 ticks.
-- For a fee tier of 30 basis points (bps), width = 60 ticks.
-- For a fee tier of 100 basis points (bps), width = 200 ticks.
+![](../product/timescales/06.png)
 
-Note: Uniswap v3 currently has four distinct fee tiers.
+In this scenario, the cost to force exercise this position would be as follows:
 
-The conversion from tick to price can be calculated using the formula:
+|    Pool Price   |        Force Exercise Cost       |
+|:---------------:|:--------------------------------:|
+|       ...       |                ...               |
+| $24.96 - $29.23 |            0.0064 AVAX           |
+| $29.24 - $33.51 |            0.0128 AVAX           |
+| $33.52 - $37.80 | In range (cannot force exercise) |
+| $37.81 - $42.08 |            0.0128 AVAX           |
+| $42.09 - $46.36 |            0.0064 AVAX           |
+|       ...       |                ...               |
 
-$Price = 1.0001 ^{Ticks}$
-
-Let's consider an example using a Panoptic pool built over a Uniswap v3 pool with a fee tier of 30 basis points (bps). Here, 1 'width' corresponds to 60 ticks. Suppose the strike price is \$991.93 (= $1.0001 ^ {69,000}$) and the spot price is \$997.90 (= $1.0001 ^ {69,060}$). In this scenario, the spot price would be considered 1 'width' away from the strike price due to the 60 ticks difference.

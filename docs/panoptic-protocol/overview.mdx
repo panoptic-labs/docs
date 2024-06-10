@@ -8,38 +8,36 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
 # Panoptic overview
-This is an introductory summary of the Panoptic Protocol.
 
 ## Who should use Panoptic?
 
 Options are one of the most traded instruments in traditional finance.
-They can be used to [hedge](/docs/trading/basic-concepts) a portfolio, [speculate](/docs/trading/perpetual-options) on the value of an asset, create [synthetic positions](/docs/trading/multi-leg-strategies) in a capital-efficient manner, or as a way to create [defined-risk](/docs/panoptic-protocol/risks) positions.
+They can be used to [hedge](/research/hedge-with-panoptic-options) a portfolio, speculate on the value of an asset, create [synthetic positions](/docs/trading/multi-leg-strategies#synthetic-positions) in a capital-efficient manner, or as a way to create [defined-risk](/docs/trading/multi-leg-strategies#managing-definedundefined-risk) positions.
 
 Investors that first learn about options may be overwhelmed at first. 
-While the math behind options may seem daunting for most users, anyone without a math background may still earn sustainable returns as long as users follow a core set of [basic rules](/docs/trading/basic-concepts).
+While the math behind options may seem daunting for most users, anyone without a math background can understand how to trade options by following a set of [basic strategies](/docs/product/opening-a-position#selecting-a-strategy).
 
 Here is how Panoptic can be valuable investment instrument for different user profiles:
 
 <details>
 <summary>1. Retail Users</summary>
 Retail investors may trade options the same way they trade stocks or tokens: buy call options to profit when the underlying increases in price or buy put options to profit when the underlying goes down in price.
-
-&nbsp;&nbsp;&nbsp;&nbsp;Retail users can also choose to participate in decentralized option vaults --a novel type of managed investment instrument pioneered by [Ribbon Finance](https://www.ribbon.finance/). 
-Option vaults can easily be implemented in Panoptic to target strategies that can be bearish, bullish, delta-neutral, or any combination thereof.
 <br />
-Link: <a href="/docs/trading/management-strategies">Strategies for retail users</a>.
+Retail users can also choose to participate in decentralized option vaults &mdash; a novel type of managed investment instruments pioneered by [Ribbon Finance](https://www.ribbon.finance/). 
+Option vaults can be implemented on top of Panoptic to target strategies that can be bearish, bullish, delta-neutral, or any combination thereof.
+<br />
+🔗 <a href="/docs/product/opening-a-position#selecting-a-strategy">Strategies for retail users</a>.
 <br />
 &nbsp;
 </details>
 
 <details>
-<summary>2. "Pro-tail" Users</summary>
+<summary>2. "Pro-Tail" Users</summary>
 Investors which are comfortable enough to manage a self-directed investment portfolio (we call those professional retail, or pro-tail, users) may employ strategies that fill the "complexity" gap between the retail and professional levels.
-
-&nbsp;&nbsp;&nbsp;&nbsp;In Panoptic, these users could be DeFi-native users that are comfortable with liquidity providing in AMMs and liquidity mining in protocols such as Uniswap or SushiSwap.
-Or they could be seasoned TradFi options traders that may want to get exposure to 24/7 markets on the long-tail of digital assets that are tradable on Uniswap v3.
 <br />
-Link: <a href="/docs/trading/multi-leg-strategies">Strategies for Pro-tail users</a>.
+In Panoptic, these users could be DeFi-native users that are comfortable with liquidity providing in AMMs and liquidity mining in protocols such as Uniswap or SushiSwap. They could also be seasoned TradFi options traders that may want to get exposure to 24/7 markets on the long-tail of digital assets that are tradable on Uniswap.
+<br />
+🔗 <a href="/research/essential-options-strategies-to-know">Strategies for Pro-tail users</a>.
 <br />
 &nbsp;
 </details>
@@ -47,13 +45,12 @@ Link: <a href="/docs/trading/multi-leg-strategies">Strategies for Pro-tail users
 <details>
 <summary>3. Market Makers and Uniswap v3 Liquidity Providers</summary>
 Market making by sophisticated actors is necessary to create markets that are liquid enough to allow retail and pro-tail users to trade a large variety of strategies in multiple underlyings.
-
-&nbsp;&nbsp;&nbsp;&nbsp;In Panoptic, market making involves responding to both the demand from buyers and the need to stabilize prices within a Uniswap v3 pool.
-That may mean having to sell OTM options or providing liquidity in response to the put skew of an underlying asset.
-Or buy close to the money options when the implied volatility is low compared to the realized volatility.
-Of course, seasoned market makers will need to do so in a way that maintains delta-neutrality at the portfolio level.
 <br />
-Link: <a href="/docs/trading/multi-leg-strategies">Strategies for Uni v3 LPs</a>.
+In Panoptic, market making involves responding to both the demand from buyers and the need to stabilize prices within a Uniswap v3 pool.
+That may mean having to sell ATM options when the implied volatility is high compared to the realized volatility.
+Of course, seasoned market makers will need to do so in a way that maintains < a href="/research/options-market-making">delta-neutrality</a> at the portfolio level.
+<br />
+🔗 <a href="/docs/getting-started/liquidity-providers">Strategies for Uni v3 LPs</a>.
 <br />
 &nbsp;
 </details>
@@ -61,24 +58,24 @@ Link: <a href="/docs/trading/multi-leg-strategies">Strategies for Uni v3 LPs</a>
 <details>
 <summary>4. Institutions</summary>
 Institutions may need to hedge their portfolio exposure in order to reduce the overall portfolio risk.
-They may do this by purchasing put options on pairs representative of the crypto market (e.g. ETH-USDC, ETH-BTC, etc.).
-Alternatively, funds may sell calls on tokens they hold as a way to realize profits on tokens.
-
-&nbsp;&nbsp;&nbsp;&nbsp;In addition, institutions may deposit funds in the Panoptic pool as liquidity providers in order to collect a stable yield on their capital, which means they would effectively be lending their tokens to options sellers and market makers for a fixed commission fee. 
+They may do this by purchasing <a href="/research/defi-put-options-uniswap-backtest">put options</a> on pairs representative of the crypto market (e.g. ETH-USDC, ETH-BTC, etc.).
+Alternatively, funds may <a href="/research/naked-covered-call-defi-options">sell calls</a> on tokens they hold as a way to realize profits on tokens.
 <br />
-Link: <a href="/docs/trading/multi-leg-strategies">Strategies for institutions</a>.
+In addition, institutions may deposit funds in the Panoptic pool as <a href="/docs/panoptic-protocol/protocol-roles#panoptic-liquidity-providers-plps">passive liquidity providers</a> in order to collect yield on their capital, which means they would effectively be lending their tokens to options sellers and market makers for a fixed commission fee. 
+<br />
+🔗 <a href="/research/naked-covered-call-defi-options">Strategies for institutions</a>.
 <br />
 &nbsp;
 </details>
 
 <details>
 <summary>5. DAOs and protocol treasuries</summary>
-DAOs and protocol treasuries are in a uniquely difficult position when deploying liquidity in a Uniswap pool: how can they create liquid markets without having to deploy ETH or stablecoins?
-
-&nbsp;&nbsp;&nbsp;&nbsp;By seeding a Panoptic pool from the "token" side, DAOs can generate revenue by earning commission fees and incentivize trading activity and interest in their token by enabling leveraged options trading on their token. 
+DAOs and protocol treasuries are in a uniquely difficult position when deploying liquidity in a Uniswap pool. How can they create liquid markets without having to deploy ETH or stablecoins?
+<br />
+By seeding a Panoptic pool from the "token" side, DAOs can generate revenue by earning commission fees and incentivize trading activity and interest in their token by enabling leveraged options trading on their token. 
 These tokens could in turn be used as collateral to back a DAO's market making activities, which could help stabilize prices and decrease market volatility.
 <br />
-Link: <a href="/docs/trading/multi-leg-strategies">Strategies for DAOs and protocols</a>.
+🔗 <a href="/docs/panoptic-protocol/protocol-roles#panoptic-liquidity-providers-plps">Strategies for DAOs and protocols</a>.
 <br />
 &nbsp;
 </details>
@@ -88,8 +85,8 @@ Link: <a href="/docs/trading/multi-leg-strategies">Strategies for DAOs and proto
 
 ## How do Panoptic Options differ from traditional options?
 
-Options in Panoptic differ slightly from conventional options.
-Instead of using a clearinghouse to settle options contracts, the Panoptic protocol uses Liquidity Provider (LP) positions in Uniswap v3 as a fundamental building block for trading long and short options.
+Options in Panoptic differ from conventional options.
+Instead of using a clearinghouse to settle options contracts, the Panoptic protocol uses Liquidity Provider (LP) positions in Uniswap v3 as a fundamental building block for trading options.
 
 Panoptic allows users to access new and improved features when options trading:
 
@@ -98,7 +95,7 @@ Panoptic allows users to access new and improved features when options trading:
 - Panoptic enables anyone to lend their capital to options traders as a [liquidity provider](/docs/panoptic-protocol/protocol-roles#liquidity-providers)
 - Options have [unique properties](/docs/panoptic-protocol/option-properties): width, new concept of moneyness, user-defined numeraire, etc.
 - [Pricing](/docs/panoptic-protocol/streamia) is path-dependent and does not involve counterparties (such as market makers)
-- There is no concept of [vega], which means that the premium for open positions will not be affected by volatility expansion
+- There is no concept of vega, which means that the premium for open positions will not be affected by volatility expansion
 - Collateralization requirements and buying power reduction [respond](/docs/panoptic-protocol/liquidations) to market activity
 - Buying power requirements [do not change over time](/docs/panoptic-protocol/collateral)
 - Commissions are paid [only once](/docs/panoptic-protocol/collateral#commissions--fees), when the position is created
@@ -112,12 +109,12 @@ Panoptic allows users to access new and improved features when options trading:
 
 Options trading is not for everyone.
 Like any form of leveraged trading, trading options is associated with significant risks.
-Any user that wishes to interact with the Panoptic protocol has to understand the risks involved.
+Any user that wishes to interact with the Panoptic protocol should understand the risks involved.
 
-The main risks are:
-- **Over-exposure**: losing due to [leveraged exposure](/docs/panoptic-protocol/collateral).
-- **Unfavorable pricing**: paying a [large premium](/docs/panoptic-protocol/streamia) for options.
-- **Forced exercise**: having [far-the-money](/docs/panoptic-protocol/risks) positions closed by external actors/liquidators.
-- **Liquidations**: losing deposited collateral because of a [margin call](/docs/panoptic-protocol/liquidations).
+The main [risks](/docs/panoptic-protocol/risks) include:
+- **Over-exposure**: losing due to [leveraged exposure](/docs/product/leverage).
+- **Unfavorable pricing**: paying a [large premium](/docs/product/streamia#streamia-induced-liquidation) for options.
+- **Forced exercise**: having far-the-money positions [forcefully closed](/docs/panoptic-protocol/risks#forced-exercise-risk) by external actors/liquidators.
+- **Liquidations**: losing deposited collateral because of a [margin call](/docs/product/position-management#avoiding-liquidations).
          
 

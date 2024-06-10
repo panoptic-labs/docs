@@ -3,7 +3,7 @@ sidebar_position: 2
 ---
 
 # Protocol roles
-Ecosystem participants include liquidity providers, options sellers, options buyers, and liquidators.
+Ecosystem participants include passive liquidity providers, options sellers, options buyers, and liquidators.
 
 import ThemedImage from '@theme/ThemedImage';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -16,7 +16,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   }}
 />
 
-## Panoptic Liquidity Providers (PLPs)
+## Passive Liquidity Providers (PLPs)
 Provide fungible liquidity to the options market. 
 This liquidity will be lent out to the options traders to allow them to access trading on leverage. 
 Funds can be deposited into Panoptic pools at any ratio.
@@ -28,23 +28,23 @@ Funds can be deposited into Panoptic pools at any ratio.
 <ThemedImage
   alt="sellers"
   sources={{
-    light: useBaseUrl('/img/OptionTradingDiagram-LP.svg'),
-    dark: useBaseUrl('/img/OptionTradingDiagram-LP.svg'),
+    light: useBaseUrl('/img/OptionTradingDiagram-LP-2.svg'),
+    dark: useBaseUrl('/img/OptionTradingDiagram-LP-2.svg'),
   }}
 />
 
-Panoptic Liquidity Providers (PLPs) will provide liquidity to the Panoptic smart contract by depositing assets into the option pool in the form of a single type.
+Passive Liquidity Providers (PLPs) provide liquidity to a Panoptic pool by making single-sided deposits of tokens into the option pool in any amount.
 They will receive [ERC-20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) shares for their deposited liquidity, and their portion of collateral inside the Panoptic pool will be tracked using a shares model from the [ERC-4626](https://ethereum.org/en/developers/docs/standards/tokens/erc-4626/) standard.
 
-The role of PLPs in Panoptic differs somewhat from that of LPs in Uni v3. The net goal of PLPs is *not* to deploy liquidity within a specific range of a Uni v3 pool.
-Rather, PLPs generate yield by providing liquidity that can be borrowed and relocated to a Uni v3 pool by options sellers for a fixed commission fee.
+The role of PLPs in Panoptic differs somewhat from that of LPs in Uni v3. PLPs do *not* deploy liquidity within a specific range of a Uni v3 pool.
+Rather, PLPs generate yield by lending tokens that can be deployed to a Uniswap v3 pool by option sellers for a fixed commission fee.
 
 When a PLP removes their liquidity from the option pool, Panoptic will burn their collateral tokens, and the PLP will receive their share of the collateral pool plus collected fees.
 </details>
 
 
 ## Option Sellers
-Sell options by borrowing liquidity for a fixed commission fee and relocating it to a Uni v3 pool. 
+Sell options by borrowing liquidity for a fixed commission fee and relocating it to a Uniswap v3 pool. 
 Sellers must deposit collateral and can sell options with notional values up to five times larger than their collateral balance.
 
 **Typical users**: Pro-tail, Market makers, DAOs.

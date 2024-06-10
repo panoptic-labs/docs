@@ -6,7 +6,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
                 
 
 # Protocol design
-The key ideas behind Panoptic.
 
 ## What is the relationship between Panoptic and Uniswap v3?
     
