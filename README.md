@@ -34,6 +34,22 @@ You can generate the glossary with:
 $ ./glossary.sh
 ```
 
+### Subgraph docs
+
+To generate subgraph docs, run
+
+```sh
+yarn graphql-markdown
+```
+
+Now, some manual cleanup steps are needed to improve readability:
+
+* Copy the contents of `subgraph/schema.md.bk` at the top of the generated `schema.md` file.
+* Remove "# Schema Types" header
+* Delete the `<details>` tag with table of contents (Docusaurus generates this automatically)
+* Starting from the `## Query` header, delete the `<table>` element.
+
+
 ### Build the Glossary
 
 We use the plugin here: https://gitlab.grnet.gr/terminology/docusaurus-terminology to manage our glossary. Build the glossary with:
