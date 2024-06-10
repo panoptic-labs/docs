@@ -9,24 +9,25 @@ Panoptic has undergone numerous economic and security reviews by leading firms. 
 ## Smart Contract Audits
 
 ### Code4rena
-- [Code4rena audit of the Semi-Fungible Position Manager (SFPM)](https://code4rena.com/reports/2023-11-panoptic) 
-- [Code4rena audit of the Panoptic V1 Protocol](https://code4rena.com/reports/2024-04-panoptic)
+The Semi-Fungible Position Manager (SFPM) audit [report](https://code4rena.com/reports/2023-11-panoptic) was completed by [Code4rena](https://code4rena.com/) (to be published).
+
+The Panoptic V1 protocol audit [report](https://code4rena.com/reports/2024-04-panoptic) was completed by Code4rena (to be published).
 <!-- - [Code4rena final review of the Panoptic V1 Protocol](https://code4rena.com/reports/2024-06-panoptic) -->
 <!-- (not published yet) -->
 
 ### Trail of Bits
-- [Trail of Bits Invariant Testing report](/pdf/TrailOfBits_Panoptic.pdf)
+The invariant testing [report](/pdf/TrailOfBits_Panoptic.pdf) was completed by [Trail of Bits](https://www.trailofbits.com/) on June 4, 2024.
 
 ### OpenZeppelin
-- [OpenZeppelin audit report](/pdf/OpenZeppelin_Panoptic.pdf)
+The second comprehensive smart contract audit [report](/pdf/OpenZeppelin_Panoptic.pdf) was completed by [OpenZeppelin](https://www.openzeppelin.com/) on December 27, 2023.
 
 ### ABDK
- - [ABDK audit report](/pdf/ABDK_Panoptic.pdf)
+The initial smart contract audit [report](/pdf/ABDK_Panoptic.pdf) was completed by [ABDK](https://abdk.consulting/) on April 26, 2023.
 
 ## Economic Audits
 
 ### Three Sigma
-- [Three Sigma report](/pdf/ThreeSigma_Panoptic.pdf)
+The second economic analysis [report](/pdf/ThreeSigma_Panoptic.pdf) was completed by [Three Sigma](https://threesigma.xyz/) on May 21, 2024.
 
 ### Simtopia
-- [Simtopia report](/pdf/Simtopia_Panoptic.pdf)
+The initial economic analysis [report](/pdf/Simtopia_Panoptic.pdf) was completed by [Simtopia](https://www.simtopia.ai/) on March 7, 2023.
