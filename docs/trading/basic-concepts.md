@@ -3,7 +3,6 @@ sidebar_position: 1
 ---
 
 # Options Basics
-What options are and how to manage them.
 
 ## What are Options?
 

@@ -1,6 +1,6 @@
 {
-    "label": "terms",
-    "position": 9,
+    "label": "Glossary",
+    "position": 7,
     "link": {
         "type": "doc",
         "id": "glossary"
