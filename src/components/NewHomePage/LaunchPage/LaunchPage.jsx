@@ -7,7 +7,7 @@ const LaunchPage = () => {
   return (
     <div className="launch-page launch-background">
       <div className="launch-text">
-        <PillText>Early 2024</PillText>
+        <PillText>2024</PillText>
         <div className="launch-title">Launching on the Ethereum Mainnet</div>
         <div className="launch-subtitle">Followed by other networks</div>
       </div>
