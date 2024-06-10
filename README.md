@@ -26,6 +26,10 @@ $ ./build.sh
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service. It also ensures that the Glossary is updated.
 
+### Subgraph docs
+You can generate subgraph docs into the `subgraph-generated` directory by running `yarn graphql-to-doc`.
+Currently, some of the generated files (especially the category.yml files) have been manually modified to hide extraneous sidebar items and provide more context. Keep in mind a bit of manualy copying of generated files into to the main `subgraph` directory will be needed to stay up to date with any schema changes.
+
 ### Glossary
 
 You can generate the glossary with:
@@ -50,3 +54,4 @@ Built using [Docusaurus 2](https://docusaurus.io/).
 ### Copyright
 
 Copyright © 2023 Axicon Labs Limited. All Rights Reserved. Panoptic™ is a trademark of Axicon Labs Inc. All other trademarks and registered trademarks are the sole property of their respective owners.
+
