@@ -1,5 +1,5 @@
 ---
-slug: gamma-scalping-in-panoptic
+slug: gamma-scalping
 title: "Gamma Scalping"
 tags: [Gamma, Volatility, IV, Delta Neutral, Hedge, Straddle, Perps]
 image: /img/research/gamma-scalping-banner.png
