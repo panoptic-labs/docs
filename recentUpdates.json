@@ -1,11 +1,19 @@
 [
   {
+    "title": "Passive Liquidity Pools",
+    "date": "2024-06-24",
+    "image": "/img/banners/passive-liquidity-pools.png",
+    "link": "https://panoptic.xyz/blog/passive-liquidity-pools",
+    "description": "Panoptic's passive liquidity pools let LPs earn yield from Uniswap V3 without active management, combining V2's simplicity with V3's efficiency.",
+    "id": 1
+  },
+  {
     "title": "Panoptic Awarded Grant from Arbitrum Foundation",
     "date": "2024-06-18",
     "image": "/img/banners/arbitrum-grant-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-awarded-arbitrum-foundation-grant",
     "description": "Panoptic awarded grant from the Arbitrum Foundation for its DeFi options platform.",
-    "id": 1
+    "id": 2
   },
   {
     "title": "Panoptic Insights: June Newsletter",
@@ -13,7 +21,7 @@
     "image": "/img/banners/newsletter-banner.webp",
     "link": "https://panoptic.xyz/blog/panoptic-newsletter-june-2024",
     "description": "Panoptic's new points incentive program, Code4rena audit results, Uniswap implied volatility, bullish crypto policy, and more!",
-    "id": 2
+    "id": 3
   },
   {
     "title": "Panoptic Insights: May Newsletter",
@@ -21,7 +29,7 @@
     "image": "/img/banners/newsletter-banner.webp",
     "link": "https://panoptic.xyz/blog/panoptic-newsletter-may-2024",
     "description": "Explore the May edition of the Panoptic Newsletter for insights into DeFi-native options, the uptick in BTC option trades, volatility implied by Uniswap liquidity, and more!",
-    "id": 3
+    "id": 4
   },
   {
     "title": "Panoptic Insights: April Newsletter",
@@ -29,14 +37,6 @@
     "image": "/img/banners/newsletter-banner.webp",
     "link": "https://panoptic.xyz/blog/panoptic-newsletter-april-2024",
     "description": "Upcoming Bitcoin ETF options approval, key expiry dates, highlights from the ETH Denver summit, and more!",
-    "id": 4
-  },
-  {
-    "title": "Panoptic Launches Comprehensive Code4rena Audit for Enhanced Security",
-    "date": "2024-04-01",
-    "image": "/img/banners/code4rena-comprehensive-audit-banner.png",
-    "link": "https://panoptic.xyz/blog/panoptic-code4rena-comprehensive-audit",
-    "description": "Panoptic launches its second audit with Code4rena to secure the DeFi options protocol.",
     "id": 5
   }
 ]
