@@ -9,14 +9,14 @@ Panoptic has undergone numerous economic and security reviews by leading firms. 
 ## Smart Contract Audits
 
 ### Code4rena
-The Semi-Fungible Position Manager (SFPM) audit [report](https://code4rena.com/reports/2023-11-panoptic) was completed by [Code4rena](https://code4rena.com/) (to be published).
+The Semi-Fungible Position Manager (SFPM) audit [report](https://code4rena.com/reports/2023-11-panoptic) was completed by [Code4rena](https://code4rena.com/) on December 11, 2023.
 
-The Panoptic V1 protocol audit [report](https://code4rena.com/reports/2024-04-panoptic) was completed by Code4rena (to be published).
-<!-- - [Code4rena final review of the Panoptic V1 Protocol](https://code4rena.com/reports/2024-06-panoptic) -->
-<!-- (not published yet) -->
+The Panoptic V1 protocol audit [report](https://code4rena.com/reports/2024-04-panoptic) was completed by Code4rena on April 22, 2024.
+
+The final review of the Panoptic V1 Protocol [report](https://code4rena.com/reports/2024-06-panoptic) was completed by Code4rena on June 10, 2024 and found no High or Medium severity issues.
 
 ### Trail of Bits
-The invariant testing [report](/pdf/TrailOfBits_Panoptic.pdf) was completed by [Trail of Bits](https://www.trailofbits.com/) on June 4, 2024.
+The invariant testing [report](/pdf/TrailOfBits_Panoptic.pdf) was completed by [Trail of Bits](https://www.trailofbits.com/) on June 4, 2024 and found no issues of any severity.
 
 ### OpenZeppelin
 The second comprehensive smart contract audit [report](/pdf/OpenZeppelin_Panoptic.pdf) was completed by [OpenZeppelin](https://www.openzeppelin.com/) on December 27, 2023.
