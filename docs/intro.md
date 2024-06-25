@@ -26,7 +26,7 @@ The following sections will provide a brief overview of the _Panoptic protocol_.
 - [Panoptic Protocol](./panoptic-protocol/overview): Getting to know Panoptic's most important concepts.
 - [Options Trading 101](./trading/basic-concepts): Options trading resources.
 - [Technical Specifications](./developers/smart-contracts-overview): Learn how to build on Panoptic.
-- [Protocol Security](./security/audits): Audits, code reviews, security.
+- [Protocol Security](./security/security_audits): Audits, code reviews, security.
 
 
 ---
@@ -36,7 +36,7 @@ The following sections will provide a brief overview of the _Panoptic protocol_.
 - [Developers](./developers/smart-contracts-overview)
 - [Litepaper](https://intro.panoptic.xyz/)
 - [Whitepaper](https://paper.panoptic.xyz/)
-- [Security audits](./security/audits)
+- [Security audits](./security/security_audits)
 
 #### 10,000-Foot View of Panoptic and the DeFi Options Landscape
 - [Panoptic - The Most Detailed Exposition To Date](https://blog.panoptic.xyz/panoptic-483c6de77a0e)  
