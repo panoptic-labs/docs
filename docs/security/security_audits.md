@@ -1,8 +1,11 @@
 ---
 sidebar_position: 1
+image: /img/banners/audits-banner.png
 ---
  
 # Security & Audits
+
+![](./audits-banner.png)
 
 Panoptic has undergone numerous economic and security reviews by leading firms. The following reports are available for public review.
 
