@@ -24,7 +24,7 @@ The platform will simplify LPing for everyone, allowing users to earn yield pass
 >_"This grant represents our commitment to fostering innovation and simplifying the user experience for liquidity providers. By enabling passive liquidity provision, Panoptic’s open-source gRHO platform will open new doors for LPs, making DeFi more accessible and rewarding for everyone involved."_
 
 
-<!-- For more details about the gRHO platform and Uniswap Foundation grant, check out our full proposal. -->
+For more details about the gRHO platform and Uniswap Foundation grant, check out our full [proposal](https://docs.google.com/document/d/1BMtEJ2d64CIWNhsGOoRpGnXmeOgQt07GNpXZ-RuCcbA/edit?usp=sharing).
 
 ## Bringing Passive LP to Uniswap
 
