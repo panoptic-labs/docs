@@ -1,11 +1,19 @@
 [
   {
+    "title": "Panoptic Insights: July Newsletter",
+    "date": "2024-07-03",
+    "image": "/img/banners/newsletter-banner.webp",
+    "link": "https://panoptic.xyz/blog/panoptic-newsletter-july-2024",
+    "description": "Panoptic receives grant from Uniswap Foundation for 'gRHO' platform, publishes security audit reports, receives grant from the Arbitrum Foundation, is heading to EthCC, and more!",
+    "id": 1
+  },
+  {
     "title": "Panoptic Awarded Grant from Uniswap Foundation for 'gRHO' Platform",
     "date": "2024-07-01",
     "image": "/img/banners/uniswap-grant-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-awarded-uniswap-foundation-grant",
     "description": "Panoptic has been awarded a grant from the Uniswap Foundation to develop the gRHO platform for passive liquidity providers and token launchers on Uniswap v4.",
-    "id": 1
+    "id": 2
   },
   {
     "title": "Passive Liquidity Pools",
@@ -13,7 +21,7 @@
     "image": "/img/banners/passive-liquidity-pools.png",
     "link": "https://panoptic.xyz/blog/passive-liquidity-pools",
     "description": "Panoptic's passive liquidity pools let LPs earn yield from Uniswap V3 without active management, combining V2's simplicity with V3's efficiency.",
-    "id": 2
+    "id": 3
   },
   {
     "title": "Panoptic Awarded Grant from Arbitrum Foundation",
@@ -21,7 +29,7 @@
     "image": "/img/banners/arbitrum-grant-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-awarded-arbitrum-foundation-grant",
     "description": "Panoptic awarded grant from the Arbitrum Foundation for its DeFi options platform.",
-    "id": 3
+    "id": 4
   },
   {
     "title": "Panoptic Insights: June Newsletter",
@@ -29,14 +37,6 @@
     "image": "/img/banners/newsletter-banner.webp",
     "link": "https://panoptic.xyz/blog/panoptic-newsletter-june-2024",
     "description": "Panoptic's new points incentive program, Code4rena audit results, Uniswap implied volatility, bullish crypto policy, and more!",
-    "id": 4
-  },
-  {
-    "title": "Panoptic Insights: April Newsletter",
-    "date": "2024-04-03",
-    "image": "/img/banners/newsletter-banner.webp",
-    "link": "https://panoptic.xyz/blog/panoptic-newsletter-april-2024",
-    "description": "Upcoming Bitcoin ETF options approval, key expiry dates, highlights from the ETH Denver summit, and more!",
     "id": 5
   }
 ]
