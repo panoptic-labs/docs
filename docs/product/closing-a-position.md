@@ -68,7 +68,7 @@ Here, you can review the details of your closed positions such as the PnL, strea
 
 ## Troubleshooting Issues with Closing a Position
 
-Generally, options on Panoptic may be freely closed. However, positions with insufficient free [liquidity](/docs/product/liquidity) cannot be closed in the traditional manner. Sometimes you may be unable to close your position without first paying a fee to [force exercise](/docs/panoptic-protocol/forced-exercise) other positions. In other cases, you may need to wait for the price to move out of range or for more liquidity to be added before closing.
+Generally, options on Panoptic may be freely closed. However, positions with insufficient free [liquidity](/docs/product/liquidity) cannot be closed in the traditional manner. Sometimes you may be unable to close your position without first paying a fee to [force exercise](/docs/product/force-exercise) other positions. In other cases, you may need to wait for the price to move out of range or for more liquidity to be added before closing.
 
 ### Insufficient Liquidity
 
