@@ -4,6 +4,7 @@ title: "From CEX to DEX: How Decentralization is Revolutionizing Options - Part 
 tags: [Comparison, Pricing, IV, Vocabulary, Theta, Liquidity Pool, Uniswap]
 image: /img/research/cex-to-dex-part-1-banner.png
 description: "Explore the core differences between centralized exchanges (CEX) and decentralized exchanges (DEX). Understanding these differences helps traders and investors better navigate the crypto markets, leverage strengths, and mitigate challenges of each exchange type. Learn foundational DeFi vocabulary and discover how protocols like Panoptic are revolutionizing options trading by eliminating expiration dates and introducing innovative pricing models."
+authors: A
 ---
 
 ![](./cex-to-dex-part-1-banner.png)

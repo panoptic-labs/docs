@@ -1,3 +1,9 @@
+A:
+  name: Amy Khaldoun
+  title: Researcher
+  url: https://www.amykhaldoun.com/
+  image_url: https://pbs.twimg.com/profile_images/1765160896685305856/h1T9HYOM_400x400.jpg
+
 B:
   name: Brandon Ly
   title: Researcher
@@ -14,10 +20,16 @@ G:
   name: Guillaume Lambert
   title: Founder
   url: https://twitter.com/guil_lambert
-  image_url: https://pbs.twimg.com/profile_images/1621853038976589826/H6-5nrpM_400x400.jpg
+  image_url: https://pbs.twimg.com/profile_images/1758835136030797824/z5MoftLQ_400x400.jpg
 
 J:
   name: Jesper Kristensen
   title: Founder
   url: https://twitter.com/cryptojesperk
   image_url: https://miro.medium.com/v2/resize:fit:2400/1*SCrRFNJefaWFoYEVxCCbOA.jpeg
+
+N:
+  name: Nathan
+  title: Researcher
+  url: https://x.com/wvuprinceton18
+  image_url: https://ca.slack-edge.com/T042RRA3JT1-U071KQU8W9L-3a1a2548b402-512

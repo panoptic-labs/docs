@@ -4,6 +4,7 @@ title: "Gamma Scalping"
 tags: [Gamma, Volatility, IV, Delta Neutral, Hedge, Straddle, Perps]
 image: /img/research/gamma-scalping-banner.png
 description: "Gamma scalping in Panoptic uses continuous delta-hedging and at-the-money options to profit from market volatility, integrating traditional finance strategies with perpetual options trading."
+authors: N
 ---
 
 ![](./gamma-scalping-banner.png)
