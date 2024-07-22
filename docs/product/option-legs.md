@@ -25,7 +25,7 @@ Options trading offers unique opportunities in the financial markets. This guide
 
   
 
-Options are versatile instruments in the financial landscape, allowing traders to speculate and hedge with more flexibility compared to other financial products. A basic understanding of options – calls and puts – sets the stage for more advanced strategies.
+Options are versatile instruments in the financial landscape, allowing traders to speculate and hedge with more flexibility compared to other financial products. A basic understanding of options – [calls and puts](/docs/product/basic-options-strategies) – sets the stage for more advanced strategies.
 
   
 
