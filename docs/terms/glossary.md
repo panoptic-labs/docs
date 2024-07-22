@@ -115,7 +115,7 @@ When the underlying asset's market price is above tjhe Panoption's upper price r
 An option with no intrinsic value
 
 
-### [Panoption](/docs/terms/panoptic) 
+### [Panoption](/docs/terms/panoption) 
 A perpetual, oracle-less, decentralized, option based on Uniswap V3.
 
 
