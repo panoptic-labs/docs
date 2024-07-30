@@ -1,19 +1,11 @@
 [
   {
-    "title": "Reverse Gamma Scalping",
-    "date": "2024-07-22",
-    "image": "/img/research/reverse-gamma-scalping-banner.png",
-    "link": "https://panoptic.xyz/research/reverse-gamma-scalping",
-    "description": "Reverse Gamma Scalping in DeFi involves selling gamma with delta-hedging to profit from market volatility, leveraging strategies from traditional finance with perpetual options trading.",
-    "id": 1
-  },
-  {
     "title": "Panoptic Insights: July Newsletter",
     "date": "2024-07-03",
     "image": "/img/banners/newsletter-banner.webp",
     "link": "https://panoptic.xyz/blog/panoptic-newsletter-july-2024",
     "description": "Panoptic receives grant from Uniswap Foundation for 'gRHO' platform, publishes security audit reports, receives grant from the Arbitrum Foundation, is heading to EthCC, and more!",
-    "id": 2
+    "id": 1
   },
   {
     "title": "Panoptic Awarded Grant from Uniswap Foundation for 'gRHO' Platform",
@@ -21,7 +13,7 @@
     "image": "/img/banners/uniswap-grant-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-awarded-uniswap-foundation-grant",
     "description": "Panoptic has been awarded a grant from the Uniswap Foundation to develop the gRHO platform for passive liquidity providers and token launchers on Uniswap v4.",
-    "id": 3
+    "id": 2
   },
   {
     "title": "Passive Liquidity Pools",
@@ -29,7 +21,7 @@
     "image": "/img/banners/passive-liquidity-pools.png",
     "link": "https://panoptic.xyz/blog/passive-liquidity-pools",
     "description": "Panoptic's passive liquidity pools let LPs earn yield from Uniswap V3 without active management, combining V2's simplicity with V3's efficiency.",
-    "id": 4
+    "id": 3
   },
   {
     "title": "Panoptic Awarded Grant from Arbitrum Foundation",
@@ -37,6 +29,14 @@
     "image": "/img/banners/arbitrum-grant-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-awarded-arbitrum-foundation-grant",
     "description": "Panoptic awarded grant from the Arbitrum Foundation for its DeFi options platform.",
+    "id": 4
+  },
+  {
+    "title": "Panoptic Insights: June Newsletter",
+    "date": "2024-06-04",
+    "image": "/img/banners/newsletter-banner.webp",
+    "link": "https://panoptic.xyz/blog/panoptic-newsletter-june-2024",
+    "description": "Panoptic's new points incentive program, Code4rena audit results, Uniswap implied volatility, bullish crypto policy, and more!",
     "id": 5
   }
 ]
