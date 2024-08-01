@@ -9,9 +9,7 @@ import DownloadButton from '../src/components/DownloadButton';
 
 # Panoptic’s V1 Roadmap
 
-<DownloadButton imageUrl="https://github.com/panoptic-labs/research/blob/main/stylesheet/Roadmap.png?raw=true" fileName="Panoptic_Roadmap"/>
-
-
+<DownloadButton imageUrl="https://i.imgur.com/6Vemxbx.png" fileName="Panoptic_Roadmap"/>
 
 ---
 
