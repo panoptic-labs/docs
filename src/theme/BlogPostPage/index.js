@@ -5,9 +5,9 @@ import {BlogPostProvider, useBlogPost} from '@docusaurus/theme-common/internal';
 import BlogLayout from './BlogPageLayout';
 import BlogPostItem from './BlogPostItem';
 import BlogPostPageMetadata from '@theme/BlogPostPage/Metadata';
+import GiscusComponent from '@site/src/components/GiscusComponent';
 import TOC from '@theme/TOC';
-
-function BlogPostPageContent({children}) {
+function BlogPostPageContent({sidebar, children}) {
   const {metadata, toc} = useBlogPost();
   const {frontMatter} = metadata;
   const {
@@ -15,7 +15,6 @@ function BlogPostPageContent({children}) {
     toc_min_heading_level: tocMinHeadingLevel,
     toc_max_heading_level: tocMaxHeadingLevel,
   } = frontMatter;
-
   return (
     <BlogLayout
       toc={
@@ -28,6 +27,7 @@ function BlogPostPageContent({children}) {
         ) : undefined
       }>
       <BlogPostItem>{children}</BlogPostItem>
+      <GiscusComponent />
     </BlogLayout>
   );
 }
