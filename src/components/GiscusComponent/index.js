@@ -7,19 +7,18 @@ export default function GiscusComponent() {
 
   return (
       <Giscus 
-        src="https://giscus.app/client.js"
-        data-repo="panoptic-labs/docs"
-        data-repo-id="R_kgDOH9NNlw"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOH9NNl84ChXl2"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="purple_dark"
-        data-lang="en"
-        data-loading="lazy"
+        repo="panoptic-labs/docs"              // Your GitHub repository
+        repoId="R_kgDOH9NNlw"                  // Your GitHub repository ID
+        category="Announcements"               // Your GitHub discussion category
+        categoryId="DIC_kwDOH9NNl84ChXl2"      // Your GitHub discussion category ID
+        mapping="pathname"
+        strict="0"
+        reactionsEnabled="1"
+        emitMetadata="0"
+        inputPosition="top"
+        theme={colorMode}                      // Use colorMode for theming
+        lang="en"
+        loading="lazy"
         crossorigin="anonymous"
         async
       />
