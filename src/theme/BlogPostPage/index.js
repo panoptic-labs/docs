@@ -2,22 +2,23 @@ import React from 'react';
 import clsx from 'clsx';
 import {HtmlClassNameProvider, ThemeClassNames} from '@docusaurus/theme-common';
 import {BlogPostProvider, useBlogPost} from '@docusaurus/theme-common/internal';
-import BlogLayout from './BlogPageLayout';
-import BlogPostItem from './BlogPostItem';
+import BlogLayout from '@theme/BlogLayout';
+import BlogPostItem from '@theme/BlogPostItem';
+import BlogPostPaginator from '@theme/BlogPostPaginator';
 import BlogPostPageMetadata from '@theme/BlogPostPage/Metadata';
+import GiscusComponent from '@site/src/components/GiscusComponent';
 import TOC from '@theme/TOC';
-
-function BlogPostPageContent({children}) {
+function BlogPostPageContent({sidebar, children}) {
   const {metadata, toc} = useBlogPost();
-  const {frontMatter} = metadata;
+  const {nextItem, prevItem, frontMatter} = metadata;
   const {
     hide_table_of_contents: hideTableOfContents,
     toc_min_heading_level: tocMinHeadingLevel,
     toc_max_heading_level: tocMaxHeadingLevel,
   } = frontMatter;
-
   return (
     <BlogLayout
+      sidebar={sidebar}
       toc={
         !hideTableOfContents && toc.length > 0 ? (
           <TOC
@@ -28,6 +29,10 @@ function BlogPostPageContent({children}) {
         ) : undefined
       }>
       <BlogPostItem>{children}</BlogPostItem>
+      <GiscusComponent />
+      {(nextItem || prevItem) && (
+        <BlogPostPaginator nextItem={nextItem} prevItem={prevItem} />
+      )}
     </BlogLayout>
   );
 }

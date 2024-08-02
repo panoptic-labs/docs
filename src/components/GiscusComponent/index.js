@@ -1,4 +1,13 @@
-<script src="https://giscus.app/client.js"
+import React from 'react';
+import Giscus from "@giscus/react";
+import { useColorMode } from '@docusaurus/theme-common';
+
+export default function GiscusComponent() {
+  const { colorMode } = useColorMode();
+
+  return (
+      <Giscus 
+        src="https://giscus.app/client.js"
         data-repo="panoptic-labs/docs"
         data-repo-id="R_kgDOH9NNlw"
         data-category="Announcements"
@@ -12,5 +21,7 @@
         data-lang="en"
         data-loading="lazy"
         crossorigin="anonymous"
-        async>
-</script>
+        async
+      />
+  );
+}
