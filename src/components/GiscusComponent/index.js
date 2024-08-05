@@ -18,7 +18,7 @@ export default function GiscusComponent() {
         inputPosition="top"
         theme={colorMode}                      // Use colorMode for theming
         lang="en"
-        loading="lazy"
+        // loading="lazy"
         crossorigin="anonymous"
         async
       />
