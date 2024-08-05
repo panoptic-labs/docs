@@ -1,11 +1,19 @@
 [
   {
+    "title": "Panoptic Insights: August Newsletter",
+    "date": "2024-08-05",
+    "image": "/img/banners/newsletter-banner.webp",
+    "link": "https://panoptic.xyz/blog/panoptic-newsletter-august-2024",
+    "description": "Highlights from EthCC, insights on decentralization's impact on options trading, strategies like reverse gamma scalping, and market trends, plus upcoming events and media appearances!",
+    "id": 1
+  },
+  {
     "title": "Panoptic Insights: July Newsletter",
     "date": "2024-07-03",
     "image": "/img/banners/newsletter-banner.webp",
     "link": "https://panoptic.xyz/blog/panoptic-newsletter-july-2024",
     "description": "Panoptic receives grant from Uniswap Foundation for 'gRHO' platform, publishes security audit reports, receives grant from the Arbitrum Foundation, is heading to EthCC, and more!",
-    "id": 1
+    "id": 2
   },
   {
     "title": "Panoptic Awarded Grant from Uniswap Foundation for 'gRHO' Platform",
@@ -13,7 +21,7 @@
     "image": "/img/banners/uniswap-grant-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-awarded-uniswap-foundation-grant",
     "description": "Panoptic has been awarded a grant from the Uniswap Foundation to develop the gRHO platform for passive liquidity providers and token launchers on Uniswap v4.",
-    "id": 2
+    "id": 3
   },
   {
     "title": "Passive Liquidity Pools",
@@ -21,14 +29,6 @@
     "image": "/img/banners/passive-liquidity-pools.png",
     "link": "https://panoptic.xyz/blog/passive-liquidity-pools",
     "description": "Panoptic's passive liquidity pools let LPs earn yield from Uniswap V3 without active management, combining V2's simplicity with V3's efficiency.",
-    "id": 3
-  },
-  {
-    "title": "Panoptic Awarded Grant from Arbitrum Foundation",
-    "date": "2024-06-18",
-    "image": "/img/banners/arbitrum-grant-banner.png",
-    "link": "https://panoptic.xyz/blog/panoptic-awarded-arbitrum-foundation-grant",
-    "description": "Panoptic awarded grant from the Arbitrum Foundation for its DeFi options platform.",
     "id": 4
   },
   {
