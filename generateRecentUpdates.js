@@ -27,35 +27,34 @@ async function generateRecentUpdates() {
 
 function generatePosts(files, directory, type) {
   return files
-  // Filter out only .md files
-  .filter(file => fs.statSync(path.join(directory, file)).isDirectory())
-  // Sort files in descending order based on last modified date
-  .sort((a, b) => {
-    const dateA = fs.statSync(path.join(directory, a)).mtime;
-    const dateB = fs.statSync(path.join(directory, b)).mtime;
-    return dateB.getTime() - dateA.getTime();
-  })
+    // Filter out only directories (assuming each post is in its own directory)
+    .filter(file => fs.statSync(path.join(directory, file)).isDirectory())
+    // Sort files based on the date in the filename
+    .sort((a, b) => {
+      const dateA = getDateFromFileName(a) || '1970-01-01';
+      const dateB = getDateFromFileName(b) || '1970-01-01';
+      return new Date(dateB) - new Date(dateA);
+    })
+    .reduce((posts, subdirectory) => {
+      const filePath = path.join(directory, subdirectory);
+      const filesInSubdirectory = fs.readdirSync(filePath);
+      const mdFile = filesInSubdirectory.find(file => file.endsWith('.md'));
 
-  .reduce((posts, subdirectory) => {
-    const filePath = path.join(directory, subdirectory);
-    const filesInSubdirectory = fs.readdirSync(filePath);
-    const mdFile = filesInSubdirectory.find(file => file.endsWith('.md'));
+      if (mdFile) {
+        const fullFilePath = path.join(filePath, mdFile);
+        const title = getTitleFromFrontMatter(fullFilePath);
+        const date = getDateFromFileName(mdFile);
+        const image = getImageFromFrontMatter(fullFilePath);
+        const link = getLinkFromFrontMatter(fullFilePath, type);
+        const description = getDescriptionFromFrontMatter(fullFilePath);
 
-    if (mdFile) {
-      const fullFilePath = path.join(filePath, mdFile);
-      const title = getTitleFromFrontMatter(fullFilePath);
-      const date = getDateFromFileName(mdFile);
-      const image = getImageFromFrontMatter(fullFilePath);
-      const link = getLinkFromFrontMatter(fullFilePath, type);
-      const description = getDescriptionFromFrontMatter(fullFilePath);
+        posts.push({ title, date, image, link, description });
+      }
 
-      posts.push({ title, date, image, link, description });
-    }
-
-    return posts;
-  }, [])
-  // Get the first 5 most recent posts
-  .slice(0, 5);
+      return posts;
+    }, [])
+    // Get the first 5 most recent posts
+    .slice(0, 5);
 }
 
 function getTitleFromFrontMatter(file) {
@@ -64,11 +63,8 @@ function getTitleFromFrontMatter(file) {
 }
 
 function getDateFromFileName(file) {
-  const match = file.match(/^(\d{4}-\d{2}-\d{2})-/);
-  if (match) {
-    return match[1];
-  }
-  return null;
+  const match = file.match(/^(\d{4}-\d{2}-\d{2})/);
+  return match ? match[1] : null;
 }
 
 function getImageFromFrontMatter(file) {
