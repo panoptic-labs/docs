@@ -8,35 +8,35 @@
     "id": 1
   },
   {
+    "title": "21 Reasons Why Options Are Important In The Crypto Market",
+    "date": "2024-08-02",
+    "image": "/img/research/21-reasons-options-banner.png",
+    "link": "https://panoptic.xyz/research/reasons-why-options-important-in-crypto-market",
+    "description": "Options are the secret sauce of the crypto market, offering profit strategies for any market condition, top-notch risk management, and portfolio diversification. They boost market efficiency, unleash volatility trading, and open doors to advanced financial wizardry. With Panoptic's cutting-edge models, options are constantly evolving, setting the stage for groundbreaking on-chain pricing and volatility dynamics.",
+    "id": 2
+  },
+  {
+    "title": "Reverse Gamma Scalping",
+    "date": "2024-07-22",
+    "image": "/img/research/reverse-gamma-scalping-banner.png",
+    "link": "https://panoptic.xyz/research/reverse-gamma-scalping",
+    "description": "Reverse Gamma Scalping in DeFi involves selling gamma with delta-hedging to profit from market volatility, leveraging strategies from traditional finance with perpetual options trading.",
+    "id": 3
+  },
+  {
+    "title": "From CEX to DEX: How Decentralization is Revolutionizing Options - Part 1",
+    "date": "2024-07-11",
+    "image": "/img/research/cex-to-dex-part-1-banner.png",
+    "link": "https://panoptic.xyz/research/from-centralized-to-decentralized-exchanges-options-pricing",
+    "description": "Explore the core differences between centralized exchanges (CEX) and decentralized exchanges (DEX). Understanding these differences helps traders and investors better navigate the crypto markets, leverage strengths, and mitigate challenges of each exchange type. Learn foundational DeFi vocabulary and discover how protocols like Panoptic are revolutionizing options trading by eliminating expiration dates and introducing innovative pricing models.",
+    "id": 4
+  },
+  {
     "title": "Panoptic Insights: July Newsletter",
     "date": "2024-07-03",
     "image": "/img/banners/newsletter-banner.webp",
     "link": "https://panoptic.xyz/blog/panoptic-newsletter-july-2024",
     "description": "Panoptic receives grant from Uniswap Foundation for 'gRHO' platform, publishes security audit reports, receives grant from the Arbitrum Foundation, is heading to EthCC, and more!",
-    "id": 2
-  },
-  {
-    "title": "Panoptic Awarded Grant from Uniswap Foundation for 'gRHO' Platform",
-    "date": "2024-07-01",
-    "image": "/img/banners/uniswap-grant-banner.png",
-    "link": "https://panoptic.xyz/blog/panoptic-awarded-uniswap-foundation-grant",
-    "description": "Panoptic has been awarded a grant from the Uniswap Foundation to develop the gRHO platform for passive liquidity providers and token launchers on Uniswap v4.",
-    "id": 3
-  },
-  {
-    "title": "Passive Liquidity Pools",
-    "date": "2024-06-24",
-    "image": "/img/banners/passive-liquidity-pools.png",
-    "link": "https://panoptic.xyz/blog/passive-liquidity-pools",
-    "description": "Panoptic's passive liquidity pools let LPs earn yield from Uniswap V3 without active management, combining V2's simplicity with V3's efficiency.",
-    "id": 4
-  },
-  {
-    "title": "Panoptic Awarded Grant from Arbitrum Foundation",
-    "date": "2024-06-18",
-    "image": "/img/banners/arbitrum-grant-banner.png",
-    "link": "https://panoptic.xyz/blog/panoptic-awarded-arbitrum-foundation-grant",
-    "description": "Panoptic awarded grant from the Arbitrum Foundation for its DeFi options platform.",
     "id": 5
   }
 ]
