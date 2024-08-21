@@ -1,7 +1,7 @@
 ---
-slug: from-centralized-to-decentralized-exchanges-options-pricing
+slug: new-formulation-implied-volatility
 title: "From CEX to DEX: A New Formulation For Implied Volatility - Part 2"
-tags: [Comparison, Pricing, Perpetual Options, Theta, Uniswap, Implied volatility, DeFi]
+tags: [Pricing, Perpetual Options, Theta, Uniswap, Implied volatility]
 image: /img/research/new-iv-formula-banner.png
 description: "Explore a novel approach to calculating implied volatility (IV) in DeFi by leveraging LP positions in Uniswap v3, offering a new formula that aligns with the LPDfi ecosystem."
 authors: A
