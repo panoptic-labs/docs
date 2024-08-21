@@ -21,7 +21,7 @@ As seen in part 1 of our series "From DEX to CEX," the Panoptic protocol uses a 
 
 Moreover, in traditional finance, extracting implied volatility involves using order book data, calculating the mid-price, the greek vega, and applying the Newton-Raphson (or bisection) method. However, the decentralized ecosystem does not support these conventional steps due to the absence of bid and ask prices, order books, and vega. What's even more different is the presence of concentrated liquidity in Uniswap v3 that allows liquidity providers (LPs) to allocate their capital more efficiently by providing liquidity within a specific price range $[P_a, P_b]$ rather than across the entire spectrum.
 
-The liquidity provider (LP) ecosystem on Uniswap operates similarly to an options market. The positions taken by LPs, together with the spot trading volume on Uniswap, indicate an anticipated future volatility of the pool's price. In other words, deriving implied volatility in this scenario appears independent of the option price, unlike the traditional approach. However, it will eventually become evident that the option price is connected to elements of the liquidity pool used to calculate the implied volatility.
+The liquidity provider (LP) ecosystem on Uniswap operates similarly to an options market. The positions taken by LPs, together with the spot trading volume on Uniswap, indicate an anticipated future volatility of the pool's price. Unlike traditional options market, implied volatility is not dependent on the upfront option price, but rather the fees collected in Uniswap.
 
 ### Step 2: Collected Fees from Liquidity Provision
 
