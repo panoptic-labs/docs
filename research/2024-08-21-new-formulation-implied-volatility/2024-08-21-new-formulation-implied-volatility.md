@@ -76,6 +76,9 @@ $
 0 & \text{otherwise}
 \end{cases}
 $
+
+and
+
 $
 \int_{R} \delta(x) dx = 1
 $
@@ -84,15 +87,19 @@ The graph of $\delta(x)$ can therefore be represented by the entire x-axis and t
 
 ![](./1.png)
 
+**Figure 1:** _Graph of the Dirac distribution $\delta(x)$._
+
 **Important Definition/Theorem (See Appendix 3.2):** The Dirac function can also be perceived as the limit, as $a$ tends to 0, of the following centered Gaussian function:
 
 $
-\frac{1}{a} e^{-(x/a)^2}
+\frac{1}{a} e^{-(x/a)^2}.
 $
 
 ![](./2.png)
 
-Example: One function commonly used to approximate the Dirac delta function is $\delta_p(x) = p \cdot \text{rect}(px)$, where:
+**Figure 2:** _Approximation of the Dirac delta function using different zero-centered normal distributions._
+
+Example: One function commonly used to represent a Dirac delta function is $\delta_p(x) = p \cdot \text{rect}(px)$, where:
 
 $
 \text{rect}(px) = \begin{cases}
@@ -103,55 +110,59 @@ $
 
 ![](./3.png)
 
+**Figure 3:** *Example of Dirac delta function: Graph of the function $\delta_p(x) = p \, \text{rect}(px)$*
+
 #### Comparing the Dirac Function to Theta
 
 We aim to approximate the theta function of options by using an approximation of the Dirac function. The Dirac function increasingly resembles the theta function for options as the days to expiration (DTE) approaches 0. The figure below shows the theta of an option as a function of spot price movements for various DTEs: 7 DTE, 1 DTE, and 0.1 DTE.
 
 ![](./4.png)
 
-**Important Remark:** The red curve is the theta of a 0.1 DTE traditional option. As $\Delta t$ being the time to expiry approaches zero, theta sharpens into a narrow peak which seems to converge towards a Dirac delta function, i.e. $\lim_{t \to 0} \theta_t(S) = \delta_p(S)$ where $p \in R$ is to be found.
+**Figure 4:** *Graph illustrating the variations in theta across different days until expiration.*
+
+**Important Remark:** The red curve is the theta of a 0.1 DTE traditional option. As $\Delta t$ being the time to expiry approaches zero, theta sharpens into a narrow peak which seems to converge towards a Dirac delta function (the rectangle in the example above), i.e. $\lim_{t \to 0} \theta_t(S) = \delta_p(S)$ where $p \in \mathbb{R}$ is to be found.
 
 To understand how this theta can have a limit resembling a Dirac delta function as $t \to 0$, we analyze the components of the two expressions: the theta function and the Dirac delta function:
 
 1. The Dirac delta function, $\delta(x)$, is defined such that:
    $
-   \delta(x) = \lim_{\epsilon \to 0} \frac{1}{\epsilon \sqrt{2\pi}} \exp \left( - \frac{x^2}{2\epsilon^2} \right)
+   \delta(x) = \lim_{\epsilon \to 0} \frac{1}{\epsilon \sqrt{2\pi}} \exp \left( - \frac{x^2}{2\epsilon^2} \right).
    $
 2. The given equation for theta is:
    $
-   \theta = \frac{S \sigma}{\sqrt{8\pi t}} \exp \left( - \frac{[\ln(\frac{S}{K}) + \frac{\sigma^2 t}{2}]^2}{2 \sigma^2 t} \right)
+   \theta = \frac{S \sigma}{\sqrt{8\pi t}} \exp \left( - \frac{[\ln(\frac{S}{K}) + \frac{\sigma^2 t}{2}]^2}{2 \sigma^2 t} \right).
    $
-3. We have $A(t) := \frac{[\ln( \frac{S}{K}) + \sigma^2 t / 2]^2}{2 \sigma^2 t}$
+3. We have $A(t) := \frac{[\ln( \frac{S}{K}) + \sigma^2 t / 2]^2}{2 \sigma^2 t}.$
 4. Set $x := \ln \left( \frac{S}{K} \right)$ and $\epsilon^2 := \sigma^2 t$. Then,
    $
-   \theta \approx_{t \to 0} K \cdot e^{x \sigma^2 / 2 \epsilon \sqrt{2\pi}} \exp \left( - \frac{x^2}{2 \epsilon^2} \right)
+   \theta \approx_{t \to 0} K \cdot e^{x \sigma^2 / 2 \epsilon \sqrt{2\pi}} \exp \left( - \frac{x^2}{2 \epsilon^2} \right).
    $
 5. Setting the limit: As $t \to 0$, the function $\theta$ approximates a Dirac delta function centered at $S_t = K$ as seen in Figure 4:
    $
-   \theta \approx_{t \to 0} K \cdot e^{x \sigma^2 / 2} \delta(x)
+   \theta \approx_{t \to 0} K \cdot e^{x \sigma^2 / 2} \delta(x).
    $
 6. We need to make sure that this resulting limit is a Dirac delta function, in other words, it respects the two conditions of the definition of the Dirac delta function:
    a) At $x = 0$, we have that $e^x \delta(x) = +\infty$ and elsewhere the function equals 0.
    b) To compute the integral of the expression $e^x \delta(x)$ over the entire real line $R$, we utilize the sifting property of the delta function. This property states that for any function $f(x)$ that is continuous at $x = a$,
    $
-   \int_{-\infty}^{\infty} f(x) \delta(x - a) dx = f(a)
+   \int_{-\infty}^{\infty} f(x) \delta(x - a) dx = f(a).
    $
 
    Applying this property to the expression $e^x \delta(x)$, where $a = 0$, we have:
    $
-   \int_{-\infty}^{\infty} e^x \delta(x) dx = e^0 = 1
+   \int_{-\infty}^{\infty} e^x \delta(x) dx = e^0 = 1.
    $
 
-**Conclusion:** $K \sigma^2 / 2 e^x \delta(x)$ is a Dirac delta function scaled by $K \sigma^2 / 2$.
+   **Conclusion:** $K \sigma^2 / 2 e^x \delta(x)$ is a Dirac delta function scaled by $K \sigma^2 / 2$.
 
 7. Now, we'll assume that the theta function converges to a Dirac delta that is similar to a rectangle (as seen in Figure 4). Hence, let's determine the optimal Dirac delta function by finding the best $p \in \mathbb{R}$ in the equation:
    $
-   K e^{x \sigma^2 / 2} \delta(x) = p \cdot \text{rect}(px)
+   K e^{x \sigma^2 / 2} \delta(x) = p \cdot \text{rect}(px).
    $
 
 **Important consequence:** The area under both functions, the theta function and the Dirac delta function, are approximately equal, and we proceed to the following calculations:
 
-The minimum width of the Dirac delta function is intrinsically tied to the tick spacing of a Uniswap v3 pool.
+Keep in mind that the minimum width of the Dirac delta function is intrinsically tied to the tick spacing of a Uniswap v3 pool.
 
 | Fee Tier | Tick Spacing | Description |
 | --- | --- | --- |
