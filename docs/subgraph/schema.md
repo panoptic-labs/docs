@@ -127,7 +127,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
- Sender (e.g. user address) + '#' + tokenId, to distinguish NFPM positions from PanopticPool positions 
+ For open positions, IDs will have the structure: 'Sender address' + '#' + 'tokenId'. The sender is to distinguish NFPM/SFPM positions from PanopticPool positions. For closed and force exercised positions, the structure will be 'Sender address' + '#' + 'tokenId' + '#' + 'txn hash of close event + '#' + log index of close event'. For liquidated positions, the ID will be the same as for other closed positions but with an additional counter for the index of the liquidated position. 
 
 </td>
 </tr>
@@ -471,14 +471,18 @@ See some example queries [here](./queries).
 <tr>
 <td colspan="2" valign="top"><strong>id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
-<td></td>
+<td>
+
+ The ID of the Bundle singleton is always 1. 
+
+</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>ethPriceUSD</strong></td>
 <td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
 <td>
 
- Price of ETH in usd 
+ Price of ETH in USD. 
 
 </td>
 </tr>
@@ -857,15 +861,6 @@ See some example queries [here](./queries).
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>totalAssets</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td>
-
- Token asset supply 
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>totalShares</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
@@ -875,11 +870,29 @@ See some example queries [here](./queries).
 </td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>totalAssets</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ Total assets managed by this Collateral vault. Should be equal to `poolAssets + inAMM`. 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>poolAssets</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ Assets accounted to be held by the Panoptic Pool ‚Äî ignores donations, pending fee payouts, and other untracked balance changes. 
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>inAMM</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Tokens in AMM 
+ Tokens moved from Panoptic Pool to AMM 
 
 </td>
 </tr>
@@ -962,7 +975,7 @@ or after being used by the AccountLiquidated() event handler.
 
 ### CollateralDayData
 
- Data accumulated and condensed into day stats for each collateral 
+ Data accumulated and condensed into day stats for each collateral. If no Collateral events are emitted on a given day, there will be a missing CollateralDayData for that day. 
 
 <table>
 <thead>
@@ -1575,7 +1588,7 @@ or after being used by the AccountLiquidated() event handler.
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- TokenId of the liquidated position 
+ TokenId of the exercised position 
 
 </td>
 </tr>
@@ -3082,7 +3095,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 
 ### PanopticPoolDayData
 
- Data accumulated and condensed into day stats for each PanopticPool. Updated at the end of every Panoptic Pool event handler. This guarantees the inclusion of volume updates from SFPM event handling because SFPM events get emitted and handled before the option events. 
+ Data accumulated and condensed into day stats for each PanopticPool. If no PanopticPool events are emitted on a given day, there will be a missing PanopticPoolDayData for that day. Updated at the end of every Panoptic Pool event handler to guarantee the inclusion of volume updates from SFPM event handling (because SFPM events get emitted and handled before the option events). 
 
 <table>
 <thead>
@@ -3535,7 +3548,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 
 ### PoolDayData
 
- Data accumulated and condensed into day stats for each pool 
+ Data accumulated and condensed into day stats for each pool. If no Pool events are emitted on a given day, there will be a missing PoolDayData for that day. 
 
 <table>
 <thead>
@@ -3702,7 +3715,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
- `Format: <pool address>#<timestamp> `
+ Format: pool address + #  + timestamp 
 
 </td>
 </tr>
@@ -14747,6 +14760,46 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>totalShares</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalShares_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalShares_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalShares_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalShares_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalShares_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalShares_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalShares_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>totalAssets</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
@@ -14787,42 +14840,42 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>totalShares</strong></td>
+<td colspan="2" valign="top"><strong>poolAssets</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>totalShares_not</strong></td>
+<td colspan="2" valign="top"><strong>poolAssets_not</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>totalShares_gt</strong></td>
+<td colspan="2" valign="top"><strong>poolAssets_gt</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>totalShares_lt</strong></td>
+<td colspan="2" valign="top"><strong>poolAssets_lt</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>totalShares_gte</strong></td>
+<td colspan="2" valign="top"><strong>poolAssets_gte</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>totalShares_lte</strong></td>
+<td colspan="2" valign="top"><strong>poolAssets_lte</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>totalShares_in</strong></td>
+<td colspan="2" valign="top"><strong>poolAssets_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>totalShares_not_in</strong></td>
+<td colspan="2" valign="top"><strong>poolAssets_not_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
@@ -36731,11 +36784,15 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>collateral__totalShares</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>collateral__totalAssets</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__totalShares</strong></td>
+<td valign="top"><strong>collateral__poolAssets</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -36922,11 +36979,15 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>collateral__totalShares</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>collateral__totalAssets</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__totalShares</strong></td>
+<td valign="top"><strong>collateral__poolAssets</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -37117,11 +37178,15 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>collateral__totalShares</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>collateral__totalAssets</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__totalShares</strong></td>
+<td valign="top"><strong>collateral__poolAssets</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -37200,11 +37265,15 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>totalShares</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>totalAssets</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>totalShares</strong></td>
+<td valign="top"><strong>poolAssets</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -37497,57 +37566,81 @@ Filter for the block changed event.
 <td valign="top"><strong>Mint</strong></td>
 <td>
 
- UniswapPool 
+ Uniswap liquidity mint 
 
 </td>
 </tr>
 <tr>
 <td valign="top"><strong>Burn</strong></td>
-<td></td>
+<td>
+
+ Uniswap liquidity burn 
+
+</td>
 </tr>
 <tr>
 <td valign="top"><strong>Collect</strong></td>
-<td></td>
+<td>
+
+ Uniswap collect 
+
+</td>
 </tr>
 <tr>
 <td valign="top"><strong>TokenizedPositionBurnt</strong></td>
 <td>
 
- SemiFungiblePositionManager 
+ SFPM tokenized position burn 
 
 </td>
 </tr>
 <tr>
 <td valign="top"><strong>TokenizedPositionMinted</strong></td>
-<td></td>
+<td>
+
+ SFPM tokenized position mint 
+
+</td>
 </tr>
 <tr>
 <td valign="top"><strong>TokenizedPositionRolled</strong></td>
-<td></td>
+<td>
+
+ SFPM tokenized position roll 
+
+</td>
 </tr>
 <tr>
 <td valign="top"><strong>Deposit</strong></td>
 <td>
 
- CollateralTracker 
+ Collateral deposit (PLP liquidity deposit) 
 
 </td>
 </tr>
 <tr>
 <td valign="top"><strong>Withdraw</strong></td>
-<td></td>
+<td>
+
+ Collateral deposit (PLP liquidity withdrawal) 
+
+</td>
 </tr>
 <tr>
 <td valign="top"><strong>OptionMint</strong></td>
 <td>
 
- PanopticPool 
+ Panoption mint / position open 
 
 </td>
 </tr>
 <tr>
 <td valign="top"><strong>OptionBurn</strong></td>
-<td></td>
+<td>
+
+ Panoption burn / position close 
+
+</td>
 </tr>
 <tr>
 <td valign="top"><strong>OptionRoll</strong></td>
@@ -37555,15 +37648,27 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>AccountLiquidated</strong></td>
-<td></td>
+<td>
+
+ Liquidation of a distressed PanopticPoolAccount. All of the distressed account's positions in a specific PanopticPool get closed and the liquidator receives a bonus. 
+
+</td>
 </tr>
 <tr>
 <td valign="top"><strong>ForcedExercised</strong></td>
-<td></td>
+<td>
+
+ Force the exercise of a single position. Exercisor will have to pay a fee to the force exercisee. 
+
+</td>
 </tr>
 <tr>
 <td valign="top"><strong>PremiumSettled</strong></td>
-<td></td>
+<td>
+
+ Emitted when premium is settled independent of a mint/burn (e.g. during `settleLongPremium`)
+
+</td>
 </tr>
 </tbody>
 </table>
@@ -39752,11 +39857,15 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>collateral0__totalShares</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>collateral0__totalAssets</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral0__totalShares</strong></td>
+<td valign="top"><strong>collateral0__poolAssets</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -39792,11 +39901,15 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>collateral1__totalShares</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>collateral1__totalAssets</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral1__totalShares</strong></td>
+<td valign="top"><strong>collateral1__poolAssets</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -40142,11 +40255,15 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>collateral0__totalShares</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>collateral0__totalAssets</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral0__totalShares</strong></td>
+<td valign="top"><strong>collateral0__poolAssets</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -40174,11 +40291,15 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>collateral1__totalShares</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>collateral1__totalAssets</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral1__totalShares</strong></td>
+<td valign="top"><strong>collateral1__poolAssets</strong></td>
 <td></td>
 </tr>
 <tr>
