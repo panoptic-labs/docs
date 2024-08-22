@@ -9,3 +9,5 @@ sidebar_position: 1
 A subgraph is a derived data schema that indexes and organizes data from various decentralized protocols.
 
 The Panoptic subgraph is a comprehensive data schema designed to provide insights into the Panoptic protocol, enabling developers and users to efficiently query and analyze data related to Panoptic pools and its associated entities. The Panoptic subgraph leverages the underlying data from Uniswap pools as its foundation, upon which the Panoptic pools are built. Users can access structured data related to Panoptic pools, accounts, transactions, and more through the subgraph. This documentation serves as a guide to understanding the structure and functionality of the Panoptic subgraph, facilitating effective utilization of its capabilities.
+
+See some example queries [here](./queries).
