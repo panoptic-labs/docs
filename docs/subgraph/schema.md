@@ -127,7 +127,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
- For open positions, IDs will have the structure: 'Sender address' + '#' + 'tokenId'. The sender is to distinguish NFPM/SFPM positions from PanopticPool positions. For closed and force exercised positions, the structure will be 'Sender address' + '#' + 'tokenId' + '#' + 'txn hash of close event + '#' + log index of close event'. For liquidated positions, the ID will be the same as for other closed positions but with an additional counter for the index of the liquidated position. 
+ For open positions, IDs will have the structure: 'Sender address' + '#' + 'tokenId'. The sender is to distinguish NFPM/SFPM positions from PanopticPool positions. For closed and force exercised positions, the structure will be 'Sender address' + '#' + 'tokenId' + '#' + 'txn hash of close event' + '#' + log index of close event'. For liquidated positions, the ID will be the same as for other closed positions but with an additional counter for the index of the liquidated position ('#' + 'index of liquidated position'). 
 
 </td>
 </tr>
@@ -883,7 +883,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Assets accounted to be held by the Panoptic Pool ‚Äî ignores donations, pending fee payouts, and other untracked balance changes. 
+ Assets accounted to be held by the Panoptic Pool. Ignores donations, pending fee payouts, and other untracked balance changes. 
 
 </td>
 </tr>
@@ -893,6 +893,15 @@ See some example queries [here](./queries).
 <td>
 
  Tokens moved from Panoptic Pool to AMM 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>poolUtilization</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ Pool utilization represents how many funds are in the AMM pool, times 10,000, over the total assets controlled by the Panoptic pool. 
 
 </td>
 </tr>
@@ -2953,7 +2962,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Number of collateral shares Collateral0 
+ Number of Collateral0 shares this PanopticPoolAccount controls 
 
 </td>
 </tr>
@@ -2962,7 +2971,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Number of collateral assets Collateral0 
+ Number of Collateral0 assets this PanopticPoolAccount controls 
 
 </td>
 </tr>
@@ -2980,7 +2989,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Number of collateral shares Collateral1 
+ Number of Collateral1 shares this PanopticPoolAccount controls 
 
 </td>
 </tr>
@@ -2989,7 +2998,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Number of collateral assets Collateral1 
+ Number of Collateral1 assets this PanopticPoolAccount controls 
 
 </td>
 </tr>
@@ -14916,6 +14925,46 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>inAMM_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>poolUtilization</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>poolUtilization_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>poolUtilization_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>poolUtilization_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>poolUtilization_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>poolUtilization_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>poolUtilization_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>poolUtilization_not_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
@@ -36800,6 +36849,10 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>collateral__poolUtilization</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>collateral__index</strong></td>
 <td></td>
 </tr>
@@ -36992,6 +37045,10 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>collateral__inAMM</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__poolUtilization</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -37194,6 +37251,10 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>collateral__poolUtilization</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>collateral__index</strong></td>
 <td></td>
 </tr>
@@ -37278,6 +37339,10 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>inAMM</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>poolUtilization</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -39873,6 +39938,10 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>collateral0__poolUtilization</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>collateral0__index</strong></td>
 <td></td>
 </tr>
@@ -39914,6 +39983,10 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>collateral1__inAMM</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral1__poolUtilization</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -40271,6 +40344,10 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>collateral0__poolUtilization</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>collateral0__index</strong></td>
 <td></td>
 </tr>
@@ -40304,6 +40381,10 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>collateral1__inAMM</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral1__poolUtilization</strong></td>
 <td></td>
 </tr>
 <tr>
