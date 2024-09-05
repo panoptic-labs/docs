@@ -128,31 +128,10 @@ Based on this calculation, an account can be liquidated if `Total value of colla
 ### Liquidation Bonus
 
 The liquidation bonus for liquidating an account is determined by two factors:  
-i) The collateral balance of the account to be liquidated
-ii) The insolvency of the account to be liquidated
+i) *Account Insolvency*: Accounts with greater insolvency offer bigger bonuses, but the bonus is capped at half of the collateral balance.
+ii) *Collateral Balance*: Higher collateral balances increase the maximum potential bonus.
 
 The formula for calculating the liquidation bonus is as follows:
 `Bonus = min{Collateral Balance / 2, Collateral Requirement at TWAP - Collateral Balance at TWAP}`
-
-It is worth revisiting the figure shown in the [Margin](/docs/panoptic-protocol/margin) page, where the size of the bonus and the amount of loss incurred by the protocol is highlighted.
-
-import ThemedImage from '@theme/ThemedImage';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
-
-<ThemedImage
-  alt="Commissions"
-  sources={{
-    light: useBaseUrl('/img/MarginRequirements.svg'),
-    dark: useBaseUrl('/img/MarginRequirements.svg'),
-  }}
-/>
-
-A few key points from the liquidation process:
-
-1. The liquidatee's collateral is used to exercise the in-the-money options *and* pay the liquidator
-2. The bonus to the liquidator will be equal to zero if the price falls below `strike` - `CollateralRequirement`
-3. The bonus will stay at zero as the price decreases further.
-4. The liquidator will be compensated by the protocol loss and will be rewarded by not losing anything (as opposed to the rest of the Panoptic Liquidity Providers who will share that loss amongst themselves)
 
 The goal of the liquidation system is to incentivize *Panoptic Liquidity Providers* to be liquidators as well, since a healthy liquidation system means the pool will never incur a loss.
