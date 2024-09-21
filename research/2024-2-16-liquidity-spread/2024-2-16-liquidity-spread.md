@@ -35,7 +35,7 @@ Implied volatility (IV) represents the market's expectations for the volatility 
 
 ### Spread as Bonus Yield
 
-In the context of Uniswap Liquidity Providers (LPs), the spread offers LPs an additional source of yield for lending out their LP tokens, which act of lending is [akin to selling a perpetual option](https://panoptic.xyz/research/defi-put-options-uniswap-backtest#lp--short-put). This arrangement enhances the returns on LPing, presenting an attractive opportunity for LPs to maximize their earnings.
+In the context of Uniswap Liquidity Providers (LPs), the spread offers LPs an additional source of yield for lending out their LP tokens, as the act of lending is [akin to selling a perpetual option](https://panoptic.xyz/research/defi-put-options-uniswap-backtest#lp--short-put). This arrangement enhances the returns on LPing, presenting an attractive opportunity for LPs to maximize their earnings.
 
 ![](./3.png)
 
@@ -61,11 +61,11 @@ Both buyers and sellers can deploy strategies to capitalize on the spread dynami
 
 -   For Sellers: Monitoring market trends and liquidity can help anticipate when the spread might widen, potentially increasing returns from options sold.
 -   For Buyers: Identifying periods when the spread narrows could reduce the cost of purchasing options, enabling more strategic entry points into the market.
-    
+
 
 ### Setting Spread Tolerance on the App
 
 Panoptic allows traders to [set a maximum limit](https://panoptic.xyz/research/opening-a-position-on-panoptic#slippage-tolerance-and-spread-limit) on the spread when buying an option, providing a mechanism to manage risk when entering a position. It's important to note that this setting does not affect positions after they are opened. Traders should remain vigilant, as widening spreads after opening a position won't automatically adjust or close the position, emphasizing the need for active management and monitoring of open trades.
 
-  
+
 *Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our social media platforms. To learn more about Panoptic and all things DeFi options, check out our docs and head to our website.*
