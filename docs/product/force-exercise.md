@@ -1,5 +1,5 @@
 ---
-sidebar_position: 12
+sidebar_position: 11
 slug: force-exercise
 title: "Force Exercise"
 tags: [Tutorial, Risk Management]
