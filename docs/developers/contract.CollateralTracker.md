@@ -5,7 +5,7 @@ sidebar_position: 3
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core-private/blob/43b745d55cc99a535a2ac086cddc74a3b26c5fba/contracts/CollateralTracker.sol)
 
 **Inherits:**
-[ERC20Minimal](/docs/developers/tokens/abstract.ERC20Minimal.md), [Multicall](/docs/developers/base/abstract.Multicall.md)
+[ERC20Minimal](/docs/developers/tokens/abstract.ERC20Minimal), [Multicall](/docs/developers/base/abstract.Multicall)
 
 **Author:**
 Axicon Labs Limited
@@ -367,7 +367,7 @@ function decimals() external view returns (uint8);
 
 ### transfer
 
-*See [IERC20-transfer](/docs/developers/tokens/abstract.ERC20Minimal.md#transfer).
+*See [IERC20-transfer](/docs/developers/tokens/abstract.ERC20Minimal#transfer).
 Requirements:
 - the caller must have a balance of at least 'amount'.
 - the msg.sender must not have any position on the panoptic pool*
@@ -379,7 +379,7 @@ function transfer(address recipient, uint256 amount) public override(ERC20Minima
 
 ### transferFrom
 
-*See [IERC20-transferFrom](/docs/developers/tokens/abstract.ERC20Minimal.md#transferfrom).
+*See [IERC20-transferFrom](/docs/developers/tokens/abstract.ERC20Minimal#transferfrom).
 Requirements:
 - the 'from' must have a balance of at least 'amount'.
 - the caller must have allowance for 'from' of at least 'amount' tokens.

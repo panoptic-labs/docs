@@ -5,7 +5,7 @@ sidebar_position: 1
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core-private/blob/43b745d55cc99a535a2ac086cddc74a3b26c5fba/contracts/SemiFungiblePositionManager.sol)
 
 **Inherits:**
-[ERC1155](/docs/developers/tokens/abstract.ERC1155.md), [Multicall](/docs/developers/base/abstract.Multicall.md), TransientReentrancyGuard
+[ERC1155](/docs/developers/tokens/abstract.ERC1155), [Multicall](/docs/developers/base/abstract.Multicall), TransientReentrancyGuard
 
 **Author:**
 Axicon Labs Limited
