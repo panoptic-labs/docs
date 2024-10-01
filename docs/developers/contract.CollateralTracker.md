@@ -367,7 +367,7 @@ function decimals() external view returns (uint8);
 
 ### transfer
 
-*See [IERC20-transfer](/docs/developers/tokens/ERC20Minimal.sol/abstract.ERC20Minimal.md#transfer).
+*See [IERC20-transfer](/docs/developers/tokens/abstract.ERC20Minimal.md#transfer).
 Requirements:
 - the caller must have a balance of at least 'amount'.
 - the msg.sender must not have any position on the panoptic pool*
@@ -379,7 +379,7 @@ function transfer(address recipient, uint256 amount) public override(ERC20Minima
 
 ### transferFrom
 
-*See [IERC20-transferFrom](/docs/developers/tokens/ERC20Minimal.sol/abstract.ERC20Minimal.md#transferfrom).
+*See [IERC20-transferFrom](/docs/developers/tokens/abstract.ERC20Minimal.md#transferfrom).
 Requirements:
 - the 'from' must have a balance of at least 'amount'.
 - the caller must have allowance for 'from' of at least 'amount' tokens.

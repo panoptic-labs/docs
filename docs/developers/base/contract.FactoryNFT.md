@@ -2,7 +2,7 @@
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core-private/blob/43b745d55cc99a535a2ac086cddc74a3b26c5fba/contracts/base/FactoryNFT.sol)
 
 **Inherits:**
-[MetadataStore](/contracts/base/MetadataStore.sol/contract.MetadataStore.md), ERC721
+[MetadataStore](/contracts/base/contract.MetadataStore.md), ERC721
 
 Constructs dynamic SVG art and metadata for Panoptic Factory NFTs from a set of building blocks.
 
