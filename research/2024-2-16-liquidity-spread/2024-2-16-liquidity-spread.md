@@ -35,7 +35,7 @@ Implied volatility (IV) represents the market's expectations for the volatility 
 
 ### Spread as Bonus Yield
 
-In the context of Uniswap Liquidity Providers (LPs), the spread offers LPs an additional source of yield for lending out their LP tokens, which act of lending is [akin to selling a perpetual option](https://panoptic.xyz/research/defi-put-options-uniswap-backtest#lp--short-put). This arrangement enhances the returns on LPing, presenting an attractive opportunity for LPs to maximize their earnings.
+In the context of Uniswap Liquidity Providers (LPs), the spread offers LPs an additional source of yield for lending out their LP tokens. Note that lending out an LP token is [akin to selling a perpetual option](https://panoptic.xyz/research/defi-put-options-uniswap-backtest#lp--short-put). This arrangement enhances the returns on LPing, presenting an attractive opportunity for LPs to maximize their earnings.
 
 ![](./3.png)
 
