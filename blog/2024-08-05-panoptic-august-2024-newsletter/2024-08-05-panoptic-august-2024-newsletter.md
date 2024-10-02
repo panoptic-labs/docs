@@ -6,6 +6,8 @@ image: /img/banners/newsletter-banner.webp
 description: "Highlights from EthCC, insights on decentralization's impact on options trading, strategies like reverse gamma scalping, and market trends, plus upcoming events and media appearances!"
 ---
 
+![](/img/banners/newsletter-banner.webp)
+
 Welcome Panoptimists to the August edition of the Panoptic Newsletter, where we provide industry insights, research recaps, and Panoptic-specific content to keep you updated on our DeFi-native options platform.
 
 If you want future newsletters sent directly to your email, signup on our [website](https://panoptic.xyz/).
