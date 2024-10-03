@@ -564,7 +564,7 @@ function _mintInSFPMAndUpdateCollateral(
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`uint32`|poolUtilizations Packing of the pool utilization (how much funds are in the Panoptic pool versus the AMM pool) at the time of minting, right 64bits for token0 and left 64bits for token1. When safeMode is active, it returns 100% pool utilization for both tokens|
+|`<none>`|`uint32`|Packing of the pool utilization (how much funds are in the Panoptic pool versus the AMM pool) at the time of minting, right 64bits for token0 and left 64bits for token1. When safeMode is active, it returns 100% pool utilization for both tokens|
 
 
 ### _payCommissionAndWriteData
