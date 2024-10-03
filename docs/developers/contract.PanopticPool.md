@@ -397,8 +397,8 @@ function calculateAccumulatedFeesBatch(address user, bool includePendingPremium,
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`LeftRightUnsigned`|shortPremium The total amount of premium owed (which may `includePendingPremium`) to the short legs in `positionIdList` (token0: right slot, token1: left slot)|
-|`<none>`|`LeftRightUnsigned`|longPremium The total amount of premium owed by the long legs in `positionIdList` (token0: right slot, token1: left slot)|
+|`<none>`|`LeftRightUnsigned`|The total amount of premium owed (which may `includePendingPremium`) to the short legs in `positionIdList` (token0: right slot, token1: left slot)|
+|`<none>`|`LeftRightUnsigned`|The total amount of premium owed by the long legs in `positionIdList` (token0: right slot, token1: left slot)|
 |`<none>`|`uint256[2][]`|A list of balances and pool utilization for each position, of the form [[tokenId0, balances0], [tokenId1, balances1], ...]|
 
 
