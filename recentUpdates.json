@@ -1,11 +1,19 @@
 [
   {
+    "title": "Bringing Passive Liquidity to Uniswap",
+    "date": "2024-10-08",
+    "image": "/img/banners/bringing-passive-liquidity-to-uniswap.png",
+    "link": "https://panoptic.xyz/blog/bringing-passive-liquidity-to-uniswap",
+    "description": "Panoptic simplifies liquidity provision on Uniswap V3 by allowing users to passively earn yield without active management.",
+    "id": 1
+  },
+  {
     "title": "Panoptic Insights: October Newsletter",
     "date": "2024-10-02",
     "image": "/img/banners/newsletter-banner.webp",
     "link": "https://panoptic.xyz/blog/panoptic-newsletter-october-2024",
     "description": "Explore Panoptic's latest insights on DeFi options, including recent implied volatility on Uniswap V3, uncertainty in the options markets before U.S. elections, and upcoming platform updates in our October newsletter.",
-    "id": 1
+    "id": 2
   },
   {
     "title": "Panoptic Solves LVR",
@@ -13,7 +21,7 @@
     "image": "/img/research/LVR-banner.png",
     "link": "https://panoptic.xyz/research/panoptic-solves-lvr",
     "description": "Panoptic addresses the issue of Loss-Versus-Rebalancing (LVR) for Uniswap LPs by boosting LP returns through LP token lending markets, passive liquidity provision, and the ability to short LP tokens, turning LVR from a risk into a strategic opportunity.",
-    "id": 2
+    "id": 3
   },
   {
     "title": "Panoptic Insights: September Newsletter",
@@ -21,7 +29,7 @@
     "image": "/img/banners/newsletter-banner.webp",
     "link": "https://panoptic.xyz/blog/panoptic-newsletter-september-2024",
     "description": "Explore Panoptic's latest insights on DeFi options, including Uniswap V3's impact on implied volatility, bullish sentiment heading into Q4, and upcoming platform updates in our September newsletter.",
-    "id": 3
+    "id": 4
   },
   {
     "title": "From CEX to DEX: A New Formulation For Implied Volatility - Part 2",
@@ -29,14 +37,6 @@
     "image": "/img/research/new-iv-formula-banner.png",
     "link": "https://panoptic.xyz/research/new-formulation-implied-volatility",
     "description": "Explore a novel approach to calculating implied volatility (IV) in DeFi by leveraging LP positions in Uniswap v3, offering a new formula that aligns with the LPDfi ecosystem.",
-    "id": 4
-  },
-  {
-    "title": "Panoptic Insights: August Newsletter",
-    "date": "2024-08-05",
-    "image": "/img/banners/newsletter-banner.webp",
-    "link": "https://panoptic.xyz/blog/panoptic-newsletter-august-2024",
-    "description": "Highlights from EthCC, insights on decentralization's impact on options trading, strategies like reverse gamma scalping, and market trends, plus upcoming events and media appearances!",
     "id": 5
   }
 ]
