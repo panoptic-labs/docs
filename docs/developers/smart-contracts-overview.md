@@ -1,8 +1,8 @@
 ---
-sidebar_position: 1
+sidebar_position: 0
 ---
 # Smart contracts overview
-Panoptic smart contracts directly interface with Uniswap v3's core contracts to create an options market.
+Panoptic smart contracts directly interface with Uniswap V3's core contracts to create an options market.
 
 ---
 
@@ -27,38 +27,21 @@ The interface for a Uniswap V3 Pool. A Uniswap pool facilitates swapping and aut
 
 Panoptic deploys contracts that interact with the already-deployed UniswapV3Pool.sol contracts.
 
-### [SemiFungiblePositionManager.sol](/docs/developers/semifungiblepositionmanager)
-The SFPM smart contract manages LP position using the ERC1155 interface.
+# Contents
+- [CollateralTracker](/docs/developers/contract.CollateralTracker)
+  - Tracks and manages collateral using a shares model.
+- [PanopticFactory](/docs/developers/contract.PanopticFactory)
+  - Deploys an options market on top of an existing Uniswap V3 pool. 
+- [PanopticPool](/docs/developers/contract.PanopticPool)
+  - Creates and manages undercollateralized options. Manages positions, collateral, liquidations and forced exercises.
+- [SemiFungiblePositionManager](/docs/developers/contract.SemiFungiblePositionManager)
+  - The Semi-fungible Position Manager contract for Panoptic replaces the functionalities of the Nonfungible Position Manager from Uniswap v3-periphery. Wraps up to 4-legged Uniswap V3 positions in the ERC1155 semi-fungible token interface.
+- [base](/docs/developers/base/abstract.Multicall)
+  - Inherited metadata and multicall contracts
+- [libraries](/docs/developers/libraries/library.CallbackLib)
+- [tokens](/docs/developers/tokens/interfaces/interface.IERC20Partial)
+  - Token implementations and interfaces used in the contracts
+- [types](/docs/developers/types/library.LeftRightLibrary)
+  - Custom data types used in the contracts
 
-The Semifungible Position Manager contract for Panoptic replaces the functionalities of the Nonfungible Position Manager from Uniswap v3-periphery. Wraps up to 4-legged Uniswap V3 positions in the ERC1155 non-fungible token interface
-
-
-### [PanopticFactory.sol](/docs/developers/panopticfactory)
-Deploys an options market on top of an existing Uniswap v3 pool.
-
-
-### [PanopticPool.sol](/docs/developers/panopticpool)
-Creates and manages undercollateralized options. Manages positions, collateral, liquidations and forced exercises.
-
-Panoptic Pool, create permissionless option on top of Uniswap V3
-
-
-### [CollateralTracker.sol](/docs/developers/collateral-tracker)
-Tracks and manages collateral using a shares model.
-
-### (periphery) NFPMigrator.sol
-
----
-
-## Events
-
-
-
----
-
-## Libraries
-
-### TokenId.sol
-
-### LeftRight.sol
 
