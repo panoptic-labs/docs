@@ -1,5 +1,5 @@
 ---
-sidebar_position: 12
+sidebar_position: 13
 slug: closing-a-position
 title: "Closing a Position"
 tags: [Tutorial, Risk Management]
