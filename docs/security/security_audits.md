@@ -11,10 +11,15 @@ Panoptic has undergone numerous economic and security reviews by leading firms. 
 
 ## Smart Contract Audits
 
-### Code4rena
-The final review of the Panoptic V1 Protocol [report](https://code4rena.com/reports/2024-06-panoptic) was completed by [Code4rena](https://code4rena.com/) on June 10, 2024 and found _**no High or Medium severity issues**_.
+### Cantina
+We're gearing up for our launch on Uniswap V4! Our Panoptic V1.1 integration is currently being audited on [Cantina](https://cantina.xyz/competitions/8773f033-afa5-4e7b-b0e8-8f989062ae8a).
 
-The Panoptic V1 protocol audit [report](https://code4rena.com/reports/2024-04-panoptic) was completed by Code4rena on April 22, 2024.
+### Code4rena
+The final review of the Panoptic V1 Protocol [report](https://code4rena.com/reports/2024-09-panoptic) was completed by [Code4rena](https://code4rena.com/) on October 10, 2024 and found _**no High or Medium severity issues**_.
+
+The second Panoptic V1 protocol audit [report](https://code4rena.com/reports/2024-06-panoptic) was completed by Code4rena on June 10, 2024.
+
+The initial Panoptic V1 protocol audit [report](https://code4rena.com/reports/2024-04-panoptic) was completed by Code4rena on April 22, 2024.
 
 The Semi-Fungible Position Manager (SFPM) audit [report](https://code4rena.com/reports/2023-11-panoptic) was completed by Code4rena on December 11, 2023.
 
