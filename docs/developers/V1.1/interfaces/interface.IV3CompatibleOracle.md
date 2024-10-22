@@ -1,5 +1,5 @@
 # IV3CompatibleOracle
-[Git Source](https://github.com/panoptic-labs/panoptic-v1-core-private/blob/198dc6b16daa5f29e4cdcc6e68a008a20c892670/contracts/interfaces/IV3CompatibleOracle.sol)
+[Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.1.x/contracts/interfaces/IV3CompatibleOracle.sol)
 
 **Author:**
 Axicon Labs Inc, credit to Uniswap Labs [https://github.com/Uniswap/v3-core](https://github.com/Uniswap/v3-core) under GPL-2.0 license

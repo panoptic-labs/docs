@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 # PanopticFactory
-[Git Source](https://github.com/panoptic-labs/panoptic-v1-core-private/blob/43b745d55cc99a535a2ac086cddc74a3b26c5fba/contracts/PanopticFactory.sol)
+[Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.1.x/contracts/PanopticFactory.sol)
 
 **Inherits:**
 [FactoryNFT](/docs/developers/base/contract.FactoryNFT), [Multicall](/docs/developers/base/abstract.Multicall)

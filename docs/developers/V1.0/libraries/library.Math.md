@@ -1,5 +1,5 @@
 # Math
-[Git Source](https://github.com/panoptic-labs/panoptic-v1-core-private/blob/43b745d55cc99a535a2ac086cddc74a3b26c5fba/contracts/libraries/Math.sol)
+[Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.0.x/contracts/libraries/Math.sol)
 
 **Author:**
 Axicon Labs Limited
