@@ -24,7 +24,7 @@ Panoptic V1.1 is an upgrade to Panoptic V1 that introduces the ability to create
   - Inherited metadata and multicall contracts
 - [interfaces](/docs/developers/V1.1/interfaces/interface.IV3CompatibleOracle)
   - Custom interfaces used in the contracts
-- [libraries](/docs/developers/V1.1/libraries/library.CallbackLib)
+- [libraries](/docs/developers/V1.1/libraries/library.Constants)
 - [tokens](/docs/developers/V1.1/tokens/interfaces/interface.IERC20Partial)
   - Token implementations and interfaces used in the contracts
 - [types](/docs/developers/V1.1/types/library.LeftRightLibrary)
