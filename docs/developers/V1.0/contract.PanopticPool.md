@@ -136,10 +136,10 @@ int256 internal constant MAX_TICKS_DELTA = 953;
 
 
 ### MAX_SPREAD
-The maximum allowed ratio for a single chunk, defined as: removedLiquidity / netLiquidity.
+The maximum allowed ratio for a single chunk, defined as `removedLiquidity / netLiquidity`.
 
 *The long premium spread multiplier that corresponds with the MAX_SPREAD value depends on VEGOID,
-which can be explored in this calculator: https://www.desmos.com/calculator/mdeqob2m04.*
+which can be explored in this calculator: [https://www.desmos.com/calculator/mdeqob2m04](https://www.desmos.com/calculator/mdeqob2m04).*
 
 
 ```solidity
@@ -184,7 +184,7 @@ SemiFungiblePositionManager internal immutable SFPM;
 
 
 ### s_univ3pool
-The Uniswap v3 pool that this instance of Panoptic is deployed on.
+The Uniswap V3 pool that this instance of Panoptic is deployed on.
 
 
 ```solidity
@@ -235,7 +235,7 @@ mapping(address account => mapping(TokenId tokenId => mapping(uint256 leg => Lef
 ### s_grossPremiumLast
 Per-chunk `last` value that gives the aggregate amount of premium owed to all sellers when multiplied by the total amount of liquidity `totalLiquidity`.
 
-*totalGrossPremium = totalLiquidity * (grossPremium(perLiquidityX64) - lastGrossPremium(perLiquidityX64)) / 2**64.*
+*`totalGrossPremium = totalLiquidity * (grossPremium(perLiquidityX64) - lastGrossPremium(perLiquidityX64)) / 2**64`*
 
 *Used to compute the denominator for the fraction of premium available to sellers to collect.*
 
@@ -272,7 +272,7 @@ mapping(address account => mapping(TokenId tokenId => PositionBalance positionBa
 
 
 ### s_positionsHash
-Tracks the position list hash i.e keccak256(XORs of abi.encodePacked(positionIdList)).
+Tracks the position list hash (i.e `keccak256(XORs of abi.encodePacked(positionIdList))`).
 
 *The order and content of this list (the preimage for the hash) is emitted in an event every time it is changed.*
 
@@ -309,7 +309,7 @@ constructor(SemiFungiblePositionManager _sfpm);
 
 ### startPool
 
-Initializes a Panoptic Pool on top of an existing Uniswap v3 + collateral vault pair.
+Initializes a Panoptic Pool on top of an existing Uniswap V3 + collateral vault pair.
 
 *Must be called first (by a factory contract) before any transaction can occur.*
 
@@ -327,7 +327,7 @@ function startPool(
 
 |Name|Type|Description|
 |----|----|-----------|
-|`_univ3pool`|`IUniswapV3Pool`|Address of the target Uniswap v3 pool|
+|`_univ3pool`|`IUniswapV3Pool`|Address of the target Uniswap V3 pool|
 |`token0`|`address`|Address of the pool's token0|
 |`token1`|`address`|Address of the pool's token1|
 |`collateralTracker0`|`CollateralTracker`|Address of the collateral vault for token0|
@@ -374,13 +374,13 @@ function validateCollateralWithdrawable(address user, TokenId[] calldata positio
 |`positionIdList`|`TokenId[]`|The list of all option positions held by `user`|
 
 
-### calculateAccumulatedFeesBatch
+### getAccumulatedFeesAndPositionsData
 
-Compute the total amount of premium accumulated for a list of positions.
+Returns the total amount of premium accumulated for a list of positions and a list containing the corresponding `PositionBalance` information for each position.
 
 
 ```solidity
-function calculateAccumulatedFeesBatch(address user, bool includePendingPremium, TokenId[] calldata positionIdList)
+function getAccumulatedFeesAndPositionsData(address user, bool includePendingPremium, TokenId[] calldata positionIdList)
     external
     view
     returns (LeftRightUnsigned, LeftRightUnsigned, uint256[2][] memory);
@@ -391,7 +391,7 @@ function calculateAccumulatedFeesBatch(address user, bool includePendingPremium,
 |----|----|-----------|
 |`user`|`address`|Address of the user that owns the positions|
 |`includePendingPremium`|`bool`|If true, include premium that is owed to the user but has not yet settled; if false, only include premium that is available to collect|
-|`positionIdList`|`TokenId[]`|List of positions. Written as [tokenId1, tokenId2, ...]|
+|`positionIdList`|`TokenId[]`|List of positions. Written as `[tokenId1, tokenId2, ...]`|
 
 **Returns**
 
@@ -399,7 +399,7 @@ function calculateAccumulatedFeesBatch(address user, bool includePendingPremium,
 |----|----|-----------|
 |`<none>`|`LeftRightUnsigned`|The total amount of premium owed (which may `includePendingPremium`) to the short legs in `positionIdList` (token0: right slot, token1: left slot)|
 |`<none>`|`LeftRightUnsigned`|The total amount of premium owed by the long legs in `positionIdList` (token0: right slot, token1: left slot)|
-|`<none>`|`uint256[2][]`|A list of balances and pool utilization for each position, of the form [[tokenId0, balances0], [tokenId1, balances1], ...]|
+|`<none>`|`uint256[2][]`|A list of `PositionBalance` data (balance and pool utilization/oracle ticks at last mint) for each position, of the form `[[tokenId0, PositionBalance_0], [tokenId1, PositionBalance_1], ...]`|
 
 
 ### _calculateAccumulatedPremia
@@ -424,7 +424,7 @@ function _calculateAccumulatedPremia(
 |`positionIdList`|`TokenId[]`|The list of all option positions held by user|
 |`computeAllPremia`|`bool`|Whether to compute accumulated premia for all legs held by the user (true), or just owed premia for long legs (false)|
 |`includePendingPremium`|`bool`|If true, include premium that is owed to the user but has not yet settled; if false, only include premium that is available to collect|
-|`atTick`|`int24`||
+|`atTick`|`int24`|The current tick of the Uniswap pool|
 
 **Returns**
 
@@ -432,12 +432,12 @@ function _calculateAccumulatedPremia(
 |----|----|-----------|
 |`shortPremium`|`LeftRightUnsigned`|The total amount of premium owed (which may `includePendingPremium`) to the short legs in `positionIdList` (token0: right slot, token1: left slot)|
 |`longPremium`|`LeftRightUnsigned`|The total amount of premium owed by the long legs in `positionIdList` (token0: right slot, token1: left slot)|
-|`balances`|`uint256[2][]`|A list of balances and pool utilization for each position, of the form [[tokenId0, balances0], [tokenId1, balances1], ...]|
+|`balances`|`uint256[2][]`|A list of balances and pool utilization for each position, of the form `[[tokenId0, balances0], [tokenId1, balances1], ...]`|
 
 
 ### pokeMedian
 
-Updates the internal median with the last Uniswap observation if the MEDIAN_PERIOD has elapsed.
+Updates the internal median with the last Uniswap observation if the `MEDIAN_PERIOD` has elapsed.
 
 
 ```solidity
@@ -462,9 +462,9 @@ function mintOptions(
 
 |Name|Type|Description|
 |----|----|-----------|
-|`positionIdList`|`TokenId[]`|The list of currently held positions by the user, where the newly minted position(token) will be the last element in 'positionIdList'|
+|`positionIdList`|`TokenId[]`|The list of currently held positions by the user, where the newly minted position(token) will be the last element in `positionIdList`|
 |`positionSize`|`uint128`|The size of the position to be minted, expressed in terms of the asset|
-|`effectiveLiquidityLimitX32`|`uint64`|Maximum amount of "spread" defined as removedLiquidity/netLiquidity for a new position and denominated as X32 = (ratioLimit * 2**32)|
+|`effectiveLiquidityLimitX32`|`uint64`|Maximum amount of "spread" defined as `removedLiquidity/netLiquidity` for a new position and denominated as X32 = (`ratioLimit * 2^32`)|
 |`tickLimitLow`|`int24`|The lower bound of an acceptable open interval for the ending price|
 |`tickLimitHigh`|`int24`|The upper bound of an acceptable open interval for the ending price|
 
@@ -529,9 +529,9 @@ function _mintOptions(
 
 |Name|Type|Description|
 |----|----|-----------|
-|`positionIdList`|`TokenId[]`|The list of currently held positions by the user, where the newly minted position(token) will be the last element in 'positionIdList'|
+|`positionIdList`|`TokenId[]`|The list of currently held positions by the user, where the newly minted position(token) will be the last element in `positionIdList`|
 |`positionSize`|`uint128`|The size of the position to be minted, expressed in terms of the asset|
-|`effectiveLiquidityLimitX32`|`uint64`|Maximum amount of "spread" defined as removedLiquidity/netLiquidity for a new position and denominated as X32 = (ratioLimit * 2**32)|
+|`effectiveLiquidityLimitX32`|`uint64`|Maximum amount of "spread" defined as `removedLiquidity/netLiquidity` for a new position and denominated as X32 = (`ratioLimit * 2^32`)|
 |`tickLimitLow`|`int24`|The lower bound of an acceptable open interval for the ending price|
 |`tickLimitHigh`|`int24`|The upper bound of an acceptable open interval for the ending price|
 
@@ -548,7 +548,7 @@ function _mintInSFPMAndUpdateCollateral(
     uint64 effectiveLiquidityLimitX32,
     int24 tickLimitLow,
     int24 tickLimitHigh
-) internal returns (uint32);
+) internal returns (uint32 poolUtilizations, LeftRightUnsigned commissions);
 ```
 **Parameters**
 
@@ -564,7 +564,8 @@ function _mintInSFPMAndUpdateCollateral(
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`uint32`|Packing of the pool utilization (how much funds are in the Panoptic pool versus the AMM pool) at the time of minting, right 64bits for token0 and left 64bits for token1. When safeMode is active, it returns 100% pool utilization for both tokens|
+|`poolUtilizations`|`uint32`|Packing of the pool utilization (how much funds are in the Panoptic pool versus the AMM pool) at the time of minting, right 64bits for token0 and left 64bits for token1. When safeMode is active, it returns 100% pool utilization for both tokens|
+|`commissions`|`LeftRightUnsigned`|The total amount of commissions (base rate + ITM spread) paid for token0 (right) and token1 (left)|
 
 
 ### _payCommissionAndWriteData
@@ -573,9 +574,9 @@ Take the commission fees for minting `tokenId` and settle any other required col
 
 
 ```solidity
-function _payCommissionAndWriteData(TokenId tokenId, uint128 positionSize, LeftRightSigned totalSwapped)
+function _payCommissionAndWriteData(TokenId tokenId, uint128 positionSize, LeftRightSigned totalSwapped, bool isCovered)
     internal
-    returns (uint32);
+    returns (uint32, LeftRightUnsigned);
 ```
 **Parameters**
 
@@ -584,17 +585,19 @@ function _payCommissionAndWriteData(TokenId tokenId, uint128 positionSize, LeftR
 |`tokenId`|`TokenId`|The option position|
 |`positionSize`|`uint128`|The size of the position, expressed in terms of the asset|
 |`totalSwapped`|`LeftRightSigned`|The amount of tokens moved during creation of the option position|
+|`isCovered`|`bool`|Whether the option was minted as covered (no swap occured if ITM)|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`uint32`|Packing of the pool utilization (how much funds are in the Panoptic pool versus the AMM pool at the time of minting), right 64bits for token0 and left 64bits for token1, defined as (inAMM * 10_000) / totalAssets() where totalAssets is the total tracked assets in the AMM and PanopticPool minus fees and donations to the Panoptic pool|
+|`<none>`|`uint32`|Packing of the pool utilization (how much funds are in the Panoptic pool versus the AMM pool at the time of minting), right 64bits for token0 and left 64bits for token1, defined as `(inAMM * 10_000) / totalAssets()` where totalAssets is the total tracked assets in the AMM and PanopticPool minus fees and donations to the Panoptic pool|
+|`<none>`|`LeftRightUnsigned`|The total amount of commissions (base rate + ITM spread) paid for token0 (right) and token1 (left)|
 
 
 ### _burnAllOptionsFrom
 
-Close all options in `positionIdList.
+Close all options in `positionIdList`.
 
 
 ```solidity
@@ -656,9 +659,9 @@ function _burnOptions(bool commitLongSettled, TokenId tokenId, address owner, in
 
 Validates the solvency of `user`.
 
-*Falls back to the more conservative tick if the delta between the fast and slow oracle exceeds `MAX_TICKS_DELTA`.*
+*Falls back to the most conservative (least solvent) oracle tick if the sum of the squares of the deltas between all oracle ticks exceeds `MAX_TICKS_DELTA^2`.*
 
-*Effectively, this means that the users must be solvent at both the fast and slow oracle ticks if one of them is stale to mint or burn options.*
+*Effectively, this means that the users must be solvent at all oracle ticks if the at least one of the ticks is sufficiently stale.*
 
 
 ```solidity
@@ -679,7 +682,7 @@ function _validateSolvency(address user, TokenId[] calldata positionIdList, uint
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`uint256`|medianData If nonzero (enough time has passed since last observation), the updated value for `s_miniMedian` with a new observation|
+|`<none>`|`uint256`|If nonzero (enough time has passed since last observation), the updated value for `s_miniMedian` with a new observation|
 
 
 ### _checkSolvency
@@ -698,7 +701,7 @@ function _checkSolvency(address user, TokenId[] calldata positionIdList, uint96 
 |----|----|-----------|
 |`user`|`address`|The account to validate|
 |`positionIdList`|`TokenId[]`|The list of positions to validate solvency for|
-|`tickData`|`uint96`|the packed tick data to check solvency at|
+|`tickData`|`uint96`|The packed tick data to check solvency at|
 |`buffer`|`uint256`|The buffer to apply to the collateral requirement for `user`|
 
 
@@ -743,7 +746,7 @@ function _burnAndHandleExercise(
 
 Liquidates a distressed account. Will burn all positions and issue a bonus to the liquidator.
 
-*Will revert if liquidated account is solvent at the TWAP tick or if TWAP tick is too far away from the current tick.*
+*Will revert if liquidated account is solvent at one of the oracle ticks or if TWAP tick is too far away from the current tick.*
 
 
 ```solidity
@@ -756,7 +759,7 @@ function liquidate(TokenId[] calldata positionIdListLiquidator, address liquidat
 |----|----|-----------|
 |`positionIdListLiquidator`|`TokenId[]`|List of positions owned by the liquidator|
 |`liquidatee`|`address`|Address of the distressed account|
-|`positionIdList`|`TokenId[]`|List of positions owned by the user. Written as [tokenId1, tokenId2, ...]|
+|`positionIdList`|`TokenId[]`|List of positions owned by the user. Written as `[tokenId1, tokenId2, ...]`|
 
 
 ### forceExercise
@@ -777,16 +780,16 @@ function forceExercise(
 |Name|Type|Description|
 |----|----|-----------|
 |`account`|`address`|Address of the distressed account|
-|`touchedId`|`TokenId[]`|List of position to be force exercised. Can only contain one tokenId, written as [tokenId]|
-|`positionIdListExercisee`|`TokenId[]`|Post-burn list of open positions in the exercisee's (account) account|
-|`positionIdListExercisor`|`TokenId[]`|List of open positions in the exercisor's (msg.sender) account|
+|`touchedId`|`TokenId[]`|List of position to be force exercised. Can only contain one tokenId, written as `[tokenId]`|
+|`positionIdListExercisee`|`TokenId[]`|Post-burn list of open positions in the exercisee's (`account`) account|
+|`positionIdListExercisor`|`TokenId[]`|List of open positions in the exercisor's (`msg.sender`) account|
 
 
 ### _checkSolvencyAtTicks
 
-Check whether an account is solvent at a given `atTick` with a collateral requirement of `buffer`/10_000 multiplied by the requirement of `positionIdList`.
+Check whether an account is solvent at a given `atTick` with a collateral requirement of `buffer/10_000` multiplied by the requirement of `positionIdList`.
 
-*this will return true if solvent at any of the provided tick, and return false iff the account is insolvent at all ticks.*
+*Reverts if `account` is not solvent at all provided ticks and `expectedSolvent == true`, or if `account` is solvent at all ticks and `!expectedSolvent`.*
 
 
 ```solidity
@@ -813,7 +816,7 @@ function _checkSolvencyAtTicks(
 
 ### _isAccountSolvent
 
-Check whether an account is solvent at a given `atTick` with a collateral requirement of `buffer`/10_000 multiplied by the requirement of `positionBalanceArray`.
+Check whether an account is solvent at a given `atTick` with a collateral requirement of `buffer/10_000` multiplied by the requirement of `positionBalanceArray`.
 
 
 ```solidity
@@ -832,7 +835,7 @@ function _isAccountSolvent(
 |----|----|-----------|
 |`account`|`address`|The account to check solvency for|
 |`atTick`|`int24`|The tick to check solvency at|
-|`positionBalanceArray`|`uint256[2][]`|A list of balances and pool utilization for each position, of the form [[tokenId0, balances0], [tokenId1, balances1], ...]|
+|`positionBalanceArray`|`uint256[2][]`|A list of balances and pool utilization for each position, of the form `[[tokenId0, balances0], [tokenId1, balances1], ...]`|
 |`shortPremium`|`LeftRightUnsigned`|The total amount of premium (prorated by available settled tokens) owed to the short legs of `account`|
 |`longPremium`|`LeftRightUnsigned`|The total amount of premium owed by the long legs of `account`|
 |`buffer`|`uint256`|The buffer to apply to the collateral requirement|
@@ -846,7 +849,7 @@ function _isAccountSolvent(
 
 ### isSafeMode
 
-Checks whether the current tick has deviated too much from the slow oracle median tick.
+Checks whether the current tick has deviated by `> MAX_TICKS_DELTA` from the slow oracle median tick.
 
 
 ```solidity
@@ -856,7 +859,7 @@ function isSafeMode() public view returns (bool);
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`bool`|Whether the current tick has deviated from the median by > MAX_TICKS_DELTA|
+|`<none>`|`bool`|Whether the current tick has deviated from the median by `> MAX_TICKS_DELTA`|
 
 
 ### _validatePositionList
@@ -963,7 +966,7 @@ function getOracleTicks()
 |`fastOracleTick`|`int24`|The fast oracle tick computed as the median of the past N observations in the Uniswap Pool|
 |`slowOracleTick`|`int24`|The slow oracle tick (either composed of Uniswap observations or tracked by `s_miniMedian`)|
 |`latestObservation`|`int24`|The latest observation from the Uniswap pool|
-|`medianData`|`uint256`|The updated value for `s_miniMedian` (0 if MEDIAN_PERIOD not elapsed) if `pokeMedian` is called at the current state|
+|`medianData`|`uint256`|The updated value for `s_miniMedian` (0 if `MEDIAN_PERIOD` not elapsed) if `pokeMedian` is called at the current state|
 
 
 ### numberOfPositions
@@ -1050,7 +1053,7 @@ function _checkLiquiditySpread(TokenId tokenId, uint256 leg, uint64 effectiveLiq
 |----|----|-----------|
 |`tokenId`|`TokenId`|An option position|
 |`leg`|`uint256`|A leg index of `tokenId` corresponding to a tickLower-tickUpper chunk|
-|`effectiveLiquidityLimitX32`|`uint64`|Maximum amount of "spread" defined as removedLiquidity/netLiquidity for a new position denominated as X32 = (ratioLimit * 2**32)|
+|`effectiveLiquidityLimitX32`|`uint64`|Maximum amount of "spread" defined as removedLiquidity/netLiquidity for a new position denominated as X32 = (`ratioLimit * 2^32`)|
 
 **Returns**
 
@@ -1061,7 +1064,7 @@ function _checkLiquiditySpread(TokenId tokenId, uint256 leg, uint64 effectiveLiq
 
 ### _getPremia
 
-Compute the premia collected for a single option position 'tokenId'.
+Compute the premia collected for a single option position `tokenId`.
 
 
 ```solidity
@@ -1078,7 +1081,7 @@ function _getPremia(TokenId tokenId, uint128 positionSize, address owner, bool c
 |`positionSize`|`uint128`|The number of contracts (size) of the option position|
 |`owner`|`address`|The holder of the tokenId option|
 |`computeAllPremia`|`bool`|Whether to compute accumulated premia for all legs held by the user (true), or just owed premia for long legs (false)|
-|`atTick`|`int24`|The tick at which the premia is calculated -> use (atTick < type(int24).max) to compute it up to current block. atTick = type(int24).max will only consider fees as of the last on-chain transaction|
+|`atTick`|`int24`|The tick at which the premia is calculated -> use (`atTick < type(int24).max`) to compute it up to current block. `atTick = type(int24).max` will only consider fees as of the last on-chain transaction|
 
 **Returns**
 
@@ -1113,7 +1116,7 @@ function settleLongPremium(TokenId[] calldata positionIdList, address owner, uin
 
 Adds collected tokens to `s_settledTokens` and adjusts `s_grossPremiumLast` for any liquidity added.
 
-*Always called after `mintTokenizedPosition`*
+*Always called after `mintTokenizedPosition`.*
 
 
 ```solidity
@@ -1306,7 +1309,13 @@ Emitted when an option is minted.
 
 
 ```solidity
-event OptionMinted(address indexed recipient, uint128 positionSize, TokenId indexed tokenId, uint128 poolUtilizations);
+event OptionMinted(
+    address indexed recipient,
+    uint128 positionSize,
+    TokenId indexed tokenId,
+    uint128 poolUtilizations,
+    LeftRightUnsigned commissions
+);
 ```
 
 **Parameters**
@@ -1316,5 +1325,6 @@ event OptionMinted(address indexed recipient, uint128 positionSize, TokenId inde
 |`recipient`|`address`|User that minted the option|
 |`positionSize`|`uint128`|The number of contracts minted, expressed in terms of the asset|
 |`tokenId`|`TokenId`|TokenId of the created option|
-|`poolUtilizations`|`uint128`|Packing of the pool utilization (how much funds are in the Panoptic pool versus the AMM pool at the time of minting), right 64bits for token0 and left 64bits for token1, defined as (inAMM * 10_000) / totalAssets() where totalAssets is the total tracked assets in the AMM and PanopticPool minus fees and donations to the Panoptic pool|
+|`poolUtilizations`|`uint128`|Packing of the pool utilization (how much funds are in the Panoptic pool versus the AMM pool at the time of minting), right 64bits for token0 and left 64bits for token1, defined as `(inAMM * 10_000) / totalAssets()` where totalAssets is the total tracked assets in the AMM and PanopticPool minus fees and donations to the Panoptic pool|
+|`commissions`|`LeftRightUnsigned`|The total amount of commissions (base rate + ITM spread) paid for token0 (right) and token1 (left)|
 

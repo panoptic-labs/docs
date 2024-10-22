@@ -97,7 +97,7 @@ function tickSpacing(TokenId self) internal pure returns (int24);
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`int24`|The `tickSpacing` of the Uniswap v3 pool|
+|`<none>`|`int24`|The `tickSpacing` of the Uniswap V3 pool|
 
 
 ### asset
@@ -610,7 +610,7 @@ function countLegs(TokenId self) internal pure returns (uint256);
 
 ### clearLeg
 
-Clear a leg in an option position with index `i`.
+Clear a leg in an option position at `legIndex`.
 
 *set bits of the leg to zero. Also sets the optionRatio and asset to zero of that leg.*
 
@@ -618,20 +618,20 @@ Clear a leg in an option position with index `i`.
 
 
 ```solidity
-function clearLeg(TokenId self, uint256 i) internal pure returns (TokenId);
+function clearLeg(TokenId self, uint256 legIndex) internal pure returns (TokenId);
 ```
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`self`|`TokenId`|The TokenId to clear the leg from|
-|`i`|`uint256`|The leg index to reset, in {0,1,2,3}|
+|`legIndex`|`uint256`|The leg index to reset, in {0,1,2,3}|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`TokenId`|`self` with the `i`th leg zeroed including optionRatio and asset|
+|`<none>`|`TokenId`|`self` with the `legIndex`th leg zeroed including optionRatio and asset|
 
 
 ### validate
@@ -668,6 +668,6 @@ function validateIsExercisable(TokenId self, int24 currentTick) internal pure;
 |Name|Type|Description|
 |----|----|-----------|
 |`self`|`TokenId`|The TokenId to validate for exercisability|
-|`currentTick`|`int24`|The current tick corresponding to the current price in the Univ3 pool|
+|`currentTick`|`int24`|The current tick corresponding to the current price in the Uniswap V3 pool|
 
 

@@ -270,20 +270,20 @@ constructor(
 
 |Name|Type|Description|
 |----|----|-----------|
-|`_commissionFee`|`uint256`|The commission fee, in basis points, collected from PLPs at option mint.|
-|`_sellerCollateralRatio`|`uint256`|Required collateral ratios for buying, represented as percentage * 10_000.|
-|`_buyerCollateralRatio`|`uint256`|Required collateral ratios for selling, represented as percentage * 10_000.|
-|`_forceExerciseCost`|`int256`|Basal cost (in bps of notional) to force exercise a position that is barely far-the-money (out-of-range).|
-|`_targetPoolUtilization`|`uint256`|Target pool utilization below which buying+selling is optimal, represented as percentage * 10_000.|
-|`_saturatedPoolUtilization`|`uint256`|Pool utilization above which selling is 100% collateral backed, represented as percentage * 10_000.|
-|`_ITMSpreadMultiplier`|`uint256`|Multiplier, in basis points, to the pool fee that is charged on the intrinsic value of ITM positions.|
+|`_commissionFee`|`uint256`|The commission fee, in basis points, collected from PLPs at option mint|
+|`_sellerCollateralRatio`|`uint256`|Required collateral ratios for buying, represented as percentage * 10_000|
+|`_buyerCollateralRatio`|`uint256`|Required collateral ratios for selling, represented as percentage * 10_000|
+|`_forceExerciseCost`|`int256`|Basal cost (in bps of notional) to force exercise a position that is barely far-the-money (out-of-range)|
+|`_targetPoolUtilization`|`uint256`|Target pool utilization below which buying+selling is optimal, represented as percentage * 10_000|
+|`_saturatedPoolUtilization`|`uint256`|Pool utilization above which selling is 100% collateral backed, represented as percentage * 10_000|
+|`_ITMSpreadMultiplier`|`uint256`|Multiplier, in basis points, to the pool fee that is charged on the intrinsic value of ITM positions|
 
 
 ### startToken
 
 Initialize a new collateral tracker for a specific token corresponding to the Panoptic Pool being created by the factory that called it.
 
-*The factory calls this function to start a new collateral tracking system for the incoming token at 'underlyingToken'.*
+*The factory calls this function to start a new collateral tracking system for the incoming token at `underlyingToken`.*
 
 *The factory will do this for each of the two tokens being tracked. Thus, the collateral tracking system does not track *both* tokens at once.*
 
@@ -296,11 +296,11 @@ function startToken(bool underlyingIsToken0, address token0, address token1, uin
 
 |Name|Type|Description|
 |----|----|-----------|
-|`underlyingIsToken0`|`bool`|whether this collateral tracker is for token0 (true) or token1 (false)|
-|`token0`|`address`|token 0 of the Uniswap pool|
-|`token1`|`address`|token 1 of the Uniswap pool|
-|`fee`|`uint24`|the fee of the Uniswap pool|
-|`panopticPool`|`PanopticPool`|the address of the Panoptic Pool being created and linked to this Collateral Tracker|
+|`underlyingIsToken0`|`bool`|Whether this collateral tracker is for token0 (true) or token1 (false)|
+|`token0`|`address`|Token 0 of the Uniswap pool|
+|`token1`|`address`|Token 1 of the Uniswap pool|
+|`fee`|`uint24`|The fee of the Uniswap pool|
+|`panopticPool`|`PanopticPool`|The address of the Panoptic Pool being created and linked to this Collateral Tracker|
 
 
 ### getPoolData
@@ -315,9 +315,9 @@ function getPoolData() external view returns (uint256 poolAssets, uint256 inside
 
 |Name|Type|Description|
 |----|----|-----------|
-|`poolAssets`|`uint256`|cached amount of assets accounted to be held by the Panoptic Pool - ignores donations, pending fee payouts, and other untracked balance changes|
-|`insideAMM`|`uint256`|the underlying token amount held in the AMM|
-|`currentPoolUtilization`|`uint256`|Packing of the pool utilization (how much funds are in the Panoptic pool versus the AMM pool at the time of minting), right 64bits for token0 and left 64bits for token1, defined as (inAMM * 10_000) / totalAssets() where totalAssets is the total tracked assets in the AMM and PanopticPool minus fees and donations to the Panoptic pool|
+|`poolAssets`|`uint256`|Cached amount of assets accounted to be held by the Panoptic Pool — ignores donations, pending fee payouts, and other untracked balance changes|
+|`insideAMM`|`uint256`|The underlying token amount held in the AMM|
+|`currentPoolUtilization`|`uint256`|The pool utilization defined as`s_inAMM * 10_000 / totalAssets()`, where totalAssets is the total tracked assets in the AMM and PanopticPool minus fees and donations to the Panoptic pool|
 
 
 ### name
@@ -369,7 +369,7 @@ function decimals() external view returns (uint8);
 
 *See [IERC20-transfer](/docs/developers/tokens/abstract.ERC20Minimal#transfer).
 Requirements:
-- the caller must have a balance of at least 'amount'.
+- the caller must have a balance of at least `amount`.
 - the msg.sender must not have any position on the panoptic pool*
 
 
@@ -381,9 +381,9 @@ function transfer(address recipient, uint256 amount) public override(ERC20Minima
 
 *See [IERC20-transferFrom](/docs/developers/tokens/abstract.ERC20Minimal#transferfrom).
 Requirements:
-- the 'from' must have a balance of at least 'amount'.
-- the caller must have allowance for 'from' of at least 'amount' tokens.
-- 'from' must not have any open positions on the panoptic pool.*
+- the `from` must have a balance of at least `amount`.
+- the caller must have allowance for `from` of at least `amount` tokens.
+- `from` must not have any open positions on the panoptic pool.*
 
 
 ```solidity
@@ -508,11 +508,11 @@ function previewDeposit(uint256 assets) public view returns (uint256 shares);
 
 Deposit underlying tokens (assets) to the Panoptic pool from the LP and mint corresponding amount of shares.
 
-*There is a maximum asset deposit limit of (2 ** 104) - 1.*
+*There is a maximum asset deposit limit of `2^104 - 1`.*
 
-*An MEV tax is levied, which is equal to a single payment of the commissionRate BEFORE adding the funds.*
+*An "MEV tax" is levied, which is equal to a single payment of the commissionRate BEFORE adding the funds.*
 
-*Shares are minted and sent to the LP ('receiver').*
+*Shares are minted and sent to the LP (`receiver`).*
 
 
 ```solidity
@@ -544,7 +544,7 @@ function maxMint(address) external view returns (uint256 maxShares);
 
 |Name|Type|Description|
 |----|----|-----------|
-|`maxShares`|`uint256`|The maximum amount of shares that can be minted.|
+|`maxShares`|`uint256`|The maximum amount of shares that can be minted|
 
 
 ### previewMint
@@ -559,23 +559,23 @@ function previewMint(uint256 shares) public view returns (uint256 assets);
 
 |Name|Type|Description|
 |----|----|-----------|
-|`shares`|`uint256`|The amount of shares to be minted.|
+|`shares`|`uint256`|The amount of shares to be minted|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`assets`|`uint256`|The amount of assets that would be deposited.|
+|`assets`|`uint256`|The amount of assets required to mint `shares`|
 
 
 ### mint
 
 Deposit required amount of assets to receive specified amount of shares.
 
-*There is a maximum asset deposit limit of (2 ** 104) - 1.
-An MEV tax is levied, which is equal to a single payment of the commissionRate BEFORE adding the funds.*
+*There is a maximum asset deposit limit of `2^104 - 1`.
+An "MEV tax" is levied, which is equal to a single payment of the commissionRate BEFORE adding the funds.*
 
-*Shares are minted and sent to the LP ('receiver').*
+*Shares are minted and sent to the LP (`receiver`).*
 
 
 ```solidity
@@ -585,14 +585,14 @@ function mint(uint256 shares, address receiver) external returns (uint256 assets
 
 |Name|Type|Description|
 |----|----|-----------|
-|`shares`|`uint256`|Amount of shares to be minted.|
-|`receiver`|`address`|User to receive the shares.|
+|`shares`|`uint256`|Amount of shares to be minted|
+|`receiver`|`address`|User to receive the shares|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`assets`|`uint256`|The amount of assets deposited to mint the desired amount of shares.|
+|`assets`|`uint256`|The amount of assets deposited to mint the desired amount of shares|
 
 
 ### maxWithdraw
@@ -610,13 +610,13 @@ function maxWithdraw(address owner) public view returns (uint256 maxAssets);
 
 |Name|Type|Description|
 |----|----|-----------|
-|`owner`|`address`|The address being withdrawn for.|
+|`owner`|`address`|The address being withdrawn for|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`maxAssets`|`uint256`|The maximum amount of assets that can be withdrawn.|
+|`maxAssets`|`uint256`|The maximum amount of assets that can be withdrawn|
 
 
 ### previewWithdraw
@@ -643,9 +643,10 @@ function previewWithdraw(uint256 assets) public view returns (uint256 shares);
 ### withdraw
 
 Redeem the amount of shares required to withdraw the specified amount of assets.
-We can only use this standard 4626 withdraw function if the user has no open positions.
 
-*Shares are burned and assets are sent to the LP ('receiver').*
+*We can only use this standard 4626 withdraw function if the user has no open positions.*
+
+*Shares are burned and assets are sent to the LP (`receiver`).*
 
 
 ```solidity
@@ -655,15 +656,15 @@ function withdraw(uint256 assets, address receiver, address owner) external retu
 
 |Name|Type|Description|
 |----|----|-----------|
-|`assets`|`uint256`|Amount of assets to be withdrawn.|
-|`receiver`|`address`|User to receive the assets.|
-|`owner`|`address`|User to burn the shares from.|
+|`assets`|`uint256`|Amount of assets to be withdrawn|
+|`receiver`|`address`|User to receive the assets|
+|`owner`|`address`|User to burn the shares from|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`shares`|`uint256`|The amount of shares burned to withdraw the desired amount of assets.|
+|`shares`|`uint256`|The amount of shares burned to withdraw the desired amount of assets|
 
 
 ### withdraw
@@ -672,7 +673,7 @@ Redeem the amount of shares required to withdraw the specified amount of assets.
 
 *Reverts if the account is not solvent with the given `positionIdList`.*
 
-*Shares are burned and assets are sent to the LP ('receiver').*
+*Shares are burned and assets are sent to the LP (`receiver`).*
 
 
 ```solidity
@@ -709,18 +710,18 @@ function maxRedeem(address owner) public view returns (uint256 maxShares);
 
 |Name|Type|Description|
 |----|----|-----------|
-|`owner`|`address`|The redeeming address.|
+|`owner`|`address`|The redeeming address|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`maxShares`|`uint256`|The maximum amount of shares that can be redeemed.|
+|`maxShares`|`uint256`|The maximum amount of shares that can be redeemed by `owner`|
 
 
 ### previewRedeem
 
-returns the amount of assets resulting from a given amount of shares being redeemed
+Returns the amount of assets resulting from a given amount of shares being redeemed.
 
 
 ```solidity
@@ -730,19 +731,20 @@ function previewRedeem(uint256 shares) public view returns (uint256 assets);
 
 |Name|Type|Description|
 |----|----|-----------|
-|`shares`|`uint256`|the amount of shares to be redeemed|
+|`shares`|`uint256`|The amount of shares to be redeemed|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`assets`|`uint256`|the amount of assets resulting from the redemption|
+|`assets`|`uint256`|The amount of assets resulting from the redemption|
 
 
 ### redeem
 
-Redeem exact shares for underlying assets
-We can only use this standard 4626 redeem function if the user has no open positions.
+Redeem exact shares for underlying assets.
+
+*We can only use this standard 4626 redeem function if the user has no open positions.*
 
 
 ```solidity
@@ -760,25 +762,25 @@ function redeem(uint256 shares, address receiver, address owner) external return
 
 |Name|Type|Description|
 |----|----|-----------|
-|`assets`|`uint256`|the amount of assets resulting from the redemption|
+|`assets`|`uint256`|The amount of assets resulting from the redemption|
 
 
 ### exerciseCost
 
 Get the cost of exercising an option. Used during a forced exercise.
 
-*This one computes the cost of calling the forceExercise function on a position:
+This one computes the cost of calling the forceExercise function on a position:
 - The forceExercisor will have to *pay* the exercisee because their position will be closed "against their will"
 - The cost must be larger when the position is close to being in-range, and should be minimal when it is far from being in range. eg. Exercising a (1000, 1050)
 position will cost more if the price is 999 than if it is 100
 - The cost is an exponentially decaying function of the distance between the position's strike and the current price
 - The cost decreases by a factor of 2 for every "position's width"
-- Note that the cost is the largest among all active legs, not the sum*
+- Note that the cost is the largest among all active legs, not the sum
 
-*Example exercise costs:
+Example exercise costs:
 - 10% if the position is liquidated when the price is between 950 and 1000, or if it is between 1050 and 1100
 - 5% if the price is between 900 and 950 or (1100, 1150)
-- 2.5% if between (850, 900) or (1150, 1200)*
+- 2.5% if between (850, 900) or (1150, 1200)
 
 
 ```solidity
@@ -809,9 +811,7 @@ function exerciseCost(
 
 ### _poolUtilization
 
-Get the pool utilization; it is a measure of the ratio of assets in the AMM vs the total assets managed by the pool.
-
-*compute: inAMM/totalAssets().*
+Get the pool utilization defined by the ratio of assets in the AMM to total assets.
 
 
 ```solidity
@@ -826,7 +826,7 @@ function _poolUtilization() internal view returns (uint256 poolUtilization);
 
 ### _sellCollateralRatio
 
-Get the (sell) collateral ratio that is paid when a short option is minted at a specific pool utilization.
+Get the base collateral requirement for a short leg at a given pool utilization.
 
 *This is computed at the time the position is minted.*
 
@@ -838,7 +838,7 @@ function _sellCollateralRatio(int256 utilization) internal view returns (uint256
 
 |Name|Type|Description|
 |----|----|-----------|
-|`utilization`|`int256`|The fraction of totalAssets() that belongs to the Uniswap Pool|
+|`utilization`|`int256`|The pool utilization of this collateral vault at the time the position is minted|
 
 **Returns**
 
@@ -849,22 +849,10 @@ function _sellCollateralRatio(int256 utilization) internal view returns (uint256
 
 ### _buyCollateralRatio
 
-SELL
-COLLATERAL
-RATIO
-^
-|                  max ratio = 100%
-100% - |                _------
-|             _-¯
-|          _-¯
-20% - |---------¯
-|         .       . .
-+---------+-------+-+--->   POOL_
-50%    90% 100%     UTILIZATION
 if utilization is less than zero, this is the calculation for a strangle, which gets 2x the capital efficiency at low pool utilization
 at 0% utilization, strangle legs do not compound efficiency
 
-Get the (buy) collateral ratio that is paid when a long option is minted at a specific pool utilization.
+Get the base collateral requirement for a long leg at a given pool utilization.
 
 *This is computed at the time the position is minted.*
 
@@ -876,7 +864,7 @@ function _buyCollateralRatio(uint16 utilization) internal view returns (uint256 
 
 |Name|Type|Description|
 |----|----|-----------|
-|`utilization`|`uint16`|The fraction of totalBalance() that belongs to the Uniswap Pool|
+|`utilization`|`uint16`|The pool utilization of this collateral vault at the time the position is minted|
 
 **Returns**
 
@@ -887,19 +875,9 @@ function _buyCollateralRatio(uint16 utilization) internal view returns (uint256 
 
 ### delegate
 
-BUY
-COLLATERAL
-RATIO
-^
-|   buy_ratio = 10%
-10% - |----------__       min_ratio = 5%
-5%  - | . . . . .  ¯¯¯--______
-|         .       . .
-+---------+-------+-+--->   POOL_
-50%    90% 100%      UTILIZATION
 this is incentivized buying, which returns funds to the panoptic pool
 
-Increase the share balance of a user by 2^248 - 1 without updating the total supply.
+Increase the share balance of a user by `2^248 - 1` without updating the total supply.
 
 *This is controlled by the Panoptic Pool - not individual users.*
 
@@ -916,9 +894,9 @@ function delegate(address delegatee) external onlyPanopticPool;
 
 ### revoke
 
-Decrease the share balance of a user by 2^248 - 1 without updating the total supply.
+Decrease the share balance of a user by `2^248 - 1` without updating the total supply.
 
-*Assumes that `delegatee` has >=(2^248 - 1) tokens, will revert otherwise.*
+*Assumes that `delegatee` has `>=(2^248 - 1)` tokens, will revert otherwise.*
 
 *This is controlled by the Panoptic Pool - not individual users.*
 
@@ -954,7 +932,7 @@ function settleLiquidation(address liquidator, address liquidatee, int256 bonus)
 
 ### refund
 
-Refunds delegated tokens to 'refunder' from 'refundee', similar to 'revoke'.
+Refunds delegated tokens to `refunder` from `refundee`, similar to `revoke`.
 
 *Assumes that the refunder has enough money to pay for the refund.*
 
@@ -968,7 +946,7 @@ function refund(address refunder, address refundee, int256 assets) external only
 
 |Name|Type|Description|
 |----|----|-----------|
-|`refunder`|`address`|The account refunding tokens to 'refundee'|
+|`refunder`|`address`|The account refunding tokens to `refundee`|
 |`refundee`|`address`|The account being refunded to|
 |`assets`|`int256`|The amount of assets to refund. Positive means a transfer from refunder to refundee, vice versa for negative|
 
@@ -979,10 +957,13 @@ Take commission on option creation/opening (commissions will not be taken on clo
 
 
 ```solidity
-function takeCommissionAddData(address optionOwner, int128 longAmount, int128 shortAmount, int128 swappedAmount)
-    external
-    onlyPanopticPool
-    returns (uint32 utilization);
+function takeCommissionAddData(
+    address optionOwner,
+    int128 longAmount,
+    int128 shortAmount,
+    int128 swappedAmount,
+    bool isCovered
+) external onlyPanopticPool returns (uint32, uint128);
 ```
 **Parameters**
 
@@ -992,12 +973,14 @@ function takeCommissionAddData(address optionOwner, int128 longAmount, int128 sh
 |`longAmount`|`int128`|The amount of longs|
 |`shortAmount`|`int128`|The amount of shorts|
 |`swappedAmount`|`int128`|The amount of tokens moved during creation of the option position|
+|`isCovered`|`bool`|Whether the option was minted as covered (no swap occured if ITM)|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`utilization`|`uint32`|The final utilization of the collateral vault|
+|`<none>`|`uint32`|The final utilization of the collateral vault|
+|`<none>`|`uint128`|The total amount of commission (base rate + ITM spread) paid|
 
 
 ### exercise
@@ -1021,8 +1004,8 @@ function exercise(
 |Name|Type|Description|
 |----|----|-----------|
 |`optionOwner`|`address`|The owner of the option being burned and potentially exercised|
-|`longAmount`|`int128`|The amount of longs to be exercised (if any)|
-|`shortAmount`|`int128`|The amount of shorts to be exercised (if any)|
+|`longAmount`|`int128`|The notional value of the long legs of the position (if any)|
+|`shortAmount`|`int128`|The notional value of the short legs of the position (if any)|
 |`swappedAmount`|`int128`|The amount of tokens moved during the option close|
 |`realizedPremium`|`int128`|Premium to settle on the current positions|
 
@@ -1039,10 +1022,10 @@ Get the amount exchanged to mint an option.
 
 
 ```solidity
-function _getExchangedAmount(int128 longAmount, int128 shortAmount, int128 swappedAmount)
+function _getExchangedAmount(int128 longAmount, int128 shortAmount, int128 swappedAmount, bool isCovered)
     internal
     view
-    returns (int256 exchangedAmount);
+    returns (int256, uint128);
 ```
 **Parameters**
 
@@ -1051,12 +1034,14 @@ function _getExchangedAmount(int128 longAmount, int128 shortAmount, int128 swapp
 |`longAmount`|`int128`|The amount of long options held|
 |`shortAmount`|`int128`|The amount of short options held|
 |`swappedAmount`|`int128`|The amount of tokens moved during creation of the option position|
+|`isCovered`|`bool`|Whether the option was minted as covered (no swap occured if ITM)|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`exchangedAmount`|`int256`|The amount of funds to be exchanged for minting an option (includes commission, swapFee, and intrinsic value)|
+|`<none>`|`int256`|exchangedAmount The amount of funds to be exchanged for minting an option (includes commission, swapFee, and intrinsic value)|
+|`<none>`|`uint128`|commission The total commission (base rate + ITM spread) paid for minting the option|
 
 
 ### getAccountMarginDetails
@@ -1083,7 +1068,7 @@ function getAccountMarginDetails(
 |----|----|-----------|
 |`user`|`address`|The account to check collateral/margin health for|
 |`atTick`|`int24`|The tick at which to evaluate the account's positions|
-|`positionBalanceArray`|`uint256[2][]`|The list of all historical positions held by the 'optionOwner', stored as [[tokenId, balance/poolUtilizationAtMint], ...]|
+|`positionBalanceArray`|`uint256[2][]`|The list of all historical positions held by the `optionOwner`, stored as `[[tokenId, balance/poolUtilizationAtMint], ...]`|
 |`shortPremium`|`uint128`|The total amount of premium (prorated by available settled tokens) owed to the short legs of `user`|
 |`longPremium`|`uint128`|The total amount of premium owed by the long legs of `user`|
 
@@ -1098,7 +1083,7 @@ function getAccountMarginDetails(
 
 Get the total required amount of collateral tokens of a user/account across all active positions to stay above the margin requirement.
 
-*Returns the token amounts required for the entire account with active positions in 'positionIdList' (list of tokenIds).*
+*Returns the token amounts required for the entire account with active positions in `positionIdList` (list of tokenIds).*
 
 
 ```solidity
@@ -1112,7 +1097,7 @@ function _getTotalRequiredCollateral(int24 atTick, uint256[2][] memory positionB
 |Name|Type|Description|
 |----|----|-----------|
 |`atTick`|`int24`|The tick at which to evaluate the account's positions|
-|`positionBalanceArray`|`uint256[2][]`|The list of all historical positions held by the 'optionOwner', stored as [[tokenId, balance/poolUtilizationAtMint], ...]|
+|`positionBalanceArray`|`uint256[2][]`|The list of all historical positions held by the `optionOwner`, stored as `[[tokenId, balance/poolUtilizationAtMint], ...]`|
 
 **Returns**
 
@@ -1123,8 +1108,8 @@ function _getTotalRequiredCollateral(int24 atTick, uint256[2][] memory positionB
 
 ### _getRequiredCollateralAtTickSinglePosition
 
-Get the required amount of collateral tokens corresponding to a specific single position 'tokenId' at a price 'tick'.
-The required collateral of an account depends on the price ('tick') in the AMM pool: if in the position's favor less collateral needed, etc.
+Get the required amount of collateral tokens corresponding to a specific single position `tokenId` at a price `atTick`.
+The required collateral of an account depends on the price (`atTick`) in the AMM pool: if in the position's favor less collateral needed, etc.
 
 
 ```solidity
@@ -1155,7 +1140,7 @@ function _getRequiredCollateralAtTickSinglePosition(
 
 ### _getRequiredCollateralSingleLeg
 
-Calculate the required amount of collateral for a single leg 'index' of position 'tokenId'.
+Calculate the required amount of collateral for a single leg `index` of position `tokenId`.
 
 
 ```solidity
@@ -1181,12 +1166,12 @@ function _getRequiredCollateralSingleLeg(
 
 |Name|Type|Description|
 |----|----|-----------|
-|`required`|`uint256`|The required amount collateral needed for this leg 'index'|
+|`required`|`uint256`|The required amount collateral needed for this leg `index`|
 
 
 ### _getRequiredCollateralSingleLegNoPartner
 
-Calculate the required amount of collateral for leg 'index' of position 'tokenId' when the leg does not have a risk partner.
+Calculate the required amount of collateral for leg `index` of position `tokenId` when the leg does not have a risk partner.
 
 
 ```solidity
@@ -1212,24 +1197,25 @@ function _getRequiredCollateralSingleLegNoPartner(
 
 |Name|Type|Description|
 |----|----|-----------|
-|`required`|`uint256`|The required amount collateral needed for this leg 'index'|
+|`required`|`uint256`|The required amount collateral needed for this leg `index`|
 
 
 ### _getRequiredCollateralSingleLegPartner
 
 ITM and out-of-range
 
-Calculate the required amount of collateral for leg 'index' for position 'tokenId' accounting for its partner leg.
+Calculate the required amount of collateral for leg `index` for position `tokenId` accounting for its partner leg.
 
-*If the two token long-types are different (one is a long, the other a short, e.g.) but the tokenTypes are the same, this is a spread
-a spread is a defined risk position which has a max loss given by difference between the long and short strikes.*
+*If the two token long-types are different (one is a long, the other a short, e.g.) but the tokenTypes are the same, this is a spread.*
+
+*A spread is a defined risk position which has a max loss given by difference between the long and short strikes.*
 
 *If the two token long-types are the same but the tokenTypes are different (one is a call, the other a put, e.g.), this is a strangle -
-a strangle benefits from enhanced capital efficiency because only one side can be ITM at a time.*
+a strangle benefits from enhanced capital efficiency because only one side can be ITM at any given time.*
 
 *if the position is a spread, then the collateral requirement consists of two components:*
 
-*1) The difference in notional value at both strikes: abs(strikeLong - strikeShort) or abs(strikeShort - strikeLong)*
+*1) The difference in notional value at both strikes: `abs(strikeLong - strikeShort)` or `abs(strikeShort - strikeLong)`*
 
 *2) A spread term which is relevant for legs that have different widths (calendar spreads)*
 
@@ -1257,16 +1243,12 @@ function _getRequiredCollateralSingleLegPartner(
 
 |Name|Type|Description|
 |----|----|-----------|
-|`required`|`uint256`|The required amount collateral needed for this leg 'index', accounting for what the leg's risk partner is|
+|`required`|`uint256`|The required amount collateral needed for this leg `index`, accounting for what the leg's risk partner is|
 
 
 ### _getRequiredCollateralAtUtilization
 
-Get the base collateral requirement for an 'amount' at the current Panoptic pool 'utilization' level.
-
-For a given incoming 'amount' - which is the size of a user position (e.g. opening a position), what is the corresponding required collateral to have.
-
-*NOTE: this does not depend on the price of the AMM pool. This only computes what is needed in response to the current utilization.*
+Get the base collateral requirement for a position of notional value `amount` at the current Panoptic pool `utilization` level.
 
 
 ```solidity
@@ -1279,7 +1261,7 @@ function _getRequiredCollateralAtUtilization(uint128 amount, uint256 isLong, int
 
 |Name|Type|Description|
 |----|----|-----------|
-|`amount`|`uint128`|The amount from which required collateral is computed|
+|`amount`|`uint128`|The amount to multiply by the base collateral ratio|
 |`isLong`|`uint256`|Whether the position is long (=1) or short (=0)|
 |`utilization`|`int16`|The utilization of the Panoptic pool (balance between sellers and buyers)|
 
@@ -1287,7 +1269,7 @@ function _getRequiredCollateralAtUtilization(uint128 amount, uint256 isLong, int
 
 |Name|Type|Description|
 |----|----|-----------|
-|`required`|`uint256`|The required collateral corresponding to the incoming 'amount'|
+|`required`|`uint256`|The base collateral requirement corresponding to the incoming `amount`|
 
 
 ### _computeSpread
@@ -1372,8 +1354,8 @@ event Deposit(address indexed sender, address indexed owner, uint256 assets, uin
 |----|----|-----------|
 |`sender`|`address`|The address of the caller (and depositor)|
 |`owner`|`address`|The address of the recipient of the newly minted shares|
-|`assets`|`uint256`|The amount of assets deposited by 'sender' in exchange for 'shares'|
-|`shares`|`uint256`|The amount of shares minted to 'owner'|
+|`assets`|`uint256`|The amount of assets deposited by `sender` in exchange for `shares`|
+|`shares`|`uint256`|The amount of shares minted to `owner`|
 
 ### Withdraw
 Emitted when assets are withdrawn from the Collateral Tracker.
@@ -1390,6 +1372,6 @@ event Withdraw(address indexed sender, address indexed receiver, address indexed
 |`sender`|`address`|The address of the caller|
 |`receiver`|`address`|The address of the recipient of the withdrawn assets|
 |`owner`|`address`|The address of the owner of the shares being burned|
-|`assets`|`uint256`|The amount of assets withdrawn to 'receiver'|
-|`shares`|`uint256`|The amount of shares burned by 'owner' in exchange for 'assets'|
+|`assets`|`uint256`|The amount of assets withdrawn to `receiver`|
+|`shares`|`uint256`|The amount of shares burned by `owner` in exchange for `assets`|
 

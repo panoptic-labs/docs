@@ -54,6 +54,24 @@ IUniswapV3Factory internal immutable FACTORY;
 ```
 
 
+### MIN_ENFORCED_TICKFILL_COST
+The approximate minimum amount of tokens it should require to fill `maxLiquidityPerTick` at the minimum and maximum enforced ticks.
+
+
+```solidity
+uint256 internal immutable MIN_ENFORCED_TICKFILL_COST;
+```
+
+
+### SUPPLY_MULTIPLIER_TICKFILL
+The multiplier, in basis points, to apply to the token supply and set as the minimum enforced tick fill cost if greater than `MIN_ENFORCED_TICKFILL_COST`.
+
+
+```solidity
+uint256 internal immutable SUPPLY_MULTIPLIER_TICKFILL;
+```
+
+
 ### s_AddrToPoolIdData
 Retrieve the corresponding poolId for a given Uniswap V3 pool address.
 
@@ -65,12 +83,12 @@ mapping(address univ3pool => uint256 poolIdData) internal s_AddrToPoolIdData;
 ```
 
 
-### s_poolIdToAddr
-Retrieve the Uniswap V3 pool address corresponding to a given poolId.
+### s_poolIdToPoolData
+Retrieve the PoolData struct corresponding to a given poolId.
 
 
 ```solidity
-mapping(uint64 poolId => IUniswapV3Pool pool) internal s_poolIdToAddr;
+mapping(uint64 poolId => PoolData poolData) internal s_poolIdToPoolData;
 ```
 
 
@@ -106,7 +124,7 @@ mapping(bytes32 positionKey => LeftRightUnsigned accountPremium) private s_accou
 ### s_accountFeesBase
 Per-liquidity accumulator for the fees collected on an account for a given chunk.
 
-*Base fees is stored as int128((feeGrowthInside0LastX128 * liquidity) / 2**128), which allows us to store the accumulated fees as int128 instead of uint256.*
+*Base fees are stored as `int128((feeGrowthInsideLastX128 * liquidity) / 2**128)`, which allows us to store the accumulated fees as int128 instead of uint256.*
 
 *Right slot: int128 token0 base fees, Left slot: int128 token1 base fees.*
 
@@ -125,18 +143,20 @@ Set the canonical Uniswap V3 Factory address.
 
 
 ```solidity
-constructor(IUniswapV3Factory _factory);
+constructor(IUniswapV3Factory _factory, uint256 _minEnforcedTickFillCost, uint256 _supplyMultiplierTickFill);
 ```
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`_factory`|`IUniswapV3Factory`|The canonical Uniswap V3 Factory address|
+|`_minEnforcedTickFillCost`|`uint256`|The minimum amount of tokens it should require to fill `maxLiquidityPerTick` at the minimum and maximum enforced ticks|
+|`_supplyMultiplierTickFill`|`uint256`|The multiplier, in basis points, to apply to the token supply and set as the minimum enforced tick fill cost if greater than `MIN_ENFORCED_TICKFILL_COST`|
 
 
 ### initializeAMMPool
 
-Initialize a Uniswap v3 pool in the SFPM.
+Initialize a Uniswap V3 pool in the SFPM.
 
 *Revert if already initialized.*
 
@@ -150,7 +170,30 @@ function initializeAMMPool(address token0, address token1, uint24 fee) external;
 |----|----|-----------|
 |`token0`|`address`|The contract address of token0 of the pool|
 |`token1`|`address`|The contract address of token1 of the pool|
-|`fee`|`uint24`|The fee level of the of the underlying Uniswap v3 pool, denominated in hundredths of bips|
+|`fee`|`uint24`|The fee level of the of the underlying Uniswap V3 pool, denominated in hundredths of bips|
+
+
+### expandEnforcedTickRange
+
+Recomputes and decreases `minEnforcedTick` and/or increases `maxEnforcedTick` for a given `poolId` if certain conditions are met.
+
+*This function will only have an effect if both conditions are met:
+- The token supply for one of the tokens was greater than MIN_ENFORCED_TICKFILL_COST at the last `initializeAMMPool` or `expandEnforcedTickRangeForPool` call for `poolId`
+- The token supply for one of the tokens meeting the first condition has *decreased* significantly since the last call*
+
+*This function *cannot* decrease the absolute value of either enforced tick, i.e., it can only widen the range of possible ticks.*
+
+*The purpose of this function is to prevent pools created while a large amount of one of the tokens was flash-minted from being stuck in a narrow tick range.*
+
+
+```solidity
+function expandEnforcedTickRange(uint64 poolId) external;
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`poolId`|`uint64`|The poolId on which to expand the enforced tick range|
 
 
 ### uniswapV3MintCallback
@@ -220,7 +263,7 @@ function burnTokenizedPosition(
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`LeftRightUnsigned[4]`|An array of LeftRight encoded words containing the amount of token0 and token1 collected as fees for each leg|
-|`<none>`|`LeftRightSigned`|A LeftRight encoded word containing the total amount of token0 and token1 swapped if minting ITM|
+|`<none>`|`LeftRightSigned`|The net amount of token0 and token1 moved to/from the Uniswap V3 pool|
 
 
 ### mintTokenizedPosition
@@ -250,7 +293,7 @@ function mintTokenizedPosition(
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`LeftRightUnsigned[4]`|An array of LeftRight encoded words containing the amount of token0 and token1 collected as fees for each leg|
-|`<none>`|`LeftRightSigned`|A LeftRight encoded word containing the total amount of token0 and token1 swapped if minting ITM|
+|`<none>`|`LeftRightSigned`|The net amount of token0 and token1 moved to/from the Uniswap V3 pool|
 
 
 ### safeTransferFrom
@@ -348,8 +391,8 @@ function swapInAMM(IUniswapV3Pool univ3pool, LeftRightSigned itmAmounts)
 
 |Name|Type|Description|
 |----|----|-----------|
-|`univ3pool`|`IUniswapV3Pool`|The uniswap pool in which to swap.|
-|`itmAmounts`|`LeftRightSigned`|How much to swap - how much is ITM|
+|`univ3pool`|`IUniswapV3Pool`|The Uniswap pool in which to swap.|
+|`itmAmounts`|`LeftRightSigned`|How much to swap (i.e. how many tokens are ITM)|
 
 **Returns**
 
@@ -360,7 +403,7 @@ function swapInAMM(IUniswapV3Pool univ3pool, LeftRightSigned itmAmounts)
 
 ### _createPositionInAMM
 
-Create the position in the AMM given in the tokenId.
+Create the position in the AMM defined by `tokenId`.
 
 *Loops over each leg in the tokenId and calls _createLegInAMM for each, which does the mint/burn in the AMM.*
 
@@ -489,9 +532,7 @@ function _getFeesBase(IUniswapV3Pool univ3pool, uint128 liquidity, LiquidityChun
 
 ### _mintLiquidity
 
-Mint a chunk of liquidity (`liquidityChunk`) in the Uniswap v3 pool; return the amount moved.
-
-*Note that "moved" means: mint in Uniswap and move tokens from msg.sender.*
+Mint a chunk of liquidity (`liquidityChunk`) in the Uniswap V3 pool; return the amount moved.
 
 
 ```solidity
@@ -504,24 +545,18 @@ function _mintLiquidity(LiquidityChunk liquidityChunk, IUniswapV3Pool univ3pool)
 |Name|Type|Description|
 |----|----|-----------|
 |`liquidityChunk`|`LiquidityChunk`|The liquidity chunk in Uniswap to mint|
-|`univ3pool`|`IUniswapV3Pool`|The Uniswap v3 pool to mint liquidity in/to|
+|`univ3pool`|`IUniswapV3Pool`|The Uniswap V3 pool to mint liquidity in/to|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`movedAmounts`|`LeftRightSigned`|How many tokens were moved from msg.sender to Uniswap|
+|`movedAmounts`|`LeftRightSigned`|How many tokens were moved from `msg.sender` to Uniswap|
 
 
 ### _burnLiquidity
 
-mint the required amount in the Uniswap pool
-
-Burn a chunk of liquidity (`liquidityChunk`) in the Uniswap v3 pool and send to msg.sender; return the amount moved.
-
-*this triggers the uniswap mint callback function*
-
-*Note that "moved" means: burn position in Uniswap and send tokens to msg.sender.*
+Burn a chunk of liquidity (`liquidityChunk`) in the Uniswap V3 pool and send to msg.sender; return the amount moved.
 
 
 ```solidity
@@ -534,13 +569,13 @@ function _burnLiquidity(LiquidityChunk liquidityChunk, IUniswapV3Pool univ3pool)
 |Name|Type|Description|
 |----|----|-----------|
 |`liquidityChunk`|`LiquidityChunk`|The liquidity chunk in Uniswap to burn|
-|`univ3pool`|`IUniswapV3Pool`|The Uniswap v3 pool to burn liquidity in/from|
+|`univ3pool`|`IUniswapV3Pool`|The Uniswap V3 pool to burn liquidity in/from|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`movedAmounts`|`LeftRightSigned`|How many tokens were moved from Uniswap to msg.sender|
+|`movedAmounts`|`LeftRightSigned`|How many tokens were moved from Uniswap to `msg.sender`|
 
 
 ### _collectAndWritePositionData
@@ -565,7 +600,7 @@ function _collectAndWritePositionData(
 |`liquidityChunk`|`LiquidityChunk`|The liquidity chunk in Uniswap to collect from|
 |`univ3pool`|`IUniswapV3Pool`|The Uniswap pool where the position is deployed|
 |`currentLiquidity`|`LeftRightUnsigned`|The existing liquidity msg.sender owns in the AMM for this chunk before the SFPM was called|
-|`positionKey`|`bytes32`|The unique key to identify the liquidity chunk/tokenType pairing in this uniswap pool|
+|`positionKey`|`bytes32`|The unique key to identify the liquidity chunk/tokenType pairing in this Uniswap pool|
 |`movedInLeg`|`LeftRightSigned`|How much liquidity has been moved between msg.sender and Uniswap before this function call|
 |`isLong`|`uint256`|Whether the leg in question is long (=1) or short (=0)|
 
@@ -580,7 +615,7 @@ function _collectAndWritePositionData(
 
 Compute deltas for Owed/Gross premium given quantities of tokens collected from Uniswap.
 
-*Returned accumulators are capped at the max value (2**128 - 1) for each token if they overflow.*
+*Returned accumulators are capped at the max value (`2^128 - 1`) for each token if they overflow.*
 
 
 ```solidity
@@ -606,9 +641,7 @@ function _getPremiaDeltas(LeftRightUnsigned currentLiquidity, LeftRightUnsigned 
 
 ### getAccountLiquidity
 
-Return the liquidity associated with a given liquidity chunk/tokenType.
-
-*Computes accountLiquidity[keccak256(abi.encodePacked(univ3pool, owner, tokenType, tickLower, tickUpper))].*
+Return the liquidity associated with a given liquidity chunk/tokenType for a user on a Uniswap pool.
 
 
 ```solidity
@@ -621,28 +654,26 @@ function getAccountLiquidity(address univ3pool, address owner, uint256 tokenType
 
 |Name|Type|Description|
 |----|----|-----------|
-|`univ3pool`|`address`|The address of the Uniswap v3 Pool|
+|`univ3pool`|`address`|The address of the Uniswap V3 Pool|
 |`owner`|`address`|The address of the account that is queried|
 |`tokenType`|`uint256`|The tokenType of the position|
-|`tickLower`|`int24`|The lower end of the tick range for the position (int24)|
-|`tickUpper`|`int24`|The upper end of the tick range for the position (int24)|
+|`tickLower`|`int24`|The lower end of the tick range for the position|
+|`tickUpper`|`int24`|The upper end of the tick range for the position|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`accountLiquidities`|`LeftRightUnsigned`|The amount of liquidity that has been shorted/added to the Uniswap contract (netLiquidity:removedLiquidity -> rightSlot:leftSlot)|
+|`accountLiquidities`|`LeftRightUnsigned`|The amount of liquidity that held in and removed from Uniswap for that chunk (netLiquidity:removedLiquidity -> rightSlot:leftSlot)|
 
 
 ### getAccountPremium
 
 Return the premium associated with a given position, where premium is an accumulator of feeGrowth for the touched position.
 
-*Computes s_accountPremium{isLong ? Owed : Gross}[keccak256(abi.encodePacked(univ3pool, owner, tokenType, tickLower, tickUpper))].*
-
-*If an atTick parameter is provided that is different from type(int24).max, then it will update the premium up to the current
-block at the provided atTick value. We do this because this may be called immediately after the Uni v3 pool has been touched,
-so no need to read the feeGrowths from the Uni v3 pool.*
+*If an atTick parameter is provided that is different from `type(int24).max`, then it will update the premium up to the current
+block at the provided atTick value. We do this because this may be called immediately after the Uniswap V3 pool has been touched,
+so no need to read the feeGrowths from the Uniswap V3 pool.*
 
 
 ```solidity
@@ -660,27 +691,25 @@ function getAccountPremium(
 
 |Name|Type|Description|
 |----|----|-----------|
-|`univ3pool`|`address`|The address of the Uniswap v3 Pool|
+|`univ3pool`|`address`|The address of the Uniswap V3 Pool|
 |`owner`|`address`|The address of the account that is queried|
 |`tokenType`|`uint256`|The tokenType of the position|
-|`tickLower`|`int24`|The lower end of the tick range for the position (int24)|
-|`tickUpper`|`int24`|The upper end of the tick range for the position (int24)|
-|`atTick`|`int24`|The current tick. Set atTick < type(int24).max = 8388608 to get latest premium up to the current block|
+|`tickLower`|`int24`|The lower end of the tick range for the position|
+|`tickUpper`|`int24`|The upper end of the tick range for the position|
+|`atTick`|`int24`|The current tick. Set `atTick < (type(int24).max = 8388608)` to get latest premium up to the current block|
 |`isLong`|`uint256`|Whether the position is long (=1) or short (=0)|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`uint128`|The amount of premium (per liquidity X64) for token0 = sum (feeGrowthLast0X128) over every block where the position has been touched|
-|`<none>`|`uint128`|The amount of premium (per liquidity X64) for token1 = sum (feeGrowthLast0X128) over every block where the position has been touched|
+|`<none>`|`uint128`|The amount of premium (per liquidity X64) for token0 = `sum(feeGrowthLast0X128)` over every block where the position has been touched|
+|`<none>`|`uint128`|The amount of premium (per liquidity X64) for token1 = `sum(feeGrowthLast0X128)` over every block where the position has been touched|
 
 
 ### getAccountFeesBase
 
 Return the feesBase associated with a given liquidity chunk.
-
-*Computes accountFeesBase[keccak256(abi.encodePacked(univ3pool, owner, tickLower, tickUpper))].*
 
 
 ```solidity
@@ -693,11 +722,11 @@ function getAccountFeesBase(address univ3pool, address owner, uint256 tokenType,
 
 |Name|Type|Description|
 |----|----|-----------|
-|`univ3pool`|`address`|The address of the Uniswap v3 Pool|
+|`univ3pool`|`address`|The address of the Uniswap V3 Pool|
 |`owner`|`address`|The address of the account that is queried|
 |`tokenType`|`uint256`|The tokenType of the position (the token it started as)|
-|`tickLower`|`int24`|The lower end of the tick range for the position (int24)|
-|`tickUpper`|`int24`|The upper end of the tick range for the position (int24)|
+|`tickLower`|`int24`|The lower end of the tick range for the position|
+|`tickUpper`|`int24`|The upper end of the tick range for the position|
 
 **Returns**
 
@@ -719,7 +748,7 @@ function getUniswapV3PoolFromId(uint64 poolId) external view returns (IUniswapV3
 
 |Name|Type|Description|
 |----|----|-----------|
-|`poolId`|`uint64`|The unique pool identifier for a Uni v3 pool|
+|`poolId`|`uint64`|The unique pool identifier for a Uniswap V3 pool|
 
 **Returns**
 
@@ -755,15 +784,35 @@ Emitted when a UniswapV3Pool is initialized in the SFPM.
 
 
 ```solidity
-event PoolInitialized(address indexed uniswapPool, uint64 poolId);
+event PoolInitialized(address indexed uniswapPool, uint64 poolId, int24 minEnforcedTick, int24 maxEnforcedTick);
 ```
 
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`uniswapPool`|`address`|Address of the underlying Uniswap v3 pool|
+|`uniswapPool`|`address`|Address of the underlying Uniswap V3 pool|
 |`poolId`|`uint64`|The SFPM's pool identifier for the pool, including the 16-bit tick spacing and 48-bit pool pattern|
+|`minEnforcedTick`|`int24`|The initial minimum enforced tick for the pool|
+|`maxEnforcedTick`|`int24`|The initial maximum enforced tick for the pool|
+
+### EnforcedTicksUpdated
+Emitted when the enforced tick range is expanded for a given `poolId`.
+
+*Will be emitted on any `expandEnforcedTickRange` call, even if the enforced ticks are not actually changed.*
+
+
+```solidity
+event EnforcedTicksUpdated(uint64 indexed poolId, int24 minEnforcedTick, int24 maxEnforcedTick);
+```
+
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`poolId`|`uint64`|The SFPM's pool identifier for the pool, including the 16-bit tick spacing and 48-bit pool pattern|
+|`minEnforcedTick`|`int24`|The new minimum enforced tick for the pool|
+|`maxEnforcedTick`|`int24`|The new maximum enforced tick for the pool|
 
 ### TokenizedPositionBurnt
 Emitted when a position is destroyed/burned.
@@ -784,8 +833,6 @@ event TokenizedPositionBurnt(address indexed recipient, TokenId indexed tokenId,
 ### TokenizedPositionMinted
 Emitted when a position is created/minted.
 
-*`recipient` is used to track whether it was minted directly by the user or through an option contract.*
-
 
 ```solidity
 event TokenizedPositionMinted(address indexed caller, TokenId indexed tokenId, uint128 positionSize);
@@ -798,4 +845,25 @@ event TokenizedPositionMinted(address indexed caller, TokenId indexed tokenId, u
 |`caller`|`address`|The address of the user who minted the position|
 |`tokenId`|`TokenId`|The tokenId of the minted position|
 |`positionSize`|`uint128`|The number of contracts minted, expressed in terms of the asset|
+
+## Structs
+### PoolData
+Type for data associated with a given Uniswap `pool`.
+
+
+```solidity
+struct PoolData {
+    IUniswapV3Pool pool;
+    int24 minEnforcedTick;
+    int24 maxEnforcedTick;
+}
+```
+
+**Properties**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`pool`|`IUniswapV3Pool`|A canonical Uniswap V3 pool initialized in the SFPM|
+|`minEnforcedTick`|`int24`|The current minimum enforced tick for the pool in the SFPM|
+|`maxEnforcedTick`|`int24`|The current maximum enforced tick for the pool in the SFPM|
 

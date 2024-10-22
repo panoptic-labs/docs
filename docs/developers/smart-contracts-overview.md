@@ -1,16 +1,39 @@
 ---
 sidebar_position: 0
 ---
+
 # Smart contracts overview
-Panoptic smart contracts directly interface with Uniswap V3's core contracts to create an options market.
+Panoptic is a protocol that facilitates the trading of Panoptions, which are options-like instruments with fixed gamma between two prices that operate on a streaming premium model. Under the hood, this consists of two components:
+- A lending market for Uniswap V3 liquidity chunks that allows option sellers (lenders) to earn a multiplier on Uniswap fees paid by borrowers (option buyers) that utilize their liquidity.
+- An undercollateralized, commissions-based token lending protocol that gives option sellers flexibility in managing their positions — allowing them to modify their payoffs and LP on Uniswap with more capital efficiency.
 
 ---
+## Architecture & Contracts (Panoptic V1.1)
+Panoptic V1.1 is an upgrade to Panoptic V1 that introduces the ability to create options markets on Uniswap V4 pools. The upgrade adds support for native ETH and native token pools on other chains, as well as pools with hooks (expansions to Uniswap V4) with the permissions `beforeInitialize`, `afterInitialize`, `beforeDonate`, `afterDonate`, `beforeSwap`, `afterSwap`, `beforeSwapReturnDelta`, and `afterSwapReturnDelta`. Panoptic V1.1 still uses V3-style oracles (which can consist of a Uniswap V3 pool or a Uniswap V4 hook that exposes the same interface).
+  
+### Directory
+- [CollateralTracker](/docs/developers/V1.1/contract.CollateralTracker)
+  - Tracks and manages collateral using a shares model.
+- [PanopticFactory](/docs/developers/V1.1/contract.PanopticFactory)
+  - Deploys an options market on top of an existing Uniswap V4 pool. 
+- [PanopticPool](/docs/developers/V1.1/contract.PanopticPool)
+  - Creates and manages undercollateralized options. Manages positions, collateral, liquidations and forced exercises.
+- [SemiFungiblePositionManager](/docs/developers/V1.1/contract.SemiFungiblePositionManager)
+  - The Semi-fungible Position Manager contract for Panoptic replaces the functionalities of the Nonfungible Position Manager from Uniswap v4-periphery. Wraps up to 4-legged Uniswap V4 positions in the ERC1155 semi-fungible token interface.
+- [base](/docs/developers/V1.1/base/abstract.Multicall)
+  - Inherited metadata and multicall contracts
+- [libraries](/docs/developers/V1.1/libraries/library.CallbackLib)
+- [tokens](/docs/developers/V1.1/tokens/interfaces/interface.IERC20Partial)
+  - Token implementations and interfaces used in the contracts
+- [types](/docs/developers/V1.1/types/library.LeftRightLibrary)
+  - Custom data types used in the contracts
 
-## Architecture & Contracts
+## Architecture & Contracts (Panoptic V1)
 
 import ThemedImage from '@theme/ThemedImage';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+##
 <ThemedImage
   alt="Commissions"
   sources={{
@@ -19,29 +42,21 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   }}
 />
 
+Panoptic V1.0 is the original version of the Panoptic Protocol. It facilitates options markets over Uniswap V3 pools.
 
-
-
-### (dependency) [UniswapV3Pool.sol](https://docs.uniswap.org/protocol/reference/core/UniswapV3Pool)
-The interface for a Uniswap V3 Pool. A Uniswap pool facilitates swapping and automated market making between any two assets that strictly conform to the ERC20 specification
-
-Panoptic deploys contracts that interact with the already-deployed UniswapV3Pool.sol contracts.
-
-# Contents
-- [CollateralTracker](/docs/developers/contract.CollateralTracker)
+### Directory
+- [CollateralTracker](/docs/developers/V1.0/contract.CollateralTracker)
   - Tracks and manages collateral using a shares model.
-- [PanopticFactory](/docs/developers/contract.PanopticFactory)
+- [PanopticFactory](/docs/developers/V1.0/contract.PanopticFactory)
   - Deploys an options market on top of an existing Uniswap V3 pool. 
-- [PanopticPool](/docs/developers/contract.PanopticPool)
+- [PanopticPool](/docs/developers/V1.0/contract.PanopticPool)
   - Creates and manages undercollateralized options. Manages positions, collateral, liquidations and forced exercises.
-- [SemiFungiblePositionManager](/docs/developers/contract.SemiFungiblePositionManager)
+- [SemiFungiblePositionManager](/docs/developers/V1.0/contract.SemiFungiblePositionManager)
   - The Semi-fungible Position Manager contract for Panoptic replaces the functionalities of the Nonfungible Position Manager from Uniswap v3-periphery. Wraps up to 4-legged Uniswap V3 positions in the ERC1155 semi-fungible token interface.
-- [base](/docs/developers/base/abstract.Multicall)
+- [base](/docs/developers/V1.0/base/abstract.Multicall)
   - Inherited metadata and multicall contracts
-- [libraries](/docs/developers/libraries/library.CallbackLib)
-- [tokens](/docs/developers/tokens/interfaces/interface.IERC20Partial)
+- [libraries](/docs/developers/V1.0/libraries/library.CallbackLib)
+- [tokens](/docs/developers/V1.0/tokens/interfaces/interface.IERC20Partial)
   - Token implementations and interfaces used in the contracts
-- [types](/docs/developers/types/library.LeftRightLibrary)
+- [types](/docs/developers/V1.0/types/library.LeftRightLibrary)
   - Custom data types used in the contracts
-
-

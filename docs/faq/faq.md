@@ -25,7 +25,7 @@ Connect and discover the forefront of DeFi options with Panoptic.
 
 <details id="what-are-the-key-benefits">
 <summary>What are the key benefits?</summary>
-Options in Panoptic differ slightly from conventional options. Instead of using a clearinghouse to settle options contracts, the Panoptic protocol uses Liquidity Provider (LP) positions in Uniswap v3 as a fundamental building block for trading long and short options.
+Options in Panoptic differ slightly from conventional options. Instead of using a clearinghouse to settle options contracts, the Panoptic protocol uses Liquidity Provider (LP) positions in Uniswap as a fundamental building block for trading long and short options.
 <br /><br />
 Panoptic allows users to access new and improved features when options trading:<br />
 1) Panoptic options never expire and are perpetual.<br />
@@ -36,12 +36,12 @@ Panoptic allows users to access new and improved features when options trading:<
 
 <details id="which-assets-can-i-trade">
 <summary>Which assets can I trade?</summary>
-Panoptic works on any ERC20 token. Panoptic users can create an options market on any token pair that exists on Uniswap v3.
+Panoptic works on any ERC20 token. Panoptic users can create an options market on any Uniswap V3 or V4 pair.
 </details>
 
 <details id="where-will-panoptic-launch">
 <summary>Where will Panoptic launch?</summary>
-Panoptic will launch on Ethereum mainnet, followed by EVM-compatible chains where Uniswap v3 is deployed.
+Panoptic will launch on Ethereum mainnet, followed by EVM-compatible chains where Uniswap V3 and V4 are deployed.
 </details>
 
 <details id="is-there-a-token">
@@ -56,7 +56,7 @@ Yes, depositors and traders can earn Panoptic incentive points (Pips). For more 
 
 <details id="wen-launch">
 <summary>Wen launch?</summary>
-Panoptic is launching on Ethereum mainnet the summer of 2024, followed by other EVM-compatible chains. See our <a href="https://panoptic.xyz/docs/roadmap">roadmap</a>.
+Panoptic is launching on the Ethereum mainnet in Fall 2024, followed by other EVM-compatible chains. See our <a href="https://panoptic.xyz/docs/roadmap">roadmap</a>.
 </details>
 
 <details id="how-does-liquidity-in-uniswap-benefit-panoptic">
@@ -70,16 +70,14 @@ No.
 </details>
 
 <details id="how-does-the-impending-release-of-uniswap-v4-affect-panoptic">
-<summary>How does the impending release of Uniswap v4 affect Panoptic?</summary>
-We are very excited for Uniswap's remarkable achievement! With Uniswap v4, Panoptic is set for an exciting journey:
+<summary>How does the impending release of Uniswap V4 affect Panoptic?</summary>
+We are very excited for Uniswap's remarkable achievement! With Uniswap V4, Panoptic is set for an exciting journey:
 <br /><br />
-1️⃣ Panoptic will launch on Uniswap v3 🔜
+1️⃣ Panoptic will land on both Uniswap V3 and V4 🔜
 <br /><br />
-2️⃣ Being backed by <a href="https://blog.uniswap.org/ventures">Uniswap Labs Ventures</a>, Uniswap v4 has always been part of our growth map🗺️
+2️⃣ Being backed by <a href="https://blog.uniswap.org/ventures">Uniswap Labs Ventures</a>, Uniswap V4 has always been part of our growth map 🗺️
 <br /><br />
-3️⃣ Uniswap v4 will supercharge Panoptic⚡
-<br /><br />
-Stay tuned...
+3️⃣ Uniswap V4 will supercharge Panoptic ⚡
 </details>
 
 
@@ -145,7 +143,7 @@ No. While Panoptic allows you to hedge against Uniswap LP positions by shorting 
 
 <details id="what-tokens-can-i-trade-options-on">
 <summary>What tokens can I trade options on?</summary>
-Any ERC20 tokens. The Panoptic protocol enables permissionless options trading for longtail assets just as Uniswap allows for permissionless spot trading for longtail assets.
+Any ERC20 token or native asset. The Panoptic protocol enables permissionless options trading for longtail assets just as Uniswap allows for permissionless spot trading for longtail assets.
 </details>
 
 <details id="can-i-sell-options-at-any-strike">
@@ -179,7 +177,7 @@ Panoptic solves this by opening up a two-sided market, where perpetual options a
 
 <details id="what-is-the-plp-role">
 <summary>What is the passive liquidity provider (PLP) role? How is this different from the option seller?</summary>
-The passive liquidity provider (PLP) passively provides fungible liquidity to the Panoptic pool and receives commission fees in return. This differs from the liquidity provider (LP) who deploys liquidity in a Uniswap V3 pool and receives swap fees in return. The option seller borrows liquidity from the PLP to deploy in a Uniswap V3 pool as an LP. This act of moving liquidity from the Panoptic pool to the Uniswap pool constitutes selling an option.   
+The passive liquidity provider (PLP) passively provides fungible liquidity to the Panoptic pool and receives commission fees in return. This differs from the liquidity provider (LP) who deploys liquidity in a Uniswap pool and receives swap fees in return. The option seller borrows liquidity from the PLP to deploy in a Uniswap pool as an LP. This act of moving liquidity from the Panoptic pool to the Uniswap pool constitutes selling an option.   
 <br /><br />
 Example A: Alice is a PLP for the ETH-USDC pool on Panoptic. She can deposit ETH, USDC, or both ETH & USDC into the pool. She receives a share of commission fees in return.  
 <br /><br />
@@ -260,7 +258,7 @@ For a detailed explanation of the differences and advantages of streamia, you ca
 ## Security
 <details id="will-there-be-an-audit">
 <summary>Will there be an audit?</summary>
-Yes. Panoptic's smart contracts has undergone multiple audits by industry leading firms, including Trail of Bits, Code4rena, <a href="https://panoptic.xyz/blog/openzeppelin-audits-panoptic-defi-options-protocol">OpenZeppelin</a>, <a href="https://panoptic.xyz/blog/abdk-audit-completion">ABDK</a>, <a href="https://panoptic.xyz/blog/panoptic-three-sigma-partnership">Three Sigma</a>, and <a href="https://panoptic.xyz/blog/simtopia-partnership-panoptic-defi-options">Simtopia</a>.
+Yes. Panoptic's smart contracts has undergone multiple audits by industry leading firms, including Cantina, Trail of Bits, Code4rena, <a href="https://panoptic.xyz/blog/openzeppelin-audits-panoptic-defi-options-protocol">OpenZeppelin</a>, <a href="https://panoptic.xyz/blog/abdk-audit-completion">ABDK</a>, <a href="https://panoptic.xyz/blog/panoptic-three-sigma-partnership">Three Sigma</a>, and <a href="https://panoptic.xyz/blog/simtopia-partnership-panoptic-defi-options">Simtopia</a>.
 </details>
 
 <details id="why-is-panoptic-oracle-free">

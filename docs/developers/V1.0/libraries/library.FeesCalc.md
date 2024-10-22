@@ -12,9 +12,9 @@ Compute fees accumulated within option position legs (a leg is a liquidity chunk
 ## Functions
 ### calculateAMMSwapFees
 
-Calculate the AMM Swap/trading fees for a `liquidityChunk` of each token.
+Calculate the AMM swap fees accumulated by the `liquidityChunk` in each token of the pool.
 
-*Read from the uniswap pool and compute the accumulated fees from swapping activity.*
+*Read from the Uniswap pool and compute the accumulated fees from swapping activity.*
 
 
 ```solidity
@@ -48,7 +48,7 @@ function calculateAMMSwapFees(
 Calculates the fee growth that has occurred (per unit of liquidity) in the AMM/Uniswap for an
 option position's tick range.
 
-*Extracts the feeGrowth from the uniswap v3 pool.*
+*Extracts the feeGrowth from the Uniswap V3 pool.*
 
 
 ```solidity

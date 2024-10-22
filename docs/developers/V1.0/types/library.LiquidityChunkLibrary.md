@@ -4,14 +4,8 @@
 **Author:**
 Axicon Labs Limited
 
-A liquidity chunk is an amount of `liquidity` (an amount of WETH, e.g.) deployed between two ticks: `tickLower` and `tickUpper`
+A liquidity chunk is an amount of `liquidity` deployed between two ticks: `tickLower` and `tickUpper`
 into a concentrated liquidity AMM.
-
-Track Tick Range Information. Lower and Upper ticks including the liquidity deployed within that range.
-
-This is used to track information about a leg in the Option Position identified by `TokenId.sol`.
-
-We pack this tick range info into a uint256.
 
 
 ## State Variables

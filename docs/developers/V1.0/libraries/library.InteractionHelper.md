@@ -7,7 +7,7 @@ Axicon Labs Limited
 Used to delegate logic with multiple external calls.
 
 *Generally employed when there is a need to save or reuse bytecode size
-on a core contract (calls take a significant amount of logic).*
+on a core contract.*
 
 
 ## Functions
@@ -53,8 +53,8 @@ function computeName(address token0, address token1, bool isToken0, uint24 fee, 
 
 |Name|Type|Description|
 |----|----|-----------|
-|`token0`|`address`|The token0 in the Uniswap Pool|
-|`token1`|`address`|The token1 in the Uniswap Pool|
+|`token0`|`address`|The token0 of the Uniswap Pool|
+|`token1`|`address`|The token1 of the Uniswap Pool|
 |`isToken0`|`bool`|Whether the collateral token computing the name is for token0 or token1|
 |`fee`|`uint24`|The fee of the Uniswap pool in hundredths of basis points|
 |`prefix`|`string`|A constant string appended to the start of the token name|
@@ -68,7 +68,7 @@ function computeName(address token0, address token1, bool isToken0, uint24 fee, 
 
 ### computeSymbol
 
-Returns symbol as prefixed symbol of underlying token.
+Returns collateral token symbol as `prefix` + `underlying token symbol`.
 
 
 ```solidity
@@ -79,13 +79,13 @@ function computeSymbol(address token, string memory prefix) external view return
 |Name|Type|Description|
 |----|----|-----------|
 |`token`|`address`|The address of the underlying token used to compute the symbol|
-|`prefix`|`string`|A constant string appended to the symbol of the underlying token to create the final symbol|
+|`prefix`|`string`|A constant string prepended to the symbol of the underlying token to create the final symbol|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`string`|The symbol of the token|
+|`<none>`|`string`|The symbol of the collateral token|
 
 
 ### computeDecimals

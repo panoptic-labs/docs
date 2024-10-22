@@ -116,7 +116,7 @@ An option with no intrinsic value
 
 
 ### [Panoption](/docs/terms/panoption) 
-A perpetual, oracle-less, decentralized, option based on Uniswap V3.
+A perpetual, oracle-less, decentralized, option with fixed gamma between two prices, operating on a streaming premium model.
 
 
 ### [Perpetual Options](/docs/terms/perps) 

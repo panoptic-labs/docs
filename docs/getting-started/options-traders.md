@@ -9,7 +9,7 @@ Options Traders can leverage Panoptic's full-featured platform. Users can buy an
 ### Full Flexibility
 Panoptic offers the full flexibility that options traders are familiar with, without sacrificing liquidity. Here is how Panoptic avoids restrictions pervasive in DeFi options:
 
-- *Ability to support large sizes*: Panoptic enables unlimited selling of options. When there are no buyers, sellers are still compensated through Uniswap trading fees. Perpetual options remove expiries to consolidate liquidity. Panoptic renders OTC options on longtail assets obsolete since Panoptic is oracle-free and enables immediate listing of any ERC-20 token pair.
+- *Ability to support large sizes*: Panoptic enables unlimited selling of options. When there are no buyers, sellers are still compensated through Uniswap trading fees. Perpetual options remove expiries to consolidate liquidity. Panoptic renders OTC options on longtail assets obsolete since Panoptic is oracle-free and enables immediate listing of any asset pair.
 
 - *Keeping variety without losing liquidity*: Traders can sell options at any strike price without limitation. 
 Traders can choose whether to buy or sell options, which strike to underwrite, what type of option to trade (put, call, or any multi-leg combination), with full capital efficiency.

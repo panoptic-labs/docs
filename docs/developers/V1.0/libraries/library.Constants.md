@@ -60,7 +60,7 @@ Parameter that determines which oracle type to use for the "slow" oracle price o
 
 *This oracle is updated with the last Uniswap observation during `mintOptions` if MEDIAN_PERIOD has elapsed past the last observation.*
 
-*If true, the "slow" oracle price is instead computed on-the-fly from 8 Uniswap observations (spaced 5 observations apart) irrespective of the frequency of `mintOptions` calls.*
+*If true, the "slow" oracle price is instead computed on-the-fly from 9 Uniswap observations (spaced 5 observations apart) irrespective of the frequency of `mintOptions` calls.*
 
 
 ```solidity
@@ -113,7 +113,7 @@ uint256 internal constant SLOW_ORACLE_CARDINALITY = 9;
 ### SLOW_ORACLE_PERIOD
 Amount of observation indices to skip in between each observation for the "slow" oracle price.
 
-*Structured such that the minimum total observation time is 8 minutes on Ethereum (similar to internal median mode).*
+*Structured such that the minimum total observation time is 9 minutes on Ethereum.*
 
 
 ```solidity

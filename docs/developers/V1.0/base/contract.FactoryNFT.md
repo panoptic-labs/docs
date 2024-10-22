@@ -4,6 +4,9 @@
 **Inherits:**
 [MetadataStore](/docs/developers/base/contract.MetadataStore), ERC721
 
+**Author:**
+Axicon Labs Limited
+
 Constructs dynamic SVG art and metadata for Panoptic Factory NFTs from a set of building blocks.
 
 *Pointers to metadata are provided at deployment time.*
@@ -18,7 +21,7 @@ Initialize metadata pointers and token name/symbol.
 ```solidity
 constructor(bytes32[] memory properties, uint256[][] memory indices, Pointer[][] memory pointers)
     MetadataStore(properties, indices, pointers)
-    ERC721("Panoptic Factory Deployer NFTs", "PANOPTIC-NFT");
+    ERC721("Panoptic V1 Factory Deployer NFTs", "PANOPTIC-NFT");
 ```
 **Parameters**
 

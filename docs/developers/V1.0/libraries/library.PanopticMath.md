@@ -4,10 +4,12 @@
 **Author:**
 Axicon Labs Limited
 
+Contains Panoptic-specific helpers and math functions.
+
 
 ## State Variables
 ### MAX_UINT256
-This is equivalent to type(uint256).max — used in assembly blocks as a replacement.
+This is equivalent to `type(uint256).max` — used in assembly blocks as a replacement.
 
 
 ```solidity
@@ -16,7 +18,7 @@ uint256 internal constant MAX_UINT256 = 2 ** 256 - 1;
 
 
 ### TICKSPACING_MASK
-Masks 16-bit tickSpacing out of 64-bit [16-bit tickspacing][48-bit poolPattern] format poolId
+Masks 16-bit tickSpacing out of 64-bit `[16-bit tickspacing][48-bit poolPattern]` format poolId
 
 
 ```solidity
@@ -27,23 +29,24 @@ uint64 internal constant TICKSPACING_MASK = 0xFFFF000000000000;
 ## Functions
 ### getPoolId
 
-Given an address to a Uniswap v3 pool, return its 64-bit ID as used in the `TokenId` of Panoptic.
+Given an address to a Uniswap V3 pool, return its 64-bit ID as used in the `TokenId` of Panoptic.
 
 
 ```solidity
-function getPoolId(address univ3pool) internal view returns (uint64);
+function getPoolId(address univ3pool, int24 tickSpacing) internal pure returns (uint64);
 ```
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`univ3pool`|`address`|The address of the Uniswap v3 pool to get the ID of|
+|`univ3pool`|`address`|The address of the Uniswap V3 pool to get the ID of|
+|`tickSpacing`|`int24`|The tick spacing of `univ3pool`|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`uint64`|A uint64 representing a fingerprint of the uniswap v3 pool address|
+|`<none>`|`uint64`|A uint64 representing a fingerprint of the Uniswap V3 pool address|
 
 
 ### incrementPoolPattern
@@ -134,11 +137,11 @@ function uniswapFeeToString(uint24 fee) internal pure returns (string memory);
 
 ### updatePositionsHash
 
-Update an existing account's "positions hash" with a new single position `tokenId`.
+Update an existing account's "positions hash" with a new `tokenId`.
 
-The positions hash contains a single fingerprint of all positions created by an account/user as well as a tally of the positions.
+The positions hash contains a fingerprint of all open positions created by an account/user and a count of those positions.
 
-*The combined hash is the XOR of all individual position hashes.*
+*The "fingerprint" portion of the hash is given by XORing the hashed `tokenId` of each position the user has open together.*
 
 
 ```solidity
@@ -149,8 +152,8 @@ function updatePositionsHash(uint256 existingHash, TokenId tokenId, bool addFlag
 |Name|Type|Description|
 |----|----|-----------|
 |`existingHash`|`uint256`|The existing position hash containing all historical N positions created and the count of the positions|
-|`tokenId`|`TokenId`|The new position to add to the existing hash: existingHash = uint248(existingHash) ^ hashOf(tokenId)|
-|`addFlag`|`bool`|Whether to mint (add) the tokenId to the count of positions or burn (subtract) it from the count (existingHash >> 248) +/- 1|
+|`tokenId`|`TokenId`|The new position to add to the existing hash: `existingHash = uint248(existingHash) ^ hashOf(tokenId)`|
+|`addFlag`|`bool`|Whether to mint (add) the tokenId to the count of positions or burn (subtract) it from the count `(existingHash >> 248) +/- 1`|
 
 **Returns**
 
@@ -161,7 +164,7 @@ function updatePositionsHash(uint256 existingHash, TokenId tokenId, bool addFlag
 
 ### getOracleTicks
 
-Gets several ticks from Uniswap regarding the underlying pair.
+Computes various oracle prices corresponding to a Uniswap pool.
 
 
 ```solidity
@@ -175,7 +178,7 @@ function getOracleTicks(IUniswapV3Pool univ3pool, uint256 miniMedian)
 |Name|Type|Description|
 |----|----|-----------|
 |`univ3pool`|`IUniswapV3Pool`|The Uniswap pool to get the observations from|
-|`miniMedian`|`uint256`|The packed structure representing the sorted 8-slot queue of ticks|
+|`miniMedian`|`uint256`|The packed structure representing the sorted 8-slot queue of internal median observations|
 
 **Returns**
 
@@ -234,7 +237,7 @@ function computeMedianObservedPrice(
 
 ### computeInternalMedian
 
-Takes a packed structure representing a sorted 8-slot queue of ticks and returns the median of those values.
+Takes a packed structure representing a sorted 8-slot queue of ticks and returns the median of those values and an updated queue if another observation is warranted.
 
 *Also inserts the latest Uniswap observation into the buffer, resorts, and returns if the last entry is at least `period` seconds old.*
 
@@ -295,7 +298,7 @@ function twapFilter(IUniswapV3Pool univ3pool, uint32 twapWindow) external view r
 ### getLiquidityChunk
 
 For a given option position (`tokenId`), leg index within that position (`legIndex`), and `positionSize` get the tick range spanned and its
-liquidity (share ownership) in the Univ3 pool; this is a liquidity chunk.
+liquidity (share ownership) in the Uniswap V3 pool; this is a liquidity chunk.
 
 
 ```solidity
@@ -321,14 +324,11 @@ function getLiquidityChunk(TokenId tokenId, uint256 legIndex, uint128 positionSi
 
 ### getTicks
 
-Extract the tick range specified by `strike` and `width` for the given `tickSpacing`, if valid.
+Extract the tick range specified by `strike` and `width` for the given `tickSpacing`.
 
 
 ```solidity
-function getTicks(int24 strike, int24 width, int24 tickSpacing)
-    internal
-    pure
-    returns (int24 tickLower, int24 tickUpper);
+function getTicks(int24 strike, int24 width, int24 tickSpacing) internal pure returns (int24, int24);
 ```
 **Parameters**
 
@@ -336,14 +336,14 @@ function getTicks(int24 strike, int24 width, int24 tickSpacing)
 |----|----|-----------|
 |`strike`|`int24`|The strike price of the option|
 |`width`|`int24`|The width of the option|
-|`tickSpacing`|`int24`|The tick spacing of the underlying Uniswap v3 pool|
+|`tickSpacing`|`int24`|The tick spacing of the underlying Uniswap V3 pool|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`tickLower`|`int24`|The lower tick of the liquidity chunk|
-|`tickUpper`|`int24`|The upper tick of the liquidity chunk|
+|`<none>`|`int24`|The lower tick of the liquidity chunk|
+|`<none>`|`int24`|The upper tick of the liquidity chunk|
 
 
 ### getRangesFromStrike
@@ -373,7 +373,7 @@ function getRangesFromStrike(int24 width, int24 tickSpacing) internal pure retur
 
 ### computeExercisedAmounts
 
-Compute the amount of funds that are underlying this option position. This is useful when exercising a position.
+Compute the amount of notional value underlying this option position.
 
 
 ```solidity
@@ -399,7 +399,7 @@ function computeExercisedAmounts(TokenId tokenId, uint128 positionSize)
 
 ### convert0to1
 
-Convert an amount of token0 into an amount of token1 given the sqrtPriceX96 in a Uniswap pool defined as sqrt(1/0)*2^96.
+Convert an amount of token0 into an amount of token1 given the sqrtPriceX96 in a Uniswap pool defined as `sqrt(1/0)*2^96`.
 
 *Uses reduced precision after tick 443636 in order to accommodate the full range of ticks*
 
@@ -423,7 +423,7 @@ function convert0to1(uint256 amount, uint160 sqrtPriceX96) internal pure returns
 
 ### convert0to1RoundingUp
 
-Convert an amount of token0 into an amount of token1 given the sqrtPriceX96 in a Uniswap pool defined as sqrt(1/0)*2^96.
+Convert an amount of token0 into an amount of token1 given the sqrtPriceX96 in a Uniswap pool defined as `sqrt(1/0)*2^96`.
 
 *Uses reduced precision after tick 443636 in order to accommodate the full range of ticks*
 
@@ -447,7 +447,7 @@ function convert0to1RoundingUp(uint256 amount, uint160 sqrtPriceX96) internal pu
 
 ### convert1to0
 
-Convert an amount of token1 into an amount of token0 given the sqrtPriceX96 in a Uniswap pool defined as sqrt(1/0)*2^96.
+Convert an amount of token1 into an amount of token0 given the sqrtPriceX96 in a Uniswap pool defined as `sqrt(1/0)*2^96`.
 
 *Uses reduced precision after tick 443636 in order to accommodate the full range of ticks.*
 
@@ -471,7 +471,7 @@ function convert1to0(uint256 amount, uint160 sqrtPriceX96) internal pure returns
 
 ### convert1to0RoundingUp
 
-Convert an amount of token1 into an amount of token0 given the sqrtPriceX96 in a Uniswap pool defined as sqrt(1/0)*2^96.
+Convert an amount of token1 into an amount of token0 given the sqrtPriceX96 in a Uniswap pool defined as `sqrt(1/0)*2^96`.
 
 *Uses reduced precision after tick 443636 in order to accommodate the full range of ticks.*
 
@@ -495,7 +495,7 @@ function convert1to0RoundingUp(uint256 amount, uint160 sqrtPriceX96) internal pu
 
 ### convert0to1
 
-Convert an amount of token0 into an amount of token1 given the sqrtPriceX96 in a Uniswap pool defined as sqrt(1/0)*2^96.
+Convert an amount of token0 into an amount of token1 given the sqrtPriceX96 in a Uniswap pool defined as `sqrt(1/0)*2^96`.
 
 *Uses reduced precision after tick 443636 in order to accommodate the full range of ticks.*
 
@@ -519,7 +519,7 @@ function convert0to1(int256 amount, uint160 sqrtPriceX96) internal pure returns 
 
 ### convert1to0
 
-Convert an amount of token1 into an amount of token0 given the sqrtPriceX96 in a Uniswap pool defined as sqrt(1/0)*2^96.
+Convert an amount of token1 into an amount of token0 given the sqrtPriceX96 in a Uniswap pool defined as `sqrt(1/0)*2^96`.
 
 *Uses reduced precision after tick 443636 in order to accommodate the full range of ticks.*
 
@@ -564,13 +564,13 @@ function getCrossBalances(LeftRightUnsigned tokenData0, LeftRightUnsigned tokenD
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`uint256`|The combined collateral balance of `tokenData0` and `tokenData1` in terms of (token0 if price(token1/token0) < 1 and vice versa)|
-|`<none>`|`uint256`|The combined required collateral threshold of `tokenData0` and `tokenData1` in terms of (token0 if price(token1/token0) < 1 and vice versa)|
+|`<none>`|`uint256`|The combined collateral balance of `tokenData0` and `tokenData1` in terms of (token0 if `price(token1/token0) < 1` and vice versa)|
+|`<none>`|`uint256`|The combined required collateral threshold of `tokenData0` and `tokenData1` in terms of (token0 if `price(token1/token0) < 1` and vice versa)|
 
 
 ### getAmountsMoved
 
-Compute the amount of token0 and token1 moved. Given an option position `tokenId`, leg index `legIndex`, and how many contracts are in the leg `positionSize`.
+Compute the notional value (for `tokenType = 0` and `tokenType = 1`) represented by a given leg in an option position.
 
 
 ```solidity
@@ -596,7 +596,7 @@ function getAmountsMoved(TokenId tokenId, uint128 positionSize, uint256 legIndex
 
 ### _calculateIOAmounts
 
-Compute the amount of funds that are moved to and removed from the Panoptic Pool.
+Compute the amount of funds that are moved to or removed from the Panoptic Pool when `tokenId` is created.
 
 
 ```solidity
@@ -623,7 +623,7 @@ function _calculateIOAmounts(TokenId tokenId, uint128 positionSize, uint256 legI
 
 ### getLiquidationBonus
 
-Compute the pre-haircut liquidation bonuses to be paid to the liquidator and the protocol loss caused by the liquidation.
+Compute the pre-haircut liquidation bonuses to be paid to the liquidator and the protocol loss caused by the liquidation (pre-haircut).
 
 
 ```solidity
@@ -650,7 +650,7 @@ function getLiquidationBonus(
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`LeftRightSigned`|The LeftRight-packed bonus amounts to be paid to the liquidator for both tokens (may be negative)|
-|`<none>`|`LeftRightSigned`|The LeftRight-packed protocol loss for both tokens, i.e., the delta between the user's starting balance and expended tokens|
+|`<none>`|`LeftRightSigned`|The LeftRight-packed protocol loss (pre-haircut) for both tokens, i.e., the delta between the user's starting balance and expended tokens|
 
 
 ### haircutPremia
@@ -689,7 +689,7 @@ function haircutPremia(
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`LeftRightSigned`|The delta in bonus0 and bonus1 for the liquidator post-haircut|
+|`<none>`|`LeftRightSigned`|The delta, if any, to apply to the existing liquidation bonus|
 
 
 ### getExerciseDeltas
@@ -711,8 +711,8 @@ function getExerciseDeltas(
 |Name|Type|Description|
 |----|----|-----------|
 |`exercisee`|`address`|The address of the user being exercised|
-|`exerciseFees`|`LeftRightSigned`|Exercise fees to debit from exercisor at tick(atTick) rightSlot = token0 left = token1|
-|`atTick`|`int24`|Tick to convert values at. This can be the current tick or some TWAP/median tick|
+|`exerciseFees`|`LeftRightSigned`|Pre-adjustment exercise fees to debit from exercisor (rightSlot = token0 left = token1)|
+|`atTick`|`int24`|The tick at which to convert between token0/token1 when redistributing the exercise fees|
 |`ct0`|`CollateralTracker`|The collateral tracker for token0|
 |`ct1`|`CollateralTracker`|The collateral tracker for token1|
 

@@ -9,7 +9,7 @@ Contains general math helpers and functions
 
 ## State Variables
 ### MAX_UINT256
-This is equivalent to type(uint256).max — used in assembly blocks as a replacement.
+This is equivalent to `type(uint256).max` — used in assembly blocks as a replacement.
 
 
 ```solidity
@@ -154,7 +154,7 @@ function max(int256 a, int256 b) internal pure returns (int256);
 
 Compute the absolute value of an integer (int256).
 
-*Does not support `type(int256).min` and will revert (type(int256).max is one less).*
+*Does not support `type(int256).min` and will revert (`type(int256).max = abs(type(int256).min) - 1`).*
 
 
 ```solidity
@@ -199,7 +199,7 @@ function absUint(int256 x) internal pure returns (uint256);
 ### mostSignificantNibble
 
 Returns the index of the most significant nibble of the 160-bit number,
-where the least significant nibble is at index 0 and the most significant nibble is at index 40.
+where the least significant nibble is at index 0 and the most significant nibble is at index 39.
 
 
 ```solidity
@@ -218,13 +218,64 @@ function mostSignificantNibble(uint160 x) internal pure returns (uint256 r);
 |`r`|`uint256`|The index of the most significant nibble (default: 0)|
 
 
+### getApproxTickWithMaxAmount
+
+Computes a tick that will require approximately `amount` of token0 to create a `tickSpacing`-wide position with `maxLiquidityPerTick` at `tickLower = tick` in Uniswap.
+
+*This function can have a maximum of two ticks of error from one of the ticks with `amount(tickA) < amount < amount(tickA + 1 = tickB)`.*
+
+*`tickSpacing is assumed to be within the range (0, 32768)*
+
+*`maxLiquidityPerTick` for `s=tickSpacing` should be defined by `(2^128 - 1) / ((887272/s) - (-887272/s) + 1)`*
+
+
+```solidity
+function getApproxTickWithMaxAmount(uint256 amount, int24 tickSpacing, uint256 maxLiquidityPerTick)
+    internal
+    pure
+    returns (int24);
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`amount`|`uint256`|The desired amount of token0 required to fill the returned tick|
+|`tickSpacing`|`int24`|The spacing between initializable ticks in the Uniswap pool|
+|`maxLiquidityPerTick`|`uint256`|The maximum liquidity that can reference any given tick in the Uniswap pool|
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`<none>`|`int24`|A tick that will require approximately `amount` of token0 to create a `tickSpacing`-wide position with `maxLiquidityPerTick` at `tickLower = tick`|
+
+
+### getMaxLiquidityPerTick
+
+Computes the maximum liquidity that is allowed to reference any given tick in a Uniswap V3 pool with `tickSpacing`.
+
+
+```solidity
+function getMaxLiquidityPerTick(int24 tickSpacing) internal pure returns (uint128);
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`tickSpacing`|`int24`|The spacing between initializable ticks in the Uniswap V3 pool|
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`<none>`|`uint128`|The maximum liquidity that can reference any given tick in the Uniswap V3 pool|
+
+
 ### getSqrtRatioAtTick
 
-Calculates 1.0001^(tick/2) as an X96 number.
+Calculates `1.0001^(tick/2)` as an X96 number.
 
-*Implemented using Uniswap's "incorrect" constants. Supplying commented-out real values for an accurate calculation.*
-
-*Will revert if |tick| > max tick.*
+*Will revert if `abs(tick) > 887272`.*
 
 
 ```solidity
@@ -234,7 +285,7 @@ function getSqrtRatioAtTick(int24 tick) internal pure returns (uint160);
 
 |Name|Type|Description|
 |----|----|-----------|
-|`tick`|`int24`|Value of the tick for which sqrt(1.0001^tick) is calculated|
+|`tick`|`int24`|Value of the tick for which `sqrt(1.0001^tick)` is calculated|
 
 **Returns**
 
@@ -243,11 +294,35 @@ function getSqrtRatioAtTick(int24 tick) internal pure returns (uint160);
 |`<none>`|`uint160`|A Q64.96 number representing the sqrt price at the provided tick|
 
 
+### log_Sqrt1p0001
+
+Approximates the log base `sqrt(1.0001)` of `argX128/2^128` with `precision` bits of precision.
+
+*Validated for `argX128` in the range `[18447437466114719744, 6276865796315986613307619852238232712866172378830163935232)`.*
+
+*Validated for `precision` in the range `[0, 20]`.*
+
+
+```solidity
+function log_Sqrt1p0001(uint256 argX128, uint256 precision) internal pure returns (int256);
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`argX128`|`uint256`|The Q128.128 fixed-point number to calculate the log of|
+|`precision`|`uint256`|The bits of precision with which to compute the result, max 64 (`err <≈ 2^-precision * log₂(√1.0001)⁻¹`)|
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`<none>`|`int256`|The log with base `sqrt(1.0001)` of `argX128/2^128`|
+
+
 ### getAmount0ForLiquidity
 
 Calculates the amount of token0 received for a given LiquidityChunk.
-
-*Had to use a less optimal calculation to match Uniswap's implementation.*
 
 
 ```solidity
@@ -257,13 +332,13 @@ function getAmount0ForLiquidity(LiquidityChunk liquidityChunk) internal pure ret
 
 |Name|Type|Description|
 |----|----|-----------|
-|`liquidityChunk`|`LiquidityChunk`|Variable that efficiently packs the liquidity, tickLower, and tickUpper.|
+|`liquidityChunk`|`LiquidityChunk`|A specification for a liquidity chunk in Uniswap containing `liquidity`, `tickLower`, and `tickUpper`|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`uint256`|The amount of token0|
+|`<none>`|`uint256`|The amount of token0 represented by `liquidityChunk` when `currentTick < tickLower`|
 
 
 ### getAmount1ForLiquidity
@@ -278,18 +353,18 @@ function getAmount1ForLiquidity(LiquidityChunk liquidityChunk) internal pure ret
 
 |Name|Type|Description|
 |----|----|-----------|
-|`liquidityChunk`|`LiquidityChunk`|Variable that efficiently packs the liquidity, tickLower, and tickUpper|
+|`liquidityChunk`|`LiquidityChunk`|A specification for a liquidity chunk in Uniswap containing `liquidity`, `tickLower`, and `tickUpper`|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`uint256`|The amount of token1|
+|`<none>`|`uint256`|The amount of token1 represented by `liquidityChunk` when `currentTick > tickUpper`|
 
 
 ### getAmountsForLiquidity
 
-Calculates the amount of token0 and token1 received for a given LiquidityChunk at the provided currentTick.
+Calculates the amount of token0 and token1 received for a given LiquidityChunk at the provided `currentTick`.
 
 
 ```solidity
@@ -302,22 +377,20 @@ function getAmountsForLiquidity(int24 currentTick, LiquidityChunk liquidityChunk
 
 |Name|Type|Description|
 |----|----|-----------|
-|`currentTick`|`int24`|The current tick to be evaluated|
-|`liquidityChunk`|`LiquidityChunk`|Variable that efficiently packs the liquidity, tickLower, and tickUpper|
+|`currentTick`|`int24`|The tick at which to evaluate `liquidityChunk`|
+|`liquidityChunk`|`LiquidityChunk`|A specification for a liquidity chunk in Uniswap containing `liquidity`, `tickLower`, and `tickUpper`|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`amount0`|`uint256`|The amount of token0|
-|`amount1`|`uint256`|The amount of token1|
+|`amount0`|`uint256`|The amount of token0 represented by `liquidityChunk` at `currentTick`|
+|`amount1`|`uint256`|The amount of token1 represented by `liquidityChunk` at `currentTick`|
 
 
 ### getLiquidityForAmount0
 
-Returns a LiquidityChunk with `liquidity` corresponding to `amount0` at the provided ticks.
-
-*Had to use a less optimal calculation to match Uniswap's implementation.*
+Returns a LiquidityChunk at the provided tick range with `liquidity` corresponding to `amount0`.
 
 
 ```solidity
@@ -338,14 +411,12 @@ function getLiquidityForAmount0(int24 tickLower, int24 tickUpper, uint256 amount
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`LiquidityChunk`|A LiquidityChunk with `tickLower`, `tickUpper`, and the calculated amount of liquidity|
+|`<none>`|`LiquidityChunk`|A LiquidityChunk with `tickLower`, `tickUpper`, and the calculated amount of liquidity for `amount0`|
 
 
 ### getLiquidityForAmount1
 
-Returns a LiquidityChunk with `liquidity` corresponding to `amount1` at the provided ticks.
-
-*Had to use a less optimal calculation to match Uniswap's implementation.*
+Returns a LiquidityChunk at the provided tick range with `liquidity` corresponding to `amount1`.
 
 
 ```solidity
@@ -366,7 +437,7 @@ function getLiquidityForAmount1(int24 tickLower, int24 tickUpper, uint256 amount
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`LiquidityChunk`|A LiquidityChunk with `tickLower`, `tickUpper`, and the calculated amount of liquidity|
+|`<none>`|`LiquidityChunk`|A LiquidityChunk with `tickLower`, `tickUpper`, and the calculated amount of liquidity for `amount1`|
 
 
 ### toUint128
@@ -387,7 +458,7 @@ function toUint128(uint256 toDowncast) internal pure returns (uint128 downcasted
 
 |Name|Type|Description|
 |----|----|-----------|
-|`downcastedInt`|`uint128`|The downcasted uint (uint128 now)|
+|`downcastedInt`|`uint128`|`toDowncast` downcasted to uint128|
 
 
 ### toUint128Capped
@@ -398,16 +469,22 @@ Downcast uint256 to uint128, but cap at type(uint128).max on overflow.
 ```solidity
 function toUint128Capped(uint256 toDowncast) internal pure returns (uint128 downcastedInt);
 ```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`toDowncast`|`uint256`|The uint256 to be downcasted|
+
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`downcastedInt`|`uint128`|The downcasted uint (uint128 now)|
+|`downcastedInt`|`uint128`|`toDowncast` downcasted to uint128|
 
 
 ### toInt128
 
-Recast uint128 to int128.
+Downcast uint128 to int128.
 
 
 ```solidity
@@ -423,7 +500,7 @@ function toInt128(uint128 toCast) internal pure returns (int128 downcastedInt);
 
 |Name|Type|Description|
 |----|----|-----------|
-|`downcastedInt`|`int128`|The downcasted int (int128 now)|
+|`downcastedInt`|`int128`|`toDowncast` downcasted to int128|
 
 
 ### toInt128
@@ -438,13 +515,13 @@ function toInt128(int256 toCast) internal pure returns (int128 downcastedInt);
 
 |Name|Type|Description|
 |----|----|-----------|
-|`toCast`|`int256`|the int256 to be downcasted to int128|
+|`toCast`|`int256`|the int256 to be downcasted|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`downcastedInt`|`int128`|the downcasted integer, now of type int128|
+|`downcastedInt`|`int128`|`toCast` downcasted to int128|
 
 
 ### toInt256
@@ -459,20 +536,20 @@ function toInt256(uint256 toCast) internal pure returns (int256);
 
 |Name|Type|Description|
 |----|----|-----------|
-|`toCast`|`uint256`|The value to be downcasted to uint128|
+|`toCast`|`uint256`|The uint256 to be downcasted|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`int256`|The incoming uint256 but now of type int256|
+|`<none>`|`int256`|`toCast` downcasted to int256|
 
 
 ### mulDiv
 
-Calculates floor(a×b÷denominator) with full precision. Throws if result overflows a uint256 or denominator == 0.
+Calculates `floor(a×b÷denominator)` with full precision. Throws if result overflows a uint256 or `denominator == 0`.
 
-*Credit to Remco Bloemen under MIT license https://xn--2-umb.com/21/muldiv*
+*Credit to Remco Bloemen under MIT license https://xn--2-umb.com/21/muldiv for this and all following `mulDiv` functions*
 
 
 ```solidity
@@ -495,7 +572,7 @@ function mulDiv(uint256 a, uint256 b, uint256 denominator) internal pure returns
 
 ### mulDivCapped
 
-Calculates min(floor(a×b÷denominator), 2^256-1) with full precision.
+Calculates `min(floor(a×b÷denominator), 2^256-1)` with full precision.
 
 
 ```solidity
@@ -518,7 +595,7 @@ function mulDivCapped(uint256 a, uint256 b, uint256 denominator) internal pure r
 
 ### mulDivRoundingUp
 
-Calculates ceil(a×b÷denominator) with full precision. Throws if result overflows a uint256 or denominator == 0.
+Calculates `ceil(a×b÷denominator)` with full precision. Throws if result overflows a uint256 or `denominator == 0`.
 
 
 ```solidity
@@ -541,7 +618,7 @@ function mulDivRoundingUp(uint256 a, uint256 b, uint256 denominator) internal pu
 
 ### mulDiv64
 
-Calculates floor(a×b÷2^64) with full precision. Throws if result overflows a uint256.
+Calculates `floor(a×b÷2^64)` with full precision. Throws if result overflows a uint256.
 
 
 ```solidity
@@ -563,7 +640,7 @@ function mulDiv64(uint256 a, uint256 b) internal pure returns (uint256);
 
 ### mulDiv96
 
-Calculates floor(a×b÷2^96) with full precision. Throws if result overflows a uint256.
+Calculates `floor(a×b÷2^96)` with full precision. Throws if result overflows a uint256.
 
 
 ```solidity
@@ -585,7 +662,7 @@ function mulDiv96(uint256 a, uint256 b) internal pure returns (uint256);
 
 ### mulDiv96RoundingUp
 
-Calculates ceil(a×b÷2^96) with full precision. Throws if result overflows a uint256.
+Calculates `ceil(a×b÷2^96)` with full precision. Throws if result overflows a uint256.
 
 
 ```solidity
@@ -607,7 +684,7 @@ function mulDiv96RoundingUp(uint256 a, uint256 b) internal pure returns (uint256
 
 ### mulDiv128
 
-Calculates floor(a×b÷2^128) with full precision. Throws if result overflows a uint256.
+Calculates `floor(a×b÷2^128)` with full precision. Throws if result overflows a uint256.
 
 
 ```solidity
@@ -629,7 +706,7 @@ function mulDiv128(uint256 a, uint256 b) internal pure returns (uint256);
 
 ### mulDiv128RoundingUp
 
-Calculates ceil(a×b÷2^128) with full precision. Throws if result overflows a uint256.
+Calculates `ceil(a×b÷2^128)` with full precision. Throws if result overflows a uint256.
 
 
 ```solidity
@@ -651,7 +728,7 @@ function mulDiv128RoundingUp(uint256 a, uint256 b) internal pure returns (uint25
 
 ### mulDiv192
 
-Calculates floor(a×b÷2^192) with full precision. Throws if result overflows a uint256.
+Calculates `floor(a×b÷2^192)` with full precision. Throws if result overflows a uint256.
 
 
 ```solidity
@@ -673,7 +750,7 @@ function mulDiv192(uint256 a, uint256 b) internal pure returns (uint256);
 
 ### mulDiv192RoundingUp
 
-Calculates ceil(a×b÷2^192) with full precision.
+Calculates `ceil(a×b÷2^192)` with full precision.
 
 
 ```solidity
@@ -695,7 +772,7 @@ function mulDiv192RoundingUp(uint256 a, uint256 b) internal pure returns (uint25
 
 ### unsafeDivRoundingUp
 
-Calculates ceil(a÷b), returning 0 if b == 0.
+Calculates `ceil(a÷b)`, returning 0 if `b == 0`.
 
 
 ```solidity

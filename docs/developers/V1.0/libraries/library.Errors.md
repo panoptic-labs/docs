@@ -9,7 +9,7 @@ Contains all custom error messages used in Panoptic.
 
 ## Errors
 ### AccountInsolvent
-PanopticPool: the account is not solvent enough to perform the desired action
+PanopticPool: The account is not solvent enough to perform the desired action
 
 
 ```solidity
@@ -27,7 +27,7 @@ error CastingError();
 ```
 
 ### CollateralTokenAlreadyInitialized
-CollateralTracker: collateral token has already been initialized
+CollateralTracker: Collateral token has already been initialized
 
 
 ```solidity
@@ -35,7 +35,7 @@ error CollateralTokenAlreadyInitialized();
 ```
 
 ### DepositTooLarge
-CollateralTracker: the amount of shares (or assets) deposited is larger than the maximum permitted
+CollateralTracker: The amount of shares (or assets) deposited is larger than the maximum permitted
 
 
 ```solidity
@@ -43,7 +43,7 @@ error DepositTooLarge();
 ```
 
 ### EffectiveLiquidityAboveThreshold
-PanopticPool: the effective liquidity (X32) is greater than min(`MAX_SPREAD`, `USER_PROVIDED_THRESHOLD`) during a long mint or short burn
+PanopticPool: The effective liquidity (X32) is greater than min(`MAX_SPREAD`, `USER_PROVIDED_THRESHOLD`) during a long mint or short burn
 
 *Effective liquidity measures how much new liquidity is minted relative to how much is already in the pool*
 
@@ -53,7 +53,7 @@ error EffectiveLiquidityAboveThreshold();
 ```
 
 ### ExceedsMaximumRedemption
-CollateralTracker: attempted to withdraw/redeem more than available liquidity, owned shares, or open positions would allow for
+CollateralTracker: Attempted to withdraw/redeem more than available liquidity, owned shares, or open positions would allow for
 
 
 ```solidity
@@ -61,7 +61,7 @@ error ExceedsMaximumRedemption();
 ```
 
 ### InputListFail
-PanopticPool: the provided list of option positions is incorrect or invalid
+PanopticPool: The provided list of option positions is incorrect or invalid
 
 
 ```solidity
@@ -85,7 +85,7 @@ error InvalidNotionalValue();
 ```
 
 ### InvalidTokenIdParameter
-Invalid TokenId parameter detected
+The TokenId provided by the user is malformed or invalid
 
 
 ```solidity
@@ -106,16 +106,8 @@ A mint or swap callback was attempted from an address that did not match the can
 error InvalidUniswapCallback();
 ```
 
-### LeftRightInputError
-Invalid input in LeftRight library
-
-
-```solidity
-error LeftRightInputError();
-```
-
 ### NoLegsExercisable
-PanopticPool: one of the legs in a position are force-exercisable (they are all either short or ITM long)
+PanopticPool: None of the legs in a position are force-exercisable (they are all either short or ATM long)
 
 
 ```solidity
@@ -123,7 +115,7 @@ error NoLegsExercisable();
 ```
 
 ### NotALongLeg
-PanopticPool: the leg is not long, so the premium cannot be settled through `settleLongPremium`
+PanopticPool: The leg is not long, so premium cannot be settled through `settleLongPremium`
 
 
 ```solidity
@@ -131,7 +123,7 @@ error NotALongLeg();
 ```
 
 ### NotEnoughLiquidity
-PanopticPool: there is not enough avaiable liquidity to buy an option
+PanopticPool: There is not enough available liquidity in the chunk for one of the long legs to be created (or for one of the short legs to be closed)
 
 
 ```solidity
@@ -139,7 +131,7 @@ error NotEnoughLiquidity();
 ```
 
 ### NotMarginCalled
-PanopticPool: position is still solvent and cannot be liquidated
+PanopticPool: Position is still solvent and cannot be liquidated
 
 
 ```solidity
@@ -147,7 +139,7 @@ error NotMarginCalled();
 ```
 
 ### NotPanopticPool
-CollateralTracker: the caller for a permissioned function is not the Panoptic Pool
+CollateralTracker: The caller for a permissioned function is not the Panoptic Pool
 
 
 ```solidity
@@ -163,7 +155,7 @@ error PoolAlreadyInitialized();
 ```
 
 ### PositionAlreadyMinted
-PanopticPool: Option position already minted
+PanopticPool: A position with the given token ID has already been minted by the caller and is still open
 
 
 ```solidity
@@ -179,7 +171,7 @@ error PositionCountNotZero();
 ```
 
 ### PositionTooLarge
-SFPM: maximum token amounts for a position exceed 128 bits
+SFPM: The maximum token deltas (excluding swaps) for a position exceed (2^127 - 5) at some valid price
 
 
 ```solidity
@@ -187,7 +179,7 @@ error PositionTooLarge();
 ```
 
 ### PriceBoundFail
-The current tick in the pool falls outside a user-defined open interval slippage range
+The current tick in the pool (post-ITM-swap) has fallen outside a user-defined open interval slippage range
 
 
 ```solidity
@@ -196,7 +188,8 @@ error PriceBoundFail();
 
 ### StaleTWAP
 An oracle price is too far away from another oracle price or the current tick
-This is a safeguard against price manipulation during option mints, burns, and liquidations
+
+*This is a safeguard against price manipulation during option mints, burns, and liquidations*
 
 
 ```solidity
@@ -204,7 +197,7 @@ error StaleTWAP();
 ```
 
 ### TooManyPositionsOpen
-PanopticPool: too many positions open (above limit per account)
+PanopticPool: An account has reached the maximum number of open positions and cannnot mint another
 
 
 ```solidity
@@ -212,20 +205,21 @@ error TooManyPositionsOpen();
 ```
 
 ### TransferFailed
-ERC20 or SFPM token transfer did not complete successfully
+ERC20 or SFPM (ERC1155) token transfer did not complete successfully
 
 
 ```solidity
 error TransferFailed();
 ```
 
-### TicksNotInitializable
+### InvalidTickBound
 The tick range given by the strike price and width is invalid
-because the upper and lower ticks are not multiples of `tickSpacing`
+because the upper and lower ticks are not initializable multiples of `tickSpacing`
+or one of the ticks exceeds the `MIN_TICK` or `MAX_TICK` bounds
 
 
 ```solidity
-error TicksNotInitializable();
+error InvalidTickBound();
 ```
 
 ### UnderOverFlow
@@ -237,7 +231,7 @@ error UnderOverFlow();
 ```
 
 ### UniswapPoolNotInitialized
-The Uniswap Pool has not been created, so it cannot be used in the SFPM or factory
+The Uniswap Pool has not been created, so it cannot be used in the SFPM or have a PanopticPool created for it by the factory
 
 
 ```solidity
@@ -245,7 +239,7 @@ error UniswapPoolNotInitialized();
 ```
 
 ### ZeroLiquidity
-SFPM: Mints/burns of 0-liquidity chunks in Uniswap are not supported
+SFPM: Mints/burns of zero-liquidity chunks in Uniswap are not supported
 
 
 ```solidity

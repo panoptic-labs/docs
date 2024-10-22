@@ -27,7 +27,7 @@ function validateCallback(address sender, IUniswapV3Factory factory, PoolFeature
 
 ## Structs
 ### PoolFeatures
-Defining characteristics of a Uni V3 pool
+Type defining characteristics of a Uniswap V3 pool.
 
 
 ```solidity
@@ -38,8 +38,16 @@ struct PoolFeatures {
 }
 ```
 
+**Properties**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`token0`|`address`|The address of `token0` for the Uniswap pool|
+|`token1`|`address`|The address of `token1` for the Uniswap pool|
+|`fee`|`uint24`|The fee tier of the Uniswap pool (in hundredths of a basis points)|
+
 ### CallbackData
-Data sent by pool in mint/swap callbacks used to validate the pool and send back requisite tokens
+Type for data sent by pool in mint/swap callbacks used to validate the pool and send back requisite tokens.
 
 
 ```solidity
@@ -48,4 +56,11 @@ struct CallbackData {
     address payer;
 }
 ```
+
+**Properties**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`poolFeatures`|`PoolFeatures`|The features of the pool that sent the callback (used to validate that the pool is canonical)|
+|`payer`|`address`|The address from which the requested tokens should be transferred|
 
