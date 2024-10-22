@@ -6,6 +6,8 @@ image: /img/banners/newsletter-banner.webp
 description: "Explore Panoptic's latest insights on DeFi options, including Uniswap V3's impact on implied volatility, bullish sentiment heading into Q4, and upcoming platform updates in our September newsletter."
 ---
 
+![](/img/banners/newsletter-banner.webp)
+
 Welcome Panoptimists to the September edition of the Panoptic Newsletter, where we provide industry insights, research recaps, and Panoptic-specific content to keep you updated on our DeFi-native options platform.
 
   
