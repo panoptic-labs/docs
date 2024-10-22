@@ -5,7 +5,7 @@ sidebar_position: 2
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.0.x/contracts/PanopticPool.sol)
 
 **Inherits:**
-ERC1155Holder, [Multicall](/docs/developers/base/abstract.Multicall)
+ERC1155Holder, [Multicall](/docs/developers/V1.0/base/abstract.Multicall)
 
 **Author:**
 Axicon Labs Limited

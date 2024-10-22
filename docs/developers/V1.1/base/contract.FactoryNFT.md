@@ -2,7 +2,7 @@
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.1.x/contracts/base/FactoryNFT.sol)
 
 **Inherits:**
-[MetadataStore](/docs/developers/base/contract.MetadataStore), ERC721
+[MetadataStore](/docs/developers/V1.1/base/contract.MetadataStore), ERC721
 
 **Author:**
 Axicon Labs Limited
