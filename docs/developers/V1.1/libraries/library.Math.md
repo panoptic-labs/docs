@@ -17,6 +17,15 @@ uint256 internal constant MAX_UINT256 = 2 ** 256 - 1;
 ```
 
 
+### MAX_UINT128
+This is equivalent to `type(uint128).max` — used in assembly blocks as a replacement.
+
+
+```solidity
+uint256 internal constant MAX_UINT128 = 2 ** 128 - 1;
+```
+
+
 ## Functions
 ### min24
 
@@ -252,23 +261,23 @@ function getApproxTickWithMaxAmount(uint256 amount, int24 tickSpacing, uint256 m
 
 ### getMaxLiquidityPerTick
 
-Computes the maximum liquidity that is allowed to reference any given tick in a Uniswap V3 pool with `tickSpacing`.
+Computes the maximum liquidity that is allowed to reference any given tick in a Uniswap V4 pool with `tickSpacing`.
 
 
 ```solidity
-function getMaxLiquidityPerTick(int24 tickSpacing) internal pure returns (uint128);
+function getMaxLiquidityPerTick(int24 tickSpacing) internal pure returns (uint128 maxLiquidityPerTick);
 ```
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`tickSpacing`|`int24`|The spacing between initializable ticks in the Uniswap V3 pool|
+|`tickSpacing`|`int24`|The spacing between initializable ticks in the Uniswap V4 pool|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`uint128`|The maximum liquidity that can reference any given tick in the Uniswap V3 pool|
+|`maxLiquidityPerTick`|`uint128`|The maximum liquidity that can reference any given tick in the Uniswap V4 pool|
 
 
 ### getSqrtRatioAtTick

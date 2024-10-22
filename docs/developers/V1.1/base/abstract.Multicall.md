@@ -16,7 +16,7 @@ Performs multiple calls on the inheritor in a single transaction, and returns th
 
 
 ```solidity
-function multicall(bytes[] calldata data) public payable returns (bytes[] memory results);
+function multicall(bytes[] calldata data) public returns (bytes[] memory results);
 ```
 **Parameters**
 

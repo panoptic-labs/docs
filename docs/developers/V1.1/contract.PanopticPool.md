@@ -19,7 +19,7 @@ Lower price bound used when no slippage check is required.
 
 
 ```solidity
-int24 internal constant MIN_SWAP_TICK = Constants.MIN_V3POOL_TICK - 1;
+int24 internal constant MIN_SWAP_TICK = Constants.MIN_V4POOL_TICK - 1;
 ```
 
 
@@ -28,7 +28,7 @@ Upper price bound used when no slippage check is required.
 
 
 ```solidity
-int24 internal constant MAX_SWAP_TICK = Constants.MAX_V3POOL_TICK + 1;
+int24 internal constant MAX_SWAP_TICK = Constants.MAX_V4POOL_TICK + 1;
 ```
 
 
@@ -183,12 +183,12 @@ SemiFungiblePositionManager internal immutable SFPM;
 ```
 
 
-### s_univ3pool
-The Uniswap V3 pool that this instance of Panoptic is deployed on.
+### POOL_MANAGER_V4
+The canonical Uniswap V4 Pool Manager address.
 
 
 ```solidity
-IUniswapV3Pool internal s_univ3pool;
+IPoolManager internal immutable POOL_MANAGER_V4;
 ```
 
 
@@ -198,24 +198,6 @@ Stores a sorted set of 8 price observations used to compute the internal median 
 
 ```solidity
 uint256 internal s_miniMedian;
-```
-
-
-### s_collateralToken0
-Collateral vault for token0 in the Uniswap pool.
-
-
-```solidity
-CollateralTracker internal s_collateralToken0;
-```
-
-
-### s_collateralToken1
-Collateral vault for token1 in the Uniswap pool.
-
-
-```solidity
-CollateralTracker internal s_collateralToken1;
 ```
 
 
@@ -292,47 +274,107 @@ mapping(address account => uint256 positionsHash) internal s_positionsHash;
 
 
 ## Functions
-### constructor
+### collateralToken0
 
-Store the address of the canonical SemiFungiblePositionManager (SFPM) contract.
+Get the collateral token corresponding to token0 of the Uniswap pool.
 
 
 ```solidity
-constructor(SemiFungiblePositionManager _sfpm);
+function collateralToken0() public pure returns (CollateralTracker);
+```
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`<none>`|`CollateralTracker`|Collateral token corresponding to token0 in Uniswap|
+
+
+### collateralToken1
+
+Get the collateral token corresponding to token1 of the Uniswap pool.
+
+
+```solidity
+function collateralToken1() public pure returns (CollateralTracker);
+```
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`<none>`|`CollateralTracker`|Collateral token corresponding to token1 in Uniswap|
+
+
+### oracleContract
+
+Get the address of the external oracle contract used by this Panoptic Pool.
+
+
+```solidity
+function oracleContract() public pure returns (IV3CompatibleOracle);
+```
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`<none>`|`IV3CompatibleOracle`|The external oracle contract used by this Panoptic Pool|
+
+
+### _V4PoolId
+
+Get the Uniswap Pool ID for the V4 pool used by this Panoptic Pool (hash of `poolKey`).
+
+
+```solidity
+function _V4PoolId() internal pure returns (PoolId);
+```
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`<none>`|`PoolId`|The Uniswap V4 Pool ID for this Panoptic Pool|
+
+
+### poolKey
+
+Get the pool key for the Uniswap V4 pool used by this Panoptic Pool.
+
+
+```solidity
+function poolKey() public pure returns (PoolKey calldata key);
+```
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`key`|`PoolKey`|The Uniswap V4 Pool Key for this Panoptic Pool|
+
+
+### constructor
+
+Store the address of the canonical SemiFungiblePositionManager (SFPM) and Uniswap V4 pool manager contracts.
+
+
+```solidity
+constructor(SemiFungiblePositionManager _sfpm, IPoolManager _poolManager);
 ```
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`_sfpm`|`SemiFungiblePositionManager`|The address of the SFPM|
+|`_poolManager`|`IPoolManager`|The address of the canonical Uniswap V4 pool manager|
 
 
-### startPool
+### initialize
 
-Initializes a Panoptic Pool on top of an existing Uniswap V3 + collateral vault pair.
+Initializes the median oracle of a new `PanopticPool` instance with median oracle state and performs initial token approvals.
 
-*Must be called first (by a factory contract) before any transaction can occur.*
+*Must be called first (by the factory contract) before any transaction can occur.*
 
 
 ```solidity
-function startPool(
-    IUniswapV3Pool _univ3pool,
-    address token0,
-    address token1,
-    CollateralTracker collateralTracker0,
-    CollateralTracker collateralTracker1
-) external;
+function initialize() external;
 ```
-**Parameters**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`_univ3pool`|`IUniswapV3Pool`|Address of the target Uniswap V3 pool|
-|`token0`|`address`|Address of the pool's token0|
-|`token1`|`address`|Address of the pool's token1|
-|`collateralTracker0`|`CollateralTracker`|Address of the collateral vault for token0|
-|`collateralTracker1`|`CollateralTracker`|Address of the collateral vault for token1|
-
 
 ### assertMinCollateralValues
 
@@ -437,7 +479,7 @@ function _calculateAccumulatedPremia(
 
 ### pokeMedian
 
-Updates the internal median with the last Uniswap observation if the `MEDIAN_PERIOD` has elapsed.
+Updates the internal median with the last oracle observation if the `MEDIAN_PERIOD` has elapsed.
 
 
 ```solidity
@@ -748,10 +790,13 @@ Liquidates a distressed account. Will burn all positions and issue a bonus to th
 
 *Will revert if liquidated account is solvent at one of the oracle ticks or if TWAP tick is too far away from the current tick.*
 
+*If native currency is attached, non-EOA callers *must* accept empty calls with value up to the amount attached.*
+
 
 ```solidity
 function liquidate(TokenId[] calldata positionIdListLiquidator, address liquidatee, TokenId[] calldata positionIdList)
-    external;
+    external
+    payable;
 ```
 **Parameters**
 
@@ -902,54 +947,9 @@ function _updatePositionsHash(address account, TokenId tokenId, bool addFlag) in
 |`addFlag`|`bool`|Whether to add `tokenId` to the hash (true) or remove it (false)|
 
 
-### univ3pool
-
-Get the address of the AMM pool connected to this Panoptic pool.
-
-
-```solidity
-function univ3pool() external view returns (IUniswapV3Pool);
-```
-**Returns**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`<none>`|`IUniswapV3Pool`|AMM pool corresponding to this Panoptic pool|
-
-
-### collateralToken0
-
-Get the collateral token corresponding to token0 of the AMM pool.
-
-
-```solidity
-function collateralToken0() external view returns (CollateralTracker);
-```
-**Returns**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`<none>`|`CollateralTracker`|Collateral token corresponding to token0 in the AMM|
-
-
-### collateralToken1
-
-Get the collateral token corresponding to token1 of the AMM pool.
-
-
-```solidity
-function collateralToken1() external view returns (CollateralTracker);
-```
-**Returns**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`<none>`|`CollateralTracker`|Collateral token corresponding to token1 in the AMM|
-
-
 ### getOracleTicks
 
-Computes and returns all oracle ticks.
+Computes and returns all ticks used for collateral checks at mint/burn.
 
 
 ```solidity
@@ -962,10 +962,10 @@ function getOracleTicks()
 
 |Name|Type|Description|
 |----|----|-----------|
-|`currentTick`|`int24`|The current tick in the Uniswap pool|
-|`fastOracleTick`|`int24`|The fast oracle tick computed as the median of the past N observations in the Uniswap Pool|
-|`slowOracleTick`|`int24`|The slow oracle tick (either composed of Uniswap observations or tracked by `s_miniMedian`)|
-|`latestObservation`|`int24`|The latest observation from the Uniswap pool|
+|`currentTick`|`int24`|The current tick of the Uniswap V4 pool|
+|`fastOracleTick`|`int24`|The fast oracle tick computed as the median of the past N observations in the oracle contract|
+|`slowOracleTick`|`int24`|The slow oracle tick (either composed of oracle observations or tracked by `s_miniMedian`)|
+|`latestObservation`|`int24`|The latest observation from the oracle contract|
 |`medianData`|`uint256`|The updated value for `s_miniMedian` (0 if `MEDIAN_PERIOD` not elapsed) if `pokeMedian` is called at the current state|
 
 
@@ -1021,13 +1021,13 @@ function positionData(address user, TokenId tokenId)
 |`<none>`|`uint128`|Size of the position|
 
 
-### getUniV3TWAP
+### getOracleTWAP
 
 Get the oracle price used to check solvency in liquidations.
 
 
 ```solidity
-function getUniV3TWAP() internal view returns (int24 twapTick);
+function getOracleTWAP() internal view returns (int24 twapTick);
 ```
 **Returns**
 

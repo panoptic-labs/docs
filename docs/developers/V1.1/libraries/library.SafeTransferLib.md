@@ -10,6 +10,22 @@ Safe ERC20 transfer library that gracefully handles missing return values.
 
 
 ## Functions
+### safeTransferETH
+
+Safely transfers ETH to a specified address.
+
+
+```solidity
+function safeTransferETH(address to, uint256 amount) internal;
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`to`|`address`|The address to transfer ETH to|
+|`amount`|`uint256`|The amount of ETH to transfer|
+
+
 ### safeTransferFrom
 
 Safely transfers ERC20 tokens from one address to another.

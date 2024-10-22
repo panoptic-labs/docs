@@ -20,7 +20,7 @@ Axicon Labs Limited
 
 Returns the amount of tokens owned by `account`.
 
-*This function is unchanged from the EIP*
+*This function is unchanged from the EIP.*
 
 
 ```solidity
@@ -43,7 +43,7 @@ function balanceOf(address account) external view returns (uint256);
 
 Sets `amount` as the allowance of `spender` over the caller's tokens.
 
-*While this function is specified to return a boolean value in the EIP, this interface does not expect one*
+*While this function is specified to return a boolean value in the EIP, this interface does not expect one.*
 
 
 ```solidity
@@ -72,4 +72,13 @@ function transfer(address to, uint256 amount) external;
 |`to`|`address`|The user to transfer tokens to|
 |`amount`|`uint256`|The amount of tokens to transfer|
 
+
+### totalSupply
+
+Returns the amount of tokens in existence.
+
+
+```solidity
+function totalSupply() external view returns (uint256);
+```
 

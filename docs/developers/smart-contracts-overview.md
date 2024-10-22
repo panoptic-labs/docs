@@ -4,7 +4,7 @@ sidebar_position: 0
 
 # Smart contracts overview
 Panoptic is a protocol that facilitates the trading of Panoptions, which are options-like instruments with fixed gamma between two prices that operate on a streaming premium model. Under the hood, this consists of two components:
-- A lending market for Uniswap V3 liquidity chunks that allows option sellers (lenders) to earn a multiplier on Uniswap fees paid by borrowers (option buyers) that utilize their liquidity.
+- A lending market for Uniswap liquidity chunks that allows option sellers (lenders) to earn a multiplier on Uniswap fees paid by borrowers (option buyers) that utilize their liquidity.
 - An undercollateralized, commissions-based token lending protocol that gives option sellers flexibility in managing their positions — allowing them to modify their payoffs and LP on Uniswap with more capital efficiency.
 
 ---
@@ -19,9 +19,11 @@ Panoptic V1.1 is an upgrade to Panoptic V1 that introduces the ability to create
 - [PanopticPool](/docs/developers/V1.1/contract.PanopticPool)
   - Creates and manages undercollateralized options. Manages positions, collateral, liquidations and forced exercises.
 - [SemiFungiblePositionManager](/docs/developers/V1.1/contract.SemiFungiblePositionManager)
-  - The Semi-fungible Position Manager contract for Panoptic replaces the functionalities of the Nonfungible Position Manager from Uniswap v4-periphery. Wraps up to 4-legged Uniswap V4 positions in the ERC1155 semi-fungible token interface.
+  - The Semi-fungible Position Manager contract for Panoptic acts as a position manager for Uniswap V4 LPs. Wraps up to 4-legged Uniswap V4 positions in the ERC1155 semi-fungible token interface.
 - [base](/docs/developers/V1.1/base/abstract.Multicall)
   - Inherited metadata and multicall contracts
+- [interfaces](/docs/developers/V1.1/interfaces/interface.IV3CompatibleOracle)
+  - Custom interfaces used in the contracts
 - [libraries](/docs/developers/V1.1/libraries/library.CallbackLib)
 - [tokens](/docs/developers/V1.1/tokens/interfaces/interface.IERC20Partial)
   - Token implementations and interfaces used in the contracts

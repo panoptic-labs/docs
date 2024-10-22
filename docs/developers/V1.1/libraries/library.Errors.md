@@ -98,12 +98,12 @@ error InvalidTokenIdParameter(uint256 parameterType);
 |----|----|-----------|
 |`parameterType`|`uint256`|poolId=0, ratio=1, tokenType=2, risk_partner=3, strike=4, width=5, two identical strike/width/tokenType chunks=6|
 
-### InvalidUniswapCallback
-A mint or swap callback was attempted from an address that did not match the canonical Uniswap V3 pool with the claimed features
+### UnauthorizedUniswapCallback
+An unlock callback was attempted from an address other than the canonical Uniswap V4 pool manager
 
 
 ```solidity
-error InvalidUniswapCallback();
+error UnauthorizedUniswapCallback();
 ```
 
 ### NoLegsExercisable
@@ -152,6 +152,14 @@ Uniswap pool has already been initialized in the SFPM or created in the factory
 
 ```solidity
 error PoolAlreadyInitialized();
+```
+
+### PoolNotInitialized
+SemiFungiblePositionManager: Tick range cannot be expanded on an an uninitialized pool
+
+
+```solidity
+error PoolNotInitialized();
 ```
 
 ### PositionAlreadyMinted

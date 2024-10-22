@@ -29,24 +29,24 @@ uint64 internal constant TICKSPACING_MASK = 0xFFFF000000000000;
 ## Functions
 ### getPoolId
 
-Given an address to a Uniswap V3 pool, return its 64-bit ID as used in the `TokenId` of Panoptic.
+Given a 256-bit Uniswap V4 pool ID (hash) and the corresponding `tickSpacing`, return its 64-bit ID as used in the `TokenId` of Panoptic.
 
 
 ```solidity
-function getPoolId(address univ3pool, int24 tickSpacing) internal pure returns (uint64);
+function getPoolId(PoolId idV4, int24 tickSpacing) internal pure returns (uint64);
 ```
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`univ3pool`|`address`|The address of the Uniswap V3 pool to get the ID of|
-|`tickSpacing`|`int24`|The tick spacing of `univ3pool`|
+|`idV4`|`PoolId`|The 256-bit Uniswap V4 pool ID|
+|`tickSpacing`|`int24`|The tick spacing of the Uniswap V4 pool identified by `idV4`|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`uint64`|A uint64 representing a fingerprint of the Uniswap V3 pool address|
+|`<none>`|`uint64`|A fingerprint representing the Uniswap V4 pool|
 
 
 ### incrementPoolPattern
@@ -114,7 +114,7 @@ function safeERC20Symbol(address token) external view returns (string memory);
 
 ### uniswapFeeToString
 
-Converts `fee` to a string with "bps" appended.
+Converts `fee` to a string with "bps" appended, or DYNAMIC if "fee" is equivalent to `0x800000`.
 
 *The lowest supported value of `fee` is 1 (`="0.01bps"`).*
 
@@ -168,36 +168,35 @@ Computes various oracle prices corresponding to a Uniswap pool.
 
 
 ```solidity
-function getOracleTicks(IUniswapV3Pool univ3pool, uint256 miniMedian)
+function getOracleTicks(IV3CompatibleOracle oracleContract, uint256 miniMedian)
     external
     view
-    returns (int24 currentTick, int24 fastOracleTick, int24 slowOracleTick, int24 latestObservation, uint256 medianData);
+    returns (int24 fastOracleTick, int24 slowOracleTick, int24 latestObservation, uint256 medianData);
 ```
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`univ3pool`|`IUniswapV3Pool`|The Uniswap pool to get the observations from|
+|`oracleContract`|`IV3CompatibleOracle`|The external oracle contract to retrieve observations from|
 |`miniMedian`|`uint256`|The packed structure representing the sorted 8-slot queue of internal median observations|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`currentTick`|`int24`|The current tick in the Uniswap pool (as returned in slot0)|
 |`fastOracleTick`|`int24`|The fast oracle tick computed as the median of the past N observations in the Uniswap Pool|
 |`slowOracleTick`|`int24`|The slow oracle tick as tracked by `s_miniMedian`|
 |`latestObservation`|`int24`|The latest observation from the Uniswap pool (price at the end of the last block)|
-|`medianData`|`uint256`|the updated value for `s_miniMedian` (returns 0 if not enough time has passed since last observation)|
+|`medianData`|`uint256`|The updated value for `s_miniMedian` (returns 0 if not enough time has passed since last observation)|
 
 
 ### computeMedianObservedPrice
 
-Returns the median of the last `cardinality` average prices over `period` observations from `univ3pool`.
+Returns the median of the last `cardinality` average prices over `period` observations from `oracleContract`.
 
 *Used when we need a manipulation-resistant TWAP price.*
 
-*Uniswap observations snapshot the closing price of the last block before the first interaction of a given block.*
+*oracle observations snapshot the closing price of the last block before the first interaction of a given block.*
 
 *The maximum frequency of observations is 1 per block, but there is no guarantee that the pool will be observed at every block.*
 
@@ -210,7 +209,7 @@ Returns the median of the last `cardinality` average prices over `period` observ
 
 ```solidity
 function computeMedianObservedPrice(
-    IUniswapV3Pool univ3pool,
+    IV3CompatibleOracle oracleContract,
     uint256 observationIndex,
     uint256 observationCardinality,
     uint256 cardinality,
@@ -221,7 +220,7 @@ function computeMedianObservedPrice(
 
 |Name|Type|Description|
 |----|----|-----------|
-|`univ3pool`|`IUniswapV3Pool`|The Uniswap pool to get the median observation from|
+|`oracleContract`|`IV3CompatibleOracle`|The external oracle contract to retrieve observations from|
 |`observationIndex`|`uint256`|The index of the last observation in the pool|
 |`observationCardinality`|`uint256`|The number of observations in the pool|
 |`cardinality`|`uint256`|The number of `periods` to in the median price array, should be odd|
@@ -239,7 +238,7 @@ function computeMedianObservedPrice(
 
 Takes a packed structure representing a sorted 8-slot queue of ticks and returns the median of those values and an updated queue if another observation is warranted.
 
-*Also inserts the latest Uniswap observation into the buffer, resorts, and returns if the last entry is at least `period` seconds old.*
+*Also inserts the latest oracle observation into the buffer, resorts, and returns if the last entry is at least `period` seconds old.*
 
 
 ```solidity
@@ -248,7 +247,7 @@ function computeInternalMedian(
     uint256 observationCardinality,
     uint256 period,
     uint256 medianData,
-    IUniswapV3Pool univ3pool
+    IV3CompatibleOracle oracleContract
 ) public view returns (int24 medianTick, uint256 updatedMedianData);
 ```
 **Parameters**
@@ -259,7 +258,7 @@ function computeInternalMedian(
 |`observationCardinality`|`uint256`|The number of observations in the Uniswap pool|
 |`period`|`uint256`|The minimum time in seconds that must have passed since the last observation was inserted into the buffer|
 |`medianData`|`uint256`|The packed structure representing the sorted 8-slot queue of ticks|
-|`univ3pool`|`IUniswapV3Pool`|The Uniswap pool to retrieve observations from|
+|`oracleContract`|`IV3CompatibleOracle`|The external oracle contract to retrieve observations from|
 
 **Returns**
 
@@ -271,7 +270,7 @@ function computeInternalMedian(
 
 ### twapFilter
 
-Computes the twap of a Uniswap V3 pool using data from its oracle.
+Computes a TWAP price over `twapWindow` on a Uniswap V3-style observation oracle.
 
 *Note that our definition of TWAP differs from a typical mean of prices over a time window.*
 
@@ -279,13 +278,13 @@ Computes the twap of a Uniswap V3 pool using data from its oracle.
 
 
 ```solidity
-function twapFilter(IUniswapV3Pool univ3pool, uint32 twapWindow) external view returns (int24);
+function twapFilter(IV3CompatibleOracle oracleContract, uint32 twapWindow) external view returns (int24);
 ```
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`univ3pool`|`IUniswapV3Pool`|The Uniswap pool from which to compute the TWAP|
+|`oracleContract`|`IV3CompatibleOracle`|The external oracle contract to retrieve observations from|
 |`twapWindow`|`uint32`|The time window to compute the TWAP over|
 
 **Returns**
@@ -298,7 +297,7 @@ function twapFilter(IUniswapV3Pool univ3pool, uint32 twapWindow) external view r
 ### getLiquidityChunk
 
 For a given option position (`tokenId`), leg index within that position (`legIndex`), and `positionSize` get the tick range spanned and its
-liquidity (share ownership) in the Uniswap V3 pool; this is a liquidity chunk.
+liquidity (share ownership) in the Uniswap V4 pool; this is a liquidity chunk.
 
 
 ```solidity
@@ -336,7 +335,7 @@ function getTicks(int24 strike, int24 width, int24 tickSpacing) internal pure re
 |----|----|-----------|
 |`strike`|`int24`|The strike price of the option|
 |`width`|`int24`|The width of the option|
-|`tickSpacing`|`int24`|The tick spacing of the underlying Uniswap V3 pool|
+|`tickSpacing`|`int24`|The tick spacing of the underlying Uniswap V4 pool|
 
 **Returns**
 

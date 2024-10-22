@@ -35,11 +35,11 @@ string internal constant TICKER_PREFIX = "po";
 
 
 ### NAME_PREFIX
-Prefix for the token name (i.e POPT-V1 USDC LP on ETH/USDC 30bps).
+Prefix for the token name (i.e POPT-V1.1 USDC LP on ETH/USDC 30bps).
 
 
 ```solidity
-string internal constant NAME_PREFIX = "POPT-V1";
+string internal constant NAME_PREFIX = "POPT-V1.1";
 ```
 
 
@@ -62,104 +62,6 @@ Decimals for computation (1 bps (basis point) precision: 0.01%).
 
 ```solidity
 int128 internal constant DECIMALS_128 = 10_000;
-```
-
-
-### s_underlyingToken
-The address of underlying token0 or token1 from the Uniswap Pool.
-
-*Whether this is token0 or token1 depends on which collateral token is being tracked in this CollateralTracker instance.*
-
-
-```solidity
-address internal s_underlyingToken;
-```
-
-
-### s_initialized
-Boolean which tracks whether this CollateralTracker has been initialized.
-
-*As each instance is deployed via proxy clone, initial parameters must only be initalized once via startToken().*
-
-
-```solidity
-bool internal s_initialized;
-```
-
-
-### s_univ3token0
-Stores address of token0 from the underlying Uniswap V3 pool.
-
-
-```solidity
-address internal s_univ3token0;
-```
-
-
-### s_univ3token1
-Stores address of token1 from the underlying Uniswap V3 pool.
-
-
-```solidity
-address internal s_univ3token1;
-```
-
-
-### s_underlyingIsToken0
-Store whether the current collateral token is token0 of the AMM (true) or token1 (false).
-
-
-```solidity
-bool internal s_underlyingIsToken0;
-```
-
-
-### s_panopticPool
-The Collateral Tracker keeps a reference to the Panoptic Pool using it.
-
-
-```solidity
-PanopticPool internal s_panopticPool;
-```
-
-
-### s_poolAssets
-Cached amount of assets accounted to be held by the Panoptic Pool — ignores donations, pending fee payouts, and other untracked balance changes.
-
-
-```solidity
-uint128 internal s_poolAssets;
-```
-
-
-### s_inAMM
-Amount of assets moved from the Panoptic Pool to the AMM.
-
-
-```solidity
-uint128 internal s_inAMM;
-```
-
-
-### s_ITMSpreadFee
-Additional risk premium charged on intrinsic value of ITM positions,
-defined in hundredths of basis points.
-
-*The result of the calculation is stored instead of the multiple to save gas during usage.
-When the fee is set, the multiple is calculated and stored.*
-
-
-```solidity
-uint128 internal s_ITMSpreadFee;
-```
-
-
-### s_poolFee
-The fee of the Uniswap pool in hundredths of basis points.
-
-
-```solidity
-uint24 internal s_poolFee;
 ```
 
 
@@ -229,18 +131,142 @@ uint256 immutable SATURATED_POOL_UTIL;
 ```
 
 
-### ITM_SPREAD_MULTIPLIER
-Multiplier, in basis points, to the pool fee that is charged on the intrinsic value of ITM positions.
-
-*e.g. ITM_SPREAD_MULTIPLIER = 20_000, s_ITMSpreadFee = 2 * s_poolFee.*
+### ITM_SPREAD_FEE
+Fee, in basis points, that is charged on the intrinsic value of ITM positions.
 
 
 ```solidity
-uint256 immutable ITM_SPREAD_MULTIPLIER;
+uint256 immutable ITM_SPREAD_FEE;
+```
+
+
+### POOL_MANAGER_V4
+The canonical Uniswap V4 Pool Manager address.
+
+
+```solidity
+IPoolManager internal immutable POOL_MANAGER_V4;
+```
+
+
+### s_poolAssets
+Cached amount of assets accounted to be held by the Panoptic Pool — ignores donations, pending fee payouts, and other untracked balance changes.
+
+
+```solidity
+uint128 internal s_poolAssets;
+```
+
+
+### s_inAMM
+Amount of assets moved from the Panoptic Pool to the AMM.
+
+
+```solidity
+uint128 internal s_inAMM;
+```
+
+
+### s_initialized
+Boolean tracking whether this CollateralTracker has been initialized.
+
+
+```solidity
+bool internal s_initialized;
 ```
 
 
 ## Functions
+### _panopticPool
+
+Retrieve the Panoptic Pool that this collateral token belongs to.
+
+
+```solidity
+function _panopticPool() internal pure returns (PanopticPool);
+```
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`<none>`|`PanopticPool`|The Panoptic Pool associated with this collateral token|
+
+
+### _underlyingIsToken0
+
+Retrieve a boolean indicating whether the underlying token is token0 or token1 in the Uniswap V4 pool.
+
+
+```solidity
+function _underlyingIsToken0() internal pure returns (bool underlyingIsToken0);
+```
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`underlyingIsToken0`|`bool`|True if the underlying token is token0, false if it is token1|
+
+
+### _underlyingToken
+
+Retrieve the address of the underlying token.
+
+
+```solidity
+function _underlyingToken() internal pure returns (address);
+```
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`<none>`|`address`|The address of the underlying token|
+
+
+### _token0
+
+Retrieve the address of token0 in the Uniswap V4 pool.
+
+
+```solidity
+function _token0() internal pure returns (address);
+```
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`<none>`|`address`|The address of token0 in the Uniswap V4 pool|
+
+
+### _token1
+
+Retrieve the address of token1 in the Uniswap V4 pool.
+
+
+```solidity
+function _token1() internal pure returns (address);
+```
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`<none>`|`address`|The address of token1 in the Uniswap V4 pool|
+
+
+### _poolFee
+
+Retrieve the fee of the Uniswap V4 pool.
+
+
+```solidity
+function _poolFee() internal pure returns (uint24 poolFee);
+```
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`poolFee`|`uint24`|The fee of the Uniswap V4 pool|
+
+
 ### onlyPanopticPool
 
 Ensure that the associated Panoptic pool is the caller. Revert if not.
@@ -263,7 +289,8 @@ constructor(
     int256 _forceExerciseCost,
     uint256 _targetPoolUtilization,
     uint256 _saturatedPoolUtilization,
-    uint256 _ITMSpreadMultiplier
+    uint256 _ITMSpreadFee,
+    IPoolManager _manager
 );
 ```
 **Parameters**
@@ -276,32 +303,18 @@ constructor(
 |`_forceExerciseCost`|`int256`|Basal cost (in bps of notional) to force exercise a position that is barely far-the-money (out-of-range)|
 |`_targetPoolUtilization`|`uint256`|Target pool utilization below which buying+selling is optimal, represented as percentage * 10_000|
 |`_saturatedPoolUtilization`|`uint256`|Pool utilization above which selling is 100% collateral backed, represented as percentage * 10_000|
-|`_ITMSpreadMultiplier`|`uint256`|Multiplier, in basis points, to the pool fee that is charged on the intrinsic value of ITM positions|
+|`_ITMSpreadFee`|`uint256`|Fee, in basis points, that is charged on the intrinsic value of ITM positions|
+|`_manager`|`IPoolManager`|The canonical Uniswap V4 pool manager|
 
 
-### startToken
+### initialize
 
-Initialize a new collateral tracker for a specific token corresponding to the Panoptic Pool being created by the factory that called it.
-
-*The factory calls this function to start a new collateral tracking system for the incoming token at `underlyingToken`.*
-
-*The factory will do this for each of the two tokens being tracked. Thus, the collateral tracking system does not track *both* tokens at once.*
+Initializes a new `CollateralTracker` instance with 1 virtual asset and 10^6 virtual shares.
 
 
 ```solidity
-function startToken(bool underlyingIsToken0, address token0, address token1, uint24 fee, PanopticPool panopticPool)
-    external;
+function initialize() external;
 ```
-**Parameters**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`underlyingIsToken0`|`bool`|Whether this collateral tracker is for token0 (true) or token1 (false)|
-|`token0`|`address`|Token 0 of the Uniswap pool|
-|`token1`|`address`|Token 1 of the Uniswap pool|
-|`fee`|`uint24`|The fee of the Uniswap pool|
-|`panopticPool`|`PanopticPool`|The address of the Panoptic Pool being created and linked to this Collateral Tracker|
-
 
 ### getPoolData
 
@@ -390,13 +403,54 @@ Requirements:
 function transferFrom(address from, address to, uint256 amount) public override(ERC20Minimal) returns (bool);
 ```
 
+### _settleTokenDelta
+
+Initiates the unlock callback to wrap/unwrap `delta` amount of the underlying token and transfer to/from the Panoptic Pool.
+
+
+```solidity
+function _settleTokenDelta(address account, int256 delta) internal;
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`account`|`address`|The address of the account to transfer the underlying token to/from|
+|`delta`|`int256`|The amount of the underlying token to wrap/unwrap and transfer|
+
+
+### unlockCallback
+
+Uniswap V4 unlock callback implementation.
+
+*Parameters are `(address account, int256 delta, uint256 valueOrigin)`.*
+
+*Wraps/unwraps `delta` amount of the underlying token and transfers to/from the Panoptic Pool.*
+
+
+```solidity
+function unlockCallback(bytes calldata data) external returns (bytes memory);
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`data`|`bytes`|The encoded data containing the account and delta|
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`<none>`|`bytes`|This function returns no data|
+
+
 ### asset
 
 Get the token contract address of the underlying asset being managed.
 
 
 ```solidity
-function asset() external view returns (address assetTokenAddress);
+function asset() external pure returns (address assetTokenAddress);
 ```
 **Returns**
 
@@ -508,6 +562,8 @@ function previewDeposit(uint256 assets) public view returns (uint256 shares);
 
 Deposit underlying tokens (assets) to the Panoptic pool from the LP and mint corresponding amount of shares.
 
+*If depositing native currency (`asset() == address(0)`), non-EOA callers *must* accept empty calls with value up to the amount attached.*
+
 *There is a maximum asset deposit limit of `2^104 - 1`.*
 
 *An "MEV tax" is levied, which is equal to a single payment of the commissionRate BEFORE adding the funds.*
@@ -516,7 +572,7 @@ Deposit underlying tokens (assets) to the Panoptic pool from the LP and mint cor
 
 
 ```solidity
-function deposit(uint256 assets, address receiver) external returns (uint256 shares);
+function deposit(uint256 assets, address receiver) external payable returns (uint256 shares);
 ```
 **Parameters**
 
@@ -572,6 +628,8 @@ function previewMint(uint256 shares) public view returns (uint256 assets);
 
 Deposit required amount of assets to receive specified amount of shares.
 
+*If depositing native currency (`asset() == address(0)`), non-EOA callers *must* accept empty calls with value up to the amount attached.*
+
 *There is a maximum asset deposit limit of `2^104 - 1`.
 An "MEV tax" is levied, which is equal to a single payment of the commissionRate BEFORE adding the funds.*
 
@@ -579,7 +637,7 @@ An "MEV tax" is levied, which is equal to a single payment of the commissionRate
 
 
 ```solidity
-function mint(uint256 shares, address receiver) external returns (uint256 assets);
+function mint(uint256 shares, address receiver) external payable returns (uint256 assets);
 ```
 **Parameters**
 
@@ -919,7 +977,7 @@ Settles liquidation bonus and returns remaining virtual shares to the protocol.
 
 
 ```solidity
-function settleLiquidation(address liquidator, address liquidatee, int256 bonus) external onlyPanopticPool;
+function settleLiquidation(address liquidator, address liquidatee, int256 bonus) external payable onlyPanopticPool;
 ```
 **Parameters**
 
@@ -1129,7 +1187,7 @@ function _getRequiredCollateralAtTickSinglePosition(
 |`positionSize`|`uint128`|The size of the option position|
 |`atTick`|`int24`|The tick at which to evaluate the account's positions|
 |`poolUtilization`|`int16`|The utilization of the collateral vault (balance of buying and selling)|
-|`underlyingIsToken0`|`bool`|Cached `s_underlyingIsToken0` value for this CollateralTracker instance|
+|`underlyingIsToken0`|`bool`|Cached `_underlyingIsToken0()` value for this CollateralTracker instance|
 
 **Returns**
 

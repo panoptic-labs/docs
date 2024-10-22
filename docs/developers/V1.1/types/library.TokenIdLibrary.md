@@ -76,7 +76,7 @@ function poolId(TokenId self) internal pure returns (uint64);
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`uint64`|The `poolId` (Panoptic's pool fingerprint, contains the whole 64 bit sequence with the tickSpacing) of the Uniswap V3 pool|
+|`<none>`|`uint64`|The `poolId` (Panoptic's pool fingerprint, contains the whole 64 bit sequence with the tickSpacing) of the Uniswap V4 pool|
 
 
 ### tickSpacing
@@ -97,7 +97,7 @@ function tickSpacing(TokenId self) internal pure returns (int24);
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`int24`|The `tickSpacing` of the Uniswap V3 pool|
+|`<none>`|`int24`|The `tickSpacing` of the Uniswap V4 pool|
 
 
 ### asset
@@ -262,7 +262,7 @@ function width(TokenId self, uint256 legIndex) internal pure returns (int24);
 
 ### addPoolId
 
-Add the Uniswap V3 Pool pointed to by this option position (contains the entropy and tickSpacing).
+Add the Uniswap V4 Pool pointed to by this option position (contains the entropy and tickSpacing).
 
 
 ```solidity
@@ -668,6 +668,6 @@ function validateIsExercisable(TokenId self, int24 currentTick) internal pure;
 |Name|Type|Description|
 |----|----|-----------|
 |`self`|`TokenId`|The TokenId to validate for exercisability|
-|`currentTick`|`int24`|The current tick corresponding to the current price in the Uniswap V3 pool|
+|`currentTick`|`int24`|The current tick corresponding to the current price in the Uniswap V4 pool|
 
 

@@ -21,7 +21,7 @@ Initialize metadata pointers and token name/symbol.
 ```solidity
 constructor(bytes32[] memory properties, uint256[][] memory indices, Pointer[][] memory pointers)
     MetadataStore(properties, indices, pointers)
-    ERC721("Panoptic V1 Factory Deployer NFTs", "PANOPTIC-NFT");
+    ERC721("Panoptic V1.1 Factory Deployer NFTs", "PANOPTIC-NFT");
 ```
 **Parameters**
 

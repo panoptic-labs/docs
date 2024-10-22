@@ -14,12 +14,12 @@ Facilitates deployment of Panoptic pools.
 
 
 ## State Variables
-### UNIV3_FACTORY
-The Uniswap V3 factory contract to use.
+### POOL_MANAGER_V4
+The canonical Uniswap V4 Pool Manager address.
 
 
 ```solidity
-IUniswapV3Factory internal immutable UNIV3_FACTORY;
+IPoolManager internal immutable POOL_MANAGER_V4;
 ```
 
 
@@ -60,11 +60,11 @@ uint16 internal constant CARDINALITY_INCREASE = 51;
 
 
 ### s_getPanopticPool
-Mapping from address(UniswapV3Pool) to address(PanopticPool) that stores the address of all deployed Panoptic Pools.
+Mapping from keccak256(Uniswap V4 pool id, oracle contract address) to address(PanopticPool) that stores the address of all deployed Panoptic Pools.
 
 
 ```solidity
-mapping(IUniswapV3Pool univ3pool => PanopticPool panopticPool) internal s_getPanopticPool;
+mapping(bytes32 panopticPoolKey => PanopticPool panopticPool) internal s_getPanopticPool;
 ```
 
 
@@ -77,7 +77,7 @@ Set immutable variables and store metadata pointers.
 ```solidity
 constructor(
     SemiFungiblePositionManager _SFPM,
-    IUniswapV3Factory _univ3Factory,
+    IPoolManager manager,
     address _poolReference,
     address _collateralReference,
     bytes32[] memory properties,
@@ -90,7 +90,7 @@ constructor(
 |Name|Type|Description|
 |----|----|-----------|
 |`_SFPM`|`SemiFungiblePositionManager`|The canonical `SemiFungiblePositionManager` deployment|
-|`_univ3Factory`|`IUniswapV3Factory`|The canonical Uniswap V3 Factory deployment|
+|`manager`|`IPoolManager`|The canonical Uniswap V4 pool manager|
 |`_poolReference`|`address`|The reference implementation of the `PanopticPool` to clone|
 |`_collateralReference`|`address`|The reference implementation of the `CollateralTracker` to clone|
 |`properties`|`bytes32[]`|An array of identifiers for different categories of metadata|
@@ -106,11 +106,11 @@ Create a new Panoptic Pool linked to the given Uniswap pool identified uniquely 
 
 *A Uniswap pool is uniquely identified by its tokens and the fee.*
 
-*Salt used in PanopticPool CREATE2 is `[leading 20 msg.sender chars][leading 20 pool address chars][salt]`.*
+*Salt used in PanopticPool creation is `[leading 20 msg.sender chars][uint80(uint256(keccak256(abi.encode(V4PoolKey, oracleContractAddress))))][salt]`.*
 
 
 ```solidity
-function deployNewPool(address token0, address token1, uint24 fee, uint96 salt)
+function deployNewPool(IV3CompatibleOracle oracleContract, PoolKey calldata key, uint96 salt)
     external
     returns (PanopticPool newPoolContract);
 ```
@@ -118,10 +118,9 @@ function deployNewPool(address token0, address token1, uint24 fee, uint96 salt)
 
 |Name|Type|Description|
 |----|----|-----------|
-|`token0`|`address`|Address of token0 for the underlying Uniswap V3 pool|
-|`token1`|`address`|Address of token1 for the underlying Uniswap V3 pool|
-|`fee`|`uint24`|The fee tier of the underlying Uniswap V3 pool, denominated in hundredths of bips|
-|`salt`|`uint96`|User-defined component of salt used in CREATE2 for the PanopticPool (must be a uint96 number)|
+|`oracleContract`|`IV3CompatibleOracle`|The external oracle contract to be used by the newly deployed Panoptic Pool|
+|`key`|`PoolKey`|The Uniswap V4 pool key|
+|`salt`|`uint96`|User-defined component of salt used in deployment process for the PanopticPool|
 
 **Returns**
 
@@ -140,17 +139,22 @@ Find the salt which would give a Panoptic Pool the highest rarity within the sea
 
 
 ```solidity
-function minePoolAddress(address deployerAddress, address v3Pool, uint96 salt, uint256 loops, uint256 minTargetRarity)
-    external
-    view
-    returns (uint96 bestSalt, uint256 highestRarity);
+function minePoolAddress(
+    address deployerAddress,
+    address oracleContract,
+    PoolKey calldata key,
+    uint96 salt,
+    uint256 loops,
+    uint256 minTargetRarity
+) external view returns (uint96 bestSalt, uint256 highestRarity);
 ```
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`deployerAddress`|`address`|Address of the account that deploys the new PanopticPool|
-|`v3Pool`|`address`|Address of the underlying UniswapV3Pool|
+|`oracleContract`|`address`||
+|`key`|`PoolKey`||
 |`salt`|`uint96`|Salt value to start from, useful as a checkpoint across multiple calls|
 |`loops`|`uint256`|The number of mining operations starting from `salt` in trying to find the highest rarity|
 |`minTargetRarity`|`uint256`|The minimum target rarity to mine for. The internal loop stops when this is reached *or* when no more iterations|
@@ -165,23 +169,27 @@ function minePoolAddress(address deployerAddress, address v3Pool, uint96 salt, u
 
 ### getPanopticPool
 
-Return the address of the Panoptic Pool associated with `univ3pool`.
+Return the address of the Panoptic Pool associated with the given Uniswap V4 pool key and oracle contract.
 
 
 ```solidity
-function getPanopticPool(IUniswapV3Pool univ3pool) external view returns (PanopticPool);
+function getPanopticPool(PoolKey calldata keyV4, IV3CompatibleOracle oracleContract)
+    external
+    view
+    returns (PanopticPool);
 ```
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`univ3pool`|`IUniswapV3Pool`|The Uniswap V3 pool address to query|
+|`keyV4`|`PoolKey`|The Uniswap V4 pool key|
+|`oracleContract`|`IV3CompatibleOracle`|The external oracle contract used by the Panoptic Pool|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`PanopticPool`|Address of the Panoptic Pool associated with `univ3pool`|
+|`<none>`|`PanopticPool`|Address of the Panoptic Pool on `keyV4` using `oracleContract`|
 
 
 ## Events
@@ -192,7 +200,8 @@ Emitted when a Panoptic Pool is created.
 ```solidity
 event PoolDeployed(
     PanopticPool indexed poolAddress,
-    IUniswapV3Pool indexed uniswapPool,
+    IV3CompatibleOracle indexed oracleContract,
+    PoolKey poolKey,
     CollateralTracker collateralTracker0,
     CollateralTracker collateralTracker1
 );
@@ -203,7 +212,8 @@ event PoolDeployed(
 |Name|Type|Description|
 |----|----|-----------|
 |`poolAddress`|`PanopticPool`|Address of the deployed Panoptic pool|
-|`uniswapPool`|`IUniswapV3Pool`|Address of the underlying Uniswap V3 pool|
+|`oracleContract`|`IV3CompatibleOracle`|The external oracle contract used by the newly deployed Panoptic Pool|
+|`poolKey`|`PoolKey`|The Uniswap V4 pool key associated with the Panoptic Pool|
 |`collateralTracker0`|`CollateralTracker`|Address of the collateral tracker contract for token0|
 |`collateralTracker1`|`CollateralTracker`|Address of the collateral tracker contract for token1|
 
