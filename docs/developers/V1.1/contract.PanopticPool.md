@@ -5,7 +5,7 @@ sidebar_position: 2
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.1.x/contracts/PanopticPool.sol)
 
 **Inherits:**
-ERC1155Holder, [Multicall](/docs/developers/V1.1/base/abstract.Multicall)
+Clone, ERC1155Holder, [Multicall](/docs/developers/V1.1/base/abstract.Multicall)
 
 **Author:**
 Axicon Labs Limited
@@ -221,7 +221,7 @@ Per-chunk `last` value that gives the aggregate amount of premium owed to all se
 
 *Used to compute the denominator for the fraction of premium available to sellers to collect.*
 
-*LeftRight - right slot is token0, left slot is token1.*
+*LeftRight - right slot is currency0, left slot is currency1.*
 
 
 ```solidity
@@ -236,7 +236,7 @@ Per-chunk accumulator for tokens owed to sellers that have been settled and are 
 
 *It decreases when sellers close positions and collect the premium they are owed.*
 
-*LeftRight - right slot is token0, left slot is token1.*
+*LeftRight - right slot is currency0, left slot is currency1.*
 
 
 ```solidity
@@ -276,7 +276,7 @@ mapping(address account => uint256 positionsHash) internal s_positionsHash;
 ## Functions
 ### collateralToken0
 
-Get the collateral token corresponding to token0 of the Uniswap pool.
+Get the collateral token corresponding to currency0 of the Uniswap pool.
 
 
 ```solidity
@@ -286,12 +286,12 @@ function collateralToken0() public pure returns (CollateralTracker);
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`CollateralTracker`|Collateral token corresponding to token0 in Uniswap|
+|`<none>`|`CollateralTracker`|Collateral token corresponding to currency0 in Uniswap|
 
 
 ### collateralToken1
 
-Get the collateral token corresponding to token1 of the Uniswap pool.
+Get the collateral token corresponding to currency1 of the Uniswap pool.
 
 
 ```solidity
@@ -301,7 +301,7 @@ function collateralToken1() public pure returns (CollateralTracker);
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`CollateralTracker`|Collateral token corresponding to token1 in Uniswap|
+|`<none>`|`CollateralTracker`|Collateral token corresponding to currency1 in Uniswap|
 
 
 ### oracleContract
@@ -390,8 +390,8 @@ function assertMinCollateralValues(uint256 minValue0, uint256 minValue1) externa
 
 |Name|Type|Description|
 |----|----|-----------|
-|`minValue0`|`uint256`|The minimum acceptable `token0` value of collateral|
-|`minValue1`|`uint256`|The minimum acceptable `token1` value of collateral|
+|`minValue0`|`uint256`|The minimum acceptable `currency0` value of collateral|
+|`minValue1`|`uint256`|The minimum acceptable `currency1` value of collateral|
 
 
 ### validateCollateralWithdrawable
@@ -439,8 +439,8 @@ function getAccumulatedFeesAndPositionsData(address user, bool includePendingPre
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`LeftRightUnsigned`|The total amount of premium owed (which may `includePendingPremium`) to the short legs in `positionIdList` (token0: right slot, token1: left slot)|
-|`<none>`|`LeftRightUnsigned`|The total amount of premium owed by the long legs in `positionIdList` (token0: right slot, token1: left slot)|
+|`<none>`|`LeftRightUnsigned`|The total amount of premium owed (which may `includePendingPremium`) to the short legs in `positionIdList` (currency0: right slot, currency1: left slot)|
+|`<none>`|`LeftRightUnsigned`|The total amount of premium owed by the long legs in `positionIdList` (currency0: right slot, currency1: left slot)|
 |`<none>`|`uint256[2][]`|A list of `PositionBalance` data (balance and pool utilization/oracle ticks at last mint) for each position, of the form `[[tokenId0, PositionBalance_0], [tokenId1, PositionBalance_1], ...]`|
 
 
@@ -472,8 +472,8 @@ function _calculateAccumulatedPremia(
 
 |Name|Type|Description|
 |----|----|-----------|
-|`shortPremium`|`LeftRightUnsigned`|The total amount of premium owed (which may `includePendingPremium`) to the short legs in `positionIdList` (token0: right slot, token1: left slot)|
-|`longPremium`|`LeftRightUnsigned`|The total amount of premium owed by the long legs in `positionIdList` (token0: right slot, token1: left slot)|
+|`shortPremium`|`LeftRightUnsigned`|The total amount of premium owed (which may `includePendingPremium`) to the short legs in `positionIdList` (currency0: right slot, currency1: left slot)|
+|`longPremium`|`LeftRightUnsigned`|The total amount of premium owed by the long legs in `positionIdList` (currency0: right slot, currency1: left slot)|
 |`balances`|`uint256[2][]`|A list of balances and pool utilization for each position, of the form `[[tokenId0, balances0], [tokenId1, balances1], ...]`|
 
 
@@ -606,8 +606,8 @@ function _mintInSFPMAndUpdateCollateral(
 
 |Name|Type|Description|
 |----|----|-----------|
-|`poolUtilizations`|`uint32`|Packing of the pool utilization (how much funds are in the Panoptic pool versus the AMM pool) at the time of minting, right 64bits for token0 and left 64bits for token1. When safeMode is active, it returns 100% pool utilization for both tokens|
-|`commissions`|`LeftRightUnsigned`|The total amount of commissions (base rate + ITM spread) paid for token0 (right) and token1 (left)|
+|`poolUtilizations`|`uint32`|Packing of the pool utilization (how much funds are in the Panoptic pool versus the AMM pool) at the time of minting, right 64bits for currency0 and left 64bits for currency1. When safeMode is active, it returns 100% pool utilization for both tokens|
+|`commissions`|`LeftRightUnsigned`|The total amount of commissions (base rate + ITM spread) paid for currency0 (right) and currency1 (left)|
 
 
 ### _payCommissionAndWriteData
@@ -633,7 +633,7 @@ function _payCommissionAndWriteData(TokenId tokenId, uint128 positionSize, LeftR
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`uint32`|Packing of the pool utilization (how much funds are in the Panoptic pool versus the AMM pool at the time of minting), right 64bits for token0 and left 64bits for token1, defined as `(inAMM * 10_000) / totalAssets()` where totalAssets is the total tracked assets in the AMM and PanopticPool minus fees and donations to the Panoptic pool|
+|`<none>`|`uint32`|Packing of the pool utilization (how much funds are in the Panoptic pool versus the AMM pool at the time of minting), right 64bits for currency0 and left 64bits for currency1, defined as `(inAMM * 10_000) / totalAssets()` where totalAssets is the total tracked assets in the AMM and PanopticPool minus fees and donations to the Panoptic pool|
 |`<none>`|`LeftRightUnsigned`|The total amount of commissions (base rate + ITM spread) paid for token0 (right) and token1 (left)|
 
 
@@ -666,7 +666,7 @@ function _burnAllOptionsFrom(
 |Name|Type|Description|
 |----|----|-----------|
 |`netPaid`|`LeftRightSigned`|The net amount of tokens paid after closing the positions|
-|`premiasByLeg`|`LeftRightSigned[4][]`|The amount of premia owed to the user for each leg of the position|
+|`premiasByLeg`|`LeftRightSigned[4][]`|The amount of premia paid by the user for each leg of the position|
 
 
 ### _burnOptions
@@ -694,7 +694,7 @@ function _burnOptions(bool commitLongSettled, TokenId tokenId, address owner, in
 |Name|Type|Description|
 |----|----|-----------|
 |`paidAmounts`|`LeftRightSigned`|The net amount of tokens paid after closing the position|
-|`premiaByLeg`|`LeftRightSigned[4]`|The amount of premia owed to the user for each leg of the position|
+|`premiaByLeg`|`LeftRightSigned[4]`|The amount of premia paid by the user for each leg of the position|
 
 
 ### _validateSolvency
@@ -780,7 +780,7 @@ function _burnAndHandleExercise(
 |Name|Type|Description|
 |----|----|-----------|
 |`realizedPremia`|`LeftRightSigned`|The net premia paid/received from the option position|
-|`premiaByLeg`|`LeftRightSigned[4]`|The premia owed to the user for each leg of the option position|
+|`premiaByLeg`|`LeftRightSigned[4]`|The premia paid by the user for each leg of the option position|
 |`paidAmounts`|`LeftRightSigned`|The net amount of tokens paid after closing the position|
 
 
@@ -815,7 +815,7 @@ Force the exercise of a single position. Exercisor will have to pay a fee to the
 ```solidity
 function forceExercise(
     address account,
-    TokenId[] calldata touchedId,
+    TokenId tokenId,
     TokenId[] calldata positionIdListExercisee,
     TokenId[] calldata positionIdListExercisor
 ) external;
@@ -825,7 +825,7 @@ function forceExercise(
 |Name|Type|Description|
 |----|----|-----------|
 |`account`|`address`|Address of the distressed account|
-|`touchedId`|`TokenId[]`|List of position to be force exercised. Can only contain one tokenId, written as `[tokenId]`|
+|`tokenId`|`TokenId`|The position to be force exercised; this position must contain at least one out-of-range long leg|
 |`positionIdListExercisee`|`TokenId[]`|Post-burn list of open positions in the exercisee's (`account`) account|
 |`positionIdListExercisor`|`TokenId[]`|List of open positions in the exercisor's (`msg.sender`) account|
 
@@ -1016,8 +1016,8 @@ function positionData(address user, TokenId tokenId)
 |`<none>`|`int24`|Fast oracle tick at mint|
 |`<none>`|`int24`|Slow oracle tick at mint|
 |`<none>`|`int24`|Last observed tick at mint|
-|`<none>`|`int256`|Utilization of token0 at mint|
-|`<none>`|`int256`|Utilization of token1 at mint|
+|`<none>`|`int256`|Utilization of currency0 at mint|
+|`<none>`|`int256`|Utilization of currency1 at mint|
 |`<none>`|`uint128`|Size of the position|
 
 
@@ -1169,7 +1169,7 @@ function _getAvailablePremium(
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`LeftRightUnsigned`|The amount of token0/token1 premium available for withdrawal|
+|`<none>`|`LeftRightUnsigned`|The amount of currency0/currency1 premium available for withdrawal|
 
 
 ### _getLiquidities
@@ -1276,7 +1276,7 @@ Emitted when premium is settled independent of a mint/burn (e.g. during `settleL
 
 
 ```solidity
-event PremiumSettled(address indexed user, TokenId indexed tokenId, LeftRightSigned settledAmounts);
+event PremiumSettled(address indexed user, TokenId indexed tokenId, uint256 legIndex, LeftRightSigned settledAmounts);
 ```
 
 **Parameters**
@@ -1285,14 +1285,17 @@ event PremiumSettled(address indexed user, TokenId indexed tokenId, LeftRightSig
 |----|----|-----------|
 |`user`|`address`|Address of the owner of the settled position|
 |`tokenId`|`TokenId`|TokenId of the settled position|
-|`settledAmounts`|`LeftRightSigned`|LeftRight encoding for the amount of premium settled for token0 (right slot) and token1 (left slot)|
+|`legIndex`|`uint256`|The leg index of `tokenId` that the premium was settled for|
+|`settledAmounts`|`LeftRightSigned`|LeftRight encoding for the amount of premium settled for currency0 (right slot) and currency1 (left slot)|
 
 ### OptionBurnt
 Emitted when an option is burned.
 
 
 ```solidity
-event OptionBurnt(address indexed recipient, uint128 positionSize, TokenId indexed tokenId, LeftRightSigned premia);
+event OptionBurnt(
+    address indexed recipient, uint128 positionSize, TokenId indexed tokenId, LeftRightSigned[4] premiaByLeg
+);
 ```
 
 **Parameters**
@@ -1302,7 +1305,7 @@ event OptionBurnt(address indexed recipient, uint128 positionSize, TokenId index
 |`recipient`|`address`|User that burnt the option|
 |`positionSize`|`uint128`|The number of contracts burnt, expressed in terms of the asset|
 |`tokenId`|`TokenId`|TokenId of the burnt option|
-|`premia`|`LeftRightSigned`|LeftRight packing for the amount of premia collected for token0 (right) and token1 (left)|
+|`premiaByLeg`|`LeftRightSigned[4]`|LeftRight packing for the amount of premia collected for currency0 (right) and currency1 (left) for each leg of `tokenId`|
 
 ### OptionMinted
 Emitted when an option is minted.
@@ -1310,11 +1313,7 @@ Emitted when an option is minted.
 
 ```solidity
 event OptionMinted(
-    address indexed recipient,
-    uint128 positionSize,
-    TokenId indexed tokenId,
-    uint128 poolUtilizations,
-    LeftRightUnsigned commissions
+    address indexed recipient, TokenId indexed tokenId, PositionBalance balanceData, LeftRightUnsigned commissions
 );
 ```
 
@@ -1323,8 +1322,7 @@ event OptionMinted(
 |Name|Type|Description|
 |----|----|-----------|
 |`recipient`|`address`|User that minted the option|
-|`positionSize`|`uint128`|The number of contracts minted, expressed in terms of the asset|
 |`tokenId`|`TokenId`|TokenId of the created option|
-|`poolUtilizations`|`uint128`|Packing of the pool utilization (how much funds are in the Panoptic pool versus the AMM pool at the time of minting), right 64bits for token0 and left 64bits for token1, defined as `(inAMM * 10_000) / totalAssets()` where totalAssets is the total tracked assets in the AMM and PanopticPool minus fees and donations to the Panoptic pool|
+|`balanceData`|`PositionBalance`|The `PositionBalance` data for `tokenId` containing the number of contracts, pool utilizations, and ticks at mint|
 |`commissions`|`LeftRightUnsigned`|The total amount of commissions (base rate + ITM spread) paid for token0 (right) and token1 (left)|
 

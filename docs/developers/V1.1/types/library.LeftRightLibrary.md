@@ -328,6 +328,30 @@ function sub(LeftRightSigned x, LeftRightSigned y) internal pure returns (LeftRi
 function sub(LeftRightSigned x, LeftRightUnsigned y) internal pure returns (LeftRightSigned z);
 ```
 
+### subRect
+
+Subtract two LeftRight-encoded words; revert on overflow or underflow.
+
+For each slot, rectify difference `x - y` to 0 if negative.
+
+
+```solidity
+function subRect(LeftRightSigned x, LeftRightSigned y) internal pure returns (LeftRightUnsigned z);
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`x`|`LeftRightSigned`|The minuend|
+|`y`|`LeftRightSigned`|The subtrahend|
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`z`|`LeftRightUnsigned`|The difference `x - y`|
+
+
 ### addCapped
 
 Adds two sets of LeftRight-encoded words, freezing both right slots if either overflows, and vice versa.

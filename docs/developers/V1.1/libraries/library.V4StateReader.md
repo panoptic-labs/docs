@@ -78,15 +78,15 @@ function getFeeGrowthInside(IPoolManager manager, PoolId idV4, int24 currentTick
 
 |Name|Type|Description|
 |----|----|-----------|
-|`feeGrowthInside0X128`|`uint256`|The fee growth in the AMM for token0|
-|`feeGrowthInside1X128`|`uint256`|The fee growth in the AMM for token1|
+|`feeGrowthInside0X128`|`uint256`|The fee growth in the AMM for currency0|
+|`feeGrowthInside1X128`|`uint256`|The fee growth in the AMM for currency1|
 
 
 ### getFeeGrowthInsideLast
 
-Diagrams shown for token0, and applies for token1 the same
+Diagrams shown for currency0, and applies for currency1 the same
 L = lowerTick, U = upperTick
-liquidity         lowerOut0 (all fees collected in this price tick range for token0)
+liquidity         lowerOut0 (all fees collected in this price tick range for currency0)
 ▲            ◄──────────────^v───► (to MAX_TICK)
 │
 │                      upperOut0
@@ -135,7 +135,7 @@ function getFeeGrowthInsideLast(IPoolManager manager, PoolId poolId, bytes32 pos
 
 |Name|Type|Description|
 |----|----|-----------|
-|`feeGrowthInside0LastX128`|`uint256`|The fee growth inside the position for token0|
-|`feeGrowthInside1LastX128`|`uint256`|The fee growth inside the position for token1|
+|`feeGrowthInside0LastX128`|`uint256`|The fee growth inside the position for currency0|
+|`feeGrowthInside1LastX128`|`uint256`|The fee growth inside the position for currency1|
 
 

@@ -21,19 +21,19 @@ function doApprovals(
     SemiFungiblePositionManager sfpm,
     CollateralTracker ct0,
     CollateralTracker ct1,
-    address token0,
-    address token1
+    address currency0,
+    address currency1
 ) external;
 ```
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`sfpm`|`SemiFungiblePositionManager`|The SemiFungiblePositionManager being approved for both token0 and token1|
-|`ct0`|`CollateralTracker`|The CollateralTracker (token0) being approved for token0|
-|`ct1`|`CollateralTracker`|The CollateralTracker (token1) being approved for token1|
-|`token0`|`address`|The token0 (in Uniswap) being approved for|
-|`token1`|`address`|The token1 (in Uniswap) being approved for|
+|`sfpm`|`SemiFungiblePositionManager`|The SemiFungiblePositionManager being approved for both currency0 and currency1|
+|`ct0`|`CollateralTracker`|The CollateralTracker (currency0) being approved for currency0|
+|`ct1`|`CollateralTracker`|The CollateralTracker (currency1) being approved for currency1|
+|`currency0`|`address`|The currency0 (in Uniswap) being approved for|
+|`currency1`|`address`|The currency1 (in Uniswap) being approved for|
 
 
 ### computeName
@@ -44,7 +44,7 @@ Computes the name of a CollateralTracker based on the token composition and fee 
 
 
 ```solidity
-function computeName(address token0, address token1, bool isToken0, uint24 fee, string memory prefix)
+function computeName(address currency0, address currency1, bool isToken0, uint24 fee, string memory prefix)
     external
     view
     returns (string memory);
@@ -53,9 +53,9 @@ function computeName(address token0, address token1, bool isToken0, uint24 fee, 
 
 |Name|Type|Description|
 |----|----|-----------|
-|`token0`|`address`|The token0 of the Uniswap Pool|
-|`token1`|`address`|The token1 of the Uniswap Pool|
-|`isToken0`|`bool`|Whether the collateral token computing the name is for token0 or token1|
+|`currency0`|`address`|The currency0 of the Uniswap Pool|
+|`currency1`|`address`|The currency1 of the Uniswap Pool|
+|`isToken0`|`bool`|Whether the collateral token computing the name is for currency0 or currency1|
 |`fee`|`uint24`|The fee of the Uniswap pool in hundredths of basis points|
 |`prefix`|`string`|A constant string appended to the start of the token name|
 
@@ -68,7 +68,7 @@ function computeName(address token0, address token1, bool isToken0, uint24 fee, 
 
 ### computeSymbol
 
-Returns collateral token symbol as `prefix` + `underlying token symbol`.
+Returns collateral token symbol as `prefix` + `underlying asset symbol`.
 
 
 ```solidity
@@ -78,8 +78,8 @@ function computeSymbol(address token, string memory prefix) external view return
 
 |Name|Type|Description|
 |----|----|-----------|
-|`token`|`address`|The address of the underlying token used to compute the symbol|
-|`prefix`|`string`|A constant string prepended to the symbol of the underlying token to create the final symbol|
+|`token`|`address`|The address of the underlying asset used to compute the symbol (`address(0)` = native asset)|
+|`prefix`|`string`|A constant string prepended to the symbol of the underlying asset to create the final symbol|
 
 **Returns**
 
@@ -90,7 +90,7 @@ function computeSymbol(address token, string memory prefix) external view return
 
 ### computeDecimals
 
-Returns decimals of underlying token (0 if not present).
+Returns decimals of underlying asset (0 if not present).
 
 
 ```solidity
@@ -100,7 +100,7 @@ function computeDecimals(address token) external view returns (uint8);
 
 |Name|Type|Description|
 |----|----|-----------|
-|`token`|`address`|The address of the underlying token used to compute the decimals|
+|`token`|`address`|The address of the underlying asset used to compute the decimals (`address(0)` = native asset)|
 
 **Returns**
 

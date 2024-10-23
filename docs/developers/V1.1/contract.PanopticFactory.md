@@ -214,6 +214,6 @@ event PoolDeployed(
 |`poolAddress`|`PanopticPool`|Address of the deployed Panoptic pool|
 |`oracleContract`|`IV3CompatibleOracle`|The external oracle contract used by the newly deployed Panoptic Pool|
 |`poolKey`|`PoolKey`|The Uniswap V4 pool key associated with the Panoptic Pool|
-|`collateralTracker0`|`CollateralTracker`|Address of the collateral tracker contract for token0|
-|`collateralTracker1`|`CollateralTracker`|Address of the collateral tracker contract for token1|
+|`collateralTracker0`|`CollateralTracker`|Address of the collateral tracker contract for currency0|
+|`collateralTracker1`|`CollateralTracker`|Address of the collateral tracker contract for currency1|
 

@@ -190,7 +190,7 @@ function unpackTickData(uint96 _tickData) internal pure returns (int24, int24, i
 
 ### utilization0
 
-Get token0 utilization of `self`.
+Get currency0 utilization of `self`.
 
 
 ```solidity
@@ -200,18 +200,18 @@ function utilization0(PositionBalance self) internal pure returns (int256);
 
 |Name|Type|Description|
 |----|----|-----------|
-|`self`|`PositionBalance`|The PositionBalance to retrieve the token0 utilization from|
+|`self`|`PositionBalance`|The PositionBalance to retrieve the currency0 utilization from|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`int256`|The token0 utilization, stored in bips|
+|`<none>`|`int256`|The currency0 utilization, stored in bips|
 
 
 ### utilization1
 
-Get token1 utilization of `self`.
+Get currency1 utilization of `self`.
 
 
 ```solidity
@@ -221,18 +221,18 @@ function utilization1(PositionBalance self) internal pure returns (int256);
 
 |Name|Type|Description|
 |----|----|-----------|
-|`self`|`PositionBalance`|The PositionBalance to retrieve the token1 utilization from|
+|`self`|`PositionBalance`|The PositionBalance to retrieve the currency1 utilization from|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`int256`|The token1 utilization, stored in bips|
+|`<none>`|`int256`|The currency1 utilization, stored in bips|
 
 
 ### utilizations
 
-Get both token0 and token1 utilizations of `self`.
+Get both currency0 and currency1 utilizations of `self`.
 
 
 ```solidity
@@ -305,8 +305,8 @@ function unpackAll(PositionBalance self)
 |`fastOracleTickAtMint`|`int24`|Fast oracle tick at mint|
 |`slowOracleTickAtMint`|`int24`|Slow oracle tick at mint|
 |`lastObservedTickAtMint`|`int24`|Last observed tick at mint|
-|`utilization0AtMint`|`int256`|Utilization of token0 at mint|
-|`utilization1AtMint`|`int256`|Utilization of token1 at mint|
+|`utilization0AtMint`|`int256`|Utilization of currency0 at mint|
+|`utilization1AtMint`|`int256`|Utilization of currency1 at mint|
 |`_positionSize`|`uint128`|Size of the position|
 
 

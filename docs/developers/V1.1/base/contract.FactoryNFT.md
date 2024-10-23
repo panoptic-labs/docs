@@ -73,8 +73,8 @@ function constructMetadata(address panopticPool, string memory symbol0, string m
 |Name|Type|Description|
 |----|----|-----------|
 |`panopticPool`|`address`|The displayed address used to determine the rarity (leading zeros) and lastCharVal (last 4 bits)|
-|`symbol0`|`string`|The symbol of `token0` in the Uniswap pool|
-|`symbol1`|`string`|The symbol of `token1` in the Uniswap pool|
+|`symbol0`|`string`|The symbol of `currency0` in the Uniswap pool|
+|`symbol1`|`string`|The symbol of `currency1` in the Uniswap pool|
 |`fee`|`uint256`|The fee of the Uniswap pool (in hundredths of basis points)|
 
 **Returns**
@@ -127,8 +127,8 @@ function generateSVGInfo(
 |`svgIn`|`string`|The SVG artwork to complete|
 |`panopticPool`|`address`|The address of the Panoptic Pool|
 |`rarity`|`uint256`|The rarity of the NFT|
-|`symbol0`|`string`|The symbol of `token0` in the Uniswap pool|
-|`symbol1`|`string`|The symbol of `token1` in the Uniswap pool|
+|`symbol0`|`string`|The symbol of `currency0` in the Uniswap pool|
+|`symbol1`|`string`|The symbol of `currency1` in the Uniswap pool|
 
 **Returns**
 

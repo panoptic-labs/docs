@@ -34,7 +34,7 @@ function slot0()
 
 |Name|Type|Description|
 |----|----|-----------|
-|`sqrtPriceX96`|`uint160`|The current price of the oracle as a sqrt(token1/token0) Q64.96 value|
+|`sqrtPriceX96`|`uint160`|The current price of the oracle as a sqrt(currency1/currency0) Q64.96 value|
 |`tick`|`int24`|The current tick of the oracle, i.e. according to the last tick transition that was run. This value may not always be equal to SqrtTickMath.getTickAtSqrtRatio(sqrtPriceX96) if the price is on a tick boundary|
 |`observationIndex`|`uint16`|The index of the last oracle observation that was written|
 |`observationCardinality`|`uint16`|The current maximum number of observations stored in the oracle|
@@ -79,7 +79,7 @@ the beginning of the period and another for the end of the period. E.g., to get 
 you must call it with secondsAgos = [3600, 0].*
 
 *The time weighted average tick represents the geometric time weighted average price of the pool, in
-log base sqrt(1.0001) of token1 / token0. The TickMath library can be used to go from a tick value to a ratio.*
+log base sqrt(1.0001) of currency1 / currency0. The TickMath library can be used to go from a tick value to a ratio.*
 
 
 ```solidity

@@ -229,7 +229,7 @@ function mostSignificantNibble(uint160 x) internal pure returns (uint256 r);
 
 ### getApproxTickWithMaxAmount
 
-Computes a tick that will require approximately `amount` of token0 to create a `tickSpacing`-wide position with `maxLiquidityPerTick` at `tickLower = tick` in Uniswap.
+Computes a tick that will require approximately `amount` of currency0 to create a `tickSpacing`-wide position with `maxLiquidityPerTick` at `tickLower = tick` in Uniswap.
 
 *This function can have a maximum of two ticks of error from one of the ticks with `amount(tickA) < amount < amount(tickA + 1 = tickB)`.*
 
@@ -248,7 +248,7 @@ function getApproxTickWithMaxAmount(uint256 amount, int24 tickSpacing, uint256 m
 
 |Name|Type|Description|
 |----|----|-----------|
-|`amount`|`uint256`|The desired amount of token0 required to fill the returned tick|
+|`amount`|`uint256`|The desired amount of currency0 required to fill the returned tick|
 |`tickSpacing`|`int24`|The spacing between initializable ticks in the Uniswap pool|
 |`maxLiquidityPerTick`|`uint256`|The maximum liquidity that can reference any given tick in the Uniswap pool|
 
@@ -256,7 +256,7 @@ function getApproxTickWithMaxAmount(uint256 amount, int24 tickSpacing, uint256 m
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`int24`|A tick that will require approximately `amount` of token0 to create a `tickSpacing`-wide position with `maxLiquidityPerTick` at `tickLower = tick`|
+|`<none>`|`int24`|A tick that will require approximately `amount` of currency0 to create a `tickSpacing`-wide position with `maxLiquidityPerTick` at `tickLower = tick`|
 
 
 ### getMaxLiquidityPerTick
@@ -331,7 +331,7 @@ function log_Sqrt1p0001(uint256 argX128, uint256 precision) internal pure return
 
 ### getAmount0ForLiquidity
 
-Calculates the amount of token0 received for a given LiquidityChunk.
+Calculates the amount of currency0 received for a given LiquidityChunk.
 
 
 ```solidity
@@ -347,12 +347,12 @@ function getAmount0ForLiquidity(LiquidityChunk liquidityChunk) internal pure ret
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`uint256`|The amount of token0 represented by `liquidityChunk` when `currentTick < tickLower`|
+|`<none>`|`uint256`|The amount of currency0 represented by `liquidityChunk` when `currentTick < tickLower`|
 
 
 ### getAmount1ForLiquidity
 
-Calculates the amount of token1 received for a given LiquidityChunk.
+Calculates the amount of currency1 received for a given LiquidityChunk.
 
 
 ```solidity
@@ -368,12 +368,12 @@ function getAmount1ForLiquidity(LiquidityChunk liquidityChunk) internal pure ret
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`uint256`|The amount of token1 represented by `liquidityChunk` when `currentTick > tickUpper`|
+|`<none>`|`uint256`|The amount of currency1 represented by `liquidityChunk` when `currentTick > tickUpper`|
 
 
 ### getAmountsForLiquidity
 
-Calculates the amount of token0 and token1 received for a given LiquidityChunk at the provided `currentTick`.
+Calculates the amount of currency0 and currency1 received for a given LiquidityChunk at the provided `currentTick`.
 
 
 ```solidity
@@ -393,8 +393,8 @@ function getAmountsForLiquidity(int24 currentTick, LiquidityChunk liquidityChunk
 
 |Name|Type|Description|
 |----|----|-----------|
-|`amount0`|`uint256`|The amount of token0 represented by `liquidityChunk` at `currentTick`|
-|`amount1`|`uint256`|The amount of token1 represented by `liquidityChunk` at `currentTick`|
+|`amount0`|`uint256`|The amount of currency0 represented by `liquidityChunk` at `currentTick`|
+|`amount1`|`uint256`|The amount of currency1 represented by `liquidityChunk` at `currentTick`|
 
 
 ### getLiquidityForAmount0
@@ -414,7 +414,7 @@ function getLiquidityForAmount0(int24 tickLower, int24 tickUpper, uint256 amount
 |----|----|-----------|
 |`tickLower`|`int24`|The lower tick of the chunk|
 |`tickUpper`|`int24`|The upper tick of the chunk|
-|`amount0`|`uint256`|The amount of token0|
+|`amount0`|`uint256`|The amount of currency0|
 
 **Returns**
 
@@ -440,7 +440,7 @@ function getLiquidityForAmount1(int24 tickLower, int24 tickUpper, uint256 amount
 |----|----|-----------|
 |`tickLower`|`int24`|The lower tick of the chunk|
 |`tickUpper`|`int24`|The upper tick of the chunk|
-|`amount1`|`uint256`|The amount of token1|
+|`amount1`|`uint256`|The amount of currency1|
 
 **Returns**
 

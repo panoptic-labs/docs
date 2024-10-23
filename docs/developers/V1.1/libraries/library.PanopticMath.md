@@ -93,23 +93,23 @@ function numberOfLeadingHexZeros(address addr) external pure returns (uint256);
 
 ### safeERC20Symbol
 
-Returns ERC20 symbol of `token`.
+Returns ERC20 symbol of `asset`.
 
 
 ```solidity
-function safeERC20Symbol(address token) external view returns (string memory);
+function safeERC20Symbol(address asset) external view returns (string memory);
 ```
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`token`|`address`|The address of the token to get the symbol of|
+|`asset`|`address`|The address of the asset to get the symbol of (`address(0)` = native asset)|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`string`|The symbol of `token` or "???" if not supported|
+|`<none>`|`string`|The symbol of `asset` or "???" if not supported|
 
 
 ### uniswapFeeToString
@@ -392,13 +392,13 @@ function computeExercisedAmounts(TokenId tokenId, uint128 positionSize)
 
 |Name|Type|Description|
 |----|----|-----------|
-|`longAmounts`|`LeftRightSigned`|Left-right packed word where rightSlot = token0 and leftSlot = token1 held against borrowed Uniswap liquidity for long legs|
-|`shortAmounts`|`LeftRightSigned`|Left-right packed word where where rightSlot = token0 and leftSlot = token1 borrowed to create short legs|
+|`longAmounts`|`LeftRightSigned`|Left-right packed word where rightSlot = currency0 and leftSlot = currency1 held against borrowed Uniswap liquidity for long legs|
+|`shortAmounts`|`LeftRightSigned`|Left-right packed word where where rightSlot = currency0 and leftSlot = currency1 borrowed to create short legs|
 
 
 ### convert0to1
 
-Convert an amount of token0 into an amount of token1 given the sqrtPriceX96 in a Uniswap pool defined as `sqrt(1/0)*2^96`.
+Convert an amount of currency0 into an amount of currency1 given the sqrtPriceX96 in a Uniswap pool defined as `sqrt(1/0)*2^96`.
 
 *Uses reduced precision after tick 443636 in order to accommodate the full range of ticks*
 
@@ -410,19 +410,19 @@ function convert0to1(uint256 amount, uint160 sqrtPriceX96) internal pure returns
 
 |Name|Type|Description|
 |----|----|-----------|
-|`amount`|`uint256`|The amount of token0 to convert into token1|
-|`sqrtPriceX96`|`uint160`|The square root of the price at which to convert `amount` of token0 into token1|
+|`amount`|`uint256`|The amount of currency0 to convert into currency1|
+|`sqrtPriceX96`|`uint160`|The square root of the price at which to convert `amount` of currency0 into currency1|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`uint256`|The converted `amount` of token0 represented in terms of token1|
+|`<none>`|`uint256`|The converted `amount` of currency0 represented in terms of currency1|
 
 
 ### convert0to1RoundingUp
 
-Convert an amount of token0 into an amount of token1 given the sqrtPriceX96 in a Uniswap pool defined as `sqrt(1/0)*2^96`.
+Convert an amount of currency0 into an amount of currency1 given the sqrtPriceX96 in a Uniswap pool defined as `sqrt(1/0)*2^96`.
 
 *Uses reduced precision after tick 443636 in order to accommodate the full range of ticks*
 
@@ -434,19 +434,19 @@ function convert0to1RoundingUp(uint256 amount, uint160 sqrtPriceX96) internal pu
 
 |Name|Type|Description|
 |----|----|-----------|
-|`amount`|`uint256`|The amount of token0 to convert into token1|
-|`sqrtPriceX96`|`uint160`|The square root of the price at which to convert `amount` of token0 into token1|
+|`amount`|`uint256`|The amount of currency0 to convert into currency1|
+|`sqrtPriceX96`|`uint160`|The square root of the price at which to convert `amount` of currency0 into currency1|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`uint256`|The converted `amount` of token0 represented in terms of token1|
+|`<none>`|`uint256`|The converted `amount` of currency0 represented in terms of currency1|
 
 
 ### convert1to0
 
-Convert an amount of token1 into an amount of token0 given the sqrtPriceX96 in a Uniswap pool defined as `sqrt(1/0)*2^96`.
+Convert an amount of currency1 into an amount of currency0 given the sqrtPriceX96 in a Uniswap pool defined as `sqrt(1/0)*2^96`.
 
 *Uses reduced precision after tick 443636 in order to accommodate the full range of ticks.*
 
@@ -458,19 +458,19 @@ function convert1to0(uint256 amount, uint160 sqrtPriceX96) internal pure returns
 
 |Name|Type|Description|
 |----|----|-----------|
-|`amount`|`uint256`|The amount of token1 to convert into token0|
-|`sqrtPriceX96`|`uint160`|The square root of the price at which to convert `amount` of token1 into token0|
+|`amount`|`uint256`|The amount of currency1 to convert into currency0|
+|`sqrtPriceX96`|`uint160`|The square root of the price at which to convert `amount` of currency1 into currency0|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`uint256`|The converted `amount` of token1 represented in terms of token0|
+|`<none>`|`uint256`|The converted `amount` of currency1 represented in terms of currency0|
 
 
 ### convert1to0RoundingUp
 
-Convert an amount of token1 into an amount of token0 given the sqrtPriceX96 in a Uniswap pool defined as `sqrt(1/0)*2^96`.
+Convert an amount of currency1 into an amount of currency0 given the sqrtPriceX96 in a Uniswap pool defined as `sqrt(1/0)*2^96`.
 
 *Uses reduced precision after tick 443636 in order to accommodate the full range of ticks.*
 
@@ -482,19 +482,19 @@ function convert1to0RoundingUp(uint256 amount, uint160 sqrtPriceX96) internal pu
 
 |Name|Type|Description|
 |----|----|-----------|
-|`amount`|`uint256`|The amount of token1 to convert into token0|
-|`sqrtPriceX96`|`uint160`|The square root of the price at which to convert `amount` of token1 into token0|
+|`amount`|`uint256`|The amount of currency1 to convert into currency0|
+|`sqrtPriceX96`|`uint160`|The square root of the price at which to convert `amount` of currency1 into currency0|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`uint256`|The converted `amount` of token1 represented in terms of token0|
+|`<none>`|`uint256`|The converted `amount` of currency1 represented in terms of currency0|
 
 
 ### convert0to1
 
-Convert an amount of token0 into an amount of token1 given the sqrtPriceX96 in a Uniswap pool defined as `sqrt(1/0)*2^96`.
+Convert an amount of currency0 into an amount of currency1 given the sqrtPriceX96 in a Uniswap pool defined as `sqrt(1/0)*2^96`.
 
 *Uses reduced precision after tick 443636 in order to accommodate the full range of ticks.*
 
@@ -506,19 +506,19 @@ function convert0to1(int256 amount, uint160 sqrtPriceX96) internal pure returns 
 
 |Name|Type|Description|
 |----|----|-----------|
-|`amount`|`int256`|The amount of token0 to convert into token1|
-|`sqrtPriceX96`|`uint160`|The square root of the price at which to convert `amount` of token0 into token1|
+|`amount`|`int256`|The amount of currency0 to convert into currency1|
+|`sqrtPriceX96`|`uint160`|The square root of the price at which to convert `amount` of currency0 into currency1|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`int256`|The converted `amount` of token0 represented in terms of token1|
+|`<none>`|`int256`|The converted `amount` of currency0 represented in terms of currency1|
 
 
 ### convert1to0
 
-Convert an amount of token1 into an amount of token0 given the sqrtPriceX96 in a Uniswap pool defined as `sqrt(1/0)*2^96`.
+Convert an amount of currency1 into an amount of currency0 given the sqrtPriceX96 in a Uniswap pool defined as `sqrt(1/0)*2^96`.
 
 *Uses reduced precision after tick 443636 in order to accommodate the full range of ticks.*
 
@@ -530,19 +530,19 @@ function convert1to0(int256 amount, uint160 sqrtPriceX96) internal pure returns 
 
 |Name|Type|Description|
 |----|----|-----------|
-|`amount`|`int256`|The amount of token1 to convert into token0|
-|`sqrtPriceX96`|`uint160`|The square root of the price at which to convert `amount` of token1 into token0|
+|`amount`|`int256`|The amount of currency1 to convert into currency0|
+|`sqrtPriceX96`|`uint160`|The square root of the price at which to convert `amount` of currency1 into currency0|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`int256`|The converted `amount` of token1 represented in terms of token0|
+|`<none>`|`int256`|The converted `amount` of currency1 represented in terms of currency0|
 
 
 ### getCrossBalances
 
-Get a single collateral balance and requirement in terms of the lowest-priced token for a given set of (token0/token1) collateral balances and requirements.
+Get a single collateral balance and requirement in terms of the lowest-priced token for a given set of (currency0/currency1) collateral balances and requirements.
 
 
 ```solidity
@@ -555,16 +555,16 @@ function getCrossBalances(LeftRightUnsigned tokenData0, LeftRightUnsigned tokenD
 
 |Name|Type|Description|
 |----|----|-----------|
-|`tokenData0`|`LeftRightUnsigned`|LeftRight encoded word with balance of token0 in the right slot, and required balance in left slot|
-|`tokenData1`|`LeftRightUnsigned`|LeftRight encoded word with balance of token1 in the right slot, and required balance in left slot|
+|`tokenData0`|`LeftRightUnsigned`|LeftRight encoded word with balance of currency0 in the right slot, and required balance in left slot|
+|`tokenData1`|`LeftRightUnsigned`|LeftRight encoded word with balance of currency1 in the right slot, and required balance in left slot|
 |`sqrtPriceX96`|`uint160`|The price at which to compute the collateral value and requirements|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`uint256`|The combined collateral balance of `tokenData0` and `tokenData1` in terms of (token0 if `price(token1/token0) < 1` and vice versa)|
-|`<none>`|`uint256`|The combined required collateral threshold of `tokenData0` and `tokenData1` in terms of (token0 if `price(token1/token0) < 1` and vice versa)|
+|`<none>`|`uint256`|The combined collateral balance of `tokenData0` and `tokenData1` in terms of (currency0 if `price(currency1/currency0) < 1` and vice versa)|
+|`<none>`|`uint256`|The combined required collateral threshold of `tokenData0` and `tokenData1` in terms of (currency0 if `price(currency1/currency0) < 1` and vice versa)|
 
 
 ### getAmountsMoved
@@ -638,8 +638,8 @@ function getLiquidationBonus(
 
 |Name|Type|Description|
 |----|----|-----------|
-|`tokenData0`|`LeftRightUnsigned`|LeftRight encoded word with balance of token0 in the right slot, and required balance in left slot|
-|`tokenData1`|`LeftRightUnsigned`|LeftRight encoded word with balance of token1 in the right slot, and required balance in left slot|
+|`tokenData0`|`LeftRightUnsigned`|LeftRight encoded word with balance of currency0 in the right slot, and required balance in left slot|
+|`tokenData1`|`LeftRightUnsigned`|LeftRight encoded word with balance of currency1 in the right slot, and required balance in left slot|
 |`atSqrtPriceX96`|`uint160`|The oracle price used to swap tokens between the liquidator/liquidatee and determine solvency for the liquidatee|
 |`netPaid`|`LeftRightSigned`|The net amount of tokens paid/received by the liquidatee to close their portfolio of positions|
 |`shortPremium`|`LeftRightUnsigned`|Total owed premium (prorated by available settled tokens) across all short legs being liquidated|
@@ -679,8 +679,8 @@ function haircutPremia(
 |`positionIdList`|`TokenId[]`|The list of position ids being liquidated|
 |`premiasByLeg`|`LeftRightSigned[4][]`|The premium paid (or received) by the liquidatee for each leg of each position|
 |`collateralRemaining`|`LeftRightSigned`|The remaining collateral after the liquidation (negative if protocol loss)|
-|`collateral0`|`CollateralTracker`|The collateral tracker for token0|
-|`collateral1`|`CollateralTracker`|The collateral tracker for token1|
+|`collateral0`|`CollateralTracker`|The collateral tracker for currency0|
+|`collateral1`|`CollateralTracker`|The collateral tracker for currency1|
 |`atSqrtPriceX96`|`uint160`|The oracle price used to swap tokens between the liquidator/liquidatee and determine solvency for the liquidatee|
 |`settledTokens`|`mapping(bytes32 chunkKey => LeftRightUnsigned settledTokens)`|The per-chunk accumulator of settled tokens in storage from which to subtract the haircut premium|
 
@@ -710,15 +710,15 @@ function getExerciseDeltas(
 |Name|Type|Description|
 |----|----|-----------|
 |`exercisee`|`address`|The address of the user being exercised|
-|`exerciseFees`|`LeftRightSigned`|Pre-adjustment exercise fees to debit from exercisor (rightSlot = token0 left = token1)|
-|`atTick`|`int24`|The tick at which to convert between token0/token1 when redistributing the exercise fees|
-|`ct0`|`CollateralTracker`|The collateral tracker for token0|
-|`ct1`|`CollateralTracker`|The collateral tracker for token1|
+|`exerciseFees`|`LeftRightSigned`|Pre-adjustment exercise fees to debit from exercisor (rightSlot = currency0 left = currency1)|
+|`atTick`|`int24`|The tick at which to convert between currency0/currency1 when redistributing the exercise fees|
+|`ct0`|`CollateralTracker`|The collateral tracker for currency0|
+|`ct1`|`CollateralTracker`|The collateral tracker for currency1|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`LeftRightSigned`|The LeftRight-packed deltas for token0/token1 to move from the exercisor to the exercisee|
+|`<none>`|`LeftRightSigned`|The LeftRight-packed deltas for currency0/currency1 to move from the exercisor to the exercisee|
 
 

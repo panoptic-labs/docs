@@ -207,8 +207,8 @@ function _unlockAndCreatePositionInAMM(
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`LeftRightUnsigned[4]`|An array of LeftRight encoded words containing the amount of token0 and token1 collected as fees for each leg|
-|`<none>`|`LeftRightSigned`|The net amount of token0 and token1 moved to/from the Uniswap V4 pool|
+|`<none>`|`LeftRightUnsigned[4]`|An array of LeftRight encoded words containing the amount of currency0 and currency1 collected as fees for each leg|
+|`<none>`|`LeftRightSigned`|The net amount of currency0 and currency1 moved to/from the Uniswap V4 pool|
 
 
 ### unlockCallback
@@ -235,7 +235,7 @@ function unlockCallback(bytes calldata data) external returns (bytes memory);
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`bytes`|`(LeftRightUnsigned[4] collectedByLeg, LeftRightSigned totalMoved)` An array of LeftRight encoded words containing the amount of token0 and token1 collected as fees for each leg and the net amount of token0 and token1 moved to/from the Uniswap V4 pool|
+|`<none>`|`bytes`|`(LeftRightUnsigned[4] collectedByLeg, LeftRightSigned totalMoved)` An array of LeftRight encoded words containing the amount of currency0 and currency1 collected as fees for each leg and the net amount of currency0 and currency1 moved to/from the Uniswap V4 pool|
 
 
 ### burnTokenizedPosition
@@ -268,8 +268,8 @@ function burnTokenizedPosition(
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`LeftRightUnsigned[4]`|An array of LeftRight encoded words containing the amount of token0 and token1 collected as fees for each leg|
-|`<none>`|`LeftRightSigned`|The net amount of token0 and token1 moved to/from the Uniswap V4 pool|
+|`<none>`|`LeftRightUnsigned[4]`|An array of LeftRight encoded words containing the amount of currency0 and currency1 collected as fees for each leg|
+|`<none>`|`LeftRightSigned`|The net amount of currency0 and currency1 moved to/from the Uniswap V4 pool|
 
 
 ### mintTokenizedPosition
@@ -300,8 +300,8 @@ function mintTokenizedPosition(
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`LeftRightUnsigned[4]`|An array of LeftRight encoded words containing the amount of token0 and token1 collected as fees for each leg|
-|`<none>`|`LeftRightSigned`|The net amount of token0 and token1 moved to/from the Uniswap V4 pool|
+|`<none>`|`LeftRightUnsigned[4]`|An array of LeftRight encoded words containing the amount of currency0 and currency1 collected as fees for each leg|
+|`<none>`|`LeftRightSigned`|The net amount of currency0 and currency1 moved to/from the Uniswap V4 pool|
 
 
 ### safeTransferFrom
@@ -329,7 +329,7 @@ function safeBatchTransferFrom(address, address, uint256[] calldata, uint256[] c
 
 Called to perform an ITM swap in the Uniswap pool to resolve any non-tokenType token deltas.
 
-*When a position is minted or burnt in-the-money (ITM) we are *not* 100% token0 or 100% token1: we have a mix of both tokens.*
+*When a position is minted or burnt in-the-money (ITM) we are *not* 100% currency0 or 100% currency1: we have a mix of both tokens.*
 
 *The swapping for ITM options is needed because only one of the tokens are "borrowed" by a user to create the position.*
 
@@ -385,7 +385,7 @@ function _createPositionInAMM(
 
 |Name|Type|Description|
 |----|----|-----------|
-|`collectedByLeg`|`LeftRightUnsigned[4]`|An array of LeftRight encoded words containing the amount of token0 and token1 collected as fees for each leg|
+|`collectedByLeg`|`LeftRightUnsigned[4]`|An array of LeftRight encoded words containing the amount of currency0 and currency1 collected as fees for each leg|
 |`totalMoved`|`LeftRightSigned`|The net amount of funds moved to/from Uniswap|
 
 
@@ -431,7 +431,7 @@ function _createLegInAMM(
 |Name|Type|Description|
 |----|----|-----------|
 |`moved`|`LeftRightSigned`|The net amount of funds moved to/from Uniswap|
-|`collectedSingleLeg`|`LeftRightUnsigned`|LeftRight encoded words containing the amount of token0 and token1 collected as fees|
+|`collectedSingleLeg`|`LeftRightUnsigned`|LeftRight encoded words containing the amount of currency0 and currency1 collected as fees|
 
 
 ### _updateStoredPremia
@@ -460,7 +460,7 @@ function _updateStoredPremia(
 |----|----|-----------|
 |`positionKey`|`bytes32`|A key representing a liquidity chunk/range in Uniswap|
 |`currentLiquidity`|`LeftRightUnsigned`|The total amount of liquidity in the AMM for the specified chunk|
-|`collectedAmounts`|`LeftRightUnsigned`|The amount of tokens (token0 and token1) collected from Uniswap|
+|`collectedAmounts`|`LeftRightUnsigned`|The amount of tokens (currency0 and currency1) collected from Uniswap|
 
 
 ### _getPremiaDeltas
@@ -481,14 +481,14 @@ function _getPremiaDeltas(LeftRightUnsigned currentLiquidity, LeftRightUnsigned 
 |Name|Type|Description|
 |----|----|-----------|
 |`currentLiquidity`|`LeftRightUnsigned`|NetLiquidity (right) and removedLiquidity (left) at the start of the transaction|
-|`collectedAmounts`|`LeftRightUnsigned`|Total amount of tokens (token0 and token1) collected from Uniswap|
+|`collectedAmounts`|`LeftRightUnsigned`|Total amount of tokens (currency0 and currency1) collected from Uniswap|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`deltaPremiumOwed`|`LeftRightUnsigned`|The extra premium (per liquidity X64) to be added to the owed accumulator for token0 (right) and token1 (left)|
-|`deltaPremiumGross`|`LeftRightUnsigned`|The extra premium (per liquidity X64) to be added to the gross accumulator for token0 (right) and token1 (left)|
+|`deltaPremiumOwed`|`LeftRightUnsigned`|The extra premium (per liquidity X64) to be added to the owed accumulator for currency0 (right) and currency1 (left)|
+|`deltaPremiumGross`|`LeftRightUnsigned`|The extra premium (per liquidity X64) to be added to the gross accumulator for currency0 (right) and currency1 (left)|
 
 
 ### getAccountLiquidity
@@ -555,8 +555,8 @@ function getAccountPremium(
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`uint128`|The amount of premium (per liquidity X64) for token0 = `sum(feeGrowthLast0X128)` over every block where the position has been touched|
-|`<none>`|`uint128`|The amount of premium (per liquidity X64) for token1 = `sum(feeGrowthLast0X128)` over every block where the position has been touched|
+|`<none>`|`uint128`|The amount of premium (per liquidity X64) for currency0 = `sum(feeGrowthLast0X128)` over every block where the position has been touched|
+|`<none>`|`uint128`|The amount of premium (per liquidity X64) for currency1 = `sum(feeGrowthLast0X128)` over every block where the position has been touched|
 
 
 ### getUniswapV4PoolKeyFromId

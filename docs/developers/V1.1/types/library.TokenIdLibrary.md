@@ -104,7 +104,7 @@ function tickSpacing(TokenId self) internal pure returns (int24);
 
 Get the asset basis for this TokenId.
 
-*Which token is the asset - can be token0 (return 0) or token1 (return 1).*
+*Which token is the asset - can be currency0 (return 0) or currency1 (return 1).*
 
 *Occupies the leftmost bit of the optionRatio 4 bits slot.*
 
@@ -123,7 +123,7 @@ function asset(TokenId self, uint256 legIndex) internal pure returns (uint256);
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`uint256`|0 if asset is token0, 1 if asset is token1|
+|`<none>`|`uint256`|0 if asset is currency0, 1 if asset is currency1|
 
 
 ### optionRatio
@@ -189,7 +189,7 @@ function tokenType(TokenId self, uint256 legIndex) internal pure returns (uint25
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`uint256`|1 if the token moved is token1 or 0 if the token moved is token0|
+|`<none>`|`uint256`|1 if the token moved is currency1 or 0 if the token moved is currency0|
 
 
 ### riskPartner

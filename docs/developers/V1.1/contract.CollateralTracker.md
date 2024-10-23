@@ -5,7 +5,7 @@ sidebar_position: 3
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.1.x/contracts/CollateralTracker.sol)
 
 **Inherits:**
-[ERC20Minimal](/docs/developers/V1.1/tokens/abstract.ERC20Minimal), [Multicall](/docs/developers/V1.1/base/abstract.Multicall)
+Clone, [ERC20Minimal](/docs/developers/V1.1/tokens/abstract.ERC20Minimal), [Multicall](/docs/developers/V1.1/base/abstract.Multicall)
 
 **Author:**
 Axicon Labs Limited
@@ -192,24 +192,24 @@ function _panopticPool() internal pure returns (PanopticPool);
 |`<none>`|`PanopticPool`|The Panoptic Pool associated with this collateral token|
 
 
-### _underlyingIsToken0
+### _underlyingIsCurrency0
 
-Retrieve a boolean indicating whether the underlying token is token0 or token1 in the Uniswap V4 pool.
+Retrieve a boolean indicating whether the underlying asset is currency0 or currency1 in the Uniswap V4 pool.
 
 
 ```solidity
-function _underlyingIsToken0() internal pure returns (bool underlyingIsToken0);
+function _underlyingIsCurrency0() internal pure returns (bool underlyingIsCurrency0);
 ```
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`underlyingIsToken0`|`bool`|True if the underlying token is token0, false if it is token1|
+|`underlyingIsCurrency0`|`bool`|True if the underlying asset is currency0, false if it is currency1|
 
 
 ### _underlyingToken
 
-Retrieve the address of the underlying token.
+Retrieve the address of the underlying asset.
 
 
 ```solidity
@@ -219,37 +219,37 @@ function _underlyingToken() internal pure returns (address);
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`address`|The address of the underlying token|
+|`<none>`|`address`|The address of the underlying asset|
 
 
-### _token0
+### _currency0
 
-Retrieve the address of token0 in the Uniswap V4 pool.
+Retrieve the address of currency0 in the Uniswap V4 pool.
 
 
 ```solidity
-function _token0() internal pure returns (address);
+function _currency0() internal pure returns (address);
 ```
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`address`|The address of token0 in the Uniswap V4 pool|
+|`<none>`|`address`|The address of currency0 in the Uniswap V4 pool|
 
 
-### _token1
+### _currency1
 
-Retrieve the address of token1 in the Uniswap V4 pool.
+Retrieve the address of currency1 in the Uniswap V4 pool.
 
 
 ```solidity
-function _token1() internal pure returns (address);
+function _currency1() internal pure returns (address);
 ```
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`address`|The address of token1 in the Uniswap V4 pool|
+|`<none>`|`address`|The address of currency1 in the Uniswap V4 pool|
 
 
 ### _poolFee
@@ -329,13 +329,13 @@ function getPoolData() external view returns (uint256 poolAssets, uint256 inside
 |Name|Type|Description|
 |----|----|-----------|
 |`poolAssets`|`uint256`|Cached amount of assets accounted to be held by the Panoptic Pool — ignores donations, pending fee payouts, and other untracked balance changes|
-|`insideAMM`|`uint256`|The underlying token amount held in the AMM|
+|`insideAMM`|`uint256`|The underlying asset amount held in the AMM|
 |`currentPoolUtilization`|`uint256`|The pool utilization defined as`s_inAMM * 10_000 / totalAssets()`, where totalAssets is the total tracked assets in the AMM and PanopticPool minus fees and donations to the Panoptic pool|
 
 
 ### name
 
-Returns name of token composed of underlying token symbol and pool data.
+Returns name of token composed of underlying asset symbol and pool data.
 
 
 ```solidity
@@ -350,7 +350,7 @@ function name() external view returns (string memory);
 
 ### symbol
 
-Returns symbol as prefixed symbol of underlying token.
+Returns symbol as prefixed symbol of underlying asset.
 
 
 ```solidity
@@ -365,7 +365,7 @@ function symbol() external view returns (string memory);
 
 ### decimals
 
-Returns decimals of underlying token (0 if not present).
+Returns decimals of underlying asset (0 if not present).
 
 
 ```solidity
@@ -380,7 +380,7 @@ function decimals() external view returns (uint8);
 
 ### transfer
 
-*See [IERC20-transfer](/docs/developers/V1.1/tokens/abstract.ERC20Minimal#transfer).
+*See [IERC20-transfer](/contracts/tokens/ERC20Minimal.sol/abstract.ERC20Minimal.md#transfer).
 Requirements:
 - the caller must have a balance of at least `amount`.
 - the msg.sender must not have any position on the panoptic pool*
@@ -392,7 +392,7 @@ function transfer(address recipient, uint256 amount) public override(ERC20Minima
 
 ### transferFrom
 
-*See [IERC20-transferFrom](/docs/developers/V1.1/tokens/abstract.ERC20Minimal#transferfrom).
+*See [IERC20-transferFrom](/contracts/tokens/ERC20Minimal.sol/abstract.ERC20Minimal.md#transferfrom).
 Requirements:
 - the `from` must have a balance of at least `amount`.
 - the caller must have allowance for `from` of at least `amount` tokens.
@@ -405,7 +405,7 @@ function transferFrom(address from, address to, uint256 amount) public override(
 
 ### _settleTokenDelta
 
-Initiates the unlock callback to wrap/unwrap `delta` amount of the underlying token and transfer to/from the Panoptic Pool.
+Initiates the unlock callback to wrap/unwrap `delta` amount of the underlying asset and transfer to/from the Panoptic Pool.
 
 
 ```solidity
@@ -415,8 +415,8 @@ function _settleTokenDelta(address account, int256 delta) internal;
 
 |Name|Type|Description|
 |----|----|-----------|
-|`account`|`address`|The address of the account to transfer the underlying token to/from|
-|`delta`|`int256`|The amount of the underlying token to wrap/unwrap and transfer|
+|`account`|`address`|The address of the account to transfer the underlying asset to/from|
+|`delta`|`int256`|The amount of the underlying asset to wrap/unwrap and transfer|
 
 
 ### unlockCallback
@@ -425,7 +425,7 @@ Uniswap V4 unlock callback implementation.
 
 *Parameters are `(address account, int256 delta, uint256 valueOrigin)`.*
 
-*Wraps/unwraps `delta` amount of the underlying token and transfers to/from the Panoptic Pool.*
+*Wraps/unwraps `delta` amount of the underlying asset and transfers to/from the Panoptic Pool.*
 
 
 ```solidity
@@ -446,7 +446,7 @@ function unlockCallback(bytes calldata data) external returns (bytes memory);
 
 ### asset
 
-Get the token contract address of the underlying asset being managed.
+Get the address of the underlying asset being managed (`address(0)` = native asset).
 
 
 ```solidity
@@ -560,7 +560,7 @@ function previewDeposit(uint256 assets) public view returns (uint256 shares);
 
 ### deposit
 
-Deposit underlying tokens (assets) to the Panoptic pool from the LP and mint corresponding amount of shares.
+Deposit underlying assets (assets) to the Panoptic pool from the LP and mint corresponding amount of shares.
 
 *If depositing native currency (`asset() == address(0)`), non-EOA callers *must* accept empty calls with value up to the amount attached.*
 
@@ -1098,8 +1098,8 @@ function _getExchangedAmount(int128 longAmount, int128 shortAmount, int128 swapp
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`int256`|exchangedAmount The amount of funds to be exchanged for minting an option (includes commission, swapFee, and intrinsic value)|
-|`<none>`|`uint128`|commission The total commission (base rate + ITM spread) paid for minting the option|
+|`<none>`|`int256`|The amount of funds to be exchanged for minting an option (includes commission, swapFee, and intrinsic value)|
+|`<none>`|`uint128`|The total commission (base rate + ITM spread) paid for minting the option|
 
 
 ### getAccountMarginDetails
@@ -1176,7 +1176,7 @@ function _getRequiredCollateralAtTickSinglePosition(
     uint128 positionSize,
     int24 atTick,
     int16 poolUtilization,
-    bool underlyingIsToken0
+    bool underlyingIsCurrency0
 ) internal view returns (uint256 tokenRequired);
 ```
 **Parameters**
@@ -1187,7 +1187,7 @@ function _getRequiredCollateralAtTickSinglePosition(
 |`positionSize`|`uint128`|The size of the option position|
 |`atTick`|`int24`|The tick at which to evaluate the account's positions|
 |`poolUtilization`|`int16`|The utilization of the collateral vault (balance of buying and selling)|
-|`underlyingIsToken0`|`bool`|Cached `_underlyingIsToken0()` value for this CollateralTracker instance|
+|`underlyingIsCurrency0`|`bool`|Cached `_underlyingIsCurrency0()` value for this CollateralTracker instance|
 
 **Returns**
 
