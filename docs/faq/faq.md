@@ -36,7 +36,7 @@ Panoptic allows users to access new and improved features when options trading:<
 
 <details id="which-assets-can-i-trade">
 <summary>Which assets can I trade?</summary>
-Panoptic works on any ERC20 token. Panoptic users can create an options market on any Uniswap V3 or V4 pair.
+Panoptic works on any ERC20 token. Panoptic users can create an options market on any Uniswap V3 or V4 token pair.
 </details>
 
 <details id="where-will-panoptic-launch">
@@ -73,7 +73,7 @@ No.
 <summary>How does the impending release of Uniswap V4 affect Panoptic?</summary>
 We are very excited for Uniswap's remarkable achievement! With Uniswap V4, Panoptic is set for an exciting journey:
 <br /><br />
-1️⃣ Panoptic will land on both Uniswap V3 and V4 🔜
+1️⃣ Panoptic will launch on both Uniswap V3 and V4 🔜
 <br /><br />
 2️⃣ Being backed by <a href="https://blog.uniswap.org/ventures">Uniswap Labs Ventures</a>, Uniswap V4 has always been part of our growth map 🗺️
 <br /><br />
@@ -258,7 +258,7 @@ For a detailed explanation of the differences and advantages of streamia, you ca
 ## Security
 <details id="will-there-be-an-audit">
 <summary>Will there be an audit?</summary>
-Yes. Panoptic's smart contracts has undergone multiple audits by industry leading firms, including Cantina, Trail of Bits, Code4rena, <a href="https://panoptic.xyz/blog/openzeppelin-audits-panoptic-defi-options-protocol">OpenZeppelin</a>, <a href="https://panoptic.xyz/blog/abdk-audit-completion">ABDK</a>, <a href="https://panoptic.xyz/blog/panoptic-three-sigma-partnership">Three Sigma</a>, and <a href="https://panoptic.xyz/blog/simtopia-partnership-panoptic-defi-options">Simtopia</a>.
+Yes. Panoptic's smart contracts has undergone multiple <a href="https://panoptic.xyz/docs/security/security_audits">audits</a> by industry leading firms, including Cantina, Trail of Bits, Code4rena, OpenZeppelin, ABDK, Three Sigma, and Simtopia.
 </details>
 
 <details id="why-is-panoptic-oracle-free">

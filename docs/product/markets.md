@@ -4,7 +4,7 @@ slug: markets
 title: "Markets"
 tags: [Tutorial, Uniswap, Markets, Permissionless]
 image: /img/research/panoptics-markets-banner.png
-description: "Discover how Panoptic allows options trading on any ERC-20 token or native asset."
+description: "Discover how Panoptic allows options trading on any token."
 ---
 
 ![](./markets/panoptics-markets-banner.png)
@@ -16,7 +16,7 @@ In this article, we delve into the innovative world of Panoptic and its integrat
 >-   What is a market in the context of Panoptic?
 >-   What are an asset and a numeraire?
 >-   How is Uniswap related to Panoptic?
->-   How can I trade options on any ERC-20 token or native asset on Panoptic?
+>-   How can I trade options on any token in Panoptic?
     
 
   
