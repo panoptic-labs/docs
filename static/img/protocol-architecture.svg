@@ -235,7 +235,7 @@
 		<stop  offset="1" style="stop-color:#FFE6F3"/>
 	</linearGradient>
 	
-		<circle stylef="fill:url(#SVGID_00000013872488953238438360000014675448548713413762_);stroke:#353535;stroke-width:2;stroke-miterlimit:10;" cx="934" cy="120" r="42.9"/>
+		<circle style="fill:url(#SVGID_00000013872488953238438360000014675448548713413762_);stroke:#353535;stroke-width:2;stroke-miterlimit:10;" cx="934" cy="120" r="42.9"/>
 	<text transform="matrix(1 0 0 1 909.947 116.4862)" class="st3 st4 st5">UniV3</text>
 	<text transform="matrix(1 0 0 1 924.3472 135.6862)" class="st3 st4 st5">LP</text>
 </g>
