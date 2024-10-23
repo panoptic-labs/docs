@@ -624,7 +624,7 @@ function _burnAllOptionsFrom(
 |Name|Type|Description|
 |----|----|-----------|
 |`netPaid`|`LeftRightSigned`|The net amount of tokens paid after closing the positions|
-|`premiasByLeg`|`LeftRightSigned[4][]`|The amount of premia owed to the user for each leg of the position|
+|`premiasByLeg`|`LeftRightSigned[4][]`|The amount of premia paid by the user for each leg of the position|
 
 
 ### _burnOptions
@@ -652,7 +652,7 @@ function _burnOptions(bool commitLongSettled, TokenId tokenId, address owner, in
 |Name|Type|Description|
 |----|----|-----------|
 |`paidAmounts`|`LeftRightSigned`|The net amount of tokens paid after closing the position|
-|`premiaByLeg`|`LeftRightSigned[4]`|The amount of premia owed to the user for each leg of the position|
+|`premiaByLeg`|`LeftRightSigned[4]`|The amount of premia paid by the user for each leg of the position|
 
 
 ### _validateSolvency
@@ -738,7 +738,7 @@ function _burnAndHandleExercise(
 |Name|Type|Description|
 |----|----|-----------|
 |`realizedPremia`|`LeftRightSigned`|The net premia paid/received from the option position|
-|`premiaByLeg`|`LeftRightSigned[4]`|The premia owed to the user for each leg of the option position|
+|`premiaByLeg`|`LeftRightSigned[4]`|The premia paid by the user for each leg of the option position|
 |`paidAmounts`|`LeftRightSigned`|The net amount of tokens paid after closing the position|
 
 
@@ -770,7 +770,7 @@ Force the exercise of a single position. Exercisor will have to pay a fee to the
 ```solidity
 function forceExercise(
     address account,
-    TokenId[] calldata touchedId,
+    TokenId tokenId,
     TokenId[] calldata positionIdListExercisee,
     TokenId[] calldata positionIdListExercisor
 ) external;
@@ -780,7 +780,7 @@ function forceExercise(
 |Name|Type|Description|
 |----|----|-----------|
 |`account`|`address`|Address of the distressed account|
-|`touchedId`|`TokenId[]`|List of position to be force exercised. Can only contain one tokenId, written as `[tokenId]`|
+|`tokenId`|`TokenId`|The position to be force exercised; this position must contain at least one out-of-range long leg|
 |`positionIdListExercisee`|`TokenId[]`|Post-burn list of open positions in the exercisee's (`account`) account|
 |`positionIdListExercisor`|`TokenId[]`|List of open positions in the exercisor's (`msg.sender`) account|
 
@@ -1276,7 +1276,7 @@ Emitted when premium is settled independent of a mint/burn (e.g. during `settleL
 
 
 ```solidity
-event PremiumSettled(address indexed user, TokenId indexed tokenId, LeftRightSigned settledAmounts);
+event PremiumSettled(address indexed user, TokenId indexed tokenId, uint256 legIndex, LeftRightSigned settledAmounts);
 ```
 
 **Parameters**
@@ -1285,6 +1285,7 @@ event PremiumSettled(address indexed user, TokenId indexed tokenId, LeftRightSig
 |----|----|-----------|
 |`user`|`address`|Address of the owner of the settled position|
 |`tokenId`|`TokenId`|TokenId of the settled position|
+|`legIndex`|`uint256`|The leg index of `tokenId` that the premium was settled for|
 |`settledAmounts`|`LeftRightSigned`|LeftRight encoding for the amount of premium settled for token0 (right slot) and token1 (left slot)|
 
 ### OptionBurnt
@@ -1292,7 +1293,9 @@ Emitted when an option is burned.
 
 
 ```solidity
-event OptionBurnt(address indexed recipient, uint128 positionSize, TokenId indexed tokenId, LeftRightSigned premia);
+event OptionBurnt(
+    address indexed recipient, uint128 positionSize, TokenId indexed tokenId, LeftRightSigned[4] premiaByLeg
+);
 ```
 
 **Parameters**
@@ -1302,7 +1305,7 @@ event OptionBurnt(address indexed recipient, uint128 positionSize, TokenId index
 |`recipient`|`address`|User that burnt the option|
 |`positionSize`|`uint128`|The number of contracts burnt, expressed in terms of the asset|
 |`tokenId`|`TokenId`|TokenId of the burnt option|
-|`premia`|`LeftRightSigned`|LeftRight packing for the amount of premia collected for token0 (right) and token1 (left)|
+|`premiaByLeg`|`LeftRightSigned[4]`|LeftRight packing for the amount of premia settled for token0 (right) and token1 (left) for each leg of `tokenId`|
 
 ### OptionMinted
 Emitted when an option is minted.
@@ -1310,11 +1313,7 @@ Emitted when an option is minted.
 
 ```solidity
 event OptionMinted(
-    address indexed recipient,
-    uint128 positionSize,
-    TokenId indexed tokenId,
-    uint128 poolUtilizations,
-    LeftRightUnsigned commissions
+    address indexed recipient, TokenId indexed tokenId, PositionBalance balanceData, LeftRightUnsigned commissions
 );
 ```
 
@@ -1323,8 +1322,7 @@ event OptionMinted(
 |Name|Type|Description|
 |----|----|-----------|
 |`recipient`|`address`|User that minted the option|
-|`positionSize`|`uint128`|The number of contracts minted, expressed in terms of the asset|
 |`tokenId`|`TokenId`|TokenId of the created option|
-|`poolUtilizations`|`uint128`|Packing of the pool utilization (how much funds are in the Panoptic pool versus the AMM pool at the time of minting), right 64bits for token0 and left 64bits for token1, defined as `(inAMM * 10_000) / totalAssets()` where totalAssets is the total tracked assets in the AMM and PanopticPool minus fees and donations to the Panoptic pool|
+|`balanceData`|`PositionBalance`|The `PositionBalance` data for `tokenId` containing the number of contracts, pool utilizations, and ticks at mint|
 |`commissions`|`LeftRightUnsigned`|The total amount of commissions (base rate + ITM spread) paid for token0 (right) and token1 (left)|
 

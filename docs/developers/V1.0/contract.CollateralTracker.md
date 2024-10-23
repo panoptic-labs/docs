@@ -1040,8 +1040,8 @@ function _getExchangedAmount(int128 longAmount, int128 shortAmount, int128 swapp
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`int256`|exchangedAmount The amount of funds to be exchanged for minting an option (includes commission, swapFee, and intrinsic value)|
-|`<none>`|`uint128`|commission The total commission (base rate + ITM spread) paid for minting the option|
+|`<none>`|`int256`|The amount of funds to be exchanged for minting an option (includes commission, swapFee, and intrinsic value)|
+|`<none>`|`uint128`|The total commission (base rate + ITM spread) paid for minting the option|
 
 
 ### getAccountMarginDetails

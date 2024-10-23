@@ -329,7 +329,7 @@ For each slot, rectify difference `x - y` to 0 if negative.
 
 
 ```solidity
-function subRect(LeftRightSigned x, LeftRightSigned y) internal pure returns (LeftRightSigned z);
+function subRect(LeftRightSigned x, LeftRightSigned y) internal pure returns (LeftRightUnsigned z);
 ```
 **Parameters**
 
@@ -342,7 +342,7 @@ function subRect(LeftRightSigned x, LeftRightSigned y) internal pure returns (Le
 
 |Name|Type|Description|
 |----|----|-----------|
-|`z`|`LeftRightSigned`|The difference `x - y`|
+|`z`|`LeftRightUnsigned`|The difference `x - y`|
 
 
 ### addCapped
