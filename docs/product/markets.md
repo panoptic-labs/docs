@@ -4,7 +4,7 @@ slug: markets
 title: "Markets"
 tags: [Tutorial, Uniswap, Markets, Permissionless]
 image: /img/research/panoptics-markets-banner.png
-description: "Discover how Panoptic allows options trading on any market of ERC-20 tokens."
+description: "Discover how Panoptic allows options trading on any token."
 ---
 
 ![](./markets/panoptics-markets-banner.png)
@@ -16,7 +16,7 @@ In this article, we delve into the innovative world of Panoptic and its integrat
 >-   What is a market in the context of Panoptic?
 >-   What are an asset and a numeraire?
 >-   How is Uniswap related to Panoptic?
->-   How can I trade options on any ERC-20 tokens on Panoptic?
+>-   How can I trade options on any token in Panoptic?
     
 
   
@@ -31,7 +31,7 @@ Panoptic, supported by Uniswap, presents a groundbreaking infrastructure in dece
 
 -   Market: In a trading pair, the market token (like WETH in WETH/USDbC) is the primary focus of the option trade. 
 -   Priced In: The 'priced in' token (like USDC in WETH/USDC) serves as the reference currency or benchmark to express the asset's value.
--   Fee Tier: The fee tier refers to the trading fee of the associated Uniswap v3 pool
+-   Fee Tier: The fee tier refers to the trading fee of the associated Uniswap pool
     
 
 This structure is analogous to the base asset and quote asset in traditional trading.
@@ -69,7 +69,7 @@ Uniswap's growth and success as a decentralized exchange protocol lay the founda
 
 ### What is Uniswap?
 
-Uniswap is a decentralized exchange protocol built on Ethereum and other blockchains. It allows for permissionless token swaps, and its automated market maker system ensures liquidity for the trading of thousands of ERC-20 tokens.
+Uniswap is a decentralized exchange protocol built on Ethereum and other blockchains. It allows for permissionless token swaps, and its automated market maker system ensures liquidity for the trading of thousands of different assets.
 
   
 
@@ -81,7 +81,7 @@ Since Uniswap’s growth over the last five years, it has emerged as the most ad
 
 ### Panoptions are built on Uniswap
 
-By directly interfacing with Uniswap v3’s core contracts, Panoptic can port over liquidity on ANY asset pair. This mechanism allows traders to leverage the liquidity and decentralized nature of Uniswap, ensuring a transparent and efficient options trading experience without the need for intermediaries.
+By directly interfacing with Uniswap's core contracts, Panoptic can port over liquidity on ANY asset pair. This mechanism allows traders to leverage the liquidity and decentralized nature of Uniswap, ensuring a transparent and efficient options trading experience without the need for intermediaries.
 
 ### Fee Tiers and Implications
 

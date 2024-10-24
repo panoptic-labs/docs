@@ -47,7 +47,7 @@ For example, selling an OTM put option initially requires 20% collateralization.
 As the price decreases below the strike price, the buying power requirement will increase above 20%.
 The exact buying power requirement for a short put at strike $\mathtt{K}$ when the current price is $\mathtt{S}$ and an initial collateral ratio of $\mathtt{C_i}$ is given by:
 $$
-\mathtt{Buying\ Power\ Requirement = notionalSize \cdot \left(100\% - (100\% - C_i)\cdot\frac{S}{K}\right)}
+\mathtt{Buying\ Power\ Requirement = notionalSize \cdot \left(100\% - frac{S}{K}\right)}
 $$
 
 In contrast, the in-the-money amount (or the amount of funds necessary to cover the option) is always lower than the buying power requirement, and it is defined as $\mathtt{ITM\ amount = notionalSize \cdot\left(100\% - \frac{S}{K} \right)}$.
@@ -59,7 +59,7 @@ So, selling a 1000 ETH-USDC put will start with a buying power requirement of 20
 The buying power requirement of a short put is limited by the notional value of the option.
 
 ```solidity
-              Short put BPR = 100% - (100% - SCR)*(price/strike)
+              Short put BPR = 100% - (price/strike)
 BUYING        
 _POWER                       
 _REQUIREMENT  ^                    .
@@ -79,7 +79,7 @@ _REQUIREMENT  ^                    .
 The buying power requirement of a short call can exceed the notional value of the minted option.
 
 ```solidity
-              Short call BPR = SCR + (100% - SCR)*(price/strike - 1) 
+              Short call BPR = SCR + (price/strike) 
 BUYING                                           
 _POWER           <- OTM  .  ITM ->            _-¯
 _REQUIREMENT  ^          .                 _-¯

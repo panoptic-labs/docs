@@ -9,7 +9,7 @@ label: Streamia
 
 ### Fees tracking per swap
 
-Each `UniswapV3Pool` uses global accumulators called `feeGrowthGlobal0X128` and `feeGrowthGlobal1X128` to track the fees owed for each position in terms of `token0` and `token1`. 
+Each Uniswap pool uses global accumulators called `feeGrowthGlobal0X128` and `feeGrowthGlobal1X128` to track the fees owed for each position in terms of `token0` and `token1`. 
 
 Every time a swap happens inside a Uniswap pool that does not change the price beyond a single tick, the accumulator is incremented by the amount of fees generated per unit of total liquidity present inside that tick. 
 If the swap crosses a tick, the `UniswapV3Pool` stores the amount of fees collected up to that point for that specific tick range.
@@ -40,7 +40,7 @@ def computeUniswapFees(tickLower, tickUpper, liquidity):
 ## Liquidity tracking in Panoptic
 
 ### Liquidity in "Chunks"
-Each option position in Panoptic is created by moving liquidity in or out of the `UniswapV3Pool.sol` smart contract. Each "chunk" of liquidity will have a few properties associated with it: 
+Each option position in Panoptic is created by moving liquidity in or out of the Uniswap smart contract. Each "chunk" of liquidity will have a few properties associated with it: 
 
 - token type
 - lower tick
@@ -89,7 +89,7 @@ Any liquidity that has been deposited in the AMM using the SFPM will collect fee
 
 Here is how we can use the accumulators to compute the `Gross`, `Net`, and `Owed` fees collected by any position.
 
-Let's say user A deposited `T` at a specific tick range into Uniswap v3 and user B later removed `S` from that same tick. Because the netLiquidity left inside that tick range is only `(T-S)`, the AMM will collect fees equal to:
+Let's say user A deposited `T` at a specific tick range into Uniswap and user B later removed `S` from that same tick. Because the netLiquidity left inside that tick range is only `(T-S)`, the AMM will collect fees equal to:
 
 `net_feesCollectedX128 = feeGrowthX128 * (T-S) = feeGrowthX128 * N`
 

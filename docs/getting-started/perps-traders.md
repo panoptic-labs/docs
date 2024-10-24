@@ -9,7 +9,7 @@ Trade any token permissionlessly with leverage, capped downside, no liquidation 
 and no expiries in the non-custodial, oracle-free options platform.
 
 ### Any Token
-Users can trade perps and perpetual options on any ERC-20 token, thanks to the 
+Users can trade perps and perpetual options on any ERC-20 token or native asset, thanks to the 
 permissionless nature of Panoptic and Uniswap.
 
 ### Permissionless
@@ -45,7 +45,7 @@ All funds are held and managed automatically on the blockchain through public, a
 Panoptic is a groundbreaking protocol enabling perpetual options trading without oracles. 
 Pricing is based on Uniswap liquidity provider (LP) fees and is completely on chain.
 Because of its oracle-free nature, Panoptic is able to support the immediate listing of options 
-on any ERC-20 token without having to wait for oracle support.
+on any ERC-20 token or native asset without having to wait for oracle support.
 
 ### Synthetic Perps
 Users can go long or short by trading leveraged perps on Panoptic. 

@@ -57,7 +57,7 @@ making options trading more accessible to a wider range of participants.
 
 ### Making Options Accessible
 Listing new options on Panoptic is fully permissionless. Anyone can generate an options pool 
-for any ERC20 tokens, including long-tail assets that are traditionally absent on options exchanges.
+for any ERC20 token or native asset, including long-tail assets that are traditionally absent on options exchanges.
 
 Liquidity provision on Panoptic is fully permissionless. Any user can provide any quantity of any token, 
 and traders can borrow fungible liquidity for undercollateralized options trading.

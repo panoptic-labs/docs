@@ -7,7 +7,7 @@ label: "Liquidity Providers"
 Panoptic empowers LPs with increased yield, impermanent loss (IL) mitigation, advanced strategies, and risk management.
 
 ### Increased Yield
-LPs who deposit liquidity into AMMs like Uniswap v3 are unable to earn additional yield on their LP token. This is because Uniswap v3 represents LP tokens as [NFTs](https://panoptic.xyz/research/reasons-bullish-financial-nfts), which are harder to integrate into the rest of the DeFi ecosystem.
+LPs who deposit liquidity into AMMs like Uniswap V3 and V4 are unable to earn additional yield on their LP token. This is because Uniswap V3 and V4 represent LP tokens as [NFTs](https://panoptic.xyz/research/reasons-bullish-financial-nfts), which are harder to integrate into the rest of the DeFi ecosystem.
 
 Through Panoptic's innovative [Semi-Fungible Position Manager](https://panoptic.xyz/docs/developers/semifungiblepositionmanager), LPs are able to lend out their LP tokens for *additional* yield. LPs still earn all of the fees they would have been entitled to on Uniswap, plus an additional yield that comes from options buyers who are borrowing the LP token.
 
@@ -24,7 +24,7 @@ LPs can use Panoptic to control and decrease the amount of IL suffered. To mitig
 4. Trade [wide](https://panoptic.xyz/research/uniswap-lp-width) positions to limit pin risk.
 
 ### Advanced strategies
-LPs are [selling perpetual put options](https://panoptic.xyz/research/loan-shark-with-put-call-parity#put-call-lp-parity), whether they know it or not. Panoptic embraces this discovery by utilizing concentrated liquidity pool on Uniswap v3 to create option payoffs for users. Instead of only *selling* put options, LPs can use Panoptic as a one-stop shop to also *buy* put options, buy call options, sell call options, trade delta-neutral straddles, and more. Stop being restricted to only trading neutral-to-bullish positions in AMMs, and start exploring the world of bearish, delta-neutral, bullish, long volatility, and short volatility trades!
+LPs are [selling perpetual put options](https://panoptic.xyz/research/loan-shark-with-put-call-parity#put-call-lp-parity), whether they know it or not. Panoptic embraces this discovery by rehypothecating CLAMM liquidity to create option payoffs for users. Instead of only *selling* put options, LPs can use Panoptic as a one-stop shop to also *buy* put options, buy call options, sell call options, trade delta-neutral straddles, and more. Stop being restricted to only trading neutral-to-bullish positions in AMMs, and start exploring the world of bearish, delta-neutral, bullish, long volatility, and short volatility trades!
 
 ### Risk Management
 LPs can take advantage of Panoptic's *visual* interface, that allows them to:

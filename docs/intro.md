@@ -19,7 +19,7 @@ The Panoptic protocol consists of smart contracts on the Ethereum blockchain tha
 All smart contracts are available 24/7 and users can interact with the Panoptic protocol without the need for intermediaries like banks, brokerage firms, clearinghouses, market makers, or centralized exchanges.
 
 Panoptic is the first permissionless options protocol that overcomes the technically challenging task of implementing an options protocol on the Ethereum blockchain.
-We achieve this by embracing the decentralized nature of Automated Market Makers and permissionless liquidity providing in [Uniswap v3](https://uniswap.org/).
+We achieve this by embracing the decentralized nature of Automated Market Makers and permissionless liquidity providing in [Uniswap](https://uniswap.org/).
 
 The following sections will provide a brief overview of the _Panoptic protocol_.
 

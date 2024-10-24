@@ -241,7 +241,7 @@ The expression for the `BUYING_POWER_REQUIREMENT` is given by:
 `BUYING_POWER_REQUIREMENT = sellCollateralRatio(poolUtilizationAtMint) * notionalValue + inTheMoneyRequirement(price)`
 
 A special case for the `inTheMoneyRequirement` has to be handled when the position is in-range (or at-the-money).
-This is because the ITM amount will be zero between the strike and the upper tick `Pb`, but the actual Uniswap v3 position will be composed of some asset.
+This is because the ITM amount will be zero between the strike and the upper tick `Pb`, but the actual Uniswap position will be composed of some asset.
 To accurately compute the in-the-money requirement for ATM options, we perform a linear interpolation between the lower price `Pa` and the upper price `Pb` (see graph below).
 
 ##### Parameters that can change:
