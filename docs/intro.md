@@ -19,14 +19,49 @@ The Panoptic protocol consists of smart contracts on the Ethereum blockchain tha
 All smart contracts are available 24/7 and users can interact with the Panoptic protocol without the need for intermediaries like banks, brokerage firms, clearinghouses, market makers, or centralized exchanges.
 
 Panoptic is the first permissionless options protocol that overcomes the technically challenging task of implementing an options protocol on the Ethereum blockchain.
-We achieve this by embracing the decentralized nature of Automated Market Makers and permissionless liquidity providing in [Uniswap](https://uniswap.org/).
+We achieve this by embracing the decentralized nature of Automated Market Makers and permissionless liquidity providing in Uniswap.
 
-The following sections will provide a brief overview of the _Panoptic protocol_.
+The following sections will provide a brief overview of the Panoptic protocol.
 
-- [Panoptic Protocol](./panoptic-protocol/overview): Getting to know Panoptic's most important concepts.
-- [Options Trading 101](./trading/basic-concepts): Options trading resources.
-- [Technical Specifications](./developers/smart-contracts-overview): Learn how to build on Panoptic.
-- [Protocol Security](./security/security_audits): Audits, code reviews, security.
+- [How To Use Panoptic](./product/opening-a-position): How to use the perpetual options trading app.
+- [What Is Panoptic](./panoptic-protocol/overview): Understanding the Panoptic protocol.
+- [Panoptions](./trading/basic-concepts): Options trading resources.
+- [Smart Contracts](./developers/smart-contracts-overview): Learn how to build on Panoptic.
+- [Security](./security/security_audits): security and audit reports.
+
+---
+
+## Infographics
+
+import ThemedImage from '@theme/ThemedImage';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<ThemedImage
+  alt="Trading-Interface"
+  sources={{
+    light: useBaseUrl('/img/trading-interface.svg'),
+    dark: useBaseUrl('/img/trading-interface.svg'),
+  }}
+  style={{width: 1000}}
+/>
+
+<ThemedImage
+  alt="Passive-LP"
+  sources={{
+    light: useBaseUrl('/img/passive-lp.svg'),
+    dark: useBaseUrl('/img/passive-lp.svg'),
+  }}
+  style={{width: 1000}}
+/>
+
+<ThemedImage
+  alt="Active-LP"
+  sources={{
+    light: useBaseUrl('/img/active-lp.svg'),
+    dark: useBaseUrl('/img/active-lp.svg'),
+  }}
+  style={{width: 1000}}
+/>
 
 
 ---
@@ -36,7 +71,6 @@ The following sections will provide a brief overview of the _Panoptic protocol_.
 - [Developers](./developers/smart-contracts-overview)
 - [Litepaper](https://intro.panoptic.xyz/)
 - [Whitepaper](https://paper.panoptic.xyz/)
-- [Security audits](./security/security_audits)
 
 #### 10,000-Foot View of Panoptic and the DeFi Options Landscape
 - [Panoptic - The Most Detailed Exposition To Date](https://blog.panoptic.xyz/panoptic-483c6de77a0e)  
