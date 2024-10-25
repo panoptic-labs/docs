@@ -7,8 +7,8 @@ label: "Resources"
 You can find all of our resources related to our gated beta launch below.
 
 ### App
-- [Beta](https://beta.panoptic.xyz/)
 - [Demo](https://demo.panoptic.xyz)
+- [Beta](https://beta.panoptic.xyz/) (deprecated)
 
 <!-- ### Sign Up
 Sign up for the gated launch [here](https://signup.panoptic.xyz).
@@ -57,7 +57,7 @@ Sign up for the gated launch [here](https://signup.panoptic.xyz).
 - Epoch 6 [Begins](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-six) (February 13, 2024)
 - Epoch 6 [Ends](https://panoptic.xyz/blog/panoptic-beta-launch-epoch-six-closed) (February 23, 2024)
 
-### Epoch 7
+### Mainnet Launch
 - COMING SOON...
 
 ### Videos
