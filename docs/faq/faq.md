@@ -16,9 +16,9 @@ Panoptic is a permissionless way to trade crypto options. We enable options trad
 <summary>How can I use Panoptic?</summary>
 To explore the Panoptic App, you will need to connect your digital wallet. There are currently two versions available for users:
 <br /><br />
-1) Beta Version: This version is accessible for previous participants in our beta tests. You can visit and join the beta experience at <a href="https://beta.panoptic.xyz">beta.panoptic.xyz</a>.
+1) Beta Version (deprecated): This version is accessible for previous participants in our beta tests. You can visit and join the beta experience at <a href="https://beta.panoptic.xyz">beta.panoptic.xyz</a>.
 <br />
-2) Demo Version: If you're looking to practice your trading without risking real funds, our paper trading platform is available on the Sepolia network. You can try it out at <a href="https://deeznuts.panoptic.xyz">deeznuts.panoptic.xyz</a>.
+2) Demo Version: If you're looking to practice your trading without risking real funds, our paper trading platform is available on the Sepolia network. You can try it out at <a href="https://demo.panoptic.xyz">demo.panoptic.xyz</a>.
 <br /><br />
 Connect and discover the forefront of DeFi options with Panoptic.
 </details>
