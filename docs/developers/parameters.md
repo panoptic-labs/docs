@@ -137,7 +137,7 @@ If true, the "slow" oracle price is instead computed on-the-fly from `SLOW_ORACL
 
 ### MEDIAN_PERIOD
 ```solidity
-uint256 immutable MEDIAN_PERIOD = 60
+uint256 immutable MEDIAN_PERIOD (seconds) = 60 = 1 minute
 ```
 The median period is the minimum amount of time permitted between internal median array updates.
 
