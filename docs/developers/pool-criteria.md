@@ -38,3 +38,34 @@ Each Panoptic V1.1 pool is linked to a Uniswap V3-compatible oracle contract. Cu
 
 In the future, Uniswap V4 hooks or other alternative oracle implementations that expose the [IV3CompatibleOracle](/docs/developers/V1.1/interfaces/interface.IV3CompatibleOracle) interface may also be supported. If you are building something like this, please reach out to the team on Discord.
 
+
+## Hooks (Panoptic V1.1)
+
+---
+Panoptic V1.1 comes with out-of-the-box support for many Uniswap V4 hooks! Hookpools can be deployed and traded permissionlessly through our interface as long as they meet the criteria for permissions outlined below. If you are the developer a hook that doesn't meet the criteria for full support but may still be a good fit for Panoptic, please reach out to the team on Discord.
+
+### Full support
+Hooks containing these permissions will appear as first-class-citizens on the Panoptic interface.
+- `beforeInitialize`
+- `afterInitialize`
+- `beforeDonate`
+- `afterDonate`
+
+### Partial support
+Hooks containing these permissions will appear on the Panoptic interface, but traders will be limited to minting covered positions (ITM swaps disabled). This page will be updated with exceptions on a rolling basis.
+- `beforeSwap`
+- `afterSwap`
+- `beforeSwapReturnDelta`
+- `afterSwapReturnDelta`
+
+### Future support
+Hooks containing these permissions will not appear on the Panoptic interface, but may be supported on a case-by-case basis in the future. This page will be updated with whitelisted hooks on a rolling basis.
+- `beforeAddLiquidity`
+- `afterAddLiquidity`
+- `beforeRemoveLiquidity`
+- `afterRemoveLiquidity`
+
+### No support
+With a few exceptions, hooks containing these permissions are unlikely to be supported in the current version of Panoptic.
+- `afterAddLiquidityReturnDelta`
+- `afterRemoveLiquidityReturnDelta`
