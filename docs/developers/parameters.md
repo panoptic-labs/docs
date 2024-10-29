@@ -84,7 +84,7 @@ Like the `COMMISSION_FEE`, this fee also compensates PLPs for the risk of provid
 ```solidity
 uint256 immutable ITM_SPREAD_FEE (bps) = 20 = 0.2%
 ```
-This fee serves the same role in Panoptic V1.1 as the ITM spread fee does in Panoptic V1, but it remains constant across all pools rather than being determined by a multiplier of the Uniswap pool fee.
+This fee serves the same role in Panoptic V1.1 as the ITM spread fee does in Panoptic V1, but it remains constant across all pools rather than being determined by a multiple of the Uniswap pool fee.
 
 ### FORCE_EXERCISE_COST
 ```solidity
