@@ -176,3 +176,18 @@ These parameters define various other aspects of the Panoptic protocol.
 uint256 immutable MAX_POSITIONS = 32
 ```
 `MAX_POSITIONS` defines the maximum number of open positions (1-4 leg `tokenIds`) that can be held by an account at any given time. This limit ensures that an account can always be liquidated within the gas limit; the value may be raised or lowered on different chains depending on what that limit is.
+
+
+### MIN_ENFORCED_TICKFILL_COST
+The approximate minimum amount of tokens it should require to fill `maxLiquidityPerTick` at the minimum and maximum enforced ticks for a liquidity chunk in the SFPM.
+```solidity
+uint256 immutable MIN_ENFORCED_TICKFILL_COST = 2100 * 10**18 = 2100 ether
+```
+
+
+### SUPPLY_MULTIPLIER_TICKFILL
+The multiplier, in basis points, to apply to the token supply and set as the enforced tick fill cost if greater than `MIN_ENFORCED_TICKFILL_COST`.
+
+```solidity
+uint256 immutable SUPPLY_MULTIPLIER_TICKFILL (bps) = 10_000 = 100%
+```
