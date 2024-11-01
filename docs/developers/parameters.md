@@ -2,11 +2,11 @@
 sidebar_position: 1
 ---
 
-# Protocol parameters
-Panoptic V1 and V1.1 have a number of immutable parameters that factor into calculations for collateral requirements, oracle prices, streamia multipliers, and other key aspects of the protocol. The current parameters for pools created by the Panoptic V1 and V1.1 factories on Ethereum Mainnet are outlined below.
+# Protocol Parameters
+Panoptic V1 and V1.1 have immutable parameters that factor into calculations for collateral requirements, oracle prices, streamia multipliers, and other key aspects of the protocol. The current parameters for pools created by the Panoptic V1 and V1.1 factories on Ethereum Mainnet are outlined below.
 
 ---
-## Collateral parameters
+## Collateral Parameters
 These parameters are used to calculate the collateral requirements for options traders on Panoptic. Each Panoptic instance has two collateral vaults: one for each token in the Uniswap pool. Both vaults use the same collateral parameter values, but have separate pool utilization metrics. For any given option leg, the collateral ratio used will correspond to the pool utilization in the collateral vault for the Uniswap (token0 or token1) `tokenType` parameter in that leg.
 
 ---
@@ -15,7 +15,7 @@ These parameters are used to calculate the collateral requirements for options t
 ```solidity
 uint256 immutable SELL_COLLATERAL_RATIO (bps) = 2_000 = 20%
 ```
-The seller collateral ratio is the ratio of the collateral required to sell an option to the option's notional value (amount borrowed from PLPs).
+The seller collateral ratio is the ratio of the collateral required to sell an option to the option's notional value (amount borrowed from [PLPs](/docs/panoptic-protocol/protocol-roles#passive-liquidity-providers-plps)).
 The collateral ratio remains at the parameter value for options minted when the pool utilization is between `0` and `TARGET_POOL_UTIL`. For options minted `utilization=TARGET_POOL_UTIL` and `utilization=SATURATED_POOL_UTIL`, the collateral ratio increases linearly to 100%.
 
 ### BUY_COLLATERAL_RATIO
@@ -70,7 +70,7 @@ These parameters define the fees corresponding to various actions on the Panopti
 uint256 immutable COMMISSION_FEE (bps) = 20 = 0.2%
 ```
 The commission fee is the base fee charged on the notional value of both purchased and sold options when they are minted. 
-This fee is distributed to PLPs in the corresponding `tokenType` vault, serving as interest payments for tokens borrowed by option sellers.
+This fee is distributed to [PLPs](/docs/panoptic-protocol/protocol-roles#passive-liquidity-providers-plps) in the corresponding `tokenType` vault, serving as interest payments for tokens borrowed by option sellers.
 The commission fee is also charged on PLP deposits and distributed to existing PLPs to discourage the capture of commission fees through just-in-time liquidity provision.
 
 ### ITM_SPREAD_MULTIPLIER (Panoptic V1)
@@ -90,10 +90,8 @@ This fee serves the same role in Panoptic V1.1 as the ITM spread fee does in Pan
 ```solidity
 int256 immutable FORCE_EXERCISE_COST (bps) = -128 = 1.28%
 ```
-The force exercise cost is the fee paid to the force exercisee by the force exercisor during a force exercise. The fee is charged on the notional value of the long legs in the position, 
-and decreases by a factor of two for each half-leg-width the current tick is away from the strike (the leg with the largest amount of distance in half-leg-widths is used for this calculation).
-This discourages force exercising positions with legs that have just become out-of-range, but allows users with far-the-money positions to be force exercised cheaply to free up their liquidity so
-it can be moved closer to the current price. 
+The [force exercise](/docs/product/force-exercise) cost is the fee paid to the force exercisee by the force exercisor during a force exercise. The fee is charged on the notional value of the long legs in the position, and decreases by a factor of two for each half-leg-width the current tick is away from the strike (the leg with the largest amount of distance in half-leg-widths is used for this calculation).
+This discourages force exercising positions with legs that have just become out-of-range, but allows users with far-the-money positions to be force exercised cheaply to free up their liquidity so it can be moved closer to the current price. 
 
 ## Oracle parameters
 Panoptic does not use any external oracles, but instead utilizes onchain price observations from Uniswap V3-style oracles to generate manipulation-resistant price feeds.
