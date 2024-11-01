@@ -23,9 +23,9 @@ We may whitelist tokens on a case-by-case basis. If you would like your token to
 For Panoptic V1, instances deployed on Uniswap pools with less than `0.2 ETH` in TVL will display warnings to PLPs and traders. 
 For a token to count as TVL (unless it is `WETH` or native `ETH`), it must be paired with `WETH`, native `ETH`, `USDC`, `USDT`, or `DAI` in at least one pool containing at least `10 ETH` in value of the other token.
 
-Panoptic V1 instances with underutilized TVL exceeding the underlying pool are discouraged. 
-Warnings will be displayed on deposits and trades once a Panoptic pool attains `25%` of the underlying pool's TVL.
-For this purpose, liquidity added to Uniswap through Panoptic will count towards Uniswap's TVL, but not towards Panoptic's TVL. 
+Panoptic V1 instances where unused PLP liquidity exceed the underlying Uniswap V3 pool's TVL are discouraged.
+Warnings will be displayed on deposits and trades when a Panoptic pool's unused PLP liquidity exceeds `25%` of the underlying Uniswap V3 pool's TVL.
+Note that liquidity added to Uniswap through Panoptic will count towards Uniswap's TVL, but not towards Panoptic's TVL.
 
 While Panoptic V1.1 instances on lower-liquidity Uniswap V4 pools may require more capital to trade, there are no specific liquidity requirements at this time. The liquidity requirements outlined above instead apply to the Uniswap V3 pool linked to a Panoptic V1.1 instance and used as an oracle.
 
