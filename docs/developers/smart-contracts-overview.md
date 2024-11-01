@@ -2,12 +2,18 @@
 sidebar_position: 0
 ---
 
-# Smart contracts overview
+# Smart Contracts Overview
 Panoptic is a protocol that facilitates the trading of [Panoptions](/docs/terms/panoption), which are perpetual options instruments with fixed gamma between two prices that operate on a [streaming premium model](/docs/product/streamia). Under the hood, this consists of two components:
 1. A lending market for Uniswap liquidity chunks that allows option sellers (lenders) to earn a [multiplier](/docs/product/spread) on Uniswap fees paid by borrowers (option buyers) that utilize their liquidity.
 2. An [undercollateralized](/docs/product/leverage), [commissions-based](/docs/panoptic-protocol/commission) token [lending protocol](/blog/bringing-passive-liquidity-to-uniswap) that gives option sellers flexibility in managing their positions — allowing them to modify their payoffs and LP on Uniswap with more capital efficiency.
 
 ---
+## Protocol Parameters
+The Panoptic protocol is governed by a set of immutable parameters used to calculate collateral requirements, streamia, fees, price feeds, and more. These parameters are shared across all Panoptic instances and set once on each chain. To read more about the parameters and their current values, visit the [parameters](/docs/developers/parameters) page.
+
+## Pool Criteria
+Panoptic Pools can be deployed permissionlessly by anyone, but pools listed on our interface must meet a certain set of criteria before they can be traded. To read more about the listing criteria and learn how to ensure a pool appears on our interface, visit the [pool criteria](/docs/developers/pool-criteria) page.
+
 ## Architecture & Contracts (Panoptic V1.1)
 Panoptic V1.1 is an upgrade to Panoptic V1 that introduces the ability to create options markets on Uniswap V4 pools. The upgrade adds support for native ETH and native token pools on other chains, as well as pools with hooks (expansions to Uniswap V4) with the permissions `beforeInitialize`, `afterInitialize`, `beforeDonate`, `afterDonate`, `beforeSwap`, `afterSwap`, `beforeSwapReturnDelta`, and `afterSwapReturnDelta`. Panoptic V1.1 still uses V3-style oracles (which can consist of a Uniswap V3 pool or a Uniswap V4 hook that exposes the same interface).
   

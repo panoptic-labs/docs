@@ -14,6 +14,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
     light: useBaseUrl('/img/Guillaume.jpg'),
     dark: useBaseUrl('/img/Guillaume.jpg'),
   }}
+  style={{width: 100}}
 />
 
 ### Guillaume Lambert (CEO) <a href="https://www.linkedin.com/in/guillaume-lambert-686591a0/"><img src="/img/linkedin.png" alt="icon | LinkedIn" width="21px"/></a> <a href="https://twitter.com/guil_lambert"><img src="/img/twitter.png" alt="icon | Twitter" width="21px"/></a>
