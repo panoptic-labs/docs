@@ -11,7 +11,7 @@ Panoptic Pools can be deployed permissionlessly by anyone, but pools listed on o
 ---
 Pools with one or more tokens not on the [Uniswap Labs Default List](https://tokenlists.org/token-list?url=https://tokens.uniswap.org) or the [Uniswap Labs Extended List](https://tokenlists.org/token-list?url=https://tokens.uniswap.org) are not officially supported and will display warnings to [PLPs](/docs/panoptic-protocol/protocol-roles#passive-liquidity-providers-plps) and traders.
 
-On the gRHO platform, warnings will be displayed according to the above requirements, with the additional restriction that pools with tokens on the [Uniswap Unsupported List](https://unsupportedtokens.uniswap.org/) (which includes fradulent tokens) will be delisted from the interface entirely.
+On the gRHO platform, warnings will be displayed according to the above requirements, with the additional restriction that pools with tokens on the [Uniswap Unsupported List](https://unsupportedtokens.uniswap.org/) (which includes fraudulent tokens) will be delisted from the interface entirely.
 
 Pools containing tokens with less than `6` decimals are supported; however, the interface will warn users that the pool may be subject to rounding errors.
 
