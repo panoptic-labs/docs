@@ -2,52 +2,43 @@
 sidebar_position: 2
 label: "Perps Traders"
 ---
+
+import ThemedImage from '@theme/ThemedImage';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 # Perps Traders
 
-Enhance your Perpetual Trading experience with Panoptic's perpetual options. 
-Trade any token permissionlessly with leverage, capped downside, no liquidation risk, 
-and no expiries in the non-custodial, oracle-free options platform.
+If you're a trader looking to enhance your perpetual trading experience with capped downside, leverage, and no liquidation risk, Panoptic is the platform for you.
 
-### Any Token
-Users can trade perps and perpetual options on any ERC-20 token or native asset, thanks to the 
-permissionless nature of Panoptic and Uniswap.
-
-### Permissionless
-Depositing, trading, pricing, settlement, listing, and liquidating are all on chain and permissionless, 
-thanks to the transparent and decentralized platform that blockchain technology enables.
-
-### Leverage
-Users can buy perpetual options with up to 10x leverage, making for bigger potential gains (and losses).
-
-### Capped Downside
-Perpetual options provide a major advantage over perps for traders to limit their downside risk. 
-For example, buying a perpetual put option on ETH gives you unlimited upside should the price of ETH fall, 
-while capping your downside should the price of ETH rise. Contrast this with ETH perps which have unlimited downside should the price of ETH rise.
-
-### No liquidation Risk
-Users can purchase perpetual options without liquidation risk. 
-Some long calls and puts have no liquidation price thanks to the capped downside they offer.
-Unlike perps, options on Panoptic are protected against liquidations 
-caused by single-wick price movements in the underlying asset.
-
-While long options in Panoptic can still be liquidated, the risk is more manageable due to the 
-gradual accumulation of premia owed and the defined risk of the position.
-
-### No Expiries
-Perps traders enjoy the flexibility of not having to roll and manage expiring futures contracts. 
-Similarly, traders on Panoptic enjoy the hassle-free perpetuality of non-expiring options contracts.
-
-### Non-custodial
-Panoptic is a completely non-custodial, decentralized exchange. 
+## Why Trade Perps on Panoptic?
+- **Trade Any Token**: Panoptic allows you to trade perps on [any](/docs/product/markets) ERC-20 token or native asset, thanks to its permissionless and oracle-free design. Panoptic supports the immediate listing of perps on any ERC-20 token or native asset without having to wait for oracle support.
+- **New Markets**: Trade perps on alternative pairs such as perps on BTC-ETH price, stablecoin-to-stablecoin prices, or memecoins.
+- **Leverage**: Gain exposure with up to 3.33x leveraged perps.
+- **Non-custodial and permissionless**: Panoptic is a completely non-custodial, decentralized exchange. 
 All funds are held and managed automatically on the blockchain through public, audited smart contracts.
+Depositing, trading, pricing, settlement, listing, and liquidating are all on chain and permissionless.
 
-### Oracle-free
-Panoptic is a groundbreaking protocol enabling perpetual options trading without oracles. 
-Pricing is based on Uniswap liquidity provider (LP) fees and is completely on chain.
-Because of its oracle-free nature, Panoptic is able to support the immediate listing of options 
-on any ERC-20 token or native asset without having to wait for oracle support.
+## Why Trade Perpetual Options on Panoptic?
+- **Capped Downside**: Perpetual options provide a major advantage over perps for traders to limit their downside risk. For example, buying a perpetual call option on ETH gives you unlimited upside should the price of ETH rise, while capping your downside should the price of ETH fall. Contrast this with ETH perps which have unlimited downside should the price of ETH fall.
+- **Reduced Liquidation Risk**: Perpetual options are protected against liquidations from single-wick price movements. Should price move in one direction, positions are protected through capped losses.
+- **Higher Leverage**: Buy perpetual options with up to 10x leverage, making for bigger potential gains (and losses).
 
-### Synthetic Perps
-Users can go long or short by trading leveraged perps on Panoptic. 
-The ability to create synthetic futures contracts by combining puts and calls carries over to crypto - 
-users can create synthetic perps by combining perpetual puts and perpetual calls on Panoptic.
+## Start Trading Perps with Panoptic
+Ready to get started? Visit our [app](http://app.panoptic.xyz/) to begin trading perps and perpetual options on any token with Panoptic.
+
+<ThemedImage
+  alt="Trading-Interface"
+  sources={{
+    light: useBaseUrl('/img/trading-interface.svg'),
+    dark: useBaseUrl('/img/trading-interface.svg'),
+  }}
+  style={{width: 1000}}
+/>
+
+---
+
+### Advanced Resources
+- [Synthetic perps](/docs/trading/multi-leg-strategies#synthetic-positions)
+- [Synthetic perp capital efficiency](/docs/trading/capital-efficiency#synthetic-long-asset)
+- [Synthetic perp funding rates](/research/introduction-synthetic-perps)
+- [Risks](/docs/panoptic-protocol/risks)
