@@ -25,7 +25,7 @@ Panoptic offers the full flexibility that options traders are familiar with, wit
 3. **Leverage**: Buy options with up to 10x leverage, and sell options with up to 5x leverage.
 
 ## Start Trading Options on Panoptic
-Ready to explore the full potential of options trading? Visit our [app](app.panoptic.xyz) to start trading with the flexibility, capital efficiency, and risk management you need to succeed in DeFi.
+Ready to explore the full potential of options trading? Visit our app (coming soon) to start trading with the flexibility, capital efficiency, and risk management you need to succeed in DeFi.
 
 <ThemedImage
   alt="Trading-Interface"
