@@ -26,11 +26,11 @@ Traders have the potential to earn up to three times more in fees by lending out
 
 ## Advantages of Migrating Uniswap LP Positions
 
--   **Effective Position Management**: Once migrated, you'll have access to tools for managing your position: view profit and loss (PnL) with visual aids, track earned fees, see your Panoptic multiplier, monitor your price range against the current price, and easily open or close positions. **In Panoptic, all LP positions are displayed as “sold puts,”** because [LP = Options](https://panoptic.xyz/blog/uniswap-lp-equals-options).
 Migrating Uniswap LP Positions to Panoptic have 4 distinct advantages:
--   **Significantly Increased Fees**: The most prominent advantage is the potential to earn up to 3x more in fees. This is made possible by lending your LP tokens through Panoptic.
--   **Flexibility**: Panoptic analyzes existing Uniswap LP positions and recommends new, optimized positions designed specifically to maximize earnings. LPs retain the ability to customize these suggestions before confirming migration.
--   **Migration Process**: Panoptic aims to make the migration process from Uniswap V2 and V3 positions as smooth as possible. This includes automatic identification and migration of all LP positions.
+1.   **Effective Position Management**: Once migrated, you'll have access to tools for managing your position: view profit and loss (PnL) with visual aids, track earned fees, see your Panoptic multiplier, monitor your price range against the current price, and easily open or close positions. **In Panoptic, all LP positions are displayed as “sold puts,”** because [LP = Options](https://panoptic.xyz/blog/uniswap-lp-equals-options).
+2.   **Significantly Increased Fees**: The most prominent advantage is the potential to earn up to 3x more in fees. This is made possible by lending your LP tokens through Panoptic.
+3.   **Flexibility**: Panoptic analyzes existing Uniswap LP positions and recommends new, optimized positions designed specifically to maximize earnings. LPs retain the ability to customize these suggestions before confirming migration.
+4.   **Migration Process**: Panoptic aims to make the migration process from Uniswap V2 and V3 positions as smooth as possible. This includes automatic identification and migration of all LP positions.
 
     
 
