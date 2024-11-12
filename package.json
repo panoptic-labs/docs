@@ -30,6 +30,7 @@
     "@radix-ui/react-tabs": "^1.0.4",
     "autoprefixer": "^10.4.16",
     "clsx": "^1.2.1",
+    "graphql-voyager": "^2.1.0",
     "hast-util-is-element": "1.1.0",
     "inter-ui": "^3.19.3",
     "postcss": "^8.4.31",
