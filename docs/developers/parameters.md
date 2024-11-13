@@ -174,11 +174,11 @@ uint256 immutable MAX_TWAP_DELTA_LIQUIDATION = 513
 These parameters define various other aspects of the Panoptic protocol.
 
 ---
-### MAX_POSITIONS (Ethereum Mainnet)
+### MAX_OPEN_LEGS (Ethereum Mainnet)
 ```solidity
-uint256 immutable MAX_POSITIONS = 32
+uint256 immutable MAX_OPEN_LEGS = 25
 ```
-`MAX_POSITIONS` defines the maximum number of open positions (1-4 leg `tokenIds`) that can be held by an account at any given time. This limit ensures that an account can always be liquidated within the gas limit; the value may be raised or lowered on different chains depending on what that limit is.
+`MAX_OPEN_LEGS` defines the maximum number of legs permitted across all open positions for an account on an individual Panoptic pool at any given time. Each position, created through a `mintOptions` call, is a `tokenId` that can contain between 1 and 4 legs. All legs contribute toward the limit, regardless of how they are distributed across an account's positions. This limit ensures that an account can always be liquidated within the gas limit; the value may be raised or lowered on different chains depending on what that limit is.
 
 
 ### MIN_ENFORCED_TICKFILL_COST
@@ -187,9 +187,14 @@ The approximate minimum amount of tokens it should require to fill `maxLiquidity
 uint256 immutable MIN_ENFORCED_TICKFILL_COST = 2100 * 10**18 = 2100 ether
 ```
 
+### NATIVE_ENFORCED_TICKFILL_COST (Ethereum Mainnet, Panoptic V1.1)
+The approximate minimum amount of **native** tokens it should require to fill `maxLiquidityPerTick` at the minimum and maximum enforced ticks for a liquidity chunk in the SFPM. The value of this parameter may vary for chains with a native token other than ETH.
+```solidity
+uint256 immutable NATIVE_ENFORCED_TICKFILL_COST = 2100 * 10**18 = 2100 ether
+```
 
 ### SUPPLY_MULTIPLIER_TICKFILL
-The multiplier, in basis points, to apply to the token supply and set as the enforced tick fill cost if greater than `MIN_ENFORCED_TICKFILL_COST`.
+The multiplier, in basis points, to apply to the token supply and set as the enforced tick fill cost if greater than `MIN_ENFORCED_TICKFILL_COST`. In Panoptic V1.1, this multiplier does not apply to pools paired with the native token.
 
 ```solidity
 uint256 immutable SUPPLY_MULTIPLIER_TICKFILL (bps) = 10_000 = 100%
