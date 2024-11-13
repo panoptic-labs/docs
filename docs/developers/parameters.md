@@ -178,7 +178,7 @@ These parameters define various other aspects of the Panoptic protocol.
 ```solidity
 uint256 immutable MAX_OPEN_LEGS = 25
 ```
-`MAX_OPEN_LEGS` defines the maximum number of legs permitted across all open positions (1-4 leg `tokenIds`) for a single account at any given time. This limit ensures that an account can always be liquidated within the gas limit; the value may be raised or lowered on different chains depending on what that limit is.
+`MAX_OPEN_LEGS` defines the maximum number of legs permitted across all open positions for an account on an individual Panoptic pool at any given time. Each position, created through a `mintOptions` call, is a `tokenId` that can contain between 1 and 4 legs. All legs contribute toward the limit, regardless of how they are distributed across an account's positions. This limit ensures that an account can always be liquidated within the gas limit; the value may be raised or lowered on different chains depending on what that limit is.
 
 
 ### MIN_ENFORCED_TICKFILL_COST
