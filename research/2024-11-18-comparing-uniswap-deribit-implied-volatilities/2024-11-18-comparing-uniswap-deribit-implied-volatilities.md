@@ -169,10 +169,10 @@ For instance, if Uniswap IV leads Deribit IV, portfolio adjustments can be made 
 
 ![](./5.png)
 
-_**Graph**: Cross-crorrelation results with $\tau = 5 \ \text{days}$_
+_**Graph**: Cross-crorrelation Over a 10-Day Rolling Window$_
 
 
-The cross-correlation plot between Uniswap IV and Deribit DVOL over a 10-day lag period provides valuable insights into their temporal relationship. The positive correlation observed at negative lags suggests that past values of Deribit DVOL could have predictive power for future movements in Uniswap IV, indicating that Deribit’s centralized market data m   ight lead the decentralized Uniswap market in certain conditions. Conversely, the declining correlation at positive lags implies that Uniswap IV's past values may not have a significant influence on future DVOL, emphasizing that information flows more prominently from the centralized Deribit market to the decentralized Uniswap IV. This asymmetry may present opportunities for arbitrage strategies, particularly for traders seeking to exploit the predictive lead-lag relationship between these markets.
+The cross-correlation plot between Uniswap IV and Deribit DVOL over a 10-day lag period provides valuable insights into their temporal relationship. The positive correlation observed at negative lags suggests that past values of Uniswap IV could have predictive power for future movements in Deribit DVOL, indicating that the decentralized Uniswap market may sometimes lead the centralized Deribit market. Conversely, the declining correlation at positive lags implies that past values of Deribit DVOL may have a more prominent influence on future movements in Uniswap IV, suggesting that information flows more strongly from Deribit's centralized market to the decentralized Uniswap market under certain conditions. This bidirectional dynamic highlights opportunities for arbitrage strategies, especially for traders aiming to capitalize on the predictive lead-lag relationships between these markets.
 
 
 ### Statistical Metrics, Cointegration and FCVAR
@@ -229,7 +229,7 @@ _**Table:** Summary of Key Results from the FCVAR Model for Uniswap IV and Derib
 
 From the FCVAR results, we can infer which series leads by examining the adjustment coefficients ($\alpha$) and the cointegration relationship. 
 
-- The adjustment coefficients are $$\alpha_{11} = -0.018$ for Uniswap IV and $\alpha_{21} = 0.001$ for Deribit DVOL, indicating how each series adjusts to deviations from the long-term equilibrium.
+- The adjustment coefficients are $\alpha_{11} = -0.018$ for Uniswap IV and $\alpha_{21} = 0.001$ for Deribit DVOL, indicating how each series adjusts to deviations from the long-term equilibrium.
 - The larger absolute value of $\alpha_{11}$ suggests that Uniswap IV responds more significantly to deviations from equilibrium compared to Deribit DVOL.
 - Since Uniswap IV shows a stronger adjustment to deviations, this implies that Deribit DVOL could be the leading series. In other words, changes in Deribit DVOL might precede changes in Uniswap IV, with Uniswap IV adjusting its values to maintain the long-term equilibrium.
 
@@ -339,7 +339,7 @@ $
 C_{XY}(\tau) = \sum_{i} x_i \cdot y_{i + \tau}
 $
 
-where $\tau$ is the lag between series values.
+where $\tau$ (e.g. 1 day, 3 days, 1 month, etc.) is the lag between series values.
 
 ### Fractional Cointegration
 
@@ -348,6 +348,8 @@ Fractional Cointegration extends traditional cointegration by allowing **fractio
 In fractional cointegration, $Z_t$ may be integrated of fractional order $d$, with $0 < d < 1$, indicating gradual mean reversion.
 
 ### FCVAR Model
+
+The Fractionally Cointegrated Vector Autoregressive (FCVAR) model is an advanced econometric framework used to analyze relationships between multiple time series that are fractionally integrated and cointegrated. Unlike traditional cointegration models, which assume integer orders of integration, the FCVAR model allows for fractional (non-integer) integration, making it more flexible in capturing long-term dependencies and persistent shocks in data. This is particularly useful for financial and economic time series where standard assumptions of stationarity or full integration may not hold.
 
 For two fractionally cointegrated series $Y_{1,t}$ and  $Y_{2,t}$, the FCVAR model is:
 
