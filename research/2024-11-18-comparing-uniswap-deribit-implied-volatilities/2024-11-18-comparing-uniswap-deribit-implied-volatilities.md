@@ -90,6 +90,8 @@ For our analysis, we performed the following steps:
 - Applied the cross-correlation metric to examine the lead-lag relationship, revealing how closely Uniswap IV and Deribit DVOL move together over time and identifying if one measure consistently leads the other.
 - Conducted cointegration and FCVAR analysis to evaluate their long-term equilibrium relationship while accounting for long-memory effects. FCVAR captures both fractional integration and cointegration, highlighting whether one series persistently influences the other over time.
 
+You can access all the data, explore the code notebooks, and replicate our work directly through our public GitHub [repository](https://github.com/panoptic-labs/research/tree/main/_research-bites/20241118).
+
 ## Technical Comparison between Uniswap IV and Deribit Index Volatility
 
 ### Market Timeframe
@@ -171,8 +173,7 @@ For instance, if Uniswap IV leads Deribit IV, portfolio adjustments can be made 
 
 _**Graph**: Cross-crorrelation Over a 10-Day Rolling Window$_
 
-
-The cross-correlation plot between Uniswap IV and Deribit DVOL over a 10-day lag period provides valuable insights into their temporal relationship. The positive correlation observed at negative lags suggests that past values of Uniswap IV could have predictive power for future movements in Deribit DVOL, indicating that the decentralized Uniswap market may sometimes lead the centralized Deribit market. Conversely, the declining correlation at positive lags implies that past values of Deribit DVOL may have a more prominent influence on future movements in Uniswap IV, suggesting that information flows more strongly from Deribit's centralized market to the decentralized Uniswap market under certain conditions. This bidirectional dynamic highlights opportunities for arbitrage strategies, especially for traders aiming to capitalize on the predictive lead-lag relationships between these markets.
+The cross-correlation plot between Uniswap IV and Deribit DVOL over a 10-day lag period provides valuable insights into their temporal relationship. The positive correlation observed at negative lags suggests that past values of Uniswap IV could have predictive power for future movements in Deribit DVOL, indicating that the decentralized Uniswap market may sometimes lead the centralized Deribit market. Conversely, the declining correlation at positive lags indicates that while Deribit DVOL's influence on future Uniswap IV weakens over time, it still plays a more significant role in driving Uniswap IV than the reverse. This suggests that the centralized Deribit market often leads the decentralized Uniswap market, with past DVOL values providing stronger predictive signals for Uniswap IV compared to the other way around. This bidirectional dynamic highlights opportunities for arbitrage strategies, especially for traders aiming to capitalize on the predictive lead-lag relationships between these markets.
 
 
 ### Statistical Metrics, Cointegration and FCVAR
