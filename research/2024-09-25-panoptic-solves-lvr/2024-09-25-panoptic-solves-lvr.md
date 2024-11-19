@@ -4,6 +4,7 @@ title: "Panoptic Solves LVR"
 tags: [LVR, IL, LP]
 image: /img/research/LVR-banner.png
 description: "Panoptic addresses the issue of Loss-Versus-Rebalancing (LVR) for Uniswap LPs by boosting LP returns through LP token lending markets, passive liquidity provision, and the ability to short LP tokens, turning LVR from a risk into a strategic opportunity."
+authors: N
 ---
 
 ![](./LVR-banner.png)

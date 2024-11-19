@@ -4,6 +4,7 @@ title: "How Derivatives Solve The Uniswap 'Doom Loop'"
 tags: [Uniswap, Volatility, Shorting]
 image: /img/research/uniswap-doom-loop.png
 description: "Discover how Panoptic's derivatives market stabilizes crypto spot markets, mitigates volatility, and empowers Uniswap LPs with new profitability strategies in DeFi."
+authors: N
 ---
 
 ![](./uniswap-doom-loop.png) 
