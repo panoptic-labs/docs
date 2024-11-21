@@ -319,14 +319,204 @@ const config = {
     [
       '@docusaurus/plugin-client-redirects',
       {
-        createRedirects(existingPath) {
-          if (existingPath.includes('/developers')) {
-            return [
-              existingPath.replace('/developers', '/docs/contracts'),
-            ];
-          }
-          return undefined; // Return a falsy value: no redirect created
-        },
+        redirects: [
+          {
+            to: '/docs/contracts/smart-contracts-overview',
+            from: '/docs/developers/smart-contracts-overview',
+          },
+          {
+            to: '/docs/contracts/parameters',
+            from: '/docs/developers/parameters',
+          },
+          {
+            to: '/docs/contracts/pool-criteria',
+            from: '/docs/developers/pool-criteria',
+          },
+          {
+            to: '/docs/contracts/V1.1/contract.SemiFungiblePositionManager',
+            from: '/docs/developers/V1.1/contract.SemiFungiblePositionManager',
+          },
+          {
+            to: '/docs/contracts/V1.1/contract.PanopticPool',
+            from: '/docs/developers/V1.1/contract.PanopticPool',
+          },
+          {
+            to: '/docs/contracts/V1.1/contract.CollateralTracker',
+            from: '/docs/developers/V1.1/contract.CollateralTracker',
+          },
+          {
+            to: '/docs/contracts/V1.1/contract.PanopticFactory',
+            from: '/docs/developers/V1.1/contract.PanopticFactory',
+          },
+          {
+            to: '/docs/contracts/V1.1/base/abstract.Multicall',
+            from: '/docs/developers/V1.1/base/abstract.Multicall',
+          },
+          {
+            to: '/docs/contracts/V1.1/base/contract.FactoryNFT',
+            from: '/docs/developers/V1.1/base/contract.FactoryNFT',
+          },
+          {
+            to: '/docs/contracts/V1.1/base/contract.MetadataStore',
+            from: '/docs/developers/V1.1/base/contract.MetadataStore',
+          },
+          {
+            to: '/docs/contracts/V1.1/interfaces/interface.IV3CompatibleOracle',
+            from: '/docs/developers/V1.1/interfaces/interface.IV3CompatibleOracle',
+          },
+          {
+            to: '/docs/contracts/V1.1/libraries/library.Constants',
+            from: '/docs/developers/V1.1/libraries/library.Constants',
+          },
+          {
+            to: '/docs/contracts/V1.1/libraries/library.Errors',
+            from: '/docs/developers/V1.1/libraries/library.Errors',
+          },
+          {
+            to: '/docs/contracts/V1.1/libraries/library.InteractionHelper',
+            from: '/docs/developers/V1.1/libraries/library.InteractionHelper',
+          },
+          {
+            to: '/docs/contracts/V1.1/libraries/library.Math',
+            from: '/docs/developers/V1.1/libraries/library.Math',
+          },
+          {
+            to: '/docs/contracts/V1.1/libraries/library.PanopticMath',
+            from: '/docs/developers/V1.1/libraries/library.PanopticMath',
+          },
+          {
+            to: '/docs/contracts/V1.1/libraries/library.SafeTransferLib',
+            from: '/docs/developers/V1.1/libraries/library.SafeTransferLib',
+          },
+          {
+            to: '/docs/contracts/V1.1/libraries/library.V4StateReader',
+            from: '/docs/developers/V1.1/libraries/library.V4StateReader',
+          },
+          {
+            to: '/docs/contracts/V1.1/tokens/abstract.ERC1155',
+            from: '/docs/developers/V1.1/tokens/abstract.ERC1155',
+          },
+          {
+            to: '/docs/contracts/V1.1/tokens/abstract.ERC20Minimal',
+            from: '/docs/developers/V1.1/tokens/abstract.ERC20Minimal',
+          },
+          {
+            to: '/docs/contracts/V1.1/tokens/interfaces/interface.IERC20Partial',
+            from: '/docs/developers/V1.1/tokens/interfaces/interface.IERC20Partial',
+          },
+          {
+            to: '/docs/contracts/V1.1/types/library.LeftRightLibrary',
+            from: '/docs/developers/V1.1/types/library.LeftRightLibrary',
+          },
+          {
+            to: '/docs/contracts/V1.1/types/library.LiquidityChunkLibrary',
+            from: '/docs/developers/V1.1/types/library.LiquidityChunkLibrary',
+          },
+          {
+            to: '/docs/contracts/V1.1/types/library.PointerLibrary',
+            from: '/docs/developers/V1.1/types/library.PointerLibrary',
+          },
+          {
+            to: '/docs/contracts/V1.1/types/library.PositionBalanceLibrary',
+            from: '/docs/developers/V1.1/types/library.PositionBalanceLibrary',
+          },
+          {
+            to: '/docs/contracts/V1.1/types/library.TokenIdLibrary',
+            from: '/docs/developers/V1.1/types/library.TokenIdLibrary',
+          },
+          {
+            to: '/docs/contracts/V1.0/contract.SemiFungiblePositionManager',
+            from: '/docs/developers/V1.0/contract.SemiFungiblePositionManager',
+          },
+          {
+            to: '/docs/contracts/V1.0/contract.PanopticPool',
+            from: '/docs/developers/V1.0/contract.PanopticPool',
+          },
+          {
+            to: '/docs/contracts/V1.0/contract.CollateralTracker',
+            from: '/docs/developers/V1.0/contract.CollateralTracker',
+          },
+          {
+            to: '/docs/contracts/V1.0/contract.PanopticFactory',
+            from: '/docs/developers/V1.0/contract.PanopticFactory',
+          },
+          {
+            to: '/docs/contracts/V1.0/base/abstract.Multicall',
+            from: '/docs/developers/V1.0/base/abstract.Multicall',
+          },
+          {
+            to: '/docs/contracts/V1.0/base/contract.FactoryNFT',
+            from: '/docs/developers/V1.0/base/contract.FactoryNFT',
+          },
+          {
+            to: '/docs/contracts/V1.0/base/contract.MetadataStore',
+            from: '/docs/developers/V1.0/base/contract.MetadataStore',
+          },
+          {
+            to: '/docs/contracts/V1.0/libraries/library.CallbackLib',
+            from: '/docs/developers/V1.0/libraries/library.CallbackLib',
+          },
+          {
+            to: '/docs/contracts/V1.0/libraries/library.Constants',
+            from: '/docs/developers/V1.0/libraries/library.Constants',
+          },
+          {
+            to: '/docs/contracts/V1.0/libraries/library.Errors',
+            from: '/docs/developers/V1.0/libraries/library.Errors',
+          },
+          {
+            to: '/docs/contracts/V1.0/libraries/library.FeesCalc',
+            from: '/docs/developers/V1.0/libraries/library.FeesCalc',
+          },
+          {
+            to: '/docs/contracts/V1.0/libraries/library.InteractionHelper',
+            from: '/docs/developers/V1.0/libraries/library.InteractionHelper',
+          },
+          {
+            to: '/docs/contracts/V1.0/libraries/library.Math',
+            from: '/docs/developers/V1.0/libraries/library.Math',
+          },
+          {
+            to: '/docs/contracts/V1.0/libraries/library.PanopticMath',
+            from: '/docs/developers/V1.0/libraries/library.PanopticMath',
+          },
+          {
+            to: '/docs/contracts/V1.0/libraries/library.SafeTransferLib',
+            from: '/docs/developers/V1.0/libraries/library.SafeTransferLib',
+          },
+          {
+            to: '/docs/contracts/V1.0/tokens/abstract.ERC1155',
+            from: '/docs/developers/V1.0/tokens/abstract.ERC1155',
+          },
+          {
+            to: '/docs/contracts/V1.0/tokens/abstract.ERC20Minimal',
+            from: '/docs/developers/V1.0/tokens/abstract.ERC20Minimal',
+          },
+          {
+            to: '/docs/contracts/V1.0/tokens/interfaces/interface.IERC20Partial',
+            from: '/docs/developers/V1.0/tokens/interfaces/interface.IERC20Partial',
+          },
+          {
+            to: '/docs/contracts/V1.0/types/library.LeftRightLibrary',
+            from: '/docs/developers/V1.0/types/library.LeftRightLibrary',
+          },
+          {
+            to: '/docs/contracts/V1.0/types/library.LiquidityChunkLibrary',
+            from: '/docs/developers/V1.0/types/library.LiquidityChunkLibrary',
+          },
+          {
+            to: '/docs/contracts/V1.0/types/library.PointerLibrary',
+            from: '/docs/developers/V1.0/types/library.PointerLibrary',
+          },
+          {
+            to: '/docs/contracts/V1.0/types/library.PositionBalanceLibrary',
+            from: '/docs/developers/V1.0/types/library.PositionBalanceLibrary',
+          },
+          {
+            to: '/docs/contracts/V1.0/types/library.TokenIdLibrary',
+            from: '/docs/developers/V1.0/types/library.TokenIdLibrary',
+          },          
+        ],
       },
     ]
   ],
