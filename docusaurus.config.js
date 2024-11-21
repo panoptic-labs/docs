@@ -320,9 +320,9 @@ const config = {
       '@docusaurus/plugin-client-redirects',
       {
         createRedirects(existingPath) {
-          if (existingPath.includes('/developers')) {
+          if (existingPath.includes('/docs/developers')) {
             return [
-              existingPath.replace('/developers', '/docs/contracts'),
+              existingPath.replace('/docs/developers', '/docs/contracts'),
             ];
           }
           return undefined; // Return a falsy value: no redirect created
