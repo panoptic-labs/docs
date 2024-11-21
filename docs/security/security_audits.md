@@ -12,10 +12,12 @@ Panoptic has undergone numerous economic and security reviews by leading firms. 
 ## Smart Contract Audits
 
 ### Cantina
-We're gearing up for our launch on Uniswap V4! Our Panoptic V1.1 integration is currently being audited on [Cantina](https://cantina.xyz/competitions/8773f033-afa5-4e7b-b0e8-8f989062ae8a).
+The final review (to be published) of the Panoptic V1.1 Protocol was completed by [Cantina](https://cantina.xyz/) on November 20, 2024.
+
+The initial Panoptic V1.1 Protocol [report](https://cantina.xyz/portfolio/5a11e7c3-da1e-4d0f-8700-bfc364d8b85a) was completed by Cantina on November 7, 2024.
 
 ### Code4rena
-The final review of the Panoptic V1 Protocol [report](https://code4rena.com/reports/2024-09-panoptic) was completed by [Code4rena](https://code4rena.com/) on October 10, 2024 and found _**no High or Medium severity issues**_.
+The final [review](https://code4rena.com/reports/2024-09-panoptic) of the Panoptic V1 Protocol was completed by [Code4rena](https://code4rena.com/) on October 10, 2024 and found _**no High or Medium severity issues**_.
 
 The second Panoptic V1 protocol audit [report](https://code4rena.com/reports/2024-06-panoptic) was completed by Code4rena on June 10, 2024.
 
