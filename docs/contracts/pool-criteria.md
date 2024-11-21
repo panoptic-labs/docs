@@ -32,11 +32,11 @@ While Panoptic V1.1 instances on lower-liquidity Uniswap V4 pools may require mo
 ## Oracles
 
 ---
-For Panoptic V1 pools on mainnet, the underlying Uniswap V3 pool is required to have at least `51` Uniswap observations before it becomes tradable on the interface. An observation is taken on every block that contains at least one swap or in-range liquidity modification. Many existing Uniswap pools already have sufficient observation cardinality, but it may take some time for newer Uniswap pools to accumulate the required quantity of observations. This value is defined on the [parameters](/docs/developers/parameters) page, and may vary by chain depending on the block time. 
+For Panoptic V1 pools on mainnet, the underlying Uniswap V3 pool is required to have at least `51` Uniswap observations before it becomes tradable on the interface. An observation is taken on every block that contains at least one swap or in-range liquidity modification. Many existing Uniswap pools already have sufficient observation cardinality, but it may take some time for newer Uniswap pools to accumulate the required quantity of observations. This value is defined on the [parameters](/docs/contracts/parameters) page, and may vary by chain depending on the block time. 
 
 Each Panoptic V1.1 pool is linked to a Uniswap V3-compatible oracle contract. Currently, only Uniswap V3 pairs that share the same tokens, reach the minimum quantity of observations, and meet the criteria specified in the *Liquidity* section above are supported. 
 
-In the future, Uniswap V4 hooks or other alternative oracle implementations that expose the [IV3CompatibleOracle](/docs/developers/V1.1/interfaces/interface.IV3CompatibleOracle) interface may also be supported. If you are building something like this, please reach out to the team on Discord.
+In the future, Uniswap V4 hooks or other alternative oracle implementations that expose the [IV3CompatibleOracle](/docs/contracts/V1.1/interfaces/interface.IV3CompatibleOracle) interface may also be supported. If you are building something like this, please reach out to the team on Discord.
 
 
 ## Hooks (Panoptic V1.1)

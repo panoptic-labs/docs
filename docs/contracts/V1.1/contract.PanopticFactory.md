@@ -5,7 +5,7 @@ sidebar_position: 4
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.1.x/contracts/PanopticFactory.sol)
 
 **Inherits:**
-[FactoryNFT](/docs/developers/V1.1/base/contract.FactoryNFT), [Multicall](/docs/developers/V1.1/base/abstract.Multicall)
+[FactoryNFT](/docs/contracts/V1.1/base/contract.FactoryNFT), [Multicall](/docs/contracts/V1.1/base/abstract.Multicall)
 
 **Author:**
 Axicon Labs Limited
