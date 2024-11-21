@@ -26,7 +26,7 @@ The following sections will provide a brief overview of the Panoptic protocol.
 - [How To Use Panoptic](./product/opening-a-position): How to use the perpetual options trading app.
 - [What Is Panoptic](./panoptic-protocol/overview): Understanding the Panoptic protocol.
 - [Panoptions](./trading/basic-concepts): Options trading resources.
-- [Smart Contracts](./developers/smart-contracts-overview): Learn how to build on Panoptic.
+- [Smart Contracts](./contracts/smart-contracts-overview): Learn how to build on Panoptic.
 - [Security](./security/security_audits): security and audit reports.
 
 ---
@@ -68,7 +68,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Resources
 - [Linktree](https://links.panoptic.xyz/all)
-- [Developers](./developers/smart-contracts-overview)
+- [Developers](./contracts/smart-contracts-overview)
 - [Litepaper](https://intro.panoptic.xyz/)
 - [Whitepaper](https://paper.panoptic.xyz/)
 

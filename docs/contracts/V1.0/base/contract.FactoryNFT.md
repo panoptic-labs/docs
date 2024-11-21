@@ -1,8 +1,8 @@
 # FactoryNFT
-[Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.1.x/contracts/base/FactoryNFT.sol)
+[Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.0.x/contracts/base/FactoryNFT.sol)
 
 **Inherits:**
-[MetadataStore](/docs/developers/V1.1/base/contract.MetadataStore), ERC721
+[MetadataStore](/docs/contracts/V1.0/base/contract.MetadataStore), ERC721
 
 **Author:**
 Axicon Labs Limited
@@ -21,7 +21,7 @@ Initialize metadata pointers and token name/symbol.
 ```solidity
 constructor(bytes32[] memory properties, uint256[][] memory indices, Pointer[][] memory pointers)
     MetadataStore(properties, indices, pointers)
-    ERC721("Panoptic V1.1 Factory Deployer NFTs", "PANOPTIC-NFT");
+    ERC721("Panoptic V1 Factory Deployer NFTs", "PANOPTIC-NFT");
 ```
 **Parameters**
 
@@ -73,8 +73,8 @@ function constructMetadata(address panopticPool, string memory symbol0, string m
 |Name|Type|Description|
 |----|----|-----------|
 |`panopticPool`|`address`|The displayed address used to determine the rarity (leading zeros) and lastCharVal (last 4 bits)|
-|`symbol0`|`string`|The symbol of `currency0` in the Uniswap pool|
-|`symbol1`|`string`|The symbol of `currency1` in the Uniswap pool|
+|`symbol0`|`string`|The symbol of `token0` in the Uniswap pool|
+|`symbol1`|`string`|The symbol of `token1` in the Uniswap pool|
 |`fee`|`uint256`|The fee of the Uniswap pool (in hundredths of basis points)|
 
 **Returns**
@@ -127,8 +127,8 @@ function generateSVGInfo(
 |`svgIn`|`string`|The SVG artwork to complete|
 |`panopticPool`|`address`|The address of the Panoptic Pool|
 |`rarity`|`uint256`|The rarity of the NFT|
-|`symbol0`|`string`|The symbol of `currency0` in the Uniswap pool|
-|`symbol1`|`string`|The symbol of `currency1` in the Uniswap pool|
+|`symbol0`|`string`|The symbol of `token0` in the Uniswap pool|
+|`symbol1`|`string`|The symbol of `token1` in the Uniswap pool|
 
 **Returns**
 

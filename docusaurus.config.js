@@ -316,6 +316,19 @@ const config = {
         },
       };
     },
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        createRedirects(existingPath) {
+          if (existingPath.includes('/developers')) {
+            return [
+              existingPath.replace('/developers', '/docs/contracts'),
+            ];
+          }
+          return undefined; // Return a falsy value: no redirect created
+        },
+      },
+    ]
   ],
   headTags: [
     {
