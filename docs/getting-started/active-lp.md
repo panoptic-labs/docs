@@ -13,7 +13,7 @@ If you're a liquidity provider (LP) looking to maximize your returns, mitigate r
 ## Why Choose Panoptic?
 - **Higher Earnings**: By [migrating](/docs/product/migrate) to Panoptic, you can earn up to [3x more](/docs/product/spread) in fees compared to traditional LPing on Uniswap. Our innovative lending model allows you to generate additional yield on your LP tokens.
 - **Enhanced Risk Management**: Manage and monitor your position with a visual dashboard (coming soon) that provides insights into profit, loss, and risk factors, helping you make informed decisions.
-- **Flexible Strategies**: Whether you’re bullish, bearish, or prefer delta-neutral positions, Panoptic opens up a [range of strategies](/research/essential-options-strategies-to-know) to suit your style. With tools including the ability to [short LP positions](/blog/turning-impermanent-loss-into-gain#shorting-lp-tokens-for-impermanent-gain), you’re no longer limited impermanent loss risks of standard LPing.
+- **Flexible Strategies**: Whether you’re bullish, bearish, or prefer delta-neutral positions, Panoptic opens up a [range of strategies](/research/essential-options-strategies-to-know) to suit your style. With tools including the ability to [short LP positions](/blog/turning-impermanent-loss-into-gain#shorting-lp-tokens-for-impermanent-gain), you’re no longer limited by the impermanent loss risks of standard LPing.
 
 ## How Does It Work?
 1. **Migrate Your LP Position**: To redeploy Uniswap positions to Panoptic, follow our [migration guide](/docs/product/migrate).
