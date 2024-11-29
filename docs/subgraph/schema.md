@@ -12,6 +12,136 @@ The Panoptic subgraph is a comprehensive data schema designed to provide insight
 
 See some example queries [here](./queries).
 
+<details>
+  <summary><strong>Table of Contents</strong></summary>
+
+  * [Query](#query)
+  * [Objects](#objects)
+    * [Account](#account)
+    * [AccountBalance](#accountbalance)
+    * [AccountLiquidated](#accountliquidated)
+    * [Bundle](#bundle)
+    * [Burn](#burn)
+    * [Chunk](#chunk)
+    * [Collateral](#collateral)
+    * [CollateralDayData](#collateraldaydata)
+    * [CollateralDeposit](#collateraldeposit)
+    * [CollateralWithdraw](#collateralwithdraw)
+    * [Collect](#collect)
+    * [Factory](#factory)
+    * [ForcedExercise](#forcedexercise)
+    * [Leg](#leg)
+    * [LegLiquidities](#legliquidities)
+    * [Mint](#mint)
+    * [OptionBurn](#optionburn)
+    * [OptionMint](#optionmint)
+    * [OptionRoll](#optionroll)
+    * [PanopticFactory](#panopticfactory)
+    * [PanopticPool](#panopticpool)
+    * [PanopticPoolAccount](#panopticpoolaccount)
+    * [PanopticPoolDayData](#panopticpooldaydata)
+    * [Pool](#pool)
+    * [PoolDayData](#pooldaydata)
+    * [PoolHourData](#poolhourdata)
+    * [PremiumSettled](#premiumsettled)
+    * [Subscription](#subscription)
+    * [Token](#token)
+    * [TokenId](#tokenid)
+    * [TokenizedPositionBurnt](#tokenizedpositionburnt)
+    * [TokenizedPositionMinted](#tokenizedpositionminted)
+    * [TokenizedPositionRolled](#tokenizedpositionrolled)
+    * [_Block_](#_block_)
+    * [_Meta_](#_meta_)
+  * [Inputs](#inputs)
+    * [AccountBalance_filter](#accountbalance_filter)
+    * [AccountLiquidated_filter](#accountliquidated_filter)
+    * [Account_filter](#account_filter)
+    * [BlockChangedFilter](#blockchangedfilter)
+    * [Block_height](#block_height)
+    * [Bundle_filter](#bundle_filter)
+    * [Burn_filter](#burn_filter)
+    * [Chunk_filter](#chunk_filter)
+    * [CollateralDayData_filter](#collateraldaydata_filter)
+    * [CollateralDeposit_filter](#collateraldeposit_filter)
+    * [CollateralWithdraw_filter](#collateralwithdraw_filter)
+    * [Collateral_filter](#collateral_filter)
+    * [Collect_filter](#collect_filter)
+    * [Event_filter](#event_filter)
+    * [Factory_filter](#factory_filter)
+    * [ForcedExercise_filter](#forcedexercise_filter)
+    * [LegLiquidities_filter](#legliquidities_filter)
+    * [Leg_filter](#leg_filter)
+    * [Mint_filter](#mint_filter)
+    * [OptionBurn_filter](#optionburn_filter)
+    * [OptionMint_filter](#optionmint_filter)
+    * [OptionRoll_filter](#optionroll_filter)
+    * [PanopticFactory_filter](#panopticfactory_filter)
+    * [PanopticPoolAccount_filter](#panopticpoolaccount_filter)
+    * [PanopticPoolDayData_filter](#panopticpooldaydata_filter)
+    * [PanopticPool_filter](#panopticpool_filter)
+    * [PoolDayData_filter](#pooldaydata_filter)
+    * [PoolHourData_filter](#poolhourdata_filter)
+    * [Pool_filter](#pool_filter)
+    * [PremiumSettled_filter](#premiumsettled_filter)
+    * [TokenId_filter](#tokenid_filter)
+    * [Token_filter](#token_filter)
+    * [TokenizedPositionBurnt_filter](#tokenizedpositionburnt_filter)
+    * [TokenizedPositionMinted_filter](#tokenizedpositionminted_filter)
+    * [TokenizedPositionRolled_filter](#tokenizedpositionrolled_filter)
+  * [Enums](#enums)
+    * [AccountBalance_orderBy](#accountbalance_orderby)
+    * [AccountLiquidated_orderBy](#accountliquidated_orderby)
+    * [Account_orderBy](#account_orderby)
+    * [Aggregation_interval](#aggregation_interval)
+    * [Bundle_orderBy](#bundle_orderby)
+    * [Burn_orderBy](#burn_orderby)
+    * [Chunk_orderBy](#chunk_orderby)
+    * [CollateralDayData_orderBy](#collateraldaydata_orderby)
+    * [CollateralDeposit_orderBy](#collateraldeposit_orderby)
+    * [CollateralWithdraw_orderBy](#collateralwithdraw_orderby)
+    * [Collateral_orderBy](#collateral_orderby)
+    * [Collect_orderBy](#collect_orderby)
+    * [EventType](#eventtype)
+    * [Event_orderBy](#event_orderby)
+    * [Factory_orderBy](#factory_orderby)
+    * [ForcedExercise_orderBy](#forcedexercise_orderby)
+    * [LegLiquidities_orderBy](#legliquidities_orderby)
+    * [Leg_orderBy](#leg_orderby)
+    * [Mint_orderBy](#mint_orderby)
+    * [OptionBurn_orderBy](#optionburn_orderby)
+    * [OptionMint_orderBy](#optionmint_orderby)
+    * [OptionRoll_orderBy](#optionroll_orderby)
+    * [OrderDirection](#orderdirection)
+    * [PanopticFactory_orderBy](#panopticfactory_orderby)
+    * [PanopticPoolAccount_orderBy](#panopticpoolaccount_orderby)
+    * [PanopticPoolDayData_orderBy](#panopticpooldaydata_orderby)
+    * [PanopticPool_orderBy](#panopticpool_orderby)
+    * [PoolDayData_orderBy](#pooldaydata_orderby)
+    * [PoolHourData_orderBy](#poolhourdata_orderby)
+    * [Pool_orderBy](#pool_orderby)
+    * [PremiumSettled_orderBy](#premiumsettled_orderby)
+    * [TokenId_orderBy](#tokenid_orderby)
+    * [Token_orderBy](#token_orderby)
+    * [TokenizedPositionBurnt_orderBy](#tokenizedpositionburnt_orderby)
+    * [TokenizedPositionMinted_orderBy](#tokenizedpositionminted_orderby)
+    * [TokenizedPositionRolled_orderBy](#tokenizedpositionrolled_orderby)
+    * [_SubgraphErrorPolicy_](#_subgrapherrorpolicy_)
+  * [Scalars](#scalars)
+    * [BigDecimal](#bigdecimal)
+    * [BigInt](#bigint)
+    * [Boolean](#boolean)
+    * [Bytes](#bytes)
+    * [Float](#float)
+    * [ID](#id)
+    * [Int](#int)
+    * [Int8](#int8)
+    * [String](#string)
+    * [Timestamp](#timestamp)
+  * [Interfaces](#interfaces)
+    * [Event](#event)
+
+</details>
+
 ## Objects
 
 ### Account
@@ -661,7 +791,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#account">Account</a>!</td>
 <td>
 
- TokenizedPositionMinted.caller if mint routes through SFPM. Otherwise, same as manager (will be a PanopticPool address for option mints/burns/rolls). 
+ TokenizedPositionMinted.caller if mint routes through SFPM. Otherwise, same as manager (will be a PanopticPool address for option mints/burns). 
 
 </td>
 </tr>
@@ -957,28 +1087,6 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#collateraldaydata_filter">CollateralDayData_filter</a></td>
 <td></td>
 </tr>
-<tr>
-<td colspan="2" valign="top"><strong>previousSharePrice</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Share price before most recent transfer event. Useful for calculating commissions. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>preLiquidationSharePrice</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
-Share price immediately before calling liquidate() used for calculating protocol loss. Starts as 0 and
-gets updated when a _mint() call is being handled during a liquidation (nonzero share transfer from 0 address -> liquidator).
-Gets reset when handling a Deposit() event (which is the only other time transfer from 0 address -> liquidator would happen)
-or after being used by the AccountLiquidated() event handler. 
-
-
-</td>
-</tr>
 </tbody>
 </table>
 
@@ -1046,7 +1154,7 @@ or after being used by the AccountLiquidated() event handler.
 <td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
 <td>
 
- Share price (assets/shares) 
+ Share price (assets/shares) - useful for calculating PLP (collateral depositors) APY 
 
 </td>
 </tr>
@@ -2137,20 +2245,11 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>premia</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td>
-
- The amount of premia collected 
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>panopticPool</strong></td>
 <td valign="top"><a href="#panopticpool">PanopticPool</a>!</td>
 <td>
 
- PanopticPool mint is within (from event.address) 
+ PanopticPool where burn occured (from event.address) 
 
 </td>
 </tr>
@@ -2169,6 +2268,51 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td>
 
  Premium collected for token1 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>premiaByLeg</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td>
+
+ Packed premia for each leg 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalShares0</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td>
+
+ Collateral0 shares at time of liquidation. Helpful for calculating protocol loss during liquidation 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalAssets0</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td>
+
+ Collateral0 assets at time of liquidation. Helpful for calculating protocol loss during liquidation 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalShares1</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td>
+
+ Collateral1 shares at time of liquidation. Helpful for calculating protocol loss during liquidation 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalAssets1</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td>
+
+ Collateral1 assets at time of liquidation. Helpful for calculating protocol loss during liquidation 
 
 </td>
 </tr>
@@ -2281,15 +2425,6 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>positionSize</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td>
-
- The number of contracts minted, expressed in terms of the asset 
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>tokenId</strong></td>
 <td valign="top"><a href="#tokenid">TokenId</a>!</td>
 <td>
@@ -2299,22 +2434,51 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>tickAt</strong></td>
-<td valign="top"><a href="#int">Int</a>!</td>
+<td colspan="2" valign="top"><strong>positionSize</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Tick at which the option was minted 
+ The number of contracts minted, expressed in terms of the asset 
 
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>poolUtilizations</strong></td>
+<td colspan="2" valign="top"><strong>poolUtilization0</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Packing of the pool utilization (how much funds are in the Panoptic pool versus the AMM pool) at the time of minting. Right 64bits for token0 and left 64bits for token1, defined as (inAMM / totalBalance) * 10_000 
+ Pool utilization of token0 (how many funds are in the AMM pool vs. the Panoptic pool) at the time of mint. Defined as (inAMM / totalBalance) * 10_000 
 
 </td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>poolUtilization1</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ Pool utilization of token1 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>currentTick</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>fastOracleTick</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>lastObservedTick</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>slowOracleTick</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>panopticPool</strong></td>
@@ -2344,20 +2508,38 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>poolUtilization0</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td colspan="2" valign="top"><strong>commissions0USD</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td>
 
- Pool utilization token0 
+ Token0 commissions paid in USD 
 
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>poolUtilization1</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td colspan="2" valign="top"><strong>commissions1USD</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td>
 
- Pool utilization token1 
+ Token1 commissions paid in USD 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>commissionsUSD</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td>
+
+ Total commissions paid in USD 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>tickAt</strong></td>
+<td valign="top"><a href="#int">Int</a>!</td>
+<td>
+
+ Tick at which the option was minted 
 
 </td>
 </tr>
@@ -2781,6 +2963,15 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 </td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>totalVolumeUSD</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
+<td>
+
+ Sum of OptionMint and OptionBurn volume for token0 and token1 in USD. 
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>commissions0</strong></td>
 <td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
 <td>
@@ -2875,7 +3066,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top">[<a href="#chunk">Chunk</a>!]!</td>
 <td>
 
- Link to all chunks of liquidity that are valid for options buying from this PanopticPool 
+ Link to all chunks of liquidity managed by this PanopticPool. 
 
 </td>
 </tr>
@@ -2902,6 +3093,74 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <tr>
 <td colspan="2" align="right" valign="top">where</td>
 <td valign="top"><a href="#chunk_filter">Chunk_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>panopticPoolDayData</strong></td>
+<td valign="top">[<a href="#panopticpooldaydata">PanopticPoolDayData</a>!]!</td>
+<td>
+
+ Snapshots of PanopticPoolDayData 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#panopticpooldaydata_orderby">PanopticPoolDayData_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#panopticpooldaydata_filter">PanopticPoolDayData_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>panopticPoolAccounts</strong></td>
+<td valign="top">[<a href="#panopticpoolaccount">PanopticPoolAccount</a>!]!</td>
+<td>
+
+ Link to all PanopticPoolAccounts for this PanopticPool. 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#panopticpoolaccount_orderby">PanopticPoolAccount_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#panopticpoolaccount_filter">PanopticPoolAccount_filter</a></td>
 <td></td>
 </tr>
 </tbody>
@@ -2999,60 +3258,6 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td>
 
  Number of Collateral1 assets this PanopticPoolAccount controls 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissions0</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- All time commissions paid to PLPs in Collateral0. Commissions increase with every OptionMint and collateral deposit. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissions1</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- All time commissions paid to PLPs in Collateral1. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>sharePriceAtLastTransfer0</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Collateral0 share price at time of last transfer (an internal bookeeping mechanism to keep track of total commissions this account has earned as a PLP). 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>sharePriceAtLastTransfer1</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- See sharePriceAtLastTransfer0. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissionsSinceLastTransfer0</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Commissions earned in token0 since this account's last share transfer event (shares get transferred when depositing or withdrawing collateral, burning or minting an option, or directly sending share tokens). 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissionsSinceLastTransfer1</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Same as `commissionsSinceLastTransfer`, but in token1. 
 
 </td>
 </tr>
@@ -3248,6 +3453,15 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td>
 
  Sum of OptionMint and OptionBurn token1 volume in USD. 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalVolumeUSD</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
+<td>
+
+ Sum of OptionMint and OptionBurn volume for token0 and token1 in USD. 
 
 </td>
 </tr>
@@ -3540,6 +3754,24 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td>
 
  Tvl USD 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>minEnforcedTick</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td>
+
+ The minimum enforced tick for the SFPM to create a position in this pool 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>maxEnforcedTick</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td>
+
+ The maximum enforced tick for the SFPM to create a position in this pool 
 
 </td>
 </tr>
@@ -3922,7 +4154,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#account">Account</a>!</td>
 <td>
 
-Address of the owner of the settled position
+ Address of the owner of the settled position 
 
 </td>
 </tr>
@@ -3931,7 +4163,16 @@ Address of the owner of the settled position
 <td valign="top"><a href="#tokenid">TokenId</a>!</td>
 <td>
 
-TokenId of the settled position
+ TokenId of the settled position 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>legIndex</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td>
+
+ The leg index of `tokenId` that the premium was settled for 
 
 </td>
 </tr>
@@ -3940,7 +4181,7 @@ TokenId of the settled position
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
-LeftRight encoding for the amount of premium settled for token0 (right slot) and token1 (left slot)
+ LeftRight encoding for the amount of premium settled for token0 (right slot) and token1 (left slot) 
 
 </td>
 </tr>
@@ -5811,6 +6052,82 @@ Set to `allow` to receive data even if the subgraph has skipped over errors whil
 </td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>optionRoll</strong></td>
+<td valign="top"><a href="#optionroll">OptionRoll</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#_subgrapherrorpolicy_">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>optionRolls</strong></td>
+<td valign="top">[<a href="#optionroll">OptionRoll</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#optionroll_orderby">OptionRoll_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#optionroll_filter">OptionRoll_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#_subgrapherrorpolicy_">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>collateralDeposit</strong></td>
 <td valign="top"><a href="#collateraldeposit">CollateralDeposit</a></td>
 <td></td>
@@ -6094,82 +6411,6 @@ Set to `allow` to receive data even if the subgraph has skipped over errors whil
 <tr>
 <td colspan="2" align="right" valign="top">where</td>
 <td valign="top"><a href="#optionburn_filter">OptionBurn_filter</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">block</td>
-<td valign="top"><a href="#block_height">Block_height</a></td>
-<td>
-
-The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">subgraphError</td>
-<td valign="top"><a href="#_subgrapherrorpolicy_">_SubgraphErrorPolicy_</a>!</td>
-<td>
-
-Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>optionRoll</strong></td>
-<td valign="top"><a href="#optionroll">OptionRoll</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">id</td>
-<td valign="top"><a href="#id">ID</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">block</td>
-<td valign="top"><a href="#block_height">Block_height</a></td>
-<td>
-
-The block at which the query should be executed. Can either be a `{ hash: Bytes }` value containing a block hash, a `{ number: Int }` containing the block number, or a `{ number_gte: Int }` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">subgraphError</td>
-<td valign="top"><a href="#_subgrapherrorpolicy_">_SubgraphErrorPolicy_</a>!</td>
-<td>
-
-Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>optionRolls</strong></td>
-<td valign="top">[<a href="#optionroll">OptionRoll</a>!]!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">skip</td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">first</td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">orderBy</td>
-<td valign="top"><a href="#optionroll_orderby">OptionRoll_orderBy</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">orderDirection</td>
-<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">where</td>
-<td valign="top"><a href="#optionroll_filter">OptionRoll_filter</a></td>
 <td></td>
 </tr>
 <tr>
@@ -6944,8 +7185,6 @@ The ERC-1155 TokenId for this position. See the TokenId.sol for more information
 </table>
 
 ### TokenizedPositionRolled
-
- SFPM tokenized position roll 
 
 <table>
 <thead>
@@ -15119,86 +15358,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>previousSharePrice</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>previousSharePrice_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>previousSharePrice_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>previousSharePrice_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>previousSharePrice_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>previousSharePrice_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>previousSharePrice_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>previousSharePrice_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>preLiquidationSharePrice</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>preLiquidationSharePrice_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>preLiquidationSharePrice_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>preLiquidationSharePrice_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>preLiquidationSharePrice_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>preLiquidationSharePrice_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>preLiquidationSharePrice_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>preLiquidationSharePrice_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>_change_block</strong></td>
 <td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
 <td>
@@ -21773,46 +21932,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>premia</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>premia_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>premia_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>premia_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>premia_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>premia_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>premia_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>premia_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>panopticPool</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
@@ -21994,6 +22113,196 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>premium1_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>premiaByLeg</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>premiaByLeg_not</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>premiaByLeg_contains</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>premiaByLeg_contains_nocase</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>premiaByLeg_not_contains</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>premiaByLeg_not_contains_nocase</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalShares0</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalShares0_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalShares0_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalShares0_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalShares0_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalShares0_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalShares0_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalShares0_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalAssets0</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalAssets0_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalAssets0_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalAssets0_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalAssets0_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalAssets0_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalAssets0_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalAssets0_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalShares1</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalShares1_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalShares1_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalShares1_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalShares1_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalShares1_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalShares1_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalShares1_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalAssets1</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalAssets1_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalAssets1_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalAssets1_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalAssets1_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalAssets1_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalAssets1_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalAssets1_not_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
@@ -23116,46 +23425,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>positionSize</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>positionSize_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>positionSize_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>positionSize_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>positionSize_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>positionSize_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>positionSize_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>positionSize_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>tokenId</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
@@ -23261,83 +23530,283 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>tickAt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>tickAt_not</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>tickAt_gt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>tickAt_lt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>tickAt_gte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>tickAt_lte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>tickAt_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>tickAt_not_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>poolUtilizations</strong></td>
+<td colspan="2" valign="top"><strong>positionSize</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>poolUtilizations_not</strong></td>
+<td colspan="2" valign="top"><strong>positionSize_not</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>poolUtilizations_gt</strong></td>
+<td colspan="2" valign="top"><strong>positionSize_gt</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>poolUtilizations_lt</strong></td>
+<td colspan="2" valign="top"><strong>positionSize_lt</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>poolUtilizations_gte</strong></td>
+<td colspan="2" valign="top"><strong>positionSize_gte</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>poolUtilizations_lte</strong></td>
+<td colspan="2" valign="top"><strong>positionSize_lte</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>poolUtilizations_in</strong></td>
+<td colspan="2" valign="top"><strong>positionSize_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>poolUtilizations_not_in</strong></td>
+<td colspan="2" valign="top"><strong>positionSize_not_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>poolUtilization0</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>poolUtilization0_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>poolUtilization0_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>poolUtilization0_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>poolUtilization0_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>poolUtilization0_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>poolUtilization0_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>poolUtilization0_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>poolUtilization1</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>poolUtilization1_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>poolUtilization1_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>poolUtilization1_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>poolUtilization1_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>poolUtilization1_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>poolUtilization1_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>poolUtilization1_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>currentTick</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>currentTick_not</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>currentTick_gt</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>currentTick_lt</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>currentTick_gte</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>currentTick_lte</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>currentTick_in</strong></td>
+<td valign="top">[<a href="#int">Int</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>currentTick_not_in</strong></td>
+<td valign="top">[<a href="#int">Int</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>fastOracleTick</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>fastOracleTick_not</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>fastOracleTick_gt</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>fastOracleTick_lt</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>fastOracleTick_gte</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>fastOracleTick_lte</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>fastOracleTick_in</strong></td>
+<td valign="top">[<a href="#int">Int</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>fastOracleTick_not_in</strong></td>
+<td valign="top">[<a href="#int">Int</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>lastObservedTick</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>lastObservedTick_not</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>lastObservedTick_gt</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>lastObservedTick_lt</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>lastObservedTick_gte</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>lastObservedTick_lte</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>lastObservedTick_in</strong></td>
+<td valign="top">[<a href="#int">Int</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>lastObservedTick_not_in</strong></td>
+<td valign="top">[<a href="#int">Int</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>slowOracleTick</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>slowOracleTick_not</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>slowOracleTick_gt</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>slowOracleTick_lt</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>slowOracleTick_gte</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>slowOracleTick_lte</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>slowOracleTick_in</strong></td>
+<td valign="top">[<a href="#int">Int</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>slowOracleTick_not_in</strong></td>
+<td valign="top">[<a href="#int">Int</a>!]</td>
 <td></td>
 </tr>
 <tr>
@@ -23526,83 +23995,163 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>poolUtilization0</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
+<td colspan="2" valign="top"><strong>commissions0USD</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>poolUtilization0_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
+<td colspan="2" valign="top"><strong>commissions0USD_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>poolUtilization0_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
+<td colspan="2" valign="top"><strong>commissions0USD_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>poolUtilization0_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
+<td colspan="2" valign="top"><strong>commissions0USD_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>poolUtilization0_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
+<td colspan="2" valign="top"><strong>commissions0USD_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>poolUtilization0_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
+<td colspan="2" valign="top"><strong>commissions0USD_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>poolUtilization0_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td colspan="2" valign="top"><strong>commissions0USD_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>poolUtilization0_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td colspan="2" valign="top"><strong>commissions0USD_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>poolUtilization1</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
+<td colspan="2" valign="top"><strong>commissions1USD</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>poolUtilization1_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
+<td colspan="2" valign="top"><strong>commissions1USD_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>poolUtilization1_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
+<td colspan="2" valign="top"><strong>commissions1USD_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>poolUtilization1_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
+<td colspan="2" valign="top"><strong>commissions1USD_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>poolUtilization1_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
+<td colspan="2" valign="top"><strong>commissions1USD_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>poolUtilization1_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
+<td colspan="2" valign="top"><strong>commissions1USD_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>poolUtilization1_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td colspan="2" valign="top"><strong>commissions1USD_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>poolUtilization1_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td colspan="2" valign="top"><strong>commissions1USD_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>commissionsUSD</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>commissionsUSD_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>commissionsUSD_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>commissionsUSD_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>commissionsUSD_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>commissionsUSD_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>commissionsUSD_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>commissionsUSD_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>tickAt</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>tickAt_not</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>tickAt_gt</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>tickAt_lt</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>tickAt_gte</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>tickAt_lte</strong></td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>tickAt_in</strong></td>
+<td valign="top">[<a href="#int">Int</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>tickAt_not_in</strong></td>
+<td valign="top">[<a href="#int">Int</a>!]</td>
 <td></td>
 </tr>
 <tr>
@@ -25720,246 +26269,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong>commissions0</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissions0_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissions0_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissions0_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissions0_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissions0_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissions0_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissions0_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissions1</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissions1_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissions1_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissions1_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissions1_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissions1_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissions1_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissions1_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>sharePriceAtLastTransfer0</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>sharePriceAtLastTransfer0_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>sharePriceAtLastTransfer0_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>sharePriceAtLastTransfer0_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>sharePriceAtLastTransfer0_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>sharePriceAtLastTransfer0_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>sharePriceAtLastTransfer0_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>sharePriceAtLastTransfer0_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>sharePriceAtLastTransfer1</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>sharePriceAtLastTransfer1_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>sharePriceAtLastTransfer1_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>sharePriceAtLastTransfer1_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>sharePriceAtLastTransfer1_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>sharePriceAtLastTransfer1_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>sharePriceAtLastTransfer1_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>sharePriceAtLastTransfer1_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissionsSinceLastTransfer0</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissionsSinceLastTransfer0_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissionsSinceLastTransfer0_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissionsSinceLastTransfer0_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissionsSinceLastTransfer0_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissionsSinceLastTransfer0_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissionsSinceLastTransfer0_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissionsSinceLastTransfer0_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissionsSinceLastTransfer1</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissionsSinceLastTransfer1_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissionsSinceLastTransfer1_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissionsSinceLastTransfer1_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissionsSinceLastTransfer1_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissionsSinceLastTransfer1_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissionsSinceLastTransfer1_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong>commissionsSinceLastTransfer1_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong>isLiquidated</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
 <td></td>
@@ -26699,6 +27008,46 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong>totalVolume1USD_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalVolumeUSD</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalVolumeUSD_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalVolumeUSD_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalVolumeUSD_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalVolumeUSD_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalVolumeUSD_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalVolumeUSD_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalVolumeUSD_not_in</strong></td>
 <td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
 <td></td>
 </tr>
@@ -28061,6 +28410,46 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>totalVolumeUSD</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalVolumeUSD_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalVolumeUSD_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalVolumeUSD_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalVolumeUSD_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalVolumeUSD_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalVolumeUSD_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>totalVolumeUSD_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>commissions0</strong></td>
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td></td>
@@ -28463,6 +28852,16 @@ Filter for the block changed event.
 <tr>
 <td colspan="2" valign="top"><strong>chunks_</strong></td>
 <td valign="top"><a href="#chunk_filter">Chunk_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>panopticPoolDayData_</strong></td>
+<td valign="top"><a href="#panopticpooldaydata_filter">PanopticPoolDayData_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>panopticPoolAccounts_</strong></td>
+<td valign="top"><a href="#panopticpoolaccount_filter">PanopticPoolAccount_filter</a></td>
 <td></td>
 </tr>
 <tr>
@@ -30775,6 +31174,86 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong>minEnforcedTick</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>minEnforcedTick_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>minEnforcedTick_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>minEnforcedTick_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>minEnforcedTick_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>minEnforcedTick_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>minEnforcedTick_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>minEnforcedTick_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>maxEnforcedTick</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>maxEnforcedTick_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>maxEnforcedTick_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>maxEnforcedTick_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>maxEnforcedTick_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>maxEnforcedTick_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>maxEnforcedTick_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>maxEnforcedTick_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong>panopticPool</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
@@ -31785,6 +32264,46 @@ Filter for the block changed event.
 <tr>
 <td colspan="2" valign="top"><strong>tokenId_</strong></td>
 <td valign="top"><a href="#tokenid_filter">TokenId_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>legIndex</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>legIndex_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>legIndex_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>legIndex_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>legIndex_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>legIndex_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>legIndex_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong>legIndex_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
 <tr>
@@ -35892,30 +36411,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPoolAccount__commissions0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPoolAccount__commissions1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPoolAccount__sharePriceAtLastTransfer0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPoolAccount__sharePriceAtLastTransfer1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPoolAccount__commissionsSinceLastTransfer0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPoolAccount__commissionsSinceLastTransfer1</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPoolAccount__isLiquidated</strong></td>
 <td></td>
 </tr>
@@ -36143,6 +36638,14 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>pool__minEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>liquidator</strong></td>
 <td></td>
 </tr>
@@ -36240,6 +36743,10 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>panopticPool__totalVolume1USD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticPool__totalVolumeUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -36467,6 +36974,14 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>pool__minEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>owner</strong></td>
 <td></td>
 </tr>
@@ -36678,6 +37193,14 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>pool__minEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>panopticPool</strong></td>
 <td></td>
 </tr>
@@ -36739,6 +37262,10 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>panopticPool__totalVolume1USD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticPool__totalVolumeUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -36854,14 +37381,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>collateral__index</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>collateral__previousSharePrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>collateral__preLiquidationSharePrice</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -37000,6 +37519,14 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>pool__minEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>sender</strong></td>
 <td></td>
 </tr>
@@ -37053,14 +37580,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>collateral__index</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>collateral__previousSharePrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>collateral__preLiquidationSharePrice</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -37195,6 +37714,14 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>pool__minEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>sender</strong></td>
 <td></td>
 </tr>
@@ -37256,14 +37783,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>collateral__index</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>collateral__previousSharePrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>collateral__preLiquidationSharePrice</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -37410,6 +37929,10 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>panopticPool__totalVolumeUSD</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>panopticPool__commissions0</strong></td>
 <td></td>
 </tr>
@@ -37455,14 +37978,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>collateralDayData</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>previousSharePrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>preLiquidationSharePrice</strong></td>
 <td></td>
 </tr>
 </tbody>
@@ -37582,6 +38097,14 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__minEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -37709,7 +38232,11 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>OptionRoll</strong></td>
-<td></td>
+<td>
+
+ Panoption roll 
+
+</td>
 </tr>
 <tr>
 <td valign="top"><strong>AccountLiquidated</strong></td>
@@ -37852,6 +38379,14 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__minEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
 <td></td>
 </tr>
 </tbody>
@@ -38001,6 +38536,14 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>pool__minEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>exercisor</strong></td>
 <td></td>
 </tr>
@@ -38105,6 +38648,10 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>panopticPool__totalVolumeUSD</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>panopticPool__commissions0</strong></td>
 <td></td>
 </tr>
@@ -38197,15 +38744,27 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>optionBurn__premia</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>optionBurn__premium0</strong></td>
 <td></td>
 </tr>
 <tr>
 <td valign="top"><strong>optionBurn__premium1</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>optionBurn__totalShares0</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>optionBurn__totalAssets0</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>optionBurn__totalShares1</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>optionBurn__totalAssets1</strong></td>
 <td></td>
 </tr>
 </tbody>
@@ -38419,6 +38978,14 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>pool__minEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>optionRatio</strong></td>
 <td></td>
 </tr>
@@ -38623,6 +39190,14 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__minEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -38845,6 +39420,14 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>pool__minEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>recipient</strong></td>
 <td></td>
 </tr>
@@ -38874,10 +39457,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>tickAt</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>premia</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -38945,6 +39524,10 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>panopticPool__totalVolumeUSD</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>panopticPool__commissions0</strong></td>
 <td></td>
 </tr>
@@ -38990,6 +39573,26 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>premium1</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>premiaByLeg</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>totalShares0</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>totalAssets0</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>totalShares1</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>totalAssets1</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -39041,11 +39644,27 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>txnOpened__tickAt</strong></td>
+<td valign="top"><strong>txnOpened__poolUtilization0</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>txnOpened__poolUtilizations</strong></td>
+<td valign="top"><strong>txnOpened__poolUtilization1</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>txnOpened__currentTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>txnOpened__fastOracleTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>txnOpened__lastObservedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>txnOpened__slowOracleTick</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -39057,11 +39676,19 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>txnOpened__poolUtilization0</strong></td>
+<td valign="top"><strong>txnOpened__commissions0USD</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>txnOpened__poolUtilization1</strong></td>
+<td valign="top"><strong>txnOpened__commissions1USD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>txnOpened__commissionsUSD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>txnOpened__tickAt</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -39316,15 +39943,19 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>pool__minEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>recipient</strong></td>
 <td></td>
 </tr>
 <tr>
 <td valign="top"><strong>recipient__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>positionSize</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -39344,11 +39975,31 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>tickAt</strong></td>
+<td valign="top"><strong>positionSize</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>poolUtilizations</strong></td>
+<td valign="top"><strong>poolUtilization0</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>poolUtilization1</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>currentTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>fastOracleTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>lastObservedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>slowOracleTick</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -39416,6 +40067,10 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>panopticPool__totalVolumeUSD</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>panopticPool__commissions0</strong></td>
 <td></td>
 </tr>
@@ -39464,11 +40119,19 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>poolUtilization0</strong></td>
+<td valign="top"><strong>commissions0USD</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>poolUtilization1</strong></td>
+<td valign="top"><strong>commissions1USD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>commissionsUSD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>tickAt</strong></td>
 <td></td>
 </tr>
 </tbody>
@@ -39591,6 +40254,14 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>pool__minEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>recipient</strong></td>
 <td></td>
 </tr>
@@ -39684,6 +40355,10 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>panopticPool__totalVolume1USD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticPool__totalVolumeUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -39866,6 +40541,10 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>panopticPool__totalVolumeUSD</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>panopticPool__commissions0</strong></td>
 <td></td>
 </tr>
@@ -39946,14 +40625,6 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral0__previousSharePrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>collateral0__preLiquidationSharePrice</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>collateral0Shares</strong></td>
 <td></td>
 </tr>
@@ -39994,43 +40665,11 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral1__previousSharePrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>collateral1__preLiquidationSharePrice</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>collateral1Shares</strong></td>
 <td></td>
 </tr>
 <tr>
 <td valign="top"><strong>collateral1Assets</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>commissions0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>commissions1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>sharePriceAtLastTransfer0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>sharePriceAtLastTransfer1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>commissionsSinceLastTransfer0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>commissionsSinceLastTransfer1</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -40118,6 +40757,10 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>panopticPool__totalVolume1USD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticPool__totalVolumeUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -40210,6 +40853,10 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>totalVolume1USD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>totalVolumeUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -40352,14 +40999,6 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral0__previousSharePrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>collateral0__preLiquidationSharePrice</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>collateral1</strong></td>
 <td></td>
 </tr>
@@ -40389,14 +41028,6 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>collateral1__index</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>collateral1__previousSharePrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>collateral1__preLiquidationSharePrice</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -40468,6 +41099,14 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>underlyingPool__minEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>underlyingPool__maxEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>mintVolume0</strong></td>
 <td></td>
 </tr>
@@ -40516,6 +41155,10 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>totalVolumeUSD</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>commissions0</strong></td>
 <td></td>
 </tr>
@@ -40557,6 +41200,14 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>chunks</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticPoolDayData</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticPoolAccounts</strong></td>
 <td></td>
 </tr>
 </tbody>
@@ -40640,6 +41291,14 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__minEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -40775,6 +41434,14 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__minEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -40973,6 +41640,14 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>minEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>maxEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>panopticPool</strong></td>
 <td></td>
 </tr>
@@ -41034,6 +41709,10 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>panopticPool__totalVolume1USD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticPool__totalVolumeUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -41196,6 +41875,14 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>pool__minEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>user</strong></td>
 <td></td>
 </tr>
@@ -41217,6 +41904,10 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>tokenId__tokenCount</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>legIndex</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -41293,6 +41984,10 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>panopticPool__totalVolume1USD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticPool__totalVolumeUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -41420,6 +42115,14 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__minEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -41597,6 +42300,14 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>pool__minEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>recipient</strong></td>
 <td></td>
 </tr>
@@ -41744,6 +42455,14 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>pool__minEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>caller</strong></td>
 <td></td>
 </tr>
@@ -41888,6 +42607,14 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__minEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
 <td></td>
 </tr>
 <tr>
