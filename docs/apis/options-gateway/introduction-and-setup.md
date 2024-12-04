@@ -3,99 +3,190 @@ sidebar_position: 0
 ---
 
 # Introduction and Setup
-Panoptic is a protocol that facilitates the trading of [Panoptions](/docs/terms/panoption), which are perpetual options instruments with fixed gamma between two prices that operate on a [streaming premium model](/docs/product/streamia). We have created an [Options Gateway API](https://github.com/panoptic-labs/options_gateway) that facilitates reading information about these markets, as well as managing positions in them. You can use this API to build market making bots, trading bots, liquidation bots, and more.
+Panoptic is a protocol that facilitates the trading of [Panoptions](/docs/terms/panoption), which are perpetual options instruments with fixed gamma between two prices that operate on a [streaming premium model](/docs/product/streamia). Panoptic uses Uniswap as an options clearinghouse and operates with the principles that [LP = Options](/blog/uniswap-lp-equals-options). We have created an [Options Gateway API](https://github.com/panoptic-labs/options_gateway) which provides market data, place orders, and access account information. You can use this API to build market making bots, trading bots, liquidation bots, and more.
 
-We built our API as a fork of the [Hummingbot Gateway](https://github.com/hummingbot/gateway). It can be used in tandem with [Hummingbot](https://github.com/hummingbot/hummingbot) or with [our fork of Hummingbot](https://github.com/panoptic-labs/panoptic_hummingbot) that includes example Panoptic strategies. The API also functions [as a generic transaction-builder and chain-reader, decoupled from Hummingbot-specific functionality or custody setup](TODO: link to "As generic API").
+TODO: Do we seperate "read" apis from "write" apis or are they all just grouped together under Options Gateway?
+
+We built our API as a fork of the [Hummingbot Gateway](https://github.com/hummingbot/gateway). It can be used in tandem with [Hummingbot](https://github.com/hummingbot/hummingbot) or with [our fork of Hummingbot](https://github.com/panoptic-labs/panoptic_hummingbot) that includes example Panoptic strategies. The API also functions as a generic [transaction-builder and chain-reader](TODO: link to "As generic API"), decoupled from Hummingbot-specific functionality or custody setup.
 
 ---
 ## Overview
-We have added an `/options` namespace to the Hummingbot Gateway, and have included a number of ways to interact with Panoptic within that namespace:
+We have added an `/options` namespace to the Hummingbot Gateway and have included a number of ways to interact with Panoptic within that namespace:
 
-- You can call `mint` and `burn` with arbitrary token IDs to construct any Panoption possible.
-- You can make arbitrary calls to the Panoptic subgraph, as well as convenience methods for getting your existing TokenIDs / positions.
-- You can use analytical methods such as `delta` and `gamma` to power a strategy, with more to come.
+- You can call `mint` or `burn` with arbitrary token IDs to open or close any Panoption.
+- You can make arbitrary calls to the Panoptic subgraph, as well as convenience methods to get your existing positions and their corresponding `TokenIDs`.
+- You can use analytical methods such as the Greek `delta` and `gamma` to inform a strategy.
 
-It also comes with Sepolia support out of the box, which is not found in upstream Hummingbot implementations.
+The namespace also supports Sepolia, an Ethereum testnet, which is not currently available in upstream Hummingbot implementations.
 
-[Our Hummingbot fork](https://github.com/panoptic-labs/panoptic_hummingbot) includes example scripts showing how you could use this Gateway to run automated Panoptic trading strategies, such as market making.
+Our [Hummingbot fork](https://github.com/panoptic-labs/panoptic_hummingbot) includes example scripts showing how you could use this gateway to run automated Panoptic trading strategies such as market making.
 
 ## Using the Gateway With Hummingbot
-### Setting up
-To run a Hummingbot script that interacts with Panoptic, you will need to set up [our Hummingbot fork](https://github.com/panoptic-labs/panoptic_hummingbot) and [the Gateway fork](https://github.com/panoptic-labs/options_gateway).
+### Set Up
+To run a Hummingbot script that interacts with Panoptic, you will need to set up our [Hummingbot fork](https://github.com/panoptic-labs/panoptic_hummingbot) and the [gateway fork](https://github.com/panoptic-labs/options_gateway).
 
-#### Step 1: Setting up the hummingbot fork:
+>Note: Hummingbot is [designed](https://hummingbot.org/installation/windows/) for Unix-based environments such as macOS or Linux, so **Windows users must install Windows Subsystem for Linux 2 (WSL 2) and setup and run Hummingbot in WSL 2**.
 
-1. First, clone the Hummingbot Fork repository down, and enter the directory we'll be working out of:
-    1. `git clone https://github.com/panoptic-labs/panoptic_hummingbot.git`
-    2. `cd panoptic_hummingbot`
-2. Then, get the Hummingbot Anaconda environment ready:
-    1. Ensure you have [Anaconda installed](https://www.anaconda.com/download)
-    2. Then, simply use the installation shellscript: `./install`
-    3. And finally, activate the newly installed environment: `conda activate hummingbot`
-3. Next, you should be able to use the compilation shellscript to get your executables ready to run Hummingbot:
-    1. `./compile`
-4. And finally, you can pull up the terminal UI with the start shellscript:
-    1. `./start`
-5. The Hummingbot UI should now present itself, and you will be asked to set a passphrase.
-6. The Hummingbot UI is split into two parts - the shell, on the left, where you can run commands such as starting strategy scripts, and the logs on the right.
+#### Step 1: Setting up the Hummingbot fork
+
+1. Clone Panoptic's Hummingbot fork repository down and enter the directory you'll be working out of:
+    ```bash
+    git clone https://github.com/panoptic-labs/panoptic_hummingbot.git
+    cd panoptic_hummingbot
+    ```
+2. Get the Hummingbot Anaconda environment ready:
+    - Ensure you have [Anaconda](https://www.anaconda.com/download) installed.
+    - Install Panoptic Hummingbot by running its installation shellscript:
+      ```bash
+      ./install
+      ```
+      *(The installation process may take a few minutes to complete.)*
+    - Activate the newly installed virtual environment (running the prior hummingbot installation script automatically creates a Conda virtual environment named `hummingbot`):
+      ```bash
+      conda activate hummingbot
+      ```
+3. Get your executables ready to run Hummingbot:
+    - Run Panoptic Hummingbot's compilation shellscript:
+      ```bash
+      ./compile
+      ```
+4. Open the terminal UI:
+    - Run Panoptic Hummingbot's start shellscript:
+      ```bash
+      ./start
+      ```
+5. The Hummingbot UI will appear, and you will be asked to set a passphrase. The Hummingbot UI is split into two parts:
+    - Left side: The shell, where you can run commands such as starting strategy scripts.
+    - Right side: The logs.
 
 TODO: Insert your screenshot
 
-Your first shell command will be to generate some certificates to secure the data you supply your Hummingbot, such as the private key to a trading account.
+To ensure the security of the data supplied to your Hummingbot, such as private keys for your trading account, you will first need to generate certificates.
 
-    1. Generate the certs by entering into the shell: `gateway generate-certs`
-    2. You’ll be prompted to set a passphrase (And note that this is a different value than the password for your Hummingbot UI).
-    3. Once you successfully generate the certificates, Hummingbot will list the directory those certificates are stored in.
-    4. Copy the directory path it generates these certificates to - you'll need it for setting up the Gateway.
-    5. Typically, this certificate destination is `~/panoptic_hummingbot/certs` - in other words, a certs sub-folder in the same folder as your hummingbot repo.
+6. Generate Certificates: Run the following command in your terminal:
+     ```bash
+     gateway generate-certs
+     ```
+7. Set a Passphrase: You will be prompted to create a passphrase (note: this passphrase is different from the password you created for the Hummingbot UI).
+8. Locate the Certificate Directory: Once the certificates are successfully generated, Hummingbot will display the directory where they are stored.
+9. Copy the Directory Path: Copy the full directory path for later use. You'll need this path when configuring the Gateway.
+10. By default, the certificates are stored in:
+     ```
+     ~/panoptic_hummingbot/certs
+     ```
+   - This means the certificates are in the `certs` folder within the same directory as your Hummingbot repository.
 
-You now have a Hummingbot set up and ready for your usage. Let's now give it a Gateway to interact with the blockchain through:
+With your Hummingbot secured and certificates generated, it's time to set up the gateway to enable blockchain interactions.
 
-#### Step 2: Setting up the gateway fork:
+#### Step 2: Setting up the gateway fork
 
-1. Similarly, we will clone down the Gateway fork  and enter the directory to work out of:
-    1. `git clone git@github.com:panoptic-labs/options_gateway.git`
-    2. `cd options_gateway`
-2. We will then install our dependencies:
-    1. `yarn`
-    2. Ensure you’re using node 18.0.0 or higher - you can use [nvm](https://github.com/nvm-sh/nvm) to manage different node versions if needed.
-3. Then, we compile the project and get a runnable Gateway executable:
-    1. `yarn build`
-4. Next, we run the built-in setup script:
-    1. First, we give permissions to the script: `chmod a+x gateway-setup.sh`
-    2. Then we run it: `./gateway-setup.sh`
-    3. This script will prompt you to copy over the certificates from your Hummingbot (step 6.5 above). Enter the path (and possibly passphrase) for those certs.
+1. Clone Panoptic's fork of the Hummingbot Gateway and enter the directory to work out of:
+    ```bash
+    git clone git@github.com:panoptic-labs/options_gateway.git
+    cd options_gateway
+    ```
+2. Install the dependencies:
+    - Run the following command:
+      ```bash
+      yarn
+      ```
+    - Ensure you’re using Node.js version 18.0.0 or higher. You can use [nvm](https://github.com/nvm-sh/nvm) to manage different Node.js versions if needed.
+3. Compile the project to create a runnable gateway executable:
+    ```bash
+    yarn build
+    ```
+4. Run the built-in setup script:
+    - Give permissions to the script:
+      ```bash
+      chmod a+x gateway-setup.sh
+      ```
+    - Execute the script:
+      ```bash
+      ./gateway-setup.sh
+      ```
+    - During this step, you will be prompted to copy over the certificates from your Hummingbot fork setup. Enter the path to your certificates and, if applicable, the passphrase.
 
-Your Gateway is now ready as well. Let's get these tools running:
+Your gateway is now ready. Let's get these tools running!
 
-### Running
 
-1. Running the Gateway is quite easy - simply `yarn start` with the passphrase for your certificates from 6.5: `yarn start --passphrase=<passphrase>`
-2. Similarly, you can run your Hummingbot with the `./start` command we mentioned above. Once you do this, if your Gateway is successfully running, you should see GATEWAY: ONLINE in the top of your log pane.
-3. In the Hummingbot shell, you can explicitly connect to the Panoptic functionality in the Gateway by running `gateway connect panoptic`. This will prompt you to supply an RPC URL and a private key for a trading wallet.
-    1. You can confirm that your connection was successful by running `gateway balance`.
-4. To see the results of your Panoptic trading, you will likely want to track a number of tokens. You can add expand the tokens that `gateway balance` reports on via the `gateway connector-tokens panoptic_ethereum_sepolia` command (substituting `sepolia` for your target chain).
-    1. Hummingbot will accept some well-known tokens out of the box by their ticker alone - so you can do things such as `gateway connector-tokens panoptic_ethereum_sepolia WETH`.
-    2. And you can expand this list by modifying `options_gateway/src/templates/lists/erc20_tokens_sepolia.json` for your appropriate chain.
+### Run
+
+1. Run the gateway with the passphrase for your certificates:
+      ```bash
+      yarn start --passphrase=<passphrase>
+      ```
+2. Run Hummingbot with the `./start` command (as in step 1.4). 
+    - The following message will be displayed at the top of the log panel to indicate the gateway is running successfully:
+      ```
+      GATEWAY: ONLINE
+      ```
+3. In the Hummingbot shell, explicitly connect to the Panoptic functionality in the gateway by running:
+    ```bash
+    gateway connect panoptic
+    ```
+    - This will prompt you to supply an RPC URL and a private key for your trading wallet.
+    - Confirm your connection was successful by running:
+      ```bash
+      gateway balance
+      ```
+4. To effectively monitor your trading account balances on Panoptic, you'll want to input which tokens to track:
+    - Expand the list of tokens reported by `gateway balance` using the following command:
+      ```bash
+      gateway connector-tokens panoptic_ethereum_sepolia
+      ```
+      *(Substitute `sepolia` with your target chain)*
+    - Hummingbot accepts some well-known tokens out of the box by their ticker alone. For example:
+      ```bash
+      gateway connector-tokens panoptic_ethereum_sepolia WETH
+      ```
+    - You can further expand this list by modifying the token list JSON file for your chain:
+      ```text
+      options_gateway/src/templates/lists/erc20_tokens_sepolia.json
+      ```
 
 Your Hummingbot can now interact with Panoptic. Let's write a script!
 
-### Scripting
+### Scripts
 
-1. Your strategies will live in the `scripts` subfolder in the `panoptic_hummingbot` folder. Let's start an example script to operate on the Sepolia test market, T1/T0. Create a file called `panoptic_testing_example.py`.
-2. For any strategies to trade successfully, you will have to approve the tokens from your trading wallet to the Panoptic and Uniswap contracts. The first thing your strategy should do is check if it has a sufficient allowance with the relevant Panoptic contracts:
-    1. TODO list python command to call the gateway to query `.allowance`
-    2. And if your allowance is insufficient, you should `.approve` the relevant Panoptic contracts: TODO list python command to call the gateway to `.approve`, and which specific Panoptic contracts you need to `.approve` / how to get their addresses.
-3. Your strategy will also need to deposit collateral before proceeding to trade.
-    1. TODO list command to query collateralTracker.balanceOf
-    2. At the start of the strategy, we'll need to `.deposit`: TODO list command to call `.deposit`
-4. After these initial approvals and deposits, we are ready to perform some regularly scheduled actions in an `on_tick` method
-    1. This method gets called every `tick` of your Hummingbot config. By default, this is 1 second. TODO: List how to alter it to 12 seconds to match Ethereum block time.
-    2. Depending on your trading philosophy, you may have different requirements on how much collateral you should have deposited at any one time. In general, you can use your account's current [buying power usage](TODO: Link to docs on what buying power usage is) as a threshold your strategy can manage. You can set some percentage that your buying power should be kept beneath, and `.deposit` as need be to top up on each tick. It'll work the same as our initial deposit in the setup: TODO list the command to deposit
-4. With these basic building blocks, your strategy is ready to trade. You can now add more functionality into your `on_tick` to make trades - you can use the guide on [automatically selling straddles](/docs/apis/options-gateway/leveraging-the-gateway)  as a starting point.
+1. Let's start an example script to operate on the T1/T0 market on Sepolia testnet. 
+   - Your strategies will reside in the `scripts` subfolder of the `panoptic_hummingbot` folder. Create a file called `panoptic_testing_example.py` in the `scripts` subfolder.
+2. For any strategies to trade successfully, you will need to approve tokens from your trading wallet to the Panoptic and Uniswap contracts. The first step in your strategy should be to check if you have sufficient allowance with the relevant Panoptic contracts:
+    - Query Allowance:
+      ```python
+      # TODO: List the Python command to call the gateway to query `.allowance`
+      ```
+    - Approve Tokens:
+      ```python
+      # TODO: List the Python command to call the gateway to `.approve`
+      # TODO: Specify which Panoptic contracts need approval and how to get their addresses
+      ```
+3. Your strategy will need to deposit collateral before proceeding to trade:
+    - Query Collateral Balance:
+      ```python
+      # TODO: List the command to query `collateralTracker.balanceOf`
+      ```
+    - Deposit Collateral:
+      ```python
+      # TODO: List the command to call `.deposit`
+      ```
+4. After these initial approvals and deposits, you can perform regularly scheduled actions in the `on_tick` method:
+    - Define `on_tick`:
+      - This method gets called every `tick` of your Hummingbot configuration (default tick is 1 second).
+      - Modify Tick Interval:* 
+        ```python
+        # TODO: List how to alter the tick interval to 12 seconds to match Ethereum block time
+        ```
+    - Monitor Collateral and Deposit as Needed:
+      - Depending on your trading strategy, you may have different requirements for collateral levels. In general, you can use your account's current [buying power usage](TODO: Link to docs on what buying power usage is) as a threshold.  
+      - Set a percentage limit for buying power and deposit collateral as needed during each tick:
+        ```python
+        # TODO: List the command to deposit collateral
+        ```
+5. With these basic building blocks, your strategy is ready for trading. You can add more functionality to your `on_tick` to perform trades.
+    - Use the guide on automated [straddle selling](/docs/apis/options-gateway/leveraging-the-gateway) as a starting point.
 
 ## Using the Gateway As A Generic API
-### Setting up
+### Set Up
 
 You can use the Options Gateway as a generic transaction-building API without being tied into the full Hummingbot setup. This may be useful depending on your wallet management - using the Gateway alone will enable you to trade from multisigs or smart wallets, if you like, and still avoid the pain of constructing complex smart contract call sequences on your own.
 
@@ -167,8 +258,8 @@ curl --header "Content-Type: application/json" \
 {"tx":null,"network":"sepolia","timestamp":1732764503484,"unsignedTransaction":{"data":"0x6e553f650000000000000000000000000000000000000000000000056bc75e2d63100000000000000000000000000000275e8f09f090cf9b8e77008643e33d477fbb05e6","to":"0x203bc3e3A8031d4d71e79f95A51C89284F813c22","gasLimit":{"type":"BigNumber","hex":"0x01a97b"},"from":"0x275e8f09f090cf9b8e77008643e33d477fbb05e6"}}
 ```
 
-### Integrating
+### Integrate
 // TODO: paste rust examples etc of sign-then-broadcast 2 liner from Slack
 
-## Contributing to the Gateway
+## Contribute to the Gateway
 TODO
