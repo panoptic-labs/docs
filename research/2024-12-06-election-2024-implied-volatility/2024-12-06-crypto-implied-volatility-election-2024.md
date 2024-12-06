@@ -1,5 +1,5 @@
 ---
-slug: election-2024-implied-volatility-election
+slug: crypto-implied-volatility-election-2024
 title: "Election Volatility: BTC & ETH IV on Deribit vs. Uniswap"
 tags: [Deribit, Uniswap, IV, Mathy]
 image: /img/research/iv-election-banner.png
