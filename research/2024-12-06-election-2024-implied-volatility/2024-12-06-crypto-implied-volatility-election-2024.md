@@ -17,6 +17,8 @@ During politically charged periods like the U.S. presidential elections, volatil
 
 We analyze hourly data from October 22 to November 20, 2024, covering [Deribit DVOL](/research/comparing-uniswap-deribit-implied-volatilities#explanation-of-dvol) and [Uniswap IV](/research/new-formulation-implied-volatility) trends. For Uniswap, we focused on the liquid ETH/USDC (5 bps) and WBTC/USDT (30 bps) pools, which consistently rank high in Total Value Locked (TVL).
 
+Data and code notebooks can be found in our public research repository. Click [here](https://github.com/panoptic-labs/research/blob/main/_research-bites/20241203/iv_election.ipynb) to check it out.
+
 ![](./1.png)
 **Figure 1:** Comparative Analysis of Hourly and Normalized Implied Volatility: Uniswap IV (ETH/USDC 5 Bps Pool, WBTC/USDT 30 Bps Pool) vs. Deribit DVOL for ETH and BTC, highlighting implied volatility dynamics during the pre- and post-election period.
 
