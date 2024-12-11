@@ -85,7 +85,7 @@ Community lies at the heart of DeFi and Panoptic, and to say thank you for your 
 
   
 
-Panoptimists can accumulate points for everyday actions, such as liking and tweeting our posts, visiting our beta app, and attending our Option Hour AMAs on [Discord](https://discord.com/invite/7fE8SN9pRT). By earning points and completing tasks, you can unlock prizes from the Panoptic team.
+Panoptimists can accumulate points for everyday actions, such as liking and tweeting our posts, visiting our beta app, and attending our Option Hour AMAs on [Discord](https://discord.com/invite/8sX5Af2KXG). By earning points and completing tasks, you can unlock prizes from the Panoptic team.
 
   
 

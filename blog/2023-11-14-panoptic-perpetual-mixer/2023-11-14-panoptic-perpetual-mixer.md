@@ -30,7 +30,7 @@ Having an opportunity to connect with our community while building a new DeFi de
 ![](./panoptic-speakeasy-mixer-photos.png)
 
 
-We extend our heartfelt gratitude to everyone who made the Panoptic Perpetual Mixer a night to remember. Your enthusiasm and engagement make events like these truly special. If you’d like to join us at our next event, be sure to follow us on [Twitter](https://twitter.com/panoptic_xyz) and [Discord](https://discord.com/invite/7fE8SN9pRT) to get all the latest updates on where we’ll be next. 
+We extend our heartfelt gratitude to everyone who made the Panoptic Perpetual Mixer a night to remember. Your enthusiasm and engagement make events like these truly special. If you’d like to join us at our next event, be sure to follow us on [Twitter](https://twitter.com/panoptic_xyz) and [Discord](https://discord.com/invite/8sX5Af2KXG) to get all the latest updates on where we’ll be next. 
  
 
 _Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](https://panoptic.xyz/docs/intro) and head to our [website](https://panoptic.xyz/)._

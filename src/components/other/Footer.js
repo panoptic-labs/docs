@@ -23,7 +23,7 @@ const Footer = () => {
         <div className="footer-conversation-social">
           <div className="footer-conversation-social-text">Find us on:</div>
           <div className="footer-conversation-social-icon-container">
-            <a className="footer-conversation-social-icon-link" href="https://discord.gg/7fE8SN9pRT" aria-label="Discord">
+            <a className="footer-conversation-social-icon-link" href="https://discord.com/invite/8sX5Af2KXG" aria-label="Discord">
               <img src={"/img/icons/discord.svg"} alt="discord" className="footer-conversation-social-icon ocial-icon-margin"></img>
             </a>
             <a className="footer-conversation-social-icon-link" href="https://twitter.com/panoptic_xyz" aria-label="Twitter">

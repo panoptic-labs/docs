@@ -29,6 +29,21 @@ Ready to earn passive income with minimal effort? Visit the gRHO app ([coming so
 
 >Note: you can also passively LP into Panoptic by visiting the trading app (coming soon) and depositing into any pool. Once you've deposited, you'll begin earning passive yield on any subsequent LP and options volume in that pool.
 
+<iframe
+  src="https://www.youtube.com/embed/TRZoneipkJU?si=yaMfb0EpoAV5WLew"
+  title="YouTube video player"
+  style={{
+    width: '100%',
+    height: 'auto',
+    aspectRatio: '16/9',
+    border: 'none',
+  }}
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen>
+</iframe>
+
 <ThemedImage
   alt="Passive-LP"
   sources={{

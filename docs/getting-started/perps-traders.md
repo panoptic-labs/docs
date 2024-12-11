@@ -26,6 +26,21 @@ Depositing, trading, pricing, settlement, listing, and liquidating are all on ch
 ## Start Trading Perps with Panoptic
 Ready to get started? Visit our app (coming soon) to begin trading perps and perpetual options on any token with Panoptic.
 
+<iframe
+  src="https://www.youtube.com/embed/B-crAZNbgWg?si=4wOoKVPcX7-DXOJc"
+  title="YouTube video player"
+  style={{
+    width: '100%',
+    height: 'auto',
+    aspectRatio: '16/9',
+    border: 'none',
+  }}
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen>
+</iframe>
+
 <ThemedImage
   alt="Trading-Interface"
   sources={{

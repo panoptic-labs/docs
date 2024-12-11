@@ -12,7 +12,7 @@ Community lies at the heart of DeFi and Panoptic. Panoptimists are helping launc
 
 <!-- truncate -->
 
-Through the program, Panoptimists can accumulate points for their everyday actions, such as liking and retweeting [our posts](https://twitter.com/Panoptic_xyz), visiting our [beta app](https://beta.panoptic.xyz/), and attending our Option Hour AMAs on [Discord](https://discord.com/invite/7fE8SN9pRT). By earning points and completing tasks, you can unlock prizes from the Panoptic team.
+Through the program, Panoptimists can accumulate points for their everyday actions, such as liking and retweeting [our posts](https://twitter.com/Panoptic_xyz), visiting our [beta app](https://beta.panoptic.xyz/), and attending our Option Hour AMAs on [Discord](https://discord.com/invite/8sX5Af2KXG). By earning points and completing tasks, you can unlock prizes from the Panoptic team.
 
 
 ## Our First Community Campaign
