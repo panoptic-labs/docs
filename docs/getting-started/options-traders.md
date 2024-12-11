@@ -27,6 +27,21 @@ Panoptic offers the full flexibility that options traders are familiar with, wit
 ## Start Trading Options on Panoptic
 Ready to explore the full potential of options trading? Visit our app (coming soon) to start trading with the flexibility, capital efficiency, and risk management you need to succeed in DeFi.
 
+<iframe
+  src="https://www.youtube.com/embed/B-crAZNbgWg?si=4wOoKVPcX7-DXOJc"
+  title="YouTube video player"
+  style={{
+    width: '100%',
+    height: 'auto',
+    aspectRatio: '16/9',
+    border: 'none',
+  }}
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen>
+</iframe>
+
 <ThemedImage
   alt="Trading-Interface"
   sources={{

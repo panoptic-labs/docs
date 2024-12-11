@@ -24,6 +24,21 @@ If you're a liquidity provider (LP) looking to maximize your returns, mitigate r
 ## Start Earning More Today
 Ready to get started? Visit our app (coming soon) to begin earning more on your LP positions with Panoptic.
 
+<iframe
+  src="https://www.youtube.com/embed/O9JsvAaLA6g?si=-a-APtjjlE4PEQXR"
+  title="YouTube video player"
+  style={{
+    width: '100%',
+    height: 'auto',
+    aspectRatio: '16/9',
+    border: 'none',
+  }}
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen>
+</iframe>
+
 <ThemedImage
   alt="Active-LP"
   sources={{

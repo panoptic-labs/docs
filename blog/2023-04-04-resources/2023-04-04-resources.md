@@ -28,7 +28,7 @@ Here’s a breakdown of the channels:
 
 - [Panoptic Research](https://panoptic.xyz/research): dive deep into educational resources on trading strategies, Panoptions, DeFi, and options finance (OpFi).
 
-- [Panoptic Socials](https://links.panoptic.xyz/all): join the conversation and connect with like-minded traders and supporters on our official channels: [Twitter](https://twitter.com/panoptic_xyz), [Discord](https://discord.com/invite/7fE8SN9pRT), [Telegram](https://t.me/panoptic), and [LinkedIn](https://www.linkedin.com/company/panoptic-xyz).
+- [Panoptic Socials](https://links.panoptic.xyz/all): join the conversation and connect with like-minded traders and supporters on our official channels: [Twitter](https://twitter.com/panoptic_xyz), [Discord](https://discord.com/invite/8sX5Af2KXG), [Telegram](https://t.me/panoptic), and [LinkedIn](https://www.linkedin.com/company/panoptic-xyz).
 
 
 ## **Panoptic Docs**

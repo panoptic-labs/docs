@@ -53,7 +53,7 @@ If your wallet is eligible, you will need to confirm your participation before A
 
   
 
-If you haven't been included in this first epoch, don't worry! Make sure you are [signed up](https://signup.panoptic.xyz) for the beta launch and joined our [Discord](https://discord.com/invite/7fE8SN9pRT). By doing so, you may still be made eligible to participate at a future date or when the protocol is publicly launched.
+If you haven't been included in this first epoch, don't worry! Make sure you are [signed up](https://signup.panoptic.xyz) for the beta launch and joined our [Discord](https://discord.com/invite/8sX5Af2KXG). By doing so, you may still be made eligible to participate at a future date or when the protocol is publicly launched.
 
   
 

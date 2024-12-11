@@ -6,10 +6,23 @@ tags: [Tutorial]
 image: /img/research/opening-a-position.png
 description: "Discover how to navigate the world of DeFi options trading with Panoptic, a comprehensive guide for beginners and advanced traders alike, covering everything from connecting your wallet to executing sophisticated trading strategies."
 ---
-  
 
 ![](./opening-a-position/1.png)
   
+<iframe
+  src="https://www.youtube.com/embed/G01KS8_rTYo?si=6Sr1qRlJao5FLoIs"
+  title="YouTube video player"
+  style={{
+    width: '100%',
+    height: 'auto',
+    aspectRatio: '16/9',
+    border: 'none',
+  }}
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen>
+</iframe>
 
 ## Overview
 

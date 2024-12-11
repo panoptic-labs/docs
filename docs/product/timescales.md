@@ -9,6 +9,21 @@ description: "Learn how perpetual options operate on Panoptic without traditiona
 
 ![](./timescales/timescale-banner.png)
 
+<iframe
+  src="https://www.youtube.com/embed/MlgZTeF8uLU?si=dneBt3gCvtmugi2z"
+  title="YouTube video player"
+  style={{
+    width: '100%',
+    height: 'auto',
+    aspectRatio: '16/9',
+    border: 'none',
+  }}
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen>
+</iframe>
+
 Perpetual options, unlike traditional options, do not have expiry dates but operate with a unique characteristic known as timescales. This guide will explore how timescales function on Panoptic's trading platform.
 
 >### Questions We'll Answer
