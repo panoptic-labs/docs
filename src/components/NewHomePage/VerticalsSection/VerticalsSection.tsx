@@ -15,7 +15,7 @@ export default function VerticalsSection() {
           icon={<LiquidityIcon />}
           title="Uniswap Liquidity Providers"
           description="Increased yield, impermanent loss (IL) mitigation, advanced strategies, and risk management"
-          url="/docs/getting-started/liquidity-providers"
+          url="/docs/getting-started/active-lp"
         />
         <Card
           icon={<PerpetualsIcon />}
@@ -32,8 +32,8 @@ export default function VerticalsSection() {
         <Card
           icon={<PanoptimistsIcon />}
           title="Panoptimists"
-          description="A robust online community of Panoptimists who value innovative advancements in blockchain, Decentralized Finance (DeFi), and financial instruments."
-          url="/docs/getting-started/panoptimists"
+          description="Earn yield without the need for constant position management, monitoring, or dealing with impermanent loss."
+          url="/docs/getting-started/passive-lp"
         />
       </div>
 
