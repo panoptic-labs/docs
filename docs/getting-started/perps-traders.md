@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 4
 label: "Perps Traders"
 ---
 
@@ -24,7 +24,7 @@ Depositing, trading, pricing, settlement, listing, and liquidating are all on ch
 - **Higher Leverage**: Buy perpetual options with up to 10x leverage, making for bigger potential gains (and losses).
 
 ## Start Trading Perps with Panoptic
-Ready to get started? Visit our app (coming soon) to begin trading perps and perpetual options on any token with Panoptic.
+Ready to get started? Visit our [app](https://app.panoptic.xyz) to begin trading perps and perpetual options on any token with Panoptic.
 
 <iframe
   src="https://www.youtube.com/embed/B-crAZNbgWg?si=4wOoKVPcX7-DXOJc"
@@ -47,7 +47,7 @@ Ready to get started? Visit our app (coming soon) to begin trading perps and per
     light: useBaseUrl('/img/trading-interface.svg'),
     dark: useBaseUrl('/img/trading-interface.svg'),
   }}
-  style={{width: 1000}}
+  style={{width: '100%'}}
 />
 
 ---

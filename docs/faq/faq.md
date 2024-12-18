@@ -56,7 +56,7 @@ Yes, depositors and traders can earn Panoptic incentive points (Pips). For more 
 
 <details id="wen-launch">
 <summary>Wen launch?</summary>
-Panoptic is launching on the Ethereum mainnet in Fall 2024, followed by other EVM-compatible chains. See our <a href="https://panoptic.xyz/docs/roadmap">roadmap</a>.
+Panoptic is launching on the Ethereum mainnet in 2024, followed by other EVM-compatible chains. See our <a href="https://panoptic.xyz/docs/roadmap">roadmap</a>.
 </details>
 
 <details id="how-does-liquidity-in-uniswap-benefit-panoptic">

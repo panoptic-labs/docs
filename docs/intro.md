@@ -42,7 +42,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
     light: useBaseUrl('/img/trading-interface.svg'),
     dark: useBaseUrl('/img/trading-interface.svg'),
   }}
-  style={{width: 1000}}
+  style={{width: '100%'}}
 />
 
 <ThemedImage
@@ -51,7 +51,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
     light: useBaseUrl('/img/passive-lp.svg'),
     dark: useBaseUrl('/img/passive-lp.svg'),
   }}
-  style={{width: 1000}}
+  style={{width: '100%'}}
 />
 
 <ThemedImage
@@ -60,7 +60,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
     light: useBaseUrl('/img/active-lp.svg'),
     dark: useBaseUrl('/img/active-lp.svg'),
   }}
-  style={{width: 1000}}
+  style={{width: '100%'}}
 />
 
 
