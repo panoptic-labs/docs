@@ -167,7 +167,7 @@ const config = {
       announcementBar: {
         id: "ETH_Denver_2023",
         content:
-          "Try our beta that's live on <a href=\"https://demo.panoptic.xyz/\">Sepolia testnet</a>!",
+          "Panoptic is <a href=\"https://app.panoptic.xyz/\">live</a> on Ethereum!",
         textColor: "#FFFFFF",
         isCloseable: true,
       },

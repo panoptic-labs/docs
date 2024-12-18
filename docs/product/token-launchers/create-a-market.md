@@ -63,7 +63,7 @@ Here's how it works:
 ### What Can I Do With My Panoptic NFT?
 The Panoptic NFT awarded to market creators are tradable and fully transferable ERC-721s. They symbolize your contribution as the original pool creator. Rarer NFTs reflect the resources spent on mining your pool.
 
-Visit the Panoptic [app](https://app.panoptic.xyz) (coming soon) to create your market, earn rewards, and enable [passive liquidity](/docs/product/token-launchers/bootstrap-liquidity) for your token pair. Take the first step in enabling permissionless options trading today!
+Visit the Panoptic [app](https://app.panoptic.xyz) to create your market, earn rewards, and enable [passive liquidity](/docs/product/token-launchers/bootstrap-liquidity) for your token pair. Take the first step in enabling permissionless options trading today!
 
 *Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](https://panoptic.xyz/docs/intro) and head to our [website](https://panoptic.xyz/).*
 

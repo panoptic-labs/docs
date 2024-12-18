@@ -1,1 +1,1 @@
-export const APP_LINK = "https://demo.panoptic.xyz/"
+export const APP_LINK = "https://app.panoptic.xyz/"

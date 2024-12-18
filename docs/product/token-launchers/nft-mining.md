@@ -19,7 +19,7 @@ Follow this step-by-step guide to mine your Panoptic NFT and begin [creating a P
 1.  **Access Etherscan:** Visit Etherscan and select the contract address for the blockchain network where you want to mine the NFT.
 	Supported blockchain networks:
 	-   [Sepolia testnet](https://sepolia.etherscan.io/address/0x000000000000010a1DEc6c46371A28A071F8bb01#readContract) (example)
-	-   Ethereum mainnet (coming soon)
+	-   [Ethereum mainnet](https://etherscan.io/address/0x000000000000010a1dec6c46371a28a071f8bb01#readContract)
 	![](./nft-mining/01.png)
 
 2.  **Navigate to the Contract:** On Etherscan, click "Contract" and then "Read Contract". Locate and select the "minePoolAddress" function.

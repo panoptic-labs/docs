@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 2
 label: "Passive Liquidity Providers"
 ---
 
@@ -27,7 +27,7 @@ Your yield as a passive LP depends on:
 ## Get Started Today
 Ready to earn passive income with minimal effort? Visit the gRHO app ([coming soon](/blog/panoptic-awarded-uniswap-foundation-grant)) for a simpler way to LP.
 
->Note: you can also passively LP into Panoptic by visiting the trading app (coming soon) and depositing into any pool. Once you've deposited, you'll begin earning passive yield on any subsequent LP and options volume in that pool.
+>Note: you can also passively LP into Panoptic by visiting the [trading app](https://app.panoptic.xyz) and depositing into any pool. Once you've deposited, you'll begin earning passive yield on any subsequent LP and options volume in that pool.
 
 <iframe
   src="https://www.youtube.com/embed/TRZoneipkJU?si=yaMfb0EpoAV5WLew"
@@ -50,7 +50,7 @@ Ready to earn passive income with minimal effort? Visit the gRHO app ([coming so
     light: useBaseUrl('/img/passive-lp.svg'),
     dark: useBaseUrl('/img/passive-lp.svg'),
   }}
-  style={{width: 1000}}
+  style={{width: '100%'}}
 />
 
 ---

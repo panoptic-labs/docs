@@ -27,7 +27,7 @@ Providing liquidity on Uniswap v3 often involves active management—selecting p
 
 ## Get Started In Three Steps
 
-Ready to bootstrap your token’s liquidity? Visit our [app](https://app.panoptic.xyz) (coming soon) and follow these three simple steps to kickstart your token on Panoptic today.
+Ready to bootstrap your token’s liquidity? Visit our [app](https://app.panoptic.xyz) and follow these three simple steps to kickstart your token on Panoptic today.
 
 1.  **Select Your Pool:** Choose the Uniswap pool which you want to provide liquidity to. If the pool doesn’t exist, follow our guide to [create](/docs/product/token-launchers/create-a-market) one.
     ![](./bootstrap-liquidity/03.png)
