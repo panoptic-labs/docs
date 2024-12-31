@@ -35,7 +35,7 @@ Panoptic addresses IL by offering several strategies: LPs can reduce IL with ext
 
 Panoptic's intuitive interface replaces traditional order books with a visual approach, letting users easily build strategies based on whether they believe an asset will rise or fall. Advanced traders can access one-click strategies, including multi-leg options and perp trading. Traders can also create their own options markets using any tokens available on Uniswap.
 
-The platform has undergone comprehensive [third-party security audits](https://panoptic.xyz/docs/security/security_audits) to ensure integrity and reliability. Panoptic is rolling out a public [bug bounty program](/docs/security/bug-bounties) planned in partnership with [Cantina](https://cantina.xyz/welcome).
+The platform has undergone comprehensive [third-party security audits](https://panoptic.xyz/docs/security/security_audits) to ensure integrity and reliability. Panoptic is rolling out a public [bug bounty program](/docs/security/bug-bounties) in partnership with [Cantina](https://cantina.xyz/welcome).
 
 To drive participation and bootstrap liquidity, the company launched the [Panoptic Incentive Points Program](https://pips.panoptic.xyz/), designed to engage traders of all experience levels and reward them for their contributions.
 
