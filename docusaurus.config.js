@@ -515,6 +515,10 @@ const config = {
           {
             to: '/docs/contracts/V1.0/types/library.TokenIdLibrary',
             from: '/docs/developers/V1.0/types/library.TokenIdLibrary',
+          },    
+          {
+            to: '/docs/intro',
+            from: '/docs',
           },          
         ],
       },
