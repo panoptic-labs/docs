@@ -10,6 +10,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 If you're a trader looking to enhance your perpetual trading experience with capped downside, leverage, and no liquidation risk, Panoptic is the platform for you.
 
+With Panoptic, you can trade perps and perpetual options on any asset available on Uniswap. This works by [combining perpetual options to create synthetic perps](/research/introduction-synthetic-perps#synthetic-perps-on-panoptic), letting you go long or short on any token.
+
 ## Why Trade Perps on Panoptic?
 - **Trade Any Token**: Panoptic allows you to trade perps on [any](/docs/product/markets) ERC-20 token or native asset, thanks to its permissionless and oracle-free design. Panoptic supports the immediate listing of perps on any ERC-20 token or native asset without having to wait for oracle support.
 - **New Markets**: Trade perps on alternative pairs such as perps on BTC-ETH price, stablecoin-to-stablecoin prices, or memecoins.
