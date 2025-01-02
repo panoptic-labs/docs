@@ -20,7 +20,7 @@ export default function VerticalsSection() {
         <Card
           icon={<PerpetualsIcon />}
           title="Perps Traders"
-          description="Trade any token permissionlessly with leverage, capped downside, no liquidation risk, and no expiries in the non-custodial, oracle-free options platform."
+          description="Trade any token permissionlessly with leverage, capped downside, no liquidation risk, and no expiries"
           url="/docs/getting-started/perps-traders"
         />
         <Card
@@ -31,7 +31,7 @@ export default function VerticalsSection() {
         />
         <Card
           icon={<PanoptimistsIcon />}
-          title="Panoptimists"
+          title="Passive LPs"
           description="Earn yield without the need for constant position management, monitoring, or dealing with impermanent loss."
           url="/docs/getting-started/passive-lp"
         />
