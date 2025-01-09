@@ -78,15 +78,15 @@ Another type of spread is the diagonal spread (also called the "Poor Man's Cover
 While its payoff is similar to that of a covered call, its capital requirements are much lower. This makes the diagonal spread a capital-efficient version of the covered call.
 
 
-## Synthetic Positions
-A synthetic position is a trading strategy that involves creating a position that mimics the risk/reward profile of another position. Typically, this results in higher capital efficiency, as you are exposed to the profit profiles of some position without actually holding it.
+## Synthetic Perps
+A synthetic position is a trading strategy that involves creating a position that mimics the risk/reward profile of another position. Typically, this results in higher capital efficiency, as you are exposed to the profit profiles of some position without actually holding it. On Panoptic, you can use perpetual options to create [synthetic perpetual futures (perps)](/research/introduction-synthetic-perps).
 
-### Synthetic Long Position
-A synthetic long position is a trading strategy that uses options to mimic the risk/reward profile of owning some asset. To create a synthetic long position, a trader can buy a call option and sell a put option with the same strike price and the same expiration date (in TradFi).
+### Synthetic Long Perp
+A synthetic long perp is a trading strategy that uses options to mimic the risk/reward profile of owning some asset. To create a synthetic long perp, a trader can buy a call option and sell a put option with the same strike price and the same expiration date (in TradFi).
 
 ![Synthetic Long](https://user-images.githubusercontent.com/62954565/229919542-ccc6dae8-602d-4a7e-a212-f2e0c268fa15.png)
 
-For example, let's say a trader wants to create a synthetic long position on ETH, which is currently trading at $100. The trader can buy a call option with a $100 strike price and sell a put option with a $100 strike price, both expiring in one month (in TradFi).
+For example, let's say a trader wants to create a synthetic long perp on ETH, which is currently trading at $100. The trader can buy a call option with a $100 strike price and sell a put option with a $100 strike price, both expiring in one month (in TradFi).
 
 At the end of one month (in TradFi options), the profit from the synthetic position is similar to the profit of purchasing ETH outright:
 
@@ -103,8 +103,8 @@ In every case, the synthetic position's value is similar to buying the asset out
 - The trader's synthetic position incurs an upfront loss ($2) to finance the options position. Had the trader bought the asset outright, the trader would not have incurred this loss.
 
 
-### Synthetic Short Position
-Conversely, a synthetic short position is a trading strategy that uses options to mimic the risk/reward profile of shorting some asset. To create a synthetic short position, a trader can sell a call option and buy a put option with the same strike price and the same expiration date (in TradFi).
+### Synthetic Short Perp
+Conversely, a synthetic short perp is a trading strategy that uses options to mimic the risk/reward profile of shorting some asset. To create a synthetic short perp, a trader can sell a call option and buy a put option with the same strike price and the same expiration date (in TradFi).
 
 <ThemedImage
   alt="Synthetic Short"
@@ -115,7 +115,7 @@ Conversely, a synthetic short position is a trading strategy that uses options t
 />
 
 
-For example, let's say a trader wants to create a synthetic short position on ETH, which is currently trading at $100. The trader can sell a call option with a $100 strike price and buy a put option with a $100 strike price, both expiring in one month (in TradFi). 
+For example, let's say a trader wants to create a synthetic short perp on ETH, which is currently trading at $100. The trader can sell a call option with a $100 strike price and buy a put option with a $100 strike price, both expiring in one month (in TradFi). 
 
 At the end of one month (in TradFi options), the profit from the synthetic position is similar to the profit of purchasing ETH outright:
 
