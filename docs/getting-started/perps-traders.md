@@ -10,10 +10,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 If you're a trader looking to enhance your perpetual trading experience with capped downside, leverage, and no liquidation risk, Panoptic is the platform for you.
 
-With Panoptic, you can trade perps and perpetual options on any asset available on Uniswap. This works by [combining perpetual options to create synthetic perps](/research/introduction-synthetic-perps#synthetic-perps-on-panoptic), letting you go long or short on any token.
+With Panoptic, you can [trade perps and perpetual options](https://app.panoptic.xyz) on any asset available on Uniswap. This works by [combining perpetual options to create synthetic perps](/research/introduction-synthetic-perps#synthetic-perps-on-panoptic), letting you go long or short on any token.
 
 ## Why Trade Perps on Panoptic?
-- **Trade Any Token**: Panoptic allows you to trade perps on [any](/docs/product/markets) ERC-20 token or native asset, thanks to its permissionless and oracle-free design. Panoptic supports the immediate listing of perps on any ERC-20 token or native asset without having to wait for oracle support.
+- **Trade Any Token**: Panoptic allows you to trade [perps](/docs/product/perps) on [any](/docs/product/markets) ERC-20 token or native asset, thanks to its permissionless and oracle-free design. Panoptic supports the immediate listing of perps on any ERC-20 token or native asset without having to wait for oracle support.
 - **New Markets**: Trade perps on alternative pairs such as perps on BTC-ETH price, stablecoin-to-stablecoin prices, or memecoins.
 - **Leverage**: Gain exposure with up to 3.33x leveraged perps.
 - **Non-custodial and permissionless**: Panoptic is a completely non-custodial, decentralized exchange. 
@@ -26,7 +26,7 @@ Depositing, trading, pricing, settlement, listing, and liquidating are all on ch
 - **Higher Leverage**: Buy perpetual options with up to 10x leverage, making for bigger potential gains (and losses).
 
 ## Start Trading Perps with Panoptic
-Ready to get started? Visit our [app](https://app.panoptic.xyz) to begin trading perps and perpetual options on any token with Panoptic.
+Ready to get started? Visit our [app](https://app.panoptic.xyz) to begin [trading perps](/docs/product/perps) and perpetual options on any token with Panoptic.
 
 <iframe
   src="https://www.youtube.com/embed/B-crAZNbgWg?si=4wOoKVPcX7-DXOJc"
@@ -55,6 +55,7 @@ Ready to get started? Visit our [app](https://app.panoptic.xyz) to begin trading
 ---
 
 ### Advanced Resources
+- [How to Trade Perps on Panoptic: A Complete Guide](/docs/product/perps)
 - [Synthetic perps](/docs/trading/multi-leg-strategies#synthetic-positions)
 - [Synthetic perp capital efficiency](/docs/trading/capital-efficiency#synthetic-long-asset)
 - [Synthetic perp funding rates](/research/introduction-synthetic-perps)
