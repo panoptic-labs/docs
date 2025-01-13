@@ -1,12 +1,14 @@
 ---
-slug: how-to-trade-perps-on-panoptic
+sidebar_position: 2.6
+slug: perps
 title: "How to Trade Perps on Panoptic: A Complete Guide"
-tags: [Perps, Guide, Strategies]
+sidebar_label: "Perps"
+tags: [Tutorial, Perps, Strategies]
 image: /img/banners/how-to-trade-perps-on-panoptic.png
 description: "A comprehensive guide for trading perps on Panoptic—no expirations, any token, and leveraged long or short positions."
 ---
 
-![](./00.png)
+![](./perps/00.png)
 
 What if you could trade without the clock ticking? What if you could speculate on the future of anything tradable, not just what some exchanges deem as worthy?
 
@@ -18,7 +20,7 @@ Perp have become a staple in the crypto trading world, offering flexibility and 
 
 Perpetual futures contracts, or perps, are a type of futures contract that don't have an expiration date. Unlike traditional futures, which require traders to manage contract rollovers, perps continue indefinitely, providing uninterrupted exposure to the underlying asset. This seamless trading experience and the ability to speculate on future asset prices make perps an essential tool for crypto traders.
 
-![](./01.png)
+![](./perps/01.png)
 
 ## Why Trade Perps on Panoptic?
 
@@ -35,35 +37,35 @@ Perpetual futures contracts, or perps, are a type of futures contract that don't
 ### Step 1: Connect Your Wallet
 
 To start trading on Panoptic, you’ll first need to connect your wallet. Panoptic supports multiple wallet providers.
-![](./02.png)
+![](./perps/02.png)
 
 ### Step 2: Choose Your Market
 
 Select the [market](/docs/product/markets) you wish to trade in. With Panoptic’s permissionless nature, you’re free to choose any token pair available on Uniswap, giving you a wide array of options to speculate on or hedge against.
 
-![](./03.png)
+![](./perps/03.png)
 
 ### Step 3: Decide on Your Strategy
 
 Determine whether you want to go [long or short](/docs/trading/multi-leg-strategies#synthetic-positions) on the chosen asset.
 
 If you’re bullish, consider a long perp.
-![](./04.png)
+![](./perps/04.png)
 
 If you’re bearish, consider a short perp.
-![](./05.png)
+![](./perps/05.png)
 
 ### Step 4: Check Your Leverage
 
 Panoptic allows up to 3.3x leverage on perps and 10x leverage on perpetual options. The [leverage](/docs/product/leverage) is calculated based on the strategy used and the pool utilization.
 
-![](./06.png)
+![](./perps/06.png)
 
 ### Step 5: Check The Funding Rate
 
 You can check the instantaneous funding rate by summing the [spread multiplier](/docs/product/spread) of each leg.
 
-![](./07.png)
+![](./perps/07.png)
 
 The [effective funding rate](/research/introduction-synthetic-perps#funding-rate-for-synthetic-perps) in this example is -0.37x of the Uniswap fees at each block. This rate is derived from the -1.37x multiplier contributed by the long call and the 1.00x multiplier from the short put, resulting in a combined spread multiplier of -0.37x.
 
@@ -75,20 +77,20 @@ The funding fee in Panoptic is settled at each block (approximately every 12 sec
 
 Once you’ve decided on your strategy and leverage, it’s time to [open your positio](/docs/product/opening-a-position)n. Panoptic’s interface makes it easy to execute your trade and manage your position over time.
 
-![](./08.png)
+![](./perps/08.png)
 
 ### Step 7: Monitor and Manage Your Position
 
 [Keep an eye](/docs/product/position-management) on your trade to decide when the best time is to lock in profits or cut losses. The crypto market doesn’t wait for anyone!
 
-![](./09.png)
+![](./perps/09.png)
 
 ### Step 8: Close Your Position
 
 When your trade has achieved its desired outcome, or if it’s necessary to mitigate losses, [close your position](/docs/product/closing-a-position) to realize your gains or minimize potential losses.
 
 
-![](./10.png)
+![](./perps/10.png)
 
 ---
 
