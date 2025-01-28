@@ -6,7 +6,7 @@
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
-    "graphql-markdown": "graphql-markdown https://api.goldsky.com/api/public/project_cl9gc21q105380hxuh8ks53k3/subgraphs/panoptic-subgraph-sepolia/beta7-prod/gn > ./docs/subgraph/schema.md",
+    "graphql-markdown": "graphql-markdown https://api.goldsky.com/api/public/project_cl9gc21q105380hxuh8ks53k3/subgraphs/panoptic-subgraph-sepolia/prod/gn > ./docs/subgraph/schema.md && node ./scripts/gen-subgraph-docs.js",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -18,7 +18,7 @@
     "@docusaurus-terminology/parser": "^1.3.0",
     "@docusaurus-terminology/term": "^1.0.0",
     "@docusaurus/core": "^2.2.0",
-    "@docusaurus/plugin-client-redirects": "2.4.1",
+    "@docusaurus/plugin-client-redirects": "2.4.3",
     "@docusaurus/plugin-google-gtag": "^2.4.3",
     "@docusaurus/preset-classic": "^2.2.0",
     "@giscus/react": "^3.0.0",
@@ -53,7 +53,7 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^2.2.0",
-    "graphql": "^16.8.1",
+    "graphql": "^16.0.0",
     "graphql-markdown": "^7.0.0"
   },
   "browserslist": {
