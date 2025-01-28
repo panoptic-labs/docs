@@ -6,7 +6,7 @@
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "build": "docusaurus build",
-    "graphql-markdown": "graphql-markdown https://api.goldsky.com/api/public/project_cl9gc21q105380hxuh8ks53k3/subgraphs/panoptic-subgraph-sepolia/prod/gn > ./docs/subgraph/schema.md && node ./scripts/gen-subgraph-docs.js",
+    "graphql-markdown": "graphql-markdown https://api.goldsky.com/api/public/project_cl9gc21q105380hxuh8ks53k3/subgraphs/panoptic-subgraph-mainnet/prod/gn > ./docs/subgraph/schema.md && node ./scripts/gen-subgraph-docs.js",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
