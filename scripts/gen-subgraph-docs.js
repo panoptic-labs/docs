@@ -27,14 +27,25 @@ schemaContent = schemaContent.replace('# Schema Types\n', '');
 // Remove details tag with table of contents (Docusaurus generates its own automatically)
 schemaContent = schemaContent.replace(/<details>[\s\S]*?<\/details>/m, '');
 
-// Remove table element after Query header
+// Remove Query header and table
 const queryIndex = schemaContent.indexOf('## Query');
 if (queryIndex !== -1) {
   const afterQuery = schemaContent.slice(queryIndex);
-  const tableMatch = afterQuery.match(/<table>[\s\S]*?<\/table>/);
+  const tableMatch = afterQuery.match(/(## Query[\s\S]*?<table>[\s\S]*?<\/table>)/);
   if (tableMatch) {
-    const tableContent = tableMatch[0];
-    schemaContent = schemaContent.replace(tableContent, '');
+    const contentToRemove = tableMatch[0];
+    schemaContent = schemaContent.replace(contentToRemove, '');
+  }
+}
+
+// Remove Subscription header and table 
+const subscriptionIndex = schemaContent.indexOf('## Subscription');
+if (subscriptionIndex !== -1) {
+  const afterSubscription = schemaContent.slice(subscriptionIndex);
+  const tableMatch = afterSubscription.match(/(## Subscription[\s\S]*?<table>[\s\S]*?<\/table>)/);
+  if (tableMatch) {
+    const contentToRemove = tableMatch[0];
+    schemaContent = schemaContent.replace(contentToRemove, '');
   }
 }
 
