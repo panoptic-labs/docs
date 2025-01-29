@@ -17,6 +17,8 @@ The final [review](https://cantina.xyz/portfolio/0eb3624c-90d4-40d8-93b7-558cb13
 The initial Panoptic V1.1 Protocol [report](https://cantina.xyz/portfolio/5a11e7c3-da1e-4d0f-8700-bfc364d8b85a) was completed by Cantina on November 7, 2024.
 
 ### Code4rena
+A review of the Panoptic V1.1 Protocol was completed by top code4rena wardens on January 28, 2025. The reports can be found [here](/pdf/Bauchibred_Panoptic.pdf) and [here](/pdf/MrPotatoMagic_Panoptic.pdf).
+
 The final [review](https://code4rena.com/reports/2024-09-panoptic) of the Panoptic V1 Protocol was completed by [Code4rena](https://code4rena.com/) on October 10, 2024 and found _**no High or Medium severity issues**_.
 
 The second Panoptic V1 protocol audit [report](https://code4rena.com/reports/2024-06-panoptic) was completed by Code4rena on June 10, 2024.
