@@ -26,7 +26,7 @@ Panoptic's [gRHO platform](https://panoptic.xyz/blog/panoptic-awarded-uniswap-fo
 
 For traders seeking to optimize their strategies, Panoptic offers an intuitive platform packed with powerful tools for options and perps trading.
 
-To incentivize participation, the company launched the [Panoptic Incentive Points (Pips) Program](https://app.panoptic.xyz/leaderboard), designed to engage traders of all experience levels and reward them for their contributions. Pips are live for the WETH/USDC (0.3%) and WBTC/WETH (0.3%) markets on Uniswap v3, with additional markets on Uniswap v4 to follow.
+To incentivize participation, the company launched the [Panoptic Incentive Points (Pips) Program](https://app.panoptic.xyz/leaderboard), designed to engage traders of all experience levels and reward them for their contributions. Pips are live for the WETH/USDC (0.3%) and WBTC/WETH (0.3%) markets on Ethereum Mainnet, with additional markets on Unichain to follow.
 
 The platform has undergone comprehensive [third-party security audits](https://panoptic.xyz/docs/security/security_audits) to ensure integrity and reliability. Panoptic has rolled out a public bug bounty program in partnership with [Cantina](https://cantina.xyz/welcome).
 
