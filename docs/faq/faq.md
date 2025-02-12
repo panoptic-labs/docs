@@ -16,7 +16,7 @@ Panoptic is a permissionless way to trade crypto options. We enable options trad
 <summary>How can I use Panoptic?</summary>
 To explore the Panoptic App, you will need to connect your digital wallet. There are currently two versions available for users:
 <br /><br />
-1) Beta Version (deprecated): This version is accessible for previous participants in our beta tests. You can visit and join the beta experience at <a href="https://beta.panoptic.xyz">beta.panoptic.xyz</a>.
+1) Official App: Trade options and LP with higher returns on Uniswap v3 and v4 pools. You can access the app <a href="https://app.panoptic.xyz">here</a>.
 <br />
 2) Demo Version: If you're looking to practice your trading without risking real funds, our paper trading platform is available on the Sepolia network. You can try it out at <a href="https://demo.panoptic.xyz">demo.panoptic.xyz</a>.
 <br /><br />
@@ -40,8 +40,8 @@ Panoptic works on any ERC20 token. Panoptic users can create an options market o
 </details>
 
 <details id="where-will-panoptic-launch">
-<summary>Where will Panoptic launch?</summary>
-Panoptic will launch on Ethereum mainnet, followed by EVM-compatible chains where Uniswap V3 and V4 are deployed.
+<summary>Where can I use Panoptic?</summary>
+Panoptic is <a href="https://app.panoptic.xyz">live</a> on Ethereum mainnet and Unichain, with other EVM-compatible chains to follow.
 </details>
 
 <details id="is-there-a-token">
@@ -54,11 +54,6 @@ No. Panoptic does not have a token at this time.
 Yes, depositors and traders can earn Panoptic incentive points (Pips). For more details, visit <a href="https://pips.panoptic.xyz">pips.panoptic.xyz</a>.
 </details>
 
-<details id="wen-launch">
-<summary>Wen launch?</summary>
-Panoptic is launching on the Ethereum mainnet in 2024, followed by other EVM-compatible chains. See our <a href="https://panoptic.xyz/docs/roadmap">roadmap</a>.
-</details>
-
 <details id="how-does-liquidity-in-uniswap-benefit-panoptic">
 <summary>How does liquidity in Uniswap benefit Panoptic?</summary>
 Panoptic harnesses Uniswap's liquidity to enhance the user experience for options traders. High liquidity and volume in Uniswap pools benefit Panoptic by ensuring steady and predictable returns for options sellers, more stable options pricing, more predictable moneyness, and lower risks of liquidation or forced exercise. This allows for the creation of robust options markets from day one.
@@ -69,15 +64,14 @@ Panoptic harnesses Uniswap's liquidity to enhance the user experience for option
 No.
 </details>
 
-<details id="how-does-the-impending-release-of-uniswap-v4-affect-panoptic">
-<summary>How does the impending release of Uniswap V4 affect Panoptic?</summary>
-We are very excited for Uniswap's remarkable achievement! With Uniswap V4, Panoptic is set for an exciting journey:
+<details id="how-does-uniswap-v4-affect-panoptic">
+<summary>How does Uniswap v4 affect Panoptic?</summary>
 <br /><br />
-1️⃣ Panoptic will launch on both Uniswap V3 and V4 🔜
+1️⃣ Panoptic is live on both Uniswap v3 and v4
 <br /><br />
 2️⃣ Being backed by <a href="https://blog.uniswap.org/ventures">Uniswap Labs Ventures</a>, Uniswap V4 has always been part of our growth map 🗺️
 <br /><br />
-3️⃣ Uniswap V4 will supercharge Panoptic ⚡
+Read more details in our <a href="https://panoptic.xyz/blog/panoptic-launches-on-uniswap-v4">announcement</a>
 </details>
 
 
