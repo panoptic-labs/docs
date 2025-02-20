@@ -192,7 +192,7 @@ Yes, the capital of Panoptic Liquidity Providers (PLPs) can be locked under cert
 
 <details id="what-does-it-cost-to-sell-an-option">
 <summary>What does it cost to sell an option?</summary>
-Selling an option costs a commission fee and gas fee. The commission fee is 0.2% to 0.6% of the notional value of the option position, depending on the <a href="https://panoptic.xyz/docs/panoptic-protocol/commission#commission-rate-and-pool-utilization">pool utilization</a> at the time of sell. There is no commission fee to close the position.
+Selling an option costs a commission fee and gas fee. The commission fee is 0.2% of the notional value of the option position. There is no commission fee to close the position.
 </details>
 
 <details id="what-does-it-cost-to-buy-an-option">
