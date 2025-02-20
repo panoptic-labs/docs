@@ -197,12 +197,12 @@ Selling an option costs a commission fee and gas fee. The commission fee is 0.2%
 
 <details id="what-does-it-cost-to-buy-an-option">
 <summary>What does it cost to buy an option?</summary>
-Buying an option costs a commission fee, streamia (streaming premia), and gas fee. The commission fee is 0.2% to 0.6% of the notional value of the option position, depending on the <a href="https://panoptic.xyz/docs/panoptic-protocol/commission#commission-rate-and-pool-utilization">pool utilization</a> at the time of purchase. The streamia starts at 0, and accumulates while the underlying price remains in range. There is no commission fee to close the position.
+Buying an option costs a commission fee, streamia (streaming premia), and gas fee. The commission fee is 0.2% of the notional value of the option position. The streamia starts at 0, and accumulates while the underlying price remains in range. There is no commission fee to close the position.
 </details>
 
 <details id="what-is-the-commission-fee">
 <summary>What is the commission fee?</summary>
-This is the fee to mint an option. When an option seller or buyer opens their position, they pay a commission fee on the notional value of the position. The commission is paid to the PLPs. The commission fee percentage varies between 0.2% - 0.6% based on <a href="https://panoptic.xyz/docs/panoptic-protocol/commission#commission-rate-and-pool-utilization">pool utilization</a>.
+This is the fee to mint an option. When an option seller or buyer opens their position, they pay a commission fee on the notional value of the position. The commission is paid to the PLPs. The commission fee percentage is 0.2% of the notional value of the option position.
 </details>
 
 <details id="how-is-the-streamia-calculated">
