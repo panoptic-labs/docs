@@ -95,3 +95,5 @@ The platform has undergone comprehensive [third-party security audits](/docs/sec
 -   For [Uniswap LPs](https://panoptic.xyz/docs/getting-started/active-lp)
 -   For [token launchers](https://panoptic.xyz/docs/product/token-launchers/bootstrap-liquidity)
 -   For [traders](https://panoptic.xyz/docs/getting-started/options-traders)
+
+_Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](https://panoptic.xyz/docs/intro) and head to our [website](https://panoptic.xyz/)._
