@@ -124,7 +124,7 @@ In the example above, the LP’s bearish position on Panoptic netted $316.10 in 
 
 ----------
 
-## **Key Takeaways**
+## Key Takeaways
 
 1.  **LVP (Loss vs. Panoptic) is Real**
 	-   Empirical data shows an LVP as high as 67% in certain ranges, meaning Uniswap-only positions can under-earn by a wide margin compared to Panoptic.
@@ -138,7 +138,7 @@ In the example above, the LP’s bearish position on Panoptic netted $316.10 in 
 
 ----------
 
-## **Conclusion**
+## Conclusion
 
 If you’ve ever wondered how to amplify your Uniswap LP returns without constantly rebalancing or trying to time the market, Panoptic offers a compelling solution. By monetizing volatility via on-chain options, your liquidity is more actively employed, and you collect both swap fees and option premiums.
 
