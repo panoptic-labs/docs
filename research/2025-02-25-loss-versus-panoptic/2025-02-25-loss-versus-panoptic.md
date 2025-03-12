@@ -71,8 +71,7 @@ For those interested in a deeper dive into the data, feel free to explore our [o
 ### Real-World Example: Borrowed Call Option
 
 ![](./03.png)
-
-In a [recent WETH–USDC position](https://app.panoptic.xyz/positions/ethereum/0x2802fb20205003c8ad599c3a0ff?view_as=0xb15617cc71ece317e24360fc3b5643c6f5f51733), an LP would earn ~$61 in fees when providing directly on Uniswap v3. However, the identical position deployed through Panoptic captured ~$186. That’s a **3.1×** increase—translating to an LVP of 67% for the vanilla Uniswap strategy. Here’s the earnings broken down in terms of both tokens:
+In a [recent WETH–USDC position](https://app.panoptic.xyz/positions/ethereum/0x2802fb20205003c8ad599c3a0ff?view_as=0xb15617cc71ece317e24360fc3b5643c6f5f51733&block_number=21885594), an LP would earn ~$61 in fees when providing directly on Uniswap v3. However, the identical position deployed through Panoptic captured ~$186. That’s a **3.1×** increase—translating to an LVP of 67% for the vanilla Uniswap strategy. Here’s the earnings broken down in terms of both tokens:
 
 -   🦄 LP directly on Uniswap: $26.71 USDC & 0.013 ETH ($61)
 -   🟣 LP on Uniswap through Panoptic: $80.66 USDC & 0.04 ETH (~$186)
@@ -82,7 +81,7 @@ In a [recent WETH–USDC position](https://app.panoptic.xyz/positions/ethereum/0
 
 (WETH-USDC 0.3% LP, price range from $2,910 to $3,700)
 
-The 3.1x gains came from this [option buyer](https://app.panoptic.xyz/positions/ethereum/0x2802fb2080302802fb2030305002fb20603003c8ad599c3a0ff?view_as=0xfa1dfec1e8ed966c61c45797a3d58666cf2ae708&block_number=21808997) who borrowed the LP position as part of a more complicated trade to create a [covered call](//research/naked-covered-call-defi-options) position, which involved [buying a synthetic perp](//research/introduction-synthetic-perps) while selling a call option.
+The 3.1x gains came from this [option buyer](https://app.panoptic.xyz/positions/ethereum/0x2802fb2080302802fb2030305002fb20603003c8ad599c3a0ff?view_as=0xfa1dfec1e8ed966c61c45797a3d58666cf2ae708&block_number=21808997) who borrowed the LP position as part of a more complicated trade to create a [covered call](/research/naked-covered-call-defi-options) position, which involved [buying a synthetic perp](/research/introduction-synthetic-perps) while selling a call option.
 
 ![](./05.png)
 
