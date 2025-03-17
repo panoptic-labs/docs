@@ -39,7 +39,7 @@ They will receive [ERC-20](https://ethereum.org/en/developers/docs/standards/tok
 The role of PLPs in Panoptic differs somewhat from that of LPs in Uniswap. PLPs do *not* deploy liquidity within a specific range of a Uniswap pool.
 Rather, PLPs generate yield by lending tokens that can be deployed to a Uniswap pool by option sellers for a fixed commission fee.
 
-When a PLP removes their liquidity from the option pool, Panoptic will burn their collateral tokens, and the PLP will receive their share of the collateral pool plus collected fees.
+When a PLP withdraws their liquidity from Panoptic, Panoptic will burn their collateral tokens and their funds are returned in the original token deposited, along with any accumulated commission fees, minus the applicable deposit fee (20 bps). For example, if a PLP deposits 1 ETH and earns an additional 0.1 ETH in comission fees, they can withdraw a total of 1.1 ETH, less the deposit fee. This withdrawal process ensures the PLP receives their original contribution.
 </details>
 
 
