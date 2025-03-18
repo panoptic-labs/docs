@@ -24,6 +24,12 @@ const Nav = ({purpleMode = false}) => {
 
   return (
     <nav className="header__nav">
+      <div onClick={() => handleClick("https://app.panoptic.xyz/")} className={clsx("nav__link", {"white-text": purpleMode})}>
+        Trade
+      </div>
+      <div onClick={() => handleClick("https://grho.panoptic.xyz")} className={clsx("nav__link", {"white-text": purpleMode})}>
+        Earn
+      </div>
       <div onClick={() => handleClick("/docs/intro")} className={clsx("nav__link", {"white-text": purpleMode})}>
         Docs
       </div>
