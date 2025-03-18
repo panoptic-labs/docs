@@ -48,7 +48,7 @@ By lending your tokens through Panoptic, you earn two streams of [income](/docs/
 
 ![](./bootstrap-liquidity/06.png)
 
-All earnings are automatically reinvested, maximizing your yield. Note that you’ll be able to better track your passive LP earnings with the upcoming [gRHO](/blog/panoptic-awarded-uniswap-foundation-grant) interface as well as see APYs for your pool. In the Panoptic trading [app](https://app.panoptic.xyz) (coming soon), you will be able to monitor the pool utilization for each token.
+All earnings are automatically reinvested, maximizing your yield. Note that you’ll be able to better track your passive LP earnings with the upcoming [gRHO](/blog/panoptic-awarded-uniswap-foundation-grant) interface as well as see APYs for your pool. In the Panoptic trading [app](https://app.panoptic.xyz), you will be able to monitor the pool utilization for each token.
 
 ![](./bootstrap-liquidity/07.png)
 
@@ -67,7 +67,7 @@ By providing liquidity, your deposited tokens serve as collateral for options tr
 -   **Community Engagement:** By allowing your community to earn in a simple way, you create stronger bonds and incentivize long-term participation.
 -   **Active LP Opportunities:** The option to manage your own liquidity on Uniswap and [earn up to 3x more fees](/blog/uniswap-lps-unlock-3x-more-fees-with-panoptic) with Panoptic
     
-With Panoptic, bootstrapping liquidity is easier than ever. Get started by visiting our [app](https://app.panoptic.xyz) (coming soon)!
+With Panoptic, bootstrapping liquidity is easier than ever. Get started by visiting our [app](https://app.panoptic.xyz)!
 
 *Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](https://panoptic.xyz/docs/intro) and head to our [website](https://panoptic.xyz/).*
 
