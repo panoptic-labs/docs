@@ -22,7 +22,7 @@ const FAQPage = () => {
             <Accordion.Item className="accordion-item" value="item-2">
             <AccordionTrigger>How can I use Panoptic?</AccordionTrigger>
               <AccordionContent>
-                You can access Panoptic by connecting your wallet to the Panoptic App, which will be deployed on app.panoptic.xyz (COMING SOON...)
+                You can access Panoptic by connecting your wallet to the Panoptic App (app.panoptic.xyz).
               </AccordionContent>
             </Accordion.Item>
             <Accordion.Item className="accordion-item" value="item-3">
@@ -49,9 +49,9 @@ const FAQPage = () => {
               </AccordionContent>
             </Accordion.Item>
             <Accordion.Item className="accordion-item" value="item-5">
-              <AccordionTrigger>Where will Panoptic launch?</AccordionTrigger>
+              <AccordionTrigger>What networks can I access Panoptic on?</AccordionTrigger>
               <AccordionContent>
-                Panoptic will launch on Ethereum mainnet and all EVM-compatible layer 2's where the Uniswap v3 smart contracts have been deployed.
+                Panoptic is live on Ethereum mainnet and Unichain, and will launch on EVM-compatible layer 2's where Uniswap v3 and v4 smart contracts have been deployed.
               </AccordionContent>
             </Accordion.Item>
           </Accordion.Root>
