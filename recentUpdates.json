@@ -1,42 +1,42 @@
 [
   {
-    "title": "Bringing Passive Liquidity to Uniswap",
-    "date": "2024-10-08",
-    "image": "/img/banners/bringing-passive-liquidity-to-uniswap.png",
-    "link": "https://panoptic.xyz/blog/bringing-passive-liquidity-to-uniswap",
-    "description": "Panoptic simplifies liquidity provision on Uniswap V3 by allowing users to passively earn yield without active management.",
+    "title": "Make Uniswap Great Again",
+    "date": "2025-03-17",
+    "image": "/img/banners/muga-banner.png",
+    "link": "https://panoptic.xyz/blog/make-uniswap-great-again",
+    "description": "Panoptic enhances Uniswap liquidity provision by integrating options strategies, enabling LPs to earn up to 3x more!",
     "id": 1
   },
   {
-    "title": "Panoptic Insights: October Newsletter",
-    "date": "2024-10-02",
-    "image": "/img/banners/newsletter-banner.webp",
-    "link": "https://panoptic.xyz/blog/panoptic-newsletter-october-2024",
-    "description": "Explore Panoptic's latest insights on DeFi options, including recent implied volatility on Uniswap V3, uncertainty in the options markets before U.S. elections, and upcoming platform updates in our October newsletter.",
+    "title": "gRHO, Unichain & ETH Denver Highlights: March Newsletter",
+    "date": "2025-03-11",
+    "image": "/img/banners/mar-25-newsletter.png",
+    "link": "https://panoptic.xyz/blog/panoptic-newsletter-march-2025",
+    "description": "The March Panoptic Newsletter covers our Uniswap v4 launch with perpetual options for active LPs and gRHO for passive LPs, Unichain integration, recent market insights, new incentive programs, our ETH Denver recap, and more!",
     "id": 2
   },
   {
-    "title": "Panoptic Solves LVR",
-    "date": "2024-09-25",
-    "image": "/img/research/LVR-banner.png",
-    "link": "https://panoptic.xyz/research/panoptic-solves-lvr",
-    "description": "Panoptic addresses the issue of Loss-Versus-Rebalancing (LVR) for Uniswap LPs by boosting LP returns through LP token lending markets, passive liquidity provision, and the ability to short LP tokens, turning LVR from a risk into a strategic opportunity.",
+    "title": "Panoptic at ETH Denver 2025",
+    "date": "2025-03-10",
+    "image": "/img/banners/panoptic-at-eth-denver-2025.jpg",
+    "link": "https://panoptic.xyz/blog/panoptic-defi-options-at-eth-denver-2025",
+    "description": "At ETH Denver 2025, Panoptic showcased on-chain options through an interactive booth collaboration with Unichain and hosted the exclusive Panopticon side event featuring Tom Sosnoff’s keynote and a lively DeFi derivatives panel.",
     "id": 3
   },
   {
-    "title": "Panoptic Insights: September Newsletter",
-    "date": "2024-09-05",
-    "image": "/img/banners/newsletter-banner.webp",
-    "link": "https://panoptic.xyz/blog/panoptic-newsletter-september-2024",
-    "description": "Explore Panoptic's latest insights on DeFi options, including Uniswap V3's impact on implied volatility, bullish sentiment heading into Q4, and upcoming platform updates in our September newsletter.",
+    "title": "Loss Versus Panoptic: Why LPs Are Leaving Money on the Table—and How to Get It Back",
+    "date": "2025-02-25",
+    "image": "/img/banners/lvp-banner.png",
+    "link": "https://panoptic.xyz/research/loss-versus-panoptic-why-lps-are-losing",
+    "description": "LP positions on Uniswap may be losing up to 67% in fees compared to the same positions in Panoptic, the on-chain options layer on Uniswap.",
     "id": 4
   },
   {
-    "title": "From CEX to DEX: A New Formulation For Implied Volatility - Part 2",
-    "date": "2024-08-21",
-    "image": "/img/research/new-iv-formula-banner.png",
-    "link": "https://panoptic.xyz/research/new-formulation-implied-volatility",
-    "description": "Explore a novel approach to calculating implied volatility (IV) in DeFi by leveraging LP positions in Uniswap v3, offering a new formula that aligns with the LPDfi ecosystem.",
+    "title": "gRHO Launches on Uniswap v4: Introducing an Easier Way to LP",
+    "date": "2025-02-24",
+    "image": "/img/banners/grho-on-uniswap-v4.jpg",
+    "link": "https://panoptic.xyz/blog/grho-launches-on-uniswap-v4",
+    "description": "Panoptic’s gRHO on Uniswap v4 eliminates impermanent loss with single-sided deposits and auto-compounding yields, simplifying passive DeFi LPing for everyone.",
     "id": 5
   }
 ]
