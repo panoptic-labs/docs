@@ -521,6 +521,15 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#optionburn_filter">OptionBurn_filter</a></td>
 <td></td>
 </tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated.panopticversion">panopticVersion</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td>
+
+ Version of Panoptic contract that emitted this event 
+
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -922,6 +931,15 @@ See some example queries [here](./queries).
 </td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong id="collateral.panopticversion">panopticVersion</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td>
+
+ Can be 1, 1.1, or 2 
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong id="collateral.token">token</strong></td>
 <td valign="top"><a href="#token">Token</a>!</td>
 <td>
@@ -1230,6 +1248,15 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
 <td></td>
 </tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit.panopticversion">panopticVersion</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td>
+
+ Version of Panoptic contract that emitted this event 
+
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -1370,6 +1397,15 @@ See some example queries [here](./queries).
 <td colspan="2" valign="top"><strong id="collateralwithdraw.ethpriceusdatwithdraw">ethPriceUSDAtWithdraw</strong></td>
 <td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
 <td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw.panopticversion">panopticVersion</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td>
+
+ Version of Panoptic contract that emitted this event 
+
+</td>
 </tr>
 </tbody>
 </table>
@@ -1709,6 +1745,15 @@ See some example queries [here](./queries).
 <td>
 
  OptionBurn event for the exercised position 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise.panopticversion">panopticVersion</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td>
+
+ Version of Panoptic contract that emitted this event 
 
 </td>
 </tr>
@@ -2292,6 +2337,15 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 
 </td>
 </tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn.panopticversion">panopticVersion</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td>
+
+ Version of Panoptic contract that emitted this event 
+
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -2517,6 +2571,15 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 
 </td>
 </tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint.panopticversion">panopticVersion</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td>
+
+ Version of Panoptic contract that emitted this event 
+
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -2739,6 +2802,15 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 
 </td>
 </tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticfactory.panopticversion">panopticVersion</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td>
+
+ Can be 1, or 1.1 (or maybe 2 in the future) 
+
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -2825,6 +2897,24 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td>
 
  Underlying pool 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool.panopticversion">panopticVersion</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td>
+
+ Can be 1, 1.1, or 2 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool.oraclecontract">oracleContract</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td>
+
+ The external oracle contract used by the newly deployed Panoptic Pool (will only be non-0 for V1.1 pools) 
 
 </td>
 </tr>
@@ -3560,7 +3650,25 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
- Pool address 
+ Pool address for V3 pool, or for V4 pools, abi encoded hash of the pool key struct for the new pool. 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="pool.isv4pool">isV4Pool</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td>
+
+ If this is a V4Pool, will be true. If it's a V3Pool, will be false 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="pool.hooks">hooks</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td>
+
+ Hook contract address 
 
 </td>
 </tr>
@@ -3811,6 +3919,40 @@ See TokenId entity for more details, or the source here: https://github.com/pano
  Associated PanopticPool. Null if not created yet 
 
 </td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="pool.panopticpools">panopticPools</strong></td>
+<td valign="top">[<a href="#panopticpool">PanopticPool</a>!]!</td>
+<td>
+
+ Associated PanopticPools. For V3 pools, will contain at most one pool. For V4 pools, can contain multiple pools. 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#panopticpool_orderby">PanopticPool_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#panopticpool_filter">PanopticPool_filter</a></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -4276,6 +4418,15 @@ PanopticPool mint is within (from event.address)
 
 </td>
 </tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled.panopticversion">panopticVersion</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td>
+
+ Version of Panoptic contract that emitted this event 
+
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -4609,6 +4760,15 @@ The ERC-1155 TokenId for this position. See the TokenId.sol for more information
 
 </td>
 </tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt.panopticversion">panopticVersion</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td>
+
+ Version of Panoptic contract that emitted this event 
+
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -4705,6 +4865,15 @@ The ERC-1155 TokenId for this position. See the TokenId.sol for more information
 <td>
 
  TokenId of the minted position 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted.panopticversion">panopticVersion</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td>
+
+ Version of Panoptic contract that emitted this event 
 
 </td>
 </tr>
@@ -7435,6 +7604,46 @@ Filter for the block changed event.
 <tr>
 <td colspan="2" valign="top"><strong id="accountliquidated_filter.optionburns_">optionBurns_</strong></td>
 <td valign="top"><a href="#optionburn_filter">OptionBurn_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated_filter.panopticversion">panopticVersion</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated_filter.panopticversion_not">panopticVersion_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated_filter.panopticversion_gt">panopticVersion_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated_filter.panopticversion_lt">panopticVersion_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated_filter.panopticversion_gte">panopticVersion_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated_filter.panopticversion_lte">panopticVersion_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated_filter.panopticversion_in">panopticVersion_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated_filter.panopticversion_not_in">panopticVersion_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
 <td></td>
 </tr>
 <tr>
@@ -11384,6 +11593,46 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit_filter.panopticversion">panopticVersion</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit_filter.panopticversion_not">panopticVersion_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit_filter.panopticversion_gt">panopticVersion_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit_filter.panopticversion_lt">panopticVersion_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit_filter.panopticversion_gte">panopticVersion_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit_filter.panopticversion_lte">panopticVersion_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit_filter.panopticversion_in">panopticVersion_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit_filter.panopticversion_not_in">panopticVersion_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong id="collateraldeposit_filter._change_block">_change_block</strong></td>
 <td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
 <td>
@@ -12702,6 +12951,46 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.panopticversion">panopticVersion</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.panopticversion_not">panopticVersion_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.panopticversion_gt">panopticVersion_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.panopticversion_lt">panopticVersion_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.panopticversion_gte">panopticVersion_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.panopticversion_lte">panopticVersion_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.panopticversion_in">panopticVersion_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.panopticversion_not_in">panopticVersion_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong id="collateralwithdraw_filter._change_block">_change_block</strong></td>
 <td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
 <td>
@@ -12772,6 +13061,46 @@ Filter for the block changed event.
 <tr>
 <td colspan="2" valign="top"><strong id="collateral_filter.id_not_in">id_not_in</strong></td>
 <td valign="top">[<a href="#id">ID</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.panopticversion">panopticVersion</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.panopticversion_not">panopticVersion_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.panopticversion_gt">panopticVersion_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.panopticversion_lt">panopticVersion_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.panopticversion_gte">panopticVersion_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.panopticversion_lte">panopticVersion_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.panopticversion_in">panopticVersion_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.panopticversion_not_in">panopticVersion_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
 <td></td>
 </tr>
 <tr>
@@ -16424,6 +16753,46 @@ Filter for the block changed event.
 <tr>
 <td colspan="2" valign="top"><strong id="forcedexercise_filter.optionburn_">optionBurn_</strong></td>
 <td valign="top"><a href="#optionburn_filter">OptionBurn_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise_filter.panopticversion">panopticVersion</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise_filter.panopticversion_not">panopticVersion_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise_filter.panopticversion_gt">panopticVersion_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise_filter.panopticversion_lt">panopticVersion_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise_filter.panopticversion_gte">panopticVersion_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise_filter.panopticversion_lte">panopticVersion_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise_filter.panopticversion_in">panopticVersion_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise_filter.panopticversion_not_in">panopticVersion_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
 <td></td>
 </tr>
 <tr>
@@ -20599,6 +20968,46 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.panopticversion">panopticVersion</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.panopticversion_not">panopticVersion_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.panopticversion_gt">panopticVersion_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.panopticversion_lt">panopticVersion_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.panopticversion_gte">panopticVersion_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.panopticversion_lte">panopticVersion_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.panopticversion_in">panopticVersion_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.panopticversion_not_in">panopticVersion_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong id="optionburn_filter._change_block">_change_block</strong></td>
 <td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
 <td>
@@ -22237,6 +22646,46 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.panopticversion">panopticVersion</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.panopticversion_not">panopticVersion_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.panopticversion_gt">panopticVersion_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.panopticversion_lt">panopticVersion_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.panopticversion_gte">panopticVersion_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.panopticversion_lte">panopticVersion_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.panopticversion_in">panopticVersion_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.panopticversion_not_in">panopticVersion_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong id="optionmint_filter._change_block">_change_block</strong></td>
 <td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
 <td>
@@ -23695,6 +24144,46 @@ Filter for the block changed event.
 <tr>
 <td colspan="2" valign="top"><strong id="panopticfactory_filter.owner_not_in">owner_not_in</strong></td>
 <td valign="top">[<a href="#id">ID</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticfactory_filter.panopticversion">panopticVersion</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticfactory_filter.panopticversion_not">panopticVersion_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticfactory_filter.panopticversion_gt">panopticVersion_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticfactory_filter.panopticversion_lt">panopticVersion_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticfactory_filter.panopticversion_gte">panopticVersion_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticfactory_filter.panopticversion_lte">panopticVersion_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticfactory_filter.panopticversion_in">panopticVersion_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticfactory_filter.panopticversion_not_in">panopticVersion_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
 <td></td>
 </tr>
 <tr>
@@ -26172,6 +26661,96 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.panopticversion">panopticVersion</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.panopticversion_not">panopticVersion_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.panopticversion_gt">panopticVersion_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.panopticversion_lt">panopticVersion_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.panopticversion_gte">panopticVersion_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.panopticversion_lte">panopticVersion_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.panopticversion_in">panopticVersion_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.panopticversion_not_in">panopticVersion_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.oraclecontract">oracleContract</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.oraclecontract_not">oracleContract_not</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.oraclecontract_gt">oracleContract_gt</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.oraclecontract_lt">oracleContract_lt</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.oraclecontract_gte">oracleContract_gte</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.oraclecontract_lte">oracleContract_lte</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.oraclecontract_in">oracleContract_in</strong></td>
+<td valign="top">[<a href="#bytes">Bytes</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.oraclecontract_not_in">oracleContract_not_in</strong></td>
+<td valign="top">[<a href="#bytes">Bytes</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.oraclecontract_contains">oracleContract_contains</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.oraclecontract_not_contains">oracleContract_not_contains</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong id="panopticpool_filter.mintvolume0">mintVolume0</strong></td>
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td></td>
@@ -28616,6 +29195,76 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong id="pool_filter.isv4pool">isV4Pool</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="pool_filter.isv4pool_not">isV4Pool_not</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="pool_filter.isv4pool_in">isV4Pool_in</strong></td>
+<td valign="top">[<a href="#boolean">Boolean</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="pool_filter.isv4pool_not_in">isV4Pool_not_in</strong></td>
+<td valign="top">[<a href="#boolean">Boolean</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="pool_filter.hooks">hooks</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="pool_filter.hooks_not">hooks_not</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="pool_filter.hooks_gt">hooks_gt</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="pool_filter.hooks_lt">hooks_lt</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="pool_filter.hooks_gte">hooks_gte</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="pool_filter.hooks_lte">hooks_lte</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="pool_filter.hooks_in">hooks_in</strong></td>
+<td valign="top">[<a href="#bytes">Bytes</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="pool_filter.hooks_not_in">hooks_not_in</strong></td>
+<td valign="top">[<a href="#bytes">Bytes</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="pool_filter.hooks_contains">hooks_contains</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="pool_filter.hooks_not_contains">hooks_not_contains</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong id="pool_filter.poolid">poolId</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
@@ -29677,6 +30326,11 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="pool_filter.panopticpool_">panopticPool_</strong></td>
+<td valign="top"><a href="#panopticpool_filter">PanopticPool_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="pool_filter.panopticpools_">panopticPools_</strong></td>
 <td valign="top"><a href="#panopticpool_filter">PanopticPool_filter</a></td>
 <td></td>
 </tr>
@@ -31011,6 +31665,46 @@ Filter for the block changed event.
 <tr>
 <td colspan="2" valign="top"><strong id="premiumsettled_filter.panopticpool_">panopticPool_</strong></td>
 <td valign="top"><a href="#panopticpool_filter">PanopticPool_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled_filter.panopticversion">panopticVersion</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled_filter.panopticversion_not">panopticVersion_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled_filter.panopticversion_gt">panopticVersion_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled_filter.panopticversion_lt">panopticVersion_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled_filter.panopticversion_gte">panopticVersion_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled_filter.panopticversion_lte">panopticVersion_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled_filter.panopticversion_in">panopticVersion_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled_filter.panopticversion_not_in">panopticVersion_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
 <td></td>
 </tr>
 <tr>
@@ -32788,6 +33482,46 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.panopticversion">panopticVersion</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.panopticversion_not">panopticVersion_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.panopticversion_gt">panopticVersion_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.panopticversion_lt">panopticVersion_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.panopticversion_gte">panopticVersion_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.panopticversion_lte">panopticVersion_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.panopticversion_in">panopticVersion_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.panopticversion_not_in">panopticVersion_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter._change_block">_change_block</strong></td>
 <td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
 <td>
@@ -33733,6 +34467,46 @@ Filter for the block changed event.
 <tr>
 <td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.tokenid_">tokenId_</strong></td>
 <td valign="top"><a href="#tokenid_filter">TokenId_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.panopticversion">panopticVersion</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.panopticversion_not">panopticVersion_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.panopticversion_gt">panopticVersion_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.panopticversion_lt">panopticVersion_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.panopticversion_gte">panopticVersion_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.panopticversion_lte">panopticVersion_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.panopticversion_in">panopticVersion_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.panopticversion_not_in">panopticVersion_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
 <td></td>
 </tr>
 <tr>
@@ -34947,6 +35721,14 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>underlyingPool__isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>underlyingPool__hooks</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>underlyingPool__poolId</strong></td>
 <td></td>
 </tr>
@@ -35180,6 +35962,14 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>pool__isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__hooks</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>pool__poolId</strong></td>
 <td></td>
 </tr>
@@ -35300,6 +36090,14 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>panopticPool__panopticVersion</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticPool__oracleContract</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>panopticPool__mintVolume0</strong></td>
 <td></td>
 </tr>
@@ -35401,6 +36199,10 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>optionBurns</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticVersion</strong></td>
 <td></td>
 </tr>
 </tbody>
@@ -35529,6 +36331,14 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>pool__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__hooks</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -35753,6 +36563,14 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>pool__isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__hooks</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>pool__poolId</strong></td>
 <td></td>
 </tr>
@@ -35834,6 +36652,14 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>panopticPool__feeTier</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticPool__panopticVersion</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticPool__oracleContract</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -35990,6 +36816,10 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>collateral__panopticVersion</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>collateral__totalShares</strong></td>
 <td></td>
 </tr>
@@ -36088,6 +36918,14 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>pool__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__hooks</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -36191,6 +37029,10 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>collateral__panopticVersion</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>collateral__totalShares</strong></td>
 <td></td>
 </tr>
@@ -36224,6 +37066,10 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>ethPriceUSDAtDeposit</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticVersion</strong></td>
 <td></td>
 </tr>
 </tbody>
@@ -36285,6 +37131,14 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>pool__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__hooks</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -36396,6 +37250,10 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>collateral__panopticVersion</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>collateral__totalShares</strong></td>
 <td></td>
 </tr>
@@ -36431,6 +37289,10 @@ Filter for the block changed event.
 <td valign="top"><strong>ethPriceUSDAtWithdraw</strong></td>
 <td></td>
 </tr>
+<tr>
+<td valign="top"><strong>panopticVersion</strong></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
@@ -36446,6 +37308,10 @@ Filter for the block changed event.
 <tbody>
 <tr>
 <td valign="top"><strong>id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticVersion</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -36514,6 +37380,14 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>panopticPool__feeTier</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticPool__panopticVersion</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticPool__oracleContract</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -36683,6 +37557,14 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>pool__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__hooks</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -36972,6 +37854,14 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>pool__isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__hooks</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>pool__poolId</strong></td>
 <td></td>
 </tr>
@@ -37130,6 +38020,14 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>pool__isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__hooks</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>pool__poolId</strong></td>
 <td></td>
 </tr>
@@ -37251,6 +38149,14 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>panopticPool__feeTier</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticPool__panopticVersion</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticPool__oracleContract</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -37429,6 +38335,14 @@ Filter for the block changed event.
 <td valign="top"><strong>optionBurn__totalAssets1</strong></td>
 <td></td>
 </tr>
+<tr>
+<td valign="top"><strong>optionBurn__panopticVersion</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticVersion</strong></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
@@ -37581,6 +38495,14 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>pool__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__hooks</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -37798,6 +38720,14 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>pool__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__hooks</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -38030,6 +38960,14 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>pool__isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__hooks</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>pool__poolId</strong></td>
 <td></td>
 </tr>
@@ -38143,6 +39081,14 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>panopticPool__feeTier</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticPool__panopticVersion</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticPool__oracleContract</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -38370,6 +39316,10 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>txnOpened__panopticVersion</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>accountBalance</strong></td>
 <td></td>
 </tr>
@@ -38494,6 +39444,10 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>forcedExercise__panopticVersion</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>accountLiquidated</strong></td>
 <td></td>
 </tr>
@@ -38557,6 +39511,14 @@ Filter for the block changed event.
 <td valign="top"><strong>accountLiquidated__tickAt</strong></td>
 <td></td>
 </tr>
+<tr>
+<td valign="top"><strong>accountLiquidated__panopticVersion</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticVersion</strong></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
@@ -38616,6 +39578,14 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>pool__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__hooks</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -38811,6 +39781,14 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>panopticPool__panopticVersion</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticPool__oracleContract</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>panopticPool__mintVolume0</strong></td>
 <td></td>
 </tr>
@@ -38934,6 +39912,10 @@ Filter for the block changed event.
 <td valign="top"><strong>tickAt</strong></td>
 <td></td>
 </tr>
+<tr>
+<td valign="top"><strong>panopticVersion</strong></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
@@ -38993,6 +39975,14 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>pool__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__hooks</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -39109,6 +40099,14 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>panopticPool__feeTier</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticPool__panopticVersion</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticPool__oracleContract</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -39275,6 +40273,10 @@ Defines the order direction, either ascending or descending
 <td valign="top"><strong>owner</strong></td>
 <td></td>
 </tr>
+<tr>
+<td valign="top"><strong>panopticVersion</strong></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
@@ -39306,6 +40308,14 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>panopticPool__feeTier</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticPool__panopticVersion</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticPool__oracleContract</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -39425,6 +40435,10 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>collateral0__panopticVersion</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>collateral0__totalShares</strong></td>
 <td></td>
 </tr>
@@ -39462,6 +40476,10 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>collateral1__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral1__panopticVersion</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -39551,6 +40569,14 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>panopticPool__feeTier</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticPool__panopticVersion</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticPool__oracleContract</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -39827,6 +40853,10 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>collateral0__panopticVersion</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>collateral0__totalShares</strong></td>
 <td></td>
 </tr>
@@ -39859,6 +40889,10 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>collateral1__panopticVersion</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>collateral1__totalShares</strong></td>
 <td></td>
 </tr>
@@ -39888,6 +40922,14 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>underlyingPool__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>underlyingPool__isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>underlyingPool__hooks</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -39956,6 +40998,14 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>underlyingPool__maxEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticVersion</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>oracleContract</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -40093,6 +41143,14 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>pool__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__hooks</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -40241,6 +41299,14 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>pool__isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__hooks</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>pool__poolId</strong></td>
 <td></td>
 </tr>
@@ -40371,6 +41437,14 @@ Defines the order direction, either ascending or descending
 <tbody>
 <tr>
 <td valign="top"><strong>id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>hooks</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -40530,6 +41604,14 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>panopticPool__panopticVersion</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticPool__oracleContract</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>panopticPool__mintVolume0</strong></td>
 <td></td>
 </tr>
@@ -40629,6 +41711,10 @@ Defines the order direction, either ascending or descending
 <td valign="top"><strong>panopticPool__createdBlockNumber</strong></td>
 <td></td>
 </tr>
+<tr>
+<td valign="top"><strong>panopticPools</strong></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
@@ -40688,6 +41774,14 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>pool__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__hooks</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -40831,6 +41925,14 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>panopticPool__panopticVersion</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>panopticPool__oracleContract</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>panopticPool__mintVolume0</strong></td>
 <td></td>
 </tr>
@@ -40930,6 +42032,10 @@ Defines the order direction, either ascending or descending
 <td valign="top"><strong>panopticPool__createdBlockNumber</strong></td>
 <td></td>
 </tr>
+<tr>
+<td valign="top"><strong>panopticVersion</strong></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
@@ -40957,6 +42063,14 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>pool__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__hooks</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -41146,6 +42260,14 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>pool__isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__hooks</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>pool__poolId</strong></td>
 <td></td>
 </tr>
@@ -41241,6 +42363,10 @@ Defines the order direction, either ascending or descending
 <td valign="top"><strong>tokenId__tokenCount</strong></td>
 <td></td>
 </tr>
+<tr>
+<td valign="top"><strong>panopticVersion</strong></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
@@ -41300,6 +42426,14 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>pool__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__hooks</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -41398,6 +42532,10 @@ Defines the order direction, either ascending or descending
 <td valign="top"><strong>tokenId__tokenCount</strong></td>
 <td></td>
 </tr>
+<tr>
+<td valign="top"><strong>panopticVersion</strong></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
@@ -41457,6 +42595,14 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>pool__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__hooks</strong></td>
 <td></td>
 </tr>
 <tr>
