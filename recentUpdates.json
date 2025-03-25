@@ -1,11 +1,19 @@
 [
   {
+    "title": "The Magnificent Seven Gamma Traps of Crypto",
+    "date": "2025-03-25",
+    "image": "/img/research/gamma-traps-banner.png",
+    "link": "https://panoptic.xyz/research/crypto-gamma-traps",
+    "description": "Explore how the seven inherent gamma traps in crypto markets fuel self-perpetuating price feedback loops, and learn how on-chain options strategies can help traders harness these powerful volatility swings.",
+    "id": 1
+  },
+  {
     "title": "Make Uniswap Great Again",
     "date": "2025-03-17",
     "image": "/img/banners/muga-banner.png",
     "link": "https://panoptic.xyz/blog/make-uniswap-great-again",
     "description": "Panoptic enhances Uniswap liquidity provision by integrating options strategies, enabling LPs to earn up to 3x more!",
-    "id": 1
+    "id": 2
   },
   {
     "title": "gRHO, Unichain & ETH Denver Highlights: March Newsletter",
@@ -13,7 +21,7 @@
     "image": "/img/banners/mar-25-newsletter.png",
     "link": "https://panoptic.xyz/blog/panoptic-newsletter-march-2025",
     "description": "The March Panoptic Newsletter covers our Uniswap v4 launch with perpetual options for active LPs and gRHO for passive LPs, Unichain integration, recent market insights, new incentive programs, our ETH Denver recap, and more!",
-    "id": 2
+    "id": 3
   },
   {
     "title": "Panoptic at ETH Denver 2025",
@@ -21,7 +29,7 @@
     "image": "/img/banners/panoptic-at-eth-denver-2025.jpg",
     "link": "https://panoptic.xyz/blog/panoptic-defi-options-at-eth-denver-2025",
     "description": "At ETH Denver 2025, Panoptic showcased on-chain options through an interactive booth collaboration with Unichain and hosted the exclusive Panopticon side event featuring Tom Sosnoff’s keynote and a lively DeFi derivatives panel.",
-    "id": 3
+    "id": 4
   },
   {
     "title": "Loss Versus Panoptic: Why LPs Are Leaving Money on the Table—and How to Get It Back",
@@ -29,14 +37,6 @@
     "image": "/img/banners/lvp-banner.png",
     "link": "https://panoptic.xyz/research/loss-versus-panoptic-why-lps-are-losing",
     "description": "LP positions on Uniswap may be losing up to 67% in fees compared to the same positions in Panoptic, the on-chain options layer on Uniswap.",
-    "id": 4
-  },
-  {
-    "title": "gRHO Launches on Uniswap v4: Introducing an Easier Way to LP",
-    "date": "2025-02-24",
-    "image": "/img/banners/grho-on-uniswap-v4.jpg",
-    "link": "https://panoptic.xyz/blog/grho-launches-on-uniswap-v4",
-    "description": "Panoptic’s gRHO on Uniswap v4 eliminates impermanent loss with single-sided deposits and auto-compounding yields, simplifying passive DeFi LPing for everyone.",
     "id": 5
   }
 ]
