@@ -44,7 +44,7 @@ function generatePosts(files, directory, type) {
         const fullFilePath = path.join(filePath, mdFile);
         const title = getTitleFromFrontMatter(fullFilePath);
         const date = getDateFromFileName(mdFile);
-        const image = getImageFromFrontMatter(fullFilePath);
+        const image = 'https://panoptic.xyz' + getImageFromFrontMatter(fullFilePath);
         const link = getLinkFromFrontMatter(fullFilePath, type);
         const description = getDescriptionFromFrontMatter(fullFilePath);
 
