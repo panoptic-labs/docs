@@ -5,7 +5,7 @@ const lightCodeTheme = require("prism-react-renderer/themes/palenight");
 const darkCodeTheme = require("prism-react-renderer/themes/shadesOfPurple");
 
 const math = require("remark-math");
-const katex = require("rehype-katex");
+// const katex = require("rehype-katex");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -216,7 +216,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           remarkPlugins: [math],
-          rehypePlugins: [katex],
+          // rehypePlugins: [katex],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
         },
@@ -242,7 +242,7 @@ const config = {
             },
           },
           remarkPlugins: [math],
-          rehypePlugins: [katex],
+          // rehypePlugins: [katex],
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -263,7 +263,7 @@ const config = {
   ],
 
   plugins: [
-    "@docusaurus-terminology/parser",
+    // "@docusaurus-terminology/parser",
 
     [
       '@docusaurus/plugin-content-blog',
@@ -302,7 +302,7 @@ const config = {
           },
         },
         remarkPlugins: [math],
-        rehypePlugins: [katex],
+        // rehypePlugins: [katex],
       },
     ],
     async function myPlugin(context, options) {
@@ -535,4 +535,27 @@ const config = {
   ],
 };
 
-module.exports = config;
+module.exports = async () => {
+  const katex = (await import("rehype-katex")).default;
+
+  return {
+    ...config,
+    presets: [
+      [
+        "classic",
+        {
+          ...config.presets[0][1],
+          docs: {
+            ...config.presets[0][1].docs,
+            rehypePlugins: [katex],
+          },
+          blog: {
+            ...config.presets[0][1].blog,
+            rehypePlugins: [katex],
+          },
+        },
+      ],
+    ],
+  };
+};
+
