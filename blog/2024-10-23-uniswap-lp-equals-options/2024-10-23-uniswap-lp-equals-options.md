@@ -10,9 +10,11 @@ description: "Panoptic leverages Uniswap v3's concentrated liquidity to create a
 
 “I don’t know how much I’m making” – it's a common complaint from liquidity providers (LPs) on Uniswap. Why? Because after putting in X ETH and Y USDC, they often come back with completely different amounts, making it difficult to assess if they made a profit or incurred a loss.
 
-This uncertainty arises from the difficulty in calculating LP positions' profit and loss (PnL). But here’s the exciting part: Guillaume Lambert, the mind behind Panoptic, [cracked the code](https://lambert-guillaume.medium.com/pricing-uniswap-v3-lp-positions-towards-a-new-options-paradigm-dce3e3b50125). He discovered that **$LP \approx options$**. Here’s the core formula:  
+This uncertainty arises from the difficulty in calculating LP positions' profit and loss (PnL). But here’s the exciting part: Guillaume Lambert, the mind behind Panoptic, [cracked the code](https://lambert-guillaume.medium.com/pricing-uniswap-v3-lp-positions-towards-a-new-options-paradigm-dce3e3b50125). He discovered that **LP** $\approx$ **options**. Here’s the core formula:  
   
-$LP = Option + \rho$
+$$
+LP = Option + \rho
+$$
 
 Where $\rho$ is the big formula below.
 
