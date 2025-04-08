@@ -5,7 +5,7 @@ const lightCodeTheme = require("prism-react-renderer/themes/palenight");
 const darkCodeTheme = require("prism-react-renderer/themes/shadesOfPurple");
 
 const math = require("remark-math");
-// const katex = require("rehype-katex");
+const katex = require("rehype-katex");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -211,14 +211,11 @@ const config = {
   presets: [
     [
       "classic",
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           remarkPlugins: [math],
-          // rehypePlugins: [katex],
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
+          rehypePlugins: [[katex, { strict: false }]], // ✅ Math rendering works again
         },
         blog: {
           blogTitle: 'Panoptic Blog',
@@ -227,40 +224,34 @@ const config = {
           blogSidebarTitle: 'All posts',
           blogSidebarCount: "ALL",
           showReadingTime: true,
-          readingTime: ({content, frontMatter, defaultReadingTime}) =>
-            defaultReadingTime({content, options: {wordsPerMinute: 300}}),
+          readingTime: ({ content, frontMatter, defaultReadingTime }) =>
+            defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
           feedOptions: {
-            type: 'all',
-            copyright: `Copyright © ${new Date().getFullYear()} 2023 Axicon Labs Limited. All Rights Reserved. Panoptic™ is a trademark of Axicon Labs Inc. All other trademarks and registered trademarks are the sole property of their respective owners.`,
-            createFeedItems: async (params) => {
-              const {blogPosts, defaultCreateFeedItems, ...rest} = params;
-              return defaultCreateFeedItems({
-                // keep only the 10 most recent blog posts in the feed
-                blogPosts: blogPosts.filter((item, index) => index < 10),
-                ...rest,
-              });
-            },
+            type: "all",
+            copyright: `Copyright © ${new Date().getFullYear()} 2023 Axicon Labs Limited...`,
           },
           remarkPlugins: [math],
-          // rehypePlugins: [katex],
+          rehypePlugins: [[katex, { strict: false }]], // ✅ Math in blog too
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
         gtag: {
-          trackingID: 'G-L8XETHMC9F',
+          trackingID: "G-L8XETHMC9F",
           anonymizeIP: true,
         },
-      }),
+      },
     ],
   ],
+  
 
   stylesheets: [
     {
-      href: "/katex/katex.min.css",
-      type: "text/css",
+      href: '/katex/katex.min.css',
+      type: 'text/css',
     },
   ],
+  
 
   plugins: [
     // "@docusaurus-terminology/parser",
@@ -302,7 +293,7 @@ const config = {
           },
         },
         remarkPlugins: [math],
-        // rehypePlugins: [katex],
+        rehypePlugins: [[katex, { strict: false }]],
       },
     ],
     async function myPlugin(context, options) {
@@ -535,27 +526,8 @@ const config = {
   ],
 };
 
-module.exports = async () => {
-  const katex = (await import("rehype-katex")).default;
-
-  return {
-    ...config,
-    presets: [
-      [
-        "classic",
-        {
-          ...config.presets[0][1],
-          docs: {
-            ...config.presets[0][1].docs,
-            rehypePlugins: [katex],
-          },
-          blog: {
-            ...config.presets[0][1].blog,
-            rehypePlugins: [katex],
-          },
-        },
-      ],
-    ],
-  };
+module.exports = {
+  ...config,
 };
+
 
