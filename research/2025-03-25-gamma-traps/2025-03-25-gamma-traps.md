@@ -4,6 +4,7 @@ title: "The Magnificent Seven Gamma Traps of Crypto"
 tags: [Gamma, Greeks, Vanna, Delta, Uniswap, Deribit]
 image: /img/research/gamma-traps-banner.png
 description: "Explore how the seven inherent gamma traps in crypto markets fuel self-perpetuating price feedback loops, and learn how on-chain options strategies can help traders harness these powerful volatility swings."
+authors: N
 ---
 
 ![](./gamma-traps-banner.png)
