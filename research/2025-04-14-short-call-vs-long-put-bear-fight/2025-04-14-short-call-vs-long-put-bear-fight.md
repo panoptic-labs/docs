@@ -73,6 +73,7 @@ The strategy’s returns component delivers steady, positive returns, averaging 
 Increasing the rolling frequency slightly reduces the severity of extreme losses, but it does not fully eliminate them. Several drawdowns still exceed -15%, showing that it’s still at risk of big losses. While premia collection becomes more consistent with more frequent rolling, the returns per instance are smaller in magnitude. Despite these adjustments, the strategy continues to exhibit a classic “picking up pennies in front of a steamroller” risk profile—generating steady, modest gains while remaining vulnerable to occasional but substantial losses.
 
 ### Cross-Strategy Interpretation
+![](./1.png)
 
 The analysis highlights three main points. First, there’s a clear difference in risk and reward between the strategies: long puts manage risk better by limiting losses and performing well during market drops, while short calls make small profits most of the time but can suffer big losses when the market moves sharply. Second, weekly rolling increases how often trades happen, which helps smooth out returns, but it doesn’t really change the overall behavior of the strategy. Lastly, the results show that WETH had major price drops in January 2024, March 2024, December 2024, and February 2025. The long put strategy took advantage of these moves, while the short call strategy struggled.
 
