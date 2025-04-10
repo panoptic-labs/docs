@@ -49,7 +49,7 @@ Across the breadth of the sample, the IV spikes that occur between the two pools
 
 ![](./06.png)
 
-The summed streamia figures for the 10-delta ETH and BTC monthly put selling strategies show cumulative streamia of 153% (27.4% annualized) and 108% (21.1% annualized) for the ETH and BTC tactics respectively spanning from May 2021 to March 2025. Why the disparity in not only collected premia, but IV-to-streamia correspondence between ETH and BTC? The answer lies in the [volatility risk premium](https://www.amazon.com/Positional-Option-Trading-Wiley/dp/1119583519).
+The summed return figures for the 10-delta ETH and BTC monthly put selling strategies show cumulative returns of 153% (27.4% annualized) and 108% (21.1% annualized) for the ETH and BTC tactics respectively spanning from May 2021 to March 2025. Why the disparity in not only returns, but IV-to-streamia correspondence between ETH and BTC? The answer lies in the [volatility risk premium](https://www.amazon.com/Positional-Option-Trading-Wiley/dp/1119583519).
 
   
 
