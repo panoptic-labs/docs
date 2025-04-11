@@ -39,8 +39,7 @@ A long put in Panoptic gives the user the right to benefit when the underlying t
 
 ## Data & Implementation
 
-We construct our strategies using the WETH/USDC 30 bps Uniswap v3 pool on Ethereum, covering the period from January 2024 through February 2025.
-We implement rolling—also referred to as rebalancing—as a core component of our strategy. Rolling simply means closing an old position and opening a new one at a different strike, usually to keep the strategy updated with current market conditions. It helps keep things on track without starting from scratch each time. It is indeed crucial because, without it, as the ETH price moves, the option characteristics would drift away from the intended strategy. For example, an OTM short call might become ATM or ITM as prices change, significantly altering its risk profile.
+We construct our strategies using the WETH/USDC 30 bps Uniswap v3 pool on Ethereum, covering the period from January 2024 through February 2025. Our code is publicly available on GitHub [here](https://github.com/panoptic-labs/research/tree/main/_research-bites/20250414). We implement rolling—also referred to as rebalancing—as a core component of our strategy. Rolling simply means closing an old position and opening a new one at a different strike, usually to keep the strategy updated with current market conditions. It helps keep things on track without starting from scratch each time. It is indeed crucial because, without it, as the ETH price moves, the option characteristics would drift away from the intended strategy. For example, an OTM short call might become ATM or ITM as prices change, significantly altering its risk profile.
 
 ## Results
 
