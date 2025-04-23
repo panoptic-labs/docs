@@ -53,7 +53,7 @@ const EmailSignUp: React.FC = () => {
             onClick={() => setInterestOpen(true)}
             className="mt-2 px-8 py-3 bg-white text-panoptic-purple font-semibold rounded-lg hover:bg-gray-100 transition ease-in-out duration-150 active:scale-95"
           >
-            Join Now
+            I'm in!
           </button>
         </div>
 
