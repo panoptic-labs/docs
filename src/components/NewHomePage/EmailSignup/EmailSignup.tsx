@@ -40,31 +40,31 @@ const EmailSignUp: React.FC = () => {
 
   return (
     <div className="email-signup-container relative z-0">
-      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 items-stretch gap-8 py-12">
+      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 items-stretch gap-8 pb-12">
         {/* Competition CTA */}
-        <div className="interest-section bg-panoptic-purple flex flex-col justify-center h-full text-white p-8 rounded-lg text-center">
+        <div className="interest-section bg-panoptic-purple flex flex-col justify-center h-full text-center shadow-md px-8 py-4 rounded-lg text-white">
           <img
             src="/img/panoptic-base-competition-banner.svg"
             alt="Trading Competition"
-            className="mx-auto w-60 h-auto mb-6"
+            className="mx-auto w-60 h-auto mb-4 mt-2"
           />
           <p className="text-lg font-semibold">Join our Trading Competition</p>
           <button
             onClick={() => setInterestOpen(true)}
-            className="mt-4 px-8 py-3 bg-white text-panoptic-purple font-semibold rounded-lg hover:bg-gray-100 transition ease-in-out duration-150 active:scale-95"
+            className="mt-2 px-8 py-3 bg-white text-panoptic-purple font-semibold rounded-lg hover:bg-gray-100 transition ease-in-out duration-150 active:scale-95"
           >
             Join Now
           </button>
         </div>
 
       {/* Newsletter CTA */}
-      <div className="newsletter-section bg-purple-100 p-8 rounded-lg text-center shadow-md flex flex-col justify-center h-full">
+      <div className="newsletter-section bg-purple-100 flex flex-col justify-center h-full text-center shadow-md px-8 py-4 rounded-lg">
         <img
           src="/img/newsletter-icon.svg"
           alt="Newsletter Icon"
           className="mx-auto w-60 h-auto mb-6"
         />
-        <p className="text-lg font-semibold text-panoptic-purple mb-4">
+        <p className="text-lg font-semibold text-panoptic-purple mb-2">
           Subscribe for Newsletter Updates
         </p>
         <button
@@ -74,7 +74,7 @@ const EmailSignUp: React.FC = () => {
           Subscribe
         </button>
       </div>
-    </div> 
+    </div>
 
       {/* Interest Modal */}
       <Transition.Root show={interestOpen} as={Fragment}>
@@ -97,7 +97,7 @@ const EmailSignUp: React.FC = () => {
           </Transition.Child>
 
           <div className="fixed inset-0 z-10 w-full overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center">
+            <div className="flex min-h-full items-center justify-center p-4">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -109,25 +109,25 @@ const EmailSignUp: React.FC = () => {
               >
                 <Dialog.Panel className="max-w-md w-full bg-white rounded-lg overflow-hidden shadow-xl">
                   <div className="bg-panoptic-purple p-5">
-                    <h3 className="text-lg font-semibold text-white">Express Your Interest</h3>
+                    <h3 className="text-lg font-semibold text-white">Join our Competition!</h3>
                   </div>
-                  <div className="p-6 space-y-6 text-center text-gray-700">
+                  <div className="p-6 space-y-6 text-gray-700">
                     <div className="mb-6">
-  <div className="flex justify-center space-x-4 mb-4">
-    <span className="px-3 py-1 bg-white text-panoptic-purple rounded-full text-sm font-medium shadow">
-      $5,000 cash
-    </span>
-    <span className="px-3 py-1 bg-white text-panoptic-purple rounded-full text-sm font-medium shadow">
-      5M+ Pips
-    </span>
-    <span className="px-3 py-1 bg-white text-panoptic-purple rounded-full text-sm font-medium shadow">
-      Plushie
-    </span>
-  </div>
-  <p className="text-base text-gray-700 font-medium">
-    Unlock a one-time <strong>1.1× Pips boost</strong> when you sign up early!
-  </p>
-</div>
+                      <div className="flex justify-center space-x-4 mb-4">
+                        <span className="px-3 py-1 bg-white text-panoptic-purple rounded-full text-sm font-medium shadow">
+                          $5,000 cash
+                        </span>
+                        <span className="px-3 py-1 bg-white text-panoptic-purple rounded-full text-sm font-medium shadow">
+                          5M+ Pips
+                        </span>
+                        <span className="px-3 py-1 bg-white text-panoptic-purple rounded-full text-sm font-medium shadow">
+                          Plushie
+                        </span>
+                      </div>
+                      <p className="text-base text-gray-700 font-medium">
+                        Unlock a one-time <strong>1.1× Pips boost</strong> when you sign up early!
+                      </p>
+                    </div>
                     {successMessage ? (
                       <div className="text-green-600 font-medium">{successMessage}</div>
                     ) : (
