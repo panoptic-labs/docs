@@ -57,17 +57,24 @@ const EmailSignUp: React.FC = () => {
           </button>
         </div>
 
-        {/* Newsletter CTA */}
-        <div className="newsletter-section bg-purple-100 p-8 rounded-lg text-center shadow-md flex flex-col justify-center h-full">
-          <p className="text-lg font-semibold text-panoptic-purple mt-6">Subscribe for Newsletter Updates</p>
-          <button
-            onClick={() => setNewsletterOpen(true)}
-            className="mt-4 px-8 py-3 bg-panoptic-purple text-white font-semibold rounded-lg hover:bg-purple-700 transition ease-in-out duration-150 active:scale-95"
-          >
-            Subscribe
-          </button>
-        </div>
+      {/* Newsletter CTA */}
+      <div className="newsletter-section bg-purple-100 p-8 rounded-lg text-center shadow-md flex flex-col justify-center h-full">
+        <img
+          src="/img/newsletter-icon.svg"
+          alt="Newsletter Icon"
+          className="mx-auto w-60 h-auto mb-6"
+        />
+        <p className="text-lg font-semibold text-panoptic-purple mb-4">
+          Subscribe for Newsletter Updates
+        </p>
+        <button
+          onClick={() => setNewsletterOpen(true)}
+          className="mt-4 px-8 py-3 bg-panoptic-purple text-white font-semibold rounded-lg hover:bg-purple-700 transition ease-in-out duration-150 active:scale-95"
+        >
+          Subscribe
+        </button>
       </div>
+    </div> 
 
       {/* Interest Modal */}
       <Transition.Root show={interestOpen} as={Fragment}>
@@ -114,7 +121,7 @@ const EmailSignUp: React.FC = () => {
       5M+ Pips
     </span>
     <span className="px-3 py-1 bg-white text-panoptic-purple rounded-full text-sm font-medium shadow">
-      Giant plushie
+      Plushie
     </span>
   </div>
   <p className="text-base text-gray-700 font-medium">
