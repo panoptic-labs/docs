@@ -1,8 +1,11 @@
 .scrolling-tokens-container {
-  width: 100%;
+  position: relative;
+  z-index: 0;
   overflow: hidden;
   padding-bottom: 60px;
+  margin-top: 2rem;
 }
+
 
 .scrolling-tokens {
   display: flex;
