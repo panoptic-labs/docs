@@ -57,24 +57,24 @@ const EmailSignUp: React.FC = () => {
           </button>
         </div>
 
-      {/* Newsletter CTA */}
-      <div className="newsletter-section bg-purple-100 flex flex-col justify-center h-full text-center shadow-md px-8 py-4 rounded-lg">
-        <img
-          src="/img/newsletter-icon.svg"
-          alt="Newsletter Icon"
-          className="mx-auto w-60 h-auto mb-6"
-        />
-        <p className="text-lg font-semibold text-panoptic-purple mb-2">
-          Subscribe for Newsletter Updates
-        </p>
-        <button
-          onClick={() => setNewsletterOpen(true)}
-          className="mt-4 px-8 py-3 bg-panoptic-purple text-white font-semibold rounded-lg hover:bg-purple-700 transition ease-in-out duration-150 active:scale-95"
-        >
-          Subscribe
-        </button>
+        {/* Newsletter CTA */}
+        <div className="newsletter-section bg-white flex flex-col justify-center h-full text-center shadow-md px-8 py-4 rounded-lg">
+          <img
+            src="/img/newsletter-icon.svg"
+            alt="Newsletter Icon"
+            className="mx-auto w-60 h-auto mb-6"
+          />
+          <p className="text-lg font-semibold text-panoptic-purple mb-2">
+            Subscribe for Newsletter Updates
+          </p>
+          <button
+            onClick={() => setNewsletterOpen(true)}
+            className="mt-4 px-8 py-3 bg-panoptic-purple text-white font-semibold rounded-lg hover:bg-purple-700 transition ease-in-out duration-150 active:scale-95"
+          >
+            Subscribe
+          </button>
+        </div>
       </div>
-    </div>
 
       {/* Interest Modal */}
       <Transition.Root show={interestOpen} as={Fragment}>
@@ -148,7 +148,7 @@ const EmailSignUp: React.FC = () => {
                             onChange={(e) => setEmail(e.target.value)}
                             required
                             placeholder="you@example.com"
-                            className="mt-1 w-full border border-gray-300 rounded-md bg-white p-3 text-base placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-panoptic-purple focus:border-panoptic-purple"
+                            className="mt-1 w-[94%] border border-gray-300 rounded-md bg-white p-3 text-base placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-panoptic-purple focus:border-panoptic-purple"
                           />
                         </div>
                         <div>
@@ -161,7 +161,7 @@ const EmailSignUp: React.FC = () => {
                             onChange={(e) => setWallet(e.target.value)}
                             required
                             placeholder="0x1234…"
-                            className="mt-1 w-full border border-gray-300 rounded-md bg-white p-3 text-base placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-panoptic-purple focus:border-panoptic-purple"
+                            className="mt-1 w-[94%] border border-gray-300 rounded-md bg-white p-3 text-base placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-panoptic-purple focus:border-panoptic-purple"
                           />
                         </div>
                         <div className="flex justify-end space-x-3 mt-6">
