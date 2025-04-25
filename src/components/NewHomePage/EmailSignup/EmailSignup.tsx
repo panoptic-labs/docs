@@ -48,7 +48,7 @@ const EmailSignUp: React.FC = () => {
             alt="Trading Competition"
             className="mx-auto w-60 h-auto mb-4 mt-2"
           />
-          <p className="text-lg font-semibold">Join our Trading Competition</p>
+          <p className="text-lg font-semibold">Join our Trading Competition on Base</p>
           <button
             onClick={() => setInterestOpen(true)}
             className="mt-2 px-8 py-3 bg-white text-panoptic-purple font-semibold rounded-lg hover:bg-gray-100 transition ease-in-out duration-150 active:scale-95"
