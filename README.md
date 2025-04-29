@@ -11,10 +11,11 @@ $ yarn
 ### Local Development
 
 ```
+$ nvm use
 $ yarn start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+This command switches you onto the correct version of node and starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
 ### Build
 
