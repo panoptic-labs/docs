@@ -25,7 +25,7 @@ This launch unlocks a new frontier for degens, strategists, and onchain power us
 ### For Traders
 
 -   Go short, hedge positions, and speculate with limited risk
--   Put your long-tail assets (like BRETT) to work
+-   Put your long-tail assets to work
 -   Earn yield on tokens with little utility and keep upside exposure
     
 
