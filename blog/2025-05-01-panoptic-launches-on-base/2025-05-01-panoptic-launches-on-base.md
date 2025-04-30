@@ -10,7 +10,7 @@ description: "Panoptic, the DeFi-native perpetual options platform built on Unis
 
 Panoptic Launches on Base
 
-We are excited to announce that [Panoptic](https://app.panoptic.xyz/), the DeFi-native perpetual options platform built on Uniswap, has officially launched on Base! To celebrate, we’re kicking off a two‑week trading competition on Base—with $5,000 in cash prizes, over 5 million Pips, and a jumbo Rilakkuma plushie—open to all traders.
+We are excited to announce that Panoptic, the DeFi-native perpetual options platform built on Uniswap, has officially launched on [Base](http://app.panoptic.xyz/markets/base)! To celebrate, we’re kicking off a two‑week trading competition on Base—with $5,000 in cash prizes, over 5 million Pips, and a jumbo Rilakkuma plushie—open to all traders.
 
 
 This launch unlocks a new frontier for degens, strategists, and onchain power users. Base’s low fees and fast finality make it the perfect playground for trading—and now with Panoptic, you can take those plays even further. Go beyond simple swaps and LPing: build perpetual, gas-efficient options strategies directly onchain. Whether you're hedging, farming, or looking for asymmetric upside, Panoptic on Base is your new power tool.
@@ -69,7 +69,7 @@ Panoptic launched the [Panoptic Incentive Points (Pips) Program](https://app.pan
 
 ![](./2.png)
 
-Anyone can earn Panoptic Incentive Points simply by depositing or trading in our eligible Base markets. Every deposit, LP, or options trade in the following markets can credit your account with Pips. Look for the ✨ icon!
+Anyone can earn Panoptic Incentive Points simply by depositing or trading in our eligible [Base markets](http://app.panoptic.xyz/markets/base). Every deposit, LP, or options trade in the following markets can credit your account with Pips. Look for the ✨ icon!
 
 -   ETH/USDC 5bps v4
 -   USDC/cbBTC 5bps v4
