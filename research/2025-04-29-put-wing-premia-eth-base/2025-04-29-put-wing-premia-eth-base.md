@@ -8,7 +8,6 @@ authors: N
 ---
 
 ![](./put-wing-premia-eth-base-banner.png)
-Put Wing Premia: Base vs. Ethereum
 
 Previously, we examined deep out-of-the-money ([OTM](/docs/terms/out_of_the_money)) [Panoption](/docs/terms/panoption)  [put](/docs/terms/put) wings on Ethereum. How does streaming premia ([streamia](/research/streamia-101)) and the volatility risk premium ([VRP](/research/implied-volatility-put-wing-premia)) translate to a Layer 2 (L2) blockchain such as Base? Do the idiosyncratic properties that drive the lucrative accrual of streamia on Ethereum still apply when executing on Base?
 
@@ -30,7 +29,7 @@ This article puts the two chains head-to-head and explores the underlying elemen
   
   
 
-Results
+## Results
 
 ![](./01.png)
 
@@ -48,7 +47,7 @@ The graphics above reveal that the cumulative premia is identical when comparing
 
 ![](./06.png)
 
-The above visuals are indicative of how the [spread-multiplied](/research/liquidity-spread) monthly premia for Base is incrementally higher than Ethereum over this 3-month range. Consistent with prior [findings](/research/implied-volatility-put-wing-premia#results), hiked premia for both chains corresponds with spikes in the [Uniswap](/research/new-formulation-implied-volatility) implied volatility ([IV](/docs/terms/implied_volatility)). The Uniswap IV on Ethereum crosses the 200% annualized level at three separate points and breaches the 800% annualized level on Base during the month of February Meanwhile, the monthly returns accordingly crest for both Ethereum and Base in February at 8% (153% annualized) and 8.4% (164% annualized) respectively. The Uniswap IV also reaches its highest monthly mean level over the course of the sample period on both blockchains during February.
+The above visuals are indicative of how the [spread-multiplied](/research/liquidity-spread) monthly premia for Base is incrementally higher than Ethereum over this 3-month range. Consistent with prior [findings](/research/implied-volatility-put-wing-premia#results), hiked premia for both chains corresponds with spikes in the [Uniswap](/research/new-formulation-implied-volatility) implied volatility ([IV](/docs/terms/implied_volatility)). The Uniswap IV on Ethereum crosses the 200% annualized level at three separate points and breaches the 800% annualized level on Base during the month of February. Meanwhile, the monthly returns accordingly crest for both Ethereum and Base in February at 8% (153% annualized) and 8.4% (164% annualized) respectively. The Uniswap IV also reaches its highest monthly mean level over the course of the sample period on both blockchains during February.
 
 ## Broader Discussion
 
