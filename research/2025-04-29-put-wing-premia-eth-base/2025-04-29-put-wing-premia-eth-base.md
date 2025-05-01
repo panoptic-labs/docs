@@ -37,7 +37,7 @@ This article puts the two chains head-to-head and explores the underlying elemen
 
   
 
-The graphics above reveal that the cumulative premia is identical when comparing the monthly sale of 10-[delta](/research/understanding-delta-risk#what-is-delta) Panoption puts from January 2025 through March 2025 for the ETH/USDC 30bps pool. The summed premia for Ethereum and Base over this period are similar with Ethereum producing 15.8% (80% annualized) and Base generating 16.5% (84% annualized) respectively. LPs on Panoptic earn around 20% more fees compared to the same position on Uniswap. Applying this [1.2x increase](/research/loss-versus-panoptic-why-lps-are-losing) in fees to the Uniswap backtest results, we find that the mean monthly premia on Base is 4.9% and on Ethereum is 4.7%, a marginal difference.
+The graphics above reveal that the cumulative premia is identical when comparing the monthly sale of 10-[delta](/research/understanding-delta-risk#what-is-delta) Panoption puts from January 2025 through March 2025 for the ETH/USDC 30bps pool (see backtest code [here](https://github.com/panoptic-labs/research/tree/main/_research-bites/20250429)). The summed premia for Ethereum and Base over this period are similar with Ethereum producing 15.8% (80% annualized) and Base generating 16.5% (84% annualized) respectively. LPs on Panoptic earn around 20% more fees compared to the same position on Uniswap. Applying this [1.2x increase](/research/loss-versus-panoptic-why-lps-are-losing) in fees to the Uniswap backtest results, we find that the mean monthly premia on Base is 4.9% and on Ethereum is 4.7%, a marginal difference.
 
 ![](./03.png)
 
