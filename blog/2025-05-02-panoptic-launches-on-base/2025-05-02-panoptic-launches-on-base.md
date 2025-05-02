@@ -8,8 +8,6 @@ description: "Panoptic, the DeFi-native perpetual options platform built on Unis
 
 ![](./panoptic-on-base.jpg)
 
-Panoptic Launches on Base
-
 We are excited to announce that Panoptic, the DeFi-native perpetual options platform built on Uniswap, has officially launched on [Base](http://app.panoptic.xyz/markets/base)! To celebrate, we’re kicking off a two‑week trading competition on Base—with $5,000 in cash prizes, over 5 million Pips, and a jumbo Rilakkuma plushie—open to all traders.
 
 
