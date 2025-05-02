@@ -1,11 +1,19 @@
 [
   {
+    "title": "Panoptic Launches on Base",
+    "date": "2025-05-02",
+    "image": "/img/banners/panoptic-on-base.jpg",
+    "link": "https://panoptic.xyz/blog/panoptic-launches-on-base",
+    "description": "Panoptic, the DeFi-native perpetual options platform built on Uniswap, launches on Base, offering gas-efficient, permissionless options trading and leveraged liquidity provision.",
+    "id": 1
+  },
+  {
     "title": "Short Call vs Long Put: Who Wins in a Bear Fight?",
     "date": "2025-04-14",
     "image": "/img/research/banner-short-call-long-put.png",
     "link": "https://panoptic.xyz/research/short-call-vs-long-put-bear-fight",
     "description": "A data-driven comparison of short call vs long put strategies on Panoptic, revealing key risk-reward tradeoffs in bearish DeFi markets.",
-    "id": 1
+    "id": 2
   },
   {
     "title": "Volatility Risk Premium: IV & Put Wing Premia",
@@ -13,7 +21,7 @@
     "image": "/img/research/volatility-risk-premium-banner.png",
     "link": "https://panoptic.xyz/research/implied-volatility-put-wing-premia",
     "description": "Dive into how the volatility risk premium manifests itself in OTM put options as well as how this premium can be exploited on the Panoptic platform.",
-    "id": 2
+    "id": 3
   },
   {
     "title": "Trading the Market Crash: April Newsletter",
@@ -21,7 +29,7 @@
     "image": "/img/banners/apr-25-newsletter.png",
     "link": "https://panoptic.xyz/blog/panoptic-newsletter-april-2025",
     "description": "Discover how traders profited from the April market crash using leveraged put options on Panoptic, with trade insights and strategies for capital-efficient downside protection.",
-    "id": 3
+    "id": 4
   },
   {
     "title": "The Magnificent Seven Gamma Traps of Crypto",
@@ -29,14 +37,6 @@
     "image": "/img/research/gamma-traps-banner.png",
     "link": "https://panoptic.xyz/research/crypto-gamma-traps",
     "description": "Explore how the seven inherent gamma traps in crypto markets fuel self-perpetuating price feedback loops, and learn how on-chain options strategies can help traders harness these powerful volatility swings.",
-    "id": 4
-  },
-  {
-    "title": "Make Uniswap Great Again",
-    "date": "2025-03-17",
-    "image": "/img/banners/muga-banner.png",
-    "link": "https://panoptic.xyz/blog/make-uniswap-great-again",
-    "description": "Panoptic enhances Uniswap liquidity provision by integrating options strategies, enabling LPs to earn up to 3x more!",
     "id": 5
   }
 ]
