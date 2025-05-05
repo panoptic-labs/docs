@@ -124,7 +124,7 @@ Tap your preferred strategy and review the projected payoff chart.
 
   
 
-### 5. Open your position
+### 5. Open a position
 
   
 
@@ -139,7 +139,7 @@ Adjust strike price, timescale, and contract size. Check fees and risk parameter
 
   
 
-Head to the Leaderboard tab and click ‘Competition’. Track your rank under PnL % and Volume columns over the two‑week event. Your final PnL % standing is based on gains on your cumulative deposits. Your volume standing is based on the size and frequency of trades placed.
+Head to the Leaderboard tab and click [‘Competition’](https://app.panoptic.xyz/leaderboard/pnl). Track your rank under PnL % and Volume columns over the two‑week event. You can open multiple positions and close old ones to increase your score. Your final PnL % standing is based on gains on your cumulative deposits. Your volume standing is based on the size and frequency of trades placed.
 
   
 

@@ -167,7 +167,7 @@ const config = {
       announcementBar: {
         id: "ETH_Denver_2023",
         content:
-          "gRHO, the passive liquidity interface, is <a href=\"https://grho.panoptic.xyz/\">live</a> on Uniswap v4!",
+          "Join our <a href=\"https://app.panoptic.xyz/leaderboard/pnl\">trading contest on Base</a>—$5K, 5M+ Pips, and a jumbo plushie await!",
         textColor: "#FFFFFF",
         isCloseable: true,
       },
