@@ -50,7 +50,8 @@ const EmailSignUp: React.FC = () => {
           />
           <p className="text-lg font-semibold">Join our Trading Competition on Base</p>
           <button
-            onClick={() => setInterestOpen(true)}
+            // onClick={() => setInterestOpen(true)}
+            onClick={() => window.location.href = 'https://app.panoptic.xyz/leaderboard/pnl'}
             className="mt-2 px-8 py-3 bg-white text-panoptic-purple font-semibold rounded-lg hover:bg-gray-100 transition ease-in-out duration-150 active:scale-95"
           >
             I'm in!
