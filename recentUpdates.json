@@ -16,12 +16,20 @@
     "id": 2
   },
   {
+    "title": "Put Wing Premia: Base vs. Ethereum",
+    "date": "2025-04-29",
+    "image": "/img/research/put-wing-premia-eth-base-banner.png",
+    "link": "https://panoptic.xyz/research/put-wing-premia-eth-base",
+    "description": "Explore how and why put wing premia translates from Ethereum to Base as well as how Panoptic can be used to capitalize on these qualities.",
+    "id": 3
+  },
+  {
     "title": "Short Call vs Long Put: Who Wins in a Bear Fight?",
     "date": "2025-04-14",
     "image": "/img/research/banner-short-call-long-put.png",
     "link": "https://panoptic.xyz/research/short-call-vs-long-put-bear-fight",
     "description": "A data-driven comparison of short call vs long put strategies on Panoptic, revealing key risk-reward tradeoffs in bearish DeFi markets.",
-    "id": 3
+    "id": 4
   },
   {
     "title": "Volatility Risk Premium: IV & Put Wing Premia",
@@ -29,14 +37,6 @@
     "image": "/img/research/volatility-risk-premium-banner.png",
     "link": "https://panoptic.xyz/research/implied-volatility-put-wing-premia",
     "description": "Dive into how the volatility risk premium manifests itself in OTM put options as well as how this premium can be exploited on the Panoptic platform.",
-    "id": 4
-  },
-  {
-    "title": "Trading the Market Crash: April Newsletter",
-    "date": "2025-04-07",
-    "image": "/img/banners/apr-25-newsletter.png",
-    "link": "https://panoptic.xyz/blog/panoptic-newsletter-april-2025",
-    "description": "Discover how traders profited from the April market crash using leveraged put options on Panoptic, with trade insights and strategies for capital-efficient downside protection.",
     "id": 5
   }
 ]
