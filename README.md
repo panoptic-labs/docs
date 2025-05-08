@@ -59,3 +59,19 @@ Built using [Docusaurus 2](https://docusaurus.io/).
 ### Copyright
 
 Copyright © 2023 Axicon Labs Limited. All Rights Reserved. Panoptic™ is a trademark of Axicon Labs Inc. All other trademarks and registered trademarks are the sole property of their respective owners.
+
+## Proxy setup
+
+How Docusaurus and Webflow are configured to play nice with each other.
+
+If you run this locally and compare the local root route, localhost:3000, to the deployed root route, panoptic.xyz/, you may notice the two homepages are different. However, nested routes from the Docusaurus site like /blog or /docs are identical.
+
+This is because the homepage displayed in production is hosted on Webflow, while nested paths are hosted on our Docusaurus site on Vercel, using a Cloudflare Worker as a reverse proxy.
+
+You can see details about the worker, including the request proxying code, [here](https://dash.cloudflare.com/f815d14bd6670e4289e3cd291337ecf4/workers/services/view/panoptic-homepage-proxy/production/metrics).
+
+If you check the [workers bindings](https://dash.cloudflare.com/f815d14bd6670e4289e3cd291337ecf4/workers/services/view/panoptic-homepage-proxy/production/settings#bindings), you'll see that it runs on requests to `panoptic.xyz/*`.
+
+The actual code that runs in the Worker is very simple: it intercepts requests to the root path (`/`), requests the Webflow site (configured to live on `home.panoptic.xyz` in our DNS records) and returns the Webflow site in the response.
+
+For all other requests, like /blog or /docs, a request is made to our Vercel Docusaurus site's production deployment URL at `https://docs-bqp0f6xid-panoptic.vercel.app`.
