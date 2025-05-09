@@ -1,11 +1,19 @@
 [
   {
+    "title": "Base Trading Competition is Live: May Newsletter",
+    "date": "2025-05-09",
+    "image": "https://panoptic.xyz/img/banners/may-25-newsletter.png",
+    "link": "https://panoptic.xyz/blog/panoptic-newsletter-may-2025",
+    "description": "Base launch highlights, trading competition updates, explosive ETH PA, and the latest in DeFi research.",
+    "id": 1
+  },
+  {
     "title": "Base Trading Competition",
     "date": "2025-05-05",
     "image": "https://panoptic.xyz/img/banners/base-competition-banner.png",
     "link": "https://panoptic.xyz/blog/base-trading-competition",
     "description": "Join Panoptic's Trading Competition to win up to $5,000, a jumbo plushie, and over 5M Pips—trade now on Base!",
-    "id": 1
+    "id": 2
   },
   {
     "title": "Panoptic Launches on Base",
@@ -13,7 +21,7 @@
     "image": "https://panoptic.xyz/img/banners/panoptic-on-base.jpg",
     "link": "https://panoptic.xyz/blog/panoptic-launches-on-base",
     "description": "Panoptic, the DeFi-native perpetual options platform built on Uniswap, launches on Base, offering gas-efficient, permissionless options trading and leveraged liquidity provision.",
-    "id": 2
+    "id": 3
   },
   {
     "title": "Put Wing Premia: Base vs. Ethereum",
@@ -21,7 +29,7 @@
     "image": "https://panoptic.xyz/img/research/put-wing-premia-eth-base-banner.png",
     "link": "https://panoptic.xyz/research/put-wing-premia-eth-base",
     "description": "Explore how and why put wing premia translates from Ethereum to Base as well as how Panoptic can be used to capitalize on these qualities.",
-    "id": 3
+    "id": 4
   },
   {
     "title": "Short Call vs Long Put: Who Wins in a Bear Fight?",
@@ -29,14 +37,6 @@
     "image": "https://panoptic.xyz/img/research/banner-short-call-long-put.png",
     "link": "https://panoptic.xyz/research/short-call-vs-long-put-bear-fight",
     "description": "A data-driven comparison of short call vs long put strategies on Panoptic, revealing key risk-reward tradeoffs in bearish DeFi markets.",
-    "id": 4
-  },
-  {
-    "title": "Volatility Risk Premium: IV & Put Wing Premia",
-    "date": "2025-04-09",
-    "image": "https://panoptic.xyz/img/research/volatility-risk-premium-banner.png",
-    "link": "https://panoptic.xyz/research/implied-volatility-put-wing-premia",
-    "description": "Dive into how the volatility risk premium manifests itself in OTM put options as well as how this premium can be exploited on the Panoptic platform.",
     "id": 5
   }
 ]
