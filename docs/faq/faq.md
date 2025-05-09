@@ -46,7 +46,7 @@ Panoptic is <a href="https://app.panoptic.xyz">live</a> on Ethereum mainnet and 
 
 <details id="is-there-a-token">
 <summary>Is there a token?</summary>
-No. Panoptic does not have a token at this time. 
+No. Panoptic does not have a token at this time.
 </details>
 
 <details id="is-there-a-points-program">
@@ -66,7 +66,6 @@ No.
 
 <details id="how-does-uniswap-v4-affect-panoptic">
 <summary>How does Uniswap v4 affect Panoptic?</summary>
-<br /><br />
 1️⃣ Panoptic is live on both Uniswap v3 and v4
 <br /><br />
 2️⃣ Being backed by <a href="https://blog.uniswap.org/ventures">Uniswap Labs Ventures</a>, Uniswap V4 has always been part of our growth map 🗺️
@@ -92,7 +91,7 @@ Panoptic makes options easy for all users by providing a seamless, draggable int
 
 <details id="options-are-too-complicated">
 <summary>Options are too complicated!</summary>
-Options trading doesn't have to be complicated. At Panoptic, we've created a <a href="https://www.youtube.com/watch?v=deqbeqjyKgg">novel UI</a> that allows anybody to easily and seamlessly trade options. 
+Options trading doesn't have to be complicated. At Panoptic, we've created a <a href="https://www.youtube.com/watch?v=deqbeqjyKgg">novel UI</a> that allows anybody to easily and seamlessly trade options.
 
 ![UI Image](ui.png)
 </details>
@@ -264,7 +263,7 @@ Panoptic is designed to minimize the risk of single-point failures and broaden m
 <summary>How are existing options protocols subject to manipulation?</summary>
 Options protocols that depend on positions expiring at a certain block are susceptible to manipulation. Bad actors can manipulate the price on that specific block, altering the status of an option from in-the-money (ITM) to out-of-the-money (OTM), or the reverse. In contrast, Panoptic's perpetual options model significantly reduces this vulnerability.
 <br /><br />
-Furthermore, DeFi options vaults with publicly scheduled auctions may face the risk of <a href="https://www.coindesk.com/markets/2022/04/19/crypto-options-traders-adopt-new-strategies-to-profit-from-defi-volatility-gyrations/">front-running</a>, a strategy where traders anticipate and exploit market movements created by the auctions. The result leads to unfavorable pricing for auction participants. 
+Furthermore, DeFi options vaults with publicly scheduled auctions may face the risk of <a href="https://www.coindesk.com/markets/2022/04/19/crypto-options-traders-adopt-new-strategies-to-profit-from-defi-volatility-gyrations/">front-running</a>, a strategy where traders anticipate and exploit market movements created by the auctions. The result leads to unfavorable pricing for auction participants.
 </details>
 
 <details id="are-options-for-long-tail-assets-with-low-liquidity">
