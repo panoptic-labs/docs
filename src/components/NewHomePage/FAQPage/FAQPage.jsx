@@ -45,13 +45,13 @@ const FAQPage = () => {
             <Accordion.Item className="accordion-item" value="item-4">
             <AccordionTrigger>Which assets can I trade?</AccordionTrigger>
               <AccordionContent>
-                Panoptic works on any ERC20 token. Panoptic users can create an options market on any token pair that exists on Uniswap V3.
+                Panoptic works on any ERC20 token. Panoptic users can create an options market on any token pair that exists on Uniswap v3 or v4.
               </AccordionContent>
             </Accordion.Item>
             <Accordion.Item className="accordion-item" value="item-5">
               <AccordionTrigger>What networks can I access Panoptic on?</AccordionTrigger>
               <AccordionContent>
-                Panoptic is live on Ethereum mainnet and Unichain, and will launch on EVM-compatible layer 2's where Uniswap v3 and v4 smart contracts have been deployed.
+                Panoptic is live on Ethereum mainnet, Base, and Unichain, and will launch on EVM-compatible layer 2's where Uniswap v3 and v4 smart contracts have been deployed.
               </AccordionContent>
             </Accordion.Item>
           </Accordion.Root>
