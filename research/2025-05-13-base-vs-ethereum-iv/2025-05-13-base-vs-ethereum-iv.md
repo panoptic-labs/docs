@@ -3,7 +3,7 @@ slug: base-vs-ethereum-iv
 title: "Base vs Ethereum Blockchains: Implied Volatility and Market Analysis"
 tags: [IV, Ethereum, Base, Uniswap, Bearish, Bullish]
 image: /img/research/base-vs-ethereum-iv-banner.png
-description: "Cmparison between the Ethereum and Base blockchains, evaluating ETH/USDC pool pricing, implied volatility, and Panoptions strategy performance."
+description: "Comparison between the Ethereum and Base blockchains, evaluating ETH/USDC pool pricing, implied volatility, and Panoptions strategy performance."
 authors: A
 ---------------------
 
