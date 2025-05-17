@@ -29,7 +29,7 @@ Base, on the other hand, is a Layer 2 blockchain built on the Optimism OP Stack.
 
 We analyze ETH/USDC 5bps pool data on both chains. For implied volatility, we use hourly data from January 1, 2024 to March 31, 2025. Price dynamics are assessed using minute-level data between January 1 and March 31, 2025. Bullish and bearish strategies are modeled using monthly 30-delta out-of-the-money (OTM) options with a ±27% range, excluding the [spread multiplier](/docs/product/spread#spread-in-panoptic).
 
-You can view the code [here](https://github.com/panoptic-labs/research/tree/main/_research-bites).
+You can view the code [here](https://github.com/panoptic-labs/research/tree/main/_research-bites/20250513).
 
 ## Results & Analysis
 
