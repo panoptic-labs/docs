@@ -9,11 +9,11 @@ authors: N
 
 ![](./relief-risk-premium-banner.png)
 
-# Feel free to check out our livestream video on YouTube!
+**Check out our livestream video on YouTube**
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/gi2cval4FyY?si=RAkIKPiC8XnM7-NX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-Panoptic has explored in prior [research](/research/implied-volatility-put-wing-premia) as to how [streamia](/research/streamia-101) interrelates to implied volatility ([IV](/docs/terms/implied_volatility)) for deep out-of-the-money ([OTM](/docs/terms/out_of_the_money)) [Panoption](/docs/terms/panoption)  [put](/docs/terms/put) wings. But what about the opposite side of the options [moneyness](/docs/product/moneyness) spectrum? How does IV relate to deep OTM Panoption [call](/docs/terms/call) wings?
+Panoptic has explored in prior [research](/research/implied-volatility-put-wing-premia) how [streamia](/research/streamia-101) interrelates to implied volatility ([IV](/docs/terms/implied_volatility)) for deep out-of-the-money ([OTM](/docs/terms/out_of_the_money)) [Panoption](/docs/terms/panoption)  [put](/docs/terms/put) wings. But what about the opposite side of the options [moneyness](/docs/product/moneyness) spectrum? How does IV relate to deep OTM Panoption [call](/docs/terms/call) wings?
 
   
 
