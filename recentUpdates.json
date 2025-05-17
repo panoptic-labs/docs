@@ -1,11 +1,19 @@
 [
   {
+    "title": "Relief Risk Premium: IV & Call Wing Premia",
+    "date": "2025-05-16",
+    "image": "https://panoptic.xyz/img/research/relief-risk-premium-banner.png",
+    "link": "https://panoptic.xyz/research/implied-volatility-call-wing-premia",
+    "description": "Dive into how the relief risk premium manifests itself in OTM call options as well as how this premium can be exploited on the Panoptic platform.",
+    "id": 1
+  },
+  {
     "title": "Base vs Ethereum Blockchains: Implied Volatility and Market Analysis",
     "date": "2025-05-13",
     "image": "https://panoptic.xyz/img/research/base-vs-ethereum-iv-banner.png",
     "link": "https://panoptic.xyz/research/base-vs-ethereum-iv",
     "description": "Comparison between the Ethereum and Base blockchains, evaluating ETH/USDC pool pricing, implied volatility, and Panoptions strategy performance.",
-    "id": 1
+    "id": 2
   },
   {
     "title": "Base Trading Competition is Live: May Newsletter",
@@ -13,7 +21,7 @@
     "image": "https://panoptic.xyz/img/banners/may-25-newsletter.png",
     "link": "https://panoptic.xyz/blog/panoptic-newsletter-may-2025",
     "description": "Base launch highlights, trading competition updates, explosive ETH PA, and the latest in DeFi research.",
-    "id": 2
+    "id": 3
   },
   {
     "title": "Base Trading Competition",
@@ -21,7 +29,7 @@
     "image": "https://panoptic.xyz/img/banners/base-competition-banner.png",
     "link": "https://panoptic.xyz/blog/base-trading-competition",
     "description": "Join Panoptic's Trading Competition to win up to $5,000, a jumbo plushie, and over 5M Pips—trade now on Base!",
-    "id": 3
+    "id": 4
   },
   {
     "title": "Panoptic Launches on Base",
@@ -29,14 +37,6 @@
     "image": "https://panoptic.xyz/img/banners/panoptic-on-base.jpg",
     "link": "https://panoptic.xyz/blog/panoptic-launches-on-base",
     "description": "Panoptic, the DeFi-native perpetual options platform built on Uniswap, launches on Base, offering gas-efficient, permissionless options trading and leveraged liquidity provision.",
-    "id": 4
-  },
-  {
-    "title": "Put Wing Premia: Base vs. Ethereum",
-    "date": "2025-04-29",
-    "image": "https://panoptic.xyz/img/research/put-wing-premia-eth-base-banner.png",
-    "link": "https://panoptic.xyz/research/put-wing-premia-eth-base",
-    "description": "Explore how and why put wing premia translates from Ethereum to Base as well as how Panoptic can be used to capitalize on these qualities.",
     "id": 5
   }
 ]
