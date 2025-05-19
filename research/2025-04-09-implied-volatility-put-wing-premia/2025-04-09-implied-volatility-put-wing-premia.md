@@ -24,7 +24,7 @@ Panoptic has previously conducted [research](/research/streamia-vs-black-scholes
 
 ![](./02.png)
 
-The above visualizations reveal how lucrative that 10-[delta](/research/understanding-delta-risk#what-is-delta) Panoption put selling has been on a month-over-month basis ranging from May 2021 to March 2025 for the ETH/USDC 30bps pool. The mean monthly premia for this strategy (code [here](https://github.com/panoptic-labs/research/tree/main/_research-bites/20250409)) is approximately 3.9% (58.6% annualized) with the maximum monthly premia of 22.7% (1076% annualized) corresponding with the largest upward spike of the [Panoptic-native IV](/research/new-formulation-implied-volatility) to around the 860% annualized level. Although the [1.2x average spread](/research/loss-versus-panoptic-why-lps-are-losing) (limited to December 2024 onwards) is applied here for demonstrative purposes, note that these raw monthly returns do not reflect the actual average Panoptic-specific [liquidity spread](/research/liquidity-spread) during this period due to historical data constrictions based on the Panoptic launch date.
+The above visualizations reveal how lucrative that 10-[delta](/research/understanding-delta-risk#what-is-delta) Panoption put selling has been on a month-over-month basis ranging from May 2021 to March 2025 for the ETH/USDC 30bps pool. The mean monthly premia for this strategy (code [here](https://github.com/panoptic-labs/research/tree/main/_research-bites/20250409)) is approximately 3.9% (58.6% annualized) with the maximum monthly premia of 22.7% (1076% annualized) corresponding with the largest upward spike of the [Panoptic-native IV](/research/new-formulation-implied-volatility) to around the 860% annualized level. Although the [1.2x average spread](/research/loss-versus-panoptic-why-lps-are-losing) (limited to December 2024 onwards) is applied here for demonstrative purposes, note that the raw monthly premia do not reflect the actual average Panoptic-specific [liquidity spread](/research/liquidity-spread) during this period due to historical data constrictions based on the Panoptic launch date.
 
 ![](./03.png)
   
@@ -35,7 +35,7 @@ The graphics above also display a consistently valuable pattern for 10-delta mon
 
   
 
-Across the breadth of the sample, the IV spikes that occur between the two pools differ in timing and level of severity as well. It can therefore be observed that while ETH streamia coincides with upward IV spikes on practically a 1:1 ratio, BTC streamia also increases alongside BTC IV level, but not to the same degree. The BTC put selling happens to be less valuable than ETH put selling as well with both lower mean premia and maximum return percentages.
+Across the breadth of the sample, the IV spikes that occur between the two pools differ in timing and level of severity as well. It can therefore be observed that while ETH streamia coincides with upward IV spikes on practically a 1:1 ratio, BTC streamia also increases alongside BTC IV level, but not to the same degree. The BTC put selling happens to be less valuable than ETH put selling as well with both lower mean premia and maximum premia percentages.
 
   
 
@@ -49,7 +49,7 @@ Across the breadth of the sample, the IV spikes that occur between the two pools
 
 ![](./06.png)
 
-The summed return figures for the 10-delta ETH and BTC monthly put selling strategies show cumulative returns of 153% (27.4% annualized) and 108% (21.1% annualized) for the ETH and BTC tactics respectively spanning from May 2021 to March 2025. Why the disparity in not only returns, but IV-to-streamia correspondence between ETH and BTC? The answer lies in the [volatility risk premium](https://www.amazon.com/Positional-Option-Trading-Wiley/dp/1119583519).
+The summed premia figures for the 10-delta ETH and BTC monthly put selling strategies show cumulative premia of 153% (27.4% annualized) and 108% (21.1% annualized) for the ETH and BTC tactics respectively spanning from May 2021 to March 2025. Why the disparity in not only premia, but IV-to-streamia correspondence between ETH and BTC? The answer lies in the [volatility risk premium](https://www.amazon.com/Positional-Option-Trading-Wiley/dp/1119583519).
 
   
 
