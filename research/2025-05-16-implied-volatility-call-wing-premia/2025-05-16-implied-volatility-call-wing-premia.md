@@ -28,7 +28,7 @@ In this article, we will dive into the relative profitability of selling Panopti
 ![](./01.png)
 ![](./02.png)
 
-The above graphics highlight the monthly returns for selling 10-[delta](/research/understanding-delta-risk#what-is-delta) Panoption calls from May 2021 to April 2025 on the ETH/USDC 30bps pools (see code [here](https://github.com/panoptic-labs/research/tree/main/_research-bites/20250516)). The mean monthly premia for this strategy is around 2.8% (39.5% annualized) with the maximum monthly premia of 11.7% (279% annualized) aligning with a subdued [Uniswap](/research/new-formulation-implied-volatility) IV level over the course of July 2022. The collected call wing premia oscillates in an inverse fashion compared to put wing premia the majority of the sample period, while interestingly moving in direct concert with put wing premia at several isolated points when whipsawing price action was taking place.
+The above graphics highlight the monthly premia for selling 10-[delta](/research/understanding-delta-risk#what-is-delta) Panoption calls from May 2021 to April 2025 on the ETH/USDC 30bps pools (see code [here](https://github.com/panoptic-labs/research/tree/main/_research-bites/20250516)). The mean monthly premia for this strategy is around 2.8% (39.5% annualized) with the maximum monthly premia of 11.7% (279% annualized) aligning with a subdued [Uniswap](/research/new-formulation-implied-volatility) IV level over the course of July 2022. The collected call wing premia oscillates in an inverse fashion compared to put wing premia the majority of the sample period, while interestingly moving in direct concert with put wing premia at several isolated points when whipsawing price action was taking place.
 
   
 
