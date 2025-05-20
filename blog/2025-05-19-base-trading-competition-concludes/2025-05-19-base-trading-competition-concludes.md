@@ -10,7 +10,7 @@ description: "Panoptic’s Base trading competition has ended, with top traders 
 
 The Panoptic [trading competition](/blog/base-trading-competition) on Base has officially come to a close, and the results are in. Thank you to everyone who participated! Over the past two weeks, participants actively traded, LP’d, and deposited into Panoptic markets for a chance to win over $5,000 in USDC, 5,000,000+ Pips, and a limited edition 23” Panopduck plushie.
 
-Thank you to everyone who participated and helped make this competition a success. You can view the full list of winners on the [leaderboard](/leaderboard/pnl).
+Thank you to everyone who participated and helped make this competition a success. You can view the full list of winners on the [leaderboard](https://app.panoptic.xyz/leaderboard/pnl).
 
 # Base Trading Competition Winners
 
