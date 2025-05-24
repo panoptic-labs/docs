@@ -31,7 +31,9 @@ The Semi-Fungible Position Manager (SFPM) audit [report](https://code4rena.com/r
 The invariant testing [report](/pdf/TrailOfBits_Panoptic.pdf) was completed by [Trail of Bits](https://www.trailofbits.com/) on June 4, 2024 and found no issues of any severity.
 
 ### OpenZeppelin
-The second comprehensive smart contract audit [report](/pdf/OpenZeppelin_Panoptic.pdf) was completed by [OpenZeppelin](https://www.openzeppelin.com/) on December 27, 2023.
+The Uniswap V4 oracle hook audit [report](https://blog.openzeppelin.com/v3styleoraclehook-audit?hs_preview=hmquOpll-190369323392) was completed by [OpenZeppelin](https://www.openzeppelin.com/) on May 20, 2025.
+
+The second comprehensive smart contract audit [report](/pdf/OpenZeppelin_Panoptic.pdf) was completed by OpenZeppelin on December 27, 2023.
 
 ### ABDK
 The initial smart contract audit [report](/pdf/ABDK_Panoptic.pdf) was completed by [ABDK](https://abdk.consulting/) on April 26, 2023.

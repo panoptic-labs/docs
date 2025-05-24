@@ -55,6 +55,7 @@ const Footer = () => {
           <div className="learn-part__list">
             <a href="/docs/panoptic-protocol/overview">Protocol Overview</a>
             <a href="/docs/trading/basic-concepts">Options Trading 101</a>
+            <a href="https://dune.com/brandonly1000/panoptic">Analytics</a>
             <a href="https://paper.panoptic.xyz/" target="_blank">Whitepaper</a>
             <a href="https://intro.panoptic.xyz/" target="_blank">Litepaper</a>
             <a href="/docs/developers/smart-contracts-overview">Developers</a>
