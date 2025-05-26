@@ -1,4 +1,65 @@
+/* components/other/Header.css */
 .header {
   height: 92px;
   background-color: #F3F3F3;
+  position: relative;
 }
+
+/* Force logo spacing on mobile */
+@media (max-width: 996px) {
+  .header :global(.navbar__brand) {
+    margin-left: 50px !important;
+    padding-left: 10px !important;
+  }
+  
+  .header :global(.navbar__inner) {
+    padding-left: 50px !important;
+  }
+  
+  .header :global(.navbar) {
+    padding-left: 50px !important;
+  }
+  
+  /* Hide the original hamburger icon and replace with ellipsis */
+  .header :global(.navbar__toggle) {
+    position: absolute !important;
+    right: 16px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 10 !important;
+    background: none !important;
+    border: none !important;
+    padding: 8px !important;
+  }
+  
+  /* Hide the original hamburger lines */
+  .header :global(.navbar__toggle svg),
+  .header :global(.navbar__toggle .navbar__toggle-icon) {
+    display: none !important;
+  }
+  
+  /* Add ellipsis using pseudo-element */
+  .header :global(.navbar__toggle::after) {
+    content: "⋯";
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: white;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* On mobile, add padding to prevent logo overlap with hamburger */
+.header--mobile {
+  padding-left: 60px; /* Make space for the left hamburger */
+  padding-right: 60px; /* Make space for the right ellipsis */
+}
+
+/* Adjust the logo positioning on mobile */
+.header--mobile .navbar__brand {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+

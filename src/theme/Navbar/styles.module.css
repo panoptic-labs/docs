@@ -1,0 +1,39 @@
+/* navbar/styles.module.css */
+.docsBtn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: white;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  height: 100%; /* Makes sure it's centered inside the navbar height */
+  z-index: 10;
+}
+
+/* Add spacing to push logo away from hamburger */
+.navbar {
+  padding-left: 60px !important;
+}
+
+/* Target the navbar brand specifically on mobile */
+:global(.navbar__brand) {
+  margin-left: 45px !important;
+}
+
+/* Alternative: if the above doesn't work, try this */
+:global(.navbar) {
+  padding-left: 60px !important;
+}
+
+:global(.navbar__inner) {
+  padding-left: 45px !important;
+}
+

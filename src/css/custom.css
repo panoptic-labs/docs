@@ -213,3 +213,41 @@ h2 {
   font-size: 32px;
   font-weight: 600;
 }
+
+/* Mobile navbar ellipsis fix */
+@media screen and (max-width: 996px) {
+  /* Target the navbar toggle button more specifically */
+  .navbar .navbar__toggle,
+  button[aria-label*="Toggle navigation"],
+  button[aria-label*="navigation menu"] {
+    position: absolute !important;
+    right: 16px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 999 !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 8px !important;
+    width: auto !important;
+    height: auto !important;
+  }
+  
+  /* Hide all children of the toggle button */
+  .navbar .navbar__toggle *,
+  button[aria-label*="Toggle navigation"] *,
+  button[aria-label*="navigation menu"] * {
+    display: none !important;
+  }
+  
+  /* Add ellipsis */
+  .navbar .navbar__toggle::before,
+  button[aria-label*="Toggle navigation"]::before,
+  button[aria-label*="navigation menu"]::before {
+    content: "⋯" !important;
+    font-size: 1.8rem !important;
+    font-weight: bold !important;
+    color: white !important;
+    line-height: 1 !important;
+    display: block !important;
+  }
+}
