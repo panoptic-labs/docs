@@ -35,6 +35,16 @@ const config = {
         style: "dark",
         items: [
           {
+            label: "Trade",
+            href: "https://app.panoptic.xyz/trade",
+            position: "left",
+          },
+          {
+            label: "Earn",
+            href: "https://app.panoptic.xyz/earn",
+            position: "left",
+          },
+          {
             type: "doc",
             docId: "intro",
             position: "left",

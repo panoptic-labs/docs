@@ -1,16 +1,82 @@
-.docPage {
+/* drawer panel */
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+  max-width: 300px;
+  height: 100vh;
+  background: #1e1e1e;              /* solid dark bg */
+  color: #fff;
+  padding: 1rem;
+  box-shadow: 2px 0 12px rgba(0,0,0,.3);
+  z-index: 2001;
+  overflow-y: auto;
+}
+
+/* darker backdrop */
+.drawerBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  z-index: 2000;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #000; /* or use white if on dark background */
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.25rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 10;
+  border-radius: 50%;
+  line-height: 1;
+  transition: background 0.2s ease;
+}
+
+.closeBtn:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+
+/* remove bullets */
+.drawer :global(ul.menu__list),
+.drawer :global(li.menu__list-item) {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* link colours */
+.drawer :global(a.menu__link)           { color: #f5f5f5; }
+.drawer :global(a.menu__link--active)   { color: var(--ifm-color-primary-light); }
+
+/* desktop baseline unchanged */
+.docPage { display:flex; flex-direction:row; width:100%; flex:1 0; }
+
+.sidebarToggleArrow {
+  position: fixed;
+  top: 120px; /* adjust to align with your logo */
+  left: 280px;
+  z-index: 999;
+  width: 32px;
+  height: 32px;
+  font-size: 20px;
+  background: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+  cursor: pointer;
   display: flex;
-  width: 100%;
-  flex: 1 0;
-  background-color: #F3F3F3;
+  align-items: center;
+  justify-content: center;
+  transition: left 0.3s ease;
 }
 
-.docsWrapper {
-  display: flex;
-  flex: 1 0 auto;
+.theme-doc-sidebar-container--hidden + .sidebarToggleArrow {
+  left: 0;
 }
-
-* li * {
-  color: black;
-}
-
