@@ -1862,7 +1862,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Strike 
+ The strike tick, defined as the average of the lower bound tick of this position and the upper bound 
 
 </td>
 </tr>
@@ -1871,7 +1871,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Width 
+ The width of this position, defined as the upper bound tick of the position, minus the lower bound, divided by tickSpacing
 
 </td>
 </tr>
