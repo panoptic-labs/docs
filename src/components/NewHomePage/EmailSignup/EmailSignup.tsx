@@ -44,17 +44,17 @@ const EmailSignUp: React.FC = () => {
         {/* Competition CTA */}
         <div className="interest-section bg-panoptic-purple flex flex-col justify-center h-full text-center shadow-md px-8 py-4 rounded-lg text-white">
           <img
-            src="/img/panoptic-base-competition-banner.svg"
+            src="/img/panoptic-base-competition-banner-cbtc.svg"
             alt="Trading Competition"
             className="mx-auto w-60 h-auto mb-4 mt-2"
           />
-          <p className="text-lg font-semibold">Earn Panoptic Points</p>
+          <p className="text-lg font-semibold">Join our Bitcoin Trading Competition!</p>
           <button
             // onClick={() => setInterestOpen(true)}
-            onClick={() => window.location.href = 'https://app.panoptic.xyz/leaderboard/pips'}
+            onClick={() => window.location.href = 'https://app.panoptic.xyz/leaderboard/pnl'}
             className="mt-2 px-8 py-3 bg-white text-panoptic-purple font-semibold rounded-lg hover:bg-gray-100 transition ease-in-out duration-150 active:scale-95"
           >
-            Start Earning
+            Win A Prize
           </button>
         </div>
 
@@ -66,7 +66,7 @@ const EmailSignUp: React.FC = () => {
             className="mx-auto w-60 h-auto mb-6"
           />
           <p className="text-lg font-semibold text-panoptic-purple mb-2">
-            Subscribe for Newsletter Updates
+            Stay Up To Date With DeFi Options
           </p>
           <button
             onClick={() => setNewsletterOpen(true)}
@@ -231,7 +231,7 @@ const EmailSignUp: React.FC = () => {
               >
                 <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
                   <div className="bg-panoptic-purple p-5">
-                    <h3 className="text-xl font-semibold text-white mb-0">Get the latest product news and updates</h3>
+                    <h3 className="text-xl font-semibold text-white mb-0">Get the latest updates with our newsletter</h3>
                   </div>
                   <div className="bg-gray-50 p-6">
                     <HubspotForm
