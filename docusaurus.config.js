@@ -177,7 +177,7 @@ const config = {
       announcementBar: {
         id: "ETH_Denver_2023",
         content:
-          "Panoptic is live on <a href=\"https://app.panoptic.xyz/leaderboard/pnl\">Base</a>!",
+          "Join our <a href=\"https://app.panoptic.xyz/leaderboard/pnl\">Bitcoin trading contest</a> starting June 2. $5K, 5M+ Pips, Michael Saylor Pillow!",
         textColor: "#FFFFFF",
         isCloseable: true,
       },
