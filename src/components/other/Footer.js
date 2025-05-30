@@ -68,7 +68,7 @@ const Footer = () => {
           <div className="community-part">
             <div className="community-part__title">Community</div>
             <div className="community-part__links">
-              <a className="community-part__link" href="https://discord.gg/7fE8SN9pRT" aria-label="Discord" />
+              <a className="community-part__link" href="https://discord.gg/8sX5Af2KXG" aria-label="Discord" />
               <a className="community-part__link" href="https://twitter.com/panoptic_xyz" aria-label="Twitter" />
               <a className="community-part__link" href="https://t.me/panoptic" aria-label="Telegram" />
               <a className="community-part__link" href="https://www.linkedin.com/company/panoptic-xyz" aria-label="Linked In" />
