@@ -60,7 +60,7 @@ We simulate both strategies using the WETH/USDC 30 bps Uniswap pool from January
   - **Payoff** is the profit or loss profile of an option as the spot price moves, shaped by the liquidity position’s range and type (e.g., short call, short put).
   - **Returns** represent the net profit or loss from an options strategy, calculated as the sum of payoff and earned fees, minus commissions (zero in our case), plus any additional yield from providing liquidity. This reflects the total performance of a position over time, accounting for both market movement and protocol-level earnings.
 
-You can view the code [here.]{https://github.com/panoptic-labs/research/tree/main/_research-bites/20250520}
+You can view the code [here](https://github.com/panoptic-labs/research/tree/main/_research-bites/20250520).
 
 You can view the code here
 
