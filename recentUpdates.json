@@ -1,11 +1,27 @@
 [
   {
+    "title": "Bitcoin Trading Contest: June Newsletter",
+    "date": "2025-06-03",
+    "image": "https://panoptic.xyz/img/banners/june-2025-newsletter-banner.png",
+    "link": "https://panoptic.xyz/blog/panoptic-newsletter-june-2025",
+    "description": "Panoptic kicks off Bitcoin trading contest on Base with $4.8K prize pool, 5M+ Pips, and a Michael Saylor pillow!",
+    "id": 1
+  },
+  {
+    "title": "Bitcoin Trading Competition on Base",
+    "date": "2025-06-02",
+    "image": "https://panoptic.xyz/img/banners/bitcoin-on-base-bannner.png",
+    "link": "https://panoptic.xyz/blog/bitcoin-trading-competition-on-base",
+    "description": "Join Panoptic's Bitcoin trading contest to win up to $4,800, a Michael Saylor pillow, and over 5M Pips—trade now on Base!",
+    "id": 2
+  },
+  {
     "title": "Base Trading Competition Concludes",
     "date": "2025-05-19",
     "image": "https://panoptic.xyz/img/banners/banner.png",
     "link": "https://panoptic.xyz/blog/base-trading-competition-concludes",
     "description": "Panoptic’s Base trading competition has ended, with top traders and LPs winning over $5K in prizes and 5M+ Pips.",
-    "id": 1
+    "id": 3
   },
   {
     "title": "Relief Risk Premium: IV & Call Wing Premia",
@@ -13,7 +29,7 @@
     "image": "https://panoptic.xyz/img/research/relief-risk-premium-banner.png",
     "link": "https://panoptic.xyz/research/implied-volatility-call-wing-premia",
     "description": "Dive into how the relief risk premium manifests itself in OTM call options as well as how this premium can be exploited on the Panoptic platform.",
-    "id": 2
+    "id": 4
   },
   {
     "title": "Base vs Ethereum Blockchains: Implied Volatility and Market Analysis",
@@ -21,22 +37,6 @@
     "image": "https://panoptic.xyz/img/research/base-vs-ethereum-iv-banner.png",
     "link": "https://panoptic.xyz/research/base-vs-ethereum-iv",
     "description": "Comparison between the Ethereum and Base blockchains, evaluating ETH/USDC pool pricing, implied volatility, and Panoptions strategy performance.",
-    "id": 3
-  },
-  {
-    "title": "Base Trading Competition is Live: May Newsletter",
-    "date": "2025-05-09",
-    "image": "https://panoptic.xyz/img/banners/may-25-newsletter.png",
-    "link": "https://panoptic.xyz/blog/panoptic-newsletter-may-2025",
-    "description": "Base launch highlights, trading competition updates, explosive ETH PA, and the latest in DeFi research.",
-    "id": 4
-  },
-  {
-    "title": "Base Trading Competition",
-    "date": "2025-05-05",
-    "image": "https://panoptic.xyz/img/banners/base-competition-banner.png",
-    "link": "https://panoptic.xyz/blog/base-trading-competition",
-    "description": "Join Panoptic's Trading Competition to win up to $5,000, a jumbo plushie, and over 5M Pips—trade now on Base!",
     "id": 5
   }
 ]
