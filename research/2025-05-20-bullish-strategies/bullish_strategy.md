@@ -1,14 +1,13 @@
 ---
 slug: bullish-strategy
 title: "Short Put vs Long Call: Who Wins the Bull Fight"
-tags:  [Uniswap, Short Put, Long Call, Bullish]
+tags: [Uniswap, Short Put, Long Call, Bullish]
 image: /img/research/bullish-strategy-banner.png
 description: "A data-driven comparison of long call vs short put strategies on Panoptic, revealing key risk-reward tradeoffs in bullish DeFi markets."
 authors: A
 ---------------------
 
 ![](./bullish-strategy-banner.png)
-
 
 
 ## Introduction
@@ -63,13 +62,13 @@ You can view the code here
 
 ## Results 
 ![](./1.png)
-** Figure 5** The WETH/USDC spot price is sourced from the Uniswap V3 30 bps pool, covering the period from January 2024 to February 2025. This timeframe exhibits significant volatility, characterized by a wide range of dynamic price patterns.
+** Figure 1** The WETH/USDC spot price is sourced from the Uniswap V3 30 bps pool, covering the period from January 2024 to February 2025. This timeframe exhibits significant volatility, characterized by a wide range of dynamic price patterns.
 
 ![](./2.png)
-** Figure 5** Weekly and monthly decomposition of ETH monthly long call and short put returns, premia, and payoff for weekly and monthly rolled options.
+** Figure 2** Weekly and monthly decomposition of ETH monthly long call and short put returns, premia, and payoff for weekly and monthly rolled options.
 
 ![](./3.png)
-** Figure 5** Weekly and monthly decomposition of ETH monthly long call and short put returns, premia, and payoff for weekly and monthly rolled options.
+** Figure 3** Weekly and monthly decomposition of ETH monthly long call and short put returns, premia, and payoff for weekly and monthly rolled options.
 
 
 
