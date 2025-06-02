@@ -10,6 +10,9 @@ authors: A
 ![](./bullish-strategy-banner.png)
 
 
+**Feel free to check out our livestream video on YouTube!**
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-82ziv3tytU?si=v4klKIvTpSN4chob" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Introduction
 
 Options strategies offer traders structured ways to express bullish or bearish views with tailored risk exposures. **Panoptic** enables these expressions in a novel DeFi-native way, transforming Uniswap V3 liquidity positions into perpetual options. Panoptic options are **perpetual**: as long as the position remains in range (within the Uniswap tick boundaries), [streamia](https://panoptic.xyz/docs/product/streamia#what-is-streamia) flows continuously. Option buyers pay streamia, while sellers collect it. When the price moves out of range, streamia stops, introducing a novel time-premium decay mechanism in DeFi.
