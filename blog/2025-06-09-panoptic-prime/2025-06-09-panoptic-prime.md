@@ -46,7 +46,7 @@ Because Panoptic Prime isn’t just a role — it’s a front-row seat to everyt
 
 ### How to Join
 
--   Fill out the quick [form]((https://panoptic.deform.cc/)) (wallet + Discord ID)
+-   Fill out the quick [form](https://panoptic.deform.cc/) (wallet + Discord ID)
     
 -   We verify based on leaderboard data and internal logs
     
