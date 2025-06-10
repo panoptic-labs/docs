@@ -80,7 +80,7 @@ A Hurst exponent on asset returns greater than 0.5 is indicative of a favorable 
 
 Based on the above displays, there are two distinct parallels shared by ETH and BTC throughout the sample. One is that not only the absolute level, but the relative “[acceleration](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2645882)” of spot-vol correlation–either upward or downward over a given time period–is relevant to risk reversal returns. The other is that steep increases in the Hurst exponent coincide with steep increases in spot-vol correlation, while sudden drops in the Hurst exponent align with sudden drops in spot-vol correlation. Trendier returns thereby serve as a factor in augmenting spot-vol correlation, and mean-reverting returns play a role in diminishing spot-vol correlation.
 
-(./08.png)
+![](./08.png)
 
 These results extend the conclusions of [prior literature](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4150310) which found that persistent autocorrelation (or trend) is empirically associated with equity bull markets and autocorrelation anti-persistence (or mean-reversion) presents itself during equity bear markets, as the above graph helps to illustrate with the S&P 500 index.
 
