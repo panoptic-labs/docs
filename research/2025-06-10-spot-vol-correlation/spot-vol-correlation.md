@@ -22,7 +22,7 @@ Now that the conceptual foundation for spot-vol correlation has been established
 
   
 
-How do asymmetries in spot-vol correlation manifest themselves in various asset classes?
+*How do asymmetries in spot-vol correlation manifest themselves in various asset classes?*
 
   
 
