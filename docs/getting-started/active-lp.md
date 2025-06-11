@@ -42,6 +42,16 @@ Ready to get started? Visit our [app](https://app.panoptic.xyz) to begin earning
 <ThemedImage
   alt="Active-LP"
   sources={{
+    light: useBaseUrl('/img/bullish-lp.png'),
+    dark: useBaseUrl('/img/bullish-lp.png'),
+  }}
+  style={{width: '100%'}}
+/>
+
+
+<ThemedImage
+  alt="Active-LP"
+  sources={{
     light: useBaseUrl('/img/active-lp.svg'),
     dark: useBaseUrl('/img/active-lp.svg'),
   }}
@@ -52,3 +62,4 @@ Ready to get started? Visit our [app](https://app.panoptic.xyz) to begin earning
 ### Resources
 - [LP = Options](/blog/uniswap-lp-equals-options)
 - [Liquidity Spread](/docs/product/spread)
+- [Delta Neutral LP - How to Hedge a Uniswap Position](/blog/delta-neutral-lp-hedge-uniswap-position)
