@@ -19,6 +19,7 @@ When you LP on Uniswap, you’re implicitly taking a directional bet:
 -   **Fees inside your range**: If you center your liquidity around the current price, you collect swap fees as long as the price stays in range.
 -   **Bullish on the underlying**: Your position is composed of both tokens. As price rises, the combined value of your underlying tokens increases.
     
+![](./0.png)
 
 That’s great when markets are sideways or going up. But when prices start crashing, you’re out of range and underwater. No more fees, just IL.
 
@@ -40,7 +41,7 @@ A quick rule of thumb is **delta (Δ)**—the slope of the payoff curve. Here, �
 
 ## Enter the Hedge: Short Perpetual Call
 
-Can we blunt those losses? Yes. Sell a perpetual call. Here’s what that looks like:
+Can we reduce those losses? Yes. Sell a perpetual call. Here’s what that looks like:
 
 ![](./3.png)
 
@@ -69,6 +70,10 @@ Here’s the formula:
 Effectively, you’re running what’s called a short straddle in the options world: profitable if price stays in range, cushioned if it drifts.
 
 Even better, on Panoptic the short call earns at least as many LP fees as the Uniswap leg, so you’re doubling your fee income while neutralizing direction.
+
+### The Cost of Hedging
+
+By hedging through selling options, this strategy earns additional income. The tradeoff is exposure to upside risk—if the price rises significantly, the position suffers losses.
 
 > You can execute the entire strategy in Panoptic via “Delta‑Neutral Uniswap LP” under [Provide Liquidity](http://app.panoptic.xyz/trade).
 
