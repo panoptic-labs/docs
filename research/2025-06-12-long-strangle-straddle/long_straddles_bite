@@ -1,12 +1,11 @@
-
 ---
 slug: long-stangle-straddle
 title: "Straddles vs Strangles: Who Wins in a Delta-Neutral Fight"
-tags: [Strangle, Straddle,Delta-neutral]
+tags: [Strangle, Straddle, Delta-neutral]
 image: /img/research/long-strangle-straddle-banner.png
 description: "A data-driven comparison of straddle vs strangle strategies on Panoptic, revealing key risk-reward tradeoffs in neutral DeFi markets."
 authors: A
----------------------
+---
 
 ![](/long-strangle-straddle-banner.png)
 
@@ -49,10 +48,10 @@ drag during sideways markets.
 In Panoptic, options are perpetual, and premiums accrue as streaming fees over time when liquidity is in-range. For straddle and strangle **sellers**, this transforms theta from a decaying liability into a positive revenue stream. These straddle strategies are designed to maximize time-in-range for both call and put legs. On the other hand, it is important to note that by frequently rolling both legs around the ATM price, each strategy harvests volatility, not through price direction, but through *mean reversion and touch frequency*. In effect, these are **theta-maximizing, delta-neutral** positions for DeFi-native traders.
 
 ![](1.png)
-** Figure 1** Payoff comparison between long straddle and long strangle strategies, illustrating how both benefit from large price movements in either direction, with the straddle activating closer to the spot and the strangle requiring a wider move to generate returns.
+**Figure 1** Payoff comparison between long straddle and long strangle strategies, illustrating how both benefit from large price movements in either direction, with the straddle activating closer to the spot and the strangle requiring a wider move to generate returns.
 
 ![](2.png)
-** Figure 2** Payoff Comparison of Long Strangle vs. Long Straddle on Panoptic — This figure displays the UI payoff curves for two volatility strategies on Panoptic: the Long Strangle (left) and the Long Straddle (right). The Long Strangle combines an out-of-the-money call (strike 3128) and put (strike 2345).
+**Figure 2** Payoff Comparison of Long Strangle vs. Long Straddle on Panoptic — This figure displays the UI payoff curves for two volatility strategies on Panoptic: the Long Strangle (left) and the Long Straddle (right). The Long Strangle combines an out-of-the-money call (strike 3128) and put (strike 2345).
 
 
 ## Data
@@ -67,14 +66,14 @@ One key factor not accounted for in this analysis is the [spread multiplier](htt
 ## Results & Interpretation
 
 ![](3.png)
-** Figure 3** ETH/USDC price dynamics from May 2024 to April 2025 in the 30 bps Uniswap v3 pool. The market shows both strong price moves and long sideways periods—making it a great environment to test how straddles and strangles perform using Panoptic’s streaming fee model.
+**Figure 3** ETH/USDC price dynamics from May 2024 to April 2025 in the 30 bps Uniswap v3 pool. The market shows both strong price moves and long sideways periods—making it a great environment to test how straddles and strangles perform using Panoptic’s streaming fee model.
 
 Looking at this ETH price chart spanning from May 2024 to April 2025, we can see some really interesting patterns that are perfect for our options backtesting. ETH started around three thousand dollars, rallied to over four thousand in late 2024, but then got hit hard and dropped all the way down to about eighteen hundred dollars - that's a massive 56% decline from the peak. What's fascinating here is how the price moves in these distinct phases. You can see we had this sideways, choppy period through most of 2024 where ETH was just grinding. Then boom - we get this explosive dcrease in the beginning of 2025.
 
 This kind of price action is exactly what we want when testing straddles and strangles. During those choppy, low-volatility periods, straddles would have been collecting premium nicely as the price stayed range-bound. But then during these big breakout moves especially that massive drop we're seeing now that's where strangles really shine, particularly if you had those out-of-the-money puts positioned correctly.
 
 ![](4.png)
-** Figure 4** Cumulative performance of ETH long straddle and strangle strategies across weekly and monthly rolling intervals. The charts break down total returns into fee income (premia), directional gains (payoff), and net results, illustrating how volatility regimes and rolling frequency influence the trade-off between premium decay and realized PnL.
+**Figure 4** Cumulative performance of ETH long straddle and strangle strategies across weekly and monthly rolling intervals. The charts break down total returns into fee income (premia), directional gains (payoff), and net results, illustrating how volatility regimes and rolling frequency influence the trade-off between premium decay and realized PnL.
 
 
 The comparative performance of long straddle and long strangle strategies on ETH/USDC, as illustrated in the figures, highlights how structure and cost sensitivity shape their outcomes under Panoptic’s perpetual option framework. All short strategies show strong premium collection - short straddles earning 45-52% and short strangles 43-51% demonstrating the power of selling volatility in crypto markets. Moreover, monthly rebalancing consistently outperforms weekly by twice as much for both long straddles and long strangles, showing that less frequent adjustments on long positions capture price swings more effectively.
@@ -82,7 +81,7 @@ The comparative performance of long straddle and long strangle strategies on ETH
 The long straddle, which places both the call and put at the at-the-money strike, responds more quickly to short-term price fluctuations. However, this sensitivity comes at a cost. Because both legs are active around the spot price, premium accrues continuously, even in low-volatility environments where neither leg generates meaningful payoff. This results in a performance profile where cumulative payoffs trend upward but are largely offset by the persistent drag of streaming fees. What's even more fascinating is that even though straddles have an immediate activation of the legs, strangle still outperformed the straddles at the end of the one year backtest: 3.28% for straddles against 10.46% for strangles. In fact, the long strangle—constructed with out-of-the-money legs—shows a more favorable risk/reward profile. Since each leg activates only when ETH moves beyond a wider threshold, premium decay is lower and more episodic. This design allows the strangle to perform well during breakout phases while remaining relatively insulated during quiet periods.
 
 ![](5.png)
-** Figure 5** Performance breakdown of ETH long straddle (50 delta) and strangle (30 delta) strategies across weekly and monthly rolling intervals, highlighting differences in fee accumulation, directional payoff, and overall return dynamics under varying volatility conditions. 
+**Figure 5** Performance breakdown of ETH long straddle (50 delta) and strangle (30 delta) strategies across weekly and monthly rolling intervals, highlighting differences in fee accumulation, directional payoff, and overall return dynamics under varying volatility conditions. 
 
 When examining the granular return charts, we observe that generally speaking, there isn't much difference in the performances of these two strategies in terms of the patterns of the returns. However, straddles seem to have the highest monthly return in both rolling frequencies, while, strangles still outperformed the straddles at the end of the one-year backtest.
 
