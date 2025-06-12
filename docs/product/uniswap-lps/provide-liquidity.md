@@ -20,7 +20,7 @@ Follow these steps to start LPing.
 
 This is the official Panoptic trading interface.
 
-### Step 2: Connect Your Wallet**
+### Step 2: Connect Your Wallet
 
 Click **Connect Wallet** and choose your preferred wallet provider. Then, select the **network** you want to provide liquidity on (e.g., Ethereum, Base, Unichain, etc.).
 
