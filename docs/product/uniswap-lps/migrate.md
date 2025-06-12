@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1.5
+sidebar_position: 1
 slug: migrate
 title: "Migrating From Uniswap"
 tags: [Tutorial, Uni V2, Uni V3]
