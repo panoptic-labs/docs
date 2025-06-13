@@ -27,16 +27,16 @@ This research byte investigates two multi-legs strategies: straddles and strangl
 Straddles are volatility-focused options strategies that involve buying both a call and put option at the same strike price (typically at-the-money). This creates a symmetric "V-shaped" payoff profile where the strategy profits when the underlier moves significantly in either direction
 
 - Profit if the underlying price moves significantly in either direction.
-- Max gain: unlimited upside if the underlyer rises, or large gain if ETH falls sharply.
+- Max gain: unlimited upside if the underlier rises, or large gain if ETH falls sharply.
 - Risk: limited to the total streamia paid for both legs.
 - Ideal market: highly volatile with large, unpredictable moves.
 
 ### Strangle
 
-Strangles, on the other hand offer a more cost-effective approach to volatility trading by purchasing out-of-the-money call and put options at different strike prices, creating a wider "profit dead zone" between the strikes. This strategy requires larger price movements to become profitable since the underlyer must break beyond either OTM range, but compensates with lower costs compared to straddles. 
+Strangles, on the other hand offer a more cost-effective approach to volatility trading by purchasing out-of-the-money call and put options at different strike prices, creating a wider "profit dead zone" between the strikes. This strategy requires larger price movements to become profitable since the underlier must break beyond either OTM range, but compensates with lower costs compared to straddles. 
 
 - Profit if the underlying price moves beyond either OTM strike level.
-- Max gain: unlimited if the underlyer trends strongly up or down.
+- Max gain: unlimited if the underlier trends strongly up or down.
 - Risk: limited to the total streamia paid, typically lower than for a straddle.
 - Ideal market: directional breakout after low volatility.
 
