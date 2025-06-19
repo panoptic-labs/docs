@@ -50,14 +50,16 @@ This introduces new opportunities for traders, such as perpetual [calendar sprea
 
 Panoptic offers options with varying timescales:
 
--   1D (One Day)
-    
--   1W (One Week)
-    
--   1M (One Month)
-   
+Pick a [timescale](/docs/product/timescales) that fits your expected duration in range:
+- `1H` (One Hour) ≈ ±1% wide LP price range
+- `1D` (One Day) ≈ ±%4 wide LP price range
+- `1W` (One Week) ≈ ±13% wide LP price range
+- `1M` (One Month) ≈ ±27% wide LP price range
+- `1Y` (One Year) ≈ ±112% wide LP price range
   
 Each timescale indicates a different width of the option, influencing the price range in which the option can accumulate streamia. For instance, longer timescales offer a broader price range, potentially increasing the duration streamia is accumulated but might result in lower fee accrual per unit of time.
+
+The timescale corresponds to the underlying LP position in Uniswap, where the timescale is the estimated amount of the time that an LP position will stay "in range", assuming 50% volatility. The mathematical formula for the estimated timescale can be found [here](/research/zero-dte-defi-options).
 
 Below are some examples of varying timescales for AVAX calls.
 
