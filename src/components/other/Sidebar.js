@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import React, { useEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 
 import "./Sidebar.css";
 import useResponsive from "../../hooks/useResponsive";
@@ -11,7 +11,7 @@ const Sidebar = ({ isOpenedSidebar, onClose, onToggle }) => {
   const { isTabletWidth } = useResponsive();
   const ref = useRef();
 
-  useEffect(() => {
+  useLayoutEffect (() => {
     if (isOpenedSidebar && isTabletWidth) {
       document.documentElement.style.overflowY = "hidden";
     } else {
