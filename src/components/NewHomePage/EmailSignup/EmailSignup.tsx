@@ -45,7 +45,7 @@ const EmailSignUp: React.FC = () => {
         <div className="interest-section bg-panoptic-purple flex flex-col justify-center h-full text-center shadow-md px-8 py-4 rounded-lg text-white">
           <img
             src="/img/liquidity-land-banner.svg"
-            alt="Trading Competition"
+            alt="Liquidity Land Campaign"
             className="mx-auto w-60 h-auto mb-4 mt-2"
           />
           <p className="text-lg font-semibold">Get a Boost Through Our Liquidity.Land Campaign!</p>
