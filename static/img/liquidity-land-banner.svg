@@ -9,15 +9,15 @@
   <clipPath id="slot0"><path d="M48 48.14h55v54H48z"/></clipPath>
   <clipPath id="slot1"><path d="M98 49h15.3v53H98z"/></clipPath>
   <clipPath id="slot2"><path d="M39.03 49H54v53H39.03z"/></clipPath>
-  <clipPath id="slot3"><path d="M202.23 48.14H256v53.86H202.23z"/></clipPath>
+  <clipPath id="slot3"><rect  x="150" y="30" width="150" height="120"/></clipPath>
   <clipPath id="slot4"><path d="M355 48.14h55v54H355z"/></clipPath>
   <clipPath id="slot5"><path d="M404 49h15.5v53H404z"/></clipPath>
   <clipPath id="slot6"><path d="M345.25 49H361v53H345.25z"/></clipPath>
-  <clipPath id="slot7"><path d="M508.38 48.14H562v53.86H508.38z"/></clipPath>
+  <clipPath id="slot7"><rect  x="435" y="30" width="150" height="120"/></clipPath>
   <clipPath id="slot8"><path d="M653 48.14h55v54H653z"/></clipPath>
   <clipPath id="slot9"><path d="M703 49h15.3v53H703z"/></clipPath>
   <clipPath id="slot10"><path d="M644.05 49H659v53H644.05z"/></clipPath>
-  <clipPath id="slot11"><path d="M807.25 48.14H861v53.86H807.25z"/></clipPath>
+  <clipPath id="slot11"><rect x="730" y="30" width="150" height="120"/></clipPath>
 
   <!-- Liquidity.Land gradient-eye symbol (full) -->
   <symbol id="liquidityEye" viewBox="0 0 35 23" preserveAspectRatio="xMidYMid meet">
@@ -152,6 +152,11 @@
   </symbol>
 </defs>
 
+
+<!-- ───────── halo strip behind all three eyes (very subtle) ───────── -->
+<!-- <rect x="0" y="30" width="900" height="120" fill="#fff" opacity="0.06"/> -->
+
+
 <!-- ──────  icon row  ────── -->
 
 <!-- slot 0 – big circle -->
@@ -170,8 +175,6 @@
         d="M113.277 75.141c0 9.825-3.77 19.099-10.629 26.121l-4.129-4.031
            c5.801-5.946 8.986-13.794 8.986-22.09 0-8.307-3.185-16.162-8.986-22.09
            l4.129-4.032c6.859 7.024 10.629 16.298 10.629 26.122z"/>
-  <!-- Liquidity Eye -->
-  <use href="#liquidityEye" x="98" y="63" width="15.3" height="11"/>
 </g>
 
 <!-- slot 2 – left wing -->
@@ -184,8 +187,7 @@
 
 <!-- slot 3 – wide eye (20 × 13 px, centred) -->
 <g clip-path="url(#slot3)">
-  <use href="#liquidityEye"
-       x="218" y="62" width="20" height="13"/>
+  <use href="#liquidityEye" x="180" y="45" width="91" height="60"/>
 </g>
 
 <!-- slot 4 – big circle -->
@@ -203,7 +205,6 @@
         d="M419.5 75.141c0 9.825-3.77 19.099-10.629 26.121l-4.129-4.031
            c5.801-5.946 8.986-13.794 8.986-22.09 0-8.307-3.185-16.162-8.986-22.09
            l4.129-4.032c6.859 7.024 10.629 16.298 10.629 26.122z"/>
-  <use href="#liquidityEye" x="404" y="63" width="15.3" height="11"/>
 </g>
 
 <!-- slot 6 – left wing -->
@@ -216,7 +217,7 @@
 
 <!-- slot 7 – wide eye -->
 <g clip-path="url(#slot7)">
-  <use href="#liquidityEye" x="504" y="62" width="20" height="13"/>
+  <use href="#liquidityEye" x="484" y="45" width="91" height="60"/>
 </g>
 
 <!-- slot 8 – big circle -->
@@ -234,7 +235,6 @@
         d="M718.301 75.141c0 9.825-3.77 19.099-10.629 26.121l-4.129-4.031
            c5.801-5.946 8.986-13.794 8.986-22.09 0-8.307-3.185-16.162-8.986-22.09
            l4.129-4.032c6.859 7.024 10.629 16.298 10.629 26.122z"/>
-  <use href="#liquidityEye" x="703" y="63" width="15.3" height="11"/>
 </g>
 
 <!-- slot 10 – left wing -->
@@ -247,7 +247,7 @@
 
 <!-- slot 11 – wide eye -->
 <g clip-path="url(#slot11)">
-  <use href="#liquidityEye" x="803" y="62" width="20" height="13"/>
+  <use href="#liquidityEye" x="778" y="45" width="91" height="60"/>
 </g>
 
 </svg>
