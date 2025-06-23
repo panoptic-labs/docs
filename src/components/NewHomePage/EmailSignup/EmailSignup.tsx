@@ -41,20 +41,20 @@ const EmailSignUp: React.FC = () => {
   return (
     <div className="email-signup-container relative z-0">
       <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 items-stretch gap-8 pb-12">
-        {/* Competition CTA */}
+        {/* Liquidity Land CTA */}
         <div className="interest-section bg-panoptic-purple flex flex-col justify-center h-full text-center shadow-md px-8 py-4 rounded-lg text-white">
           <img
-            src="/img/panoptic-base-competition-banner-cbtc.svg"
+            src="/img/liquidity-land-banner.svg"
             alt="Trading Competition"
             className="mx-auto w-60 h-auto mb-4 mt-2"
           />
-          <p className="text-lg font-semibold">Join our Bitcoin Trading Competition!</p>
+          <p className="text-lg font-semibold">Get a Boost Through Our Liquidity.Land Campaign!</p>
           <button
             // onClick={() => setInterestOpen(true)}
-            onClick={() => window.location.href = 'https://app.panoptic.xyz/leaderboard/pnl'}
+            onClick={() => window.location.href = 'https://app.liquidity.land/project/Panoptic'}
             className="mt-2 px-8 py-3 bg-white text-panoptic-purple font-semibold rounded-lg hover:bg-gray-100 transition ease-in-out duration-150 active:scale-95"
           >
-            Win A Prize
+            Get Your Boost
           </button>
         </div>
 
