@@ -99,6 +99,8 @@ $$\text{P\&L}_{\text{Reverse Gamma Scalping}} = \text{Vega} \cdot \left( \sigma_
 $$
 &
 *Short Vol-of-Vol P&L*:
+
+
 ([2](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4291955))
 $$
 \text{P\&L}_{\text{Short Vol-of-Vol}} = \frac{1}{2} \sigma_{\text{ATM}}^2 \cdot \text{Volga} \cdot \left( \nu_{\text{imp}}^2 - \nu_{\text{real}}^2 \right) \Delta t 
