@@ -14,7 +14,7 @@ authors: A
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/OeK2TdAC8e4?si=Jcuy6rhrDtwYXzwd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-> **Note:** The results of the premia have been updated in this bite due to a correction in the backtester code. We apologize for the minor inconvenience and appreciate your understanding.
+> Note: The premia results have been updated as up 6/26/25 due to a correction in the backtester.
 
 ## Introduction
 
