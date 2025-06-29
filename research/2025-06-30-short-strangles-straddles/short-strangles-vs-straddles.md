@@ -2,12 +2,12 @@
 slug: short-strangle-vs-straddle
 title: "Straddles vs Strangles: Who Wins in a Delta-Neutral Fight"
 tags: [Strangle, Straddle, Delta-neutral]
-image: /img/research/short-strangle-vs-straddle.png
+image: /img/research/short-strangles-vs-straddles-banner.png
 description: "A data-driven comparison of short straddle vs short strangle strategies on Panoptic, revealing key risk-reward tradeoffs in neutral DeFi markets."
 authors: A
 ---
 
-![](short-strangle-vs-straddle.png)
+![](short-strangles-vs-straddles-banner.png)
 
 
 **Feel free to check out our livestream video on YouTube!**
@@ -73,12 +73,12 @@ This strategy mirrors the perpetual straddle structure but repositions the short
 
 ## 3. Data
 
-To evaluate the performance of short straddle and short strangle strategies on ETH/USDC, we simulate monthly option positions using a \href[range factor](https://panoptic.xyz/research/uniswap-lp-calculate-price-range)of 1.27, the equivalent of an LP position that is concentrated 27\% above and 27\% below the current price. The backtest period spans one year, from May 2024 to April 2025, just like in part 3. For the short straddle, we take simultaneous short positions in both a call and a put option at the current market price, thereby maximizing fee collection near the spot price. For the short strangle, the call and put positions are placed further apart to reflect out-of-the-money exposure, aiming to collect fees across a broader range. These strategies are designed to profit from low volatility and price stability, earning streaming fees as long as ETH remains within the defined range. Although options are undercollateralized on Panoptic, we assume strategies are fully collateralized for these backtests, incur no trading commission, and are evaluated using historical Uniswap v3 pool data with a 0.3\% fee tier on the Ethereum network.
+To evaluate the performance of short straddle and short strangle strategies on ETH/USDC, we simulate monthly option positions using a[range factor](https://panoptic.xyz/research/uniswap-lp-calculate-price-range) of 1.27, the equivalent of an LP position that is concentrated 27% above and 27% below the current price. The backtest period spans one year, from May 2024 to April 2025, just like in part 3. For the short straddle, we take simultaneous short positions in both a call and a put option at the current market price, thereby maximizing fee collection near the spot price. For the short strangle, the call and put positions are placed further apart to reflect out-of-the-money exposure, aiming to collect fees across a broader range. These strategies are designed to profit from low volatility and price stability, earning streaming fees as long as ETH remains within the defined range. Although options are undercollateralized on Panoptic, we assume strategies are fully collateralized for these backtests, incur no trading commission, and are evaluated using historical Uniswap v3 pool data with a 0.3% fee tier on the Ethereum network.
 
 In this backtest, we evaluate daily, weekly and monthly rolling frequencies to measure how often straddle and strangle positions are reset around the market price. daily rolling offers tighter alignment with short-term volatility, while weekly and monthly rolling captures broader directional moves and amplifies longer term payoff dynamics.
 
 **Important Note:**  
-One key factor not accounted for in this analysis is the [spread multiplier](https://panoptic.xyz/docs/product/spread) , which is likely greater than 1x. In fact, observed data shows an average [spread multiplier](https://panoptic.xyz/research/loss-versus-panoptic-why-lps-are-losing) of approximately 1.2x. This implies that, when the spread multiplier is equal to 1, the option premium reflects its theoretical value with no adjustment. However, when the spread multiplier is greater than 1—in our case, 1.2x—This means the actual trading conditions deviate from the base pricing due to increased option buyer demand. In this case, buyers pay 20\% more than the expected price, making options more expensive to purchase. Conversely, sellers benefit from this spread, earning 20\% more than the base premium, which makes selling options more profitable under these conditions.
+One key factor not accounted for in this analysis is the [spread multiplier](https://panoptic.xyz/docs/product/spread) , which is likely greater than 1x. In fact, observed data shows an average [spread multiplier](https://panoptic.xyz/research/loss-versus-panoptic-why-lps-are-losing) of approximately 1.2x. This implies that, when the spread multiplier is equal to 1, the option premium reflects its theoretical value with no adjustment. However, when the spread multiplier is greater than 1—in our case, 1.2x—This means the actual trading conditions deviate from the base pricing due to increased option buyer demand. In this case, buyers pay 20% more than the expected price, making options more expensive to purchase. Conversely, sellers benefit from this spread, earning 20% more than the base premium, which makes selling options more profitable under these conditions.
 
 
 
@@ -86,14 +86,15 @@ One key factor not accounted for in this analysis is the [spread multiplier](htt
 ## 4. Results & Interpretation
 
 ![](3.png)
-**Figure 3:**ETH/USDC price dynamics from May 2024 to April 2025 in the 30 bps Uniswap v3 pool. The market shows both strong price moves and long sideways periods—making it a great environment to test how straddles and strangles perform using Panoptic’s streaming fee model.
+**Figure 3:** ETH/USDC price dynamics from May 2024 to April 2025 in the 30 bps Uniswap v3 pool. The market shows both strong price moves and long sideways periods—making it a great environment to test how straddles and strangles perform using Panoptic’s streaming fee model.
 
 
 ![](4.png)
+
 **Figure 4:** Daily, weekly, and monthly percentage changes in ETH price from May 2024 to April 2025. These changes dynamics provide important context for evaluating short straddle and strangle performance, particularly under different rolling frequencies.
 
 
-Looking at this ETH price chart, spanning from May 2024 to April 2025, we can identify several distinct phases that are ideal for evaluating short straddles and strangles. ETH began near three thousand dollars, rallied to over four thousand by late 2024, and then sharply declined to around eighteen hundred in early 2025 — a dramatic 56\% drawdown from the peak.
+Looking at this ETH price chart, spanning from May 2024 to April 2025, we can identify several distinct phases that are ideal for evaluating short straddles and strangles. ETH began near three thousand dollars, rallied to over four thousand by late 2024, and then sharply declined to around eighteen hundred in early 2025 — a dramatic 56% drawdown from the peak.
 
 What’s particularly interesting is how the price action unfolds: we see a prolonged choppy, sideways period throughout much of 2024, where ETH remained tightly range-bound. These low-volatility conditions are ideal for short straddles and strangles, as the price staying within the option range allows sellers to accumulate streaming fees without significant exposure to directional risk.
 
@@ -102,15 +103,15 @@ However, the sharp drop at the beginning of 2025 presents a stark contrast. Thes
 In the backtest results, cumulative performance of ETH short straddle and strangle strategies across daily, weekly, and monthly rolling intervals. Each subplot highlights how premia collection, directional payoff, and net return vary under different volatility regimes and strategy designs. To evaluate the risk-return characteristics of short volatility strategies on ETH, we compare short straddles (monthly 50 delta options) and short strangles (monthly 30 delta options) across three rolling intervals: daily, weekly, and monthly. The charts decompose returns into premia (fees earned while the option remains out-of-the-money), payoff (realized token movement due to price breaches), and the net return, allowing for detailed insight into how these strategies perform under different market regimes.
 
 ![](5.png)
-**Figure 5:e**Daily-rolling returns for ETH short strangle (30 delta) and short straddle (50 delta) strategies from May 2024 to April 2025.
+**Figure 5:** Daily-rolling returns for ETH short strangle (30 delta) and short straddle (50 delta) strategies from May 2024 to April 2025.
 
 
 ![](6.png)
-**Figure 6:**Weekly-rolling returns for ETH short strangle (30 delta) and short straddle (50 delta) strategies from May 2024 to April 2025.
+**Figure 6:** Weekly-rolling returns for ETH short strangle (30 delta) and short straddle (50 delta) strategies from May 2024 to April 2025.
 
 
 ![](7.png)
-**Figure 7:**Monthly-rolling returns for ETH short strangle (30 delta) and short straddle (50 delta) strategies from May 2024 to April 2025.
+**Figure 7:** Monthly-rolling returns for ETH short strangle (30 delta) and short straddle (50 delta) strategies from May 2024 to April 2025.
 
 
 
@@ -143,9 +144,9 @@ In the backtest results, cumulative performance of ETH short straddle and strang
 
 Starting with the daily rolling interval, both straddle and strangle strategies exhibit relatively low volatility and tight clustering around zero. Occasional drawdowns do appear, especially in response to abrupt price movements like those in March 2025. However, the short straddle clearly benefits more from the daily re-centering effect. It consistently collects higher premia due to its at-the-money (ATM) positioning and exhibits greater return stability across the year. In contrast, the short strangle, while more resilient to minor intraday fluctuations due to its wider range, captures less premium and shows slightly more vulnerability during fast directional moves.
 
-The weekly rolling plots offer a balanced perspective. Both strategies achieve more stable return profiles compared to the monthly charts while allowing for more capital efficiency than daily rolling. Weekly straddles produce consistent fee accumulation and moderate drawdowns, typically not exceeding -6\%. The weekly strangle also improves in stability compared to the monthly version, but still underperforms the straddle overall. The shorter rolling horizon ensures quicker strike re-centering after large moves, which helps contain loss severity and allows return recovery in the following weeks.
+The weekly rolling plots offer a balanced perspective. Both strategies achieve more stable return profiles compared to the monthly charts while allowing for more capital efficiency than daily rolling. Weekly straddles produce consistent fee accumulation and moderate drawdowns, typically not exceeding -6%. The weekly strangle also improves in stability compared to the monthly version, but still underperforms the straddle overall. The shorter rolling horizon ensures quicker strike re-centering after large moves, which helps contain loss severity and allows return recovery in the following weeks.
 
-In the monthly rolling plots, the differences become more pronounced. Both strategies are exposed to more prolonged directional risk, but the short strangle demonstrates significantly deeper losses. For instance, in months like August 2024 and March 2025, the short strangle reaches drawdowns as steep as -14\%, while the short straddle tends to limit its worst-case returns to the -11\% range. Despite this, both strategies show strong positive returns during calm months like October 2024, February 2025, and April 2025, with the short straddle again outperforming due to its richer fee collection. The monthly strangle, while capable of producing good returns in sideways markets, suffers heavily when ETH breaks out directionally, reflecting the high gamma exposure over extended windows.
+In the monthly rolling plots, the differences become more pronounced. Both strategies are exposed to more prolonged directional risk, but the short strangle demonstrates significantly deeper losses. For instance, in months like August 2024 and March 2025, the short strangle reaches drawdowns as steep as -14%, while the short straddle tends to limit its worst-case returns to the -11% range. Despite this, both strategies show strong positive returns during calm months like October 2024, February 2025, and April 2025, with the short straddle again outperforming due to its richer fee collection. The monthly strangle, while capable of producing good returns in sideways markets, suffers heavily when ETH breaks out directionally, reflecting the high gamma exposure over extended windows.
 
 Quantitatively, the short straddle dominates in terms of sharpe ratio and return consistency. Its tighter strike placement yields greater premia, and the frequent OTM condition ensures fee income builds up reliably. The strangle only outperforms in long, low-volatility phases where the spot price drifts but stays well within its OTM range. However, when breached, its wider wings deliver harsher payoffs and slower recovery. This makes the strangle strategy particularly vulnerable under high-volatility breakouts.
 
@@ -170,7 +171,7 @@ To further quantify the reliability of short straddle and short strangle strateg
 
 
 
-As shown in Table, both strategies exhibit moderate-to-high win rates across all rolling intervals. Daily rolling displays the strongest consistency, with short straddles achieving a 70.96\% win rate and short strangles closely following at 68.22\%. Weekly frequencies also perform reliably, with win rates clustering near 58.49\% for short straddle and 60.38\% for short strangles. Monthly rebalancing, while more volatile in terms of payoff magnitude, still achieves a 66.67\% win rate for both strategies, indicating that even with fewer rolling opportunities, premium collection and range containment often yield net-positive outcomes.
+As shown in Table, both strategies exhibit moderate-to-high win rates across all rolling intervals. Daily rolling displays the strongest consistency, with short straddles achieving a 70.96% win rate and short strangles closely following at 68.22%. Weekly frequencies also perform reliably, with win rates clustering near 58.49% for short straddle and 60.38% for short strangles. Monthly rebalancing, while more volatile in terms of payoff magnitude, still achieves a 66.67% win rate for both strategies, indicating that even with fewer rolling opportunities, premium collection and range containment often yield net-positive outcomes.
 
 
 ## 5. Conclusion & Future Work
@@ -179,8 +180,10 @@ In conclusion, short straddles exhibit peak gamma exposure precisely when the un
 
 Additionally, since Panoptions stream yield only while one or more legs remains in range, the timing of price movement is critical. If ETH breaches a leg early in the cycle, that leg ceases to collect fees, dramatically reducing net returns. Consequently, two price paths ending near the same level can yield vastly different outcomes based on how long each leg remained inactive. Furthermore, while short straddles and strangles may be delta-neutral at entry, they are not risk-neutral. Convexity—i.e., gamma risk—grows the longer the strategy is left unadjusted. 
 
-On the other hand, more frequent rolling helps maintain neutrality but increases exposure to re-entry at potentially less favorable volatility levels. Ultimately, these strategies display a characteristically skewed return profile: many small, steady wins punctuated by rare but severe losses. With win rates commonly exceeding 55\%, a single volatile move (i.e. a sudden \$1,000 drop in ETH) can wipe out months of gains, underscoring the importance of position sizing and risk limits in DeFi-native volatility harvesting.
+On the other hand, more frequent rolling helps maintain neutrality but increases exposure to re-entry at potentially less favorable volatility levels. Ultimately, these strategies display a characteristically skewed return profile: many small, steady wins punctuated by rare but severe losses. With win rates commonly exceeding 60%, a single volatile move (i.e. a sudden $1,000 drop in ETH) can wipe out months of gains, underscoring the importance of position sizing and risk limits in DeFi-native volatility harvesting.
 
-This study opens several promising avenues for future research. First, applying the short straddle and strangle framework to other Uniswap v3 pools—such as \texttt{WBTC/USDC} or \texttt{ETH/stETH}—would help evaluate strategy robustness across different volatility profiles and liquidity conditions. Second, deeper delta optimization could be achieved by conditioning strike selection on historical breach frequency or volatility clustering, enabling more responsive positioning. Third, incorporating risk-adjusted metrics like Sharpe and Sortino ratios would offer a clearer view of return consistency and tail risk across rolling intervals. Finally, exploring alternative rebalancing triggers—such as volatility spikes, breach proximity, or fee decay thresholds—may significantly improve risk management and capital efficiency compared to fixed calendar-based rebalancing.
+This study opens several promising avenues for future research. First, applying the short straddle and strangle framework to other Uniswap v3 pools—such as `WBTC/USDC` or `ETH/stETH` would help evaluate strategy robustness across different volatility profiles and liquidity conditions. Second, deeper delta optimization could be achieved by conditioning strike selection on historical breach frequency or volatility clustering, enabling more responsive positioning. Third, incorporating risk-adjusted metrics like Sharpe and Sortino ratios would offer a clearer view of return consistency and tail risk across rolling intervals. Finally, exploring alternative rebalancing triggers such as volatility spikes, breach proximity, or fee decay thresholds may significantly improve risk management and capital efficiency compared to fixed calendar-based rebalancing.
 
+
+Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://linktr.ee/panopticxyz). To learn more about Panoptic and all things DeFi options, check out our [docs](/docs/intro) and head to [our website](https://panoptic.xyz/).
 
