@@ -77,6 +77,8 @@ To evaluate the performance of short straddle and short strangle strategies on E
 
 In this backtest, we evaluate daily, weekly and monthly rolling frequencies to measure how often straddle and strangle positions are reset around the market price. daily rolling offers tighter alignment with short-term volatility, while weekly and monthly rolling captures broader directional moves and amplifies longer term payoff dynamics.
 
+Feel free to check out the code [here](PUT THE LINK HERE)
+
 **Important Note:**  
 One key factor not accounted for in this analysis is the [spread multiplier](https://panoptic.xyz/docs/product/spread) , which is likely greater than 1x. In fact, observed data shows an average [spread multiplier](https://panoptic.xyz/research/loss-versus-panoptic-why-lps-are-losing) of approximately 1.2x. This implies that, when the spread multiplier is equal to 1, the option premium reflects its theoretical value with no adjustment. However, when the spread multiplier is greater than 1—in our case, 1.2x—This means the actual trading conditions deviate from the base pricing due to increased option buyer demand. In this case, buyers pay 20% more than the expected price, making options more expensive to purchase. Conversely, sellers benefit from this spread, earning 20% more than the base premium, which makes selling options more profitable under these conditions.
 
