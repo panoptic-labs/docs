@@ -1,6 +1,6 @@
 ---
 slug: short-strangle-vs-straddle
-title: "Straddles vs Strangles: Who Wins in a Delta-Neutral Fight"
+title: "Straddles vs Strangles: Which Short Vol Strategy Wins"
 tags: [Strangle, Straddle, Delta-neutral]
 image: /img/research/short-strangles-vs-straddles-banner.png
 description: "A data-driven comparison of short straddle vs short strangle strategies on Panoptic, revealing key risk-reward tradeoffs in neutral DeFi markets."
