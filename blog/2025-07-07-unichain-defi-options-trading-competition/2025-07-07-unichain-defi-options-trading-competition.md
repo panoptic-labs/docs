@@ -39,7 +39,7 @@ Please **do not withdraw any collateral from the ETH market** during the competi
 -   🚂 **The Penny Picker (Highest Streamia Earned in Single Trade):** 250,000 Pips + $250 USDC
 -   🤑 **The Big Tipper (Highest Streamia Paid in Single Trade):** 250,000 Pips + $250 USDC
 -   💰 **Big Bags (Highest Volume):** 500,000 Pips + $250 USDC
--   👁️👄👁️ **The Bragger (Shared Trading Card Lottery for [Prime Members](/blog/panoptic-prime-loyalty-program) Only):** 250,000 Pips + $250 USDC  
+-   👁️👄👁️ **The Shiller (Shared Trading Card Lottery for [Prime Members](/blog/panoptic-prime-loyalty-program) Only):** 250,000 Pips + $250 USDC  
 
 Good luck, and may the best trader win!
 
