@@ -36,10 +36,14 @@ Please **do not withdraw any collateral from the ETH market** during the competi
 -   💜 **The Panoptimist (Highest PnL %):** 500,000 Pips + $500 USDC
 -   🎯 **The Sniper (Highest Absolute Gain in Single Trade):** 250,000 Pips + $250 USDC
 -   💩 **The N00b  (Highest Absolute Loss in Single Trade):** 250,000 Pips + $250 USDC + Consolation Prize
--   🚂 **The Penny Picker (Highest Streamia Earned in Single Trade):** 250,000 Pips + $250 USDC
--   🤑 **The Big Tipper (Highest Streamia Paid in Single Trade):** 250,000 Pips + $250 USDC
+-   🚂 **The Penny Picker (Highest Streamia Earned):** 250,000 Pips + $250 USDC
+-   🤑 **The Big Tipper (Highest Streamia Paid):** 250,000 Pips + $250 USDC
 -   💰 **Big Bags (Highest Volume):** 500,000 Pips + $250 USDC
 -   👁️👄👁️ **The Shiller (Shared Trading Card Lottery for [Prime Members](/blog/panoptic-prime-loyalty-program) Only):** 250,000 Pips + $250 USDC  
+
+> Panoptimist, Penny Picker, Big Tipper, and Big Bags are calculated per _account_, meaning multiple trades can cumulatively boost or hurt your score. For Penny Picker and Big Tipper, only positions that are _opened after the contest start_ and _closed before the contest end_ will be counted.
+> 
+> Be sure to **close all your positions before the contest ends to make them eligible for the leaderboard's streamia scoring**!
 
 Good luck, and may the best trader win!
 
