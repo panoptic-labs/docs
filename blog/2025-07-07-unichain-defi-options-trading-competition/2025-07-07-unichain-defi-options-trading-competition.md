@@ -41,7 +41,7 @@ Please **do not withdraw any collateral from the ETH market** during the competi
 -   💰 **Big Bags (Highest Volume):** 500,000 Pips + $250 USDC
 -   👁️👄👁️ **The Shiller (Shared Trading Card Lottery for [Prime Members](/blog/panoptic-prime-loyalty-program) Only):** 250,000 Pips + $250 USDC  
 
-> Panoptimist, Penny Picker, Big Tipper, and Big Bags are calculated per _account_, meaning multiple trades can cumulatively boost or hurt your score. For Penny Picker and Big Tipper, only positions that are _opened after the contest start_ and _closed before the contest end_ will be counted.
+> Panoptimist, Penny Picker, Big Tipper, and Big Bags are calculated per _account_, meaning multiple trades can cumulatively boost or hurt your score. For Sniper and N00b, only positions _opened after the contest start_ will be counted. For Penny Picker and Big Tipper, only positions that are _opened after the contest start_ and _closed before the contest end_ will be counted.
 > 
 > Be sure to **close all your positions before the contest ends to make them eligible for the leaderboard's streamia scoring**!
 
