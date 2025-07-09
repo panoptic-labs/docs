@@ -1,0 +1,253 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1200" height="200"
+     viewBox="0 0 900 150" preserveAspectRatio="xMidYMid meet">
+
+<!-- ─────────────── defs ─────────────── -->
+<defs>
+  <!-- slot clip-paths (unchanged) -->
+  <clipPath id="slot0"><path d="M48 48.14h55v54H48z"/></clipPath>
+  <clipPath id="slot1"><path d="M98 49h15.3v53H98z"/></clipPath>
+  <clipPath id="slot2"><path d="M39.03 49H54v53H39.03z"/></clipPath>
+  <clipPath id="slot3"><rect  x="150" y="30" width="150" height="120"/></clipPath>
+  <clipPath id="slot4"><path d="M355 48.14h55v54H355z"/></clipPath>
+  <clipPath id="slot5"><path d="M404 49h15.5v53H404z"/></clipPath>
+  <clipPath id="slot6"><path d="M345.25 49H361v53H345.25z"/></clipPath>
+  <clipPath id="slot7"><rect  x="435" y="30" width="150" height="120"/></clipPath>
+  <clipPath id="slot8"><path d="M653 48.14h55v54H653z"/></clipPath>
+  <clipPath id="slot9"><path d="M703 49h15.3v53H703z"/></clipPath>
+  <clipPath id="slot10"><path d="M644.05 49H659v53H644.05z"/></clipPath>
+  <clipPath id="slot11"><rect x="730" y="30" width="150" height="120"/></clipPath>
+
+  <!-- Liquidity.Land gradient-eye symbol (full) -->
+  <symbol id="liquidityEye" viewBox="0 0 35 23" preserveAspectRatio="xMidYMid meet">
+    <g opacity="0.82">
+      <!-- eye shape -->
+      <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M34.3962 11.5c0 6.018-3.0376 10.898-6.7847 10.898
+               -1.7624 0-3.368-1.078-4.5743-2.848
+               -1.656-2.428-2.4683-6.182-5.4092-6.182
+               -2.8972 0-3.618 3.73-5.2344 6.134
+               -1.2102 1.8-2.8296 2.9-4.6089 2.9
+               -3.747 0-6.7846-4.879-6.7846-10.898
+               0-6.0186 3.0376-10.8976 6.7846-10.8976
+               1.764 0 3.3707 1.082 4.5773 2.8537
+               1.572 2.3089 2.4724 5.6885 5.2658 5.6885
+               2.7746 0 3.7798-3.1909 5.2923-5.5171
+               1.2185-1.874 2.8713-3.0253 4.6915-3.0253
+               3.7471 0 6.7847 4.879 6.7847 10.8979z"
+            fill="url(#g0)"/>
+
+      <!-- two big rings -->
+      <path d="M32.53 11.57c0 2.324-0.593 4.426-1.549 5.946
+               -0.956 1.52-2.272 2.453-3.72 2.453
+               -1.448 0-2.765-0.933-3.722-2.453
+               -0.956-1.52-1.548-3.622-1.548-5.946
+               0-2.324 0.592-4.425 1.548-5.945
+               0.957-1.52 2.274-2.453 3.722-2.453
+               1.448 0 2.764 0.933 3.72 2.453
+               0.956 1.52 1.549 3.621 1.549 5.945z"
+            fill="url(#g1)" stroke="#fff" stroke-width=".076"/>
+      <path d="M2.866 11.431c0-2.324 0.593-4.426 1.549-5.946
+               0.956-1.52 2.272-2.453 3.721-2.453
+               1.448 0 2.764 0.933 3.721 2.453
+               0.956 1.52 1.548 3.622 1.548 5.946
+               0 2.324-0.592 4.426-1.548 5.946
+               -0.957 1.52-2.273 2.453-3.721 2.453
+               -1.449 0-2.765-0.933-3.721-2.453
+               -0.956-1.52-1.549-3.622-1.549-5.946z"
+            fill="url(#g2)" stroke="#fff" stroke-width=".076"/>
+
+      <!-- five inner rings (mirrored pair + centre) -->
+      <path d="M30.069 11.607c0 1.635-0.412 3.113-1.076 4.182
+               -0.664 1.069-1.577 1.722-2.579 1.722
+               -1.001 0-1.913-0.653-2.577-1.722
+               -0.664-1.069-1.076-2.547-1.076-4.182
+               0-1.635 0.412-3.113 1.076-4.182
+               0.664-1.069 1.576-1.723 2.577-1.723
+               1.002 0 1.915 0.654 2.579 1.723
+               0.664 1.069 1.076 2.547 1.076 4.182z"
+            fill="url(#g3)" stroke="#fff" stroke-width=".076"/>
+      <path d="M5.327 11.396c0-1.635 0.412-3.113 1.076-4.182
+               0.664-1.069 1.577-1.723 2.577-1.723
+               1.001 0 1.914 0.654 2.579 1.723
+               0.664 1.069 1.076 2.547 1.076 4.182
+               0 1.635-0.412 3.113-1.076 4.182
+               -0.665 1.069-1.578 1.723-2.579 1.723
+               -1.0 0-1.913-0.654-2.577-1.723
+               -0.664-1.069-1.076-2.547-1.076-4.182z"
+            fill="url(#g4)" stroke="#fff" stroke-width=".076"/>
+      <path d="M27.679 11.606c0 0.994-0.25 1.892-0.653 2.541
+               -0.403 0.649-0.955 1.043-1.559 1.043
+               -0.603 0-1.155-0.394-1.558-1.043
+               -0.403-0.649-0.654-1.547-0.654-2.541
+               0-0.995 0.251-1.893 0.654-2.542
+               0.403-0.649 0.955-1.043 1.558-1.043
+               0.604 0 1.156 0.394 1.559 1.043
+               0.403 0.649 0.653 1.547 0.653 2.542z"
+            fill="url(#g5)" stroke="#fff" stroke-width=".076"/>
+      <path d="M7.718 11.395c0-0.994 0.25-1.892 0.653-2.541
+               0.403-0.649 0.955-1.043 1.558-1.043
+               0.604 0 1.156 0.394 1.559 1.043
+               0.403 0.649 0.654 1.547 0.654 2.541
+               0 0.995-0.251 1.893-0.654 2.542
+               -0.403 0.649-0.955 1.043-1.559 1.043
+               -0.603 0-1.155-0.394-1.558-1.043
+               -0.403-0.649-0.653-1.547-0.653-2.542z"
+            fill="url(#g6)" stroke="#fff" stroke-width=".076"/>
+
+      <!-- faint blur (shadow) -->
+      <g filter="url(#f0)">
+        <ellipse cx="18.155" cy="11.36" rx="10.827" ry="2.18" fill="#fff"/>
+      </g>
+      <g filter="url(#f1)">
+        <ellipse cx="17.804" cy="11.122" rx="7.242" ry="1.898" fill="#fff"/>
+      </g>
+    </g>
+
+    <!-- gradients -->
+    <linearGradient id="g0" x1="17.698" y1="0.602" x2="17.698" y2="22.398" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3D249A"/><stop offset=".225" stop-color="#5A2DE7"/>
+      <stop offset=".54" stop-color="#9FB0F5"/><stop offset=".79" stop-color="#5A2DE7"/>
+      <stop offset=".985" stop-color="#3D249A"/>
+    </linearGradient>
+    <linearGradient id="g1" x1="27.26" y1="3.135" x2="27.26" y2="20.008" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3D249A"/><stop offset=".225" stop-color="#5A2DE7"/>
+      <stop offset=".54" stop-color="#9FB0F5"/><stop offset=".79" stop-color="#5A2DE7"/>
+      <stop offset=".985" stop-color="#3D249A"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="8.136" y1="19.867" x2="8.136" y2="2.994" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3D249A"/><stop offset=".225" stop-color="#5A2DE7"/>
+      <stop offset=".54" stop-color="#9FB0F5"/><stop offset=".79" stop-color="#5A2DE7"/>
+      <stop offset=".985" stop-color="#3D249A"/>
+    </linearGradient>
+    <linearGradient id="g3" x1="26.416" y1="5.666" x2="26.416" y2="17.548" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3D249A"/><stop offset=".225" stop-color="#5A2DE7"/>
+      <stop offset=".54" stop-color="#9FB0F5"/><stop offset=".79" stop-color="#5A2DE7"/>
+      <stop offset=".985" stop-color="#3D249A"/>
+    </linearGradient>
+    <linearGradient id="g4" x1="8.98" y1="17.337" x2="8.98" y2="5.455" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3D249A"/><stop offset=".225" stop-color="#5A2DE7"/>
+      <stop offset=".54" stop-color="#9FB0F5"/><stop offset=".79" stop-color="#5A2DE7"/>
+      <stop offset=".985" stop-color="#3D249A"/>
+    </linearGradient>
+    <linearGradient id="g5" x1="25.467" y1="7.986" x2="25.467" y2="15.227" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3D249A"/><stop offset=".225" stop-color="#5A2DE7"/>
+      <stop offset=".54" stop-color="#9FB0F5"/><stop offset=".79" stop-color="#5A2DE7"/>
+      <stop offset=".985" stop-color="#3D249A"/>
+    </linearGradient>
+    <linearGradient id="g6" x1="9.929" y1="15.016" x2="9.929" y2="7.774" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3D249A"/><stop offset=".225" stop-color="#5A2DE7"/>
+      <stop offset=".54" stop-color="#9FB0F5"/><stop offset=".79" stop-color="#5A2DE7"/>
+      <stop offset=".985" stop-color="#3D249A"/>
+    </linearGradient>
+
+    <!-- blur filters -->
+    <filter id="f0" x="3.533" y="5.386" width="29.245" height="11.949" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="1.898"/>
+    </filter>
+    <filter id="f1" x="9.424" y="8.085" width="16.76" height="6.074" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="0.569"/>
+    </filter>
+  </symbol>
+</defs>
+
+
+<!-- ───────── halo strip behind all three eyes (very subtle) ───────── -->
+<!-- <rect x="0" y="30" width="900" height="120" fill="#fff" opacity="0.06"/> -->
+
+
+<!-- ──────  icon row  ────── -->
+
+<!-- slot 0 – big circle -->
+<g clip-path="url(#slot0)">
+  <path fill="#4F15D0"
+        d="M102.867 75.141c0 14.888-12.11 26.988-26.988 26.988S48.902 90.029 48.902 75.141
+           60.996 48.156 75.879 48.156s26.988 12.101 26.988 26.985zm-48.191 0
+           c0 11.704 9.52 21.228 21.203 21.228s21.215-9.524 21.215-21.228
+           -9.516-21.224-21.215-21.224-21.203 9.52-21.203 21.224z"/>
+</g>
+
+<!-- slot 1 – right wing + eye (eye 15 × 11 px) -->
+<g clip-path="url(#slot1)">
+  <!-- original right-parenthesis wing -->
+  <path fill="#4F15D0"
+        d="M113.277 75.141c0 9.825-3.77 19.099-10.629 26.121l-4.129-4.031
+           c5.801-5.946 8.986-13.794 8.986-22.09 0-8.307-3.185-16.162-8.986-22.09
+           l4.129-4.032c6.859 7.024 10.629 16.298 10.629 26.122z"/>
+</g>
+
+<!-- slot 2 – left wing -->
+<g clip-path="url(#slot2)">
+  <path fill="#4F15D0"
+        d="M39.027 75.141c0-9.82 3.774-19.098 10.629-26.121l4.129 4.036
+           c-5.801 5.94-8.985 13.788-8.985 22.185 0 8.302 3.199 16.161 8.985 22.087
+           l-4.129 4.036C42.801 94.239 39.027 84.965 39.027 75.141z"/>
+</g>
+
+<!-- slot 3 – wide eye (20 × 13 px, centred) -->
+<g clip-path="url(#slot3)">
+  <use href="#liquidityEye" x="180" y="45" width="91" height="60"/>
+</g>
+
+<!-- slot 4 – big circle -->
+<g clip-path="url(#slot4)">
+  <path fill="#4F15D0"
+        d="M409.094 75.141c0 14.888-12.11 26.988-26.992 26.988s-26.977-12.1-26.977-26.988
+           12.094-26.985 26.977-26.985 26.992 12.101 26.992 26.985zm-48.196 0
+           c0 11.704 9.52 21.228 21.204 21.228s21.215-9.524 21.215-21.228
+           -9.516-21.224-21.215-21.224-21.204 9.52-21.204 21.224z"/>
+</g>
+
+<!-- slot 5 – right wing + eye -->
+<g clip-path="url(#slot5)">
+  <path fill="#4F15D0"
+        d="M419.5 75.141c0 9.825-3.77 19.099-10.629 26.121l-4.129-4.031
+           c5.801-5.946 8.986-13.794 8.986-22.09 0-8.307-3.185-16.162-8.986-22.09
+           l4.129-4.032c6.859 7.024 10.629 16.298 10.629 26.122z"/>
+</g>
+
+<!-- slot 6 – left wing -->
+<g clip-path="url(#slot6)">
+  <path fill="#4F15D0"
+        d="M345.25 75.141c0-9.82 3.774-19.098 10.629-26.121l4.129 4.036
+           c-5.801 5.94-8.984 13.788-8.984 22.185 0 8.302 3.198 16.161 8.984 22.087
+           l-4.129 4.036C349.024 94.239 345.25 84.965 345.25 75.141z"/>
+</g>
+
+<!-- slot 7 – wide eye -->
+<g clip-path="url(#slot7)">
+  <use href="#liquidityEye" x="484" y="45" width="91" height="60"/>
+</g>
+
+<!-- slot 8 – big circle -->
+<g clip-path="url(#slot8)">
+  <path fill="#4F15D0"
+        d="M707.895 75.141c0 14.888-12.11 26.988-26.993 26.988s-26.977-12.1-26.977-26.988
+           12.094-26.985 26.977-26.985 26.993 12.101 26.993 26.985zm-48.196 0
+           c0 11.704 9.52 21.228 21.204 21.228s21.216-9.524 21.216-21.228
+           -9.516-21.224-21.216-21.224-21.204 9.52-21.204 21.224z"/>
+</g>
+
+<!-- slot 9 – right wing + eye -->
+<g clip-path="url(#slot9)">
+  <path fill="#4F15D0"
+        d="M718.301 75.141c0 9.825-3.77 19.099-10.629 26.121l-4.129-4.031
+           c5.801-5.946 8.986-13.794 8.986-22.09 0-8.307-3.185-16.162-8.986-22.09
+           l4.129-4.032c6.859 7.024 10.629 16.298 10.629 26.122z"/>
+</g>
+
+<!-- slot 10 – left wing -->
+<g clip-path="url(#slot10)">
+  <path fill="#4F15D0"
+        d="M644.051 75.141c0-9.82 3.775-19.098 10.63-26.121l4.127 4.036
+           c-5.799 5.94-8.984 13.788-8.984 22.185 0 8.302 3.197 16.161 8.984 22.087
+           l-4.127 4.036c-6.855-7.027-10.63-16.301-10.63-26.223z"/>
+</g>
+
+<!-- slot 11 – wide eye -->
+<g clip-path="url(#slot11)">
+  <use href="#liquidityEye" x="778" y="45" width="91" height="60"/>
+</g>
+
+</svg>
