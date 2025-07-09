@@ -1,10 +1,14 @@
+.bg-lavender {
+  background:#F4F1FF; color:#4F15D0;
+}
+
 .email-signup {
   flex: 1
 }
 
 .email-signup-form {
   border: 2px solid #4E14D0;
-  border-radius: 10px; 
+  border-radius: 10px;
 }
 
 
@@ -32,7 +36,7 @@
   background-color: #4E14D0; /* You can change this to your preferred color */
   color: white;
   cursor: pointer;
-  border-radius: 10px; 
+  border-radius: 10px;
 }
 
 .signup-button:hover {
