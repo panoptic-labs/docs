@@ -177,7 +177,7 @@ const config = {
       announcementBar: {
         id: "ETH_Denver_2023",
         content:
-          "Join our <a href=\"https://app.panoptic.xyz/leaderboard/pnl\">trading competition</a>! Contest ends July 21.",
+          "Get a boost through our <a href=\"https://app.liquidity.land/project/Panoptic\">Liquidity.Land</a> points campaign!",
         textColor: "#FFFFFF",
         isCloseable: true,
       },

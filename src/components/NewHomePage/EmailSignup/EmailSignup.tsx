@@ -45,13 +45,13 @@ const EmailSignUp: React.FC = () => {
         {/* Competition CTA */}
         <div className="interest-section bg-panoptic-purple flex flex-col justify-center h-full text-center shadow-md px-8 py-4 rounded-lg text-white">
           <PanopticUnichainBanner className="w-full h-auto" />
-          <p className="text-lg font-semibold">Join our Unichain Trading Competition!</p>
+          <p className="text-lg font-semibold">Deposit to earn UNI incentives!</p>
           <button
             // onClick={() => setInterestOpen(true)}
-            onClick={() => window.location.href = 'https://app.panoptic.xyz/leaderboard/pnl'}
+            onClick={() => window.location.href = 'https://panoptic.xyz/blog/uni-token-incentives-on-panoptic'}
             className="mt-2 px-8 py-3 bg-white text-panoptic-purple font-semibold rounded-lg hover:bg-gray-100 transition ease-in-out duration-150 active:scale-95"
           >
-            Win A Prize
+            Learn More
           </button>
         </div>
 
