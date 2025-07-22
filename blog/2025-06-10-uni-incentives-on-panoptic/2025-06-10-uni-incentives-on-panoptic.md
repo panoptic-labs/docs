@@ -22,12 +22,19 @@ The incentives maintained by Gauntlet are being [distributed bi-weekly](https://
 
 -   [ETH/USDC v4 5bps](https://app.panoptic.xyz/markets/unichain/0x000003493cb99a8c1e4f103d2b6333e4d195df7d) on Unichain
 -   [WBTC/USDT0 v4 5bps](https://app.panoptic.xyz/markets/unichain/0x00006d1224c7b77d89ce39ca9eb161d9dd6a759f) on Unichain
--   [ETH/WBTC v4 5 bps](https://app.panoptic.xyz/markets/unichain/0x00000344137b8efbf9bdba1d56cca688deda8ce5) on Unichain
--   [WBTC/USDC v4 30 bps](https://app.panoptic.xyz/markets/unichain/0x0000cc48ddbde5b520b5fd1130884c13192ab6aa) on Unichain
--   [ETH/USDT0 v4 5 bps](https://app.panoptic.xyz/markets/unichain/0x0000ed265c5edaa58c3eaf503f8bfe2ccab1c0ad) on Unichain
-    
+-   [ETH/WBTC v4 5bps](https://app.panoptic.xyz/markets/unichain/0x00000344137b8efbf9bdba1d56cca688deda8ce5) on Unichain
+-   [WBTC/USDC v4 30bps](https://app.panoptic.xyz/markets/unichain/0x0000cc48ddbde5b520b5fd1130884c13192ab6aa) on Unichain
+-   [ETH/USDT0 v4 5bps](https://app.panoptic.xyz/markets/unichain/0x0000ed265c5edaa58c3eaf503f8bfe2ccab1c0ad) on Unichain
+
+> _Update: ETH/WBTC v4 5bps is no longer eligible for UNI incentives_
 
 ![](./02.png)
+
+**Eligible Panoptic Markets on Ethereum:**
+
+- [ETH/USDC v4 5bps](https://app.panoptic.xyz/markets/ethereum/0xdfbfe4c03508648589120350f96e05c780eb6e50) on Ethereum
+
+    ![](./03.png)
 
 
 ## Who Will Receive the UNI Tokens?
@@ -39,6 +46,8 @@ Specifically, LPs who deposit liquidity into selected pools on these platforms w
 Incentive distribution will be dynamic, with pools selected and adjusted every two weeks.
 
 More details regarding reward distribution to Panoptic users will be revealed later.
+
+> _Update: All UNI rewards will be redistributed to depositors, LPs, and option traders based on their Panoptic points allocation. That means that if you only deposit, you'll still earn UNI rewards. But if you LP or buy options, you'll earn even more!_
 
 ## What Is the Distribution Based On?
 
