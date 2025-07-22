@@ -1,7 +1,7 @@
 ---
-slug: variance-risk-premium
+slug: variance-risk-premium-onchain-synthetic-perps
 title: "Variance Trading With Onchain Synthetic Perps"
-tags: [Perps, Variance Risk Premium, Futures Curve, RV, IV, Volatility Clustering]
+tags: [Perps, VRP, Futures Curve, RV, IV, Volatility Clustering]
 image: /img/research/variance-risk-banner.png
 description: "Discover how variance can be traded through synthetic perps on Panoptic."
 authors: N
