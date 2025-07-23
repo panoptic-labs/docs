@@ -95,7 +95,7 @@ We will more fully delve into how crypto volatility markets are uniquely rife wi
 
 ### Variance Risk Premium
 
-The VRP is a phenomenon where IV tends to be priced higher than (RV). The cause may be from options sellers and market makers demanding a surcharge for the asymmetric downside risk profile they undertake through the sale of de facto insurance contracts.
+The VRP is a phenomenon where IV tends to be priced higher than RV. The cause may be from options sellers and market makers demanding a surcharge for the asymmetric downside risk profile they undertake through the sale of de facto insurance contracts.
 
 The formula for the VRP below tends to arrive at a negative value with most inputs.
 
