@@ -13,7 +13,9 @@ export default function DocItem(props) {
         <DocItemMetadata />
         <DocItemLayout>
           <MDXComponent />
-          <GiscusComponent />
+  <div className="hidden md:block">
+    <GiscusComponent />
+  </div>      
         </DocItemLayout>
       </HtmlClassNameProvider>
     </DocProvider>
