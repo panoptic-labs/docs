@@ -1,0 +1,287 @@
+---
+sidebar_position: 3
+---
+
+# Deposit/Withdrawal flow
+Panoptic Vaults use an asymmetric deposit/withdrawal system.
+Every deposit request must be approved by the manager to help set the shares price from the pool's valuation.
+Similarly, withdrawals must also be approved by the manager in case the vault needs to divest from its investments to free up capital.
+
+## Deposit Flow
+(Image of deposit flow)
+
+The deposit process in the Panoptic Vault follows a two-phase epoch-based system designed to ensure fair pricing and prevent front-running attacks. When users deposit assets, they enter a queue for the current epoch and must wait for the manager to fulfill their request before receiving shares.
+
+The process works as follows:
+1. **Request Phase**: Users call `requestDeposit()` to transfer their assets (e.g., USDC) into the vault. The assets are held in escrow and the request is recorded in the current deposit epoch.
+2. **Fulfillment Phase**: The manager periodically calls `fulfillDeposits()` to process all pending deposits in the current epoch. During fulfillment, the manager:
+   - Calculates the vault's Net Asset Value (NAV) through the accountant contract
+   - Determines the share price based on the current NAV
+   - Allocates shares proportionally to all depositors in that epoch
+   - Advances to the next epoch
+3. **Execution Phase**: After fulfillment, users call `executeDeposit()` to claim their shares. The shares are calculated based on the NAV at the time of fulfillment, ensuring all users in the same epoch receive the same price.
+
+This system prevents sandwich attacks and ensures fair pricing by batching deposits together and pricing them simultaneously based on the vault's actual NAV.
+
+
+## Withdrawal Flow
+(Image of withdrawal flow)
+
+The withdrawal process mirrors the deposit flow but in reverse, using a similar epoch-based queuing system to ensure orderly redemptions and protect remaining shareholders.
+
+The process consists of:
+1. **Request Phase**: Users call `requestWithdrawal()` to burn their shares and enter the withdrawal queue. The shares are immediately burned but assets remain in the vault. The system tracks each user's cost basis to calculate performance fees on profitable withdrawals.
+2. **Fulfillment Phase**: The manager calls `fulfillWithdrawals()` to process pending withdrawals. During this phase:
+   - The vault's NAV is calculated to determine the current share price
+   - Assets are allocated proportionally to all withdrawers in the epoch
+   - The manager can set a maximum asset disbursement to ensure vault liquidity
+   - Performance fees are calculated on any gains above the original cost basis
+3. **Execution Phase**: Users call `executeWithdrawal()` to receive their assets. Performance fees (if any) are automatically deducted and sent to the fee wallet.
+
+The system also supports a unique "redeposit" feature where withdrawn assets can be automatically reinvested into the vault, useful for compounding strategies or manager-initiated rebalancing.
+
+
+## Transfer
+(Image of transfer flow)
+
+The Panoptic Vault implements custom transfer logic that goes beyond standard ERC20 functionality to maintain accurate performance fee calculations across share transfers.
+
+Key features of the transfer system:
+- **Basis Tracking**: When shares are transferred, the cost basis (original deposit value) transfers proportionally with them. This ensures performance fees are calculated correctly regardless of share ownership changes.
+- **Basis Averaging**: When transferring to an existing shareholder, the system uses the lower average basis between sender and receiver to prevent fee manipulation.
+- **Standard Compatibility**: Despite the custom logic, transfers remain fully compatible with standard ERC20 interfaces, allowing integration with DEXs, wallets, and other DeFi protocols.
+
+The basis tracking system ensures that:
+- Performance fees cannot be avoided by transferring shares before withdrawal
+- New shareholders inherit the appropriate cost basis for their shares
+- The vault maintains accurate records for fee calculations even with secondary market trading
+
+This sophisticated transfer mechanism allows Panoptic Vault shares to function as tradeable assets while maintaining the integrity of the performance fee system.
+
+## Contract Interactions
+<details>
+<summary>Deposits</summary>
+
+### `requestDeposit()`
+Users initiate a deposit by calling `requestDeposit()` with the amount of assets they want to deposit. The assets are transferred from the user to the vault and a deposit request is created that must be fulfilled by the manager.
+
+```solidity
+function requestDeposit(uint256 assets, address receiver, address owner) 
+    external 
+    returns (uint256 requestId)
+```
+
+-----
+
+
+**Parameters:**
+- `assets`: The amount of underlying assets to deposit
+- `receiver`: The address that will receive the vault shares
+- `owner`: The address that owns the deposit request
+
+**Returns:**
+- `requestId`: A unique identifier for the deposit request
+
+-----
+
+
+### `executeDeposit()`
+Executes a pending deposit request after it has been fulfilled by the manager. This mints the vault shares to the receiver based on the share price set during fulfillment.
+
+```solidity
+function executeDeposit(uint256 requestId, address receiver) 
+    external 
+    returns (uint256 shares)
+```
+
+-----
+
+
+**Parameters:**
+- `requestId`: The ID of the deposit request to execute
+- `receiver`: The address to receive the minted shares
+
+**Returns:**
+- `shares`: The amount of vault shares minted
+
+
+-----
+
+### `cancelDeposit()`
+Allows users to cancel their pending deposit request before it's fulfilled by the manager. The deposited assets are returned to the owner.
+
+```solidity
+function cancelDeposit(uint256 requestId) external
+```
+
+-----
+
+
+**Parameters:**
+- `requestId`: The ID of the deposit request to cancel
+
+</details>
+
+
+<details>
+<summary>Withdrawals</summary>
+
+### `requestWithdrawal()`
+Users request to withdraw their shares by calling `requestWithdrawal()`. The shares are transferred from the user to the vault and a withdrawal request is created that must be fulfilled by the manager.
+
+```solidity
+function requestWithdrawal(uint256 shares, address receiver, address owner) 
+    external 
+    returns (uint256 requestId)
+```
+
+-----
+
+
+**Parameters:**
+- `shares`: The amount of vault shares to redeem
+- `receiver`: The address that will receive the withdrawn assets
+- `owner`: The address that owns the withdrawal request
+
+**Returns:**
+- `requestId`: A unique identifier for the withdrawal request
+
+-----
+
+
+### `executeWithdrawal()`
+Executes a pending withdrawal request after it has been fulfilled by the manager. This burns the vault shares and transfers the underlying assets to the receiver based on the share price set during fulfillment.
+
+```solidity
+function executeWithdrawal(uint256 requestId, address receiver) 
+    external 
+    returns (uint256 assets)
+```
+
+-----
+
+
+**Parameters:**
+- `requestId`: The ID of the withdrawal request to execute
+- `receiver`: The address to receive the withdrawn assets
+
+**Returns:**
+- `assets`: The amount of underlying assets withdrawn
+
+-----
+
+
+### `cancelWithdrawal()`
+Allows users to cancel their pending withdrawal request before it's fulfilled by the manager. The vault shares are returned to the owner.
+
+```solidity
+function cancelWithdrawal(uint256 requestId) external
+```
+
+-----
+
+
+**Parameters:**
+- `requestId`: The ID of the withdrawal request to cancel
+
+</details>
+
+<details>
+<summary>Transfers</summary>
+
+### `transfer()`
+Standard ERC20 transfer function that moves vault shares between addresses. This implementation includes special handling for basis tracking used in withdrawal calculations.
+
+```solidity
+function transfer(address to, uint256 amount) 
+    public 
+    override 
+    returns (bool)
+```
+
+-----
+
+
+**Parameters:**
+- `to`: The recipient address
+- `amount`: The amount of shares to transfer
+
+**Returns:**
+- `bool`: True if the transfer was successful
+
+-----
+
+
+### `_transferBasis()`
+Internal function that handles the transfer of cost basis information along with share transfers. This is used to track the original deposit value for each share, which is important for calculating withdrawal amounts and potential profits/losses.
+The new basis for the recipient will be the *minimum* average between the sender and receiver to ensure performance fee is not deflated through the transfer of negative pnl shares.
+
+```solidity
+function _transferBasis(address from, address to, uint256 amount) internal
+```
+
+-----
+
+**Parameters:**
+- `from`: The sender address
+- `to`: The recipient address
+- `amount`: The amount of shares being transferred
+
+</details>
+
+<details>
+<summary>Manager Actions</summary>
+
+### `fulfillDeposits()`
+A manager-only function to fulfill pending deposit requests from the current epoch. The manager specifies the amount of assets to fulfill, and the contract calculates the number of shares to mint based on the vault's current Net Asset Value (NAV). The share price is determined implicitly on-chain.
+
+```solidity
+function fulfillDeposits(
+    uint256 assetsToFulfill,
+    bytes memory managerInput
+) external onlyManager;
+````
+
+-----
+
+**Parameters:**
+
+  - `assetsToFulfill`: The total amount of underlying assets from the deposit queue to convert into vault shares.
+  - `managerInput`: Calldata for the `PanopticVaultAccountant` contract to compute the vault's NAV. This includes pool information, position data, and manager price quotes.
+
+**Notes:**
+
+  - Any assets not fulfilled in the current epoch are rolled over to the next deposit epoch.
+  - Must be called before users can execute their deposits via `executeDeposit()`.
+
+-----
+
+### `fulfillWithdrawals()`
+
+A manager-only function to fulfill pending withdrawal requests from the current epoch. The manager specifies the number of shares to redeem. The contract calculates the corresponding amount of assets to be disbursed based on the vault's NAV.
+
+```solidity
+function fulfillWithdrawals(
+    uint256 sharesToFulfill,
+    uint256 maxAssetsReceived,
+    bytes memory managerInput
+) external onlyManager;
+```
+
+-----
+
+**Parameters:**
+
+  - `sharesToFulfill`: The total amount of shares from the withdrawal queue to redeem for underlying assets.
+  - `maxAssetsReceived`: A safety parameter defining the maximum amount of assets the manager is willing to disburse for the `sharesToFulfill`. The transaction reverts if the calculated amount exceeds this value, protecting the vault from slippage or price anomalies.
+  - `managerInput`: Calldata for the `PanopticVaultAccountant` contract to compute the vault's NAV.
+
+**Notes:**
+
+  - Any shares not fulfilled are rolled over to the next withdrawal epoch.
+  - The disbursed assets are moved into a reserve pool, from which users can claim them by calling `executeWithdrawal()`.
+
+</details>
+
+
+
