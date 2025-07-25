@@ -1,10 +1,8 @@
 ---
-sidebar_position: 5
+sidebar_position: 3
 ---
 
-# Vaults & Structured Products
-
-## What are Structured Products?
+# What are Structured Products?
 **Structured Products** are pre-packaged, on-chain investment strategies that combine a primary asset or yield source with a derivative layer—in this case, perpetual options from Panoptic. 
 The goal is to create a specific risk-return profile that isn't possible with traditional assets alone.
 
