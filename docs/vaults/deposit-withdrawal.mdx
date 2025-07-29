@@ -1,31 +1,49 @@
 ---
 sidebar_position: 4
+sidebar_label: "Deposits and Withdrawals"
 ---
 
-# Deposit/Withdrawal flow
-Panoptic Vaults use an asymmetric deposit/withdrawal system.
+import ThemedImage from '@theme/ThemedImage';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+# Deposit and Withdrawal Flow
+Panoptic Vaults use an asynchronous deposit and withdrawal system.
 Every deposit request must be approved by the manager to help set the shares price from the pool's valuation.
 Similarly, withdrawals must also be approved by the manager in case the vault needs to divest from its investments to free up capital.
 
 ## Deposit Flow
-(Image of deposit flow)
 
 The deposit process in the Panoptic Vault follows a two-phase epoch-based system designed to ensure fair pricing and prevent front-running attacks. When users deposit assets, they enter a queue for the current epoch and must wait for the manager to fulfill their request before receiving shares.
+
+<ThemedImage
+  alt="Commissions"
+  sources={{
+    light: useBaseUrl('/img/vault-deposit-flow.png'),
+    dark: useBaseUrl('/img/vault-deposit-flow.png'),
+  }}
+/>
 
 The process works as follows:
 1. **Request Phase**: Users call `requestDeposit()` to transfer their assets (e.g., USDC) into the vault. The assets are held in escrow and the request is recorded in the current deposit epoch.
 2. **Fulfillment Phase**: The manager periodically calls `fulfillDeposits()` to process all pending deposits in the current epoch. During fulfillment, the manager:
-   - Calculates the vault's Net Asset Value (NAV) through the accountant contract
+   - Calculates the vault's [Net Asset Value (NAV)](/docs/vaults/nav) through the accountant contract
    - Determines the share price based on the current NAV
    - Allocates shares proportionally to all depositors in that epoch
    - Advances to the next epoch
-3. **Execution Phase**: After fulfillment, users call `executeDeposit()` to claim their shares. The shares are calculated based on the NAV at the time of fulfillment, ensuring all users in the same epoch receive the same price.
+3. **Execution Phase**: After fulfillment, users call `executeDeposit()` to claim their shares. The shares are calculated based on the NAV at the time of fulfillment, ensuring all users in the same epoch receive the same price. Since assets can only be withdrawn after shares are claimed, users typically wait to claim until they're ready to withdraw, avoiding unnecessary steps in the meantime.
 
 This system prevents sandwich attacks and ensures fair pricing by batching deposits together and pricing them simultaneously based on the vault's actual NAV.
 
 
 ## Withdrawal Flow
-(Image of withdrawal flow)
+
+<ThemedImage
+  alt="Commissions"
+  sources={{
+    light: useBaseUrl('/img/vault-withdraw-flow.png'),
+    dark: useBaseUrl('/img/vault-withdraw-flow.png'),
+  }}
+/>
 
 The withdrawal process mirrors the deposit flow but in reverse, using a similar epoch-based queuing system to ensure orderly redemptions and protect remaining shareholders.
 
@@ -38,11 +56,12 @@ The process consists of:
    - Performance fees are calculated on any gains above the original cost basis
 3. **Execution Phase**: Users call `executeWithdrawal()` to receive their assets. Performance fees (if any) are automatically deducted and sent to the fee wallet.
 
-The system also supports a unique "redeposit" feature where withdrawn assets can be automatically reinvested into the vault, useful for compounding strategies or manager-initiated rebalancing.
+## Compounding Returns
+The system also supports a unique redeposit feature where withdrawn assets can be automatically reinvested into the vault, useful for compounding strategies or manager-initiated rebalancing.
 
 
-## Transfer
-(Image of transfer flow)
+## Transfers
+<!-- TODO: add image of transfer flow -->
 
 The Panoptic Vault implements custom transfer logic that goes beyond standard ERC20 functionality to maintain accurate performance fee calculations across share transfers.
 

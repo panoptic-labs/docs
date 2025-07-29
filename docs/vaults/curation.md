@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 6
 ---
 
 # Curation
@@ -20,7 +20,7 @@ This is the standard, trusted model. The Curator sets a single address as the **
 This is an advanced, trust-minimized pattern. While not native to the base `HypoVault`, a Curator can design a system where the Manager can only execute a limited set of pre-approved actions. This is typically achieved by having the Curator commit to a Merkle root of all valid strategic actions. The Manager must then provide a Merkle proof along with each action, which is verified on-chain before execution. This enforces a "strategic whitelist," preventing the Manager from going rogue.
 
 ---
-## computeNAV and managerInput
+## Safeguards
 
 While the Manager constructs the `managerInput` payload for each NAV calculation, the Curator defines the immutable rules and sanity checks that this input is validated against in the `PanopticVaultAccountant`.
 
@@ -41,15 +41,15 @@ This is the complete list of all Panoptic position NFTs the vault holds. The Man
 
 The Curator should design the vault's fund management cadence, balancing user experience with strategic needs.
 
-### Epoch basics
+### Epochs
 
-Deposits and withdrawals are not instant. They are batched into **epochs**. The Manager fulfills an entire epoch at once, ensuring all participants in that batch receive a fair, uniform price based on a single NAV calculation.
+Deposits and withdrawals are not instant, but rather they are batched into **epochs**. The Manager fulfills an entire epoch at once, ensuring all participants in that batch receive a fair, uniform price based on a single NAV calculation.
 
-### shouldRedeposit
+### `shouldRedeposit`
 
-This is a boolean flag in a user's pending withdrawal. When `true`, the assets from a user's withdrawal are automatically re-queued for deposit into the next epoch instead of being sent to their wallet.
+This is a boolean flag in a user's pending withdrawal. When `true`, the assets from a user's withdrawal are automatically [re-queued for deposit](/docs/vaults/deposit-withdrawal#compounding-returns) into the next epoch instead of being sent to their wallet.
 
-### requestWithdrawalFrom()
+### `requestWithdrawalFrom()`
 
 This manager-only function utilizes the `shouldRedeposit` flag. It allows the Manager to trigger a withdrawal on behalf of a user and force the proceeds to be redeposited. This is a powerful tool for portfolio rebalancing or realizing profits for performance fee calculation without the user's funds ever leaving the vault's ecosystem.
 

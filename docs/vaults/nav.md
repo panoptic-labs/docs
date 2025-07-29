@@ -6,18 +6,16 @@ sidebar_position: 5
 
 The Net Asset Value (NAV) represents the total value of all assets held by the vault, denominated in its `underlyingToken`. 
 It's the core metric used to determine the price of a vault share. 
-When a manager fulfills deposits or withdrawals, the NAV is calculated by the `PanopticVaultAccountant` contract to ensure that new shares are minted and old shares are redeemed at the fair market value of the vault's portfolio.
+
+When a manager fulfills [deposits or withdrawals](/docs/vaults/deposit-withdrawal), the NAV is calculated by the [`PanopticVaultAccountant`](/docs/vaults/vault-architecture#accountant) contract to ensure that new shares are minted and old shares are redeemed at the fair market value of the vault's portfolio.
 
 ## Asset valuation
 
 The vault's assets are valued using a hybrid on-chain and manager-driven approach to balance accuracy with security. The valuation process accounts for all assets under the vault's control, including:
 
 - **Panoptic Positions**: The value of all long and short option positions held across various Panoptic pools.
-
 - **Collateral**: The value of collateral deposited in Panoptic pools, redeemable for the underlying assets.
-
 - **Accumulated Fees**: Premiums collected from selling options.
-
 - **Fungible Tokens**: Balances of any other ERC20 tokens and native ETH held directly by the vault.
 
 To ensure prices are accurate and not manipulated, the vault manager provides price quotes which are cross-referenced against on-chain Time-Weighted Average Prices (TWAPs) from oracles.
@@ -27,7 +25,7 @@ All asset values are ultimately converted to the vault's single `underlyingToken
 
 ## Computing the NAV
 
-The NAV is computed by the `PanopticVaultAccountant`'s `computeNAV` function, which is called by the vault manager during the `fulfillDeposits` or `fulfillWithdrawals` process.
+The NAV is computed by the `computeNAV` function of the `PanopticVaultAccountant`, which is called by the vault manager during the [`fulfillDeposits`](/docs/vaults/deposit-withdrawal#deposit-flow) or [`fulfillWithdrawals`](/docs/vaults/deposit-withdrawal#withdrawal-flow) process.
 
 The computation follows these steps:
 1.  **Manager Input**: The manager supplies the necessary data, which includes a list of every Panoptic pool the vault interacts with, a complete list of all position token IDs held in each of those pools, and the manager's current price quotes for the assets.
@@ -38,17 +36,21 @@ The computation follows these steps:
 3.  **Portfolio Valuation**: The accountant iterates through each pool to calculate its net worth. For each pool, it sums the value of collateral, fees, and all option positions. A key feature of the calculation is that if a single pool has a net negative value (i.e., represents a liability), its value is floored at zero (`Math.max(poolExposure0 + poolExposure1, 0)`). This means an underwater position in one pool does not detract from the total NAV derived from other, profitable pools.
 4.  **Final Aggregation**: The values from all pools are summed together, along with the value of any other tokens held directly by the vault, to arrive at the final NAV in the vault's `underlyingToken`. This value is then used to price shares for deposits and withdrawals.
 
-## Share Valuation Examples
+
+<!--
+TODO:
+## Share Valuation Examples 
 
 ### Passive Liquidity Provisioning (PLP) Vault
 
 ### Covered Call Vault
 
-### Delta-neutral (Straddle) Vault
+### Delta-Neutral LP (Straddle) Vault
 
 ### Reverse Convertible Bond
 
 ## Contract Interactions
+-->
 
 <details>
 <summary>Manager Actions</summary>
