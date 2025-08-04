@@ -1,5 +1,5 @@
 ---
-slug: pricing-models-perp-options
+slug: perpetual-option-pricing-model-comparison
 title: "How to Price Perpetual Options: Five Models Compared"
 tags: [Pricing Model, Black Scholes, American Option]
 image: /img/research/pricing-models-perp-options-banner.png
@@ -451,9 +451,6 @@ This setup leads to mathematically rich *free-boundary problems*, which can be a
 | **Greeks View** | Theta-based revenue, gamma bounded by LP range | Classic delta/gamma model; theta funds flow | Average Greeks across expiries | Multiple Greeks layered; sensitive to boundary rules | Volatility is a function of gamma; nonlinearity impacts all Greeks |
 | **Innovation** | Oracle-free, real-liquidity derived perpetual options | Replicates option decay via perps-style funding | Elegant link between perpetual options and vanilla blends | First closed-form perpetual compound American options | Introduces feedback-sensitive volatility into perpetual puts |
 | **Main Limitation** | No closed-form price; requires simulation; high path variance | Dependent on oracle accuracy; off-chain components | Ignores real-time path; more theoretical than practical | Complex to implement and nest in composable DeFi | Hard to solve analytically; parameter calibration is complex |
-
-**Comparative table of perpetual option pricing models**
-
 
 
 ## Conclusion
