@@ -1,9 +1,9 @@
 ---
 slug: pricing-models-perp-options
 title: "How to Price Perpetual Options: Five Models Compared"
-tags: [Pricing Model, Black-Scholes, American Option]
+tags: [Pricing Model, Black Scholes, American Option]
 image: /img/research/pricing-models-perp-options-banner.png
-description: "This paper presents a rigorous overview of several perpetual option pricing frameworks and compares them to the Panoptic protocol, an oracle-free, DeFi-native options model built on Uniswap v3 and v4. We highlight the mathematical foundations of each model, discuss their pricing mechanics, and analyze their applicability in decentralized markets."
+description: "This paper compares perpetual option pricing frameworks with Panoptic’s oracle-free, DeFi-native model on Uniswap v3/v4, detailing mathematical foundations, pricing mechanics, and applicability to decentralized markets."
 authors: A
 ---
 
@@ -68,8 +68,6 @@ The protocol defines a function `FeeRate` based on:
 - Tick spacing (width of range),
 - Volume traded inside the range,
 - Amount of base liquidity,
-- Historical fees collected.
-
 
 ### Theoretical Approximation via Theta Integration
 
@@ -349,7 +347,7 @@ While Panoptic relies on continuous fee accrual driven by path-dependent Uniswap
 
 ### Quantitative Explanation
 
-This model extends the classical Black-Scholes framework for pricing perpetual American put options by allowing the volatility function \( \sigma \) to depend nonlinearly on the second derivative (Gamma) of the option price.
+This model extends the classical Black-Scholes framework for pricing perpetual American put options by allowing the volatility function $\sigma$ to depend nonlinearly on the second derivative (Gamma) of the option price.
 
 **Variable Definitions for Grossinho et al. Model**
 
@@ -447,7 +445,7 @@ This setup leads to mathematically rich *free-boundary problems*, which can be a
 | **Expiry** | None (truly perpetual) | None | Randomized (Exp or Geo) | None | None |
 | **Pricing Method** | Time-integrated theta, path-dependent | Theta as funding; price tracks oracle BSM value | Integral over BSM prices with time distribution weights | Two-layer optimal stopping; closed-form with GBM | Free-boundary PDE with nonlinear volatility function |
 | **Oracle Needed?** | No | Yes (mark price) | Optional (only if BSM used) | No | No |
-| **Hedging Model** | Not hedgeable in traditional sense; relies on LP mechanics | Delta/gamma hedging via mark price and funding | Theoretical hedge depends on expiry weights | Requires boundary-aware, layered exercise logic | Volatility feedback complicates standard hedging |
+| **Hedging Model** | [Delta hedging](https://panoptic.xyz/research/options-market-making#market-making-in-panoptic) with perps, gamma hedging with options | Delta/gamma hedging via mark price and funding | Theoretical hedge depends on expiry weights | Requires boundary-aware, layered exercise logic | Volatility feedback complicates standard hedging |
 | **Path Dependency** | Yes (accumulates based on time spent near strike) | No (price snapshot) | No (distribution-driven) | No (exercise boundary is static) | No (but volatility is state-dependent) |
 | **On-Chain Compatibility** | Fully native (built on AMM tick data) | Difficult; oracle and off-chain needed | Medium; numerical methods needed | Difficult; compound logic not natively modular | Challenging; requires nonlinear PDE solver |
 | **Greeks View** | Theta-based revenue, gamma bounded by LP range | Classic delta/gamma model; theta funds flow | Average Greeks across expiries | Multiple Greeks layered; sensitive to boundary rules | Volatility is a function of gamma; nonlinearity impacts all Greeks |
@@ -477,11 +475,13 @@ Perpetual options represent more than an innovation in pricing, they signal a sh
 - **Sidani, W.**  
   *Pricing Perpetual Options Using a Distribution over Expiry*.  
   (Private draft/notes, circulated in DeFi research community), 2023.
+  https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5065014
 
 - **Gapeev, P. V., and Rodosthenous, N.**  
   *Perpetual American Compound Option Valuation*.  
   Quantitative Finance, Volume 13, Issue 1, 2013, pp. 129–139.  
-  https://doi.org/10.1080/14697688.2011.647972
+  https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1698264
+  
 
 - **Grossinho, M. R., Faghan, M., and Ševčovič, D.**  
   *Pricing Perpetual Put Options by the Black–Scholes Equation with a Nonlinear Volatility Function*.  
@@ -496,5 +496,5 @@ Perpetual options represent more than an innovation in pricing, they signal a sh
 
 
 
-Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://linktr.ee/panopticxyz). To learn more about Panoptic and all things DeFi options, check out our [docs](/docs/intro) and head to [our website](https://panoptic.xyz/).
+_Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://linktr.ee/panopticxyz). To learn more about Panoptic and all things DeFi options, check out our [docs](/docs/intro) and head to [our website](https://panoptic.xyz/)._
 
