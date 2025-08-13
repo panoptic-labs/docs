@@ -2,19 +2,15 @@
 sidebar_position: 1
 image: /img/banners/audits-banner.png
 ---
- 
+
 # Security & Audits
 
 ![](./audits-banner.png)
 
 Panoptic has undergone numerous economic and security reviews by leading firms. The following reports are available for public review.
 
-## Vault Audits
 
-### Code4rena
-The Panoptic vault infrastructure audit [report](https://code4rena.com/reports/2025-06-panoptic-hypovault) was completed by [Code4rena](https://code4rena.com/) on August 13, 2025.
-
-## Smart Contract Audits
+## Core Protocol Audits
 
 ### Cantina
 The final [review](https://cantina.xyz/portfolio/0eb3624c-90d4-40d8-93b7-558cb130f753) of the Panoptic V1.1 Protocol was completed by [Cantina](https://cantina.xyz/) on November 20, 2024.
@@ -50,3 +46,10 @@ The second economic analysis [report](/pdf/ThreeSigma_Panoptic.pdf) was complete
 
 ### Simtopia
 The initial economic analysis [report](/pdf/Simtopia_Panoptic.pdf) was completed by [Simtopia](https://www.simtopia.ai/) on March 7, 2023.
+
+## Vault Audits
+
+### Code4rena
+A Panoptic vault infrastructure audit [report](https://code4rena.com/reports/2025-06-panoptic-hypovault) was completed by [Code4rena](https://code4rena.com/) on August 13, 2025.
+
+More Vault audits are in-progress and will be added here as they become available.
