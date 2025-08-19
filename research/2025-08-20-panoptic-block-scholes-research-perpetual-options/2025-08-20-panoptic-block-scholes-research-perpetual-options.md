@@ -6,6 +6,8 @@ image: /img/research/panoptic-block-scholes-research-perpetual-options.png
 description: "Perpetual options transform AMM liquidity into continuously rolled options that never expire—eliminating costly rollovers, reducing gamma risk, and unlocking a more efficient, onchain volatility market."
 ---
 
+![](./panoptic-block-scholes-research-perpetual-options.png)
+
 >_This article was originally published by Block Scholes on August 20, 2025. We are republishing it here with permission for broader accessibility. You can view the original report [here](https://www.blockscholes.com/research/block-scholes-x-panoptic-perpetual-option)._
 
 ## Perpetual Options
