@@ -22,7 +22,7 @@ All rescued funds have been transferred to [vault.panoptic.eth](https://ethersca
 On Monday, August 25th, we received a report from a Cantina researcher claiming that a critical vulnerability existed in the core Panoptic protocol which could enable anyone to drain nearly all funds locked in the PanopticPool smart contracts.
 
 The Panoptic team immediately spent 4 hours on Monday evening testing the claims from the Cantina report.
-The Cantina researcher provided a hardcoded spoof list of position IDs that seemed to bypass the internal checks inside the PanopticPool smart contract.
+The Cantina researcher provided a hardcoded [spoof](https://en.wikipedia.org/wiki/Spoofing_attack) list of position IDs that seemed to bypass the internal checks inside the PanopticPool smart contract.
 To test if we could reproduce this attack using new positions, we wrote a Python script to implement the spoof mining, relying on the research of [Bellare & Micciancio](https://cseweb.ucsd.edu/~mihir/papers/inchash.pdf).
 We confirmed that our Python script could produce new lists and execute new attacks, and that the researcher’s findings were valid.
 
@@ -110,7 +110,7 @@ In the spirit of learning in public, we want to share the more general lessons w
 
 - **Don’t underestimate the importance of social recovery.** While technical whitehat operations secured the majority of funds, our ability to quickly contact and coordinate with users prevented a potential catastrophe. Within 48 hours, we successfully reached users controlling over $4.05M in deposits, with community members, protocol founders, and even our Discord moderator proving instrumental in tracking down multisig owners. The security of a protocol is also about maintaining accurate user contact information, building strong community relationships, and having clear communication channels ready before a crisis hits.
 
-- **Use available tools and methods at all times.** We chose to roll our own cryptographic hash aggregation scheme without doing proper research about existing methods. We set up a fingerprinting method that relied on XORing together hashes, enabling orderless position lists & making updates to the position list gas-efficient. This method is known as XHASH. Had we done our proper research, we’d have known about the issues with XHASH. More generally, the Panoptic team's expertise is in decentralized finance. We should specialize in developing the best rules for an options trading protocol, and rely on cryptography experts to provide the battle-tested security primitives we need.
+- **Use available tools and methods at all times.** We chose to roll our own cryptographic hash aggregation scheme without doing proper research about existing methods. We set up a fingerprinting method that relied on [XORing](https://en.wikipedia.org/wiki/Xor) together hashes, enabling orderless position lists & making updates to the position list gas-efficient. This method is known as XHASH. Had we done our proper research, we’d have known about the issues with XHASH. More generally, the Panoptic team's expertise is in decentralized finance. We should specialize in developing the best rules for an options trading protocol, and rely on cryptography experts to provide the battle-tested security primitives we need.
 
 Finally, a few words regarding the next steps for Panoptic as a protocol and product.
 We will soon be relaunching with Panoptic V2, an upgrade which addresses this vulnerability at its core while also releasing planned improvements to force exercise mechanics, PLP economics, and position management flexibility.
@@ -166,9 +166,9 @@ Instead, we:
 
 This should mean that our contracts have an accurate picture of the user's open positions whenever the user takes actions that affect their account's liquidatability or active position list.
 
-### Position IDs fingerprinting
+### Fingerprinting Position IDs
 
-A fingerprint for a list of Panoptic positions in Panoptic v1 (and v1.1) is generated using the following code:
+A fingerprint for a list of Panoptic positions in Panoptic v1 (and v1.1) is [generated](https://github.com/panoptic-labs/panoptic-v1-core/blob/df4dc38dee4fe29fd889cffaa8097dccc561e572/contracts/libraries/PanopticMath.sol#L122-L139) using the following code:
 
 ```solidity
 function updatePositionsHash(
@@ -196,11 +196,11 @@ That code performs the following operations:
 - Take the list of packed uints representing your positions, in their uint-interpreted format (in other words, take a list of numbers).
 - Take an "empty" hash to start (e.g., the number 0). Call this value `accumulatedFingerprint`.
 - Loop through each position (which is a number) in the list, and:
-  - Take the keccak hash of the number
+  - Take the [keccak](https://www.evm.codes/?fork=cancun#20) hash of the number
   - Take the lower 248 bits of that hash output
-  - XOR those lower 248 bits against the lower 248 bits of the `accumulatedFingerprint`
+  - [XOR](https://en.wikipedia.org/wiki/Xor) those lower 248 bits against the lower 248 bits of the `accumulatedFingerprint`
   - Get the number of legs in the position using the `tokenId.countLegs()` [method](https://github.com/panoptic-labs/panoptic-v1-core/blob/df4dc38dee4fe29fd889cffaa8097dccc561e572/contracts/types/TokenId.sol#L423-L440), which can be stored in a `uint8`, and add those onto the upper 8 bits of `accumulatedFingerprint`
-  - Save your accumulatedFingerprint and proceed to the next position
+  - Save your `accumulatedFingerprint` and proceed to the next position
 - Over the course of the loop, this should result in the upper 8 bits of `accumulatedFingerprint` containing the total legs across all positions, and the lower 248 bits storing the XOR of the hash of each position's keccak hash.
 
 ### Position Hashing Vulnerabilities
