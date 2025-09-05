@@ -165,7 +165,7 @@ Instead, we:
 
 This should mean that our contracts have an accurate picture of the user's open positions whenever the user takes actions that affect their account's liquidatability or active position list.
 
-### Position IDs fingerprinting
+### Fingerprinting Position IDs
 
 A fingerprint for a list of Panoptic positions in Panoptic v1 (and v1.1) is generated using the following code:
 
