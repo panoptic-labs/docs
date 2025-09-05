@@ -83,7 +83,7 @@ We will transfer all rescued tokens into a dedicated contract with a stored merk
 
 We will provide an offchain system for generating the correct Merkle proof for each user address, enabling every users to call this dedicated contract with a proof of which tokens they have the rights to and receive a transfer of their funds.
 
-We have also attached a CSV file with our calculations of each account's claimable funds.
+We will upload a [CSV file to our Github page](https://github.com/panoptic-labs) with our calculations of each account’s claimable funds.
 We ask any affected user to send an email to support@panoptic.xyz or create a support ticket on Discord for disputes regarding your redistribution allotment.
 Our goal is to make everyone 100% whole, [in-kind](https://en.wikipedia.org/wiki/In_kind#In-kind_transfers) - we will not be exchanging any underlying assets for USDC or taking similar actions.
 
@@ -136,7 +136,7 @@ First, we have to understand how a position in Panoptic is represented.
 In Panoptic, each position you hold can be described as a packed `uint256`.
 We break up the 256 bits that store a uint256 into sections.
 Within each section, we store something about your position - we use 8 bits here to store a uint8 number for one leg's option ratio, one bit there for whether it's a put or a call, and so on.
-The full schema can be found in [TokenId.sol](https://github.com/panoptic-labs/panoptic-v1-core/blob/df4dc38dee4fe29fd889cffaa8097dccc561e572/contracts/types/TokenId.sol#L17-L51).
+The full schema can be found in [TokenId.sol](http://github.com/panoptic-labs/panoptic-v1-core/blob/v1.0.x/contracts/types/TokenId.sol#L12-L47).
 
 ```solidity
 // PACKING RULES FOR A TOKENID:
@@ -168,7 +168,7 @@ This should mean that our contracts have an accurate picture of the user's open 
 
 ### Fingerprinting Position IDs
 
-A fingerprint for a list of Panoptic positions in Panoptic v1 (and v1.1) is [generated](https://github.com/panoptic-labs/panoptic-v1-core/blob/df4dc38dee4fe29fd889cffaa8097dccc561e572/contracts/libraries/PanopticMath.sol#L122-L139) using the following code:
+A fingerprint for a list of Panoptic positions in Panoptic v1 (and v1.1) is [generated](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.0.x/contracts/libraries/PanopticMath.sol#L122-L139) using the following code:
 
 ```solidity
 function updatePositionsHash(
@@ -199,7 +199,7 @@ That code performs the following operations:
   - Take the [keccak](https://www.evm.codes/?fork=cancun#20) hash of the number
   - Take the lower 248 bits of that hash output
   - [XOR](https://en.wikipedia.org/wiki/Xor) those lower 248 bits against the lower 248 bits of the `accumulatedFingerprint`
-  - Get the number of legs in the position using the `tokenId.countLegs()` [method](https://github.com/panoptic-labs/panoptic-v1-core/blob/df4dc38dee4fe29fd889cffaa8097dccc561e572/contracts/types/TokenId.sol#L423-L440), which can be stored in a `uint8`, and add those onto the upper 8 bits of `accumulatedFingerprint`
+  - Get the number of legs in the position using the `tokenId.countLegs()` [method](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.0.x/contracts/types/TokenId.sol#L423-L440), which can be stored in a `uint8`, and add those onto the upper 8 bits of `accumulatedFingerprint`
   - Save your `accumulatedFingerprint` and proceed to the next position
 - Over the course of the loop, this should result in the upper 8 bits of `accumulatedFingerprint` containing the total legs across all positions, and the lower 248 bits storing the XOR of the hash of each position's keccak hash.
 
