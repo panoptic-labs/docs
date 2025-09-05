@@ -16,20 +16,14 @@ const Nav = ({purpleMode = false}) => {
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
     }
   };
-  
 
-  const iconPath = purpleMode ? 
-  "/img/new-home-page/external-link-arrow-white.svg" : 
+
+  const iconPath = purpleMode ?
+  "/img/new-home-page/external-link-arrow-white.svg" :
   "/img/new-home-page/external-link-arrow.svg"
 
   return (
     <nav className="header__nav">
-      <div onClick={() => handleClick("https://app.panoptic.xyz/")} className={clsx("nav__link", {"white-text": purpleMode})}>
-        Trade
-      </div>
-      <div onClick={() => handleClick("https://grho.panoptic.xyz")} className={clsx("nav__link", {"white-text": purpleMode})}>
-        Earn
-      </div>
       <div onClick={() => handleClick("/docs/intro")} className={clsx("nav__link", {"white-text": purpleMode})}>
         Docs
       </div>

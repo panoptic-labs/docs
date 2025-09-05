@@ -35,16 +35,6 @@ const config = {
         style: "dark",
         items: [
           {
-            label: "Trade",
-            href: "https://app.panoptic.xyz/trade",
-            position: "left",
-          },
-          {
-            label: "Earn",
-            href: "https://app.panoptic.xyz/earn",
-            position: "left",
-          },
-          {
             type: "doc",
             docId: "intro",
             position: "left",
@@ -174,13 +164,6 @@ const config = {
             "https://raw.githubusercontent.com/panoptic-labs/docs/main/static/img/website-banner.png",
         },
       ],
-      announcementBar: {
-        id: "ETH_Denver_2023",
-        content:
-          "Get a boost through our <a href=\"https://app.liquidity.land/project/Panoptic\">Liquidity.Land</a> points campaign!",
-        textColor: "#FFFFFF",
-        isCloseable: true,
-      },
       image:
         "https://raw.githubusercontent.com/panoptic-labs/docs/main/static/img/website-banner.png",
       algolia: {
@@ -191,16 +174,16 @@ const config = {
         contextualSearch: true,
         // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
         // externalUrlRegex: 'external\\.com|domain\\.com',
-  
+
         // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
         // replaceSearchResultPathname: {
         //   from: '/docs/', // or as RegExp: /\/docs\//
         //   to: '/',
         // },
-  
+
         // Optional: Algolia search parameters
         searchParameters: {},
-  
+
         // Optional: path for search page that enabled by default (`false` to disable it)
         searchPagePath: 'search',
       },
@@ -253,7 +236,7 @@ const config = {
       },
     ],
   ],
-  
+
 
   stylesheets: [
     {
@@ -261,7 +244,7 @@ const config = {
       type: 'text/css',
     },
   ],
-  
+
 
   plugins: [
     // "@docusaurus-terminology/parser",
@@ -516,11 +499,11 @@ const config = {
           {
             to: '/docs/contracts/V1.0/types/library.TokenIdLibrary',
             from: '/docs/developers/V1.0/types/library.TokenIdLibrary',
-          },    
+          },
           {
             to: '/docs/intro',
             from: '/docs',
-          },          
+          },
         ],
       },
     ]
@@ -539,5 +522,3 @@ const config = {
 module.exports = {
   ...config,
 };
-
-
