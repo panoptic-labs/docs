@@ -204,7 +204,7 @@ That code performs the following operations:
 
 There are two key flaws to notice here.
 
-- We didn't validate that the passed positions are valid options positions that could actually be minted by Panoptic. Specifically, these `uint256`'s could contain a leg-count of 0.
+- We didn't validate that the passed positions are valid options positions that could actually be minted by Panoptic. Specifically, these `uint256`'s could contain a leg-count of `0`.
   - Under normal circumstances, the accumulated total leg count in a prospective user-supplied position list must match the leg count in the stored finger print. If every position in the list must have a leg count of at least one, and the maximum number of positions is 25 with each position having at least one leg, then the search space of passable user-supplied position lists is constrained to 25-item lists or smaller.
   - By failing to check that the provided position ID had at least 1 leg, however, we remove this constraint and attackers may consider any list of any length when looking for fingerprint collisions.
 
@@ -262,3 +262,24 @@ A tangible example supplied by the researcher is an attack that carries out the 
 - Call the withdrawal method on our contracts, and supply a fake list of zero-collateral-requirement positions, enabling you to withdraw the funds that have been credited to your account for the levered-up in-the-money options without triggering the collateral subtraction of your borrowed funds.
 
 And ultimately, this is what the whitehat Attacker contracts did, using hardcoded spoof lists generated offchain.
+
+### Recovery transaction hashes
+
+- Mainnet EOA: https://etherscan.io/address/0xa1F0A9d51b592ee074eD6987006976908631503B
+  - Attack 1: https://etherscan.io/tx/0x67a45dfe5ff4b190058674d7c791bbdc48e889f319f937c24fa13a5f9093f088
+  - Attack 2: https://etherscan.io/tx/0xf2f05a9af8ea55e8b32227c180fa13a2d92e199a528d5ba485fa091150c6320d
+  - Attack 3: https://etherscan.io/tx/0x696df1f41ee743c00613825d19a78eff6afcc6cf16c531043f8451f0415c7f9b
+  - Attack 4: https://etherscan.io/tx/0xff5de8202fda3c26660baa993499f9e6dd3ffaffca863fc6ab7d6e4ffa1c83c0
+
+- Base EOA: https://basescan.org/address/0xa1F0A9d51b592ee074eD6987006976908631503B
+  - Attack 1: https://basescan.org/tx/0xe39c3554630287f7e71ab7052254cebb1438d0faf7f9bc4ec6449568332d8b91
+  - Attack 2: https://basescan.org/tx/0x6e1a55219526892033e813ae069c2445e097731575ec4df91b9447481fe40fb9
+  - Attack 3: https://basescan.org/tx/0xe2e5e5ab4e3d5ba74b372e44546691b71c96569fa834ef5d178111acdd754102
+  - Attack 4: https://basescan.org/tx/0xb878d58ab6b6863987f1b0b43b6ca9103ebd2612ad499b36a648acae4bca3397
+
+- Unichain EOA: https://uniscan.xyz/address/0xa1F0A9d51b592ee074eD6987006976908631503B
+  - Attack 1: https://uniscan.xyz/tx/0x4664adefa310a3501b8ef4d2d5229b8961dbdb5c60b422c9922200b25f66c7b3
+  - Attack 2: https://uniscan.xyz/tx/0x96e2e60a11b15b38cd46a8e8fb2333ab84b103ec86dcd386418714eee452f53b
+  - Attack 3: https://uniscan.xyz/tx/0x4fb292194adaf85873801378fa259567d37639039d42d18c484bf3ef39711786
+  - Attack 4: https://uniscan.xyz/tx/0x121bab166d499f99cad88cc79aabb72f706d2dc8b9d2a29889a231854176a8fa
+  - Attack 5: https://uniscan.xyz/tx/0x31d88c0d61ff57034cb2f081e361980a4f971e509b6dc4fef339164ca0f52e4a
