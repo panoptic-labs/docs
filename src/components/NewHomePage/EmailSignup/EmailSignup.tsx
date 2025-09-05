@@ -41,20 +41,7 @@ const EmailSignUp: React.FC = () => {
 
   return (
     <div className="email-signup-container relative z-0">
-      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 items-stretch gap-8 pb-12">
-        {/* Competition CTA */}
-        <div className="interest-section bg-panoptic-purple flex flex-col justify-center h-full text-center shadow-md px-8 py-4 rounded-lg text-white">
-          <PanopticUnichainBanner className="w-full h-auto" />
-          <p className="text-lg font-semibold">Deposit to earn UNI incentives!</p>
-          <button
-            // onClick={() => setInterestOpen(true)}
-            onClick={() => window.location.href = 'https://panoptic.xyz/blog/uni-token-incentives-on-panoptic'}
-            className="mt-2 px-8 py-3 bg-white text-panoptic-purple font-semibold rounded-lg hover:bg-gray-100 transition ease-in-out duration-150 active:scale-95"
-          >
-            Learn More
-          </button>
-        </div>
-
+      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-1 items-stretch gap-8 pb-12">
         {/* Newsletter CTA */}
         <div className="newsletter-section bg-white flex flex-col justify-center h-full text-center shadow-md px-8 py-4 rounded-lg">
           <img
@@ -70,24 +57,6 @@ const EmailSignUp: React.FC = () => {
             className="mt-4 px-8 py-3 bg-panoptic-purple text-white font-semibold rounded-lg hover:bg-purple-700 transition ease-in-out duration-150 active:scale-95"
           >
             Subscribe
-          </button>
-        </div>
-      </div>
-
-      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 items-stretch gap-8 pb-12">
-        {/* Liquidity Land CTA */}
-        <div className="interest-section bg-lavender flex flex-col justify-center h-full text-center shadow-md px-8 py-4 rounded-lg text-white">
-          <img
-            src="/img/liquidity-land-banner.svg"
-            alt="Liquidity Land Campaign"
-            className="mx-auto w-60 h-auto mb-4 mt-2"
-          />
-          <p className="text-lg font-semibold text-panoptic-purple mb-2">Get a Boost Through Our Liquidity.Land Campaign!</p>
-          <button
-            onClick={() => window.location.href = 'https://app.liquidity.land/project/Panoptic'}
-            className="mt-4 px-8 py-3 bg-panoptic-purple text-white font-semibold rounded-lg hover:bg-purple-700 transition ease-in-out duration-150 active:scale-95"
-          >
-            Get Your Boost
           </button>
         </div>
       </div>

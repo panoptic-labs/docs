@@ -72,9 +72,6 @@ const Sidebar = ({ isOpenedSidebar, onClose, onToggle }) => {
         </div>
         <div className="sidebar__nav__bottom-part">
           <div className="nav__bottom-part__buttons">
-            <Link to={APP_LINK} className="sidebar-button">
-              <Button className="sidebar-button">Launch App</Button>
-            </Link>
           </div>
         </div>
       </nav>

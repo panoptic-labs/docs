@@ -37,16 +37,9 @@ const Header = ({purpleMode = false, children}) => {
             <div className="mobile-button" onClick={handleToggle}>
               { purpleMode
                 ? <i className="icon__burger right-part__icon" />
-                : <img src={"/img/burger-purple.svg"}/>  
+                : <img src={"/img/burger-purple.svg"}/>
               }
             </div>
-          )}
-          {showAppComingSoonButton && (
-            <Link to={APP_LINK}>
-            <button className="enter-app-button">
-              Launch App
-            </button>
-            </Link>
           )}
         </div>
       </header>
