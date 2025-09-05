@@ -2,10 +2,11 @@
 slug: position-spoofing-post-mortem
 title: "Position Spoofing Post Mortem"
 tags: [Company, Newsletter]
-image: /img/banners/august-2025-newsletter.png
+image: /img/banners/post-mortem-banner.png
 description: "Post mortem of the security incident that occurred on August 25, 2025."
 ---
 
+![](./post-mortem-banner.png)
 _What happened before and during the recent security incident, and what happens next._
 
 ## What Happened?
@@ -201,6 +202,8 @@ That code performs the following operations:
   - Get the number of legs in the position using the `tokenId.countLegs()` [method](https://github.com/panoptic-labs/panoptic-v1-core/blob/df4dc38dee4fe29fd889cffaa8097dccc561e572/contracts/types/TokenId.sol#L423-L440), which can be stored in a `uint8`, and add those onto the upper 8 bits of `accumulatedFingerprint`
   - Save your accumulatedFingerprint and proceed to the next position
 - Over the course of the loop, this should result in the upper 8 bits of `accumulatedFingerprint` containing the total legs across all positions, and the lower 248 bits storing the XOR of the hash of each position's keccak hash.
+
+### Position Hashing Vulnerabilities
 
 There are two key flaws to notice here.
 
