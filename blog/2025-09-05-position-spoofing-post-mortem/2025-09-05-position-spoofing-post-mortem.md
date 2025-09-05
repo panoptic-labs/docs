@@ -214,3 +214,52 @@ There are two key flaws to notice here.
     - It is commutative: `a XOR b == b XOR a`
     - It is self-cancelling: `a XOR a == 0`
   - XORing hash outputs can therefore can be framed as [linear combinations](https://en.wikipedia.org/wiki/Linear_combination), that is, XORing together [vectors](https://en.wikipedia.org/wiki/Row_and_column_vectors), where each hash output is laid out as its binary string in a column, and each column has a coefficient of 0 or 1 multiplied to it before XORing together all columns. Visually:
+![](./vectors.png)
+... with a coefficient of `x_0` multiplied to the first vector `h_0`, `x_1` to the second vector `h_1`, and so on.
+  - Why are we now adding in these coefficients?
+    - We're setting things up this way on purpose because there are well-known methods for answering the question: "Given this target output vector we're combining some input vectors toward, what coefficient should we set for each vector factor?"
+      - [Gaussian elimination](https://en.wikipedia.org/wiki/Gaussian_elimination) is the one we shall use.
+      - Note that in linear algebra, coefficients of 0 and 1 mean "exclude or include the whole input vector in the final operation", not "multiply each element of the vector by 0 or 1". 
+    - Note that this list of input vectors can be cheaply computed ahead of time - you're just picking `uint`s at random and `keccak`-ing them. The number of input vectors can also be arbitrarily large, as you'll only be picking a subset of them - the ones that receive a coefficient of 1.
+
+
+### Spoofing the position Id lists
+
+So we now have the problem framed for finding these spoofed lists of tokenIds:
+
+- Given a large pool of vectors - that is, precomputed hashes of candidate TokenIds, which don't even have to conform to the true TokenId standard - set up a long, long sequence of vectors which you want to XOR together such that you end up with the target output fingerprint.
+- Use Gaussian elimination to find the target coefficient for each.
+- Select the vectors that Gaussian elimination gives a coefficient of 1.
+- Consider setting an upper-bound on the number of vectors in your final selection (that is, which receive a coefficient of 1), so that you don't end up with an intolerably-large list as your spoof list (larger lists will cost more gas and may bump up against block gas limits). If your first found solution is too large, try again. But remember: there's no leg-count limit, so lists longer than 25 items are fine.
+- Once you have a sufficiently small solution, that's your spoofed list.
+
+We relied heavily on the research of [Bellare & Micciancio](https://cseweb.ucsd.edu/~mihir/papers/inchash.pdf) to understand this insecurity in XORing hash outputs together. 
+The curious reader might want to look into David Wagner's [k-tree algorithm](https://iacr.org/archive/crypto2002/24420288/24420288.pdf) and its [open source implementation](https://github.com/hoytech/birthday-collisions) for a more complete description of the general birthday problem.
+
+We implemented this spoof searching as a Python script, which will be posted [here](https://github.com/panoptic-labs). 
+It was built in the heat of the moment and there are several optimisations that could be made. 
+But even on low-budget laptops we were able to find spoof lists for arbitrary real positions, given that Gaussian elimination can be performed in polynomial time, enabling whitehat attacks on all pools.
+
+### Economic attack with a spoofed list
+
+With the ability to spoof the positions you hold to the PanopticPool, you can, in general:
+
+- Open positions with large collateral requirements
+- Engage in actions that would normally consider that large collateral requirement, but supply a fake list of positions with zero collateral requirement when performing the action
+
+A tangible example supplied by the researcher is an attack that carries out the following steps:
+
+- Borrow assets in a [flash loan](https://chain.link/education-hub/flash-loans)
+- Use that funding to deposit lots of collateral
+- Open two deeply [in-the-money](https://www.investopedia.com/ask/answers/042715/what-difference-between-money-and-out-money.asp) positions, a call and a put, at a levered size
+   - In Panoptic, you may [borrow up to 5 times](https://panoptic.xyz/docs/panoptic-protocol/collateral) your deposited collateral in the PanopticPool smart contract to increase the size of a position.
+   - When Panoptic is functioning correctly, in-the-money options have intrinsic value, so levered in-the-money options credit your account with:
+     - The value of your deposited collateral, 
+     - Plus the borrowed capital,
+     - Minus the collateral requirement of your options, which should mean subtracting whatever you borrowed
+- Call the withdrawal method on our contracts, and supply a fake list of zero-collateral-requirement positions, enabling you to withdraw the funds that have been credited to your account for the levered-up in-the-money options without triggering the collateral subtraction of your borrowed funds.
+
+And ultimately, this is what the whitehat Attacker contracts did, using hardcoded spoof lists generated offchain.
+
+
+
