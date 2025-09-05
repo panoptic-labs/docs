@@ -83,7 +83,7 @@ We will transfer all rescued tokens into a dedicated contract with a stored merk
 
 We will provide an offchain system for generating the correct Merkle proof for each user address, enabling every users to call this dedicated contract with a proof of which tokens they have the rights to and receive a transfer of their funds.
 
-We will upload a [CSV file to our Github page](https://github.com/panoptic-labs) with our calculations of each account’s claimable funds.
+We will upload a [CSV file to our Github page](https://github.com/panoptic-labs/whitehat_disbursement/blob/main/balances) with our calculations of each account’s claimable funds.
 We ask any affected user to send an email to support@panoptic.xyz or create a support ticket on Discord for disputes regarding your redistribution allotment.
 Our goal is to make everyone 100% whole, [in-kind](https://en.wikipedia.org/wiki/In_kind#In-kind_transfers) - we will not be exchanging any underlying assets for USDC or taking similar actions.
 
