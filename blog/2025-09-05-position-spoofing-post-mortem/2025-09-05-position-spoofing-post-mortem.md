@@ -246,6 +246,7 @@ With the ability to spoof the positions you hold to the PanopticPool, you can, i
 
 - Open positions with large collateral requirements
 - Engage in actions that would normally consider that large collateral requirement, but supply a fake list of positions with zero collateral requirement when performing the action
+  - Since we did not ensure that position IDs were owned by the attacked during the collateral requirement checks, the spoofed position IDs simply returned a `0` balance [here](https://github.com/panoptic-labs/panoptic-v1-core/blob/df4dc38dee4fe29fd889cffaa8097dccc561e572/contracts/CollateralTracker.sol#L1167) and resulted in no collateral requirement for that position.
 
 A tangible example supplied by the researcher is an attack that carries out the following steps:
 
