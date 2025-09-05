@@ -23,7 +23,7 @@
 
 .blog-p ul > li {
   list-style-type: disc;
-  font-size: 20px;
+  font-size: 20px;   
 }
 
 @media screen and (max-width: 1024px) {
@@ -33,6 +33,11 @@
     font-weight: 400;
     line-height: 150%;
   }
+  .blog-p ul > li {
+    list-style-type: disc;
+    font-size: 16px;   
+  }
+
 
   .blog-p > h2 {
     font-size: 24px;
