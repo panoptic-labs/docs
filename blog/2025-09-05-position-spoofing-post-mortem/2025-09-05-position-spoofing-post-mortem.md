@@ -21,7 +21,7 @@ All rescued funds have been transferred to [vault.panoptic.eth](https://ethersca
 On Monday, August 25th, we received a report from a Cantina researcher claiming that a critical vulnerability existed in the core Panoptic protocol which could enable anyone to drain nearly all funds locked in the PanopticPool smart contracts.
 
 The Panoptic team immediately spent 4 hours on Monday evening testing the claims from the Cantina report.
-The Cantina researcher provided a hardcoded list of position IDs that seemed to bypass the internal checks inside the PanopticPool smart contract.
+The Cantina researcher provided a hardcoded spoof list of position IDs that seemed to bypass the internal checks inside the PanopticPool smart contract.
 To test if we could reproduce this attack using new positions, we wrote a Python script to implement the spoof mining, relying on the research of [Bellare & Micciancio](https://cseweb.ucsd.edu/~mihir/papers/inchash.pdf).
 We confirmed that our Python script could produce new lists and execute new attacks, and that the researcher’s findings were valid.
 
