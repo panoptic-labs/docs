@@ -27,13 +27,13 @@ To test if we could reproduce this attack using new positions, we wrote a Python
 We confirmed that our Python script could produce new lists and execute new attacks, and that the researcher’s findings were valid.
 
 By this point, we had confirmed the vulnerability was real, and live customer funds were at risk.
-We engaged with our Cantina Incident Response team as well as Seal 911 at 10:30pm on Monday night to create war rooms.
+We engaged with our Cantina Incident Response team as well as SEAL 911 at 10:30pm on Monday night to create war rooms.
 Over the next 2 days, we took the following actions.
 
 - We gathered up the contact information for as many prospective Panoptic users as possible - people who had reached out and told us they were using the protocol, people who had asked research questions about the protocol, protocol team partners - and informed them of the situation, advising them to withdraw their funds.
 - By Tuesday morning 9am, $2.35M of funds had already been voluntarily withdrawn from the Panoptic protocol.
-- By Tuesday evening, more than 50 users had been contacted through direct messages on blockscan, and some had withdrawn their funds. However, close to $1.6M was still in the WETH-USDC-30bps pool on Mainnet, out of which 70% seemed to be linked to two multisigs wallets. Throughout the day on Tuesday, onchain investigations and help from our community enabled us to link that account to several other protocols such as Euler Finance, Goldfinch, and DYAD, but attempts to contact the owner(s) of these wallets did not prove successful.
-- On Wednesday morning, our Discord mod, Hunter, uncovered a link between one of the multisig signers and one of our Discord users. After directly contacting this user on Discord, close to $1.25M was withdrawn from the protocol, leaving $550k of funds still at risk at the protocol level.
+- By Tuesday evening, more than 50 users had been contacted through direct messages on blockscan, and some had withdrawn their funds. However, close to $1.6M was still in the WETH-USDC-30bps pool on Mainnet, out of which 70% seemed to be linked to two multisigs wallets. Throughout the day on Tuesday, onchain investigations and help from our community enabled us to link that account to several other protocols such as Euler Finance, Goldfinch, and DYAD, but initial attempts to contact the owner(s) of these wallets did not prove successful.
+- On Wednesday morning, our Discord mod, Hunter, uncovered a link between one of the multisig signers and one of our Discord users. Additionally, SEAL 911 reached out to Binance who was able to successfully contact the multisig owners to alert them of the ongoing incident. Immediately after, nearly $1.25M was withdrawn from the protocol, leaving $550k of funds still at risk at the protocol level.
 
 ## Preparing for Recovery
 
@@ -77,6 +77,7 @@ The remaining markets are small enough in TVL that a direct compensation from th
 All whitehat-rescued funds were then transferred to [vault.panoptic.eth](https://etherscan.io/address/0x82BF455e9ebd6a541EF10b683dE1edCaf05cE7A1).
 
 ## What Happens from Here?
+> _Update: All user funds have been successfully rescued and are available for redistribution. Please claim your funds [here](https://app.panoptic.xyz/claim/rescued-funds)._
 
 Users will be able to claim rescued funds by the end of next week, after we’ve set up a [Merkle-root claim system](https://www.cyfrin.io/blog/what-is-a-merkle-tree-merkle-proof-and-merkle-root).
 We will transfer all rescued tokens into a dedicated contract with a stored merkle root, then enable users to claim their tokens back from the contract.
@@ -92,7 +93,7 @@ Additionally, we have also confirmed to the Cantina reporter that they will rece
 We are deeply grateful for their research, as well as for the live help we received during this intense period from several teams:
 
 - The Cantina Incident Response team
-- Seal 911
+- SEAL 911
 - Flashbots
 - Panoptic users, investors, and advisors
 
@@ -112,6 +113,8 @@ In the spirit of learning in public, we want to share the more general lessons w
 
 - **Use available tools and methods at all times.** We chose to roll our own cryptographic hash aggregation scheme without doing proper research about existing methods. We set up a fingerprinting method that relied on [XORing](https://en.wikipedia.org/wiki/Xor) together hashes, enabling orderless position lists & making updates to the position list gas-efficient. This method is known as XHASH. Had we done our proper research, we’d have known about the issues with XHASH. More generally, the Panoptic team's expertise is in decentralized finance. We should specialize in developing the best rules for an options trading protocol, and rely on cryptography experts to provide the battle-tested security primitives we need.
 
+- **Communicate with urgency and clarity.** Some users delayed taking protective action because our initial messages didn’t convey the seriousness of the situation strongly enough. In at least one case, a user thought the word “investigating” meant the vulnerability was still unconfirmed, and held on to a position rather than acting immediately. This illustrates how critical it is for crisis communications to cut through hesitation: messages must leave no doubt about the severity of the issue, the urgency of action, and the exact steps required from users.
+
 Finally, a few words regarding the next steps for Panoptic as a protocol and product.
 We will soon be relaunching with Panoptic V2, an upgrade which addresses this vulnerability at its core while also releasing planned improvements to force exercise mechanics, PLP economics, and position management flexibility.
 We remain committed to building a secure options protocol and will share more details about V2's architecture and our enhanced security measures in the coming weeks.
@@ -120,10 +123,10 @@ We remain committed to building a secure options protocol and will share more de
 
 Please take note of the following security tips:
 
-- All official communication occurs through Panoptic Twitter, Panoptic Discord, and blog.panoptic.xyz.
+- All official communication occurs through Panoptic's Twitter, Panoptic's Discord, and Panoptic's blog.
 - Do not click on any links that people DM you. The only links you should will be posted from our official communication channels.
 - Only click links from our official channels, and avoid clicking on links sent in direct messages.
-- Panoptic does not yet have a live claim portal. Any websites claiming to be a Panoptic claim portal are fraudulent.
+- Panoptic's claim portal can be found at app.panoptic.xyz/claim/rescued-funds. Any other websites claiming to be a Panoptic claim portal are fraudulent.
 - Panoptic team members will never DM you about refunds. If someone does, it's a scam.
 - Panoptic is not conducting any airdrops at the moment. If someone DMs you about an airdrop, it’s a scam.
 
@@ -286,3 +289,5 @@ And ultimately, this is what the whitehat Attacker contracts did, using hardcode
   - Attack 3: https://uniscan.xyz/tx/0x4fb292194adaf85873801378fa259567d37639039d42d18c484bf3ef39711786
   - Attack 4: https://uniscan.xyz/tx/0x121bab166d499f99cad88cc79aabb72f706d2dc8b9d2a29889a231854176a8fa
   - Attack 5: https://uniscan.xyz/tx/0x31d88c0d61ff57034cb2f081e361980a4f971e509b6dc4fef339164ca0f52e4a
+
+_Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://linktr.ee/panopticxyz). To learn more about Panoptic and all things DeFi options, check out our [docs](https://panoptic.xyz/docs/intro) and head to our [website](https://panoptic.xyz/)._

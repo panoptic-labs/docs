@@ -164,6 +164,22 @@ const config = {
             "https://raw.githubusercontent.com/panoptic-labs/docs/main/static/img/website-banner.png",
         },
       ],
+      announcementBar: {
+        id: "ETH_Denver_2023",
+        content: `
+          A vulnerability was discovered in the Panoptic smart contracts. 
+          All user funds have been
+          <a href="https://x.com/Panoptic_xyz/status/1964010635026715015" target="_blank" rel="noopener noreferrer">
+            successfully rescued</a> 
+          and are available for redistribution.
+          <br />
+          Please claim your funds 
+          <a href="https://app.panoptic.xyz/claim/rescued-funds">
+            here</a>.
+        `,
+        textColor: "#FFFFFF",
+        isCloseable: true,
+      },
       image:
         "https://raw.githubusercontent.com/panoptic-labs/docs/main/static/img/website-banner.png",
       algolia: {
