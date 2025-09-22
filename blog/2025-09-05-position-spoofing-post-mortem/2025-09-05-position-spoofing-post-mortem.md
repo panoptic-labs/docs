@@ -1,7 +1,7 @@
 ---
 slug: position-spoofing-post-mortem
 title: "Position Spoofing Post Mortem"
-tags: [Company, Newsletter]
+tags: [Security, Post-Mortem, Audit, Panoptic V2]
 image: /img/banners/post-mortem-banner.png
 description: "Post mortem of the security incident that occurred on August 25, 2025."
 ---
