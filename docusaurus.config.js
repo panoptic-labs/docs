@@ -165,7 +165,7 @@ const config = {
         },
       ],
       announcementBar: {
-        id: "ETH_Denver_2023",
+        id: "Vulnerability_claims_open",
         content: `
           A vulnerability was discovered in the Panoptic smart contracts. 
           All user funds have been
