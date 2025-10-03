@@ -167,18 +167,18 @@ const config = {
       announcementBar: {
         id: "Vulnerability_claims_open",
         content: `
-          A vulnerability was discovered in the Panoptic smart contracts. 
+          A vulnerability was discovered in the Panoptic smart contracts.
           All user funds have been
           <a href="https://x.com/Panoptic_xyz/status/1964010635026715015" target="_blank" rel="noopener noreferrer">
-            successfully rescued</a> 
+            successfully rescued</a>
           and are available for redistribution.
           <br />
-          Please claim your funds 
+          Please claim your funds
           <a href="https://app.panoptic.xyz/claim/rescued-funds">
             here</a>.
         `,
         textColor: "#FFFFFF",
-        isCloseable: true,
+        isCloseable: false,
       },
       image:
         "https://raw.githubusercontent.com/panoptic-labs/docs/main/static/img/website-banner.png",
