@@ -35,7 +35,7 @@ Panoptic V1 turned Uniswap V3 and V4 LP positions into perpetual options.
 ### What We Learned
 
 While V1 broke new ground, it also revealed challenges that shaped our redesign.
--   **Security:** A [vulnerability](/blog/position-spoofing-post-mortem) discovered through our bug bounty program highlighted the need for deeper audits and stronger safeguards.
+-   **Security:** A [vulnerability](/blog/position-spoofing-post-mortem) discovered through our bug bounty program highlighted the need for more defensive programming and stronger safeguards.
 -   **Complex UX:** Users had to manually manage ranges, rebalances, and collateral, creating a steep learning curve.  
 -   **Onboarding friction:** The deposit fee and commission structure discouraged new users.   
 -   **Limited Position Flexibility:** Exiting positions was often challenging due to restrictions around force exercises and limited options for reducing position size, making active position management troublesome.
