@@ -3,7 +3,7 @@ slug: panoptic-v2-is-coming
 title: "The Evolution of Panoptic: From V1 to V2"
 tags: [V2, Vaults]
 image: /img/banners/panoptic-v2-is-coming-banner.png
-description: "Panoptic V2 is a rebuilt, more secure protocol with new features and automated vaults that simplify strategy execution, improve capital efficiency, and make perpetual options practical for real-world use."
+description: "Panoptic V2 makes options powerful."
 ---
 
 ![](./01.png)
