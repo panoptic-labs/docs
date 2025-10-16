@@ -73,8 +73,9 @@ V2 isn’t just V1 with fixes. It’s a full evolution that’s more secure, mod
 
 | Feature / Area          | Panoptic V1                                                                 | Panoptic V2                                                                                                             |
 |-------------------------|------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
-| **Security**            | Comprehensive audits                                                        | Comprehensive audits with 12+ protocol improvements and vaults                                                         |
+| **Security**            | Comprehensive audits                                                        | Comprehensive audits + increased defensive programming                                                         |
 | **Fees**               | Deposit fee and commission model                                           | No deposit fee → interest-rate lending model where depositors continuously earn yield                                  |
+| **Fee Switch**               | None                                                                 | Fee switch for potential future fee capture                                  |
 | **Position Management** | Locked up positions, difficult to reduce size or exit                      | Close any position with a streamlined process to force exercise and reduce size                                         |
 | **Risk Engine & Leverage** | Fixed utilization and conservative leverage limits                      | Modular risk engines allow higher, controlled leverage and greater capital efficiency on stable pairs                  |
 | **Vaults & Automation** | None                                                                        | Vault-based automation for passive deposits and optimized yield generation                                             |
@@ -84,7 +85,7 @@ V2 isn’t just V1 with fixes. It’s a full evolution that’s more secure, mod
 
 ## Roadmap
 
--   **October:** Core development, testing, and security audits for Panoptic V2
+-   **August - October:** Core development, testing, and security audits for Panoptic V2
 - **November:** Additional security audits and vault contracts, infrastructure, and interface
 -   **Mid-December:** Mainnet relaunch aligned with V1’s one-year anniversary.
 
