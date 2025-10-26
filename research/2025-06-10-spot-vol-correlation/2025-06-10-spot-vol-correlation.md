@@ -82,7 +82,7 @@ Based on the above displays, there are two distinct parallels shared by ETH and 
 
 ![](./08.png)
 
-These results extend the conclusions of [prior literature](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4150310) which found that persistent autocorrelation (or trend) is empirically associated with equity bull markets and autocorrelation anti-persistence (or mean-reversion) presents itself during equity bear markets, as the above graph helps to illustrate with the S&P 500 index.
+These results extend the conclusions of [prior literature](https://www.researchgate.net/profile/Wolfgang-Schadner/publication/361957169_Expected_Return_Auto-Correlation_Believes_Efficiency_and_Meltdowns/links/632b1d9b70cc936cd3258564/Expected-Return-Auto-Correlation-Believes-Efficiency-and-Meltdowns.pdf) which found that persistent autocorrelation (or trend) is empirically associated with equity bull markets and autocorrelation anti-persistence (or mean-reversion) presents itself during equity bear markets, as the above graph helps to illustrate with the S&P 500 index.
 
   
 
