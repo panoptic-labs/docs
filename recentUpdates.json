@@ -1,42 +1,42 @@
 [
   {
-    "title": "Bitcoin Trading Contest: June Newsletter",
-    "date": "2025-06-03",
-    "image": "https://panoptic.xyz/img/banners/june-2025-newsletter-banner.png",
-    "link": "https://panoptic.xyz/blog/panoptic-newsletter-june-2025",
-    "description": "Panoptic kicks off Bitcoin trading contest on Base with $4.8K prize pool, 5M+ Pips, and a Michael Saylor pillow!",
+    "title": "The Evolution of Panoptic: From V1 to V2",
+    "date": "2025-10-16",
+    "image": "https://panoptic.xyz/img/banners/panoptic-v2-is-coming-banner.png",
+    "link": "https://panoptic.xyz/blog/panoptic-v2-is-coming",
+    "description": "Panoptic V2 makes options powerful.",
     "id": 1
   },
   {
-    "title": "Bitcoin Trading Competition on Base",
-    "date": "2025-06-02",
-    "image": "https://panoptic.xyz/img/banners/bitcoin-on-base-bannner.png",
-    "link": "https://panoptic.xyz/blog/bitcoin-trading-competition-on-base",
-    "description": "Join Panoptic's Bitcoin trading contest to win up to $4,800, a Michael Saylor pillow, and over 5M Pips—trade now on Base!",
+    "title": "Panoptic Insights: September Newsletter",
+    "date": "2025-09-23",
+    "image": "https://panoptic.xyz/img/banners/september-2025-newsletter-banner.png",
+    "link": "https://panoptic.xyz/blog/panoptic-september-2025-newsletter",
+    "description": "The September Panoptic Newsletter recaps a critical $5M vulnerability and rescue operation and previews Panoptic's V2 upgrade.",
     "id": 2
   },
   {
-    "title": "Base Trading Competition Concludes",
-    "date": "2025-05-19",
-    "image": "https://panoptic.xyz/img/banners/banner.png",
-    "link": "https://panoptic.xyz/blog/base-trading-competition-concludes",
-    "description": "Panoptic’s Base trading competition has ended, with top traders and LPs winning over $5K in prizes and 5M+ Pips.",
+    "title": "Position Spoofing Post Mortem",
+    "date": "2025-09-05",
+    "image": "https://panoptic.xyz/img/banners/post-mortem-banner.png",
+    "link": "https://panoptic.xyz/blog/position-spoofing-post-mortem",
+    "description": "Post mortem of the security incident that occurred on August 25, 2025.",
     "id": 3
   },
   {
-    "title": "Relief Risk Premium: IV & Call Wing Premia",
-    "date": "2025-05-16",
-    "image": "https://panoptic.xyz/img/research/relief-risk-premium-banner.png",
-    "link": "https://panoptic.xyz/research/implied-volatility-call-wing-premia",
-    "description": "Dive into how the relief risk premium manifests itself in OTM call options as well as how this premium can be exploited on the Panoptic platform.",
+    "title": "Perpetual Options — A Block Scholes Research Report (Part I)",
+    "date": "2025-08-20",
+    "image": "https://panoptic.xyz/img/research/panoptic-block-scholes-research-perpetual-options.png",
+    "link": "https://panoptic.xyz/research/panoptic-block-scholes-research-perpetual-options",
+    "description": "Perpetual options transform AMM liquidity into continuously rolled options that never expire—eliminating costly rollovers, reducing gamma risk, and unlocking a more efficient, onchain volatility market.",
     "id": 4
   },
   {
-    "title": "Base vs Ethereum Blockchains: Implied Volatility and Market Analysis",
-    "date": "2025-05-13",
-    "image": "https://panoptic.xyz/img/research/base-vs-ethereum-iv-banner.png",
-    "link": "https://panoptic.xyz/research/base-vs-ethereum-iv",
-    "description": "Comparison between the Ethereum and Base blockchains, evaluating ETH/USDC pool pricing, implied volatility, and Panoptions strategy performance.",
+    "title": "Panoptic Insights: August Newsletter",
+    "date": "2025-08-14",
+    "image": "https://panoptic.xyz/img/banners/august-2025-newsletter.png",
+    "link": "https://panoptic.xyz/blog/panoptic-august-2025-newsletter",
+    "description": "Point opportunities, successful put stratgies, and upcoming vault audits.",
     "id": 5
   }
 ]
