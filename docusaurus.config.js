@@ -167,15 +167,22 @@ const config = {
       announcementBar: {
         id: "Vulnerability_claims_open",
         content: `
-          A vulnerability was discovered in the Panoptic smart contracts.
-          All user funds have been
-          <a href="https://x.com/Panoptic_xyz/status/1964010635026715015" target="_blank" rel="noopener noreferrer">
-            successfully rescued</a>
-          and are available for redistribution.
-          <br />
-          Please claim your funds
-          <a href="https://app.panoptic.xyz/claim/rescued-funds">
-            here</a>.
+          Panoptic V2 is coming.<br>
+          <span style="font-size: 0.82em; opacity: 0.8; display: inline-block; text-align: left; line-height: 1.1;">
+            ✔️ Audit #1 (Obsidian)<br>
+            🚧 Audit #2 (Nethermind)<br>
+            🔜 Audit #3 (Competitive)<br>
+          </span>
+
+          <br>
+
+          <span style="font-size: 0.80em; opacity: 0.9;">
+            V1 vulnerability resolved — all funds 
+            <a href="https://x.com/Panoptic_xyz/status/1964010635026715015" target="_blank" rel="noopener noreferrer">
+              rescued</a>.
+            Claim
+            <a href="https://app.panoptic.xyz/claim/rescued-funds" target="_blank" rel="noopener noreferrer">here</a>.
+          </span>
         `,
         textColor: "#FFFFFF",
         isCloseable: false,

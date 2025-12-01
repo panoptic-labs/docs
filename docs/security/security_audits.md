@@ -12,7 +12,10 @@ Panoptic has undergone numerous economic and security reviews by leading firms. 
 
 ## Core Protocol Audits
 
-### Cantina
+### Obsidian
+The initial Panoptic V2 protocol audit [report](https://github.com/ObsidianAudits/audits/blob/main/2025-10-panoptic-v2.pdf) was completed by Obsidian on November 15, 2025.
+
+### Cantina 
 The final [review](https://cantina.xyz/portfolio/0eb3624c-90d4-40d8-93b7-558cb130f753) of the Panoptic V1.1 Protocol was completed by [Cantina](https://cantina.xyz/) on November 20, 2024.
 
 The initial Panoptic V1.1 Protocol [report](https://cantina.xyz/portfolio/5a11e7c3-da1e-4d0f-8700-bfc364d8b85a) was completed by Cantina on November 7, 2024.
