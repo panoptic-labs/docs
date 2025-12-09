@@ -1,11 +1,19 @@
 [
   {
+    "title": "Happy Vol-idays: December Newsletter",
+    "date": "2025-12-09",
+    "image": "https://panoptic.xyz/img/banners/december-2025-newsletter-banner.png",
+    "link": "https://panoptic.xyz/blog/panoptic-december-2025-newsletter",
+    "description": "Panoptic’s December update highlights audit & security progress, the upcoming launch of V2 with Perpetual Option Vaults (POVs), and key industry shifts in crypto options.",
+    "id": 1
+  },
+  {
     "title": "The Evolution of Panoptic: From V1 to V2",
     "date": "2025-10-16",
     "image": "https://panoptic.xyz/img/banners/panoptic-v2-is-coming-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-v2-is-coming",
     "description": "Panoptic V2 makes options powerful.",
-    "id": 1
+    "id": 2
   },
   {
     "title": "Panoptic Insights: September Newsletter",
@@ -13,7 +21,7 @@
     "image": "https://panoptic.xyz/img/banners/september-2025-newsletter-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-september-2025-newsletter",
     "description": "The September Panoptic Newsletter recaps a critical $5M vulnerability and rescue operation and previews Panoptic's V2 upgrade.",
-    "id": 2
+    "id": 3
   },
   {
     "title": "Position Spoofing Post Mortem",
@@ -21,7 +29,7 @@
     "image": "https://panoptic.xyz/img/banners/post-mortem-banner.png",
     "link": "https://panoptic.xyz/blog/position-spoofing-post-mortem",
     "description": "Post mortem of the security incident that occurred on August 25, 2025.",
-    "id": 3
+    "id": 4
   },
   {
     "title": "Perpetual Options — A Block Scholes Research Report (Part I)",
@@ -29,14 +37,6 @@
     "image": "https://panoptic.xyz/img/research/panoptic-block-scholes-research-perpetual-options.png",
     "link": "https://panoptic.xyz/research/panoptic-block-scholes-research-perpetual-options",
     "description": "Perpetual options transform AMM liquidity into continuously rolled options that never expire—eliminating costly rollovers, reducing gamma risk, and unlocking a more efficient, onchain volatility market.",
-    "id": 4
-  },
-  {
-    "title": "Panoptic Insights: August Newsletter",
-    "date": "2025-08-14",
-    "image": "https://panoptic.xyz/img/banners/august-2025-newsletter.png",
-    "link": "https://panoptic.xyz/blog/panoptic-august-2025-newsletter",
-    "description": "Point opportunities, successful put stratgies, and upcoming vault audits.",
     "id": 5
   }
 ]
