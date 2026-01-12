@@ -167,7 +167,7 @@ const config = {
       announcementBar: {
         id: "Vulnerability_claims_open",
         content: `
-          Panoptic V2 is Coming&emsp;&emsp;&emsp; ✔️ Audit #1 (Obsidian)&emsp;&emsp;&emsp;    🚧 Audit #2 (Nethermind)&emsp;&emsp;&emsp;    🔜 Audit #3 (Competitive)
+          Panoptic V2 is Coming&emsp;&emsp;&emsp; ✔️ Audit #1 (Obsidian)&emsp;&emsp;&emsp;    ✔️ Audit #2 (Nethermind)&emsp;&emsp;&emsp;    🚧 Audit #3 (Competitive)
           <br>
 
           <span style="font-size: 0.80em; opacity: 0.9;">
