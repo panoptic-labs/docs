@@ -1,11 +1,19 @@
 [
   {
+    "title": "Panoptic Insights: January Newsletter",
+    "date": "2026-01-12",
+    "image": "https://panoptic.xyz/img/banners/january-2026-newsletter-banner.png",
+    "link": "https://panoptic.xyz/blog/panoptic-january-2026-newsletter",
+    "description": "Season 2 Points, Panoptic V2 Vaults, DeFi Options 2025 Landscape Report, and more!",
+    "id": 1
+  },
+  {
     "title": "Happy Vol-idays: December Newsletter",
     "date": "2025-12-09",
     "image": "https://panoptic.xyz/img/banners/december-2025-newsletter-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-december-2025-newsletter",
     "description": "Panoptic’s December update highlights audit & security progress, the upcoming launch of V2 with Perpetual Option Vaults (POVs), and key industry shifts in crypto options.",
-    "id": 1
+    "id": 2
   },
   {
     "title": "The Evolution of Panoptic: From V1 to V2",
@@ -13,7 +21,7 @@
     "image": "https://panoptic.xyz/img/banners/panoptic-v2-is-coming-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-v2-is-coming",
     "description": "Panoptic V2 makes options powerful.",
-    "id": 2
+    "id": 3
   },
   {
     "title": "Panoptic Insights: September Newsletter",
@@ -21,14 +29,6 @@
     "image": "https://panoptic.xyz/img/banners/september-2025-newsletter-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-september-2025-newsletter",
     "description": "The September Panoptic Newsletter recaps a critical $5M vulnerability and rescue operation and previews Panoptic's V2 upgrade.",
-    "id": 3
-  },
-  {
-    "title": "Position Spoofing Post Mortem",
-    "date": "2025-09-05",
-    "image": "https://panoptic.xyz/img/banners/post-mortem-banner.png",
-    "link": "https://panoptic.xyz/blog/position-spoofing-post-mortem",
-    "description": "Post mortem of the security incident that occurred on August 25, 2025.",
     "id": 4
   },
   {
