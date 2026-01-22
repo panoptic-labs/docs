@@ -14,11 +14,9 @@ Panoptic is a permissionless way to trade crypto options. We enable options trad
 
 <details id="how-can-i-use-panoptic">
 <summary>How can I use Panoptic?</summary>
-To explore the Panoptic App, you will need to connect your digital wallet. There are currently two versions available for users:
+To explore the Panoptic App, you will need to connect your digital wallet.
 <br /><br />
-1) Official App: Trade options and LP with higher returns on Uniswap v3 and v4 pools. You can access the app <a href="https://app.panoptic.xyz">here</a>.
-<br />
-2) Demo Version: If you're looking to practice your trading without risking real funds, our paper trading platform is available on the Sepolia network. You can try it out at <a href="https://demo.panoptic.xyz">demo.panoptic.xyz</a>.
+Trade options and LP with higher returns on Uniswap v4 pools. You can access the app <a href="https://app.panoptic.xyz">here</a>.
 <br /><br />
 Connect and discover the forefront of DeFi options with Panoptic.
 </details>
@@ -41,7 +39,7 @@ Panoptic works on any ERC20 token. Panoptic users can create an options market o
 
 <details id="where-will-panoptic-launch">
 <summary>Where can I use Panoptic?</summary>
-Panoptic is <a href="https://app.panoptic.xyz">live</a> on Ethereum mainnet and Unichain, with other EVM-compatible chains to follow.
+Panoptic V2 will be <a href="https://app.panoptic.xyz">live</a> on Ethereum mainnet, with other EVM-compatible chains to follow.
 </details>
 
 <details id="is-there-a-token">
@@ -51,7 +49,7 @@ No. Panoptic does not have a token at this time.
 
 <details id="is-there-a-points-program">
 <summary>Is there a points program?</summary>
-Yes, depositors and traders can earn Panoptic incentive points (Pips). For more details, visit <a href="https://pips.panoptic.xyz">pips.panoptic.xyz</a>.
+Yes, depositing into vaults and trading can earn Panoptic incentive points (Pips). Click <a href="https://panoptic.xyz/docs/getting-started/points">here</a> for more details.
 </details>
 
 <details id="how-does-liquidity-in-uniswap-benefit-panoptic">
@@ -62,15 +60,6 @@ Panoptic harnesses Uniswap's liquidity to enhance the user experience for option
 <details id="are-there-any-off-chain-components">
 <summary>Are there any off-chain components?</summary>
 No.
-</details>
-
-<details id="how-does-uniswap-v4-affect-panoptic">
-<summary>How does Uniswap v4 affect Panoptic?</summary>
-1️⃣ Panoptic is live on both Uniswap v3 and v4
-<br /><br />
-2️⃣ Being backed by <a href="https://blog.uniswap.org/ventures">Uniswap Labs Ventures</a>, Uniswap V4 has always been part of our growth map 🗺️
-<br /><br />
-Read more details in our <a href="https://panoptic.xyz/blog/panoptic-launches-on-uniswap-v4">announcement</a>
 </details>
 
 
@@ -170,16 +159,16 @@ Panoptic solves this by opening up a two-sided market, where perpetual options a
 
 <details id="what-is-the-plp-role">
 <summary>What is the passive liquidity provider (PLP) role? How is this different from the option seller?</summary>
-The passive liquidity provider (PLP) passively provides fungible liquidity to the Panoptic pool and receives commission fees in return. This differs from the liquidity provider (LP) who deploys liquidity in a Uniswap pool and receives swap fees in return. The option seller borrows liquidity from the PLP to deploy in a Uniswap pool as an LP. This act of moving liquidity from the Panoptic pool to the Uniswap pool constitutes selling an option.   
+The passive liquidity provider (PLP) supplies fungible liquidity to the Panoptic pool and receives interest payments in return. This differs from the liquidity provider (LP) who deploys liquidity in a Uniswap pool and receives swap fees in return. The option seller borrows liquidity from the PLP to deploy in a Uniswap pool as an LP. This act of moving liquidity from the Panoptic pool to the Uniswap pool constitutes selling an option.   
 <br /><br />
-Example A: Alice is a PLP for the ETH-USDC pool on Panoptic. She can deposit ETH, USDC, or both ETH & USDC into the pool. She receives a share of commission fees in return.  
+Example A: Alice is a PLP (lender) for the ETH-USDC pool on Panoptic. She can deposit ETH, USDC, or both ETH & USDC into the pool. She receives a share of commission fees in return.  
 <br /><br />
 Example B: Bob is an option seller for ETH-USDC options. After depositing some collateral to the ETH-USDC pool on Panoptic (making him a PLP), he borrows a larger amount of ETH & USDC. The Panoptic protocol deploys his borrowed ETH & USDC into the ETH-USDC pool on Uniswap (making him an LP). His LP position on Uniswap has the same payoffs as a short option (making him an option seller).
 </details>
 
 <details id="do-plps-suffer-il">
 <summary>Do passive liquidity providers (PLPs) suffer impermanent loss (IL)?</summary>
-No, passive liquidity providers (PLPs) do not suffer IL from Uniswap LP positions. PLPs earn commission fees, and take on protocol risk (e.g. if the Panoptic pool accrues bad debt from <a href="https://panoptic.xyz/docs/panoptic-protocol/margin">failing to liquidate</a> on time, then PLPs can lose capital). However, protocol risk is minimized through a tried-and-true <a href="https://panoptic.xyz/docs/panoptic-protocol/liquidations#liquidation-bonus">decentralized liquidation network</a> just as Aave, Compound, and dYdX use to prevent protocol insolvency.
+No, passive liquidity providers (PLPs) do not suffer IL from Uniswap LP positions. PLPs earn interest, and take on protocol risk (e.g. if the Panoptic pool accrues bad debt from <a href="https://panoptic.xyz/docs/panoptic-protocol/margin">failing to liquidate</a> on time, then PLPs can lose capital). However, protocol risk is minimized through a tried-and-true <a href="https://panoptic.xyz/docs/panoptic-protocol/liquidations#liquidation-bonus">decentralized liquidation network</a> just as Aave, Compound, and dYdX use to prevent protocol insolvency.
 </details>
 
 <details id="is-the-capital-deposited-by-plps-locked">
@@ -191,17 +180,17 @@ Yes, the capital of Panoptic Liquidity Providers (PLPs) can be locked under cert
 
 <details id="what-does-it-cost-to-sell-an-option">
 <summary>What does it cost to sell an option?</summary>
-Selling an option costs a commission fee and gas fee. The commission fee is 0.2% of the notional value of the option position. There is no commission fee to close the position.
+Selling an option costs a commission fee, interest on borrowed funds, and a gas fee. For more details, click <a href="https://panoptic.xyz/docs/panoptic-protocol/design#fees">here</a>. 
 </details>
 
 <details id="what-does-it-cost-to-buy-an-option">
 <summary>What does it cost to buy an option?</summary>
-Buying an option costs a commission fee, streamia (streaming premia), and gas fee. The commission fee is 0.2% of the notional value of the option position. The streamia starts at 0, and accumulates while the underlying price remains in range. There is no commission fee to close the position.
+Buying an option costs a commission fee, streamia (streaming premia), and gas fee. The streamia starts at 0, and accumulates while the underlying price remains in range. For more details, click <a href="https://panoptic.xyz/docs/panoptic-protocol/design#fees">here</a>. 
 </details>
 
 <details id="what-is-the-commission-fee">
 <summary>What is the commission fee?</summary>
-This is the fee to mint an option. When an option seller or buyer opens their position, they pay a commission fee on the notional value of the position. The commission is paid to the PLPs. The commission fee percentage is 0.2% of the notional value of the option position.
+The commission fee is a fee charged when opening a position (based on notional size) and when closing a position if premium has been realized. The commission fee is 0.01% of notional when opening a position and 0.1% of net streamia when closing a position. For more details, click <a href="https://panoptic.xyz/docs/panoptic-protocol/V2/fee-structure">here</a>.
 </details>
 
 <details id="how-is-the-streamia-calculated">
@@ -251,7 +240,7 @@ For a detailed explanation of the differences and advantages of streamia, you ca
 ## Security
 <details id="will-there-be-an-audit">
 <summary>Will there be an audit?</summary>
-Yes. Panoptic's smart contracts has undergone multiple <a href="https://panoptic.xyz/docs/security/security_audits">audits</a> by industry leading firms, including Cantina, Trail of Bits, Code4rena, OpenZeppelin, ABDK, Three Sigma, and Simtopia.
+Yes. Panoptic's smart contracts has undergone multiple <a href="https://panoptic.xyz/docs/security/security_audits">audits</a> by industry leading firms, including Cantina, Trail of Bits, Code4rena, OpenZeppelin, Nethermind, Obsidian, ABDK, Three Sigma, and Simtopia.
 </details>
 
 <details id="why-is-panoptic-oracle-free">

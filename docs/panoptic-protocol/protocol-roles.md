@@ -3,7 +3,7 @@ sidebar_position: 2
 ---
 
 # Protocol roles
-Ecosystem participants include passive liquidity providers, options sellers, options buyers, and liquidators.
+Ecosystem participants include lenders, options sellers, options buyers, and liquidators.
 
 import ThemedImage from '@theme/ThemedImage';
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -16,10 +16,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   }}
 />
 
-## Passive Liquidity Providers (PLPs)
-Provide fungible liquidity to the options market. 
+## Lenders (Passive Liquidity Providers, PLPs)
+Supply fungible liquidity to the options market. 
 This liquidity will be lent out to the options traders to allow them to access trading on leverage. 
-Funds can be deposited into Panoptic pools at any ratio.
+Funds can be supplied to Panoptic pools at any ratio.
 
 **Typical users**: Retail, Institutions, DAOs.
 
@@ -33,18 +33,20 @@ Funds can be deposited into Panoptic pools at any ratio.
   }}
 />
 
-Passive Liquidity Providers (PLPs) provide liquidity to a Panoptic pool by making single-sided deposits of tokens into the option pool in any amount.
+Lenders provide liquidity to a Panoptic pool by making single-sided deposits of tokens into the option pool in any amount.
+
 They will receive [ERC-20](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/) shares for their deposited liquidity, and their portion of collateral inside the Panoptic pool will be tracked using a shares model from the [ERC-4626](https://ethereum.org/en/developers/docs/standards/tokens/erc-4626/) standard.
 
-The role of PLPs in Panoptic differs somewhat from that of LPs in Uniswap. PLPs do *not* deploy liquidity within a specific range of a Uniswap pool.
-Rather, PLPs generate yield by lending tokens that can be deployed to a Uniswap pool by option sellers for a fixed commission fee.
+The role of lenders in Panoptic differs somewhat from that of LPs in Uniswap. Lenders do *not* deploy liquidity within a specific range of a Uniswap pool.
 
-When a PLP withdraws their liquidity from Panoptic, Panoptic will burn their collateral tokens and their funds are returned in the original token deposited, along with any accumulated commission fees, minus the applicable deposit fee (20 bps). For example, if a PLP deposits 1 ETH and earns an additional 0.1 ETH in comission fees, they can withdraw a total of 1.1 ETH, less the deposit fee. This withdrawal process ensures the PLP receives their original contribution.
+Rather, lenders generate yield by supplying tokens that can be deployed to a Uniswap pool by option sellers for a dynamic interest rate.
+
+When a lender withdraws their liquidity from Panoptic, Panoptic will burn their collateral tokens and their funds are returned in the original token deposited, along with any accumulated interest payment. For example, if a lender deposits 1 ETH and earns an additional 0.1 ETH in interest, they can withdraw a total of 1.1 ETH. This withdrawal process ensures the lender receives their original contribution.
 </details>
 
 
 ## Option Sellers
-Sell options by borrowing liquidity for a fixed commission fee and relocating it to a Uniswap pool. 
+Sell options by borrowing liquidity at a dynamic interest rate and relocating it to a Uniswap pool. 
 Sellers must deposit collateral and can sell options with notional values up to five times larger than their collateral balance.
 
 **Typical users**: Pro-tail, Market makers, DAOs.
@@ -79,7 +81,8 @@ A similar process happens when minting a K=2000 short call options: the Panoptic
 
 
 ## Option Buyers
-Buy options by moving liquidity out of the Uniswap pool back to the Panoptic smart contract for a fixed commission fee. 
+Buy options by moving liquidity out of the Uniswap pool back to the Panoptic smart contract.
+
 Buyers also have to deposit collateral (10% of the notional value of the option) to cover the potential premium to be paid to the sellers.
 
 **Typical users**: Retail, Institutions.
@@ -95,7 +98,7 @@ Buyers also have to deposit collateral (10% of the notional value of the option)
   }}
 />
 
-Long options are minted by *removing* liquidity from the Uni v3 pool and moving it back to the Panoptic pool.
+Long options are minted by *removing* liquidity from the Uniswap pool and moving it back to the Panoptic pool.
 While any option can be sold at any price at any time, users wishing to buy an option can only do it if it has been sold first.
 
 Let us consider what happens if a user wants to buy a PUT option at price K=1000 and *width 10%* (basically buying the option that has been sold in the example above).

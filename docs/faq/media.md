@@ -23,6 +23,9 @@ Guillaume draws on his extensive background as a world-renowned expert and Profe
 
 
 ## Presentations
+### Livestreams
+Explore dozens of trading topics in our [recorded livestreams](https://www.youtube.com/@Panopticxyz/videos) on YouTube.
+
 ### Your Protocol's Token Will Go to Zero. Here's How to Fix It 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qAnp-_58PVM?si=X8NC7VimRatuTNWo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 

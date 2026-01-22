@@ -21,13 +21,16 @@ All smart contracts are available 24/7 and users can interact with the Panoptic 
 Panoptic is the first permissionless options protocol that overcomes the technically challenging task of implementing an options protocol on the Ethereum blockchain.
 We achieve this by embracing the decentralized nature of Automated Market Makers and permissionless liquidity providing in Uniswap.
 
+Panoptic offers **Perpetual Option Vaults (POVs)**: automated vaults that generate yield from market volatility.
+POVs wrap Panoptic’s perpetual options into simple, deposit-based strategies that allow passive users to earn returns, while active traders can interact directly through Panoptic's advanced trading interface.
+
 The following sections will provide a brief overview of the Panoptic protocol.
 
 - [How To Use Panoptic](./product/opening-a-position): How to use the perpetual options trading app.
 - [What Is Panoptic](./panoptic-protocol/overview): Understanding the Panoptic protocol.
 - [Panoptions](./trading/basic-concepts): Options trading resources.
 - [Smart Contracts](./contracts/smart-contracts-overview): Learn how to build on Panoptic.
-- [Security](./security/security_audits): security and audit reports.
+- [Security](./security/security_audits): Security and audit reports.
 
 ---
 

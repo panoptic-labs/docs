@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2.3
 label: "Options Traders"
 ---
 
@@ -8,7 +8,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Options Traders
 
-Options Traders can leverage Panoptic's full-featured platform. Users can buy and sell capital-efficient, multi-legged options strategies on any token at any strike price. 
+Options Traders can leverage Panoptic's full-featured platform through its advanced trading interface. Users can buy and sell capital-efficient, multi-legged options strategies on any token at any strike price. 
 
 ## Why Trade Options on Panoptic?
 

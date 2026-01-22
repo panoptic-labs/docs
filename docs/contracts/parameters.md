@@ -1,8 +1,236 @@
 ---
 sidebar_position: 1
+sidebar_label: "Protocol Parameters"
 ---
 
-# Protocol Parameters
+# Protocol Parameters (V2)
+
+The parameters below describe the default economic and risk configuration enforced by the Panoptic V2 RiskEngine.
+
+> For a given Panoptic V2 pool, all parameters are enforced by an immutable RiskEngine contract referenced at deployment time.
+> While these values are not stored as static constants, the logic producing them is immutable for the lifetime of the pool.
+
+## Collateral Parameters
+
+These parameters govern collateral requirements for option buyers and sellers.  
+Collateral requirements may vary based on pool utilization, token type, and oracle state.
+
+### SELL_COLLATERAL_RATIO
+```text
+Default (baseline): 20%
+Effective range: 20% → 100%
+```
+
+Baseline collateral ratio required to sell an option, expressed as a percentage of the option’s notional value.
+
+- Applies when pool utilization is below `TARGET_POOL_UTIL`
+- Increases linearly toward full collateralization as utilization approaches `SATURATED_POOL_UTIL`
+- Enforced dynamically by the RiskEngine
+
+
+### BUY_COLLATERAL_RATIO
+```text
+Default (baseline): 10%
+Minimum: 5%
+```
+
+Baseline collateral ratio required to buy an option.
+
+- Applies when pool utilization is below `TARGET_POOL_UTIL`
+- Decreases linearly as utilization increases
+- Reaches its minimum at `SATURATED_POOL_UTIL`
+- Designed to incentivize utilization-reducing positions during congestion
+
+### TARGET_POOL_UTIL
+```text
+Default: 50%
+```
+
+Utilization inflection point for collateral logic.
+
+- Below this value, baseline collateral ratios apply
+- Above this value:
+  - seller collateral requirements increase
+  - buyer collateral requirements decrease
+
+### SATURATED_POOL_UTIL
+```text
+Default: 90%
+```
+
+Utilization level at which:
+- sellers are required to post 100% collateral
+- buyers reach their minimum collateral requirement
+
+This level maximally discourages additional borrowing while incentivizing utilization-reducing actions.
+
+### BP_DECREASE_BUFFER
+```text
+Default: TBD (bps)
+```
+
+A multiplicative buffer applied during solvency checks following actions that may reduce buying power, including:
+- minting options
+- force exercising another account
+
+This buffer prevents users from placing themselves immediately into a liquidatable state through their own actions.
+
+### CROSS_BUFFER
+
+A multiplier applied to the account’s cross-collateral solvency threshold when checking solvency.
+
+Internally, solvency compares:
+- `balanceCross` (the account’s cross-collateral value)  
+vs  
+- `thresholdCross * crossBufferBps / 10_000` (the required threshold with buffer applied)
+
+This buffer is used to enforce stricter solvency during actions that can reduce buying power (e.g., minting, force exercise, or collateral withdrawals).
+
+**Default:** `10_000` (no additional buffer, i.e., `1.00×`)
+
+## Premium & Spread Parameters
+
+These parameters control how option premiums scale with liquidity usage and how much liquidity may be removed from a given chunk.
+
+### VEGOID
+```text
+Default: 2
+```
+
+Controls the curvature of the premium multiplier applied to option buyers.
+
+- Lower values increase convexity (premiums rise faster with utilization)
+- Higher values smooth premium growth
+- Used in the premium multiplier equation governing streamia
+
+### MAX_SPREAD
+```text
+Default: 9x
+```
+
+Maximum allowed ratio of removed liquidity to remaining liquidity within a single liquidity chunk.
+
+- Caps effective liquidity imbalance
+- Limits the maximum premium multiplier paid by option buyers
+- Enforced during minting and burning of positions
+
+### effectiveLiquidityLimit (per mint)
+```text
+User-specified
+```
+
+Optional per-position spread limit supplied by the caller during mint.
+
+For long legs, the enforced spread limit is:
+
+```text
+min(effectiveLiquidityLimit, MAX_SPREAD)
+```
+
+## Fee Parameters
+
+Fees in Panoptic V2 are applied dynamically and may vary based on `builderCode`.
+
+### COMMISSION_FEE (Notional Fee)
+```text
+Default: 0.01%
+Applied on: position open
+```
+
+Fee charged on the notional value of both bought and sold options at mint.
+
+- Distributed to lenders in the corresponding `tokenType` collateral vault
+- Functions as interest for liquidity borrowed by option sellers
+
+### COMMISSION_FEE_P (Premium Fee)
+```text
+Default: 0.1%
+Applied on: position close
+```
+
+Fee charged on net premium accumulated by an options position when closed.
+
+- Distributed to lenders in the corresponding `tokenType` collateral vault
+
+## Builder Codes
+
+Builder codes are fee-routing codes.
+
+When a trade is executed through the Panoptic V2 `RiskEngine`, the caller may provide a `builderCode`. If the code is valid, it deterministically resolves (via CREATE2) to a BuilderWallet address that can receive a portion of protocol fees.
+
+When a builder code is active, fee shares are split as follows:
+- 65% → Protocol (sent to the `RiskEngine` address)
+- 25% → BuilderWallet (sent to the BuilderWallet derived from `builderCode`)
+- 10% → User (10% fee discount, trader only pays 90% of fees)
+
+If `builderCode = 0`, there is **no builder recipient**, and lenders of that pool proportionally receive the full fee.
+
+This fee routing applies to commissions charged when opening positions (notional fees) and when closing positions (premium fees).
+
+
+## Force Exercise Parameters
+
+Force exercise costs are computed dynamically based on oracle state and position configuration.
+
+### FORCE_EXERCISE_COST
+```text
+All long legs are out of range: 0.01%
+Any long leg is in range: 1.024%
+```
+
+Fee paid by the force exercisor to the force exercisee, applied to the notional value of long legs.
+
+- If **all long legs are out of range**, the lower fee applies
+- If **any long leg is in range**, the higher fee applies
+- Enforced dynamically by the RiskEngine
+
+## Oracle Parameters
+
+Panoptic V2 does not rely on external price oracles.  
+All oracle logic is derived from Uniswap-style price observations and internal aggregation.
+
+### Oracle Update Cadence
+```text
+~64 seconds (epoch-based)
+```
+
+Oracle state may be updated at most once per epoch.  
+Updates are permissionless via `pokeOracle()`.
+
+### Oracle Construction
+```text
+Internal median + EMA smoothing
+```
+
+The internal oracle system tracks:
+- EMA-smoothed ticks (fast, slow, long-horizon)
+- Median-derived ticks from rolling observations
+- A reconstructed latest observation tick
+
+### Stale Oracle Protection
+```text
+Enabled
+```
+
+If oracle ticks diverge excessively or become stale:
+- the RiskEngine may enforce conservative solvency assumptions
+- safe mode may be triggered
+- certain actions (e.g. minting) may be restricted
+
+## Miscellaneous Parameters
+
+### MAX_OPEN_LEGS
+```solidity
+uint64 constant MAX_OPEN_LEGS = 25;
+```
+
+Maximum number of legs permitted across all open positions for an account on a single Panoptic pool.
+
+This limit ensures all positions remain liquidatable within practical gas limits.
+
+---
+
+# Protocol Parameters for V1 and V1.1 (DEPRECATED)
 Panoptic V1 and V1.1 have immutable parameters that factor into calculations for collateral requirements, oracle prices, streamia multipliers, and other key aspects of the protocol. The current parameters for pools created by the Panoptic V1 and V1.1 factories on Ethereum Mainnet are outlined below.
 
 ---
@@ -51,7 +279,7 @@ These parameters help to determine the maximum amount of liquidity that can be b
 ---
 ### VEGOID
 ```solidity
-uint256 immutable VEGOID = 2
+uint256 immutable VEGOID = 3
 ```
 `VEGOID` is a parameter used to modify the [premium multiplier equation](https://www.desmos.com/calculator/mdeqob2m04): lower values of `VEGOID` result in an increased rate of increase in the premium multiplier as the percentage of sold liquidity borrowed in a chunk increases, while higher values of `VEGOID` result in a more gradual premium multiplier increase alongside increases in liquidity utilization.
 
