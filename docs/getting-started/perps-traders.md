@@ -14,7 +14,7 @@ With Panoptic, you can [trade perps and perpetual options](https://app.panoptic.
 
 ## Why Trade Perps on Panoptic?
 - **Trade Any Token**: Panoptic allows you to trade [perps](/docs/product/perps) on [any](/docs/product/markets) ERC-20 token or native asset, thanks to its permissionless and oracle-free design. Panoptic supports the immediate listing of perps on any ERC-20 token or native asset without having to wait for oracle support.
-- **New Markets**: Trade perps on alternative pairs such as perps on BTC-ETH price, stablecoin-to-stablecoin prices, or memecoins.
+- **New Markets**: Trade perps on alternative pairs including perps on the BTC-ETH ratio, stablecoin-to-stablecoin, or memecoins.
 - **Leverage**: Gain exposure with up to 3.33x leveraged perps.
 - **Non-custodial and permissionless**: Panoptic is a completely non-custodial, decentralized exchange. 
 All funds are held and managed automatically on the blockchain through public, audited smart contracts.

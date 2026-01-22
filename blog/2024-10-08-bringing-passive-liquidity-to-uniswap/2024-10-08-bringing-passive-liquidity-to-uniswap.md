@@ -30,7 +30,7 @@ A distinguishing factor of Panoptic’s platform is that passive liquidity canno
 
 ## Where Does the Yield Come From?
 
-The yield generated for passive LPs originates from active LPs who borrow passive liquidity to deploy at a specific price range in Uniswap. Active LPs pay a [percentage fee](/docs/panoptic-protocol/commission) on the amount of liquidity borrowed, providing passive LPs with a steady source of income. In addition, option buyers who [short](/docs/terms/short) the LP tokens of active LPs also pay a percentage fee to passive LPs.
+The yield generated for passive LPs originates from active LPs who borrow passive liquidity to deploy at a specific price range in Uniswap. Active LPs pay an [interest rate](/docs/panoptic-protocol/V2/interest-accrual) on the amount of liquidity borrowed, providing passive LPs with a steady source of income. In addition, option buyers who [short](/docs/terms/short) the LP tokens of active LPs also pay a percentage fee to passive LPs.
 
 
 ![](./03.png)

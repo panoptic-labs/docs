@@ -18,24 +18,16 @@ Two critical components of liquidations are the Buyer Collateral Requirement (BC
 ### Liquidation Thresholds
 An account becomes liquidatable in a specific pool when its collateral falls short of the required collateral requirement thresholds. This situation typically arises when market movements are unfavorable to the position held by the account, causing the required level to exceed the collateral's value. At this juncture, the account is deemed liquidatable and is subject to being closed out.
 
-## The Liquidation Bot
+## Liquidation Bots
 
 ### Monitoring and Reporting
-The liquidation bot is a crucial component of Panoptic. It continuously monitors all positions opened in a pool across all accounts. This surveillance occurs at regular time intervals, ensuring real-time tracking of the collateral status of each position. The bot is programmed to identify accounts that become liquidatable, flagging any account that falls below the required collateral thresholds.
+Liquidation bots continuously monitor open positions in a pool to assess the collateral status of each position. Bots are programmed to identify accounts that become liquidatable, flagging any account that falls below the required collateral thresholds.
 
 ### Liquidation Process
-Upon identifying a liquidatable account, the bot triggers an alert. Liquidators can then engage by interacting directly with the smart contracts governing the pool. This direct interaction facilitates the liquidation of underwater accounts, thereby mitigating risk and preserving the integrity of the pool.
+Upon identifying a liquidatable account, liquidation bots trigger an alert. Liquidators can then engage by interacting directly with the smart contracts governing the pool. This direct interaction facilitates the liquidation of underwater accounts, thereby mitigating risk and preserving the integrity of the pool.
 
 ### Open Source
-Panoptics will make the liquidation bot open source, allowing anyone to use it. This bot is written in Typescript, and by making it publicly available, Panoptic aims to encourage widespread participation. Users can run the bot by hosting it on cloud platforms like AWS, Azure, or Google Cloud. When operated on a supported blockchain, the bot not only contributes to the protection of the protocol but also offers users the opportunity to earn a liquidation bonus, thus aligning individual incentives with the overall health of the system.
-
-### What's Next
-
-#### Automating the Liquidation Process
-The next frontier for Panoptics involves automating the liquidation process. Liquidators will be able to link their wallets to the liquidation bot, enabling automated responses to liquidation opportunities. This integration enhances the efficiency of the liquidation process, making it more responsive to market changes.
-
-#### Predictive Capabilities
-Further optimization of the liquidation bot will be underway, with a focus on predictiveness. The aim is to equip the bot with the ability to foresee accounts that are on the brink of becoming liquidatable. This predictive capability will allow liquidators to prepare in advance, ensuring they are ready to act when an account crosses the liquidation threshold.
+Users are encouraged to run liquidation bots in order to protect pool capital and get rewarded with liquidation bonusees. Panoptic will make its liquidation bot open source and available to the public.
 
 ## Technical Details
 
@@ -121,7 +113,7 @@ _REQUIREMENT     <- OTM  .  ITM ->
 To determine whether an account is solvent, the Panoptic protocol computes and adds up the collateral requirement for each position. 
 The protocol will then compare the amount of user-deposited collateral with the account's total collateral requirement.
 
-Because users can deposit both types of tokens for a token pair to be [cross-collateralized](docs/panoptic-protocol/collateral#cross-collateralization), it is the actual value of the required collateral and of the collateral balance that are compared.
+Because users can deposit both types of tokens for a token pair to be [cross-collateralized](/docs/panoptic-protocol/V2/collateral-overview), it is the actual value of the required collateral and of the collateral balance that are compared.
 Based on this calculation, an account can be liquidated if `Total value of collateral` < `collateral requirement`
 
 

@@ -40,7 +40,7 @@ Buyers can purchase any option that has been sold beforehand.
 Panoptic aims to transform the way users trade options the same way Uniswap transformed on-chain spot trading.
 
 ## Oracle-free Pricing
-The key difference between the pricing of regular options in TradFi and in Panoptic is the way the premium is calculated. Instead of requiring users to pay for their options upfront, the pricing of a Panoptic option is path-dependent and will grow at each block as long as the spot price is [within range](https://panoptic.xyz/docs/terms/in_range) of the option strike price.
+The key difference between the pricing of regular options in TradFi and in Panoptic is the way the premium is calculated. Instead of requiring users to pay for their options upfront, the pricing of a Panoptic option is path-dependent and will grow at each block as long as the spot price is [within range](/docs/terms/in_range) of the option strike price.
 While this may create an extra level of uncertainty for options buyers (it is impossible to know ahead of time how much an option will cost), one of the advantages of the path-dependent pricing model is that some options may cost nothing even if it is held for several days.
 
 ## Capital Efficiency
@@ -50,8 +50,8 @@ Undercollateralized options aim to more accurately reflect the risks associated 
 
 ## Fees
 Users pay fees in three scenarios.
-1. When a new option is minted, the options trader pays a commission fee equal to 10 bps of the notional value of the option to the [Panoptic liquidity providers (PLPs)](https://panoptic.xyz/docs/panoptic-protocol/protocol-roles#panoptic-liquidity-providers-plps).
-There is no commission fee when burning an option.
+1. When a position is opened or closed, the options trader pays a [commission fee](/docs/contracts/parameters#fee-parameters) equal to 1 basis point (0.01%) of the notional value of an opened position and 10 bps (0.1%) of the accrued premium of a closed position.
 
-2. Users pay a trading fee whenever an option is minted or burned [in the money](https://panoptic.xyz/docs/terms/in_the_money).
-This is to compensate PLPs for the increased risk of insolvency on options with high intrinsic value. This is because deep ITM positions' intrinsic value is more volatile.
+2. When a user borrows funds from the Panoptic pool to open positions on leverage, the user pays [interest](/docs/panoptic-protocol/V2/interest-accrual) on the borrowed amount. The interest rate is a floating rate which depends on the pool's current utilization vs target utilization.
+
+3. When a user buys an option, the user accumulates [streaming premia (streamia)](/docs/product/streamia) on the position.

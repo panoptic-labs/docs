@@ -68,19 +68,17 @@ Here, you can review the details of your closed positions such as the PnL, strea
 
 ## Troubleshooting Issues with Closing a Position
 
-Generally, options on Panoptic may be freely closed. However, positions with insufficient free [liquidity](/docs/product/liquidity) cannot be closed in the traditional manner. Sometimes you may be unable to close your position without first paying a fee to [force exercise](/docs/product/force-exercise) other positions. In other cases, you may need to wait for the price to move [out of range](/docs/product/force-exercise#conditions-for-force-exercising) or for more liquidity to be added before closing.
+Generally, options on Panoptic may be freely closed. However, positions with insufficient free [liquidity](/docs/product/liquidity) cannot be closed in the traditional manner. Sometimes you may be unable to close your position without first paying a fee to [force exercise](/docs/product/force-exercise) other positions.
 
 ### Insufficient Liquidity
 
 Option buyers may freely close their positions at any time. However, option sellers may only close their positions if there is sufficient liquidity. This is because sellers may not close their position if it has been purchased by another account.
 
-In most situations, you may close your position for a fee by force exercising the required positions. The further the current price of the underlying asset is from the strike price of the position you wish to close, the cheaper the fee. If your position is eligible to be closed via force exercise, you will be prompted to force exercise all required positions for a fee immediately before closing your own position.
+You may close your position for a fee by force exercising the required positions. Out of range positions are cheaper to force exercise. If your position is eligible to be closed via force exercise, you will be prompted to force exercise all required positions for a fee immediately before closing your own position.
 
-In some cases, an in-range position with insufficient liquidity cannot be closed, even through force exercise, until the position becomes out of range or additional liquidity is added. This limitation arises because closing a position requires sufficient free liquidity in the associated contract and force exercises cannot be executed on in-range positions.
-
-You have two options when faced with being unable to close a position:
-1. **Wait for Position Conditions to Change**: You can wait until the position moves out of range, allowing you to close the position via force exercise, or until additional liquidity becomes available for the associated contract.
-2. **Reduce Position Size**: You can reduce the size of your position. This approach involves simultaneously opening a smaller version of your position and closing the original, larger position. Note that this process reduces your exposure but may require additional collateral to be deposited to facilitate the size reduction.
+You have two options if you want to close a position without paying a force exercise fee:
+1. **Wait for Position Conditions to Change**: You can wait until additional liquidity becomes available for the associated option contract or until the position moves out of range, allowing you to close the position via force exercise for cheaper.
+2. **Reduce Position Size**: You can reduce the size of your position. This approach involves replacing your original, larger position with a smaller version of your position.
 
 ![](./closing-a-position/6.png)
 
