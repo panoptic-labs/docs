@@ -5,7 +5,7 @@ sidebar_position: 2
 [Git Source](https://github.com/panoptic-labs/panoptic-next-core-private/blob/8cb6912a84b43ed5df88c9b5bd34535204453dc5/contracts/PanopticPool.sol)
 
 **Inherits:**
-Clone, [Multicall](/contracts/base/Multicall.sol/abstract.Multicall.md), [TransientReentrancyGuard](/contracts/libraries/TransientReentrancyGuard.sol/abstract.TransientReentrancyGuard.md)
+Clone, [Multicall](/contracts/V2/base/abstract.Multicall.md), [TransientReentrancyGuard](/contracts/V2/libraries/abstract.TransientReentrancyGuard.md)
 
 **Title:**
 The Panoptic Pool: Create permissionless options on a CLAMM.

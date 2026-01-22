@@ -5,7 +5,7 @@ sidebar_position: 0
 # Smart Contracts Overview
 Panoptic is a protocol that facilitates the trading of [Panoptions](/docs/terms/panoption), which are perpetual options instruments with fixed gamma between two prices that operate on a [streaming premium model](/docs/product/streamia). Under the hood, this consists of two components:
 1. A lending market for Uniswap liquidity chunks that allows option sellers (lenders) to earn a [multiplier](/docs/product/spread) on Uniswap fees paid by borrowers (option buyers) that utilize their liquidity.
-2. An [undercollateralized](/docs/product/leverage), [commissions-based](/docs/panoptic-protocol/commission) token [lending protocol](/blog/bringing-passive-liquidity-to-uniswap) that gives option sellers flexibility in managing their positions — allowing them to modify their payoffs and LP on Uniswap with more capital efficiency.
+2. An [undercollateralized](/docs/product/leverage), [interest-based](/docs/panoptic-protocol/V2/interest-accrual) token lending protocol that gives option sellers flexibility in managing their positions — allowing them to modify their payoffs and LP on Uniswap with more capital efficiency.
 
 ---
 ## Protocol Parameters

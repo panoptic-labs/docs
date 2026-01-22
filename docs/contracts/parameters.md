@@ -302,7 +302,7 @@ uint256 immutable COMMISSION_FEE (bps) = 20 = 0.2%
 ```
 The commission fee is the base fee charged on the notional value of both purchased and sold options when they are minted. 
 
-This fee is distributed to [PLPs](/docs/panoptic-protocol/protocol-roles#passive-liquidity-providers-plps) in the corresponding `tokenType` vault, serving as interest payments for tokens borrowed by option sellers. To read more about our commission fee structure for options trades, see the [commissions](/docs/panoptic-protocol/commission) page.
+This fee is distributed to [PLPs](/docs/panoptic-protocol/protocol-roles#passive-liquidity-providers-plps) in the corresponding `tokenType` vault, serving as interest payments for tokens borrowed by option sellers.
 
 The commission fee is also charged on PLP deposits and distributed to existing PLPs to discourage the capture of commission fees through just-in-time liquidity provision.
 

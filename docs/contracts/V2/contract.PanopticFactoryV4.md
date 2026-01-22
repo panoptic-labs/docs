@@ -5,7 +5,7 @@ sidebar_position: 4.1
 [Git Source](https://github.com/panoptic-labs/panoptic-next-core-private/blob/8cb6912a84b43ed5df88c9b5bd34535204453dc5/contracts/PanopticFactoryV4.sol)
 
 **Inherits:**
-[FactoryNFT](/contracts/base/FactoryNFT.sol/contract.FactoryNFT.md), [Multicall](/contracts/base/Multicall.sol/abstract.Multicall.md)
+[FactoryNFT](/contracts/V2/base/contract.FactoryNFT.md), [Multicall](/contracts/V2/base/abstract.Multicall.md)
 
 **Title:**
 Panoptic Factory which creates and registers Panoptic Pools.

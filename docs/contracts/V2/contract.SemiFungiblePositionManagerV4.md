@@ -5,7 +5,7 @@ sidebar_position: 1.2
 [Git Source](https://github.com/panoptic-labs/panoptic-next-core-private/blob/8cb6912a84b43ed5df88c9b5bd34535204453dc5/contracts/SemiFungiblePositionManagerV4.sol)
 
 **Inherits:**
-[ERC1155](/contracts/tokens/ERC1155Minimal.sol/abstract.ERC1155.md), [Multicall](/contracts/base/Multicall.sol/abstract.Multicall.md), [TransientReentrancyGuard](/contracts/libraries/TransientReentrancyGuard.sol/abstract.TransientReentrancyGuard.md)
+[ERC1155](/contracts/V2/tokens/abstract.ERC1155.md), [Multicall](/contracts/V2/base/abstract.Multicall.md), [TransientReentrancyGuard](/contracts/V2/libraries/abstract.TransientReentrancyGuard.md)
 
 **Title:**
 Semi-Fungible Position Manager (ERC1155) - a gas-efficient Uniswap V4 position manager.

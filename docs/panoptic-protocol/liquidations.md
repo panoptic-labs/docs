@@ -113,7 +113,7 @@ _REQUIREMENT     <- OTM  .  ITM ->
 To determine whether an account is solvent, the Panoptic protocol computes and adds up the collateral requirement for each position. 
 The protocol will then compare the amount of user-deposited collateral with the account's total collateral requirement.
 
-Because users can deposit both types of tokens for a token pair to be [cross-collateralized](docs/panoptic-protocol/collateral#cross-collateralization), it is the actual value of the required collateral and of the collateral balance that are compared.
+Because users can deposit both types of tokens for a token pair to be [cross-collateralized](/docs/panoptic-protocol/V2/collateral-overview), it is the actual value of the required collateral and of the collateral balance that are compared.
 Based on this calculation, an account can be liquidated if `Total value of collateral` < `collateral requirement`
 
 

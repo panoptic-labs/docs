@@ -6,7 +6,7 @@ sidebar_position: 3
 [Git Source](https://github.com/panoptic-labs/panoptic-next-core-private/blob/8cb6912a84b43ed5df88c9b5bd34535204453dc5/contracts/CollateralTracker.sol)
 
 **Inherits:**
-Clone, [ERC20Minimal](/contracts/tokens/ERC20Minimal.sol/abstract.ERC20Minimal.md), [Multicall](/contracts/base/Multicall.sol/abstract.Multicall.md), [TransientReentrancyGuard](/contracts/libraries/TransientReentrancyGuard.sol/abstract.TransientReentrancyGuard.md)
+Clone, [ERC20Minimal](/contracts/V2/tokens/abstract.ERC20Minimal.md), [Multicall](/contracts/V2/base/abstract.Multicall.md), [TransientReentrancyGuard](/contracts/V2/libraries/abstract.TransientReentrancyGuard.md)
 
 **Title:**
 Collateral Tracking System / Margin Accounting used in conjunction with a Panoptic Pool.
@@ -505,7 +505,7 @@ function decimals() external view returns (uint8);
 
 ### transfer
 
-See [IERC20-transfer](/contracts/tokens/ERC20Minimal.sol/abstract.ERC20Minimal.md#transfer).
+See [IERC20-transfer](/contracts/V2/tokens/abstract.ERC20Minimal.md#transfer).
 
 Requirements:
 - the caller must have a balance of at least `amount`.
@@ -518,7 +518,7 @@ function transfer(address recipient, uint256 amount) public override(ERC20Minima
 
 ### transferFrom
 
-See [IERC20-transferFrom](/contracts/tokens/ERC20Minimal.sol/abstract.ERC20Minimal.md#transferfrom).
+See [IERC20-transferFrom](/contracts/V2/tokens/abstract.ERC20Minimal.md#transferfrom).
 
 Requirements:
 - the `from` must have a balance of at least `amount`.

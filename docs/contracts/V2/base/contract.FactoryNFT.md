@@ -2,7 +2,7 @@
 [Git Source](https://github.com/panoptic-labs/panoptic-next-core-private/blob/8cb6912a84b43ed5df88c9b5bd34535204453dc5/contracts/base/FactoryNFT.sol)
 
 **Inherits:**
-[MetadataStore](/contracts/base/MetadataStore.sol/contract.MetadataStore.md), ERC721
+[MetadataStore](/contracts/V2/base/contract.MetadataStore.md), ERC721
 
 **Title:**
 FactoryNFT: ERC721 contract for Panoptic Factory NFTs.
