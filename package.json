@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@docusaurus/core": "2.4.1",
-    "@docusaurus/plugin-client-redirects": "^2.4.3",
+    "@docusaurus/plugin-client-redirects": "2.4.1",
     "@docusaurus/preset-classic": "2.4.1",
     "@giscus/react": "^3.0.0",
     "@headlessui/react": "1.7.17",
