@@ -17,8 +17,6 @@ See some example queries [here](./queries).
 
 
 
-
-
 ## Objects
 
 ### Account
@@ -143,7 +141,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#account">Account</a>!</td>
 <td>
 
- Creator of this AccountToken balance (e.g. NFPM Account, SFPM Account, PanopticPool) 
+ Creator of this AccountToken balance (e.g. NFPM Account, SFPM Account, PanopticPool, Uniswap Migrator) 
 
 </td>
 </tr>
@@ -527,6 +525,389 @@ See some example queries [here](./queries).
 <td>
 
  Version of Panoptic contract that emitted this event 
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### BorrowRateUpdated
+
+ Emitted when a borrow rate is updated in the RiskEngine. 
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated.id">id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated.hash">hash</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated.logindex">logIndex</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated.eventtype">eventType</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated.from">from</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated.to">to</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated.blocknumber">blockNumber</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated.timestamp">timestamp</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated.gasused">gasUsed</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated.gasprice">gasPrice</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated.pool">pool</strong></td>
+<td valign="top"><a href="#pool">Pool</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated.riskengine">riskEngine</strong></td>
+<td valign="top"><a href="#riskengine">RiskEngine</a>!</td>
+<td>
+
+ RiskEngine contract address 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated.collateraltoken">collateralToken</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a>!</td>
+<td>
+
+ Address of the collateral token whose rate was updated 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated.avgborrowrate">avgBorrowRate</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ The average borrow rate calculated 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated.rateattarget">rateAtTarget</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ The new rate at target 
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### BuilderDeployed
+
+ Emitted when a new BuilderWallet is deployed through the BuilderFactory. 
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed.id">id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed.hash">hash</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed.logindex">logIndex</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed.eventtype">eventType</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed.from">from</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed.to">to</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed.blocknumber">blockNumber</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed.timestamp">timestamp</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed.gasused">gasUsed</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed.gasprice">gasPrice</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed.pool">pool</strong></td>
+<td valign="top"><a href="#pool">Pool</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed.builderfactory">builderFactory</strong></td>
+<td valign="top"><a href="#builderfactory">BuilderFactory</a>!</td>
+<td>
+
+ BuilderFactory contract address 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed.buildercode">builderCode</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ Builder code (uint48) used as CREATE2 salt 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed.wallet">wallet</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a>!</td>
+<td>
+
+ Address of the deployed BuilderWallet 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed.builderadmin">builderAdmin</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a>!</td>
+<td>
+
+ Address of the builder admin 
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### BuilderFactory
+
+ BuilderFactory contract - deploys BuilderWallet contracts for fee distribution. 
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory.id">id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+ BuilderFactory contract address 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory.riskengine">riskEngine</strong></td>
+<td valign="top"><a href="#riskengine">RiskEngine</a></td>
+<td>
+
+ Owner address that can deploy new builder wallets 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory.builderwallets">builderWallets</strong></td>
+<td valign="top">[<a href="#builderwallet">BuilderWallet</a>!]!</td>
+<td>
+
+ All builder wallets deployed by this factory 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#builderwallet_orderby">BuilderWallet_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#builderwallet_filter">BuilderWallet_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory.buildercount">builderCount</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ Total number of builder wallets deployed 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory.createdtimestamp">createdTimestamp</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ Creation timestamp 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory.createdblocknumber">createdBlockNumber</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ Creation block number 
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### BuilderWallet
+
+ BuilderWallet contract - holds builder fees and allows sweeping by the builder admin. 
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet.id">id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+ BuilderWallet contract address 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet.buildercode">builderCode</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ Builder code (uint48) used as CREATE2 salt 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet.builderadmin">builderAdmin</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a>!</td>
+<td>
+
+ Address allowed to sweep tokens from this wallet 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet.factory">factory</strong></td>
+<td valign="top"><a href="#builderfactory">BuilderFactory</a>!</td>
+<td>
+
+ Factory that deployed this wallet 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet.createdtimestamp">createdTimestamp</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ Creation timestamp 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet.createdblocknumber">createdBlockNumber</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ Creation block number 
 
 </td>
 </tr>
@@ -958,29 +1339,65 @@ See some example queries [here](./queries).
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral.totalassets">totalAssets</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td colspan="2" valign="top"><strong id="collateral.totaldonations">totalDonations</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td>
 
- Total assets managed by this Collateral vault. Should be equal to `poolAssets + inAMM`. 
+ The total amount of shares donated 
 
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral.poolassets">poolAssets</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td colspan="2" valign="top"><strong id="collateral.totalplpcommissions">totalPLPCommissions</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td>
 
- Assets accounted to be held by the Panoptic Pool. Ignores donations, pending fee payouts, and other untracked balance changes. 
+ Sum of commissions paid to PLPs – derived from commissionPaidProtocol (builder == 0x0 case)
 
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral.inamm">inAMM</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td colspan="2" valign="top"><strong id="collateral.totalprotocolcommissions">totalProtocolCommissions</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td>
 
- Tokens moved from Panoptic Pool to AMM 
+ Sum of commissions paid to the protocol – derived from commissionPaidProtocol (builder != 0x0 case)
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral.commissionpaidbuilder">commissionPaidBuilder</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td>
+
+ Sum of commissions paid to the builder for this CollateralTracker 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral.totalinsolvencypenalties">totalInsolvencyPenalties</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td>
+
+ Sum of interestOwed - interestPaid for each InsolvencyPenaltyApplied event 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral.totalprotocollossrealized">totalProtocolLossRealized</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td>
+
+ Sum of protocolLossAssets for each ProtocolLossRealized event 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral.totalprotocollossrealizedusd">totalProtocolLossRealizedUSD</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td>
+
+ Sum of protocolLossAssets in USD for each ProtocolLossRealized event 
 
 </td>
 </tr>
@@ -1095,24 +1512,6 @@ See some example queries [here](./queries).
 <td>
 
  Shares 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldaydata.totalassets">totalAssets</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td>
-
- Assets 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldaydata.shareprice">sharePrice</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Share price (assets/shares) - useful for calculating PLP (collateral depositors) APY 
 
 </td>
 </tr>
@@ -1241,12 +1640,20 @@ See some example queries [here](./queries).
 <tr>
 <td colspan="2" valign="top"><strong id="collateraldeposit.tokenderivedethatdeposit">tokenDerivedEthAtDeposit</strong></td>
 <td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td></td>
+<td>
+
+ Price of token in ETH at time of deposit 
+
+</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="collateraldeposit.ethpriceusdatdeposit">ethPriceUSDAtDeposit</strong></td>
 <td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td></td>
+<td>
+
+ Price of ETH in USD at time of deposit 
+
+</td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="collateraldeposit.panopticversion">panopticVersion</strong></td>
@@ -1536,6 +1943,222 @@ See some example queries [here](./queries).
 </tbody>
 </table>
 
+### CommissionPaid
+
+ Collateral commission paid - Emitted when a commission is paid. 
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid.id">id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid.hash">hash</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid.logindex">logIndex</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid.eventtype">eventType</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid.from">from</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid.to">to</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid.blocknumber">blockNumber</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid.timestamp">timestamp</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid.gasused">gasUsed</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid.gasprice">gasPrice</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid.pool">pool</strong></td>
+<td valign="top"><a href="#pool">Pool</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid.owner">owner</strong></td>
+<td valign="top"><a href="#account">Account</a>!</td>
+<td>
+
+ The address of the owner of the shares being used to pay for the commission 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid.builder">builder</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a>!</td>
+<td>
+
+ The address of the account that received the commission if a builderCode is provided 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid.commissionpaidprotocol">commissionPaidProtocol</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ The amount of assets paid that goes to the PLPs (if builder == address(0)) or to the protocol 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid.commissionpaidbuilder">commissionPaidBuilder</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ The amount of assets paid that goes to the builder 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid.collateral">collateral</strong></td>
+<td valign="top"><a href="#collateral">Collateral</a>!</td>
+<td>
+
+ The collateral entity associated with this commission 
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### Donate
+
+ Collateral donate - Emitted when shares are donated to the protocol. 
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="donate.id">id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate.hash">hash</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate.logindex">logIndex</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate.eventtype">eventType</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate.from">from</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate.to">to</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate.blocknumber">blockNumber</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate.timestamp">timestamp</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate.gasused">gasUsed</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate.gasprice">gasPrice</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate.pool">pool</strong></td>
+<td valign="top"><a href="#pool">Pool</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate.sender">sender</strong></td>
+<td valign="top"><a href="#account">Account</a>!</td>
+<td>
+
+ The address of the account donating shares 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate.shares">shares</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ The amount of shares donated 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate.collateral">collateral</strong></td>
+<td valign="top"><a href="#collateral">Collateral</a>!</td>
+<td>
+
+ The collateral entity that was donated to 
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### Factory
 
  Uniswap Factory (deployer of Pools). 
@@ -1760,6 +2383,204 @@ See some example queries [here](./queries).
 </tbody>
 </table>
 
+### GuardianSafeModeUpdated
+
+ Emitted when the guardian updates the enforced safe mode for a PanopticPool. 
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated.id">id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated.hash">hash</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated.logindex">logIndex</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated.eventtype">eventType</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated.from">from</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated.to">to</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated.blocknumber">blockNumber</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated.timestamp">timestamp</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated.gasused">gasUsed</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated.gasprice">gasPrice</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated.riskengine">riskEngine</strong></td>
+<td valign="top"><a href="#riskengine">RiskEngine</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated.lockmode">lockMode</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+ True when safe mode is forcibly locked, false when the lock is lifted 
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### InsolvencyPenaltyApplied
+
+ Collateral insolvency penalty - Emitted when a user attempts to settle interest but lacks sufficient shares to pay in full. 
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied.id">id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied.hash">hash</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied.logindex">logIndex</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied.eventtype">eventType</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied.from">from</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied.to">to</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied.blocknumber">blockNumber</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied.timestamp">timestamp</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied.gasused">gasUsed</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied.gasprice">gasPrice</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied.pool">pool</strong></td>
+<td valign="top"><a href="#pool">Pool</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied.owner">owner</strong></td>
+<td valign="top"><a href="#account">Account</a>!</td>
+<td>
+
+ The address of the insolvent user 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied.interestowed">interestOwed</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ The total amount of interest the user owed 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied.interestpaid">interestPaid</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ The actual amount of interest paid (value of shares burned) 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied.sharesburned">sharesBurned</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ The number of shares burned in the partial payment 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied.collateral">collateral</strong></td>
+<td valign="top"><a href="#collateral">Collateral</a>!</td>
+<td>
+
+ The collateral entity associated with this penalty 
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### Leg
 
  A leg of a TokenId, representing a single option. 
@@ -1781,7 +2602,6 @@ See some example queries [here](./queries).
 
 Id is the tuple (asset, optionRatio, isLong, tokenType, riskPartner, strike, width) from LSB to MSB, in BigInt form, cast to a string
 See TokenId entity for more details, or the source here: https://github.com/panoptic-labs/Panoptic/blob/b33788f414d3101448309212dd66654e63c6a31d/contracts/libraries/TokenId.sol#L29
-
 
 </td>
 </tr>
@@ -1862,7 +2682,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- The strike tick, defined as the average of the lower bound tick of this position and the upper bound 
+ Strike 
 
 </td>
 </tr>
@@ -1871,16 +2691,16 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- The width of this position, defined as the upper bound tick of the position, minus the lower bound, divided by tickSpacing
+ Width 
 
 </td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="leg.chunk">chunk</strong></td>
-<td valign="top"><a href="#chunk">Chunk</a>!</td>
+<td valign="top"><a href="#chunk">Chunk</a></td>
 <td>
 
- Chunk data 
+ Chunk data (null for zero-width legs that don't have liquidity) 
 
 </td>
 </tr>
@@ -2266,42 +3086,6 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="optionburn.totalshares0">totalShares0</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td>
-
- Collateral0 shares at time of liquidation. Helpful for calculating protocol loss during liquidation 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn.totalassets0">totalAssets0</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td>
-
- Collateral0 assets at time of liquidation. Helpful for calculating protocol loss during liquidation 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn.totalshares1">totalShares1</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td>
-
- Collateral1 shares at time of liquidation. Helpful for calculating protocol loss during liquidation 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn.totalassets1">totalAssets1</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td>
-
- Collateral1 assets at time of liquidation. Helpful for calculating protocol loss during liquidation 
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="optionburn.txnopened">txnOpened</strong></td>
 <td valign="top"><a href="#optionmint">OptionMint</a>!</td>
 <td>
@@ -2343,6 +3127,69 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td>
 
  Version of Panoptic contract that emitted this event 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn.volume0usd">volume0USD</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td>
+
+ Token0 Volume USD (converted from amount0 using token.derivedETH and ETH prices at time of mint)
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn.volume1usd">volume1USD</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td>
+
+ Token1 Volume USD (converted from amount1 using token.derivedETH and ETH prices at time of mint)
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn.shares0">shares0</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td>
+
+ Net Collateral 0 shares burned from and minted to recipient as a result of this OptionBurn 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn.shares1">shares1</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td>
+
+ Net Collateral 1 shares burned from and minted to recipient as a result of this OptionBurn 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn.ethpriceusdatburn">ethPriceUSDAtBurn</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td>
+
+ Price of ETH in USD at time of burn 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn.token0derivedethatburn">token0DerivedEthAtBurn</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td>
+
+ Price of token0 in ETH at time of option burn 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn.token1derivedethatburn">token1DerivedEthAtBurn</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td>
+
+ Price of token1 in ETH at time of option burn 
 
 </td>
 </tr>
@@ -2518,6 +3365,24 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 </td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong id="optionmint.shares0">shares0</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td>
+
+ Net Collateral 0 shares burned from and minted to recipient as a result of this OptionMint 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint.shares1">shares1</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td>
+
+ Net Collateral 1 shares burned from and minted to recipient as a result of this OptionMint 
+
+</td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong id="optionmint.commissions0">commissions0</strong></td>
 <td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
 <td>
@@ -2580,181 +3445,48 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 
 </td>
 </tr>
-</tbody>
-</table>
-
-### OptionRoll
-
-<table>
-<thead>
 <tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll.id">id</strong></td>
-<td valign="top"><a href="#id">ID</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll.hash">hash</strong></td>
-<td valign="top"><a href="#string">String</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll.logindex">logIndex</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll.eventtype">eventType</strong></td>
-<td valign="top"><a href="#eventtype">EventType</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll.from">from</strong></td>
-<td valign="top"><a href="#string">String</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll.to">to</strong></td>
-<td valign="top"><a href="#string">String</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll.blocknumber">blockNumber</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll.timestamp">timestamp</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll.gasused">gasUsed</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll.gasprice">gasPrice</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll.pool">pool</strong></td>
-<td valign="top"><a href="#pool">Pool</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll.recipient">recipient</strong></td>
-<td valign="top"><a href="#account">Account</a>!</td>
+<td colspan="2" valign="top"><strong id="optionmint.volume0usd">volume0USD</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td>
 
- User that burnt the option 
+ Token0 Volume USD (converted from amount0 using token.derivedETH and ETH prices at time of mint)
 
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="optionroll.positionsize">positionSize</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td colspan="2" valign="top"><strong id="optionmint.volume1usd">volume1USD</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td>
 
- The number of contracts burnt, expressed in terms of the asset 
+ Token1 Volume USD (converted from amount1 using token.derivedETH and ETH prices at time of mint)
 
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="optionroll.oldtokenid">oldTokenId</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td colspan="2" valign="top"><strong id="optionmint.ethpriceusdatmint">ethPriceUSDAtMint</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td>
 
- TokenId of the burnt option 
+ Price of ETH in USD at time of mint 
 
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="optionroll.newtokenid">newTokenId</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td colspan="2" valign="top"><strong id="optionmint.token0derivedethatmint">token0DerivedEthAtMint</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td>
 
- TokenId of the minted option 
+ Price of token0 in ETH at time of option mint 
 
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="optionroll.tickatroll">tickAtRoll</strong></td>
-<td valign="top"><a href="#int">Int</a>!</td>
+<td colspan="2" valign="top"><strong id="optionmint.token1derivedethatmint">token1DerivedEthAtMint</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td>
 
- Tick at which the option was rolled 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll.poolutilizations">poolUtilizations</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td>
-
- Packing of the pool utilization (how much funds are in the Panoptic pool versus the AMM pool) at the time of minting. Right 64bits for token0 and left 64bits for token1, defined as (inAMM / totalBalance) * 10_000 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll.premia">premia</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td>
-
- LeftRight packing for the amount of premia collected for token0 and token1 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll.panopticpool">panopticPool</strong></td>
-<td valign="top"><a href="#panopticpool">PanopticPool</a>!</td>
-<td>
-
- PanopticPool roll is within (from event.address) 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll.poolutilization0">poolUtilization0</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td>
-
- Pool utilization token0 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll.poolutilization1">poolUtilization1</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td>
-
- Pool utilization token1 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll.premium0">premium0</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td>
-
- Premium collected for token0 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll.premium1">premium1</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td>
-
- Premium collected for token1 
+ Price of token1 in ETH at time of option mint 
 
 </td>
 </tr>
@@ -3081,51 +3813,6 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="panopticpool.protocolloss0">protocolLoss0</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- All time protocol loss in token0. Protocol loss is the value of shares added to the supply in the event of liquidation of bad debt. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool.protocolloss0usd">protocolLoss0USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- All time protocol loss in token0 converted to USD (calculated using token0's derivedETH and the bundle.ethPriceUSD values). 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool.protocolloss1">protocolLoss1</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- All time protocol loss in token1.
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool.protocolloss1usd">protocolLoss1USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- All time protocol loss in token1 converted to USD. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool.protocollossusd">protocolLossUSD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- All time protocol loss in both tokens converted to USD. 
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="panopticpool.chunks">chunks</strong></td>
 <td valign="top">[<a href="#chunk">Chunk</a>!]!</td>
 <td>
@@ -3157,6 +3844,11 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <tr>
 <td colspan="2" align="right" valign="top">where</td>
 <td valign="top"><a href="#chunk_filter">Chunk_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool.riskengine">riskEngine</strong></td>
+<td valign="top"><a href="#riskengine">RiskEngine</a></td>
 <td></td>
 </tr>
 <tr>
@@ -3308,15 +4000,6 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount.collateral0assets">collateral0Assets</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td>
-
- @deprecated Estimate of Collateral0 assets this PanopticPoolAccount can withdraw. 
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="panopticpoolaccount.collateral1">collateral1</strong></td>
 <td valign="top"><a href="#collateral">Collateral</a>!</td>
 <td>
@@ -3331,15 +4014,6 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td>
 
  Number of Collateral1 shares this PanopticPoolAccount controls 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount.collateral1assets">collateral1Assets</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td>
-
- @deprecated Estimate of Collateral1 assets this PanopticPoolAccount can withdraw. 
 
 </td>
 </tr>
@@ -4430,6 +5104,149 @@ PanopticPool mint is within (from event.address)
 </tbody>
 </table>
 
+### ProtocolLossRealized
+
+ Collateral protocol loss - Emitted when protocol loss is realized during liquidation. 
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized.id">id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized.hash">hash</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized.logindex">logIndex</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized.eventtype">eventType</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized.from">from</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized.to">to</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized.blocknumber">blockNumber</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized.timestamp">timestamp</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized.gasused">gasUsed</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized.gasprice">gasPrice</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized.pool">pool</strong></td>
+<td valign="top"><a href="#pool">Pool</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized.liquidatee">liquidatee</strong></td>
+<td valign="top"><a href="#account">Account</a>!</td>
+<td>
+
+ The address of the liquidated account 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized.liquidator">liquidator</strong></td>
+<td valign="top"><a href="#account">Account</a>!</td>
+<td>
+
+ The address of the liquidator 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized.protocollossassets">protocolLossAssets</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ The protocol loss in asset terms 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized.protocollossshares">protocolLossShares</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ The protocol loss in share terms 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized.collateral">collateral</strong></td>
+<td valign="top"><a href="#collateral">Collateral</a>!</td>
+<td>
+
+ The collateral entity associated with this protocol loss 
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### RiskEngine
+
+ The RiskEngine contract - central risk assessment and solvency calculator for Panoptic V2. 
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="riskengine.id">id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+ RiskEngine contract address 
+
+</td>
+</tr>
+</tbody>
+</table>
+
 ### Token
 
 <table>
@@ -4562,7 +5379,6 @@ PanopticPool mint is within (from event.address)
 <td>
 
 The ERC-1155 TokenId for this position. See the TokenId.sol for more information on its structure.
-
 
 </td>
 </tr>
@@ -4880,7 +5696,9 @@ The ERC-1155 TokenId for this position. See the TokenId.sol for more information
 </tbody>
 </table>
 
-### TokenizedPositionRolled
+### TokensCollected
+
+ Emitted when tokens are collected from the RiskEngine contract by the guardian. 
 
 <table>
 <thead>
@@ -4893,93 +5711,93 @@ The ERC-1155 TokenId for this position. See the TokenId.sol for more information
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled.id">id</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected.id">id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled.hash">hash</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected.hash">hash</strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled.logindex">logIndex</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected.logindex">logIndex</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled.eventtype">eventType</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected.eventtype">eventType</strong></td>
 <td valign="top"><a href="#eventtype">EventType</a>!</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled.from">from</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected.from">from</strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled.to">to</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected.to">to</strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled.blocknumber">blockNumber</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected.blocknumber">blockNumber</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled.timestamp">timestamp</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected.timestamp">timestamp</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled.gasused">gasUsed</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected.gasused">gasUsed</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled.gasprice">gasPrice</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected.gasprice">gasPrice</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled.pool">pool</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected.pool">pool</strong></td>
 <td valign="top"><a href="#pool">Pool</a>!</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled.recipient">recipient</strong></td>
-<td valign="top"><a href="#account">Account</a>!</td>
+<td colspan="2" valign="top"><strong id="tokenscollected.riskengine">riskEngine</strong></td>
+<td valign="top"><a href="#riskengine">RiskEngine</a>!</td>
 <td>
 
- User that rolled the position 
+ RiskEngine contract address 
 
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled.oldtokenid">oldTokenId</strong></td>
-<td valign="top"><a href="#tokenid">TokenId</a>!</td>
+<td colspan="2" valign="top"><strong id="tokenscollected.token">token</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a>!</td>
 <td>
 
- TokenId of the burnt position 
+ Address of the token collected 
 
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled.newtokenid">newTokenId</strong></td>
-<td valign="top"><a href="#tokenid">TokenId</a>!</td>
+<td colspan="2" valign="top"><strong id="tokenscollected.recipient">recipient</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a>!</td>
 <td>
 
- TokenId of the newly minted position 
+ Address receiving the tokens 
 
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled.positionsize">positionSize</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected.amount">amount</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- The number of contracts rolled, expressed in terms of the asset 
+ Amount of tokens collected 
 
 </td>
 </tr>
@@ -5060,7 +5878,6 @@ Information about a specific subgraph block. The hash of the block
 will be null if the _meta field has a block constraint that asks for
 a block number. It will be filled if the _meta field has no block constraint
 and therefore asks for the latest  block
-
 
 </td>
 </tr>
@@ -7751,6 +8568,599 @@ Filter for the block changed event.
 </tbody>
 </table>
 
+### BaseEvent_filter
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.id">id</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.id_not">id_not</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.id_gt">id_gt</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.id_lt">id_lt</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.id_gte">id_gte</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.id_lte">id_lte</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.id_in">id_in</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.id_not_in">id_not_in</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.hash">hash</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.hash_not">hash_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.hash_gt">hash_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.hash_lt">hash_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.hash_gte">hash_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.hash_lte">hash_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.hash_in">hash_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.hash_not_in">hash_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.hash_contains">hash_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.hash_contains_nocase">hash_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.hash_not_contains">hash_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.hash_not_contains_nocase">hash_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.hash_starts_with">hash_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.hash_starts_with_nocase">hash_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.hash_not_starts_with">hash_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.hash_not_starts_with_nocase">hash_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.hash_ends_with">hash_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.hash_ends_with_nocase">hash_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.hash_not_ends_with">hash_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.hash_not_ends_with_nocase">hash_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.logindex">logIndex</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.logindex_not">logIndex_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.logindex_gt">logIndex_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.logindex_lt">logIndex_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.logindex_gte">logIndex_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.logindex_lte">logIndex_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.logindex_in">logIndex_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.logindex_not_in">logIndex_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.from">from</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.from_not">from_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.from_gt">from_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.from_lt">from_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.from_gte">from_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.from_lte">from_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.from_in">from_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.from_not_in">from_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.from_contains">from_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.from_contains_nocase">from_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.from_not_contains">from_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.from_not_contains_nocase">from_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.from_starts_with">from_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.from_starts_with_nocase">from_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.from_not_starts_with">from_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.from_not_starts_with_nocase">from_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.from_ends_with">from_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.from_ends_with_nocase">from_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.from_not_ends_with">from_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.from_not_ends_with_nocase">from_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.to">to</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.to_not">to_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.to_gt">to_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.to_lt">to_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.to_gte">to_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.to_lte">to_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.to_in">to_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.to_not_in">to_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.to_contains">to_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.to_contains_nocase">to_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.to_not_contains">to_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.to_not_contains_nocase">to_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.to_starts_with">to_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.to_starts_with_nocase">to_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.to_not_starts_with">to_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.to_not_starts_with_nocase">to_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.to_ends_with">to_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.to_ends_with_nocase">to_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.to_not_ends_with">to_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.blocknumber">blockNumber</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.blocknumber_not">blockNumber_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.blocknumber_gt">blockNumber_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.blocknumber_lt">blockNumber_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.blocknumber_gte">blockNumber_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.blocknumber_lte">blockNumber_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.blocknumber_in">blockNumber_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.blocknumber_not_in">blockNumber_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.timestamp">timestamp</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.timestamp_not">timestamp_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.timestamp_gt">timestamp_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.timestamp_lt">timestamp_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.timestamp_gte">timestamp_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.timestamp_lte">timestamp_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.timestamp_in">timestamp_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.timestamp_not_in">timestamp_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.gasused">gasUsed</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.gasused_not">gasUsed_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.gasused_gt">gasUsed_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.gasused_lt">gasUsed_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.gasused_gte">gasUsed_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.gasused_lte">gasUsed_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.gasused_in">gasUsed_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.gasused_not_in">gasUsed_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.gasprice">gasPrice</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.gasprice_not">gasPrice_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.gasprice_gt">gasPrice_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.gasprice_lt">gasPrice_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.gasprice_gte">gasPrice_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.gasprice_lte">gasPrice_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.gasprice_in">gasPrice_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.gasprice_not_in">gasPrice_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.eventtype">eventType</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.eventtype_not">eventType_not</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.eventtype_in">eventType_in</strong></td>
+<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.eventtype_not_in">eventType_not_in</strong></td>
+<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter._change_block">_change_block</strong></td>
+<td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
+<td>
+
+Filter for the block changed event.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.and">and</strong></td>
+<td valign="top">[<a href="#baseevent_filter">BaseEvent_filter</a>]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent_filter.or">or</strong></td>
+<td valign="top">[<a href="#baseevent_filter">BaseEvent_filter</a>]</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
 ### BlockChangedFilter
 
 <table>
@@ -7794,6 +9204,2533 @@ Filter for the block changed event.
 <tr>
 <td colspan="2" valign="top"><strong id="block_height.number_gte">number_gte</strong></td>
 <td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### BorrowRateUpdated_filter
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.id">id</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.id_not">id_not</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.id_gt">id_gt</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.id_lt">id_lt</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.id_gte">id_gte</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.id_lte">id_lte</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.id_in">id_in</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.id_not_in">id_not_in</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.hash">hash</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.hash_not">hash_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.hash_gt">hash_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.hash_lt">hash_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.hash_gte">hash_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.hash_lte">hash_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.hash_in">hash_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.hash_not_in">hash_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.hash_contains">hash_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.hash_contains_nocase">hash_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.hash_not_contains">hash_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.hash_not_contains_nocase">hash_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.hash_starts_with">hash_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.hash_starts_with_nocase">hash_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.hash_not_starts_with">hash_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.hash_not_starts_with_nocase">hash_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.hash_ends_with">hash_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.hash_ends_with_nocase">hash_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.hash_not_ends_with">hash_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.hash_not_ends_with_nocase">hash_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.logindex">logIndex</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.logindex_not">logIndex_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.logindex_gt">logIndex_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.logindex_lt">logIndex_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.logindex_gte">logIndex_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.logindex_lte">logIndex_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.logindex_in">logIndex_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.logindex_not_in">logIndex_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.eventtype">eventType</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.eventtype_not">eventType_not</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.eventtype_in">eventType_in</strong></td>
+<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.eventtype_not_in">eventType_not_in</strong></td>
+<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.from">from</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.from_not">from_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.from_gt">from_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.from_lt">from_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.from_gte">from_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.from_lte">from_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.from_in">from_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.from_not_in">from_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.from_contains">from_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.from_contains_nocase">from_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.from_not_contains">from_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.from_not_contains_nocase">from_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.from_starts_with">from_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.from_starts_with_nocase">from_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.from_not_starts_with">from_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.from_not_starts_with_nocase">from_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.from_ends_with">from_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.from_ends_with_nocase">from_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.from_not_ends_with">from_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.from_not_ends_with_nocase">from_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.to">to</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.to_not">to_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.to_gt">to_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.to_lt">to_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.to_gte">to_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.to_lte">to_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.to_in">to_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.to_not_in">to_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.to_contains">to_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.to_contains_nocase">to_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.to_not_contains">to_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.to_not_contains_nocase">to_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.to_starts_with">to_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.to_starts_with_nocase">to_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.to_not_starts_with">to_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.to_not_starts_with_nocase">to_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.to_ends_with">to_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.to_ends_with_nocase">to_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.to_not_ends_with">to_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.blocknumber">blockNumber</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.blocknumber_not">blockNumber_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.blocknumber_gt">blockNumber_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.blocknumber_lt">blockNumber_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.blocknumber_gte">blockNumber_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.blocknumber_lte">blockNumber_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.blocknumber_in">blockNumber_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.blocknumber_not_in">blockNumber_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.timestamp">timestamp</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.timestamp_not">timestamp_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.timestamp_gt">timestamp_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.timestamp_lt">timestamp_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.timestamp_gte">timestamp_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.timestamp_lte">timestamp_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.timestamp_in">timestamp_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.timestamp_not_in">timestamp_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.gasused">gasUsed</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.gasused_not">gasUsed_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.gasused_gt">gasUsed_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.gasused_lt">gasUsed_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.gasused_gte">gasUsed_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.gasused_lte">gasUsed_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.gasused_in">gasUsed_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.gasused_not_in">gasUsed_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.gasprice">gasPrice</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.gasprice_not">gasPrice_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.gasprice_gt">gasPrice_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.gasprice_lt">gasPrice_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.gasprice_gte">gasPrice_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.gasprice_lte">gasPrice_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.gasprice_in">gasPrice_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.gasprice_not_in">gasPrice_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool">pool</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_not">pool_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_gt">pool_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_lt">pool_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_gte">pool_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_lte">pool_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_in">pool_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_not_in">pool_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_contains">pool_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_contains_nocase">pool_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_not_contains">pool_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_not_contains_nocase">pool_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_starts_with">pool_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_starts_with_nocase">pool_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_not_starts_with">pool_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_not_starts_with_nocase">pool_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_ends_with">pool_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_ends_with_nocase">pool_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_not_ends_with">pool_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_not_ends_with_nocase">pool_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_">pool_</strong></td>
+<td valign="top"><a href="#pool_filter">Pool_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.riskengine">riskEngine</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.riskengine_not">riskEngine_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.riskengine_gt">riskEngine_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.riskengine_lt">riskEngine_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.riskengine_gte">riskEngine_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.riskengine_lte">riskEngine_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.riskengine_in">riskEngine_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.riskengine_not_in">riskEngine_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.riskengine_contains">riskEngine_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.riskengine_contains_nocase">riskEngine_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.riskengine_not_contains">riskEngine_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.riskengine_not_contains_nocase">riskEngine_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.riskengine_starts_with">riskEngine_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.riskengine_starts_with_nocase">riskEngine_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.riskengine_not_starts_with">riskEngine_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.riskengine_not_starts_with_nocase">riskEngine_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.riskengine_ends_with">riskEngine_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.riskengine_ends_with_nocase">riskEngine_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.riskengine_not_ends_with">riskEngine_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.riskengine_not_ends_with_nocase">riskEngine_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.riskengine_">riskEngine_</strong></td>
+<td valign="top"><a href="#riskengine_filter">RiskEngine_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.collateraltoken">collateralToken</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.collateraltoken_not">collateralToken_not</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.collateraltoken_gt">collateralToken_gt</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.collateraltoken_lt">collateralToken_lt</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.collateraltoken_gte">collateralToken_gte</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.collateraltoken_lte">collateralToken_lte</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.collateraltoken_in">collateralToken_in</strong></td>
+<td valign="top">[<a href="#bytes">Bytes</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.collateraltoken_not_in">collateralToken_not_in</strong></td>
+<td valign="top">[<a href="#bytes">Bytes</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.collateraltoken_contains">collateralToken_contains</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.collateraltoken_not_contains">collateralToken_not_contains</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.avgborrowrate">avgBorrowRate</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.avgborrowrate_not">avgBorrowRate_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.avgborrowrate_gt">avgBorrowRate_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.avgborrowrate_lt">avgBorrowRate_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.avgborrowrate_gte">avgBorrowRate_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.avgborrowrate_lte">avgBorrowRate_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.avgborrowrate_in">avgBorrowRate_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.avgborrowrate_not_in">avgBorrowRate_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.rateattarget">rateAtTarget</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.rateattarget_not">rateAtTarget_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.rateattarget_gt">rateAtTarget_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.rateattarget_lt">rateAtTarget_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.rateattarget_gte">rateAtTarget_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.rateattarget_lte">rateAtTarget_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.rateattarget_in">rateAtTarget_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.rateattarget_not_in">rateAtTarget_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter._change_block">_change_block</strong></td>
+<td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
+<td>
+
+Filter for the block changed event.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.and">and</strong></td>
+<td valign="top">[<a href="#borrowrateupdated_filter">BorrowRateUpdated_filter</a>]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.or">or</strong></td>
+<td valign="top">[<a href="#borrowrateupdated_filter">BorrowRateUpdated_filter</a>]</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### BuilderDeployed_filter
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.id">id</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.id_not">id_not</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.id_gt">id_gt</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.id_lt">id_lt</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.id_gte">id_gte</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.id_lte">id_lte</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.id_in">id_in</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.id_not_in">id_not_in</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.hash">hash</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.hash_not">hash_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.hash_gt">hash_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.hash_lt">hash_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.hash_gte">hash_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.hash_lte">hash_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.hash_in">hash_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.hash_not_in">hash_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.hash_contains">hash_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.hash_contains_nocase">hash_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.hash_not_contains">hash_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.hash_not_contains_nocase">hash_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.hash_starts_with">hash_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.hash_starts_with_nocase">hash_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.hash_not_starts_with">hash_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.hash_not_starts_with_nocase">hash_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.hash_ends_with">hash_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.hash_ends_with_nocase">hash_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.hash_not_ends_with">hash_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.hash_not_ends_with_nocase">hash_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.logindex">logIndex</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.logindex_not">logIndex_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.logindex_gt">logIndex_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.logindex_lt">logIndex_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.logindex_gte">logIndex_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.logindex_lte">logIndex_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.logindex_in">logIndex_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.logindex_not_in">logIndex_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.eventtype">eventType</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.eventtype_not">eventType_not</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.eventtype_in">eventType_in</strong></td>
+<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.eventtype_not_in">eventType_not_in</strong></td>
+<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.from">from</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.from_not">from_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.from_gt">from_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.from_lt">from_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.from_gte">from_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.from_lte">from_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.from_in">from_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.from_not_in">from_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.from_contains">from_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.from_contains_nocase">from_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.from_not_contains">from_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.from_not_contains_nocase">from_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.from_starts_with">from_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.from_starts_with_nocase">from_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.from_not_starts_with">from_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.from_not_starts_with_nocase">from_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.from_ends_with">from_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.from_ends_with_nocase">from_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.from_not_ends_with">from_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.from_not_ends_with_nocase">from_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.to">to</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.to_not">to_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.to_gt">to_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.to_lt">to_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.to_gte">to_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.to_lte">to_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.to_in">to_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.to_not_in">to_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.to_contains">to_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.to_contains_nocase">to_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.to_not_contains">to_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.to_not_contains_nocase">to_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.to_starts_with">to_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.to_starts_with_nocase">to_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.to_not_starts_with">to_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.to_not_starts_with_nocase">to_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.to_ends_with">to_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.to_ends_with_nocase">to_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.to_not_ends_with">to_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.blocknumber">blockNumber</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.blocknumber_not">blockNumber_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.blocknumber_gt">blockNumber_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.blocknumber_lt">blockNumber_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.blocknumber_gte">blockNumber_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.blocknumber_lte">blockNumber_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.blocknumber_in">blockNumber_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.blocknumber_not_in">blockNumber_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.timestamp">timestamp</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.timestamp_not">timestamp_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.timestamp_gt">timestamp_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.timestamp_lt">timestamp_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.timestamp_gte">timestamp_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.timestamp_lte">timestamp_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.timestamp_in">timestamp_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.timestamp_not_in">timestamp_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.gasused">gasUsed</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.gasused_not">gasUsed_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.gasused_gt">gasUsed_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.gasused_lt">gasUsed_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.gasused_gte">gasUsed_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.gasused_lte">gasUsed_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.gasused_in">gasUsed_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.gasused_not_in">gasUsed_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.gasprice">gasPrice</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.gasprice_not">gasPrice_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.gasprice_gt">gasPrice_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.gasprice_lt">gasPrice_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.gasprice_gte">gasPrice_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.gasprice_lte">gasPrice_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.gasprice_in">gasPrice_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.gasprice_not_in">gasPrice_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool">pool</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_not">pool_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_gt">pool_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_lt">pool_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_gte">pool_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_lte">pool_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_in">pool_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_not_in">pool_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_contains">pool_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_contains_nocase">pool_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_not_contains">pool_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_not_contains_nocase">pool_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_starts_with">pool_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_starts_with_nocase">pool_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_not_starts_with">pool_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_not_starts_with_nocase">pool_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_ends_with">pool_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_ends_with_nocase">pool_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_not_ends_with">pool_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_not_ends_with_nocase">pool_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_">pool_</strong></td>
+<td valign="top"><a href="#pool_filter">Pool_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderfactory">builderFactory</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderfactory_not">builderFactory_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderfactory_gt">builderFactory_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderfactory_lt">builderFactory_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderfactory_gte">builderFactory_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderfactory_lte">builderFactory_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderfactory_in">builderFactory_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderfactory_not_in">builderFactory_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderfactory_contains">builderFactory_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderfactory_contains_nocase">builderFactory_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderfactory_not_contains">builderFactory_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderfactory_not_contains_nocase">builderFactory_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderfactory_starts_with">builderFactory_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderfactory_starts_with_nocase">builderFactory_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderfactory_not_starts_with">builderFactory_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderfactory_not_starts_with_nocase">builderFactory_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderfactory_ends_with">builderFactory_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderfactory_ends_with_nocase">builderFactory_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderfactory_not_ends_with">builderFactory_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderfactory_not_ends_with_nocase">builderFactory_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderfactory_">builderFactory_</strong></td>
+<td valign="top"><a href="#builderfactory_filter">BuilderFactory_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.buildercode">builderCode</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.buildercode_not">builderCode_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.buildercode_gt">builderCode_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.buildercode_lt">builderCode_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.buildercode_gte">builderCode_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.buildercode_lte">builderCode_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.buildercode_in">builderCode_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.buildercode_not_in">builderCode_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.wallet">wallet</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.wallet_not">wallet_not</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.wallet_gt">wallet_gt</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.wallet_lt">wallet_lt</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.wallet_gte">wallet_gte</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.wallet_lte">wallet_lte</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.wallet_in">wallet_in</strong></td>
+<td valign="top">[<a href="#bytes">Bytes</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.wallet_not_in">wallet_not_in</strong></td>
+<td valign="top">[<a href="#bytes">Bytes</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.wallet_contains">wallet_contains</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.wallet_not_contains">wallet_not_contains</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderadmin">builderAdmin</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderadmin_not">builderAdmin_not</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderadmin_gt">builderAdmin_gt</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderadmin_lt">builderAdmin_lt</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderadmin_gte">builderAdmin_gte</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderadmin_lte">builderAdmin_lte</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderadmin_in">builderAdmin_in</strong></td>
+<td valign="top">[<a href="#bytes">Bytes</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderadmin_not_in">builderAdmin_not_in</strong></td>
+<td valign="top">[<a href="#bytes">Bytes</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderadmin_contains">builderAdmin_contains</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.builderadmin_not_contains">builderAdmin_not_contains</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter._change_block">_change_block</strong></td>
+<td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
+<td>
+
+Filter for the block changed event.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.and">and</strong></td>
+<td valign="top">[<a href="#builderdeployed_filter">BuilderDeployed_filter</a>]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderdeployed_filter.or">or</strong></td>
+<td valign="top">[<a href="#builderdeployed_filter">BuilderDeployed_filter</a>]</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### BuilderFactory_filter
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.id">id</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.id_not">id_not</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.id_gt">id_gt</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.id_lt">id_lt</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.id_gte">id_gte</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.id_lte">id_lte</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.id_in">id_in</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.id_not_in">id_not_in</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.riskengine">riskEngine</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.riskengine_not">riskEngine_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.riskengine_gt">riskEngine_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.riskengine_lt">riskEngine_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.riskengine_gte">riskEngine_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.riskengine_lte">riskEngine_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.riskengine_in">riskEngine_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.riskengine_not_in">riskEngine_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.riskengine_contains">riskEngine_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.riskengine_contains_nocase">riskEngine_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.riskengine_not_contains">riskEngine_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.riskengine_not_contains_nocase">riskEngine_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.riskengine_starts_with">riskEngine_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.riskengine_starts_with_nocase">riskEngine_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.riskengine_not_starts_with">riskEngine_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.riskengine_not_starts_with_nocase">riskEngine_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.riskengine_ends_with">riskEngine_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.riskengine_ends_with_nocase">riskEngine_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.riskengine_not_ends_with">riskEngine_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.riskengine_not_ends_with_nocase">riskEngine_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.riskengine_">riskEngine_</strong></td>
+<td valign="top"><a href="#riskengine_filter">RiskEngine_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.builderwallets_">builderWallets_</strong></td>
+<td valign="top"><a href="#builderwallet_filter">BuilderWallet_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.buildercount">builderCount</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.buildercount_not">builderCount_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.buildercount_gt">builderCount_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.buildercount_lt">builderCount_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.buildercount_gte">builderCount_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.buildercount_lte">builderCount_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.buildercount_in">builderCount_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.buildercount_not_in">builderCount_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.createdtimestamp">createdTimestamp</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.createdtimestamp_not">createdTimestamp_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.createdtimestamp_gt">createdTimestamp_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.createdtimestamp_lt">createdTimestamp_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.createdtimestamp_gte">createdTimestamp_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.createdtimestamp_lte">createdTimestamp_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.createdtimestamp_in">createdTimestamp_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.createdtimestamp_not_in">createdTimestamp_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.createdblocknumber">createdBlockNumber</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.createdblocknumber_not">createdBlockNumber_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.createdblocknumber_gt">createdBlockNumber_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.createdblocknumber_lt">createdBlockNumber_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.createdblocknumber_gte">createdBlockNumber_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.createdblocknumber_lte">createdBlockNumber_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.createdblocknumber_in">createdBlockNumber_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.createdblocknumber_not_in">createdBlockNumber_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter._change_block">_change_block</strong></td>
+<td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
+<td>
+
+Filter for the block changed event.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.and">and</strong></td>
+<td valign="top">[<a href="#builderfactory_filter">BuilderFactory_filter</a>]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderfactory_filter.or">or</strong></td>
+<td valign="top">[<a href="#builderfactory_filter">BuilderFactory_filter</a>]</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### BuilderWallet_filter
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.id">id</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.id_not">id_not</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.id_gt">id_gt</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.id_lt">id_lt</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.id_gte">id_gte</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.id_lte">id_lte</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.id_in">id_in</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.id_not_in">id_not_in</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.buildercode">builderCode</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.buildercode_not">builderCode_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.buildercode_gt">builderCode_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.buildercode_lt">builderCode_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.buildercode_gte">builderCode_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.buildercode_lte">builderCode_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.buildercode_in">builderCode_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.buildercode_not_in">builderCode_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.builderadmin">builderAdmin</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.builderadmin_not">builderAdmin_not</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.builderadmin_gt">builderAdmin_gt</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.builderadmin_lt">builderAdmin_lt</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.builderadmin_gte">builderAdmin_gte</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.builderadmin_lte">builderAdmin_lte</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.builderadmin_in">builderAdmin_in</strong></td>
+<td valign="top">[<a href="#bytes">Bytes</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.builderadmin_not_in">builderAdmin_not_in</strong></td>
+<td valign="top">[<a href="#bytes">Bytes</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.builderadmin_contains">builderAdmin_contains</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.builderadmin_not_contains">builderAdmin_not_contains</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.factory">factory</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.factory_not">factory_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.factory_gt">factory_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.factory_lt">factory_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.factory_gte">factory_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.factory_lte">factory_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.factory_in">factory_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.factory_not_in">factory_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.factory_contains">factory_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.factory_contains_nocase">factory_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.factory_not_contains">factory_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.factory_not_contains_nocase">factory_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.factory_starts_with">factory_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.factory_starts_with_nocase">factory_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.factory_not_starts_with">factory_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.factory_not_starts_with_nocase">factory_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.factory_ends_with">factory_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.factory_ends_with_nocase">factory_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.factory_not_ends_with">factory_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.factory_not_ends_with_nocase">factory_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.factory_">factory_</strong></td>
+<td valign="top"><a href="#builderfactory_filter">BuilderFactory_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.createdtimestamp">createdTimestamp</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.createdtimestamp_not">createdTimestamp_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.createdtimestamp_gt">createdTimestamp_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.createdtimestamp_lt">createdTimestamp_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.createdtimestamp_gte">createdTimestamp_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.createdtimestamp_lte">createdTimestamp_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.createdtimestamp_in">createdTimestamp_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.createdtimestamp_not_in">createdTimestamp_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.createdblocknumber">createdBlockNumber</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.createdblocknumber_not">createdBlockNumber_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.createdblocknumber_gt">createdBlockNumber_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.createdblocknumber_lt">createdBlockNumber_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.createdblocknumber_gte">createdBlockNumber_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.createdblocknumber_lte">createdBlockNumber_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.createdblocknumber_in">createdBlockNumber_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.createdblocknumber_not_in">createdBlockNumber_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter._change_block">_change_block</strong></td>
+<td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
+<td>
+
+Filter for the block changed event.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.and">and</strong></td>
+<td valign="top">[<a href="#builderwallet_filter">BuilderWallet_filter</a>]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwallet_filter.or">or</strong></td>
+<td valign="top">[<a href="#builderwallet_filter">BuilderWallet_filter</a>]</td>
 <td></td>
 </tr>
 </tbody>
@@ -10297,86 +14234,6 @@ Filter for the block changed event.
 <tr>
 <td colspan="2" valign="top"><strong id="collateraldaydata_filter.totalshares_not_in">totalShares_not_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldaydata_filter.totalassets">totalAssets</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldaydata_filter.totalassets_not">totalAssets_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldaydata_filter.totalassets_gt">totalAssets_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldaydata_filter.totalassets_lt">totalAssets_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldaydata_filter.totalassets_gte">totalAssets_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldaydata_filter.totalassets_lte">totalAssets_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldaydata_filter.totalassets_in">totalAssets_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldaydata_filter.totalassets_not_in">totalAssets_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldaydata_filter.shareprice">sharePrice</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldaydata_filter.shareprice_not">sharePrice_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldaydata_filter.shareprice_gt">sharePrice_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldaydata_filter.shareprice_lt">sharePrice_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldaydata_filter.shareprice_gte">sharePrice_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldaydata_filter.shareprice_lte">sharePrice_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldaydata_filter.shareprice_in">sharePrice_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldaydata_filter.shareprice_not_in">sharePrice_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
 <td></td>
 </tr>
 <tr>
@@ -13249,123 +17106,283 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.totalassets">totalAssets</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totaldonations">totalDonations</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.totalassets_not">totalAssets_not</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totaldonations_not">totalDonations_not</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.totalassets_gt">totalAssets_gt</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totaldonations_gt">totalDonations_gt</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.totalassets_lt">totalAssets_lt</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totaldonations_lt">totalDonations_lt</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.totalassets_gte">totalAssets_gte</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totaldonations_gte">totalDonations_gte</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.totalassets_lte">totalAssets_lte</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totaldonations_lte">totalDonations_lte</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.totalassets_in">totalAssets_in</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totaldonations_in">totalDonations_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.totalassets_not_in">totalAssets_not_in</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totaldonations_not_in">totalDonations_not_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.poolassets">poolAssets</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalplpcommissions">totalPLPCommissions</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.poolassets_not">poolAssets_not</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalplpcommissions_not">totalPLPCommissions_not</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.poolassets_gt">poolAssets_gt</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalplpcommissions_gt">totalPLPCommissions_gt</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.poolassets_lt">poolAssets_lt</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalplpcommissions_lt">totalPLPCommissions_lt</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.poolassets_gte">poolAssets_gte</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalplpcommissions_gte">totalPLPCommissions_gte</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.poolassets_lte">poolAssets_lte</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalplpcommissions_lte">totalPLPCommissions_lte</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.poolassets_in">poolAssets_in</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalplpcommissions_in">totalPLPCommissions_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.poolassets_not_in">poolAssets_not_in</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalplpcommissions_not_in">totalPLPCommissions_not_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.inamm">inAMM</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocolcommissions">totalProtocolCommissions</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.inamm_not">inAMM_not</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocolcommissions_not">totalProtocolCommissions_not</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.inamm_gt">inAMM_gt</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocolcommissions_gt">totalProtocolCommissions_gt</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.inamm_lt">inAMM_lt</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocolcommissions_lt">totalProtocolCommissions_lt</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.inamm_gte">inAMM_gte</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocolcommissions_gte">totalProtocolCommissions_gte</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.inamm_lte">inAMM_lte</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocolcommissions_lte">totalProtocolCommissions_lte</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.inamm_in">inAMM_in</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocolcommissions_in">totalProtocolCommissions_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.inamm_not_in">inAMM_not_in</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocolcommissions_not_in">totalProtocolCommissions_not_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.commissionpaidbuilder">commissionPaidBuilder</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.commissionpaidbuilder_not">commissionPaidBuilder_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.commissionpaidbuilder_gt">commissionPaidBuilder_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.commissionpaidbuilder_lt">commissionPaidBuilder_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.commissionpaidbuilder_gte">commissionPaidBuilder_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.commissionpaidbuilder_lte">commissionPaidBuilder_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.commissionpaidbuilder_in">commissionPaidBuilder_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.commissionpaidbuilder_not_in">commissionPaidBuilder_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalinsolvencypenalties">totalInsolvencyPenalties</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalinsolvencypenalties_not">totalInsolvencyPenalties_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalinsolvencypenalties_gt">totalInsolvencyPenalties_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalinsolvencypenalties_lt">totalInsolvencyPenalties_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalinsolvencypenalties_gte">totalInsolvencyPenalties_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalinsolvencypenalties_lte">totalInsolvencyPenalties_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalinsolvencypenalties_in">totalInsolvencyPenalties_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalinsolvencypenalties_not_in">totalInsolvencyPenalties_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocollossrealized">totalProtocolLossRealized</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocollossrealized_not">totalProtocolLossRealized_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocollossrealized_gt">totalProtocolLossRealized_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocollossrealized_lt">totalProtocolLossRealized_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocollossrealized_gte">totalProtocolLossRealized_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocollossrealized_lte">totalProtocolLossRealized_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocollossrealized_in">totalProtocolLossRealized_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocollossrealized_not_in">totalProtocolLossRealized_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocollossrealizedusd">totalProtocolLossRealizedUSD</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocollossrealizedusd_not">totalProtocolLossRealizedUSD_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocollossrealizedusd_gt">totalProtocolLossRealizedUSD_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocollossrealizedusd_lt">totalProtocolLossRealizedUSD_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocollossrealizedusd_gte">totalProtocolLossRealizedUSD_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocollossrealizedusd_lte">totalProtocolLossRealizedUSD_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocollossrealizedusd_in">totalProtocolLossRealizedUSD_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocollossrealizedusd_not_in">totalProtocolLossRealizedUSD_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
 <td></td>
 </tr>
 <tr>
@@ -14643,6 +18660,1992 @@ Filter for the block changed event.
 <tr>
 <td colspan="2" valign="top"><strong id="collect_filter.or">or</strong></td>
 <td valign="top">[<a href="#collect_filter">Collect_filter</a>]</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### CommissionPaid_filter
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.id">id</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.id_not">id_not</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.id_gt">id_gt</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.id_lt">id_lt</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.id_gte">id_gte</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.id_lte">id_lte</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.id_in">id_in</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.id_not_in">id_not_in</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.hash">hash</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.hash_not">hash_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.hash_gt">hash_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.hash_lt">hash_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.hash_gte">hash_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.hash_lte">hash_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.hash_in">hash_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.hash_not_in">hash_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.hash_contains">hash_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.hash_contains_nocase">hash_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.hash_not_contains">hash_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.hash_not_contains_nocase">hash_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.hash_starts_with">hash_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.hash_starts_with_nocase">hash_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.hash_not_starts_with">hash_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.hash_not_starts_with_nocase">hash_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.hash_ends_with">hash_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.hash_ends_with_nocase">hash_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.hash_not_ends_with">hash_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.hash_not_ends_with_nocase">hash_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.logindex">logIndex</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.logindex_not">logIndex_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.logindex_gt">logIndex_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.logindex_lt">logIndex_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.logindex_gte">logIndex_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.logindex_lte">logIndex_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.logindex_in">logIndex_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.logindex_not_in">logIndex_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.eventtype">eventType</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.eventtype_not">eventType_not</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.eventtype_in">eventType_in</strong></td>
+<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.eventtype_not_in">eventType_not_in</strong></td>
+<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.from">from</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.from_not">from_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.from_gt">from_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.from_lt">from_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.from_gte">from_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.from_lte">from_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.from_in">from_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.from_not_in">from_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.from_contains">from_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.from_contains_nocase">from_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.from_not_contains">from_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.from_not_contains_nocase">from_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.from_starts_with">from_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.from_starts_with_nocase">from_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.from_not_starts_with">from_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.from_not_starts_with_nocase">from_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.from_ends_with">from_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.from_ends_with_nocase">from_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.from_not_ends_with">from_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.from_not_ends_with_nocase">from_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.to">to</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.to_not">to_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.to_gt">to_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.to_lt">to_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.to_gte">to_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.to_lte">to_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.to_in">to_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.to_not_in">to_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.to_contains">to_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.to_contains_nocase">to_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.to_not_contains">to_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.to_not_contains_nocase">to_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.to_starts_with">to_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.to_starts_with_nocase">to_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.to_not_starts_with">to_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.to_not_starts_with_nocase">to_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.to_ends_with">to_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.to_ends_with_nocase">to_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.to_not_ends_with">to_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.blocknumber">blockNumber</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.blocknumber_not">blockNumber_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.blocknumber_gt">blockNumber_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.blocknumber_lt">blockNumber_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.blocknumber_gte">blockNumber_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.blocknumber_lte">blockNumber_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.blocknumber_in">blockNumber_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.blocknumber_not_in">blockNumber_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.timestamp">timestamp</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.timestamp_not">timestamp_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.timestamp_gt">timestamp_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.timestamp_lt">timestamp_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.timestamp_gte">timestamp_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.timestamp_lte">timestamp_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.timestamp_in">timestamp_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.timestamp_not_in">timestamp_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.gasused">gasUsed</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.gasused_not">gasUsed_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.gasused_gt">gasUsed_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.gasused_lt">gasUsed_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.gasused_gte">gasUsed_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.gasused_lte">gasUsed_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.gasused_in">gasUsed_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.gasused_not_in">gasUsed_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.gasprice">gasPrice</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.gasprice_not">gasPrice_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.gasprice_gt">gasPrice_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.gasprice_lt">gasPrice_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.gasprice_gte">gasPrice_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.gasprice_lte">gasPrice_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.gasprice_in">gasPrice_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.gasprice_not_in">gasPrice_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.pool">pool</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.pool_not">pool_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.pool_gt">pool_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.pool_lt">pool_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.pool_gte">pool_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.pool_lte">pool_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.pool_in">pool_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.pool_not_in">pool_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.pool_contains">pool_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.pool_contains_nocase">pool_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.pool_not_contains">pool_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.pool_not_contains_nocase">pool_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.pool_starts_with">pool_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.pool_starts_with_nocase">pool_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.pool_not_starts_with">pool_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.pool_not_starts_with_nocase">pool_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.pool_ends_with">pool_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.pool_ends_with_nocase">pool_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.pool_not_ends_with">pool_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.pool_not_ends_with_nocase">pool_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.pool_">pool_</strong></td>
+<td valign="top"><a href="#pool_filter">Pool_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.owner">owner</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.owner_not">owner_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.owner_gt">owner_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.owner_lt">owner_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.owner_gte">owner_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.owner_lte">owner_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.owner_in">owner_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.owner_not_in">owner_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.owner_contains">owner_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.owner_contains_nocase">owner_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.owner_not_contains">owner_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.owner_not_contains_nocase">owner_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.owner_starts_with">owner_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.owner_starts_with_nocase">owner_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.owner_not_starts_with">owner_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.owner_not_starts_with_nocase">owner_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.owner_ends_with">owner_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.owner_ends_with_nocase">owner_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.owner_not_ends_with">owner_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.owner_not_ends_with_nocase">owner_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.owner_">owner_</strong></td>
+<td valign="top"><a href="#account_filter">Account_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.builder">builder</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.builder_not">builder_not</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.builder_gt">builder_gt</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.builder_lt">builder_lt</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.builder_gte">builder_gte</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.builder_lte">builder_lte</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.builder_in">builder_in</strong></td>
+<td valign="top">[<a href="#bytes">Bytes</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.builder_not_in">builder_not_in</strong></td>
+<td valign="top">[<a href="#bytes">Bytes</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.builder_contains">builder_contains</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.builder_not_contains">builder_not_contains</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.commissionpaidprotocol">commissionPaidProtocol</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.commissionpaidprotocol_not">commissionPaidProtocol_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.commissionpaidprotocol_gt">commissionPaidProtocol_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.commissionpaidprotocol_lt">commissionPaidProtocol_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.commissionpaidprotocol_gte">commissionPaidProtocol_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.commissionpaidprotocol_lte">commissionPaidProtocol_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.commissionpaidprotocol_in">commissionPaidProtocol_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.commissionpaidprotocol_not_in">commissionPaidProtocol_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.commissionpaidbuilder">commissionPaidBuilder</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.commissionpaidbuilder_not">commissionPaidBuilder_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.commissionpaidbuilder_gt">commissionPaidBuilder_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.commissionpaidbuilder_lt">commissionPaidBuilder_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.commissionpaidbuilder_gte">commissionPaidBuilder_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.commissionpaidbuilder_lte">commissionPaidBuilder_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.commissionpaidbuilder_in">commissionPaidBuilder_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.commissionpaidbuilder_not_in">commissionPaidBuilder_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.collateral">collateral</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.collateral_not">collateral_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.collateral_gt">collateral_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.collateral_lt">collateral_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.collateral_gte">collateral_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.collateral_lte">collateral_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.collateral_in">collateral_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.collateral_not_in">collateral_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.collateral_contains">collateral_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.collateral_contains_nocase">collateral_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.collateral_not_contains">collateral_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.collateral_not_contains_nocase">collateral_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.collateral_starts_with">collateral_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.collateral_starts_with_nocase">collateral_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.collateral_not_starts_with">collateral_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.collateral_not_starts_with_nocase">collateral_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.collateral_ends_with">collateral_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.collateral_ends_with_nocase">collateral_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.collateral_not_ends_with">collateral_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.collateral_not_ends_with_nocase">collateral_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.collateral_">collateral_</strong></td>
+<td valign="top"><a href="#collateral_filter">Collateral_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter._change_block">_change_block</strong></td>
+<td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
+<td>
+
+Filter for the block changed event.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.and">and</strong></td>
+<td valign="top">[<a href="#commissionpaid_filter">CommissionPaid_filter</a>]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.or">or</strong></td>
+<td valign="top">[<a href="#commissionpaid_filter">CommissionPaid_filter</a>]</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### Donate_filter
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.id">id</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.id_not">id_not</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.id_gt">id_gt</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.id_lt">id_lt</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.id_gte">id_gte</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.id_lte">id_lte</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.id_in">id_in</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.id_not_in">id_not_in</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.hash">hash</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.hash_not">hash_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.hash_gt">hash_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.hash_lt">hash_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.hash_gte">hash_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.hash_lte">hash_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.hash_in">hash_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.hash_not_in">hash_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.hash_contains">hash_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.hash_contains_nocase">hash_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.hash_not_contains">hash_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.hash_not_contains_nocase">hash_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.hash_starts_with">hash_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.hash_starts_with_nocase">hash_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.hash_not_starts_with">hash_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.hash_not_starts_with_nocase">hash_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.hash_ends_with">hash_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.hash_ends_with_nocase">hash_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.hash_not_ends_with">hash_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.hash_not_ends_with_nocase">hash_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.logindex">logIndex</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.logindex_not">logIndex_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.logindex_gt">logIndex_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.logindex_lt">logIndex_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.logindex_gte">logIndex_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.logindex_lte">logIndex_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.logindex_in">logIndex_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.logindex_not_in">logIndex_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.eventtype">eventType</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.eventtype_not">eventType_not</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.eventtype_in">eventType_in</strong></td>
+<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.eventtype_not_in">eventType_not_in</strong></td>
+<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.from">from</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.from_not">from_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.from_gt">from_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.from_lt">from_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.from_gte">from_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.from_lte">from_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.from_in">from_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.from_not_in">from_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.from_contains">from_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.from_contains_nocase">from_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.from_not_contains">from_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.from_not_contains_nocase">from_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.from_starts_with">from_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.from_starts_with_nocase">from_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.from_not_starts_with">from_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.from_not_starts_with_nocase">from_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.from_ends_with">from_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.from_ends_with_nocase">from_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.from_not_ends_with">from_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.from_not_ends_with_nocase">from_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.to">to</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.to_not">to_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.to_gt">to_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.to_lt">to_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.to_gte">to_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.to_lte">to_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.to_in">to_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.to_not_in">to_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.to_contains">to_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.to_contains_nocase">to_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.to_not_contains">to_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.to_not_contains_nocase">to_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.to_starts_with">to_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.to_starts_with_nocase">to_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.to_not_starts_with">to_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.to_not_starts_with_nocase">to_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.to_ends_with">to_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.to_ends_with_nocase">to_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.to_not_ends_with">to_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.blocknumber">blockNumber</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.blocknumber_not">blockNumber_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.blocknumber_gt">blockNumber_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.blocknumber_lt">blockNumber_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.blocknumber_gte">blockNumber_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.blocknumber_lte">blockNumber_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.blocknumber_in">blockNumber_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.blocknumber_not_in">blockNumber_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.timestamp">timestamp</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.timestamp_not">timestamp_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.timestamp_gt">timestamp_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.timestamp_lt">timestamp_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.timestamp_gte">timestamp_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.timestamp_lte">timestamp_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.timestamp_in">timestamp_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.timestamp_not_in">timestamp_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.gasused">gasUsed</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.gasused_not">gasUsed_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.gasused_gt">gasUsed_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.gasused_lt">gasUsed_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.gasused_gte">gasUsed_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.gasused_lte">gasUsed_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.gasused_in">gasUsed_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.gasused_not_in">gasUsed_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.gasprice">gasPrice</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.gasprice_not">gasPrice_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.gasprice_gt">gasPrice_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.gasprice_lt">gasPrice_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.gasprice_gte">gasPrice_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.gasprice_lte">gasPrice_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.gasprice_in">gasPrice_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.gasprice_not_in">gasPrice_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.pool">pool</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.pool_not">pool_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.pool_gt">pool_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.pool_lt">pool_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.pool_gte">pool_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.pool_lte">pool_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.pool_in">pool_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.pool_not_in">pool_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.pool_contains">pool_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.pool_contains_nocase">pool_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.pool_not_contains">pool_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.pool_not_contains_nocase">pool_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.pool_starts_with">pool_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.pool_starts_with_nocase">pool_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.pool_not_starts_with">pool_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.pool_not_starts_with_nocase">pool_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.pool_ends_with">pool_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.pool_ends_with_nocase">pool_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.pool_not_ends_with">pool_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.pool_not_ends_with_nocase">pool_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.pool_">pool_</strong></td>
+<td valign="top"><a href="#pool_filter">Pool_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.sender">sender</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.sender_not">sender_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.sender_gt">sender_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.sender_lt">sender_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.sender_gte">sender_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.sender_lte">sender_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.sender_in">sender_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.sender_not_in">sender_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.sender_contains">sender_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.sender_contains_nocase">sender_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.sender_not_contains">sender_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.sender_not_contains_nocase">sender_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.sender_starts_with">sender_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.sender_starts_with_nocase">sender_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.sender_not_starts_with">sender_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.sender_not_starts_with_nocase">sender_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.sender_ends_with">sender_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.sender_ends_with_nocase">sender_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.sender_not_ends_with">sender_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.sender_not_ends_with_nocase">sender_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.sender_">sender_</strong></td>
+<td valign="top"><a href="#account_filter">Account_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.shares">shares</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.shares_not">shares_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.shares_gt">shares_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.shares_lt">shares_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.shares_gte">shares_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.shares_lte">shares_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.shares_in">shares_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.shares_not_in">shares_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.collateral">collateral</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.collateral_not">collateral_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.collateral_gt">collateral_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.collateral_lt">collateral_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.collateral_gte">collateral_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.collateral_lte">collateral_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.collateral_in">collateral_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.collateral_not_in">collateral_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.collateral_contains">collateral_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.collateral_contains_nocase">collateral_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.collateral_not_contains">collateral_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.collateral_not_contains_nocase">collateral_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.collateral_starts_with">collateral_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.collateral_starts_with_nocase">collateral_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.collateral_not_starts_with">collateral_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.collateral_not_starts_with_nocase">collateral_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.collateral_ends_with">collateral_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.collateral_ends_with_nocase">collateral_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.collateral_not_ends_with">collateral_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.collateral_not_ends_with_nocase">collateral_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.collateral_">collateral_</strong></td>
+<td valign="top"><a href="#collateral_filter">Collateral_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter._change_block">_change_block</strong></td>
+<td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
+<td>
+
+Filter for the block changed event.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.and">and</strong></td>
+<td valign="top">[<a href="#donate_filter">Donate_filter</a>]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="donate_filter.or">or</strong></td>
+<td valign="top">[<a href="#donate_filter">Donate_filter</a>]</td>
 <td></td>
 </tr>
 </tbody>
@@ -16812,6 +22815,1752 @@ Filter for the block changed event.
 <tr>
 <td colspan="2" valign="top"><strong id="forcedexercise_filter.or">or</strong></td>
 <td valign="top">[<a href="#forcedexercise_filter">ForcedExercise_filter</a>]</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### GuardianSafeModeUpdated_filter
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.id">id</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.id_not">id_not</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.id_gt">id_gt</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.id_lt">id_lt</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.id_gte">id_gte</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.id_lte">id_lte</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.id_in">id_in</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.id_not_in">id_not_in</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.hash">hash</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.hash_not">hash_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.hash_gt">hash_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.hash_lt">hash_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.hash_gte">hash_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.hash_lte">hash_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.hash_in">hash_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.hash_not_in">hash_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.hash_contains">hash_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.hash_contains_nocase">hash_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.hash_not_contains">hash_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.hash_not_contains_nocase">hash_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.hash_starts_with">hash_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.hash_starts_with_nocase">hash_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.hash_not_starts_with">hash_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.hash_not_starts_with_nocase">hash_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.hash_ends_with">hash_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.hash_ends_with_nocase">hash_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.hash_not_ends_with">hash_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.hash_not_ends_with_nocase">hash_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.logindex">logIndex</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.logindex_not">logIndex_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.logindex_gt">logIndex_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.logindex_lt">logIndex_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.logindex_gte">logIndex_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.logindex_lte">logIndex_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.logindex_in">logIndex_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.logindex_not_in">logIndex_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.eventtype">eventType</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.eventtype_not">eventType_not</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.eventtype_in">eventType_in</strong></td>
+<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.eventtype_not_in">eventType_not_in</strong></td>
+<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.from">from</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.from_not">from_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.from_gt">from_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.from_lt">from_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.from_gte">from_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.from_lte">from_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.from_in">from_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.from_not_in">from_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.from_contains">from_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.from_contains_nocase">from_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.from_not_contains">from_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.from_not_contains_nocase">from_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.from_starts_with">from_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.from_starts_with_nocase">from_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.from_not_starts_with">from_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.from_not_starts_with_nocase">from_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.from_ends_with">from_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.from_ends_with_nocase">from_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.from_not_ends_with">from_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.from_not_ends_with_nocase">from_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.to">to</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.to_not">to_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.to_gt">to_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.to_lt">to_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.to_gte">to_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.to_lte">to_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.to_in">to_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.to_not_in">to_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.to_contains">to_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.to_contains_nocase">to_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.to_not_contains">to_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.to_not_contains_nocase">to_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.to_starts_with">to_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.to_starts_with_nocase">to_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.to_not_starts_with">to_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.to_not_starts_with_nocase">to_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.to_ends_with">to_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.to_ends_with_nocase">to_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.to_not_ends_with">to_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.blocknumber">blockNumber</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.blocknumber_not">blockNumber_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.blocknumber_gt">blockNumber_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.blocknumber_lt">blockNumber_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.blocknumber_gte">blockNumber_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.blocknumber_lte">blockNumber_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.blocknumber_in">blockNumber_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.blocknumber_not_in">blockNumber_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.timestamp">timestamp</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.timestamp_not">timestamp_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.timestamp_gt">timestamp_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.timestamp_lt">timestamp_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.timestamp_gte">timestamp_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.timestamp_lte">timestamp_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.timestamp_in">timestamp_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.timestamp_not_in">timestamp_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.gasused">gasUsed</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.gasused_not">gasUsed_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.gasused_gt">gasUsed_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.gasused_lt">gasUsed_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.gasused_gte">gasUsed_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.gasused_lte">gasUsed_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.gasused_in">gasUsed_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.gasused_not_in">gasUsed_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.gasprice">gasPrice</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.gasprice_not">gasPrice_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.gasprice_gt">gasPrice_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.gasprice_lt">gasPrice_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.gasprice_gte">gasPrice_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.gasprice_lte">gasPrice_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.gasprice_in">gasPrice_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.gasprice_not_in">gasPrice_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.riskengine">riskEngine</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.riskengine_not">riskEngine_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.riskengine_gt">riskEngine_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.riskengine_lt">riskEngine_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.riskengine_gte">riskEngine_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.riskengine_lte">riskEngine_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.riskengine_in">riskEngine_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.riskengine_not_in">riskEngine_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.riskengine_contains">riskEngine_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.riskengine_contains_nocase">riskEngine_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.riskengine_not_contains">riskEngine_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.riskengine_not_contains_nocase">riskEngine_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.riskengine_starts_with">riskEngine_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.riskengine_starts_with_nocase">riskEngine_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.riskengine_not_starts_with">riskEngine_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.riskengine_not_starts_with_nocase">riskEngine_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.riskengine_ends_with">riskEngine_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.riskengine_ends_with_nocase">riskEngine_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.riskengine_not_ends_with">riskEngine_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.riskengine_not_ends_with_nocase">riskEngine_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.riskengine_">riskEngine_</strong></td>
+<td valign="top"><a href="#riskengine_filter">RiskEngine_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.lockmode">lockMode</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.lockmode_not">lockMode_not</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.lockmode_in">lockMode_in</strong></td>
+<td valign="top">[<a href="#boolean">Boolean</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.lockmode_not_in">lockMode_not_in</strong></td>
+<td valign="top">[<a href="#boolean">Boolean</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter._change_block">_change_block</strong></td>
+<td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
+<td>
+
+Filter for the block changed event.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.and">and</strong></td>
+<td valign="top">[<a href="#guardiansafemodeupdated_filter">GuardianSafeModeUpdated_filter</a>]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="guardiansafemodeupdated_filter.or">or</strong></td>
+<td valign="top">[<a href="#guardiansafemodeupdated_filter">GuardianSafeModeUpdated_filter</a>]</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### InsolvencyPenaltyApplied_filter
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.id">id</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.id_not">id_not</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.id_gt">id_gt</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.id_lt">id_lt</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.id_gte">id_gte</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.id_lte">id_lte</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.id_in">id_in</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.id_not_in">id_not_in</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.hash">hash</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.hash_not">hash_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.hash_gt">hash_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.hash_lt">hash_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.hash_gte">hash_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.hash_lte">hash_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.hash_in">hash_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.hash_not_in">hash_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.hash_contains">hash_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.hash_contains_nocase">hash_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.hash_not_contains">hash_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.hash_not_contains_nocase">hash_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.hash_starts_with">hash_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.hash_starts_with_nocase">hash_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.hash_not_starts_with">hash_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.hash_not_starts_with_nocase">hash_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.hash_ends_with">hash_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.hash_ends_with_nocase">hash_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.hash_not_ends_with">hash_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.hash_not_ends_with_nocase">hash_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.logindex">logIndex</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.logindex_not">logIndex_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.logindex_gt">logIndex_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.logindex_lt">logIndex_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.logindex_gte">logIndex_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.logindex_lte">logIndex_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.logindex_in">logIndex_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.logindex_not_in">logIndex_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.eventtype">eventType</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.eventtype_not">eventType_not</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.eventtype_in">eventType_in</strong></td>
+<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.eventtype_not_in">eventType_not_in</strong></td>
+<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.from">from</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.from_not">from_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.from_gt">from_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.from_lt">from_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.from_gte">from_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.from_lte">from_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.from_in">from_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.from_not_in">from_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.from_contains">from_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.from_contains_nocase">from_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.from_not_contains">from_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.from_not_contains_nocase">from_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.from_starts_with">from_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.from_starts_with_nocase">from_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.from_not_starts_with">from_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.from_not_starts_with_nocase">from_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.from_ends_with">from_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.from_ends_with_nocase">from_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.from_not_ends_with">from_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.from_not_ends_with_nocase">from_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.to">to</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.to_not">to_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.to_gt">to_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.to_lt">to_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.to_gte">to_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.to_lte">to_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.to_in">to_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.to_not_in">to_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.to_contains">to_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.to_contains_nocase">to_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.to_not_contains">to_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.to_not_contains_nocase">to_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.to_starts_with">to_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.to_starts_with_nocase">to_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.to_not_starts_with">to_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.to_not_starts_with_nocase">to_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.to_ends_with">to_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.to_ends_with_nocase">to_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.to_not_ends_with">to_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.blocknumber">blockNumber</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.blocknumber_not">blockNumber_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.blocknumber_gt">blockNumber_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.blocknumber_lt">blockNumber_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.blocknumber_gte">blockNumber_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.blocknumber_lte">blockNumber_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.blocknumber_in">blockNumber_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.blocknumber_not_in">blockNumber_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.timestamp">timestamp</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.timestamp_not">timestamp_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.timestamp_gt">timestamp_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.timestamp_lt">timestamp_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.timestamp_gte">timestamp_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.timestamp_lte">timestamp_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.timestamp_in">timestamp_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.timestamp_not_in">timestamp_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.gasused">gasUsed</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.gasused_not">gasUsed_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.gasused_gt">gasUsed_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.gasused_lt">gasUsed_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.gasused_gte">gasUsed_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.gasused_lte">gasUsed_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.gasused_in">gasUsed_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.gasused_not_in">gasUsed_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.gasprice">gasPrice</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.gasprice_not">gasPrice_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.gasprice_gt">gasPrice_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.gasprice_lt">gasPrice_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.gasprice_gte">gasPrice_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.gasprice_lte">gasPrice_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.gasprice_in">gasPrice_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.gasprice_not_in">gasPrice_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.pool">pool</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.pool_not">pool_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.pool_gt">pool_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.pool_lt">pool_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.pool_gte">pool_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.pool_lte">pool_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.pool_in">pool_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.pool_not_in">pool_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.pool_contains">pool_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.pool_contains_nocase">pool_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.pool_not_contains">pool_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.pool_not_contains_nocase">pool_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.pool_starts_with">pool_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.pool_starts_with_nocase">pool_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.pool_not_starts_with">pool_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.pool_not_starts_with_nocase">pool_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.pool_ends_with">pool_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.pool_ends_with_nocase">pool_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.pool_not_ends_with">pool_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.pool_not_ends_with_nocase">pool_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.pool_">pool_</strong></td>
+<td valign="top"><a href="#pool_filter">Pool_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.owner">owner</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.owner_not">owner_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.owner_gt">owner_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.owner_lt">owner_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.owner_gte">owner_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.owner_lte">owner_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.owner_in">owner_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.owner_not_in">owner_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.owner_contains">owner_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.owner_contains_nocase">owner_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.owner_not_contains">owner_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.owner_not_contains_nocase">owner_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.owner_starts_with">owner_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.owner_starts_with_nocase">owner_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.owner_not_starts_with">owner_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.owner_not_starts_with_nocase">owner_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.owner_ends_with">owner_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.owner_ends_with_nocase">owner_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.owner_not_ends_with">owner_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.owner_not_ends_with_nocase">owner_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.owner_">owner_</strong></td>
+<td valign="top"><a href="#account_filter">Account_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.interestowed">interestOwed</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.interestowed_not">interestOwed_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.interestowed_gt">interestOwed_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.interestowed_lt">interestOwed_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.interestowed_gte">interestOwed_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.interestowed_lte">interestOwed_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.interestowed_in">interestOwed_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.interestowed_not_in">interestOwed_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.interestpaid">interestPaid</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.interestpaid_not">interestPaid_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.interestpaid_gt">interestPaid_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.interestpaid_lt">interestPaid_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.interestpaid_gte">interestPaid_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.interestpaid_lte">interestPaid_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.interestpaid_in">interestPaid_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.interestpaid_not_in">interestPaid_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.sharesburned">sharesBurned</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.sharesburned_not">sharesBurned_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.sharesburned_gt">sharesBurned_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.sharesburned_lt">sharesBurned_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.sharesburned_gte">sharesBurned_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.sharesburned_lte">sharesBurned_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.sharesburned_in">sharesBurned_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.sharesburned_not_in">sharesBurned_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.collateral">collateral</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.collateral_not">collateral_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.collateral_gt">collateral_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.collateral_lt">collateral_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.collateral_gte">collateral_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.collateral_lte">collateral_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.collateral_in">collateral_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.collateral_not_in">collateral_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.collateral_contains">collateral_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.collateral_contains_nocase">collateral_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.collateral_not_contains">collateral_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.collateral_not_contains_nocase">collateral_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.collateral_starts_with">collateral_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.collateral_starts_with_nocase">collateral_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.collateral_not_starts_with">collateral_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.collateral_not_starts_with_nocase">collateral_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.collateral_ends_with">collateral_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.collateral_ends_with_nocase">collateral_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.collateral_not_ends_with">collateral_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.collateral_not_ends_with_nocase">collateral_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.collateral_">collateral_</strong></td>
+<td valign="top"><a href="#collateral_filter">Collateral_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter._change_block">_change_block</strong></td>
+<td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
+<td>
+
+Filter for the block changed event.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.and">and</strong></td>
+<td valign="top">[<a href="#insolvencypenaltyapplied_filter">InsolvencyPenaltyApplied_filter</a>]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.or">or</strong></td>
+<td valign="top">[<a href="#insolvencypenaltyapplied_filter">InsolvencyPenaltyApplied_filter</a>]</td>
 <td></td>
 </tr>
 </tbody>
@@ -20388,166 +28137,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalshares0">totalShares0</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalshares0_not">totalShares0_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalshares0_gt">totalShares0_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalshares0_lt">totalShares0_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalshares0_gte">totalShares0_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalshares0_lte">totalShares0_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalshares0_in">totalShares0_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalshares0_not_in">totalShares0_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalassets0">totalAssets0</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalassets0_not">totalAssets0_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalassets0_gt">totalAssets0_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalassets0_lt">totalAssets0_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalassets0_gte">totalAssets0_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalassets0_lte">totalAssets0_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalassets0_in">totalAssets0_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalassets0_not_in">totalAssets0_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalshares1">totalShares1</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalshares1_not">totalShares1_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalshares1_gt">totalShares1_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalshares1_lt">totalShares1_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalshares1_gte">totalShares1_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalshares1_lte">totalShares1_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalshares1_in">totalShares1_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalshares1_not_in">totalShares1_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalassets1">totalAssets1</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalassets1_not">totalAssets1_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalassets1_gt">totalAssets1_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalassets1_lt">totalAssets1_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalassets1_gte">totalAssets1_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalassets1_lte">totalAssets1_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalassets1_in">totalAssets1_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.totalassets1_not_in">totalAssets1_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="optionburn_filter.txnopened">txnOpened</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
@@ -21004,6 +28593,286 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="optionburn_filter.panopticversion_not_in">panopticVersion_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.volume0usd">volume0USD</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.volume0usd_not">volume0USD_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.volume0usd_gt">volume0USD_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.volume0usd_lt">volume0USD_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.volume0usd_gte">volume0USD_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.volume0usd_lte">volume0USD_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.volume0usd_in">volume0USD_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.volume0usd_not_in">volume0USD_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.volume1usd">volume1USD</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.volume1usd_not">volume1USD_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.volume1usd_gt">volume1USD_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.volume1usd_lt">volume1USD_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.volume1usd_gte">volume1USD_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.volume1usd_lte">volume1USD_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.volume1usd_in">volume1USD_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.volume1usd_not_in">volume1USD_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.shares0">shares0</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.shares0_not">shares0_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.shares0_gt">shares0_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.shares0_lt">shares0_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.shares0_gte">shares0_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.shares0_lte">shares0_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.shares0_in">shares0_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.shares0_not_in">shares0_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.shares1">shares1</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.shares1_not">shares1_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.shares1_gt">shares1_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.shares1_lt">shares1_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.shares1_gte">shares1_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.shares1_lte">shares1_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.shares1_in">shares1_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.shares1_not_in">shares1_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.ethpriceusdatburn">ethPriceUSDAtBurn</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.ethpriceusdatburn_not">ethPriceUSDAtBurn_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.ethpriceusdatburn_gt">ethPriceUSDAtBurn_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.ethpriceusdatburn_lt">ethPriceUSDAtBurn_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.ethpriceusdatburn_gte">ethPriceUSDAtBurn_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.ethpriceusdatburn_lte">ethPriceUSDAtBurn_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.ethpriceusdatburn_in">ethPriceUSDAtBurn_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.ethpriceusdatburn_not_in">ethPriceUSDAtBurn_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.token0derivedethatburn">token0DerivedEthAtBurn</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.token0derivedethatburn_not">token0DerivedEthAtBurn_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.token0derivedethatburn_gt">token0DerivedEthAtBurn_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.token0derivedethatburn_lt">token0DerivedEthAtBurn_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.token0derivedethatburn_gte">token0DerivedEthAtBurn_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.token0derivedethatburn_lte">token0DerivedEthAtBurn_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.token0derivedethatburn_in">token0DerivedEthAtBurn_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.token0derivedethatburn_not_in">token0DerivedEthAtBurn_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.token1derivedethatburn">token1DerivedEthAtBurn</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.token1derivedethatburn_not">token1DerivedEthAtBurn_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.token1derivedethatburn_gt">token1DerivedEthAtBurn_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.token1derivedethatburn_lt">token1DerivedEthAtBurn_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.token1derivedethatburn_gte">token1DerivedEthAtBurn_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.token1derivedethatburn_lte">token1DerivedEthAtBurn_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.token1derivedethatburn_in">token1DerivedEthAtBurn_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.token1derivedethatburn_not_in">token1DerivedEthAtBurn_not_in</strong></td>
 <td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
 <td></td>
 </tr>
@@ -22406,6 +30275,86 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.shares0">shares0</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.shares0_not">shares0_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.shares0_gt">shares0_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.shares0_lt">shares0_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.shares0_gte">shares0_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.shares0_lte">shares0_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.shares0_in">shares0_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.shares0_not_in">shares0_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.shares1">shares1</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.shares1_not">shares1_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.shares1_gt">shares1_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.shares1_lt">shares1_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.shares1_gte">shares1_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.shares1_lte">shares1_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.shares1_in">shares1_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.shares1_not_in">shares1_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong id="optionmint_filter.commissions0">commissions0</strong></td>
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td></td>
@@ -22686,6 +30635,206 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.volume0usd">volume0USD</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.volume0usd_not">volume0USD_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.volume0usd_gt">volume0USD_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.volume0usd_lt">volume0USD_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.volume0usd_gte">volume0USD_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.volume0usd_lte">volume0USD_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.volume0usd_in">volume0USD_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.volume0usd_not_in">volume0USD_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.volume1usd">volume1USD</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.volume1usd_not">volume1USD_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.volume1usd_gt">volume1USD_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.volume1usd_lt">volume1USD_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.volume1usd_gte">volume1USD_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.volume1usd_lte">volume1USD_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.volume1usd_in">volume1USD_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.volume1usd_not_in">volume1USD_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.ethpriceusdatmint">ethPriceUSDAtMint</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.ethpriceusdatmint_not">ethPriceUSDAtMint_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.ethpriceusdatmint_gt">ethPriceUSDAtMint_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.ethpriceusdatmint_lt">ethPriceUSDAtMint_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.ethpriceusdatmint_gte">ethPriceUSDAtMint_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.ethpriceusdatmint_lte">ethPriceUSDAtMint_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.ethpriceusdatmint_in">ethPriceUSDAtMint_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.ethpriceusdatmint_not_in">ethPriceUSDAtMint_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.token0derivedethatmint">token0DerivedEthAtMint</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.token0derivedethatmint_not">token0DerivedEthAtMint_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.token0derivedethatmint_gt">token0DerivedEthAtMint_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.token0derivedethatmint_lt">token0DerivedEthAtMint_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.token0derivedethatmint_gte">token0DerivedEthAtMint_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.token0derivedethatmint_lte">token0DerivedEthAtMint_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.token0derivedethatmint_in">token0DerivedEthAtMint_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.token0derivedethatmint_not_in">token0DerivedEthAtMint_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.token1derivedethatmint">token1DerivedEthAtMint</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.token1derivedethatmint_not">token1DerivedEthAtMint_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.token1derivedethatmint_gt">token1DerivedEthAtMint_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.token1derivedethatmint_lt">token1DerivedEthAtMint_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.token1derivedethatmint_gte">token1DerivedEthAtMint_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.token1derivedethatmint_lte">token1DerivedEthAtMint_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.token1derivedethatmint_in">token1DerivedEthAtMint_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.token1derivedethatmint_not_in">token1DerivedEthAtMint_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong id="optionmint_filter._change_block">_change_block</strong></td>
 <td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
 <td>
@@ -22702,1314 +30851,6 @@ Filter for the block changed event.
 <tr>
 <td colspan="2" valign="top"><strong id="optionmint_filter.or">or</strong></td>
 <td valign="top">[<a href="#optionmint_filter">OptionMint_filter</a>]</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-### OptionRoll_filter
-
-<table>
-<thead>
-<tr>
-<th colspan="2" align="left">Field</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.id">id</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.id_not">id_not</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.id_gt">id_gt</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.id_lt">id_lt</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.id_gte">id_gte</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.id_lte">id_lte</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.id_in">id_in</strong></td>
-<td valign="top">[<a href="#id">ID</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.id_not_in">id_not_in</strong></td>
-<td valign="top">[<a href="#id">ID</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.hash">hash</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.hash_not">hash_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.hash_gt">hash_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.hash_lt">hash_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.hash_gte">hash_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.hash_lte">hash_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.hash_in">hash_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.hash_not_in">hash_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.hash_contains">hash_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.hash_contains_nocase">hash_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.hash_not_contains">hash_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.hash_not_contains_nocase">hash_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.hash_starts_with">hash_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.hash_starts_with_nocase">hash_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.hash_not_starts_with">hash_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.hash_not_starts_with_nocase">hash_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.hash_ends_with">hash_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.hash_ends_with_nocase">hash_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.hash_not_ends_with">hash_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.hash_not_ends_with_nocase">hash_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.logindex">logIndex</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.logindex_not">logIndex_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.logindex_gt">logIndex_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.logindex_lt">logIndex_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.logindex_gte">logIndex_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.logindex_lte">logIndex_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.logindex_in">logIndex_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.logindex_not_in">logIndex_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.eventtype">eventType</strong></td>
-<td valign="top"><a href="#eventtype">EventType</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.eventtype_not">eventType_not</strong></td>
-<td valign="top"><a href="#eventtype">EventType</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.eventtype_in">eventType_in</strong></td>
-<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.eventtype_not_in">eventType_not_in</strong></td>
-<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.from">from</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.from_not">from_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.from_gt">from_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.from_lt">from_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.from_gte">from_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.from_lte">from_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.from_in">from_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.from_not_in">from_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.from_contains">from_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.from_contains_nocase">from_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.from_not_contains">from_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.from_not_contains_nocase">from_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.from_starts_with">from_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.from_starts_with_nocase">from_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.from_not_starts_with">from_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.from_not_starts_with_nocase">from_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.from_ends_with">from_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.from_ends_with_nocase">from_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.from_not_ends_with">from_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.from_not_ends_with_nocase">from_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.to">to</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.to_not">to_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.to_gt">to_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.to_lt">to_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.to_gte">to_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.to_lte">to_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.to_in">to_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.to_not_in">to_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.to_contains">to_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.to_contains_nocase">to_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.to_not_contains">to_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.to_not_contains_nocase">to_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.to_starts_with">to_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.to_starts_with_nocase">to_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.to_not_starts_with">to_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.to_not_starts_with_nocase">to_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.to_ends_with">to_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.to_ends_with_nocase">to_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.to_not_ends_with">to_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.blocknumber">blockNumber</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.blocknumber_not">blockNumber_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.blocknumber_gt">blockNumber_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.blocknumber_lt">blockNumber_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.blocknumber_gte">blockNumber_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.blocknumber_lte">blockNumber_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.blocknumber_in">blockNumber_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.blocknumber_not_in">blockNumber_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.timestamp">timestamp</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.timestamp_not">timestamp_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.timestamp_gt">timestamp_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.timestamp_lt">timestamp_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.timestamp_gte">timestamp_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.timestamp_lte">timestamp_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.timestamp_in">timestamp_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.timestamp_not_in">timestamp_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.gasused">gasUsed</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.gasused_not">gasUsed_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.gasused_gt">gasUsed_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.gasused_lt">gasUsed_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.gasused_gte">gasUsed_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.gasused_lte">gasUsed_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.gasused_in">gasUsed_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.gasused_not_in">gasUsed_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.gasprice">gasPrice</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.gasprice_not">gasPrice_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.gasprice_gt">gasPrice_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.gasprice_lt">gasPrice_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.gasprice_gte">gasPrice_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.gasprice_lte">gasPrice_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.gasprice_in">gasPrice_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.gasprice_not_in">gasPrice_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.pool">pool</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.pool_not">pool_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.pool_gt">pool_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.pool_lt">pool_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.pool_gte">pool_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.pool_lte">pool_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.pool_in">pool_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.pool_not_in">pool_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.pool_contains">pool_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.pool_contains_nocase">pool_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.pool_not_contains">pool_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.pool_not_contains_nocase">pool_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.pool_starts_with">pool_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.pool_starts_with_nocase">pool_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.pool_not_starts_with">pool_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.pool_not_starts_with_nocase">pool_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.pool_ends_with">pool_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.pool_ends_with_nocase">pool_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.pool_not_ends_with">pool_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.pool_not_ends_with_nocase">pool_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.pool_">pool_</strong></td>
-<td valign="top"><a href="#pool_filter">Pool_filter</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.recipient">recipient</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.recipient_not">recipient_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.recipient_gt">recipient_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.recipient_lt">recipient_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.recipient_gte">recipient_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.recipient_lte">recipient_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.recipient_in">recipient_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.recipient_not_in">recipient_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.recipient_contains">recipient_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.recipient_contains_nocase">recipient_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.recipient_not_contains">recipient_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.recipient_not_contains_nocase">recipient_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.recipient_starts_with">recipient_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.recipient_starts_with_nocase">recipient_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.recipient_not_starts_with">recipient_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.recipient_not_starts_with_nocase">recipient_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.recipient_ends_with">recipient_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.recipient_ends_with_nocase">recipient_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.recipient_not_ends_with">recipient_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.recipient_not_ends_with_nocase">recipient_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.recipient_">recipient_</strong></td>
-<td valign="top"><a href="#account_filter">Account_filter</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.positionsize">positionSize</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.positionsize_not">positionSize_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.positionsize_gt">positionSize_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.positionsize_lt">positionSize_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.positionsize_gte">positionSize_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.positionsize_lte">positionSize_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.positionsize_in">positionSize_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.positionsize_not_in">positionSize_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.oldtokenid">oldTokenId</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.oldtokenid_not">oldTokenId_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.oldtokenid_gt">oldTokenId_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.oldtokenid_lt">oldTokenId_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.oldtokenid_gte">oldTokenId_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.oldtokenid_lte">oldTokenId_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.oldtokenid_in">oldTokenId_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.oldtokenid_not_in">oldTokenId_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.newtokenid">newTokenId</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.newtokenid_not">newTokenId_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.newtokenid_gt">newTokenId_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.newtokenid_lt">newTokenId_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.newtokenid_gte">newTokenId_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.newtokenid_lte">newTokenId_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.newtokenid_in">newTokenId_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.newtokenid_not_in">newTokenId_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.tickatroll">tickAtRoll</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.tickatroll_not">tickAtRoll_not</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.tickatroll_gt">tickAtRoll_gt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.tickatroll_lt">tickAtRoll_lt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.tickatroll_gte">tickAtRoll_gte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.tickatroll_lte">tickAtRoll_lte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.tickatroll_in">tickAtRoll_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.tickatroll_not_in">tickAtRoll_not_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.poolutilizations">poolUtilizations</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.poolutilizations_not">poolUtilizations_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.poolutilizations_gt">poolUtilizations_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.poolutilizations_lt">poolUtilizations_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.poolutilizations_gte">poolUtilizations_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.poolutilizations_lte">poolUtilizations_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.poolutilizations_in">poolUtilizations_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.poolutilizations_not_in">poolUtilizations_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.premia">premia</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.premia_not">premia_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.premia_gt">premia_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.premia_lt">premia_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.premia_gte">premia_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.premia_lte">premia_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.premia_in">premia_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.premia_not_in">premia_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.panopticpool">panopticPool</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.panopticpool_not">panopticPool_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.panopticpool_gt">panopticPool_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.panopticpool_lt">panopticPool_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.panopticpool_gte">panopticPool_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.panopticpool_lte">panopticPool_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.panopticpool_in">panopticPool_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.panopticpool_not_in">panopticPool_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.panopticpool_contains">panopticPool_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.panopticpool_contains_nocase">panopticPool_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.panopticpool_not_contains">panopticPool_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.panopticpool_not_contains_nocase">panopticPool_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.panopticpool_starts_with">panopticPool_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.panopticpool_starts_with_nocase">panopticPool_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.panopticpool_not_starts_with">panopticPool_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.panopticpool_not_starts_with_nocase">panopticPool_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.panopticpool_ends_with">panopticPool_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.panopticpool_ends_with_nocase">panopticPool_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.panopticpool_not_ends_with">panopticPool_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.panopticpool_not_ends_with_nocase">panopticPool_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.panopticpool_">panopticPool_</strong></td>
-<td valign="top"><a href="#panopticpool_filter">PanopticPool_filter</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.poolutilization0">poolUtilization0</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.poolutilization0_not">poolUtilization0_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.poolutilization0_gt">poolUtilization0_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.poolutilization0_lt">poolUtilization0_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.poolutilization0_gte">poolUtilization0_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.poolutilization0_lte">poolUtilization0_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.poolutilization0_in">poolUtilization0_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.poolutilization0_not_in">poolUtilization0_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.poolutilization1">poolUtilization1</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.poolutilization1_not">poolUtilization1_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.poolutilization1_gt">poolUtilization1_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.poolutilization1_lt">poolUtilization1_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.poolutilization1_gte">poolUtilization1_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.poolutilization1_lte">poolUtilization1_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.poolutilization1_in">poolUtilization1_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.poolutilization1_not_in">poolUtilization1_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.premium0">premium0</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.premium0_not">premium0_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.premium0_gt">premium0_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.premium0_lt">premium0_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.premium0_gte">premium0_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.premium0_lte">premium0_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.premium0_in">premium0_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.premium0_not_in">premium0_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.premium1">premium1</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.premium1_not">premium1_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.premium1_gt">premium1_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.premium1_lt">premium1_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.premium1_gte">premium1_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.premium1_lte">premium1_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.premium1_in">premium1_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.premium1_not_in">premium1_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter._change_block">_change_block</strong></td>
-<td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
-<td>
-
-Filter for the block changed event.
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.and">and</strong></td>
-<td valign="top">[<a href="#optionroll_filter">OptionRoll_filter</a>]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionroll_filter.or">or</strong></td>
-<td valign="top">[<a href="#optionroll_filter">OptionRoll_filter</a>]</td>
 <td></td>
 </tr>
 </tbody>
@@ -24615,46 +31456,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.collateral0assets">collateral0Assets</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.collateral0assets_not">collateral0Assets_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.collateral0assets_gt">collateral0Assets_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.collateral0assets_lt">collateral0Assets_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.collateral0assets_gte">collateral0Assets_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.collateral0assets_lte">collateral0Assets_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.collateral0assets_in">collateral0Assets_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.collateral0assets_not_in">collateral0Assets_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.collateral1">collateral1</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
@@ -24796,46 +31597,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.collateral1shares_not_in">collateral1Shares_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.collateral1assets">collateral1Assets</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.collateral1assets_not">collateral1Assets_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.collateral1assets_gt">collateral1Assets_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.collateral1assets_lt">collateral1Assets_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.collateral1assets_gte">collateral1Assets_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.collateral1assets_lte">collateral1Assets_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.collateral1assets_in">collateral1Assets_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.collateral1assets_not_in">collateral1Assets_not_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
@@ -27471,208 +34232,113 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss0">protocolLoss0</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss0_not">protocolLoss0_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss0_gt">protocolLoss0_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss0_lt">protocolLoss0_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss0_gte">protocolLoss0_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss0_lte">protocolLoss0_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss0_in">protocolLoss0_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss0_not_in">protocolLoss0_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss0usd">protocolLoss0USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss0usd_not">protocolLoss0USD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss0usd_gt">protocolLoss0USD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss0usd_lt">protocolLoss0USD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss0usd_gte">protocolLoss0USD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss0usd_lte">protocolLoss0USD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss0usd_in">protocolLoss0USD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss0usd_not_in">protocolLoss0USD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss1">protocolLoss1</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss1_not">protocolLoss1_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss1_gt">protocolLoss1_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss1_lt">protocolLoss1_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss1_gte">protocolLoss1_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss1_lte">protocolLoss1_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss1_in">protocolLoss1_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss1_not_in">protocolLoss1_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss1usd">protocolLoss1USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss1usd_not">protocolLoss1USD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss1usd_gt">protocolLoss1USD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss1usd_lt">protocolLoss1USD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss1usd_gte">protocolLoss1USD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss1usd_lte">protocolLoss1USD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss1usd_in">protocolLoss1USD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocolloss1usd_not_in">protocolLoss1USD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocollossusd">protocolLossUSD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocollossusd_not">protocolLossUSD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocollossusd_gt">protocolLossUSD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocollossusd_lt">protocolLossUSD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocollossusd_gte">protocolLossUSD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocollossusd_lte">protocolLossUSD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocollossusd_in">protocolLossUSD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.protocollossusd_not_in">protocolLossUSD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="panopticpool_filter.chunks_">chunks_</strong></td>
 <td valign="top"><a href="#chunk_filter">Chunk_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.riskengine">riskEngine</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.riskengine_not">riskEngine_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.riskengine_gt">riskEngine_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.riskengine_lt">riskEngine_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.riskengine_gte">riskEngine_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.riskengine_lte">riskEngine_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.riskengine_in">riskEngine_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.riskengine_not_in">riskEngine_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.riskengine_contains">riskEngine_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.riskengine_contains_nocase">riskEngine_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.riskengine_not_contains">riskEngine_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.riskengine_not_contains_nocase">riskEngine_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.riskengine_starts_with">riskEngine_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.riskengine_starts_with_nocase">riskEngine_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.riskengine_not_starts_with">riskEngine_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.riskengine_not_starts_with_nocase">riskEngine_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.riskengine_ends_with">riskEngine_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.riskengine_ends_with_nocase">riskEngine_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.riskengine_not_ends_with">riskEngine_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.riskengine_not_ends_with_nocase">riskEngine_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="panopticpool_filter.riskengine_">riskEngine_</strong></td>
+<td valign="top"><a href="#riskengine_filter">RiskEngine_filter</a></td>
 <td></td>
 </tr>
 <tr>
@@ -31729,6 +38395,1172 @@ Filter for the block changed event.
 </tbody>
 </table>
 
+### ProtocolLossRealized_filter
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.id">id</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.id_not">id_not</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.id_gt">id_gt</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.id_lt">id_lt</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.id_gte">id_gte</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.id_lte">id_lte</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.id_in">id_in</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.id_not_in">id_not_in</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.hash">hash</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.hash_not">hash_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.hash_gt">hash_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.hash_lt">hash_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.hash_gte">hash_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.hash_lte">hash_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.hash_in">hash_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.hash_not_in">hash_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.hash_contains">hash_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.hash_contains_nocase">hash_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.hash_not_contains">hash_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.hash_not_contains_nocase">hash_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.hash_starts_with">hash_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.hash_starts_with_nocase">hash_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.hash_not_starts_with">hash_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.hash_not_starts_with_nocase">hash_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.hash_ends_with">hash_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.hash_ends_with_nocase">hash_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.hash_not_ends_with">hash_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.hash_not_ends_with_nocase">hash_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.logindex">logIndex</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.logindex_not">logIndex_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.logindex_gt">logIndex_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.logindex_lt">logIndex_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.logindex_gte">logIndex_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.logindex_lte">logIndex_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.logindex_in">logIndex_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.logindex_not_in">logIndex_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.eventtype">eventType</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.eventtype_not">eventType_not</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.eventtype_in">eventType_in</strong></td>
+<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.eventtype_not_in">eventType_not_in</strong></td>
+<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.from">from</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.from_not">from_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.from_gt">from_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.from_lt">from_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.from_gte">from_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.from_lte">from_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.from_in">from_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.from_not_in">from_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.from_contains">from_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.from_contains_nocase">from_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.from_not_contains">from_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.from_not_contains_nocase">from_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.from_starts_with">from_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.from_starts_with_nocase">from_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.from_not_starts_with">from_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.from_not_starts_with_nocase">from_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.from_ends_with">from_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.from_ends_with_nocase">from_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.from_not_ends_with">from_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.from_not_ends_with_nocase">from_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.to">to</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.to_not">to_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.to_gt">to_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.to_lt">to_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.to_gte">to_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.to_lte">to_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.to_in">to_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.to_not_in">to_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.to_contains">to_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.to_contains_nocase">to_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.to_not_contains">to_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.to_not_contains_nocase">to_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.to_starts_with">to_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.to_starts_with_nocase">to_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.to_not_starts_with">to_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.to_not_starts_with_nocase">to_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.to_ends_with">to_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.to_ends_with_nocase">to_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.to_not_ends_with">to_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.blocknumber">blockNumber</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.blocknumber_not">blockNumber_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.blocknumber_gt">blockNumber_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.blocknumber_lt">blockNumber_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.blocknumber_gte">blockNumber_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.blocknumber_lte">blockNumber_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.blocknumber_in">blockNumber_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.blocknumber_not_in">blockNumber_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.timestamp">timestamp</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.timestamp_not">timestamp_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.timestamp_gt">timestamp_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.timestamp_lt">timestamp_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.timestamp_gte">timestamp_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.timestamp_lte">timestamp_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.timestamp_in">timestamp_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.timestamp_not_in">timestamp_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.gasused">gasUsed</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.gasused_not">gasUsed_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.gasused_gt">gasUsed_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.gasused_lt">gasUsed_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.gasused_gte">gasUsed_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.gasused_lte">gasUsed_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.gasused_in">gasUsed_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.gasused_not_in">gasUsed_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.gasprice">gasPrice</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.gasprice_not">gasPrice_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.gasprice_gt">gasPrice_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.gasprice_lt">gasPrice_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.gasprice_gte">gasPrice_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.gasprice_lte">gasPrice_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.gasprice_in">gasPrice_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.gasprice_not_in">gasPrice_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.pool">pool</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.pool_not">pool_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.pool_gt">pool_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.pool_lt">pool_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.pool_gte">pool_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.pool_lte">pool_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.pool_in">pool_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.pool_not_in">pool_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.pool_contains">pool_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.pool_contains_nocase">pool_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.pool_not_contains">pool_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.pool_not_contains_nocase">pool_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.pool_starts_with">pool_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.pool_starts_with_nocase">pool_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.pool_not_starts_with">pool_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.pool_not_starts_with_nocase">pool_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.pool_ends_with">pool_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.pool_ends_with_nocase">pool_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.pool_not_ends_with">pool_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.pool_not_ends_with_nocase">pool_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.pool_">pool_</strong></td>
+<td valign="top"><a href="#pool_filter">Pool_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidatee">liquidatee</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidatee_not">liquidatee_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidatee_gt">liquidatee_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidatee_lt">liquidatee_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidatee_gte">liquidatee_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidatee_lte">liquidatee_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidatee_in">liquidatee_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidatee_not_in">liquidatee_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidatee_contains">liquidatee_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidatee_contains_nocase">liquidatee_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidatee_not_contains">liquidatee_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidatee_not_contains_nocase">liquidatee_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidatee_starts_with">liquidatee_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidatee_starts_with_nocase">liquidatee_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidatee_not_starts_with">liquidatee_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidatee_not_starts_with_nocase">liquidatee_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidatee_ends_with">liquidatee_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidatee_ends_with_nocase">liquidatee_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidatee_not_ends_with">liquidatee_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidatee_not_ends_with_nocase">liquidatee_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidatee_">liquidatee_</strong></td>
+<td valign="top"><a href="#account_filter">Account_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidator">liquidator</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidator_not">liquidator_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidator_gt">liquidator_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidator_lt">liquidator_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidator_gte">liquidator_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidator_lte">liquidator_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidator_in">liquidator_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidator_not_in">liquidator_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidator_contains">liquidator_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidator_contains_nocase">liquidator_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidator_not_contains">liquidator_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidator_not_contains_nocase">liquidator_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidator_starts_with">liquidator_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidator_starts_with_nocase">liquidator_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidator_not_starts_with">liquidator_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidator_not_starts_with_nocase">liquidator_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidator_ends_with">liquidator_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidator_ends_with_nocase">liquidator_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidator_not_ends_with">liquidator_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidator_not_ends_with_nocase">liquidator_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.liquidator_">liquidator_</strong></td>
+<td valign="top"><a href="#account_filter">Account_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.protocollossassets">protocolLossAssets</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.protocollossassets_not">protocolLossAssets_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.protocollossassets_gt">protocolLossAssets_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.protocollossassets_lt">protocolLossAssets_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.protocollossassets_gte">protocolLossAssets_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.protocollossassets_lte">protocolLossAssets_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.protocollossassets_in">protocolLossAssets_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.protocollossassets_not_in">protocolLossAssets_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.protocollossshares">protocolLossShares</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.protocollossshares_not">protocolLossShares_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.protocollossshares_gt">protocolLossShares_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.protocollossshares_lt">protocolLossShares_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.protocollossshares_gte">protocolLossShares_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.protocollossshares_lte">protocolLossShares_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.protocollossshares_in">protocolLossShares_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.protocollossshares_not_in">protocolLossShares_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.collateral">collateral</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.collateral_not">collateral_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.collateral_gt">collateral_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.collateral_lt">collateral_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.collateral_gte">collateral_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.collateral_lte">collateral_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.collateral_in">collateral_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.collateral_not_in">collateral_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.collateral_contains">collateral_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.collateral_contains_nocase">collateral_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.collateral_not_contains">collateral_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.collateral_not_contains_nocase">collateral_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.collateral_starts_with">collateral_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.collateral_starts_with_nocase">collateral_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.collateral_not_starts_with">collateral_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.collateral_not_starts_with_nocase">collateral_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.collateral_ends_with">collateral_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.collateral_ends_with_nocase">collateral_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.collateral_not_ends_with">collateral_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.collateral_not_ends_with_nocase">collateral_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.collateral_">collateral_</strong></td>
+<td valign="top"><a href="#collateral_filter">Collateral_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter._change_block">_change_block</strong></td>
+<td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
+<td>
+
+Filter for the block changed event.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.and">and</strong></td>
+<td valign="top">[<a href="#protocollossrealized_filter">ProtocolLossRealized_filter</a>]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.or">or</strong></td>
+<td valign="top">[<a href="#protocollossrealized_filter">ProtocolLossRealized_filter</a>]</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### RiskEngine_filter
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="riskengine_filter.id">id</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="riskengine_filter.id_not">id_not</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="riskengine_filter.id_gt">id_gt</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="riskengine_filter.id_lt">id_lt</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="riskengine_filter.id_gte">id_gte</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="riskengine_filter.id_lte">id_lte</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="riskengine_filter.id_in">id_in</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="riskengine_filter.id_not_in">id_not_in</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="riskengine_filter._change_block">_change_block</strong></td>
+<td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
+<td>
+
+Filter for the block changed event.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="riskengine_filter.and">and</strong></td>
+<td valign="top">[<a href="#riskengine_filter">RiskEngine_filter</a>]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="riskengine_filter.or">or</strong></td>
+<td valign="top">[<a href="#riskengine_filter">RiskEngine_filter</a>]</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
 ### TokenId_filter
 
 <table>
@@ -34531,7 +42363,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### TokenizedPositionRolled_filter
+### TokensCollected_filter
 
 <table>
 <thead>
@@ -34543,1027 +42375,917 @@ Filter for the block changed event.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.id">id</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.id">id</strong></td>
 <td valign="top"><a href="#id">ID</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.id_not">id_not</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.id_not">id_not</strong></td>
 <td valign="top"><a href="#id">ID</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.id_gt">id_gt</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.id_gt">id_gt</strong></td>
 <td valign="top"><a href="#id">ID</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.id_lt">id_lt</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.id_lt">id_lt</strong></td>
 <td valign="top"><a href="#id">ID</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.id_gte">id_gte</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.id_gte">id_gte</strong></td>
 <td valign="top"><a href="#id">ID</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.id_lte">id_lte</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.id_lte">id_lte</strong></td>
 <td valign="top"><a href="#id">ID</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.id_in">id_in</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.id_in">id_in</strong></td>
 <td valign="top">[<a href="#id">ID</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.id_not_in">id_not_in</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.id_not_in">id_not_in</strong></td>
 <td valign="top">[<a href="#id">ID</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.hash">hash</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.hash">hash</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.hash_not">hash_not</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.hash_not">hash_not</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.hash_gt">hash_gt</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.hash_gt">hash_gt</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.hash_lt">hash_lt</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.hash_lt">hash_lt</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.hash_gte">hash_gte</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.hash_gte">hash_gte</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.hash_lte">hash_lte</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.hash_lte">hash_lte</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.hash_in">hash_in</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.hash_in">hash_in</strong></td>
 <td valign="top">[<a href="#string">String</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.hash_not_in">hash_not_in</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.hash_not_in">hash_not_in</strong></td>
 <td valign="top">[<a href="#string">String</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.hash_contains">hash_contains</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.hash_contains">hash_contains</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.hash_contains_nocase">hash_contains_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.hash_contains_nocase">hash_contains_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.hash_not_contains">hash_not_contains</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.hash_not_contains">hash_not_contains</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.hash_not_contains_nocase">hash_not_contains_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.hash_not_contains_nocase">hash_not_contains_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.hash_starts_with">hash_starts_with</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.hash_starts_with">hash_starts_with</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.hash_starts_with_nocase">hash_starts_with_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.hash_starts_with_nocase">hash_starts_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.hash_not_starts_with">hash_not_starts_with</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.hash_not_starts_with">hash_not_starts_with</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.hash_not_starts_with_nocase">hash_not_starts_with_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.hash_not_starts_with_nocase">hash_not_starts_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.hash_ends_with">hash_ends_with</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.hash_ends_with">hash_ends_with</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.hash_ends_with_nocase">hash_ends_with_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.hash_ends_with_nocase">hash_ends_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.hash_not_ends_with">hash_not_ends_with</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.hash_not_ends_with">hash_not_ends_with</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.hash_not_ends_with_nocase">hash_not_ends_with_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.hash_not_ends_with_nocase">hash_not_ends_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.logindex">logIndex</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.logindex">logIndex</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.logindex_not">logIndex_not</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.logindex_not">logIndex_not</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.logindex_gt">logIndex_gt</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.logindex_gt">logIndex_gt</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.logindex_lt">logIndex_lt</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.logindex_lt">logIndex_lt</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.logindex_gte">logIndex_gte</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.logindex_gte">logIndex_gte</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.logindex_lte">logIndex_lte</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.logindex_lte">logIndex_lte</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.logindex_in">logIndex_in</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.logindex_in">logIndex_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.logindex_not_in">logIndex_not_in</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.logindex_not_in">logIndex_not_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.eventtype">eventType</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.eventtype">eventType</strong></td>
 <td valign="top"><a href="#eventtype">EventType</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.eventtype_not">eventType_not</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.eventtype_not">eventType_not</strong></td>
 <td valign="top"><a href="#eventtype">EventType</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.eventtype_in">eventType_in</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.eventtype_in">eventType_in</strong></td>
 <td valign="top">[<a href="#eventtype">EventType</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.eventtype_not_in">eventType_not_in</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.eventtype_not_in">eventType_not_in</strong></td>
 <td valign="top">[<a href="#eventtype">EventType</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.from">from</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.from">from</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.from_not">from_not</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.from_not">from_not</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.from_gt">from_gt</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.from_gt">from_gt</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.from_lt">from_lt</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.from_lt">from_lt</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.from_gte">from_gte</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.from_gte">from_gte</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.from_lte">from_lte</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.from_lte">from_lte</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.from_in">from_in</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.from_in">from_in</strong></td>
 <td valign="top">[<a href="#string">String</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.from_not_in">from_not_in</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.from_not_in">from_not_in</strong></td>
 <td valign="top">[<a href="#string">String</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.from_contains">from_contains</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.from_contains">from_contains</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.from_contains_nocase">from_contains_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.from_contains_nocase">from_contains_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.from_not_contains">from_not_contains</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.from_not_contains">from_not_contains</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.from_not_contains_nocase">from_not_contains_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.from_not_contains_nocase">from_not_contains_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.from_starts_with">from_starts_with</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.from_starts_with">from_starts_with</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.from_starts_with_nocase">from_starts_with_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.from_starts_with_nocase">from_starts_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.from_not_starts_with">from_not_starts_with</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.from_not_starts_with">from_not_starts_with</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.from_not_starts_with_nocase">from_not_starts_with_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.from_not_starts_with_nocase">from_not_starts_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.from_ends_with">from_ends_with</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.from_ends_with">from_ends_with</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.from_ends_with_nocase">from_ends_with_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.from_ends_with_nocase">from_ends_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.from_not_ends_with">from_not_ends_with</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.from_not_ends_with">from_not_ends_with</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.from_not_ends_with_nocase">from_not_ends_with_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.from_not_ends_with_nocase">from_not_ends_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.to">to</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.to">to</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.to_not">to_not</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.to_not">to_not</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.to_gt">to_gt</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.to_gt">to_gt</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.to_lt">to_lt</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.to_lt">to_lt</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.to_gte">to_gte</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.to_gte">to_gte</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.to_lte">to_lte</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.to_lte">to_lte</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.to_in">to_in</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.to_in">to_in</strong></td>
 <td valign="top">[<a href="#string">String</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.to_not_in">to_not_in</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.to_not_in">to_not_in</strong></td>
 <td valign="top">[<a href="#string">String</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.to_contains">to_contains</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.to_contains">to_contains</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.to_contains_nocase">to_contains_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.to_contains_nocase">to_contains_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.to_not_contains">to_not_contains</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.to_not_contains">to_not_contains</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.to_not_contains_nocase">to_not_contains_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.to_not_contains_nocase">to_not_contains_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.to_starts_with">to_starts_with</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.to_starts_with">to_starts_with</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.to_starts_with_nocase">to_starts_with_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.to_starts_with_nocase">to_starts_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.to_not_starts_with">to_not_starts_with</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.to_not_starts_with">to_not_starts_with</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.to_not_starts_with_nocase">to_not_starts_with_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.to_not_starts_with_nocase">to_not_starts_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.to_ends_with">to_ends_with</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.to_ends_with">to_ends_with</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.to_ends_with_nocase">to_ends_with_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.to_ends_with_nocase">to_ends_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.to_not_ends_with">to_not_ends_with</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.to_not_ends_with">to_not_ends_with</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.blocknumber">blockNumber</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.blocknumber">blockNumber</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.blocknumber_not">blockNumber_not</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.blocknumber_not">blockNumber_not</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.blocknumber_gt">blockNumber_gt</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.blocknumber_gt">blockNumber_gt</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.blocknumber_lt">blockNumber_lt</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.blocknumber_lt">blockNumber_lt</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.blocknumber_gte">blockNumber_gte</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.blocknumber_gte">blockNumber_gte</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.blocknumber_lte">blockNumber_lte</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.blocknumber_lte">blockNumber_lte</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.blocknumber_in">blockNumber_in</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.blocknumber_in">blockNumber_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.blocknumber_not_in">blockNumber_not_in</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.blocknumber_not_in">blockNumber_not_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.timestamp">timestamp</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.timestamp">timestamp</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.timestamp_not">timestamp_not</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.timestamp_not">timestamp_not</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.timestamp_gt">timestamp_gt</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.timestamp_gt">timestamp_gt</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.timestamp_lt">timestamp_lt</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.timestamp_lt">timestamp_lt</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.timestamp_gte">timestamp_gte</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.timestamp_gte">timestamp_gte</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.timestamp_lte">timestamp_lte</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.timestamp_lte">timestamp_lte</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.timestamp_in">timestamp_in</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.timestamp_in">timestamp_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.timestamp_not_in">timestamp_not_in</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.timestamp_not_in">timestamp_not_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.gasused">gasUsed</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.gasused">gasUsed</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.gasused_not">gasUsed_not</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.gasused_not">gasUsed_not</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.gasused_gt">gasUsed_gt</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.gasused_gt">gasUsed_gt</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.gasused_lt">gasUsed_lt</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.gasused_lt">gasUsed_lt</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.gasused_gte">gasUsed_gte</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.gasused_gte">gasUsed_gte</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.gasused_lte">gasUsed_lte</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.gasused_lte">gasUsed_lte</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.gasused_in">gasUsed_in</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.gasused_in">gasUsed_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.gasused_not_in">gasUsed_not_in</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.gasused_not_in">gasUsed_not_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.gasprice">gasPrice</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.gasprice">gasPrice</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.gasprice_not">gasPrice_not</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.gasprice_not">gasPrice_not</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.gasprice_gt">gasPrice_gt</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.gasprice_gt">gasPrice_gt</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.gasprice_lt">gasPrice_lt</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.gasprice_lt">gasPrice_lt</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.gasprice_gte">gasPrice_gte</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.gasprice_gte">gasPrice_gte</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.gasprice_lte">gasPrice_lte</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.gasprice_lte">gasPrice_lte</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.gasprice_in">gasPrice_in</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.gasprice_in">gasPrice_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.gasprice_not_in">gasPrice_not_in</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.gasprice_not_in">gasPrice_not_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.pool">pool</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool">pool</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.pool_not">pool_not</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_not">pool_not</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.pool_gt">pool_gt</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_gt">pool_gt</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.pool_lt">pool_lt</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_lt">pool_lt</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.pool_gte">pool_gte</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_gte">pool_gte</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.pool_lte">pool_lte</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_lte">pool_lte</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.pool_in">pool_in</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_in">pool_in</strong></td>
 <td valign="top">[<a href="#string">String</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.pool_not_in">pool_not_in</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_not_in">pool_not_in</strong></td>
 <td valign="top">[<a href="#string">String</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.pool_contains">pool_contains</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_contains">pool_contains</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.pool_contains_nocase">pool_contains_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_contains_nocase">pool_contains_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.pool_not_contains">pool_not_contains</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_not_contains">pool_not_contains</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.pool_not_contains_nocase">pool_not_contains_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_not_contains_nocase">pool_not_contains_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.pool_starts_with">pool_starts_with</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_starts_with">pool_starts_with</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.pool_starts_with_nocase">pool_starts_with_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_starts_with_nocase">pool_starts_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.pool_not_starts_with">pool_not_starts_with</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_not_starts_with">pool_not_starts_with</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.pool_not_starts_with_nocase">pool_not_starts_with_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_not_starts_with_nocase">pool_not_starts_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.pool_ends_with">pool_ends_with</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_ends_with">pool_ends_with</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.pool_ends_with_nocase">pool_ends_with_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_ends_with_nocase">pool_ends_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.pool_not_ends_with">pool_not_ends_with</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_not_ends_with">pool_not_ends_with</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.pool_not_ends_with_nocase">pool_not_ends_with_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_not_ends_with_nocase">pool_not_ends_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.pool_">pool_</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_">pool_</strong></td>
 <td valign="top"><a href="#pool_filter">Pool_filter</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.recipient">recipient</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.riskengine">riskEngine</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.recipient_not">recipient_not</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.riskengine_not">riskEngine_not</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.recipient_gt">recipient_gt</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.riskengine_gt">riskEngine_gt</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.recipient_lt">recipient_lt</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.riskengine_lt">riskEngine_lt</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.recipient_gte">recipient_gte</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.riskengine_gte">riskEngine_gte</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.recipient_lte">recipient_lte</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.riskengine_lte">riskEngine_lte</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.recipient_in">recipient_in</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.riskengine_in">riskEngine_in</strong></td>
 <td valign="top">[<a href="#string">String</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.recipient_not_in">recipient_not_in</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.riskengine_not_in">riskEngine_not_in</strong></td>
 <td valign="top">[<a href="#string">String</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.recipient_contains">recipient_contains</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.riskengine_contains">riskEngine_contains</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.recipient_contains_nocase">recipient_contains_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.riskengine_contains_nocase">riskEngine_contains_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.recipient_not_contains">recipient_not_contains</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.riskengine_not_contains">riskEngine_not_contains</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.recipient_not_contains_nocase">recipient_not_contains_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.riskengine_not_contains_nocase">riskEngine_not_contains_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.recipient_starts_with">recipient_starts_with</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.riskengine_starts_with">riskEngine_starts_with</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.recipient_starts_with_nocase">recipient_starts_with_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.riskengine_starts_with_nocase">riskEngine_starts_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.recipient_not_starts_with">recipient_not_starts_with</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.riskengine_not_starts_with">riskEngine_not_starts_with</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.recipient_not_starts_with_nocase">recipient_not_starts_with_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.riskengine_not_starts_with_nocase">riskEngine_not_starts_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.recipient_ends_with">recipient_ends_with</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.riskengine_ends_with">riskEngine_ends_with</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.recipient_ends_with_nocase">recipient_ends_with_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.riskengine_ends_with_nocase">riskEngine_ends_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.recipient_not_ends_with">recipient_not_ends_with</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.riskengine_not_ends_with">riskEngine_not_ends_with</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.recipient_not_ends_with_nocase">recipient_not_ends_with_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.riskengine_not_ends_with_nocase">riskEngine_not_ends_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.recipient_">recipient_</strong></td>
-<td valign="top"><a href="#account_filter">Account_filter</a></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.riskengine_">riskEngine_</strong></td>
+<td valign="top"><a href="#riskengine_filter">RiskEngine_filter</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.oldtokenid">oldTokenId</strong></td>
-<td valign="top"><a href="#string">String</a></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.token">token</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.oldtokenid_not">oldTokenId_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.token_not">token_not</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.oldtokenid_gt">oldTokenId_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.token_gt">token_gt</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.oldtokenid_lt">oldTokenId_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.token_lt">token_lt</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.oldtokenid_gte">oldTokenId_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.token_gte">token_gte</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.oldtokenid_lte">oldTokenId_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.token_lte">token_lte</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.oldtokenid_in">oldTokenId_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.token_in">token_in</strong></td>
+<td valign="top">[<a href="#bytes">Bytes</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.oldtokenid_not_in">oldTokenId_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.token_not_in">token_not_in</strong></td>
+<td valign="top">[<a href="#bytes">Bytes</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.oldtokenid_contains">oldTokenId_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.token_contains">token_contains</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.oldtokenid_contains_nocase">oldTokenId_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.token_not_contains">token_not_contains</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.oldtokenid_not_contains">oldTokenId_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.recipient">recipient</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.oldtokenid_not_contains_nocase">oldTokenId_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.recipient_not">recipient_not</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.oldtokenid_starts_with">oldTokenId_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.recipient_gt">recipient_gt</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.oldtokenid_starts_with_nocase">oldTokenId_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.recipient_lt">recipient_lt</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.oldtokenid_not_starts_with">oldTokenId_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.recipient_gte">recipient_gte</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.oldtokenid_not_starts_with_nocase">oldTokenId_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.recipient_lte">recipient_lte</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.oldtokenid_ends_with">oldTokenId_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.recipient_in">recipient_in</strong></td>
+<td valign="top">[<a href="#bytes">Bytes</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.oldtokenid_ends_with_nocase">oldTokenId_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.recipient_not_in">recipient_not_in</strong></td>
+<td valign="top">[<a href="#bytes">Bytes</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.oldtokenid_not_ends_with">oldTokenId_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.recipient_contains">recipient_contains</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.oldtokenid_not_ends_with_nocase">oldTokenId_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.recipient_not_contains">recipient_not_contains</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.oldtokenid_">oldTokenId_</strong></td>
-<td valign="top"><a href="#tokenid_filter">TokenId_filter</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.newtokenid">newTokenId</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.newtokenid_not">newTokenId_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.newtokenid_gt">newTokenId_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.newtokenid_lt">newTokenId_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.newtokenid_gte">newTokenId_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.newtokenid_lte">newTokenId_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.newtokenid_in">newTokenId_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.newtokenid_not_in">newTokenId_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.newtokenid_contains">newTokenId_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.newtokenid_contains_nocase">newTokenId_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.newtokenid_not_contains">newTokenId_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.newtokenid_not_contains_nocase">newTokenId_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.newtokenid_starts_with">newTokenId_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.newtokenid_starts_with_nocase">newTokenId_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.newtokenid_not_starts_with">newTokenId_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.newtokenid_not_starts_with_nocase">newTokenId_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.newtokenid_ends_with">newTokenId_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.newtokenid_ends_with_nocase">newTokenId_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.newtokenid_not_ends_with">newTokenId_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.newtokenid_not_ends_with_nocase">newTokenId_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.newtokenid_">newTokenId_</strong></td>
-<td valign="top"><a href="#tokenid_filter">TokenId_filter</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.positionsize">positionSize</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.amount">amount</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.positionsize_not">positionSize_not</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.amount_not">amount_not</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.positionsize_gt">positionSize_gt</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.amount_gt">amount_gt</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.positionsize_lt">positionSize_lt</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.amount_lt">amount_lt</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.positionsize_gte">positionSize_gte</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.amount_gte">amount_gte</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.positionsize_lte">positionSize_lte</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.amount_lte">amount_lte</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.positionsize_in">positionSize_in</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.amount_in">amount_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.positionsize_not_in">positionSize_not_in</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.amount_not_in">amount_not_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter._change_block">_change_block</strong></td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter._change_block">_change_block</strong></td>
 <td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
 <td>
 
@@ -35572,13 +43294,13 @@ Filter for the block changed event.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.and">and</strong></td>
-<td valign="top">[<a href="#tokenizedpositionrolled_filter">TokenizedPositionRolled_filter</a>]</td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.and">and</strong></td>
+<td valign="top">[<a href="#tokenscollected_filter">TokensCollected_filter</a>]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenizedpositionrolled_filter.or">or</strong></td>
-<td valign="top">[<a href="#tokenizedpositionrolled_filter">TokenizedPositionRolled_filter</a>]</td>
+<td colspan="2" valign="top"><strong id="tokenscollected_filter.or">or</strong></td>
+<td valign="top">[<a href="#tokenscollected_filter">TokensCollected_filter</a>]</td>
 <td></td>
 </tr>
 </tbody>
@@ -35657,15 +43379,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPoolAccount__collateral0Assets</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPoolAccount__collateral1Shares</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPoolAccount__collateral1Assets</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -36170,26 +43884,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__protocolLoss0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss0USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLossUSD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__createdTimestamp</strong></td>
 <td></td>
 </tr>
@@ -36249,6 +43943,479 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>day</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### BaseEvent_orderBy
+
+<table>
+<thead>
+<tr>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><strong>id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>hash</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>logIndex</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>from</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>to</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>blockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>timestamp</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>gasUsed</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>gasPrice</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>eventType</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### BorrowRateUpdated_orderBy
+
+<table>
+<thead>
+<tr>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><strong>id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>hash</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>logIndex</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>eventType</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>from</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>to</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>blockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>timestamp</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>gasUsed</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>gasPrice</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__hooks</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__poolId</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__feeTier</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__tickSpacing</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__txCount</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__liquidity</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__sqrtPrice</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__tick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__token0Price</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__token1Price</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__minEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>riskEngine</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>riskEngine__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateralToken</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>avgBorrowRate</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>rateAtTarget</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### BuilderDeployed_orderBy
+
+<table>
+<thead>
+<tr>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><strong>id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>hash</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>logIndex</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>eventType</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>from</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>to</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>blockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>timestamp</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>gasUsed</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>gasPrice</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__hooks</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__poolId</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__feeTier</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__tickSpacing</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__txCount</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__liquidity</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__sqrtPrice</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__tick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__token0Price</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__token1Price</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__minEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>builderFactory</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>builderFactory__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>builderFactory__builderCount</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>builderFactory__createdTimestamp</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>builderFactory__createdBlockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>builderCode</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>wallet</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>builderAdmin</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### BuilderFactory_orderBy
+
+<table>
+<thead>
+<tr>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><strong>id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>riskEngine</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>riskEngine__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>builderWallets</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>builderCount</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>createdTimestamp</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>createdBlockNumber</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### BuilderWallet_orderBy
+
+<table>
+<thead>
+<tr>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><strong>id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>builderCode</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>builderAdmin</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>factory</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>factory__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>factory__builderCount</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>factory__createdTimestamp</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>factory__createdBlockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>createdTimestamp</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>createdBlockNumber</strong></td>
 <td></td>
 </tr>
 </tbody>
@@ -36735,26 +44902,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__protocolLoss0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss0USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLossUSD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__createdTimestamp</strong></td>
 <td></td>
 </tr>
@@ -36824,15 +44971,31 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__totalAssets</strong></td>
+<td valign="top"><strong>collateral__totalDonations</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__poolAssets</strong></td>
+<td valign="top"><strong>collateral__totalPLPCommissions</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__inAMM</strong></td>
+<td valign="top"><strong>collateral__totalProtocolCommissions</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__commissionPaidBuilder</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalInsolvencyPenalties</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalProtocolLossRealized</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalProtocolLossRealizedUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -36849,14 +45012,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>totalShares</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>totalAssets</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>sharePrice</strong></td>
 <td></td>
 </tr>
 </tbody>
@@ -37037,15 +45192,31 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__totalAssets</strong></td>
+<td valign="top"><strong>collateral__totalDonations</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__poolAssets</strong></td>
+<td valign="top"><strong>collateral__totalPLPCommissions</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__inAMM</strong></td>
+<td valign="top"><strong>collateral__totalProtocolCommissions</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__commissionPaidBuilder</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalInsolvencyPenalties</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalProtocolLossRealized</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalProtocolLossRealizedUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -37258,15 +45429,31 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__totalAssets</strong></td>
+<td valign="top"><strong>collateral__totalDonations</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__poolAssets</strong></td>
+<td valign="top"><strong>collateral__totalPLPCommissions</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__inAMM</strong></td>
+<td valign="top"><strong>collateral__totalProtocolCommissions</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__commissionPaidBuilder</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalInsolvencyPenalties</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalProtocolLossRealized</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalProtocolLossRealizedUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -37351,15 +45538,31 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>totalAssets</strong></td>
+<td valign="top"><strong>totalDonations</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>poolAssets</strong></td>
+<td valign="top"><strong>totalPLPCommissions</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>inAMM</strong></td>
+<td valign="top"><strong>totalProtocolCommissions</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>commissionPaidBuilder</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>totalInsolvencyPenalties</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>totalProtocolLossRealized</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>totalProtocolLossRealizedUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -37460,26 +45663,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>panopticPool__commissionsUSD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss0USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLossUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -37670,6 +45853,416 @@ Filter for the block changed event.
 </tbody>
 </table>
 
+### CommissionPaid_orderBy
+
+<table>
+<thead>
+<tr>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><strong>id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>hash</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>logIndex</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>eventType</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>from</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>to</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>blockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>timestamp</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>gasUsed</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>gasPrice</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__hooks</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__poolId</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__feeTier</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__tickSpacing</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__txCount</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__liquidity</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__sqrtPrice</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__tick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__token0Price</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__token1Price</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__minEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>owner</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>owner__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>builder</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>commissionPaidProtocol</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>commissionPaidBuilder</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__panopticVersion</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalShares</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalDonations</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalPLPCommissions</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalProtocolCommissions</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__commissionPaidBuilder</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalInsolvencyPenalties</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalProtocolLossRealized</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalProtocolLossRealizedUSD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__poolUtilization</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__index</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### Donate_orderBy
+
+<table>
+<thead>
+<tr>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><strong>id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>hash</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>logIndex</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>eventType</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>from</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>to</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>blockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>timestamp</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>gasUsed</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>gasPrice</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__hooks</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__poolId</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__feeTier</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__tickSpacing</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__txCount</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__liquidity</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__sqrtPrice</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__tick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__token0Price</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__token1Price</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__minEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>sender</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>sender__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>shares</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__panopticVersion</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalShares</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalDonations</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalPLPCommissions</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalProtocolCommissions</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__commissionPaidBuilder</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalInsolvencyPenalties</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalProtocolLossRealized</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalProtocolLossRealizedUSD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__poolUtilization</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__index</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
 ### EventType
 
 <table>
@@ -37789,6 +46382,62 @@ Filter for the block changed event.
 <td>
 
  Emitted when premium is settled independent of a mint/burn (e.g. during `settleLongPremium`)
+
+</td>
+</tr>
+<tr>
+<td valign="top"><strong>BorrowRateUpdated</strong></td>
+<td>
+
+ Borrow rate was updated for a collateral token 
+
+</td>
+</tr>
+<tr>
+<td valign="top"><strong>TokensCollected</strong></td>
+<td>
+
+ Tokens were collected from the RiskEngine contract 
+
+</td>
+</tr>
+<tr>
+<td valign="top"><strong>GuardianSafeModeUpdated</strong></td>
+<td>
+
+ Guardian updated the safe mode lock status 
+
+</td>
+</tr>
+<tr>
+<td valign="top"><strong>BuilderDeployed</strong></td>
+<td>
+
+ A new builder wallet was deployed 
+
+</td>
+</tr>
+<tr>
+<td valign="top"><strong>ProtocolLossRealized</strong></td>
+<td>
+
+ Protocol loss was realized during liquidation 
+
+</td>
+</tr>
+<tr>
+<td valign="top"><strong>CommissionPaid</strong></td>
+<td>
+
+ Collateral commission paid - Emitted when a commission is paid. 
+
+</td>
+</tr>
+<tr>
+<td valign="top"><strong>InsolvencyPenaltyApplied</strong></td>
+<td>
+
+ Collateral insolvency penalty - Emitted when a user attempts to settle interest but lacks sufficient shares to pay in full. 
 
 </td>
 </tr>
@@ -38232,26 +46881,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__protocolLoss0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss0USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLossUSD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__createdTimestamp</strong></td>
 <td></td>
 </tr>
@@ -38320,27 +46949,313 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>optionBurn__totalShares0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>optionBurn__totalAssets0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>optionBurn__totalShares1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>optionBurn__totalAssets1</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>optionBurn__panopticVersion</strong></td>
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>optionBurn__volume0USD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>optionBurn__volume1USD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>optionBurn__shares0</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>optionBurn__shares1</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>optionBurn__ethPriceUSDAtBurn</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>optionBurn__token0DerivedEthAtBurn</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>optionBurn__token1DerivedEthAtBurn</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>panopticVersion</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### GuardianSafeModeUpdated_orderBy
+
+<table>
+<thead>
+<tr>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><strong>id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>hash</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>logIndex</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>eventType</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>from</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>to</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>blockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>timestamp</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>gasUsed</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>gasPrice</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>riskEngine</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>riskEngine__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>lockMode</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### InsolvencyPenaltyApplied_orderBy
+
+<table>
+<thead>
+<tr>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><strong>id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>hash</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>logIndex</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>eventType</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>from</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>to</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>blockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>timestamp</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>gasUsed</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>gasPrice</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__hooks</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__poolId</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__feeTier</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__tickSpacing</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__txCount</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__liquidity</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__sqrtPrice</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__tick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__token0Price</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__token1Price</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__minEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>owner</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>owner__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>interestOwed</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>interestPaid</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>sharesBurned</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__panopticVersion</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalShares</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalDonations</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalPLPCommissions</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalProtocolCommissions</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__commissionPaidBuilder</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalInsolvencyPenalties</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalProtocolLossRealized</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalProtocolLossRealizedUSD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__poolUtilization</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__index</strong></td>
 <td></td>
 </tr>
 </tbody>
@@ -39164,26 +48079,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__protocolLoss0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss0USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLossUSD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__createdTimestamp</strong></td>
 <td></td>
 </tr>
@@ -39201,22 +48096,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>premiaByLeg</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>totalShares0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>totalAssets0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>totalShares1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>totalAssets1</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -39292,6 +48171,14 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>txnOpened__shares0</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>txnOpened__shares1</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>txnOpened__commissions0</strong></td>
 <td></td>
 </tr>
@@ -39317,6 +48204,26 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>txnOpened__panopticVersion</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>txnOpened__volume0USD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>txnOpened__volume1USD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>txnOpened__ethPriceUSDAtMint</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>txnOpened__token0DerivedEthAtMint</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>txnOpened__token1DerivedEthAtMint</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -39517,6 +48424,34 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>panopticVersion</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>volume0USD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>volume1USD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>shares0</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>shares1</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>ethPriceUSDAtBurn</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>token0DerivedEthAtBurn</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>token1DerivedEthAtBurn</strong></td>
 <td></td>
 </tr>
 </tbody>
@@ -39861,31 +48796,19 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__protocolLoss0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss0USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLossUSD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__createdTimestamp</strong></td>
 <td></td>
 </tr>
 <tr>
 <td valign="top"><strong>panopticPool__createdBlockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>shares0</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>shares1</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -39916,313 +48839,24 @@ Filter for the block changed event.
 <td valign="top"><strong>panopticVersion</strong></td>
 <td></td>
 </tr>
-</tbody>
-</table>
-
-### OptionRoll_orderBy
-
-<table>
-<thead>
 <tr>
-<th align="left">Value</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td valign="top"><strong>id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>hash</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>logIndex</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>eventType</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>from</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>to</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>blockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>timestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>gasUsed</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>gasPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__isV4Pool</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__hooks</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__poolId</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__feeTier</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickSpacing</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__sqrtPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__minEnforcedTick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>recipient</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>recipient__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>positionSize</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>oldTokenId</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>newTokenId</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>tickAtRoll</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>poolUtilizations</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>premia</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__feeTier</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__panopticVersion</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__oracleContract</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__mintVolume0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__mintVolume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__burnVolume0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__burnVolume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__totalVolume0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__totalVolume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__mintVolume1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__mintVolume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__burnVolume1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__burnVolume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__totalVolume1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__totalVolume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__totalVolumeUSD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__commissions0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__commissions0USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__commissions1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__commissions1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__commissionsUSD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss0USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLossUSD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__createdTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__createdBlockNumber</strong></td>
+<td valign="top"><strong>volume0USD</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>poolUtilization0</strong></td>
+<td valign="top"><strong>volume1USD</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>poolUtilization1</strong></td>
+<td valign="top"><strong>ethPriceUSDAtMint</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>premium0</strong></td>
+<td valign="top"><strong>token0DerivedEthAtMint</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>premium1</strong></td>
+<td valign="top"><strong>token1DerivedEthAtMint</strong></td>
 <td></td>
 </tr>
 </tbody>
@@ -40391,26 +49025,6 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__protocolLoss0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss0USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLossUSD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__createdTimestamp</strong></td>
 <td></td>
 </tr>
@@ -40443,15 +49057,31 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral0__totalAssets</strong></td>
+<td valign="top"><strong>collateral0__totalDonations</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral0__poolAssets</strong></td>
+<td valign="top"><strong>collateral0__totalPLPCommissions</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral0__inAMM</strong></td>
+<td valign="top"><strong>collateral0__totalProtocolCommissions</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral0__commissionPaidBuilder</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral0__totalInsolvencyPenalties</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral0__totalProtocolLossRealized</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral0__totalProtocolLossRealizedUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -40464,10 +49094,6 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>collateral0Shares</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>collateral0Assets</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -40487,15 +49113,31 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral1__totalAssets</strong></td>
+<td valign="top"><strong>collateral1__totalDonations</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral1__poolAssets</strong></td>
+<td valign="top"><strong>collateral1__totalPLPCommissions</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral1__inAMM</strong></td>
+<td valign="top"><strong>collateral1__totalProtocolCommissions</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral1__commissionPaidBuilder</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral1__totalInsolvencyPenalties</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral1__totalProtocolLossRealized</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral1__totalProtocolLossRealizedUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -40508,10 +49150,6 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>collateral1Shares</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>collateral1Assets</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -40649,26 +49287,6 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>panopticPool__commissionsUSD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss0USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLossUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -40861,15 +49479,31 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral0__totalAssets</strong></td>
+<td valign="top"><strong>collateral0__totalDonations</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral0__poolAssets</strong></td>
+<td valign="top"><strong>collateral0__totalPLPCommissions</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral0__inAMM</strong></td>
+<td valign="top"><strong>collateral0__totalProtocolCommissions</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral0__commissionPaidBuilder</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral0__totalInsolvencyPenalties</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral0__totalProtocolLossRealized</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral0__totalProtocolLossRealizedUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -40897,15 +49531,31 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral1__totalAssets</strong></td>
+<td valign="top"><strong>collateral1__totalDonations</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral1__poolAssets</strong></td>
+<td valign="top"><strong>collateral1__totalPLPCommissions</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral1__inAMM</strong></td>
+<td valign="top"><strong>collateral1__totalProtocolCommissions</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral1__commissionPaidBuilder</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral1__totalInsolvencyPenalties</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral1__totalProtocolLossRealized</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral1__totalProtocolLossRealizedUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -41081,27 +49731,15 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>protocolLoss0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>protocolLoss0USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>protocolLoss1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>protocolLoss1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>protocolLossUSD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>chunks</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>riskEngine</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>riskEngine__id</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -41684,26 +50322,6 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__protocolLoss0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss0USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLossUSD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__createdTimestamp</strong></td>
 <td></td>
 </tr>
@@ -42005,26 +50623,6 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__protocolLoss0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss0USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLoss1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__protocolLossUSD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__createdTimestamp</strong></td>
 <td></td>
 </tr>
@@ -42034,6 +50632,236 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>panopticVersion</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### ProtocolLossRealized_orderBy
+
+<table>
+<thead>
+<tr>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><strong>id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>hash</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>logIndex</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>eventType</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>from</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>to</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>blockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>timestamp</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>gasUsed</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>gasPrice</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__isV4Pool</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__hooks</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__poolId</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__feeTier</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__tickSpacing</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__txCount</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__liquidity</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__sqrtPrice</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__tick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__token0Price</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__token1Price</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__minEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>liquidatee</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>liquidatee__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>liquidator</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>liquidator__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>protocolLossAssets</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>protocolLossShares</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__panopticVersion</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalShares</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalDonations</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalPLPCommissions</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalProtocolCommissions</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__commissionPaidBuilder</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalInsolvencyPenalties</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalProtocolLossRealized</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__totalProtocolLossRealizedUSD</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__poolUtilization</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__index</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### RiskEngine_orderBy
+
+<table>
+<thead>
+<tr>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><strong>id</strong></td>
 <td></td>
 </tr>
 </tbody>
@@ -42539,7 +51367,7 @@ Defines the order direction, either ascending or descending
 </tbody>
 </table>
 
-### TokenizedPositionRolled_orderBy
+### TokensCollected_orderBy
 
 <table>
 <thead>
@@ -42674,47 +51502,23 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>riskEngine</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>riskEngine__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>token</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>recipient</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>recipient__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>oldTokenId</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>oldTokenId__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>oldTokenId__idHexString</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>oldTokenId__tokenCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>newTokenId</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>newTokenId__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>newTokenId__idHexString</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>newTokenId__tokenCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>positionSize</strong></td>
+<td valign="top"><strong>amount</strong></td>
 <td></td>
 </tr>
 </tbody>
@@ -42767,11 +51571,9 @@ If the subgraph has indexing errors, data will be omitted. The default.
 
 4 bytes signed integer
 
-
 ### Int8
 
 8 bytes signed integer
-
 
 ### String
 
@@ -42780,13 +51582,121 @@ If the subgraph has indexing errors, data will be omitted. The default.
 A string representation of microseconds UNIX timestamp (16 digits)
 
 
-
 ## Interfaces
 
 
+### BaseEvent
+
+ A generic entity for events which are not pool-specific that get emitted throughout the Panoptic protocol (similar interface to Event but without `pool` field). 
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent.id">id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td>
+
+ Txn hash + '#' + log index 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent.hash">hash</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+ Txn hash of the transaction emitting this event 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent.logindex">logIndex</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ Event log index 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent.from">from</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+ Sender of transaction 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent.to">to</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+ Receiver of transaction 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent.blocknumber">blockNumber</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ Block txn was included in 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent.timestamp">timestamp</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ Timestamp txn was confirmed 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent.gasused">gasUsed</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ Gas used during txn execution 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent.gasprice">gasPrice</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ Gas price during txn execution 
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="baseevent.eventtype">eventType</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a>!</td>
+<td>
+
+ Type of event. The Graph doesn't allow filtering by __typename meta so it's explicitly required here 
+
+</td>
+</tr>
+</tbody>
+</table>
+
+**Possible Types:** [BorrowRateUpdated](#borrowrateupdated), [TokensCollected](#tokenscollected), [GuardianSafeModeUpdated](#guardiansafemodeupdated)
+
 ### Event
 
- A generic entity for the many events that get emitted throughout the Panoptic protocol. 
+ A generic entity for the many account-facing events that get emitted throughout the Panoptic protocol. 
 
 <table>
 <thead>
@@ -42900,4 +51810,4 @@ A string representation of microseconds UNIX timestamp (16 digits)
 </tbody>
 </table>
 
-**Possible Types:** [Mint](#mint), [Burn](#burn), [Collect](#collect), [TokenizedPositionBurnt](#tokenizedpositionburnt), [TokenizedPositionMinted](#tokenizedpositionminted), [TokenizedPositionRolled](#tokenizedpositionrolled), [OptionRoll](#optionroll), [CollateralDeposit](#collateraldeposit), [CollateralWithdraw](#collateralwithdraw), [OptionMint](#optionmint), [OptionBurn](#optionburn), [AccountLiquidated](#accountliquidated), [ForcedExercise](#forcedexercise), [PremiumSettled](#premiumsettled)
+**Possible Types:** [Mint](#mint), [Burn](#burn), [Collect](#collect), [TokenizedPositionBurnt](#tokenizedpositionburnt), [TokenizedPositionMinted](#tokenizedpositionminted), [CollateralDeposit](#collateraldeposit), [CollateralWithdraw](#collateralwithdraw), [Donate](#donate), [CommissionPaid](#commissionpaid), [InsolvencyPenaltyApplied](#insolvencypenaltyapplied), [ProtocolLossRealized](#protocollossrealized), [OptionMint](#optionmint), [OptionBurn](#optionburn), [AccountLiquidated](#accountliquidated), [ForcedExercise](#forcedexercise), [PremiumSettled](#premiumsettled), [BuilderDeployed](#builderdeployed)
