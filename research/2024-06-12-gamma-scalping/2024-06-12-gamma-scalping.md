@@ -25,7 +25,7 @@ The principle of convexity constitutes the nonlinearity that options allot due t
 ## Gamma Scalping
 Gamma scalping entails the buying of gamma while continuously [delta-hedging](https://panoptic.xyz/research/options-market-making#delta-neutral-trading). Buying gamma typically takes place by buying [at-the-money](https://panoptic.xyz/docs/terms/at_the_money) (ATM) [straddles](https://panoptic.xyz/research/defi-option-straddle-101), and delta-hedging can be implemented by buying and selling either the underlying asset, futures, or perps.
 
-An integral factor in successful gamma scalping is the retention of directional (or delta) neutrality. If the underlying price rises, then a gamma scalper would short the delta-specified quantity of the underlying required to reattain delta neutrality. Conversely though, if the underlying price were to fall, then gamma scalper would buy the appropriate quantity. In deciding how often to delta-hedge, traders may base their hedging frequency on some delta threshold or time-based measure.
+An integral factor in successful gamma scalping is the retention of directional (or delta) neutrality. If the underlying price rises, then a gamma scalper would short the delta-specified quantity of the underlying required to reattain delta neutrality. Conversely though, if the underlying price were to fall, then a gamma scalper would buy the appropriate quantity. In deciding how often to delta-hedge, traders may base their hedging frequency on some delta threshold or time-based measure.
 
 ![](./02.png)
 
