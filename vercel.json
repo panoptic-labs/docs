@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/*", "destination": "https://panoptic-964459.webflow.io/" }
+  ]
+}
