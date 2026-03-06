@@ -1,11 +1,19 @@
 [
   {
+    "title": "Panoptic V2 Codebase",
+    "date": "2026-03-06",
+    "image": "https://panoptic.xyz/img/banners/panoptic-v2-codebase-banner.png",
+    "link": "https://panoptic.xyz/blog/panoptic-v2-codebase",
+    "description": "Panoptic v2 is an open-sourced unified risk engine that brings options, lending, and AMM liquidity into a single cross-margin system, enabling capital-efficient volatility trading and institutional-grade derivatives infrastructure for DeFi.",
+    "id": 1
+  },
+  {
     "title": "Panoptic at ETH Denver 2026",
     "date": "2026-02-24",
     "image": "https://panoptic.xyz/img/banners/panoptic-at-eth-denver-2026.png",
     "link": "https://panoptic.xyz/blog/panoptic-at-eth-denver-2026",
     "description": "Panoptic returned to ETHDenver 2026 to connect with serious builders and traders, share its vision for capital-efficient onchain volatility infrastructure, and leave with renewed conviction, new partnerships, and momentum toward the Panoptic V2 beta launch.",
-    "id": 1
+    "id": 2
   },
   {
     "title": "Panoptic Insights: January Newsletter",
@@ -13,7 +21,7 @@
     "image": "https://panoptic.xyz/img/banners/january-2026-newsletter-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-january-2026-newsletter",
     "description": "Season 2 Points, Panoptic V2 Vaults, DeFi Options 2025 Landscape Report, and more!",
-    "id": 2
+    "id": 3
   },
   {
     "title": "Happy Vol-idays: December Newsletter",
@@ -21,14 +29,6 @@
     "image": "https://panoptic.xyz/img/banners/december-2025-newsletter-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-december-2025-newsletter",
     "description": "Panoptic’s December update highlights audit & security progress, the upcoming launch of V2 with Perpetual Option Vaults (POVs), and key industry shifts in crypto options.",
-    "id": 3
-  },
-  {
-    "title": "The Evolution of Panoptic: From V1 to V2",
-    "date": "2025-10-16",
-    "image": "https://panoptic.xyz/img/banners/panoptic-v2-is-coming-banner.png",
-    "link": "https://panoptic.xyz/blog/panoptic-v2-is-coming",
-    "description": "Panoptic V2 makes options powerful.",
     "id": 4
   },
   {
