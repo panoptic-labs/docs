@@ -12,6 +12,19 @@ Panoptic has undergone numerous economic and security reviews by leading firms. 
 
 ## Core Protocol Audits
 
+### Code4rena
+The third Panoptic V2 protocol audit [report](https://code4rena.com/reports/2025-12-panoptic-next-core) was completed by [code4rena](http://code4rena.com/) on March 09, 2026.
+
+A review of the Panoptic V1.1 Protocol was completed by top code4rena wardens on January 28, 2025. The reports can be found [here](/pdf/Bauchibred_Panoptic.pdf) and [here](/pdf/MrPotatoMagic_Panoptic.pdf).
+
+The final [review](https://code4rena.com/reports/2024-09-panoptic) of the Panoptic V1 Protocol was completed by Code4rena on October 10, 2024 and found _**no High or Medium severity issues**_.
+
+The second Panoptic V1 protocol audit [report](https://code4rena.com/reports/2024-06-panoptic) was completed by Code4rena on June 10, 2024.
+
+The initial Panoptic V1 protocol audit [report](https://code4rena.com/reports/2024-04-panoptic) was completed by Code4rena on April 22, 2024.
+
+The Semi-Fungible Position Manager (SFPM) audit [report](https://code4rena.com/reports/2023-11-panoptic) was completed by Code4rena on December 11, 2023.
+
 ### Nethermind
 The second Panoptic V2 protocol audit [report](https://github.com/NethermindEth/PublicAuditReports/blob/main/NM0701-FINAL_PANOPTIC_V2.pdf) was completed by [Nethermind](https://www.nethermind.io/nethermind-security) on January 12, 2026.
 
@@ -22,17 +35,6 @@ The initial Panoptic V2 protocol audit [report](https://github.com/ObsidianAudit
 The final [review](https://cantina.xyz/portfolio/0eb3624c-90d4-40d8-93b7-558cb130f753) of the Panoptic V1.1 Protocol was completed by [Cantina](https://cantina.xyz/) on November 20, 2024.
 
 The initial Panoptic V1.1 Protocol [report](https://cantina.xyz/portfolio/5a11e7c3-da1e-4d0f-8700-bfc364d8b85a) was completed by Cantina on November 7, 2024.
-
-### Code4rena
-A review of the Panoptic V1.1 Protocol was completed by top code4rena wardens on January 28, 2025. The reports can be found [here](/pdf/Bauchibred_Panoptic.pdf) and [here](/pdf/MrPotatoMagic_Panoptic.pdf).
-
-The final [review](https://code4rena.com/reports/2024-09-panoptic) of the Panoptic V1 Protocol was completed by Code4rena on October 10, 2024 and found _**no High or Medium severity issues**_.
-
-The second Panoptic V1 protocol audit [report](https://code4rena.com/reports/2024-06-panoptic) was completed by Code4rena on June 10, 2024.
-
-The initial Panoptic V1 protocol audit [report](https://code4rena.com/reports/2024-04-panoptic) was completed by Code4rena on April 22, 2024.
-
-The Semi-Fungible Position Manager (SFPM) audit [report](https://code4rena.com/reports/2023-11-panoptic) was completed by Code4rena on December 11, 2023.
 
 ### Trail of Bits
 The invariant testing [report](/pdf/TrailOfBits_Panoptic.pdf) was completed by [Trail of Bits](https://www.trailofbits.com/) on June 4, 2024 and found no issues of any severity.
