@@ -1,5 +1,5 @@
 .partner-page {
-  background-color: #F3F3F3;
+  background-color: #0f0426;
   padding: 0 80px 30px;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,7 @@
 
 .partner-text {
   padding: 60px 10px 0px 10px;
-  color: black;
+  color: #ffffff;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
@@ -27,8 +27,7 @@
   height: auto;
   max-height: 56px;
 
-  mix-blend-mode: multiply;
-  filter: grayscale(100%)
+  /* full-color logos */
 }
 
 .partner-logos-container {

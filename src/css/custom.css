@@ -4,9 +4,20 @@
  * work well for content-centric websites.
  */
 
- @tailwind base; 
+ @tailwind base;
  @tailwind components;
  @tailwind utilities;
+
+/* Scroll reveal animations */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* You can override the default Infima variables here. */
 :root {
