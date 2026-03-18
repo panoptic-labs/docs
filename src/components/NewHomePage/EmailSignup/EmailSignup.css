@@ -1,5 +1,5 @@
 .bg-lavender {
-  background:#F4F1FF; color:#4F15D0;
+  background: hsla(258, 9%, 13%, 1); color:#f3f3f3;
 }
 
 .email-signup {
@@ -7,7 +7,7 @@
 }
 
 .email-signup-form {
-  border: 2px solid #4E14D0;
+  border: 2px solid #413755;
   border-radius: 10px;
 }
 
@@ -28,6 +28,8 @@
   padding: 0 20px;
   border: none;
   font-weight: 500;
+  background-color: transparent;
+  color: #ffffff;
 }
 
 .signup-button {

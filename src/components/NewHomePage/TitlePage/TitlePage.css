@@ -1,13 +1,9 @@
 /* TitlePage.css */
 .title-page {
   position: relative;
-  background-color: #F3F3F3;
+  background-color: #0f0426;
   display: flex;
   flex-direction: column;
-  /* Allow natural flow */
-  /* height and min-height removed to prevent forced spacing */
-  /* height: calc(100vh - var(--ifm-navbar-height)); */
-  /* min-height: 920px; */
   justify-content: flex-start;
   padding-top: var(--ifm-navbar-height);
 }
@@ -22,12 +18,10 @@
 .title-page-flex {
   padding: 60px 0;
   display: flex;
-  /* prevent wrapping so the screenshot stays side-by-side */
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: flex-start;
   animation: fade-in-title 2300ms linear;
-  /* allow horizontal scroll if it overflows */
   overflow-x: auto;
 }
 
@@ -49,45 +43,82 @@
   font-family: Inter;
   font-size: 92px;
   font-weight: 500;
-  color: #4E14D0;
+  color: #ffffff;
   line-height: 100%;
 }
 
-.subtitles {
-  flex: 1;
+/* Hero buttons */
+.hero-buttons {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  font-family: Inter;
-  font-size: 24px;
-  font-weight: 500;
-  justify-content: center;
-  line-height: 120%;
-  color: #4E14D0;
-  padding: 30px 0;
+  gap: 16px;
+  margin-top: 36px;
 }
 
-.subtitle-with-icon {
-  display: flex;
+.hero-button-primary {
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
-}
-
-.app-screenshot {
-  box-shadow: 0px 4px 180px 3px rgba(0, 0, 0, 0.30);
-  max-width: 795px;
-  margin-top: 60px;
-  width: 45vw;
-  height: auto;
-  border-radius: 8px 0 0 8px;
-  filter: grayscale(0%);
-}
-
-.join-button-text {
-  margin-right: 19px;
+  justify-content: center;
+  padding: 14px 32px;
+  background-color: #4E14D0;
+  color: #ffffff;
   font-family: Inter;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.hero-button-primary:hover {
+  background-color: #5e24e0;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.hero-button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  background-color: transparent;
+  color: #ffffff;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 600;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.hero-button-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Stats bar */
+.stats-bar {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid #413755;
+}
+
+.stat-value {
+  font-family: Inter;
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.stat-label {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  color: #9a8fb0;
+  margin-top: 4px;
 }
 
 /* ScrollingTokens spacing */
@@ -100,25 +131,23 @@
 }
 
 /* Responsive tweaks */
-@media screen and (max-width: 1400px) {
-  .app-screenshot { width: 45vw; }
-  .screenshot-container { display: flex; flex-direction: column; justify-content: center; }
-}
 @media screen and (max-width: 1050px) {
-  .screenshot-container { display: none; }
   .title { font-size: 80px; }
 }
 @media screen and (max-width: 767px) {
-  .title-page-info { margin: 37px 40px 0; }
+  .title-page-info { margin: 37px 40px 0; padding-right: 40px; }
   .title-page-flex { padding-top: 8px; }
   .with-background { background-position: bottom left; }
+  .stats-bar { gap: 24px; flex-wrap: wrap; }
 }
 
 @media screen and (max-width: 600px) {
   .title { font-size: 64px; }
+  .stats-bar { gap: 20px; }
+  .stat-value { font-size: 22px; }
 }
 @media screen and (max-width: 405px) {
-  .title-page-info { padding: 0; gap: 0; }
+  .title-page-info { padding: 0; gap: 0; margin: 37px 20px 0; }
   .title { font-size: 52px; }
-  .join-button-text { margin-right: 14px; font-size: 14px; }
+  .hero-buttons { flex-direction: column; }
 }
