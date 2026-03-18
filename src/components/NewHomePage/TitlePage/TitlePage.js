@@ -33,9 +33,6 @@ const TitlePage = () => {
           </div>
           <EmailSignUp />
         </div>
-        <div className="screenshot-container">
-          <img src="/img/new-home-page/title-page-image.svg" alt="App Screenshot" className="app-screenshot"/>
-        </div>
       </div>
       <ScrollingTokens/>
     </div>
