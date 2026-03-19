@@ -1,5 +1,5 @@
 .how-it-works-section {
-  background-color: #0A0118;
+  background-color: rgba(78, 20, 208, 0.12);
   padding: 100px 0;
 }
 
@@ -44,7 +44,7 @@
   font-family: "JetBrains Mono", monospace;
   font-weight: 700;
   font-size: 2.5rem;
-  color: rgba(78, 20, 208, 0.25);
+  color: rgba(123, 63, 228, 0.5);
   margin-bottom: 16px;
   line-height: 1;
 }

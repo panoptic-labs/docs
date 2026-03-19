@@ -1,0 +1,74 @@
+.floating-logos {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.floating-logo {
+  position: absolute;
+  opacity: 0.18;
+  filter: blur(20px);
+}
+
+.floating-logo svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Logo 1 — top-left, large */
+.floating-logo-1 {
+  width: 500px;
+  height: 500px;
+  top: 10%;
+  left: -8%;
+  animation: floatLogo1 25s ease-in-out infinite;
+}
+
+/* Logo 2 — center-right, medium */
+.floating-logo-2 {
+  width: 380px;
+  height: 380px;
+  top: 45%;
+  right: -5%;
+  animation: floatLogo2 30s ease-in-out infinite;
+}
+
+/* Logo 3 — bottom-left, small */
+.floating-logo-3 {
+  width: 300px;
+  height: 300px;
+  bottom: 15%;
+  left: 15%;
+  animation: floatLogo3 22s ease-in-out infinite;
+}
+
+@keyframes floatLogo1 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(40px, -30px) rotate(5deg); }
+  50% { transform: translate(-20px, 40px) rotate(-3deg); }
+  75% { transform: translate(30px, 15px) rotate(4deg); }
+}
+
+@keyframes floatLogo2 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(-35px, 25px) rotate(-6deg); }
+  66% { transform: translate(25px, -35px) rotate(4deg); }
+}
+
+@keyframes floatLogo3 {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(20px, 20px) rotate(8deg); }
+  50% { transform: translate(-30px, -15px) rotate(-5deg); }
+  75% { transform: translate(15px, -25px) rotate(3deg); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .floating-logo-1,
+  .floating-logo-2,
+  .floating-logo-3 {
+    animation: none;
+  }
+}

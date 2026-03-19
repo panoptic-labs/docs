@@ -1,17 +1,15 @@
 import "./TitlePage.css"
 import "@fontsource-variable/space-grotesk"
 import "@fontsource/jetbrains-mono"
-import ScrollingTokens from "../ScrollingTokens/ScrollingTokens"
+// ScrollingTokens removed — will revisit with UI screenshots
+// import ScrollingTokens from "../ScrollingTokens/ScrollingTokens"
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { APP_LINK } from "../../../constants";
-import GlowOrb from "../../animations/GlowOrb";
-
 const TitlePage = () => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const gridY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const orbScale = useTransform(scrollYProgress, [0, 1], [1, 1.3]);
   const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
   const logoRotate = useTransform(scrollYProgress, [0, 1], [0, 15]);
   const logoScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
@@ -35,12 +33,6 @@ const TitlePage = () => {
             </linearGradient>
           </defs>
         </svg>
-      </motion.div>
-
-      {/* Floating glow orbs with scroll scale */}
-      <motion.div style={{ scale: orbScale }} className="orb-wrapper">
-        <GlowOrb size={600} color="rgba(78, 20, 208, 0.15)" top="-15%" left="-10%" delay={0} />
-        <GlowOrb size={450} color="rgba(40, 203, 149, 0.08)" top="30%" right="-10%" delay={2} />
       </motion.div>
 
       <motion.div className="hero-content-wrapper" style={{ y: contentY }}>
@@ -104,7 +96,7 @@ const TitlePage = () => {
       </div>
       */}
 
-      <ScrollingTokens/>
+      {/* ScrollingTokens removed — will revisit with UI screenshots */}
     </div>
   )
 }

@@ -18,6 +18,7 @@ const config = {
   favicon: "img/favicon.ico",
 
   staticDirectories: ['static'],
+  clientModules: [require.resolve('./src/suppress-resize-observer.js')],
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
