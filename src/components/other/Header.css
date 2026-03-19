@@ -31,7 +31,8 @@
 
 .header__logo img {
   display: inherit;
-  width: 132px;
+  height: 24px;
+  width: auto;
   margin-right: 42px;
 }
 

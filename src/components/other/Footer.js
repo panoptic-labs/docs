@@ -50,7 +50,7 @@ const Footer = () => {
         <div className="footer__container__logo-part">
           <img
             className="logo-part__logo"
-            src="/img/logo-dark.svg"
+            src="/img/logo-new-white.svg"
             alt="footer logo"
           />
           <Copyright />

@@ -28,7 +28,7 @@ const Header = ({purpleMode = false, children}) => {
     setOpenedSidebar(false);
   };
 
-  const logoPath = `/img/logo-mono-white.svg`;
+  const logoPath = `/img/logo-new-white.svg`;
 
   const showAppComingSoonButton = loadedWidth && (!is1200 || !children) && !isTabletWidth
 
