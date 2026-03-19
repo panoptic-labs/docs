@@ -24,9 +24,8 @@
   position: relative;
 }
 
-/* Connecting line between steps */
-.steps-grid::before {
-  content: '';
+/* Connecting line that draws in via framer-motion */
+.steps-line {
   position: absolute;
   top: 40px;
   left: calc(33.33% - 16px);
@@ -34,6 +33,7 @@
   height: 1px;
   background: linear-gradient(90deg, #4E14D0, #28CB95);
   opacity: 0.3;
+  transform-origin: left center;
 }
 
 .step {
@@ -74,7 +74,7 @@
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  .steps-grid::before {
+  .steps-line {
     display: none;
   }
 }

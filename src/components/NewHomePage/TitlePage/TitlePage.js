@@ -2,23 +2,39 @@ import "./TitlePage.css"
 import "@fontsource-variable/space-grotesk"
 import "@fontsource/jetbrains-mono"
 import ScrollingTokens from "../ScrollingTokens/ScrollingTokens"
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { APP_LINK } from "../../../constants";
 import GlowOrb from "../../animations/GlowOrb";
 import CountUpStat from "../../animations/CountUpStat";
 
+const statItem = {
+  hidden: { opacity: 0, y: 20, scale: 0.95 },
+  show: (i) => ({
+    opacity: 1, y: 0, scale: 1,
+    transition: { duration: 0.5, delay: 0.5 + i * 0.1, ease: "easeOut" },
+  }),
+};
+
 const TitlePage = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const gridY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const orbScale = useTransform(scrollYProgress, [0, 1], [1, 1.3]);
+  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "12%"]);
+
   return (
-    <div className="title-page">
-      {/* Grid background */}
-      <div className="hero-grid" />
+    <div className="title-page" ref={ref}>
+      {/* Parallax grid background */}
+      <motion.div className="hero-grid" style={{ y: gridY }} />
 
-      {/* Floating glow orbs */}
-      <GlowOrb size={600} color="rgba(78, 20, 208, 0.15)" top="-15%" left="-10%" delay={0} />
-      <GlowOrb size={450} color="rgba(40, 203, 149, 0.08)" top="30%" right="-10%" delay={2} />
+      {/* Floating glow orbs with scroll scale */}
+      <motion.div style={{ scale: orbScale }} className="orb-wrapper">
+        <GlowOrb size={600} color="rgba(78, 20, 208, 0.15)" top="-15%" left="-10%" delay={0} />
+        <GlowOrb size={450} color="rgba(40, 203, 149, 0.08)" top="30%" right="-10%" delay={2} />
+      </motion.div>
 
-      <div className="hero-content-wrapper">
+      <motion.div className="hero-content-wrapper" style={{ y: contentY }}>
         <motion.div
           className="hero-content"
           initial={{ opacity: 0, y: 24 }}
@@ -26,10 +42,15 @@ const TitlePage = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           {/* Badge */}
-          <div className="hero-badge">
+          <motion.div
+            className="hero-badge"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
             <span className="hero-badge-dot" />
             Live on Ethereum, Base &amp; Unichain
-          </div>
+          </motion.div>
 
           <h1 className="hero-title">
             Perpetual Options,<br/>
@@ -54,34 +75,33 @@ const TitlePage = () => {
             </a>
           </motion.div>
         </motion.div>
-      </div>
-
-      {/* Stats grid */}
-      <motion.div
-        className="stats-section"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.5 }}
-      >
-        <div className="stats-grid">
-          <div className="stat-card">
-            <div className="stat-number"><CountUpStat end={50} prefix="$" suffix="M+" /></div>
-            <div className="stat-label">Total Value Locked</div>
-          </div>
-          <div className="stat-card">
-            <div className="stat-number"><CountUpStat end={500} prefix="$" suffix="M+" /></div>
-            <div className="stat-label">Cumulative Volume</div>
-          </div>
-          <div className="stat-card">
-            <div className="stat-number"><CountUpStat end={500} suffix="+" /></div>
-            <div className="stat-label">Active Markets</div>
-          </div>
-          <div className="stat-card">
-            <div className="stat-number"><CountUpStat end={100} suffix="K+" /></div>
-            <div className="stat-label">Trades Executed</div>
-          </div>
-        </div>
       </motion.div>
+
+      {/* Stats grid — individual card entrances */}
+      <div className="stats-section">
+        <div className="stats-grid">
+          {[
+            { end: 50, prefix: "$", suffix: "M+", label: "Total Value Locked" },
+            { end: 500, prefix: "$", suffix: "M+", label: "Cumulative Volume" },
+            { end: 500, prefix: "", suffix: "+", label: "Active Markets" },
+            { end: 100, prefix: "", suffix: "K+", label: "Trades Executed" },
+          ].map((stat, i) => (
+            <motion.div
+              className="stat-card"
+              key={stat.label}
+              custom={i}
+              variants={statItem}
+              initial="hidden"
+              animate="show"
+            >
+              <div className="stat-number">
+                <CountUpStat end={stat.end} prefix={stat.prefix} suffix={stat.suffix} />
+              </div>
+              <div className="stat-label">{stat.label}</div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
 
       <ScrollingTokens/>
     </div>

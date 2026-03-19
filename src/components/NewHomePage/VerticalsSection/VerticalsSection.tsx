@@ -15,14 +15,23 @@ const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.08 },
+    transition: { staggerChildren: 0.1 },
   },
 };
 
-const item = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-};
+// Cards slide in from left or right based on column position
+const cardVariant = (index: number) => ({
+  hidden: {
+    opacity: 0,
+    x: index % 3 === 0 ? -30 : index % 3 === 2 ? 30 : 0,
+    y: index % 3 === 1 ? 30 : 0,
+    scale: 0.96,
+  },
+  show: {
+    opacity: 1, x: 0, y: 0, scale: 1,
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+  },
+});
 
 export default function VerticalsSection() {
   return (
@@ -30,8 +39,8 @@ export default function VerticalsSection() {
       <div className="features-container">
         <motion.div
           className="section-eyebrow"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
@@ -60,10 +69,14 @@ export default function VerticalsSection() {
           variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, margin: "-50px" }}
+          viewport={{ once: true, margin: "-80px" }}
         >
-          {features.map((f) => (
-            <motion.div key={f.title} className="feature-card" variants={item}>
+          {features.map((f, i) => (
+            <motion.div
+              key={f.title}
+              className="feature-card"
+              variants={cardVariant(i)}
+            >
               <div className="feature-icon">{f.icon}</div>
               <h3>{f.title}</h3>
               <p>{f.description}</p>

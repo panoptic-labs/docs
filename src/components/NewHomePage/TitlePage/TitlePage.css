@@ -9,6 +9,13 @@
   overflow: hidden;
 }
 
+.orb-wrapper {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
 /* ── Grid background ── */
 .hero-grid {
   position: absolute;

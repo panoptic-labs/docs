@@ -25,7 +25,13 @@ const FAQPage = () => {
             </Link>
           </div>
         </motion.div>
-        <div className="faq-right">
+        <motion.div
+          className="faq-right"
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+        >
           <Accordion.Root className="accordion-root" type="single" defaultValue="item-1" collapsible>
             <Accordion.Item className="accordion-item" value="item-1">
               <AccordionTrigger>What is Panoptic?</AccordionTrigger>
@@ -69,7 +75,7 @@ const FAQPage = () => {
               </AccordionContent>
             </Accordion.Item>
           </Accordion.Root>
-        </div>
+        </motion.div>
       </div>
     </div>
   )

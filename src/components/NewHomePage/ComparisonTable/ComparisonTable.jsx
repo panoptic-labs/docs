@@ -18,8 +18,8 @@ function StatusDot({ value }) {
 }
 
 const rowVariant = {
-  hidden: { opacity: 0, x: -10 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.4, ease: "easeOut" } },
+  hidden: { opacity: 0, x: -20, filter: "blur(4px)" },
+  show: { opacity: 1, x: 0, filter: "blur(0px)", transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] } },
 };
 
 export default function ComparisonTable() {
@@ -28,8 +28,8 @@ export default function ComparisonTable() {
       <div className="comparison-container">
         <motion.div
           className="section-eyebrow"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
@@ -44,8 +44,21 @@ export default function ComparisonTable() {
         >
           Built different.
         </motion.h2>
-        <div className="comparison-table-wrapper">
-          <div className="comparison-glow-bar" />
+        <motion.div
+          className="comparison-table-wrapper"
+          initial={{ opacity: 0, y: 30, scale: 0.97 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        >
+          {/* Glow bar draws in */}
+          <motion.div
+            className="comparison-glow-bar"
+            initial={{ scaleX: 0, opacity: 0 }}
+            whileInView={{ scaleX: 1, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          />
           <table className="comparison-table">
             <thead>
               <tr>
@@ -59,7 +72,7 @@ export default function ComparisonTable() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              transition={{ staggerChildren: 0.08 }}
+              transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}
             >
               {rows.map((r) => (
                 <motion.tr key={r.feature} variants={rowVariant} className="comparison-row">
@@ -71,7 +84,7 @@ export default function ComparisonTable() {
               ))}
             </motion.tbody>
           </table>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
