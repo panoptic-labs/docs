@@ -14,6 +14,14 @@
   margin-bottom: 16px;
 }
 
+[data-theme="dark"] .blog-details-title {
+  color: #fff;
+}
+
+[data-theme="dark"] .blog-details-date {
+  color: rgba(232, 224, 245, 0.5);
+}
+
 .blog-details-description {
   color: #393B43;
   text-overflow: ellipsis;
@@ -22,6 +30,10 @@
   line-height: 155%;
   text-overflow: ellipsis;
   word-wrap: break-word;
+}
+
+[data-theme="dark"] .blog-details-description {
+  color: rgba(232, 224, 245, 0.6);
 }
 
 .blog-details-tag-list {
