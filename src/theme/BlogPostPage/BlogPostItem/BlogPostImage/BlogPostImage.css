@@ -1,6 +1,7 @@
 
 .blog-post-image {
   border-radius: 16px;
-  max-height: 360px;
+  max-height: 400px;
   width: 100%;
+  object-fit: cover;
 }
