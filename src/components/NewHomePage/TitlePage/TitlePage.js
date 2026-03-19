@@ -59,7 +59,7 @@ const TitlePage = () => {
           </h1>
 
           <p className="hero-subtitle">
-            Trade permissionless put and call options on any ERC-20 token. No expiries. No oracles. No intermediaries. Powered by Uniswap liquidity.
+            Trade permissionless put and call options on any ERC-20 token.<br/>No expiries. No oracles. No intermediaries.<br/>Powered by Uniswap liquidity.
           </p>
 
           <motion.div
