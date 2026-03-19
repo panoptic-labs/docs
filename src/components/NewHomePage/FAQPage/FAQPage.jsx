@@ -71,7 +71,7 @@ const FAQPage = () => {
             <Accordion.Item className="accordion-item" value="item-5">
               <AccordionTrigger>What networks can I access Panoptic on?</AccordionTrigger>
               <AccordionContent>
-                Panoptic is live on Ethereum mainnet, Base, and Unichain, and will launch on EVM-compatible layer 2's where Uniswap v3 and v4 smart contracts have been deployed.
+                Panoptic V2 is live on Ethereum mainnet. Multi-chain expansion to follow.
               </AccordionContent>
             </Accordion.Item>
           </Accordion.Root>

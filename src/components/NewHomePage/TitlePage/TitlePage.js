@@ -55,11 +55,13 @@ const TitlePage = () => {
 
           <h1 className="hero-title">
             Perpetual Options,<br/>
-            <span className="gradient-text-hero">DeFi-Native</span>
+            <span className="gradient-text-hero">DeFi's Volatility Layer</span>
           </h1>
 
           <p className="hero-subtitle">
-            Trade permissionless put and call options on any ERC-20 token.<br/>No expiries. No oracles. No intermediaries.<br/>Powered by Uniswap liquidity.
+            Deposit into curator-run vaults that harvest yield from perpetual options. 
+            No expiries, capital-efficient, fully onchain.
+            <br/>Powered by Uniswap liquidity.
           </p>
 
           <motion.div
@@ -69,7 +71,7 @@ const TitlePage = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <a href={APP_LINK} className="btn-launch" target="_blank" rel="noopener noreferrer">
-              Start Trading →
+              Launch App →
             </a>
             <a href="/docs/intro" className="btn-outline">
               Read the Docs

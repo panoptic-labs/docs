@@ -22,7 +22,7 @@ const pillars = [
     desc: "Multiple independent security audits, formal verification, and a competitive audit program.",
   },
   {
-    title: "Fully Open Source",
+    title: "Public Code",
     desc: "Every line of smart contract code is publicly verifiable on GitHub. Transparency by default.",
   },
 ];
