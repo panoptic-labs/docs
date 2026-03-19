@@ -1,40 +1,71 @@
 import React from "react"
 import { motion } from "framer-motion"
-import PillText from "../PillText/PillText"
 import "./LaunchPage.css"
 
 const chains = [
-  { name: "Ethereum", icon: "/img/chains/ethereum.svg" },
-  { name: "Base", icon: "/img/chains/base.svg" },
-  { name: "Unichain", icon: "/img/chains/unichain.svg" },
+  { name: "Ethereum", dotClass: "chain-dot-eth" },
+  { name: "Base", dotClass: "chain-dot-base" },
+  { name: "Unichain", dotClass: "chain-dot-uni" },
+  { name: "More L2s Coming", dotClass: "chain-dot-more" },
 ];
+
+const container = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { staggerChildren: 0.1 } },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 16 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
+};
 
 const LaunchPage = () => {
   return (
-    <div className="launch-page">
-      {/* Gradient divider */}
-      <div className="launch-divider" />
-
-      <motion.div
-        className="launch-text"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        <PillText>2025</PillText>
-        <div className="launch-title">Live on Ethereum, Base, and Unichain</div>
-        <div className="launch-subtitle">Expanding to other networks soon</div>
-        <div className="launch-chains">
-          {chains.map((chain) => (
-            <div key={chain.name} className="launch-chain-card">
-              <img src={chain.icon} alt={chain.name} className="launch-chain-icon" onError={(e) => { e.target.style.display = 'none' }} />
-              <span className="launch-chain-name">{chain.name}</span>
-            </div>
+    <section className="networks-section">
+      <div className="networks-container">
+        <motion.div
+          className="section-eyebrow"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          Live Networks
+        </motion.div>
+        <motion.h2
+          className="section-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.05 }}
+        >
+          Multi-chain. Day one.
+        </motion.h2>
+        <motion.p
+          className="section-desc networks-desc"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          Deployed where the liquidity lives — with more chains on the way.
+        </motion.p>
+        <motion.div
+          className="network-pills"
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          {chains.map((c) => (
+            <motion.div key={c.name} className="network-pill" variants={item}>
+              <span className={`chain-dot ${c.dotClass}`} />
+              {c.name}
+            </motion.div>
           ))}
-        </div>
-      </motion.div>
-    </div>
+        </motion.div>
+      </div>
+    </section>
   )
 }
 

@@ -1,86 +1,72 @@
-.launch-page {
+.networks-section {
   background-color: #0A0118;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0;
-}
-
-.launch-divider {
-  width: 80%;
-  max-width: 800px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(123, 63, 228, 0.3), transparent);
-  margin-bottom: 60px;
-}
-
-.launch-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  color: #F3F3F3;
-  padding: 0 20px 80px;
-}
-
-.launch-title {
-  font-size: clamp(2rem, 4vw, 3.25rem);
-  font-family: "Space Grotesk Variable", "Space Grotesk", Inter, sans-serif;
-  line-height: 110%;
-  font-weight: 700;
-  margin-top: 8px;
+  padding: 100px 0;
   text-align: center;
 }
 
-.launch-subtitle {
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.5);
+.networks-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
 }
 
-.launch-chains {
+.networks-desc {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.network-pills {
   display: flex;
   gap: 16px;
-  margin-top: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 48px;
 }
 
-.launch-chain-card {
+.network-pill {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 24px;
-  background: rgba(19, 8, 40, 0.6);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(123, 63, 228, 0.15);
-  border-radius: 12px;
+  padding: 16px 28px;
+  border-radius: 14px;
+  background: rgba(78, 20, 208, 0.06);
+  border: 1px solid rgba(78, 20, 208, 0.18);
+  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #E8E0F5;
   transition: all 0.3s ease;
 }
 
-.launch-chain-card:hover {
-  border-color: rgba(123, 63, 228, 0.4);
-  box-shadow: 0 0 20px rgba(123, 63, 228, 0.15);
+.network-pill:hover {
+  border-color: #4E14D0;
+  transform: translateY(-2px);
 }
 
-.launch-chain-icon {
-  width: 28px;
-  height: 28px;
+.chain-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
 }
 
-.launch-chain-name {
-  font-size: 16px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.8);
+.chain-dot-eth {
+  background: linear-gradient(135deg, #627EEA, #3B5ADB);
 }
 
-@media screen and (max-width: 600px) {
-  .launch-chains {
-    flex-direction: column;
-    align-items: center;
-  }
+.chain-dot-base {
+  background: linear-gradient(135deg, #0052FF, #0066FF);
+}
 
-  .launch-chain-card {
-    width: 200px;
-    justify-content: center;
+.chain-dot-uni {
+  background: linear-gradient(135deg, #FC72FF, #FF2CF0);
+}
+
+.chain-dot-more {
+  background: linear-gradient(135deg, #4E14D0, #28CB95);
+}
+
+@media screen and (max-width: 768px) {
+  .networks-section {
+    padding: 72px 0;
   }
 }

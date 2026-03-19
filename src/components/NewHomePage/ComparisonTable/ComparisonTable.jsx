@@ -24,44 +24,55 @@ const rowVariant = {
 
 export default function ComparisonTable() {
   return (
-    <div className="comparison-section">
-      <motion.h2
-        className="comparison-heading"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-      >
-        Built Different
-      </motion.h2>
-      <div className="comparison-table-wrapper glass">
-        <div className="comparison-glow-bar" />
-        <table className="comparison-table">
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th className="panoptic-col">Panoptic</th>
-              <th>CEX Options</th>
-              <th>Other DeFi</th>
-            </tr>
-          </thead>
-          <motion.tbody
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            transition={{ staggerChildren: 0.08 }}
-          >
-            {rows.map((r) => (
-              <motion.tr key={r.feature} variants={rowVariant} className="comparison-row">
-                <td>{r.feature}</td>
-                <td className="panoptic-col"><StatusDot value={r.panoptic} /></td>
-                <td><StatusDot value={r.cex} /></td>
-                <td><StatusDot value={r.defi} /></td>
-              </motion.tr>
-            ))}
-          </motion.tbody>
-        </table>
+    <section className="comparison-section">
+      <div className="comparison-container">
+        <motion.div
+          className="section-eyebrow"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          Comparison
+        </motion.div>
+        <motion.h2
+          className="section-title"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.05 }}
+        >
+          Built different.
+        </motion.h2>
+        <div className="comparison-table-wrapper">
+          <div className="comparison-glow-bar" />
+          <table className="comparison-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th className="panoptic-col">Panoptic</th>
+                <th>CEX Options</th>
+                <th>Other DeFi</th>
+              </tr>
+            </thead>
+            <motion.tbody
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              transition={{ staggerChildren: 0.08 }}
+            >
+              {rows.map((r) => (
+                <motion.tr key={r.feature} variants={rowVariant} className="comparison-row">
+                  <td>{r.feature}</td>
+                  <td className="panoptic-col"><StatusDot value={r.panoptic} /></td>
+                  <td><StatusDot value={r.cex} /></td>
+                  <td><StatusDot value={r.defi} /></td>
+                </motion.tr>
+              ))}
+            </motion.tbody>
+          </table>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

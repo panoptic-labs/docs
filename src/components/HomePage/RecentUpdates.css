@@ -24,9 +24,9 @@
 .recent-updates__title {
   font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
   font-weight: 700;
-  font-size: clamp(1.5rem, 3vw, 2.25rem);
-  line-height: 44px;
-  letter-spacing: -0.02em;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
   color: #ffffff;
   margin: 0;
 }
@@ -146,7 +146,7 @@ a:hover {
   line-height: 130%;
   font-weight: 400;
   letter-spacing: -0.02em;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(232, 224, 245, 0.5);
   margin-bottom: 13px;
   width: 300px;
   overflow: hidden;

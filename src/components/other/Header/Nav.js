@@ -2,6 +2,7 @@ import React from "react";
 import clsx from "clsx";
 import "./Nav.css"
 import { useHistory } from 'react-router-dom';
+import { APP_LINK } from "../../../constants";
 
 const Nav = ({purpleMode = false}) => {
 
@@ -9,39 +10,31 @@ const Nav = ({purpleMode = false}) => {
 
   const handleClick = (permalink) => {
     if (permalink.startsWith('http')) {
-      window.location.href = permalink; // For external links
+      window.location.href = permalink;
     } else {
-      history.push(permalink); // For internal links
-      document.body.scrollTop = 0; // For Safari
-      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+      history.push(permalink);
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
     }
   };
 
-
-  const iconPath = purpleMode ?
-  "/img/new-home-page/external-link-arrow-white.svg" :
-  "/img/new-home-page/external-link-arrow.svg"
-
   return (
     <nav className="header__nav">
-      <div onClick={() => handleClick("/docs/intro")} className={clsx("nav__link", {"white-text": purpleMode})}>
+      <div onClick={() => handleClick("/docs/intro")} className="nav__link">
         Docs
       </div>
-      <div onClick={() => handleClick("/blog")} className={clsx("nav__link", {"white-text": purpleMode})}>
+      <div onClick={() => handleClick("/research")} className="nav__link">
+        Research
+      </div>
+      <div onClick={() => handleClick("/blog")} className="nav__link">
         Blog
       </div>
-      <div onClick={() => handleClick("/research")} className={clsx("nav__link", {"white-text": purpleMode})}>
-        Deep Dive
+      <div onClick={() => handleClick("https://github.com/panoptic-labs")} className="nav__link">
+        GitHub
       </div>
-      <div onClick={() => handleClick("/docs/faq/")} className={clsx("nav__link", {"white-text": purpleMode})}>
-        FAQ
-      </div>
-      <div onClick={() => handleClick("https://github.com/panoptic-labs")} className={clsx("nav__link", {"white-text": purpleMode})}>
-        Github
-        <span className="external-link-arrow">
-          <img src={iconPath} alt="arrow"/>
-        </span>
-      </div>
+      <a href={APP_LINK} className="nav-btn-launch" target="_blank" rel="noopener noreferrer">
+        Launch App →
+      </a>
     </nav>
   );
 };
