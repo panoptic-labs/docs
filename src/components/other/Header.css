@@ -1,20 +1,14 @@
 .header {
   position: sticky;
   top: 0;
-  background: rgba(10, 1, 24, 0.7);
+  background: rgba(10, 1, 24, 0.85) !important;
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   z-index: 20;
   align-items: center;
   padding: 0 32px;
   height: 64px;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
   border-bottom: 1px solid rgba(78, 20, 208, 0.18);
-}
-
-.header.scrolled {
-  background: rgba(10, 1, 24, 0.85);
-  box-shadow: 0 1px 0 rgba(78, 20, 208, 0.15);
 }
 
 .navbar {

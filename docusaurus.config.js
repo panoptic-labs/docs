@@ -143,7 +143,7 @@ const config = {
         darkTheme: darkCodeTheme,
       },
       colorMode: {
-        defaultMode: 'light',
+        defaultMode: 'dark',
         disableSwitch: true,
         respectPrefersColorScheme: false,
       },
