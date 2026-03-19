@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import "./VerticalsSection.css";
 
 const features = [
@@ -10,19 +11,48 @@ const features = [
   { emoji: "🔐", title: "Self-Custody", description: "Your keys, your funds — fully non-custodial" },
 ];
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.1 },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
 export default function VerticalsSection() {
   return (
-    <div className="verticals-section container mx-auto text-center py-20 flex flex-col gap-y-6 text-white" style={{ backgroundColor: '#0f0426' }}>
-      <h2 className="text-white text-4xl font-bold">Built for DeFi Traders</h2>
-      <div className="feature-grid">
+    <div className="verticals-section">
+      <motion.h2
+        className="verticals-heading"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        Built for DeFi Traders
+      </motion.h2>
+      <motion.div
+        className="feature-grid"
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "-50px" }}
+      >
         {features.map((f) => (
-          <div key={f.title} className="feature-card">
-            <span className="feature-emoji">{f.emoji}</span>
+          <motion.div key={f.title} className="feature-card" variants={item}>
+            <div className="feature-emoji-glow">
+              <span className="feature-emoji">{f.emoji}</span>
+            </div>
             <h3 className="feature-title">{f.title}</h3>
             <p className="feature-desc">{f.description}</p>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

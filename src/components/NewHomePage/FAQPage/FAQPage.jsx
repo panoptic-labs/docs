@@ -1,5 +1,6 @@
 import React from "react"
 import * as Accordion from '@radix-ui/react-accordion';
+import { motion, AnimatePresence } from "framer-motion";
 import Button from "../Button/Button";
 import Link from "@docusaurus/Link";
 import "./FAQPage.css"
@@ -8,13 +9,26 @@ const FAQPage = () => {
   return (
     <div className="faq-page">
       <div className="faq-content">
-        <div className="faq-title">
-          Frequently Asked Questions
-        </div>
-        <div className="faq-accordion">
+        <motion.div
+          className="faq-left"
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="faq-title">
+            Frequently Asked<br/>Questions
+          </div>
+          <div className="faq-button-container">
+            <Link to="/docs/faq/">
+              <Button>More Questions?</Button>
+            </Link>
+          </div>
+        </motion.div>
+        <div className="faq-right">
           <Accordion.Root className="accordion-root" type="single" defaultValue="item-1" collapsible>
             <Accordion.Item className="accordion-item" value="item-1">
-              <AccordionTrigger className="first-trigger">What is Panoptic?</AccordionTrigger>
+              <AccordionTrigger>What is Panoptic?</AccordionTrigger>
               <AccordionContent>
                 The Panoptic protocol enables the minting, trading, and market-making of perpetual put and call options. All smart contracts are available 24/7 and users can interact with the Panoptic protocol without the need for intermediaries like banks, brokerage firms, clearinghouses, market makers, or centralized exchanges.
               </AccordionContent>
@@ -28,7 +42,7 @@ const FAQPage = () => {
             <Accordion.Item className="accordion-item" value="item-3">
               <AccordionTrigger>What are the key benefits?</AccordionTrigger>
               <AccordionContent>
-                Options in Panoptic differ slightly from conventional options. Instead of using a clearinghouse to settle options contracts, the Panoptic protocol uses Liquidity Provider (LP) positions in Uniswap v3 as a fundamental building block for trading long and short options. 
+                Options in Panoptic differ slightly from conventional options. Instead of using a clearinghouse to settle options contracts, the Panoptic protocol uses Liquidity Provider (LP) positions in Uniswap v3 as a fundamental building block for trading long and short options.
                 <br/>
                 <br/>
                 Panoptic allows users to access new and improved features when trading options:
@@ -56,20 +70,14 @@ const FAQPage = () => {
             </Accordion.Item>
           </Accordion.Root>
         </div>
-        <div className="faq-button-container">
-          <Link to="/docs/faq/">
-            <Button>More Questions?</Button>
-          </Link>
-        </div>
       </div>
-
     </div>
   )
 };
 
 const AccordionTrigger = ({children, className}) => (
   <Accordion.Header className="accordion-header">
-    <Accordion.Trigger className={`accordion-trigger ${className}`}>
+    <Accordion.Trigger className={`accordion-trigger ${className || ''}`}>
       <span>{children}</span>
       <div className="faq-arrow-container">
         <img src={`/img/new-home-page/faq-arrow.svg`} alt="faq-arrow" className="faq-arrow"/>

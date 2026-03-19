@@ -1,9 +1,9 @@
 .recent-updates {
-  background-color: #0f0426;
+  background-color: #0A0118;
 }
 
 .recent-updates__container {
-  padding: 42px 80px 77px 80px;
+  padding: 60px 80px 80px;
   max-width: 1441px;
   width: 100%;
   margin: 0 auto;
@@ -22,8 +22,9 @@
 }
 
 .recent-updates__title {
+  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
   font-weight: 700;
-  font-size: 36px;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
   line-height: 44px;
   letter-spacing: -0.02em;
   color: #ffffff;
@@ -38,18 +39,20 @@
 .pagination__prev,
 .pagination__next {
   display: block;
-  background: transparent;
-  color: #4E14D0;
-  border: 1.5px solid #4E14D0;
+  background: rgba(19, 8, 40, 0.6);
+  color: #7B3FE4;
+  border: 1px solid rgba(123, 63, 228, 0.2);
   border-radius: 10px;
   padding: 12px;
   cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
 }
 
 .pagination__next:hover,
 .pagination__prev:hover {
-  background: #4E14D0;
-  transition: background 300ms;
+  background: rgba(123, 63, 228, 0.2);
+  border-color: rgba(123, 63, 228, 0.4);
 }
 
 .pagination__prev:hover > .pagination__icon,
@@ -58,16 +61,15 @@
 }
 
 .pagination__icon {
-  background-color: #4E14D0;
+  background-color: #7B3FE4;
 }
 
 .recent-updates__card {
   display: inline-block;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0 20px;
-  cursor: pointer;
   padding: 5px;
+  cursor: pointer;
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
@@ -78,22 +80,35 @@ a:hover {
 }
 
 .recent-updates__card__image {
-  object-fit: contain; /* or 'contain' depending on your needs */
+  object-fit: contain;
+  border-radius: 12px;
 }
 
 .recent-updates__card {
   overflow: hidden;
-  transition: transform 300ms ease, box-shadow 600ms 60ms ease, border-radius 600ms ease;
+  transition: transform 300ms ease;
+  border-radius: 16px;
 }
 
 .recent-updates__card:hover {
-  transform: scale(1.05);
+  transform: translateY(-4px);
 }
 
 .recent-updates__card__content {
   height: 420px;
   width: fit-content;
   margin: auto;
+  padding: 12px;
+  background: rgba(19, 8, 40, 0.4);
+  border: 1px solid rgba(65, 55, 85, 0.3);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.recent-updates__card:hover .recent-updates__card__content {
+  border-color: rgba(123, 63, 228, 0.3);
+  box-shadow: 0 0 20px rgba(123, 63, 228, 0.1);
 }
 
 .recent-updates__card_top {
@@ -111,17 +126,18 @@ a:hover {
 }
 
 .recent-updates__card__title {
+  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 28px;
   letter-spacing: -0.02em;
   color: #ffffff;
   margin: 13px 0 3px;
-  width: 320px;
-  display: -webkit-box; 
-  -webkit-line-clamp: 3; 
-  -webkit-box-orient: vertical; 
-  overflow: hidden; 
+  width: 300px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   text-overflow: ellipsis;
 }
 
@@ -130,9 +146,9 @@ a:hover {
   line-height: 130%;
   font-weight: 400;
   letter-spacing: -0.02em;
-  color: #8d8e94;
+  color: rgba(255, 255, 255, 0.4);
   margin-bottom: 13px;
-  width: 320px;
+  width: 300px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -142,11 +158,6 @@ a:hover {
 }
 
 .recent-updates__card__date {
-  /* font-weight: 500;
-  font-size: 12px;
-  line-height: 20px;
-  letter-spacing: -0.02em;
-  color: #8d8e94; */
 }
 
 .recent-updates__card__link {
@@ -183,7 +194,6 @@ a:hover {
 
   .recent-updates__card {
     width: 100%;
-    /* max-width: 350px; */
   }
 
   .recent-updates__card__content {

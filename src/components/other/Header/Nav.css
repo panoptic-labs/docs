@@ -11,5 +11,9 @@
 }
 
 .white-text {
-  color: #FFF !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.white-text:hover {
+  color: #28CB95 !important;
 }

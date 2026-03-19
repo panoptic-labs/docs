@@ -1,68 +1,73 @@
 .partner-page {
-  background-color: #0f0426;
-  padding: 0 80px 30px;
+  background-color: #0A0118;
+  padding: 80px 0 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+  gap: 40px;
+  overflow: hidden;
 }
 
 .partner-text {
-  padding: 60px 10px 0px 10px;
+  padding: 0 20px;
   color: #ffffff;
-  font-family: 'Inter';
-  font-style: normal;
+  font-family: "Space Grotesk Variable", "Space Grotesk", Inter, sans-serif;
   font-weight: 700;
-  font-size: 32px;
+  font-size: clamp(1.5rem, 3vw, 2rem);
   line-height: 120%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
 }
 
-.investor {
-  margin: 0 12.5px 20px 12.5px;
-  width: 122px;
-  height: auto;
-  max-height: 56px;
-
-  /* full-color logos */
+.partner-marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
-.partner-logos-container {
+.partner-marquee {
   display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.partner-pill {
+  display: flex;
+  align-items: center;
   justify-content: center;
+  padding: 12px 24px;
+  margin: 0 12px;
+  background: rgba(19, 8, 40, 0.4);
+  border: 1px solid rgba(65, 55, 85, 0.3);
+  border-radius: 999px;
+  transition: all 0.3s ease;
 }
 
-.partner-logos {
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-width: 1000px;
+.partner-pill:hover {
+  border-color: rgba(123, 63, 228, 0.3);
+  background: rgba(19, 8, 40, 0.7);
 }
 
-.blizzard {
-  padding: 0 21px;
+.investor {
+  width: 110px;
+  height: auto;
+  max-height: 40px;
+  filter: grayscale(100%) brightness(0.7);
+  transition: filter 0.3s ease;
 }
 
-.big-brain {
-  padding: 0 16px;
+.partner-pill:hover .investor {
+  filter: grayscale(0%) brightness(1);
 }
 
-@media screen and (max-width: 767px) { 
-  .partner-page {
-    padding: 0 40px 30px;
-  }
-}
-
-@media screen and (max-width: 380px) { 
-  .partner-text {
-    font-size: 18px;
-  }
-
+@media screen and (max-width: 380px) {
   .investor {
-    margin: 0 4px 10px 6px;
-    height: 42px;
+    width: 80px;
+    max-height: 32px;
   }
 }

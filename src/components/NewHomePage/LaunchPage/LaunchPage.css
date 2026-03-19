@@ -1,17 +1,17 @@
 .launch-page {
-  height: 352px;
-  background-color: #4E14D0;
+  background-color: #0A0118;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  padding: 0;
 }
 
-.launch-background {
-  background-image: url("/img/new-home-page/launch-background-vector.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 70%;
+.launch-divider {
+  width: 80%;
+  max-width: 800px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(123, 63, 228, 0.3), transparent);
+  margin-bottom: 60px;
 }
 
 .launch-text {
@@ -21,65 +21,66 @@
   align-items: center;
   gap: 20px;
   color: #F3F3F3;
+  padding: 0 20px 80px;
 }
 
 .launch-title {
-  font-size: 52px;
-  font-family: Inter;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-family: "Space Grotesk Variable", "Space Grotesk", Inter, sans-serif;
   line-height: 110%;
   font-weight: 700;
-  margin-top: 7.75px;
-  padding: 0 20px;
+  margin-top: 8px;
   text-align: center;
 }
 
 .launch-subtitle {
   font-size: 18px;
+  color: rgba(255, 255, 255, 0.5);
 }
 
-@media screen and (max-width: 1310px) { 
-  .launch-background { 
-    background-size: 100%; 
-  } 
-} 
+.launch-chains {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
 
-@media screen and (max-width: 950px) { 
-  .launch-background { 
-    background-size: 120%; 
-  } 
-  .launch-title {
-    max-width: 500px;
+.launch-chain-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background: rgba(19, 8, 40, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(123, 63, 228, 0.15);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.launch-chain-card:hover {
+  border-color: rgba(123, 63, 228, 0.4);
+  box-shadow: 0 0 20px rgba(123, 63, 228, 0.15);
+}
+
+.launch-chain-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.launch-chain-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@media screen and (max-width: 600px) {
+  .launch-chains {
+    flex-direction: column;
+    align-items: center;
   }
-} 
 
-@media screen and (max-width: 780px) { 
-  .launch-background { 
-    background-size: 150%; 
-  } 
-} 
-
-@media screen and (max-width: 640px) { 
-  .launch-background { 
-    background-size: 180%; 
-  } 
-} 
-
-@media screen and (max-width: 510px) { 
-  .launch-title {
-    font-size: 36px;
+  .launch-chain-card {
+    width: 200px;
+    justify-content: center;
   }
-
-  .launch-subtitle {
-    font-size: 16px;
-  }
-
-  .launch-page {
-    height: 300px;
-  }
-} 
-
-@media screen and (max-width: 370px) { 
-  .launch-title {
-    font-size: 28px;
-  }
-} 
+}

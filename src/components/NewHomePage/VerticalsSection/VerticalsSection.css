@@ -1,41 +1,75 @@
-.verticals-section h2, .verticals-section h3 {
-  margin: 0;
-  padding: 0;
+.verticals-section {
+  background-color: #0A0118;
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.verticals-heading {
+  color: #fff;
+  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin: 0 0 40px 0;
+  text-align: center;
 }
 
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 20px;
   max-width: 960px;
   margin: 0 auto;
 }
 
 .feature-card {
-  background: hsla(258, 9%, 13%, 1);
-  border: 2px solid #413755;
-  border-radius: 12px;
-  padding: 24px;
+  background: rgba(19, 8, 40, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(123, 63, 228, 0.15);
+  border-radius: 16px;
+  padding: 28px;
   text-align: left;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  border-color: rgba(123, 63, 228, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px rgba(123, 63, 228, 0.15);
+}
+
+.feature-emoji-glow {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(123, 63, 228, 0.1);
+  margin-bottom: 16px;
 }
 
 .feature-emoji {
-  font-size: 2rem;
+  font-size: 1.5rem;
   display: block;
-  margin-bottom: 8px;
 }
 
 .feature-title {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
   color: #fff;
-  margin-bottom: 4px;
+  margin: 0 0 8px 0;
+  padding: 0;
 }
 
 .feature-desc {
-  color: #a1a1aa;
-  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
   margin: 0;
+  line-height: 1.5;
 }
 
 @media screen and (max-width: 767px) {

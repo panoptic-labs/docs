@@ -1,0 +1,160 @@
+/**
+ * Premium theme overrides for Docs, Blog, and Research pages.
+ * Applied globally via custom.css import.
+ */
+
+/* ===== DOC SIDEBAR ===== */
+[data-theme="dark"] .theme-doc-sidebar-container {
+  background: rgba(10, 1, 24, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-right: 1px solid rgba(65, 55, 85, 0.3);
+}
+
+[data-theme="dark"] .menu__link--active:not(.menu__link--sublist) {
+  border-left: 3px solid #7B3FE4;
+  padding-left: 9px;
+  background: rgba(123, 63, 228, 0.08);
+  color: #c4b5fd;
+}
+
+[data-theme="dark"] .menu__link:hover {
+  color: #28CB95;
+  background: rgba(40, 203, 149, 0.05);
+}
+
+/* ===== DOC CONTENT ===== */
+[data-theme="dark"] .theme-doc-markdown {
+  max-width: 800px;
+}
+
+[data-theme="dark"] .theme-doc-markdown h1,
+[data-theme="dark"] .theme-doc-markdown h2,
+[data-theme="dark"] .theme-doc-markdown h3,
+[data-theme="dark"] .theme-doc-markdown h4 {
+  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+}
+
+/* Code blocks with purple tint */
+[data-theme="dark"] pre {
+  background: rgba(19, 8, 40, 0.6) !important;
+  border: 1px solid rgba(123, 63, 228, 0.15);
+  border-radius: 12px;
+}
+
+[data-theme="dark"] code {
+  font-family: "JetBrains Mono", monospace;
+}
+
+[data-theme="dark"] :not(pre) > code {
+  background: rgba(123, 63, 228, 0.1);
+  border: 1px solid rgba(123, 63, 228, 0.15);
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+/* ===== TOC (Table of Contents) ===== */
+[data-theme="dark"] .table-of-contents {
+  background: rgba(10, 1, 24, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 12px;
+  border: 1px solid rgba(65, 55, 85, 0.2);
+  padding: 12px;
+}
+
+[data-theme="dark"] .table-of-contents__link--active {
+  color: #28CB95;
+  font-weight: 500;
+}
+
+/* ===== DOC PAGINATION ===== */
+[data-theme="dark"] .pagination-nav__link {
+  background: rgba(19, 8, 40, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(123, 63, 228, 0.15);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .pagination-nav__link:hover {
+  border-color: rgba(123, 63, 228, 0.35);
+  box-shadow: 0 0 20px rgba(123, 63, 228, 0.1);
+}
+
+/* ===== BLOG LIST PAGE ===== */
+[data-theme="dark"] .blog-list-page,
+[data-theme="dark"] .blog-tags-posts-page {
+  background: #0A0118;
+}
+
+/* Blog tags as pills */
+[data-theme="dark"] .tag_node_modules-\@docusaurus-theme-classic-lib-theme-Tag-styles-module,
+[data-theme="dark"] a[class*="tag_"] {
+  background: rgba(19, 8, 40, 0.6);
+  border: 1px solid rgba(65, 55, 85, 0.3);
+  border-radius: 999px;
+  padding: 4px 12px;
+  transition: all 0.2s ease;
+}
+
+[data-theme="dark"] a[class*="tag_"]:hover {
+  border-color: rgba(123, 63, 228, 0.4);
+  background: rgba(123, 63, 228, 0.1);
+}
+
+/* ===== BLOG POST PAGE ===== */
+[data-theme="dark"] .blog-post-page article h1,
+[data-theme="dark"] article header h1 {
+  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+}
+
+/* Reading progress bar */
+.reading-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #7B3FE4, #28CB95);
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* ===== SEARCH BAR ===== */
+[data-theme="dark"] .DocSearch-Button {
+  background: rgba(19, 8, 40, 0.6) !important;
+  border: 1px solid rgba(65, 55, 85, 0.3) !important;
+  border-radius: 12px !important;
+  transition: all 0.2s ease !important;
+}
+
+[data-theme="dark"] .DocSearch-Button:hover {
+  border-color: rgba(123, 63, 228, 0.3) !important;
+  box-shadow: 0 0 15px rgba(123, 63, 228, 0.1) !important;
+}
+
+/* ===== BREADCRUMBS ===== */
+[data-theme="dark"] .breadcrumbs__link {
+  transition: color 0.2s ease;
+}
+
+[data-theme="dark"] .breadcrumbs__link:hover {
+  color: #28CB95;
+}
+
+/* ===== ALERTS / ADMONITIONS ===== */
+[data-theme="dark"] .alert {
+  background: rgba(19, 8, 40, 0.5);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+}
+
+/* ===== GENERAL DARK MODE BACKGROUNDS ===== */
+[data-theme="dark"] main {
+  background: #0A0118;
+}
+
+[data-theme="dark"] .docMainContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module {
+  background: #0A0118;
+}

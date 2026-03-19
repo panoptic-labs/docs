@@ -8,15 +8,32 @@
  @tailwind components;
  @tailwind utilities;
 
-/* Scroll reveal animations */
-.scroll-reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+@import './theme-overrides.css';
+
+/* Glassmorphism utilities */
+.glass {
+  background: rgba(19, 8, 40, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(123, 63, 228, 0.15);
 }
-.scroll-reveal.revealed {
-  opacity: 1;
-  transform: translateY(0);
+
+.glass-hover {
+  transition: all 0.3s ease;
+}
+
+.glass-hover:hover {
+  background: rgba(26, 14, 53, 0.8);
+  border-color: rgba(123, 63, 228, 0.35);
+  box-shadow: 0 0 30px rgba(123, 63, 228, 0.15);
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #7B3FE4, #28CB95);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* You can override the default Infima variables here. */
@@ -37,6 +54,7 @@
   --ifm-color-primary-lightest: hsl(262, 49%, 56%);
   --ifm-color-navbar-links: hsl(257, 68%, 69%);
   --ifm-font-family-base: "Inter";
+  --ifm-heading-font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
   --ifm-font-size-base: 16px;
   --ifm-font-weight-semibold: 400;
   --ifm-font-weight-bold: 700;
@@ -52,7 +70,7 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme="dark"] {
-  --color-body: #0f0426;
+  --color-body: #0A0118;
   --color-card: rgba(50, 46, 57, 0.51);
   --color-text-primary: #ffffff;
   --color-text-secondary: #f3f3f3;
@@ -134,15 +152,7 @@ div[class^="announcementBar_"] .close {
 
 html[data-theme="dark"] {
   background-position: 0px 25vh;
-  background: radial-gradient(
-    circle at 100%,
-    hsla(262, 94%, 80%, 0.1) 2% 0%,
-    hsla(262, 69%, 100%, 0.1) 15% 7%,
-    hsla(262, 94%, 76%, 0.1) 47% 53%,
-    hsla(262, 69%, 87%, 0.1) 80%
-  );
-
-  /* any other colors you wish to overwrite */
+  background: #0A0118;
 }
 
 html[data-theme="light"] {
@@ -155,6 +165,20 @@ html[data-theme="light"] {
     hsla(262, 49%, 13%, 0.05) 80%
   );
   /* any other colors you wish to overwrite */
+}
+
+/* Subtle noise texture overlay */
+html[data-theme="dark"]::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
 }
 
 .main {
@@ -220,9 +244,22 @@ html[data-theme="light"] {
   align-items: center;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ifm-heading-font-family);
+}
+
 h2 {
   font-size: 32px;
   font-weight: 600;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Mobile navbar ellipsis fix */
@@ -242,14 +279,14 @@ h2 {
     width: auto !important;
     height: auto !important;
   }
-  
+
   /* Hide all children of the toggle button */
   .navbar .navbar__toggle *,
   button[aria-label*="Toggle navigation"] *,
   button[aria-label*="navigation menu"] * {
     display: none !important;
   }
-  
+
   /* Add ellipsis */
   .navbar .navbar__toggle::before,
   button[aria-label*="Toggle navigation"]::before,

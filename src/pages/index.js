@@ -1,4 +1,6 @@
 import "inter-ui/inter.css";
+import "@fontsource-variable/space-grotesk";
+import "@fontsource/jetbrains-mono";
 import React from "react";
 
 import RecentUpdates from "../components/HomePage/RecentUpdates";
@@ -11,24 +13,19 @@ import FAQPage from '../components/NewHomePage/FAQPage/FAQPage';
 import Layout from '@theme/Layout';
 import VerticalsSection from '../components/NewHomePage/VerticalsSection/VerticalsSection';
 import ComparisonTable from '../components/NewHomePage/ComparisonTable/ComparisonTable';
-import useScrollReveal from '../hooks/useScrollReveal';
-
-function RevealSection({ children }) {
-  const ref = useScrollReveal();
-  return <div ref={ref}>{children}</div>;
-}
+import FadeIn from '../components/animations/FadeIn';
 
 export default function Home() {
   return (
     <Layout purpleMode={false}>
-      <main style={{backgroundColor: '#0f0426'}}>
+      <main style={{backgroundColor: '#0A0118'}}>
         <TitlePage/>
-        <RevealSection><VerticalsSection/></RevealSection>
-        <RevealSection><ComparisonTable/></RevealSection>
-        <RevealSection><LaunchPage/></RevealSection>
-        <RevealSection><PartnerPage/></RevealSection>
-        <RevealSection><FAQPage/></RevealSection>
-        <RecentUpdates />
+        <FadeIn><VerticalsSection/></FadeIn>
+        <FadeIn><ComparisonTable/></FadeIn>
+        <FadeIn><LaunchPage/></FadeIn>
+        <FadeIn><PartnerPage/></FadeIn>
+        <FadeIn><FAQPage/></FadeIn>
+        <FadeIn><RecentUpdates /></FadeIn>
       </main>
     </Layout>
   );
