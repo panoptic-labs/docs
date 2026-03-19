@@ -6,12 +6,12 @@ import SearchBar from '@theme/SearchBar';
 import {useWindowSize} from '@docusaurus/theme-common';
 import {useLocation} from '@docusaurus/router';
 import styles from './styles.module.css';
+import { APP_LINK } from '../../constants';
 
 export default function Navbar({purpleMode = true}) {
   const windowSize = useWindowSize();
   const location = useLocation();
-  
-  // Only show docs hamburger on docs pages
+
   const isDocsPage = location.pathname.startsWith('/docs');
 
   return (
@@ -42,9 +42,17 @@ export default function Navbar({purpleMode = true}) {
         </svg>
         </button>
       )}
-      <NavbarSearch>
-        <SearchBar />
-      </NavbarSearch>
+      {isDocsPage ? (
+        <NavbarSearch>
+          <SearchBar />
+        </NavbarSearch>
+      ) : (
+        windowSize !== 'mobile' && (
+          <a href={APP_LINK} className={styles.navLaunchBtn} target="_blank" rel="noopener noreferrer">
+            Launch App →
+          </a>
+        )
+      )}
     </Header>
   );
 }

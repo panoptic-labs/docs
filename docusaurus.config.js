@@ -164,23 +164,13 @@ const config = {
             "https://raw.githubusercontent.com/panoptic-labs/docs/main/static/img/website-banner.png",
         },
       ],
-      announcementBar: {
-        id: "Vulnerability_claims_open",
-        content: `
-          Panoptic V2 is Coming&emsp;&emsp;&emsp; ✔️ Audit #1 (Obsidian)&emsp;&emsp;&emsp;    ✔️ Audit #2 (Nethermind)&emsp;&emsp;&emsp;    🚧 Audit #3 (Competitive)
-          <br>
-
-          <span style="font-size: 0.80em; opacity: 0.9;">
-            V1 vulnerability resolved — all funds 
-            <a href="https://x.com/Panoptic_xyz/status/1964010635026715015" target="_blank" rel="noopener noreferrer">
-              rescued</a>.
-            Claim
-            <a href="https://app.panoptic.xyz/claim/rescued-funds" target="_blank" rel="noopener noreferrer">here</a>.
-          </span>
-        `,
-        textColor: "#FFFFFF",
-        isCloseable: false,
-      },
+      // Announcement bar temporarily disabled — V2 info moved to homepage banner
+      // announcementBar: {
+      //   id: "Vulnerability_claims_open",
+      //   content: `Panoptic V2 is Coming`,
+      //   textColor: "#FFFFFF",
+      //   isCloseable: false,
+      // },
       image:
         "https://raw.githubusercontent.com/panoptic-labs/docs/main/static/img/website-banner.png",
       algolia: {

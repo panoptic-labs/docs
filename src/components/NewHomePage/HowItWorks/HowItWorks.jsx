@@ -5,18 +5,18 @@ import "./HowItWorks.css";
 const steps = [
   {
     num: "01",
-    title: "LPs Deposit Capital",
-    desc: "Liquidity providers deposit tokens into Panoptic pools and passively earn yield as their capital is lent to options traders.",
+    title: "Trade Actively",
+    desc: "Self-directed traders deploy algorithmic and quantitative options strategies on-chain — with up to 10× leverage and full control over every position.",
   },
   {
     num: "02",
-    title: "Traders Open Positions",
-    desc: "Options traders borrow liquidity to sell options or use their own capital to buy puts and calls — with up to 10× leverage.",
+    title: "Earn Passively",
+    desc: "Deposit into managed strategy vaults and earn yield from options strategies curated by expert vault managers. No active management required.",
   },
   {
     num: "03",
-    title: "Settle Permissionlessly",
-    desc: "Everything settles on-chain. No intermediaries, no waiting periods. Manage, adjust, and close positions any time.",
+    title: "Curate Vaults",
+    desc: "Vault managers design, deploy, and manage options strategies on behalf of depositors — earning performance fees while building reputation on-chain.",
   },
 ];
 
@@ -57,10 +57,9 @@ export default function HowItWorks() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Whether you trade, provide liquidity, or build — Panoptic has a place for you.
+          Whether you trade actively, earn passively, or manage strategies — Panoptic has a place for you.
         </motion.p>
         <div className="steps-grid">
-          {/* Connecting line that draws in */}
           <motion.div
             className="steps-line"
             initial={{ scaleX: 0 }}

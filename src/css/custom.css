@@ -9,6 +9,7 @@
  @tailwind utilities;
 
 @import './theme-overrides.css';
+@import './v2-banner.css';
 
 /* Glassmorphism utilities */
 .glass {

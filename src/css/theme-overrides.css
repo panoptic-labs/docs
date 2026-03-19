@@ -127,11 +127,60 @@
   border: 1px solid rgba(65, 55, 85, 0.3) !important;
   border-radius: 12px !important;
   transition: all 0.2s ease !important;
+  color: rgba(232, 224, 245, 0.5) !important;
 }
 
 [data-theme="dark"] .DocSearch-Button:hover {
   border-color: rgba(123, 63, 228, 0.3) !important;
   box-shadow: 0 0 15px rgba(123, 63, 228, 0.1) !important;
+}
+
+[data-theme="dark"] .DocSearch-Button .DocSearch-Search-Icon {
+  color: rgba(232, 224, 245, 0.5) !important;
+}
+
+/* Search modal dark mode */
+[data-theme="dark"] .DocSearch-Modal {
+  background: #0A0118 !important;
+  border: 1px solid rgba(78, 20, 208, 0.2) !important;
+}
+
+[data-theme="dark"] .DocSearch-SearchBar {
+  background: rgba(19, 8, 40, 0.8) !important;
+  border-bottom: 1px solid rgba(78, 20, 208, 0.15) !important;
+}
+
+[data-theme="dark"] .DocSearch-Form {
+  background: rgba(19, 8, 40, 0.6) !important;
+  border: 1px solid rgba(78, 20, 208, 0.18) !important;
+  border-radius: 12px !important;
+}
+
+[data-theme="dark"] .DocSearch-Input {
+  color: #E8E0F5 !important;
+}
+
+[data-theme="dark"] .DocSearch-Hit {
+  background: rgba(19, 8, 40, 0.4) !important;
+  border: 1px solid rgba(65, 55, 85, 0.2) !important;
+  border-radius: 8px !important;
+}
+
+[data-theme="dark"] .DocSearch-Hit a {
+  background: transparent !important;
+}
+
+[data-theme="dark"] .DocSearch-Hit[aria-selected="true"] a {
+  background: rgba(78, 20, 208, 0.15) !important;
+}
+
+[data-theme="dark"] .DocSearch-Footer {
+  background: rgba(19, 8, 40, 0.8) !important;
+  border-top: 1px solid rgba(78, 20, 208, 0.15) !important;
+}
+
+[data-theme="dark"] .DocSearch-Dropdown {
+  background: transparent !important;
 }
 
 /* ===== BREADCRUMBS ===== */

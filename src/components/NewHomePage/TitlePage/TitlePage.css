@@ -36,6 +36,31 @@
   transform-origin: center 0;
 }
 
+/* ── Large gradient logo mark behind hero ── */
+.hero-logo-mark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 480px;
+  height: 480px;
+  opacity: 0.07;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-logo-mark svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-logo-mark {
+    width: 320px;
+    height: 320px;
+  }
+}
+
 /* ── Hero content ── */
 .hero-content-wrapper {
   min-height: calc(100vh - var(--ifm-navbar-height) - 200px);

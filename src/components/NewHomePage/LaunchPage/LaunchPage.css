@@ -43,6 +43,11 @@
   transform: translateY(-2px);
 }
 
+.network-pill-dim {
+  opacity: 0.5;
+  border-style: dashed;
+}
+
 .chain-dot {
   width: 10px;
   height: 10px;

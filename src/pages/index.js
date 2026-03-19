@@ -7,7 +7,7 @@ import RecentUpdates from "../components/HomePage/RecentUpdates";
 import TitlePage from "../components/NewHomePage/TitlePage/TitlePage";
 import VerticalsSection from "../components/NewHomePage/VerticalsSection/VerticalsSection";
 import HowItWorks from "../components/NewHomePage/HowItWorks/HowItWorks";
-import ComparisonTable from "../components/NewHomePage/ComparisonTable/ComparisonTable";
+import SecuritySection from "../components/NewHomePage/SecuritySection/SecuritySection";
 import LaunchPage from "../components/NewHomePage/LaunchPage/LaunchPage";
 import PartnerPage from "../components/NewHomePage/PartnerPage/PartnerPage";
 import FAQPage from "../components/NewHomePage/FAQPage/FAQPage";
@@ -21,12 +21,12 @@ export default function Home() {
       <main style={{ backgroundColor: "#0A0118" }}>
         <TitlePage />
         <FadeIn><VerticalsSection /></FadeIn>
+        <FadeIn><RecentUpdates /></FadeIn>
         <FadeIn><HowItWorks /></FadeIn>
-        <FadeIn><ComparisonTable /></FadeIn>
+        <FadeIn><SecuritySection /></FadeIn>
         <FadeIn><LaunchPage /></FadeIn>
         <FadeIn><PartnerPage /></FadeIn>
         <FadeIn><FAQPage /></FadeIn>
-        <FadeIn><RecentUpdates /></FadeIn>
         <CTASection />
       </main>
     </Layout>

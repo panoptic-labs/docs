@@ -32,9 +32,6 @@ const Nav = ({purpleMode = false}) => {
       <div onClick={() => handleClick("https://github.com/panoptic-labs")} className="nav__link">
         GitHub
       </div>
-      <a href={APP_LINK} className="nav-btn-launch" target="_blank" rel="noopener noreferrer">
-        Launch App →
-      </a>
     </nav>
   );
 };

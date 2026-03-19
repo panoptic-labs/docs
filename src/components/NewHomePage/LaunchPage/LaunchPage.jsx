@@ -3,10 +3,8 @@ import { motion } from "framer-motion"
 import "./LaunchPage.css"
 
 const chains = [
-  { name: "Ethereum", dotClass: "chain-dot-eth" },
-  { name: "Base", dotClass: "chain-dot-base" },
-  { name: "Unichain", dotClass: "chain-dot-uni" },
-  { name: "More L2s Coming", dotClass: "chain-dot-more" },
+  { name: "Ethereum", dotClass: "chain-dot-eth", live: true },
+  { name: "More L2s Coming Soon", dotClass: "chain-dot-more", live: false },
 ];
 
 const container = {
@@ -30,7 +28,7 @@ const LaunchPage = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          Live Networks
+          Network
         </motion.div>
         <motion.h2
           className="section-title"
@@ -39,7 +37,7 @@ const LaunchPage = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.05 }}
         >
-          Multi-chain. Day one.
+          Launching on Ethereum.
         </motion.h2>
         <motion.p
           className="section-desc networks-desc"
@@ -48,7 +46,7 @@ const LaunchPage = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Deployed where the liquidity lives — with more chains on the way.
+          Panoptic V2 launches on Ethereum mainnet first — where the deepest liquidity lives. Multi-chain expansion to follow.
         </motion.p>
         <motion.div
           className="network-pills"
@@ -58,7 +56,7 @@ const LaunchPage = () => {
           viewport={{ once: true }}
         >
           {chains.map((c) => (
-            <motion.div key={c.name} className="network-pill" variants={item}>
+            <motion.div key={c.name} className={`network-pill ${!c.live ? 'network-pill-dim' : ''}`} variants={item}>
               <span className={`chain-dot ${c.dotClass}`} />
               {c.name}
             </motion.div>
