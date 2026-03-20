@@ -157,12 +157,12 @@ const config = {
         {
           property: "og:image",
           content:
-            "https://panoptic.xyz/img/website-banner.png",
+            "https://panoptic.xyz/img/website-banner.png?v=2",
         },
         {
           name: "twitter:image",
           content:
-            "https://panoptic.xyz/img/website-banner.png",
+            "https://panoptic.xyz/img/website-banner.png?v=2",
         },
       ],
       // Announcement bar temporarily disabled — V2 info moved to homepage banner
@@ -173,7 +173,7 @@ const config = {
       //   isCloseable: false,
       // },
       image:
-        "https://panoptic.xyz/img/website-banner.png",
+        "https://panoptic.xyz/img/website-banner.png?v=2",
       algolia: {
         appId: '8ICJTW297L',
         // Public API key: it is safe to commit it

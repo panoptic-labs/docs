@@ -20,35 +20,36 @@ const icons = {
       <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
     </svg>
   ),
-  multileg: (
+  margin: (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="3" y="3" width="7" height="7" rx="1" />
-      <rect x="14" y="3" width="7" height="7" rx="1" />
-      <rect x="3" y="14" width="7" height="7" rx="1" />
-      <rect x="14" y="14" width="7" height="7" rx="1" />
+      <path d="M12 2L2 7l10 5 10-5-10-5z" />
+      <path d="M2 17l10 5 10-5" />
+      <path d="M2 12l10 5 10-5" />
     </svg>
   ),
-  oracle: (
+  vault: (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="12" r="10" />
-      <line x1="4.93" y1="4.93" x2="19.07" y2="19.07" />
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="12" cy="12" r="1" />
+      <path d="M2 10h4M18 10h4" />
     </svg>
   ),
-  custody: (
+  riskEngine: (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+      <path d="M12 2L2 7v6.5c0 5.25 4.25 10.15 10 11.5 5.75-1.35 10-6.25 10-11.5V7l-10-5z" />
+      <path d="M9 12l2 2 4-4" />
     </svg>
   ),
 };
 
 const features = [
   { icon: icons.perpetual, title: "Perpetual Options", description: "No expiry dates. Hold positions indefinitely and manage them on your terms. Exit when you want, not when a contract says so." },
-  { icon: icons.token, title: "Any Token", description: "Create options markets on any asset with a Uniswap pool. Permissionless market creation — no gatekeepers required." },
+  { icon: icons.token, title: "Any Token", description: "Create options markets on any asset with a Uniswap pool. Permissionless market creation — no external oracle dependencies." },
   { icon: icons.leverage, title: "Up to 10× Leverage", description: "Capital-efficient trading with built-in risk controls. Maximize exposure without maximizing trust assumptions." },
-  { icon: icons.multileg, title: "Multi-leg Strategies", description: "Combine puts, calls, and spreads in a single position. Straddles, strangles, iron condors — all on-chain." },
-  { icon: icons.oracle, title: "Oracle-Free Pricing", description: "Option pricing derived directly from Uniswap liquidity. No external oracle dependencies, no manipulation vectors." },
-  { icon: icons.custody, title: "Self-Custody", description: "Fully non-custodial protocol. Your keys, your funds. Always. No counterparty risk, no withdrawal queues." },
+  { icon: icons.margin, title: "Portfolio-Aware Margining", description: "Net positions against one another to create defined-risk strategies. Straddles, strangles, and spreads are capital-efficiently margined as a single portfolio." },
+  { icon: icons.vault, title: "Perpetual Options Vaults", description: "Deposit into curator-managed vaults that run sophisticated options strategies on your behalf. Earn yield from volatility without active management." },
+  { icon: icons.riskEngine, title: "Modular Risk Engines", description: "Trade memecoins, blue chips, or stable pairs — each with a risk engine tailored to its asset class. One protocol, fit for every market." },
 ];
 
 const container = {
