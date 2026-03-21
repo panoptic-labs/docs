@@ -4,6 +4,10 @@
   margin-bottom: 0px;
 }
 
+:global([data-theme="dark"]) .title {
+  color: #fff;
+}
+
 /**
   Blog post title should be smaller on smaller devices
 **/

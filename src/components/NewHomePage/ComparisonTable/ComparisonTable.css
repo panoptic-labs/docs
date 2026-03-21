@@ -1,0 +1,121 @@
+.comparison-section {
+  padding: 100px 0;
+  background-color: #0A0118;
+}
+
+.comparison-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.comparison-table-wrapper {
+  max-width: 720px;
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 16px;
+  position: relative;
+  background: rgba(78, 20, 208, 0.06);
+  border: 1px solid rgba(78, 20, 208, 0.18);
+  margin-top: 40px;
+}
+
+.comparison-glow-bar {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #7B3FE4, transparent);
+  border-radius: 2px;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  color: #E8E0F5;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 16px 20px;
+  text-align: center;
+  border-bottom: 1px solid rgba(78, 20, 208, 0.12);
+}
+
+.comparison-table th {
+  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: rgba(232, 224, 245, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.comparison-table td:first-child,
+.comparison-table th:first-child {
+  text-align: left;
+}
+
+.comparison-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.comparison-table .panoptic-col {
+  background: rgba(78, 20, 208, 0.08);
+}
+
+.comparison-table th.panoptic-col {
+  color: #9B6CFF;
+}
+
+.comparison-row {
+  transition: background 0.2s ease;
+}
+
+.comparison-row:hover {
+  background: rgba(78, 20, 208, 0.04);
+}
+
+/* Status dots */
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dot-green {
+  background: #28CB95;
+  box-shadow: 0 0 10px rgba(40, 203, 149, 0.5);
+}
+
+.dot-red {
+  background: rgba(239, 68, 68, 0.5);
+}
+
+.dot-na {
+  color: rgba(232, 224, 245, 0.3);
+  font-size: 0.8rem;
+}
+
+.dot-limited {
+  color: rgba(232, 224, 245, 0.4);
+  font-size: 0.8rem;
+}
+
+@media screen and (max-width: 768px) {
+  .comparison-section {
+    padding: 72px 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .comparison-table th,
+  .comparison-table td {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+}

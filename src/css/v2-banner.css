@@ -1,0 +1,52 @@
+/* V2 Announcement banner — on homepage above CTA */
+.v2-announcement-banner {
+  background: linear-gradient(135deg, rgba(78, 20, 208, 0.08), rgba(40, 203, 149, 0.05));
+  border-top: 1px solid rgba(78, 20, 208, 0.18);
+  border-bottom: 1px solid rgba(78, 20, 208, 0.18);
+  padding: 28px 32px;
+  text-align: center;
+}
+
+.v2-announcement-content {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.v2-announcement-title {
+  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.v2-announcement-audits {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.v2-audit-item {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.v2-audit-complete {
+  color: #28CB95;
+}
+
+.v2-audit-progress {
+  color: #FBBF24;
+}
+
+@media screen and (max-width: 600px) {
+  .v2-announcement-audits {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

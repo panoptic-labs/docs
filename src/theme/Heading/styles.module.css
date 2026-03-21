@@ -15,6 +15,10 @@ See https://twitter.com/JoshWComeau/status/1332015868725891076
   color: black;
 }
 
+:global([data-theme="dark"]) .headingStyle {
+  color: #fff;
+}
+
 :global(.hash-link) {
   opacity: 0;
   padding-left: 0.5rem;

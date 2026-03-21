@@ -2,12 +2,13 @@
 .blog-landing-page {
   background-color: #4E14D0;
   padding: 60px 80px;
-  min-height: calc(100vh - 60px);
 
   background-image: url("/img/blog-landing-page-background.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .blog-title {

@@ -1,0 +1,153 @@
+.security-section {
+  background-color: transparent;
+  padding: 100px 0;
+}
+
+.security-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* Audit badges */
+.audit-badges {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.audit-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  border-radius: 14px;
+  background: rgba(78, 20, 208, 0.06);
+  border: 1px solid rgba(78, 20, 208, 0.18);
+  transition: all 0.3s ease;
+}
+
+.audit-badge:hover {
+  border-color: rgba(78, 20, 208, 0.35);
+  transform: translateY(-2px);
+}
+
+.audit-status {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.audit-complete {
+  background: rgba(40, 203, 149, 0.15);
+  color: #28CB95;
+  border: 1px solid rgba(40, 203, 149, 0.3);
+}
+
+.audit-progress {
+  background: rgba(251, 191, 36, 0.1);
+  color: #FBBF24;
+  border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+.audit-name {
+  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.audit-status-text {
+  font-size: 0.8rem;
+  color: rgba(232, 224, 245, 0.5);
+  margin-top: 2px;
+}
+
+.audit-details-link {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #9B6CFF;
+  text-decoration: none;
+  margin-bottom: 48px;
+  transition: color 0.2s ease;
+}
+
+.audit-details-link:hover {
+  color: #28CB95;
+  text-decoration: none;
+}
+
+/* Security pillars grid */
+.security-pillars {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.security-pillar {
+  padding: 32px 28px;
+  border-radius: 16px;
+  background: rgba(78, 20, 208, 0.06);
+  border: 1px solid rgba(78, 20, 208, 0.18);
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.security-pillar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #28CB95, transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.security-pillar:hover {
+  border-color: rgba(40, 203, 149, 0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 48px rgba(40, 203, 149, 0.06);
+}
+
+.security-pillar:hover::before {
+  opacity: 1;
+}
+
+.security-pillar h3 {
+  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0 0 8px;
+  padding: 0;
+  color: #fff;
+}
+
+.security-pillar p {
+  color: rgba(232, 224, 245, 0.5);
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 768px) {
+  .security-section {
+    padding: 72px 0;
+  }
+  .security-pillars {
+    grid-template-columns: 1fr;
+  }
+  .audit-badges {
+    flex-direction: column;
+  }
+}

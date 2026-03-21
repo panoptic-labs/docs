@@ -4,12 +4,14 @@ import Layout from '@theme/Layout';
 import './BlogPageLayout.css'
 import useResponsive from '../../../hooks/useResponsive';
 import BlogPostRelatedPosts from '../BlogPostRelatedPosts';
+import FloatingLogos from '../../../components/animations/FloatingLogos';
 
 export default function BlogLayout(props) {
   const { isMobileWidth } = useResponsive();
   const {sidebar, toc, children, ...layoutProps} = props;
   return (
     <Layout {...layoutProps} purpleMode={false}>
+      <FloatingLogos />
       <div className="blog-page-layout">
         {!isMobileWidth &&
           <div className="blog-page-featured-tag-container">

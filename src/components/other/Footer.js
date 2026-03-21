@@ -18,34 +18,39 @@ const Footer = () => {
 
   return (
     <footer className="custom-footer">
-      <div className="footer-conversation-container footer-conversation-container-background">
-        <div className="footer-conversation-title">Join the conversation</div>
-        <div className="footer-conversation-social">
-          <div className="footer-conversation-social-text">Find us on:</div>
-          <div className="footer-conversation-social-icon-container">
-            <a className="footer-conversation-social-icon-link" href="https://discord.com/invite/8sX5Af2KXG" aria-label="Discord">
-              <img src={"/img/icons/discord.svg"} alt="discord" className="footer-conversation-social-icon ocial-icon-margin"></img>
+      {/* Gradient divider */}
+      <div className="footer-gradient-divider" />
+
+      {/* CTA Bar */}
+      <div className="footer-cta-bar">
+        <div className="footer-cta-content">
+          <div className="footer-cta-title">Join the conversation</div>
+          <div className="footer-cta-social">
+            <a className="footer-social-icon-link" href="https://discord.com/invite/8sX5Af2KXG" aria-label="Discord">
+              <img src={"/img/icons/discord.svg"} alt="discord" className="footer-social-icon" />
             </a>
-            <a className="footer-conversation-social-icon-link" href="https://twitter.com/panoptic_xyz" aria-label="Twitter">
-              <img src={"/img/icons/twitter.svg"} alt="Twitter" className="footer-conversation-social-icon ocial-icon-margin"></img>
+            <a className="footer-social-icon-link" href="https://twitter.com/panoptic_xyz" aria-label="Twitter">
+              <img src={"/img/icons/twitter.svg"} alt="Twitter" className="footer-social-icon" />
             </a>
-            <a className="footer-conversation-social-icon-link" href="https://t.me/panoptic" aria-label="Telegram">
-              <img src={"/img/icons/telegram-big.svg"} alt="telegram" className="footer-conversation-social-icon"></img>
+            <a className="footer-social-icon-link" href="https://t.me/panoptic" aria-label="Telegram">
+              <img src={"/img/icons/telegram-big.svg"} alt="telegram" className="footer-social-icon" />
             </a>
-            <a className="footer-conversation-social-icon-link" href="https://www.linkedin.com/company/panoptic-xyz" aria-label="Linked In">
-              <img src={"/img/icons/linkedin.svg"} alt="Linked In" className="footer-conversation-social-icon ocial-icon-margin"></img>
+            <a className="footer-social-icon-link" href="https://www.linkedin.com/company/panoptic-xyz" aria-label="Linked In">
+              <img src={"/img/icons/linkedin.svg"} alt="Linked In" className="footer-social-icon" />
             </a>
-            <a className="footer-conversation-social-icon-link" href="https://poap.family/events/151512,156764,156765,159354,159355,165545,165546,167273,167274,167935,167936,169080,169081" aria-label="POAP">
-              <img src={"/img/icons/poap.svg"} alt="POAP" className="footer-conversation-social-icon ocial-icon-margin"></img>
+            <a className="footer-social-icon-link" href="https://poap.family/events/151512,156764,156765,159354,159355,165545,165546,167273,167274,167935,167936,169080,169081" aria-label="POAP">
+              <img src={"/img/icons/poap.svg"} alt="POAP" className="footer-social-icon" />
             </a>
           </div>
         </div>
       </div>
+
+      {/* Main footer grid */}
       <div className="footer__container">
         <div className="footer__container__logo-part">
           <img
             className="logo-part__logo"
-            src="/img/logo-dark.svg"
+            src="/img/logo-new-white.svg"
             alt="footer logo"
           />
           <Copyright />

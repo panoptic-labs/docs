@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "@docusaurus/Link";
 import clsx from "clsx";
 import useResponsive from "../../hooks/useResponsive";
@@ -10,7 +10,15 @@ import { APP_LINK } from "../../constants";
 
 const Header = ({purpleMode = false, children}) => {
   const [isOpenedSidebar, setOpenedSidebar] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { loadedWidth, isTabletWidth, is1200 } = useResponsive();
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleToggle = () => {
     setOpenedSidebar((state) => !state);
@@ -20,25 +28,22 @@ const Header = ({purpleMode = false, children}) => {
     setOpenedSidebar(false);
   };
 
-  const logoPath = purpleMode ? `/img/logo-mono-white.svg` : `/img/logo-mono.svg`;
+  const logoPath = `/img/logo-new-white.svg`;
 
   const showAppComingSoonButton = loadedWidth && (!is1200 || !children) && !isTabletWidth
 
   return (
     <>
-      <header className={clsx("header", "navbar", {"purple-background": purpleMode})}>
+      <header className={clsx("header", "navbar", {"purple-background": purpleMode, "scrolled": scrolled})}>
         <Link to="/" className="header__logo">
           <img src={logoPath} alt="logo" />
         </Link>
-        {loadedWidth && !isTabletWidth && <Nav purpleMode={purpleMode}/>}
+        {loadedWidth && !isTabletWidth && <Nav purpleMode={true}/>}
         <div className="right-part">
           {children}
           {loadedWidth && isTabletWidth && (
             <div className="mobile-button" onClick={handleToggle}>
-              { purpleMode
-                ? <i className="icon__burger right-part__icon" />
-                : <img src={"/img/burger-purple.svg"}/>
-              }
+              <i className="icon__burger right-part__icon" />
             </div>
           )}
         </div>

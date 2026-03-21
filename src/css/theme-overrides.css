@@ -1,0 +1,399 @@
+/**
+ * Premium theme overrides for Docs, Blog, and Research pages.
+ * Applied globally via custom.css import.
+ */
+
+/* ===== GLOBAL DARK MODE TEXT & BACKGROUNDS ===== */
+[data-theme="dark"] main {
+  background: #0A0118;
+  color: #E8E0F5;
+}
+
+[data-theme="dark"] .markdown,
+[data-theme="dark"] .theme-doc-markdown,
+[data-theme="dark"] article {
+  color: #E8E0F5;
+}
+
+[data-theme="dark"] .markdown h1,
+[data-theme="dark"] .markdown h2,
+[data-theme="dark"] .markdown h3,
+[data-theme="dark"] .markdown h4,
+[data-theme="dark"] .markdown h5,
+[data-theme="dark"] .markdown h6,
+[data-theme="dark"] article h1,
+[data-theme="dark"] article h2,
+[data-theme="dark"] article h3 {
+  color: #fff !important;
+}
+
+[data-theme="dark"] .markdown p,
+[data-theme="dark"] .markdown li,
+[data-theme="dark"] .markdown td,
+[data-theme="dark"] .markdown th,
+[data-theme="dark"] .markdown span,
+[data-theme="dark"] article p,
+[data-theme="dark"] article li,
+[data-theme="dark"] article span {
+  color: #E8E0F5;
+}
+
+[data-theme="dark"] .markdown strong,
+[data-theme="dark"] article strong {
+  color: #fff;
+}
+
+[data-theme="dark"] .markdown a,
+[data-theme="dark"] article a {
+  color: #9B6CFF;
+}
+
+[data-theme="dark"] .markdown a:hover,
+[data-theme="dark"] article a:hover {
+  color: #28CB95;
+}
+
+[data-theme="dark"] .markdown blockquote {
+  border-left-color: rgba(123, 63, 228, 0.4);
+  color: rgba(232, 224, 245, 0.7);
+}
+
+[data-theme="dark"] .markdown hr {
+  border-color: rgba(65, 55, 85, 0.3);
+}
+
+[data-theme="dark"] .markdown table th {
+  background: rgba(78, 20, 208, 0.08);
+}
+
+[data-theme="dark"] .markdown table td,
+[data-theme="dark"] .markdown table th {
+  border-color: rgba(65, 55, 85, 0.3);
+}
+
+/* ===== DOC SIDEBAR ===== */
+[data-theme="dark"] .theme-doc-sidebar-container {
+  background: rgba(10, 1, 24, 0.95);
+  border-right: 1px solid rgba(65, 55, 85, 0.3);
+}
+
+[data-theme="dark"] .menu {
+  background: transparent;
+}
+
+[data-theme="dark"] .menu__link {
+  color: rgba(232, 224, 245, 0.7);
+}
+
+[data-theme="dark"] .menu__link--active:not(.menu__link--sublist) {
+  border-left: 3px solid #7B3FE4;
+  padding-left: 9px;
+  background: rgba(123, 63, 228, 0.08);
+  color: #c4b5fd;
+}
+
+[data-theme="dark"] .menu__link:hover {
+  color: #28CB95;
+  background: rgba(40, 203, 149, 0.05);
+}
+
+[data-theme="dark"] .menu__list-item-collapsible .menu__link {
+  color: rgba(232, 224, 245, 0.9);
+}
+
+/* ===== DOC CONTENT ===== */
+[data-theme="dark"] .theme-doc-markdown {
+  max-width: 800px;
+}
+
+[data-theme="dark"] .theme-doc-markdown h1,
+[data-theme="dark"] .theme-doc-markdown h2,
+[data-theme="dark"] .theme-doc-markdown h3,
+[data-theme="dark"] .theme-doc-markdown h4 {
+  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+}
+
+/* Code blocks with purple tint */
+[data-theme="dark"] pre {
+  background: rgba(19, 8, 40, 0.6) !important;
+  border: 1px solid rgba(123, 63, 228, 0.15);
+  border-radius: 12px;
+}
+
+[data-theme="dark"] code {
+  font-family: "JetBrains Mono", monospace;
+  color: #E8E0F5;
+}
+
+[data-theme="dark"] :not(pre) > code {
+  background: rgba(123, 63, 228, 0.1);
+  border: 1px solid rgba(123, 63, 228, 0.15);
+  border-radius: 4px;
+  padding: 2px 6px;
+  color: #c4b5fd;
+}
+
+/* ===== TOC (Table of Contents) ===== */
+[data-theme="dark"] .table-of-contents {
+  background: rgba(10, 1, 24, 0.5);
+  border-radius: 12px;
+  border: 1px solid rgba(65, 55, 85, 0.2);
+  padding: 12px;
+}
+
+[data-theme="dark"] .table-of-contents__link {
+  color: rgba(232, 224, 245, 0.5);
+}
+
+[data-theme="dark"] .table-of-contents__link:hover {
+  color: #E8E0F5;
+}
+
+[data-theme="dark"] .table-of-contents__link--active {
+  color: #28CB95 !important;
+  font-weight: 500;
+}
+
+/* ===== DOC PAGINATION ===== */
+[data-theme="dark"] .pagination-nav__link {
+  background: rgba(19, 8, 40, 0.5);
+  border: 1px solid rgba(123, 63, 228, 0.15);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .pagination-nav__link:hover {
+  border-color: rgba(123, 63, 228, 0.35);
+  box-shadow: 0 0 20px rgba(123, 63, 228, 0.1);
+}
+
+[data-theme="dark"] .pagination-nav__sublabel {
+  color: rgba(232, 224, 245, 0.5);
+}
+
+[data-theme="dark"] .pagination-nav__label {
+  color: #E8E0F5;
+}
+
+/* ===== DOC PAGE BACKGROUNDS ===== */
+[data-theme="dark"] .docMainContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocPage-Layout-Main-styles-module,
+[data-theme="dark"] [class*="docMainContainer"] {
+  background: #0E0520;
+}
+
+[data-theme="dark"] [class*="docSidebarContainer"] {
+  background: #0B0319 !important;
+  border-right: 1px solid rgba(65, 55, 85, 0.3) !important;
+}
+
+/* ===== BLOG / RESEARCH / DOCS — override all #F3F3F3 backgrounds ===== */
+/* Blog/research pages — unified #160934 purple background */
+[data-theme="dark"] .blog-page-layout,
+[data-theme="dark"] .blog-post-items,
+[data-theme="dark"] .blog-list-page-paginator,
+[data-theme="dark"] .blog-list-filters,
+[data-theme="dark"] .blog-post-related-posts,
+[data-theme="dark"] .doc-post-related-posts {
+  background-color: #160934 !important;
+}
+
+/* Force the entire page bg on blog/research pages */
+html[data-theme="dark"][class*="blog"],
+html[data-theme="dark"][class*="blog"] [class*="mainWrapper"],
+html[data-theme="dark"][class*="blog"] main {
+  background: #160934 !important;
+}
+
+/* ===== BLOG / RESEARCH BACKGROUNDS ===== */
+
+[data-theme="dark"] .blog-post-image-placeholder {
+  background-color: rgba(78, 20, 208, 0.06) !important;
+}
+
+/* Blog/research cards — dark purple style matching homepage Recent Updates */
+[data-theme="dark"] .blog-post-item {
+  background: #1E0F42 !important;
+  border: 1px solid rgba(78, 20, 208, 0.18);
+  border-radius: 16px;
+  padding: 12px;
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .blog-post-item:hover {
+  border-color: rgba(123, 63, 228, 0.3);
+  box-shadow: 0 0 20px rgba(123, 63, 228, 0.1);
+  transform: translateY(-4px);
+}
+
+[data-theme="dark"] .blog-post-image-read-time {
+  background-color: rgba(19, 8, 40, 0.8) !important;
+  border-color: rgba(78, 20, 208, 0.18) !important;
+  color: #E8E0F5 !important;
+}
+
+/* ===== BLOG LIST PAGE ===== */
+[data-theme="dark"] .blog-list-page,
+[data-theme="dark"] .blog-tags-posts-page {
+  background: #160934;
+}
+
+/* Blog card text colors */
+[data-theme="dark"] .blog-post-item,
+[data-theme="dark"] [class*="blogPostTitle"],
+[data-theme="dark"] .blog-post-details {
+  color: #E8E0F5;
+}
+
+[data-theme="dark"] [class*="blogPostTitle"] a {
+  color: #fff !important;
+}
+
+/* Blog tags as pills */
+[data-theme="dark"] a[class*="tag_"] {
+  background: rgba(19, 8, 40, 0.6);
+  border: 1px solid rgba(65, 55, 85, 0.3);
+  border-radius: 999px;
+  padding: 4px 12px;
+  transition: all 0.2s ease;
+  color: rgba(232, 224, 245, 0.7);
+}
+
+[data-theme="dark"] a[class*="tag_"]:hover {
+  border-color: rgba(123, 63, 228, 0.4);
+  background: rgba(123, 63, 228, 0.1);
+  color: #E8E0F5;
+}
+
+/* ===== BLOG POST PAGE ===== */
+[data-theme="dark"] article header h1 {
+  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+}
+
+/* Blog post metadata */
+[data-theme="dark"] [class*="blogPostInfo"],
+[data-theme="dark"] [class*="blogPostDate"],
+[data-theme="dark"] .blog-post-author-name,
+[data-theme="dark"] time {
+  color: rgba(232, 224, 245, 0.5) !important;
+}
+
+/* Blog featured tag */
+[data-theme="dark"] .blog-page-featured-tag {
+  border-color: rgba(78, 20, 208, 0.18);
+  background: rgba(78, 20, 208, 0.06);
+  color: #E8E0F5;
+}
+
+/* Reading progress bar */
+.reading-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #7B3FE4, #28CB95);
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+
+/* ===== SEARCH BAR ===== */
+[data-theme="dark"] .DocSearch-Button {
+  background: rgba(19, 8, 40, 0.6) !important;
+  border: 1px solid rgba(65, 55, 85, 0.3) !important;
+  border-radius: 12px !important;
+  transition: all 0.2s ease !important;
+  color: rgba(232, 224, 245, 0.5) !important;
+}
+
+[data-theme="dark"] .DocSearch-Button:hover {
+  border-color: rgba(123, 63, 228, 0.3) !important;
+  box-shadow: 0 0 15px rgba(123, 63, 228, 0.1) !important;
+}
+
+[data-theme="dark"] .DocSearch-Button .DocSearch-Search-Icon {
+  color: rgba(232, 224, 245, 0.5) !important;
+}
+
+/* Search modal dark mode */
+[data-theme="dark"] .DocSearch-Modal {
+  background: #0A0118 !important;
+  border: 1px solid rgba(78, 20, 208, 0.2) !important;
+}
+
+[data-theme="dark"] .DocSearch-SearchBar {
+  background: rgba(19, 8, 40, 0.8) !important;
+  border-bottom: 1px solid rgba(78, 20, 208, 0.15) !important;
+}
+
+[data-theme="dark"] .DocSearch-Form {
+  background: rgba(19, 8, 40, 0.6) !important;
+  border: 1px solid rgba(78, 20, 208, 0.18) !important;
+  border-radius: 12px !important;
+}
+
+[data-theme="dark"] .DocSearch-Input {
+  color: #E8E0F5 !important;
+}
+
+[data-theme="dark"] .DocSearch-Hit {
+  background: rgba(19, 8, 40, 0.4) !important;
+  border: 1px solid rgba(65, 55, 85, 0.2) !important;
+  border-radius: 8px !important;
+}
+
+[data-theme="dark"] .DocSearch-Hit a {
+  background: transparent !important;
+}
+
+[data-theme="dark"] .DocSearch-Hit[aria-selected="true"] a {
+  background: rgba(78, 20, 208, 0.15) !important;
+}
+
+[data-theme="dark"] .DocSearch-Footer {
+  background: rgba(19, 8, 40, 0.8) !important;
+  border-top: 1px solid rgba(78, 20, 208, 0.15) !important;
+}
+
+[data-theme="dark"] .DocSearch-Dropdown {
+  background: transparent !important;
+}
+
+/* ===== BREADCRUMBS ===== */
+[data-theme="dark"] .breadcrumbs__link {
+  color: rgba(232, 224, 245, 0.5);
+  transition: color 0.2s ease;
+}
+
+[data-theme="dark"] .breadcrumbs__link:hover {
+  color: #28CB95;
+}
+
+[data-theme="dark"] .breadcrumbs__item--active .breadcrumbs__link {
+  color: #E8E0F5;
+}
+
+/* ===== ALERTS / ADMONITIONS ===== */
+[data-theme="dark"] .alert {
+  background: rgba(19, 8, 40, 0.5);
+  border-radius: 12px;
+}
+
+/* ===== FOOTER on non-homepage pages ===== */
+[data-theme="dark"] .footer {
+  background: #0A0118 !important;
+  box-shadow: none !important;
+}
+
+/* ===== MISC CATCH-ALL ===== */
+[data-theme="dark"] .card {
+  background: rgba(19, 8, 40, 0.5);
+  border: 1px solid rgba(65, 55, 85, 0.3);
+  color: #E8E0F5;
+}
+
+[data-theme="dark"] .navbar__title {
+  color: #fff;
+}
+
+[data-theme="dark"] .navbar__item {
+  color: rgba(232, 224, 245, 0.7);
+}

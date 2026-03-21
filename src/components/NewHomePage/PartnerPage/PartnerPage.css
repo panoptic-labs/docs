@@ -1,69 +1,43 @@
-.partner-page {
-  background-color: #F3F3F3;
-  padding: 0 80px 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-}
-
-.partner-text {
-  padding: 60px 10px 0px 10px;
-  color: black;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 120%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.investors-section {
+  background-color: transparent;
+  padding: 100px 0;
   text-align: center;
 }
 
-.investor {
-  margin: 0 12.5px 20px 12.5px;
-  width: 122px;
-  height: auto;
-  max-height: 56px;
-
-  mix-blend-mode: multiply;
-  filter: grayscale(100%)
+.investors-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
 }
 
-.partner-logos-container {
+.investor-grid {
   display: flex;
-  justify-content: center;
-}
-
-.partner-logos {
-  display: inline-flex;
   flex-wrap: wrap;
+  gap: 16px;
   justify-content: center;
-  max-width: 1000px;
+  margin-top: 48px;
 }
 
-.blizzard {
-  padding: 0 21px;
+.investor-chip {
+  padding: 14px 28px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
 }
 
-.big-brain {
-  padding: 0 16px;
+.investor-chip:hover {
+  border-color: rgba(78, 20, 208, 0.18);
+  color: #fff;
+  background: rgba(78, 20, 208, 0.05);
 }
 
-@media screen and (max-width: 767px) { 
-  .partner-page {
-    padding: 0 40px 30px;
-  }
-}
-
-@media screen and (max-width: 380px) { 
-  .partner-text {
-    font-size: 18px;
-  }
-
-  .investor {
-    margin: 0 4px 10px 6px;
-    height: 42px;
+@media screen and (max-width: 768px) {
+  .investors-section {
+    padding: 72px 0;
   }
 }

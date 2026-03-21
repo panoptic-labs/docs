@@ -18,6 +18,7 @@ const config = {
   favicon: "img/favicon.ico",
 
   staticDirectories: ['static'],
+  clientModules: [require.resolve('./src/suppress-resize-observer.js')],
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -142,7 +143,7 @@ const config = {
         darkTheme: darkCodeTheme,
       },
       colorMode: {
-        defaultMode: 'light',
+        defaultMode: 'dark',
         disableSwitch: true,
         respectPrefersColorScheme: false,
       },
@@ -156,33 +157,23 @@ const config = {
         {
           property: "og:image",
           content:
-            "https://raw.githubusercontent.com/panoptic-labs/docs/main/static/img/website-banner.png",
+            "https://panoptic.xyz/img/website-banner.png?v=2",
         },
         {
           name: "twitter:image",
           content:
-            "https://raw.githubusercontent.com/panoptic-labs/docs/main/static/img/website-banner.png",
+            "https://panoptic.xyz/img/website-banner.png?v=2",
         },
       ],
-      announcementBar: {
-        id: "Vulnerability_claims_open",
-        content: `
-          Panoptic V2 is Coming&emsp;&emsp;&emsp; ✔️ Audit #1 (Obsidian)&emsp;&emsp;&emsp;    ✔️ Audit #2 (Nethermind)&emsp;&emsp;&emsp;    🚧 Audit #3 (Competitive)
-          <br>
-
-          <span style="font-size: 0.80em; opacity: 0.9;">
-            V1 vulnerability resolved — all funds 
-            <a href="https://x.com/Panoptic_xyz/status/1964010635026715015" target="_blank" rel="noopener noreferrer">
-              rescued</a>.
-            Claim
-            <a href="https://app.panoptic.xyz/claim/rescued-funds" target="_blank" rel="noopener noreferrer">here</a>.
-          </span>
-        `,
-        textColor: "#FFFFFF",
-        isCloseable: false,
-      },
+      // Announcement bar temporarily disabled — V2 info moved to homepage banner
+      // announcementBar: {
+      //   id: "Vulnerability_claims_open",
+      //   content: `Panoptic V2 is Coming`,
+      //   textColor: "#FFFFFF",
+      //   isCloseable: false,
+      // },
       image:
-        "https://raw.githubusercontent.com/panoptic-labs/docs/main/static/img/website-banner.png",
+        "https://panoptic.xyz/img/website-banner.png?v=2",
       algolia: {
         appId: '8ICJTW297L',
         // Public API key: it is safe to commit it

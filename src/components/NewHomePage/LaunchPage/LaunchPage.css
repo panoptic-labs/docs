@@ -1,85 +1,77 @@
-.launch-page {
-  height: 352px;
-  background-color: #4E14D0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.launch-background {
-  background-image: url("/img/new-home-page/launch-background-vector.svg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 70%;
-}
-
-.launch-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  color: #F3F3F3;
-}
-
-.launch-title {
-  font-size: 52px;
-  font-family: Inter;
-  line-height: 110%;
-  font-weight: 700;
-  margin-top: 7.75px;
-  padding: 0 20px;
+.networks-section {
+  background-color: rgba(78, 20, 208, 0.12);
+  padding: 100px 0;
   text-align: center;
 }
 
-.launch-subtitle {
-  font-size: 18px;
+.networks-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
 }
 
-@media screen and (max-width: 1310px) { 
-  .launch-background { 
-    background-size: 100%; 
-  } 
-} 
+.networks-desc {
+  margin-left: auto;
+  margin-right: auto;
+}
 
-@media screen and (max-width: 950px) { 
-  .launch-background { 
-    background-size: 120%; 
-  } 
-  .launch-title {
-    max-width: 500px;
+.network-pills {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 48px;
+}
+
+.network-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 28px;
+  border-radius: 14px;
+  background: rgba(78, 20, 208, 0.06);
+  border: 1px solid rgba(78, 20, 208, 0.18);
+  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #E8E0F5;
+  transition: all 0.3s ease;
+}
+
+.network-pill:hover {
+  border-color: #4E14D0;
+  transform: translateY(-2px);
+}
+
+.network-pill-dim {
+  opacity: 0.5;
+  border-style: dashed;
+}
+
+.chain-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.chain-dot-eth {
+  background: linear-gradient(135deg, #627EEA, #3B5ADB);
+}
+
+.chain-dot-base {
+  background: linear-gradient(135deg, #0052FF, #0066FF);
+}
+
+.chain-dot-uni {
+  background: linear-gradient(135deg, #FC72FF, #FF2CF0);
+}
+
+.chain-dot-more {
+  background: linear-gradient(135deg, #4E14D0, #28CB95);
+}
+
+@media screen and (max-width: 768px) {
+  .networks-section {
+    padding: 72px 0;
   }
-} 
-
-@media screen and (max-width: 780px) { 
-  .launch-background { 
-    background-size: 150%; 
-  } 
-} 
-
-@media screen and (max-width: 640px) { 
-  .launch-background { 
-    background-size: 180%; 
-  } 
-} 
-
-@media screen and (max-width: 510px) { 
-  .launch-title {
-    font-size: 36px;
-  }
-
-  .launch-subtitle {
-    font-size: 16px;
-  }
-
-  .launch-page {
-    height: 300px;
-  }
-} 
-
-@media screen and (max-width: 370px) { 
-  .launch-title {
-    font-size: 28px;
-  }
-} 
+}

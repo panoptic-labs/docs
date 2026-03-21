@@ -14,26 +14,51 @@
   top: 50%;
   left: 12px;
   transform: translateY(-50%);
-  height: 100%; /* Makes sure it's centered inside the navbar height */
+  height: 100%;
   z-index: 10;
 }
 
-/* Add spacing to push logo away from hamburger */
-.navbar {
-  padding-left: 60px !important;
+.navLaunchBtn {
+  padding: 8px 20px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  background: linear-gradient(135deg, #4E14D0, #7B3FE4);
+  color: #fff !important;
+  text-decoration: none !important;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 0 20px rgba(78, 20, 208, 0.4);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
-/* Target the navbar brand specifically on mobile */
-:global(.navbar__brand) {
-  margin-left: 45px !important;
+.navLaunchBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(78, 20, 208, 0.5);
+  color: #fff !important;
+  text-decoration: none !important;
 }
 
-/* Alternative: if the above doesn't work, try this */
-:global(.navbar) {
-  padding-left: 60px !important;
+.navLaunchBtn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 40%, rgba(255, 255, 255, 0.15) 50%, transparent 60%);
+  transform: translateX(-100%);
+  transition: transform 0.6s;
 }
 
-:global(.navbar__inner) {
-  padding-left: 45px !important;
+.navLaunchBtn:hover::after {
+  transform: translateX(100%);
 }
 
+/* Add spacing to push logo away from hamburger on mobile docs */
+@media (max-width: 996px) {
+  :global(.navbar__brand) {
+    margin-left: 45px !important;
+  }
+}
