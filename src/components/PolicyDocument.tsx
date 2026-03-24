@@ -13,6 +13,6 @@ export default function PolicyDocument({ name }: PolicyDocumentProps) {
 
   return <div className="policy-document">
     {/* iframe name is used for external navigation inside the frame */}
-    <iframe src={`/${name}.html`} name="policy-document"/>
+    <iframe src={`/${name}.html`} name="policy-document" title={name === 'privacy-policy' ? 'Privacy Policy' : 'Terms of Use'}/>
   </div>
 }

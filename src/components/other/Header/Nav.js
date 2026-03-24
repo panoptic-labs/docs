@@ -20,18 +20,18 @@ const Nav = ({purpleMode = false}) => {
 
   return (
     <nav className="header__nav">
-      <div onClick={() => handleClick("/docs/intro")} className="nav__link">
+      <button onClick={() => handleClick("/docs/intro")} className="nav__link">
         Docs
-      </div>
-      <div onClick={() => handleClick("/research")} className="nav__link">
+      </button>
+      <button onClick={() => handleClick("/research")} className="nav__link">
         Research
-      </div>
-      <div onClick={() => handleClick("/blog")} className="nav__link">
+      </button>
+      <button onClick={() => handleClick("/blog")} className="nav__link">
         Blog
-      </div>
-      <div onClick={() => handleClick("https://github.com/panoptic-labs")} className="nav__link">
+      </button>
+      <button onClick={() => handleClick("https://github.com/panoptic-labs")} className="nav__link">
         GitHub
-      </div>
+      </button>
     </nav>
   );
 };
