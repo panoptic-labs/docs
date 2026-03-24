@@ -77,7 +77,7 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
-  color: #8d8e94;
+  color: var(--color-text-secondary);
 }
 
 .post__link {
@@ -155,7 +155,7 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 24px;
-  color: #8d8e94;
+  color: var(--color-text-secondary);
   margin: 0;
 }
 
@@ -181,13 +181,13 @@
 }
 
 [data-theme="dark"] .faq__load-more {
-  border-color: #28cb95;
-  color: #28cb95;
+  border-color: var(--color-success);
+  color: var(--color-success);
 }
 
 [data-theme="dark"] .faq__load-more:hover {
-  background: #28cb95;
-  border-color: #28cb95;
+  background: var(--color-success);
+  border-color: var(--color-success);
   color: #fff;
 }
 

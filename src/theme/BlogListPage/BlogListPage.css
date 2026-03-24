@@ -1,7 +1,7 @@
 
 .blog-list-page-paginator {
   padding: 0px 80px 48px 80px;
-  background-color: #F3F3F3;
+  background-color: var(--color-surface);
   max-width: 1400px;
   margin: 0 auto;
 }

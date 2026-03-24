@@ -1,6 +1,6 @@
 .comparison-section {
   padding: 100px 0;
-  background-color: #0A0118;
+  background-color: var(--color-bg-dark);
 }
 
 .comparison-container {
@@ -16,7 +16,7 @@
   border-radius: 16px;
   position: relative;
   background: rgba(78, 20, 208, 0.06);
-  border: 1px solid rgba(78, 20, 208, 0.18);
+  border: 1px solid var(--color-border-subtle);
   margin-top: 40px;
 }
 
@@ -27,7 +27,7 @@
   transform: translateX(-50%);
   width: 200px;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #7B3FE4, transparent);
+  background: linear-gradient(90deg, transparent, var(--color-primary-light), transparent);
   border-radius: 2px;
 }
 
@@ -35,7 +35,7 @@
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  color: #E8E0F5;
+  color: var(--color-text-light);
 }
 
 .comparison-table th,
@@ -46,10 +46,10 @@
 }
 
 .comparison-table th {
-  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
   font-weight: 600;
   font-size: 0.85rem;
-  color: rgba(232, 224, 245, 0.5);
+  color: rgba(232, 224, 245, 0.75);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -68,7 +68,7 @@
 }
 
 .comparison-table th.panoptic-col {
-  color: #9B6CFF;
+  color: var(--color-accent);
 }
 
 .comparison-row {
@@ -88,7 +88,7 @@
 }
 
 .dot-green {
-  background: #28CB95;
+  background: var(--color-success);
   box-shadow: 0 0 10px rgba(40, 203, 149, 0.5);
 }
 

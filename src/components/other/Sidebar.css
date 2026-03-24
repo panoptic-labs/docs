@@ -42,7 +42,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 24px !important;
+  height: 24px;
   aspect-ratio: 1;
 }
 
@@ -92,7 +92,7 @@
 }
 
 .sidebar__nav__link:hover {
-  color: #28CB95;
+  color: var(--color-success);
   text-decoration: none;
 }
 
@@ -126,8 +126,8 @@
 
 @media (min-width: 767px) {
   .sidebar-button {
-    color: white !important;
-    border-color: white !important;
+    color: white;
+    border-color: white;
     text-align: center;
   }
 }
@@ -142,13 +142,13 @@
 }
 
 @keyframes animation-sidebar-open {
-  from { opacity: 0; height: 0; }
-  to { opacity: 1; height: calc(100dvh - var(--padding-top) - 48px - 10px - 21px); }
+  from { opacity: 0; transform: scaleY(0); transform-origin: top; }
+  to { opacity: 1; transform: scaleY(1); transform-origin: top; }
 }
 
 @keyframes animation-sidebar-close {
-  from { opacity: 1; height: calc(100dvh - var(--padding-top) - 48px - 10px - 21px); }
-  to { opacity: 0; height: 0; }
+  from { opacity: 1; transform: scaleY(1); transform-origin: top; }
+  to { opacity: 0; transform: scaleY(0); transform-origin: top; }
 }
 
 @keyframes animation-open {

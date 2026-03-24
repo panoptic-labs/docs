@@ -7,6 +7,10 @@
   font-weight: 500;
   transition: color 0.25s;
   letter-spacing: 0.01em;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
 }
 
 .nav__link:hover {
@@ -14,13 +18,18 @@
   text-decoration: none;
 }
 
+.nav__link:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
 .nav-btn-launch {
   padding: 10px 24px;
   border-radius: 10px;
   font-size: 0.875rem;
   font-weight: 600;
-  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
-  background: linear-gradient(135deg, #4E14D0, #7B3FE4);
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   color: #fff;
   text-decoration: none;
   border: none;

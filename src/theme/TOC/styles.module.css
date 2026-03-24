@@ -15,7 +15,7 @@
 
 .tableOfContentsTitle {
   color: #828282;
-  font-family: Inter;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
@@ -60,12 +60,12 @@
 }
 
 .tableOfContentsLinkActive {
-  background-color: #F3F3F3;
+  background-color: var(--color-surface);
 }
 
 :global([data-theme="dark"]) .tableOfContentsLinkActive {
   background-color: rgba(78, 20, 208, 0.15);
-  color: #28CB95;
+  color: var(--color-success);
 }
 
 @media (max-width: 996px) {

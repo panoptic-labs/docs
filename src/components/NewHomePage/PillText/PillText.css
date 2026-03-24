@@ -1,7 +1,7 @@
 .pill-text {
   display: inline-block;
   padding: 4px 10px;
-  border: 1.5px solid #F3F3F3;
+  border: 1.5px solid var(--color-surface);
   border-radius: 60px;
   font-weight: 400;
   font-size: 16px;
@@ -10,6 +10,6 @@
 }
 
 .grey {
-  border-color: #f3f3f3;
-  color: #f3f3f3;
+  border-color: var(--color-surface);
+  color: var(--color-surface);
 }

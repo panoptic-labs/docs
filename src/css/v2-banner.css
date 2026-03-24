@@ -17,7 +17,7 @@
 }
 
 .v2-announcement-title {
-  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
   font-weight: 700;
   font-size: 1.2rem;
   color: #fff;
@@ -37,7 +37,7 @@
 }
 
 .v2-audit-complete {
-  color: #28CB95;
+  color: var(--color-success);
 }
 
 .v2-audit-progress {

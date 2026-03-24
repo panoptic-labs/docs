@@ -74,7 +74,7 @@
   line-height: 32px;
   letter-spacing: -0.02em;
   margin: 0;
-  color: #323232;
+  color: var(--color-text-primary);
 }
 
 .partners__chains__cards {

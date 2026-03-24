@@ -7,7 +7,7 @@
 
 .read-more-label {
   color: var(--black, #040404);
-  font-family: Inter;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;

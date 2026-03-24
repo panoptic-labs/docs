@@ -31,7 +31,7 @@
   left: calc(33.33% - 16px);
   right: calc(33.33% - 16px);
   height: 1px;
-  background: linear-gradient(90deg, #4E14D0, #28CB95);
+  background: linear-gradient(90deg, var(--color-primary), var(--color-success));
   opacity: 0.3;
   transform-origin: left center;
 }
@@ -41,16 +41,16 @@
 }
 
 .step-num {
-  font-family: "JetBrains Mono", monospace;
+  font-family: "Fragment Mono", monospace;
   font-weight: 700;
   font-size: 2.5rem;
-  color: rgba(123, 63, 228, 0.5);
+  color: rgba(123, 63, 228, 0.75);
   margin-bottom: 16px;
   line-height: 1;
 }
 
 .step h3 {
-  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
   font-weight: 600;
   font-size: 1.15rem;
   margin: 0 0 10px;
@@ -60,7 +60,7 @@
 }
 
 .step p {
-  color: rgba(232, 224, 245, 0.5);
+  color: rgba(232, 224, 245, 0.75);
   font-size: 0.9rem;
   line-height: 1.6;
   margin: 0;

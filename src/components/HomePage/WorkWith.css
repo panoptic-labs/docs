@@ -85,14 +85,16 @@
 .pagination_button {
   display: block;
   border-radius: 9999px;
-  padding: 0;
+  padding: 20px;
   border: 0;
   width: 4px;
   height: 4px;
+  background-clip: content-box;
   background-color: var(--color-primary);
   opacity: 0.1;
   cursor: pointer;
   transition: all 0.3s;
+  box-sizing: content-box;
 }
 
 [data-theme="dark"] .pagination_button {

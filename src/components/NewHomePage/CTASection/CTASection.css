@@ -27,7 +27,7 @@
 }
 
 .cta-title {
-  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
   font-weight: 700;
   font-size: clamp(2rem, 4vw, 3rem);
   letter-spacing: -0.03em;
@@ -38,7 +38,7 @@
 }
 
 .cta-desc {
-  color: rgba(232, 224, 245, 0.5);
+  color: rgba(232, 224, 245, 0.75);
   font-size: 1.05rem;
   line-height: 1.6;
   max-width: 500px;
@@ -60,23 +60,42 @@
   border-radius: 14px;
   font-size: 1rem;
   font-weight: 600;
-  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
-  background: linear-gradient(135deg, #4E14D0, #7B3FE4);
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   color: #fff;
   text-decoration: none;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
   box-shadow: 0 0 30px rgba(78, 20, 208, 0.4), 0 0 60px rgba(78, 20, 208, 0.15);
   position: relative;
   overflow: hidden;
 }
 
+.btn-cta-big::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 50px rgba(78, 20, 208, 0.5), 0 0 80px rgba(78, 20, 208, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
 .btn-cta-big:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 50px rgba(78, 20, 208, 0.5), 0 0 80px rgba(78, 20, 208, 0.2);
   color: #fff;
   text-decoration: none;
+}
+
+.btn-cta-big:hover::before {
+  opacity: 1;
+}
+
+.btn-cta-big:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
 }
 
 /* Shimmer */
@@ -100,20 +119,25 @@
   border-radius: 14px;
   font-size: 1rem;
   font-weight: 600;
-  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
   background: transparent;
-  color: #E8E0F5;
+  color: var(--color-text-light);
   text-decoration: none;
-  border: 1px solid rgba(78, 20, 208, 0.18);
+  border: 1px solid var(--color-border-subtle);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .btn-cta-outline:hover {
-  border-color: #4E14D0;
+  border-color: var(--color-primary);
   background: rgba(78, 20, 208, 0.08);
   color: #fff;
   text-decoration: none;
+}
+
+.btn-cta-outline:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
 }
 
 /* Newsletter strip */
@@ -128,7 +152,7 @@
   padding: 16px 24px;
   border-radius: 14px;
   background: rgba(78, 20, 208, 0.06);
-  border: 1px solid rgba(78, 20, 208, 0.18);
+  border: 1px solid var(--color-border-subtle);
 }
 
 .cta-newsletter-text {
@@ -141,30 +165,50 @@
 }
 
 .cta-newsletter-icon {
-  color: #9B6CFF;
+  color: var(--color-accent);
   flex-shrink: 0;
 }
 
 .cta-newsletter-btn {
-  padding: 8px 24px;
+  padding: 10px 24px;
+  min-height: 44px;
   border-radius: 10px;
   font-size: 0.85rem;
   font-weight: 600;
-  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
-  background: linear-gradient(135deg, #4E14D0, #7B3FE4);
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   color: #fff;
   border: none;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: transform 0.3s;
   box-shadow: 0 0 15px rgba(78, 20, 208, 0.3);
   position: relative;
   overflow: hidden;
   white-space: nowrap;
 }
 
+.cta-newsletter-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 25px rgba(78, 20, 208, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
 .cta-newsletter-btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 0 25px rgba(78, 20, 208, 0.4);
+}
+
+.cta-newsletter-btn:hover::before {
+  opacity: 1;
+}
+
+.cta-newsletter-btn:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
 }
 
 .cta-newsletter-btn::after {
@@ -212,7 +256,7 @@
 }
 
 .newsletter-modal-header h3 {
-  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
   font-size: 1.15rem;
   font-weight: 600;
   color: #fff;
@@ -231,6 +275,11 @@
 
 .newsletter-modal-close:hover {
   color: #fff;
+}
+
+.newsletter-modal-close:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
 }
 
 .newsletter-modal-body {

@@ -25,7 +25,7 @@ const Token = ({ tokenName }) => {
 
   return (
     <div className="token-icon">
-      <img src={imageSrc} alt="token"/>
+      <img src={imageSrc} alt={`${tokenName} token`} loading="lazy"/>
       <div className="token-name">
         {tokenName}
       </div>

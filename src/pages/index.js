@@ -1,7 +1,7 @@
-import "inter-ui/inter.css";
-import "@fontsource-variable/space-grotesk";
-import "@fontsource/jetbrains-mono";
+import "@fontsource-variable/dm-sans";
+import "@fontsource/fragment-mono";
 import React from "react";
+import { MotionConfig } from "framer-motion";
 
 import RecentUpdates from "../components/HomePage/RecentUpdates";
 import TitlePage from "../components/NewHomePage/TitlePage/TitlePage";
@@ -31,7 +31,8 @@ function GradientDivider() {
 export default function Home() {
   return (
     <Layout purpleMode={false}>
-      <main style={{ backgroundColor: "#0A0118", position: "relative" }}>
+      <MotionConfig reducedMotion="user">
+      <main style={{ backgroundColor: "var(--color-bg-dark)", position: "relative" }}>
         <FloatingLogos />
         <TitlePage />
         <FadeIn><RecentUpdates /></FadeIn>
@@ -47,6 +48,7 @@ export default function Home() {
         <FadeIn><FAQPage /></FadeIn>
         <CTASection />
       </main>
+      </MotionConfig>
     </Layout>
   );
 }

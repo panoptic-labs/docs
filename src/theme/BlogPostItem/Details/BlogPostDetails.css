@@ -2,7 +2,7 @@
 .blog-details-date {
   font-size: 14px;
   font-weight: 600;
-  color: #8D8E94;
+  color: var(--color-text-secondary);
 }
 
 .blog-details-title {
@@ -19,7 +19,7 @@
 }
 
 [data-theme="dark"] .blog-details-date {
-  color: rgba(232, 224, 245, 0.5);
+  color: rgba(232, 224, 245, 0.7);
 }
 
 .blog-details-description {

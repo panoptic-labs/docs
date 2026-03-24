@@ -2,6 +2,7 @@ import AbdkIcon from "../Icons/ABDK";
 import * as Tabs from "@radix-ui/react-tabs";
 import "./SecurityPage.css";
 import React, { useState } from "react";
+import useInViewAnimation from "../../../hooks/useInViewAnimation";
 import DocumentIcon from "../Icons/Document";
 import AoIcon from "../Icons/Ao";
 import MagnifyingIcon from "../Icons/Magnifying";
@@ -9,6 +10,7 @@ import PillText from "../PillText/PillText"
 
 const SecurityPage = () => {
   const [activeTab, setActiveTab] = useState("tab1");
+  const { ref: scrollRef, inView } = useInViewAnimation();
 
   const iconMap = {
     tab1: {
@@ -54,18 +56,18 @@ const SecurityPage = () => {
               <PillText>State-of-the-Art-Security</PillText>
             </div>
           </div>
-          <div className="main-header">
+          <h2 className="main-header">
             <span>
               Our <span style={{ color: "#28CB95" }}>360° Audit:</span>{" "}
             </span>
-            <p className="no-break">Setting new</p>
-            <p className="no-break">standards for</p>
-            <p className="no-break">platform security</p>
-          </div>
+            <span className="no-break">Setting new</span>
+            <span className="no-break">standards for</span>
+            <span className="no-break">platform security</span>
+          </h2>
         </div>
         <div className="tab-section">
-          <div className="scrolling-icons-border">
-            <div className="scrolling-icons">{RenderIcon()}</div>
+          <div className="scrolling-icons-border" ref={scrollRef}>
+            <div className={`scrolling-icons ${inView ? '' : 'paused'}`}>{RenderIcon()}</div>
           </div>
           <Tabs.Root
             className="tabs-root"

@@ -23,24 +23,38 @@
   border-radius: 10px;
   font-size: 0.85rem;
   font-weight: 600;
-  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
-  background: linear-gradient(135deg, #4E14D0, #7B3FE4);
-  color: #fff !important;
-  text-decoration: none !important;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  color: #fff;
+  text-decoration: none;
   border: none;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: transform 0.3s;
   box-shadow: 0 0 20px rgba(78, 20, 208, 0.4);
   position: relative;
   overflow: hidden;
   white-space: nowrap;
 }
 
+.navLaunchBtn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 30px rgba(78, 20, 208, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
 .navLaunchBtn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 30px rgba(78, 20, 208, 0.5);
-  color: #fff !important;
-  text-decoration: none !important;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navLaunchBtn:hover::before {
+  opacity: 1;
 }
 
 .navLaunchBtn::after {
@@ -58,7 +72,7 @@
 
 /* Add spacing to push logo away from hamburger on mobile docs */
 @media (max-width: 996px) {
-  :global(.navbar__brand) {
-    margin-left: 45px !important;
+  :global(.navbar .navbar__brand) {
+    margin-left: 45px;
   }
 }

@@ -7,6 +7,7 @@ const AbdkIcon = () => (
     viewBox="0 0 121 56"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
   >
     <g>
     {/* style="mix-blend-mode:luminosity" */}

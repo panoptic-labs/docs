@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import HubspotForm from 'react-hubspot-form';
 import { APP_LINK } from "../../../constants";
@@ -8,20 +8,64 @@ const HUBSPOT_PORTAL_ID = '44445689';
 const HUBSPOT_FORM_ID = 'f0b4f21e-9ddc-4fff-a88d-bba812a2d084';
 
 function NewsletterModal({ open, onClose }) {
+  const modalRef = useRef(null);
+  const previousFocusRef = useRef(null);
+
   useEffect(() => {
-    if (open) document.body.style.overflow = 'hidden';
-    else document.body.style.overflow = '';
+    if (open) {
+      previousFocusRef.current = document.activeElement;
+      document.body.style.overflow = 'hidden';
+      // Focus the modal after render
+      requestAnimationFrame(() => modalRef.current?.focus());
+    } else {
+      document.body.style.overflow = '';
+      previousFocusRef.current?.focus();
+    }
     return () => { document.body.style.overflow = ''; };
   }, [open]);
+
+  const handleKeyDown = useCallback((e) => {
+    if (e.key === 'Escape') {
+      onClose();
+      return;
+    }
+    // Trap focus within modal
+    if (e.key === 'Tab' && modalRef.current) {
+      const focusable = modalRef.current.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last?.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first?.focus();
+      }
+    }
+  }, [onClose]);
 
   if (!open) return null;
 
   return (
-    <div className="newsletter-modal-overlay" onClick={onClose}>
-      <div className="newsletter-modal" onClick={(e) => e.stopPropagation()}>
+    <div
+      className="newsletter-modal-overlay"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="newsletter-modal-title"
+      onKeyDown={handleKeyDown}
+    >
+      <div
+        className="newsletter-modal"
+        onClick={(e) => e.stopPropagation()}
+        ref={modalRef}
+        tabIndex={-1}
+      >
         <div className="newsletter-modal-header">
-          <h3>Get the latest updates</h3>
-          <button className="newsletter-modal-close" onClick={onClose}>✕</button>
+          <h3 id="newsletter-modal-title">Get the latest updates</h3>
+          <button className="newsletter-modal-close" onClick={onClose} aria-label="Close newsletter modal">✕</button>
         </div>
         <div className="newsletter-modal-body">
           <HubspotForm
@@ -37,7 +81,6 @@ function NewsletterModal({ open, onClose }) {
 
 export default function CTASection() {
   const [newsletterOpen, setNewsletterOpen] = useState(false);
-
   return (
     <section className="cta-section">
       <motion.div
@@ -100,7 +143,7 @@ export default function CTASection() {
         >
           <div className="cta-newsletter-inner">
             <div className="cta-newsletter-text">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="cta-newsletter-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="cta-newsletter-icon" aria-hidden="true">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                 <polyline points="22,6 12,13 2,6" />
               </svg>

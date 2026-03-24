@@ -17,9 +17,15 @@
   transition: all 0.3s;
 }
 
+.toggle-theme_button:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  border-radius: 50%;
+}
+
 .toggle-theme_button path,
 .toggle-theme_button rect {
-  color: #8d8e94;
+  color: var(--color-text-secondary);
 }
 
 .toggle-theme_button circle {
@@ -27,16 +33,16 @@
 }
 
 [data-theme="dark"] .toggle-theme {
-  border-color: #8d8e94;
+  border-color: var(--color-text-secondary);
 }
 
 [data-theme="dark"] .toggle-theme_button path,
 [data-theme="dark"] .toggle-theme_button rect {
-  color: #8d8e94;
+  color: var(--color-text-secondary);
 }
 
 [data-theme="dark"] .toggle-theme_button circle {
-  color: #323232;
+  color: var(--color-text-primary);
 }
 
 .toggle-theme_button[data-active="true"] path,

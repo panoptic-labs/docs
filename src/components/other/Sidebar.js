@@ -39,6 +39,7 @@ const Sidebar = ({ isOpenedSidebar, onClose, onToggle }) => {
       <Button
         className="right-part-mobile-button sidebar__button"
         onClick={onToggle}
+        aria-label={isOpenedSidebar ? "Close navigation menu" : "Open navigation menu"}
       >
         <i
           className={clsx("right-part__icon", {

@@ -42,10 +42,22 @@
   --color-body: #ffffff;
   --color-card: #fbfbfb;
   --color-primary: #4e14d0;
+  --color-primary-light: #7B3FE4;
+  --color-accent: #9B6CFF;
+  --color-success: #28CB95;
   --color-secondary: #e1e1e1;
   --color-text-primary: #323232;
   --color-text-secondary: #8d8e94;
+  --color-text-muted: rgba(232, 224, 245, 0.75);
+  --color-text-light: #E8E0F5;
+  --color-surface: #F3F3F3;
+  --color-border: #E7E7E7;
+  --color-bg-dark: #0A0118;
+  --color-bg-elevated: rgba(19, 8, 40, 0.6);
+  --color-border-subtle: rgba(78, 20, 208, 0.18);
+  --color-border-accent: rgba(123, 63, 228, 0.15);
   --color-link: #4e14d0;
+  --color-focus: #9B6CFF;
   --ifm-color-primary: hsl(262, 49%, 45%);
   --ifm-color-primary-dark: hsl(262, 49%, 42%);
   --ifm-color-primary-darker: hsl(262, 49%, 40%);
@@ -54,8 +66,9 @@
   --ifm-color-primary-lighter: hsl(262, 49%, 50%);
   --ifm-color-primary-lightest: hsl(262, 49%, 56%);
   --ifm-color-navbar-links: hsl(257, 68%, 69%);
-  --ifm-font-family-base: "Inter";
-  --ifm-heading-font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  --ifm-font-family-base: "DM Sans Variable", "DM Sans", sans-serif;
+  --ifm-heading-font-family: "DM Sans Variable", "DM Sans", sans-serif;
+  --ifm-font-family-monospace: "Fragment Mono", monospace;
   --ifm-font-size-base: 16px;
   --ifm-font-weight-semibold: 400;
   --ifm-font-weight-bold: 700;
@@ -182,7 +195,7 @@ html[data-theme="dark"]::before {
 
 @supports (font-variation-settings: normal) {
   .html {
-    font-family: "Inter var", "system-ui";
+    font-family: "DM Sans Variable", "DM Sans", "system-ui";
   }
 }
 
@@ -192,7 +205,7 @@ html[data-theme="dark"]::before {
 }
 
 .bg-body {
-  background-color: var(--color-body) !important;
+  background-color: var(--color-body);
 }
 
 .icon__arrow-left {

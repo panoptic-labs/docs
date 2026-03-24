@@ -1,6 +1,6 @@
 
 .adjacent-posts {
-  background-color: #F3F3F3;
+  background-color: var(--color-surface);
   padding: 20px 0px 0px 0px;
   cursor: pointer;
 }
@@ -16,7 +16,7 @@
 
 @media screen and (max-width: 767px) { 
   .blog-page-related-posts {
-    background-color: #F3F3F3;
+    background-color: var(--color-surface);
     padding: 20px 16px 32px 16px;
   }
 }

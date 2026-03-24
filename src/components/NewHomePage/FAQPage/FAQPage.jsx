@@ -16,9 +16,9 @@ const FAQPage = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <div className="faq-title">
+          <h2 className="faq-title">
             Frequently Asked<br/>Questions
-          </div>
+          </h2>
           <div className="faq-button-container">
             <Link to="/docs/faq/">
               <Button>More Questions?</Button>
@@ -86,7 +86,7 @@ const AccordionTrigger = ({children, className}) => (
     <Accordion.Trigger className={`accordion-trigger ${className || ''}`}>
       <span>{children}</span>
       <div className="faq-arrow-container">
-        <img src={`/img/new-home-page/faq-arrow.svg`} alt="faq-arrow" className="faq-arrow"/>
+        <img src={`/img/new-home-page/faq-arrow.svg`} alt="" className="faq-arrow"/>
       </div>
     </Accordion.Trigger>
   </Accordion.Header>

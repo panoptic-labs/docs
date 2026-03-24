@@ -47,7 +47,7 @@
 
 .audit-complete {
   background: rgba(40, 203, 149, 0.15);
-  color: #28CB95;
+  color: var(--color-success);
   border: 1px solid rgba(40, 203, 149, 0.3);
 }
 
@@ -58,7 +58,7 @@
 }
 
 .audit-name {
-  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
   font-weight: 600;
   font-size: 0.95rem;
   color: #fff;
@@ -74,14 +74,14 @@
   display: inline-block;
   font-size: 0.9rem;
   font-weight: 500;
-  color: #9B6CFF;
+  color: var(--color-accent);
   text-decoration: none;
   margin-bottom: 48px;
   transition: color 0.2s ease;
 }
 
 .audit-details-link:hover {
-  color: #28CB95;
+  color: var(--color-success);
   text-decoration: none;
 }
 
@@ -125,7 +125,7 @@
 }
 
 .security-pillar h3 {
-  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
   font-weight: 600;
   font-size: 1.1rem;
   margin: 0 0 8px;

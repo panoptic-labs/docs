@@ -42,9 +42,9 @@ const Header = ({purpleMode = false, children}) => {
         <div className="right-part">
           {children}
           {loadedWidth && isTabletWidth && (
-            <div className="mobile-button" onClick={handleToggle}>
+            <button className="mobile-button" onClick={handleToggle} aria-label="Toggle navigation menu">
               <i className="icon__burger right-part__icon" />
-            </div>
+            </button>
           )}
         </div>
       </header>

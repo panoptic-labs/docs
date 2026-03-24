@@ -7,7 +7,7 @@ ul {
 }
 
 .tag {
-  border: 1px solid #E7E7E7;
+  border: 1px solid var(--color-border);
   border-radius: 100px;
   background-color: #FFF;
   transition: border var(--ifm-transition-fast);
@@ -15,7 +15,7 @@ ul {
   padding: 6px 14px;
   white-space: nowrap;
 
-  font-family: Inter;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
@@ -25,6 +25,11 @@ ul {
 
 .tag:hover {
   color: black;
+}
+
+.tag:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
 }
 
 /* .tagRegular {

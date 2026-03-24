@@ -8,7 +8,7 @@
 }
 
 .blog-p > blockquote {
-  border-left: 2px solid #4E14D0;
+  border-left: 2px solid var(--color-primary);
   padding: 0 16px;
 }
 
