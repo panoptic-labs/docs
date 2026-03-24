@@ -18,6 +18,11 @@
   text-decoration: none;
 }
 
+.nav__link:focus-visible {
+  outline: 2px solid #9B6CFF;
+  outline-offset: 2px;
+}
+
 .nav-btn-launch {
   padding: 10px 24px;
   border-radius: 10px;

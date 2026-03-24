@@ -38,7 +38,7 @@
 }
 
 .cta-desc {
-  color: rgba(232, 224, 245, 0.5);
+  color: rgba(232, 224, 245, 0.75);
   font-size: 1.05rem;
   line-height: 1.6;
   max-width: 500px;
@@ -79,6 +79,11 @@
   text-decoration: none;
 }
 
+.btn-cta-big:focus-visible {
+  outline: 2px solid #9B6CFF;
+  outline-offset: 2px;
+}
+
 /* Shimmer */
 .btn-cta-big::after {
   content: '';
@@ -114,6 +119,11 @@
   background: rgba(78, 20, 208, 0.08);
   color: #fff;
   text-decoration: none;
+}
+
+.btn-cta-outline:focus-visible {
+  outline: 2px solid #9B6CFF;
+  outline-offset: 2px;
 }
 
 /* Newsletter strip */
@@ -165,6 +175,11 @@
 .cta-newsletter-btn:hover {
   transform: translateY(-1px);
   box-shadow: 0 0 25px rgba(78, 20, 208, 0.4);
+}
+
+.cta-newsletter-btn:focus-visible {
+  outline: 2px solid #9B6CFF;
+  outline-offset: 2px;
 }
 
 .cta-newsletter-btn::after {
@@ -231,6 +246,11 @@
 
 .newsletter-modal-close:hover {
   color: #fff;
+}
+
+.newsletter-modal-close:focus-visible {
+  outline: 2px solid #9B6CFF;
+  outline-offset: 2px;
 }
 
 .newsletter-modal-body {

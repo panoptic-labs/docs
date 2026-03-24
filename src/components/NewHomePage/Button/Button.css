@@ -20,6 +20,11 @@
   box-shadow: 0 0 35px rgba(78, 20, 208, 0.5);
 }
 
+.primary-button:focus-visible {
+  outline: 2px solid #9B6CFF;
+  outline-offset: 2px;
+}
+
 /* Shimmer effect */
 .primary-button::after {
   content: '';

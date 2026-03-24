@@ -21,7 +21,7 @@ function NewsletterModal({ open, onClose }) {
       <div className="newsletter-modal" onClick={(e) => e.stopPropagation()}>
         <div className="newsletter-modal-header">
           <h3>Get the latest updates</h3>
-          <button className="newsletter-modal-close" onClick={onClose}>✕</button>
+          <button className="newsletter-modal-close" onClick={onClose} aria-label="Close newsletter modal">✕</button>
         </div>
         <div className="newsletter-modal-body">
           <HubspotForm

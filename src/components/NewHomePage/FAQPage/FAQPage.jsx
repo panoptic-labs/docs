@@ -16,9 +16,9 @@ const FAQPage = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <div className="faq-title">
+          <h2 className="faq-title">
             Frequently Asked<br/>Questions
-          </div>
+          </h2>
           <div className="faq-button-container">
             <Link to="/docs/faq/">
               <Button>More Questions?</Button>

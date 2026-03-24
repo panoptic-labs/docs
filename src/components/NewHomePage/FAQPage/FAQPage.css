@@ -31,6 +31,7 @@
   color: #ffffff;
   line-height: 1.1;
   letter-spacing: -0.03em;
+  margin-top: 0;
   margin-bottom: 24px;
 }
 
@@ -77,6 +78,11 @@
 
 .accordion-trigger:hover {
   color: #28CB95;
+}
+
+.accordion-trigger:focus-visible {
+  outline: 2px solid #9B6CFF;
+  outline-offset: 2px;
 }
 
 .faq-arrow-container {
@@ -133,7 +139,7 @@
 .accordion-content-text {
   font-weight: 400;
   font-size: 15px;
-  color: rgba(232, 224, 245, 0.5);
+  color: rgba(232, 224, 245, 0.75);
   padding: 0 16px 18px;
   line-height: 160%;
 }

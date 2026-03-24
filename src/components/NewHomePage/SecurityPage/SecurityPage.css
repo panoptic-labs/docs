@@ -37,6 +37,7 @@
   display: flex;
   flex-direction: column;
   margin-top: 6px;
+  margin-bottom: 0;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
@@ -45,9 +46,9 @@
   letter-spacing: -0.72px;
 }
 
-p.no-break {
+.no-break {
   display: inline;
-  margin: 0; 
+  margin: 0;
 }
 
 .scrolling-icons-border {
@@ -115,6 +116,11 @@ input {
   width: 35%;
   height: 3px;
   margin-top: 7px;
+}
+
+.tabs-trigger:focus-visible {
+  outline: 2px solid #9B6CFF;
+  outline-offset: 2px;
 }
 
 .tabs-trigger[data-state='active'] {

@@ -54,14 +54,14 @@ const SecurityPage = () => {
               <PillText>State-of-the-Art-Security</PillText>
             </div>
           </div>
-          <div className="main-header">
+          <h2 className="main-header">
             <span>
               Our <span style={{ color: "#28CB95" }}>360° Audit:</span>{" "}
             </span>
-            <p className="no-break">Setting new</p>
-            <p className="no-break">standards for</p>
-            <p className="no-break">platform security</p>
-          </div>
+            <span className="no-break">Setting new</span>
+            <span className="no-break">standards for</span>
+            <span className="no-break">platform security</span>
+          </h2>
         </div>
         <div className="tab-section">
           <div className="scrolling-icons-border">
