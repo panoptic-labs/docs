@@ -40,7 +40,7 @@
 .pagination__next {
   display: block;
   background: rgba(19, 8, 40, 0.6);
-  color: #7B3FE4;
+  color: var(--color-primary-light);
   border: 1px solid rgba(123, 63, 228, 0.2);
   border-radius: 10px;
   padding: 12px;
@@ -61,7 +61,7 @@
 }
 
 .pagination__icon {
-  background-color: #7B3FE4;
+  background-color: var(--color-primary-light);
 }
 
 .recent-updates__card {

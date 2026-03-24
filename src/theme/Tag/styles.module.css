@@ -7,7 +7,7 @@ ul {
 }
 
 .tag {
-  border: 1px solid #E7E7E7;
+  border: 1px solid var(--color-border);
   border-radius: 100px;
   background-color: #FFF;
   transition: border var(--ifm-transition-fast);

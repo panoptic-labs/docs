@@ -59,7 +59,7 @@
 
 /* Adjust the logo positioning on mobile */
 .header--mobile .navbar__brand {
-  margin-left: 0 !important;
-  padding-left: 0 !important;
+  margin-left: 0;
+  padding-left: 0;
 }
 

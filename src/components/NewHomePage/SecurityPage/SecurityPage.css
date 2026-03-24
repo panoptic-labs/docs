@@ -30,7 +30,7 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 130%; 
-  color: #F3F3F3;
+  color: var(--color-surface);
 }
 
 .main-header {

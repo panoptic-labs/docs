@@ -87,7 +87,7 @@
   background: rgba(40, 203, 149, 0.08);
   border: 1px solid rgba(40, 203, 149, 0.2);
   font-size: 0.8rem;
-  color: #28CB95;
+  color: var(--color-success);
   font-weight: 500;
   margin-bottom: 32px;
 }
@@ -96,7 +96,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #28CB95;
+  background: var(--color-success);
   animation: pulse-dot 2s ease-in-out infinite;
 }
 
@@ -188,7 +188,7 @@
   justify-content: center;
   padding: 14px 32px;
   background: transparent;
-  color: #E8E0F5;
+  color: var(--color-text-light);
   font-family: "DM Sans Variable", "DM Sans", sans-serif;
   font-size: 1rem;
   font-weight: 600;
@@ -200,7 +200,7 @@
 }
 
 .btn-outline:hover {
-  border-color: #4E14D0;
+  border-color: var(--color-primary);
   background: rgba(78, 20, 208, 0.08);
   color: #ffffff;
   text-decoration: none;
@@ -226,7 +226,7 @@
 }
 
 .stat-card {
-  background: #0A0118;
+  background: var(--color-bg-dark);
   padding: 40px 24px;
   text-align: center;
   transition: background 0.3s ease;
@@ -277,11 +277,11 @@
 }
 .scrolling-tokens-container::before {
   left: 0;
-  background: linear-gradient(to right, #0A0118, transparent);
+  background: linear-gradient(to right, var(--color-bg-dark), transparent);
 }
 .scrolling-tokens-container::after {
   right: 0;
-  background: linear-gradient(to left, #0A0118, transparent);
+  background: linear-gradient(to left, var(--color-bg-dark), transparent);
 }
 
 /* ── Responsive ── */

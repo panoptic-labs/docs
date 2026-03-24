@@ -1,6 +1,6 @@
 .custom-footer {
   overflow: hidden;
-  background: #0A0118;
+  background: var(--color-bg-dark);
   position: relative;
   padding: 0;
   box-shadow: none;
@@ -36,7 +36,7 @@
   font-size: 48px;
   font-family: "DM Sans Variable", "DM Sans", sans-serif;
   line-height: 110%;
-  color: #F3F3F3;
+  color: var(--color-surface);
 }
 
 .footer-cta-social {
@@ -138,7 +138,7 @@
 
 .learn-part__list > a:hover {
   text-decoration: none;
-  color: #28CB95;
+  color: var(--color-success);
 }
 
 .footer__container__community-and-more-part {
@@ -165,7 +165,7 @@
 
 .community-part__link {
   display: inline-block;
-  background: #8d8e94;
+  background: var(--color-text-secondary);
   width: 20px;
   height: 20px;
   mask-repeat: no-repeat;
@@ -174,7 +174,7 @@
 }
 
 .community-part__link:hover {
-  background: #28CB95;
+  background: var(--color-success);
   text-decoration: none;
   filter: drop-shadow(0 0 6px rgba(40, 203, 149, 0.5));
 }
@@ -198,17 +198,17 @@
 }
 
 .more-part__link > i {
-  background: #8d8e94;
+  background: var(--color-text-secondary);
   transition: background 0.2s ease;
 }
 
 .more-part__link:hover {
-  color: #28CB95;
+  color: var(--color-success);
   text-decoration: none;
 }
 
 .more-part__link:hover > i {
-  background: #28CB95;
+  background: var(--color-success);
 }
 
 .community-part__link[aria-label="Discord"] {

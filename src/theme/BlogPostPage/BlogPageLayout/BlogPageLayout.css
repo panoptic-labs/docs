@@ -1,11 +1,11 @@
 .blog-page-layout {
-  background-color: #F3F3F3;
+  background-color: var(--color-surface);
   margin-top: 0;
   padding-top: 40px;
 }
 
 [data-theme="dark"] .blog-page-layout {
-  background-color: #0A0118;
+  background-color: var(--color-bg-dark);
 }
 
 .blog-page-container {
@@ -53,7 +53,7 @@
 
 .blog-page-featured-tag {
   border-radius: 100px;
-  border: 1px solid #E7E7E7;
+  border: 1px solid var(--color-border);
   background: #FFF;
   padding: 6px 14px;
   color: var(--ifm-font-color-base);
@@ -67,7 +67,7 @@
 [data-theme="dark"] .blog-page-featured-tag {
   border-color: rgba(78, 20, 208, 0.18);
   background: rgba(78, 20, 208, 0.06);
-  color: #E8E0F5;
+  color: var(--color-text-light);
 }
 
 /* TOC — narrower and sticky */

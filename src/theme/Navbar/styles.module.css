@@ -29,18 +29,32 @@
   text-decoration: none;
   border: none;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: transform 0.3s;
   box-shadow: 0 0 20px rgba(78, 20, 208, 0.4);
   position: relative;
   overflow: hidden;
   white-space: nowrap;
 }
 
+.navLaunchBtn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 30px rgba(78, 20, 208, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
 .navLaunchBtn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 30px rgba(78, 20, 208, 0.5);
   color: #fff;
   text-decoration: none;
+}
+
+.navLaunchBtn:hover::before {
+  opacity: 1;
 }
 
 .navLaunchBtn::after {

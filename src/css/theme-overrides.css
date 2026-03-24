@@ -24,7 +24,7 @@
 [data-theme="dark"] article h1,
 [data-theme="dark"] article h2,
 [data-theme="dark"] article h3 {
-  color: #fff !important;
+  color: #fff;
 }
 
 [data-theme="dark"] .markdown p,
@@ -115,7 +115,7 @@
 
 /* Code blocks with purple tint */
 [data-theme="dark"] pre {
-  background: rgba(19, 8, 40, 0.6) !important;
+  background: rgba(19, 8, 40, 0.6);
   border: 1px solid rgba(123, 63, 228, 0.15);
   border-radius: 12px;
 }
@@ -150,7 +150,7 @@
 }
 
 [data-theme="dark"] .table-of-contents__link--active {
-  color: #28CB95 !important;
+  color: #28CB95;
   font-weight: 500;
 }
 
@@ -212,7 +212,7 @@ html[data-theme="dark"][class*="blog"] main {
 
 /* Blog/research cards — dark purple style matching homepage Recent Updates */
 [data-theme="dark"] .blog-post-item {
-  background: #1E0F42 !important;
+  background: #1E0F42;
   border: 1px solid rgba(78, 20, 208, 0.18);
   border-radius: 16px;
   padding: 12px;
@@ -245,7 +245,7 @@ html[data-theme="dark"][class*="blog"] main {
 }
 
 [data-theme="dark"] [class*="blogPostTitle"] a {
-  color: #fff !important;
+  color: #fff;
 }
 
 /* Blog tags as pills */
@@ -274,7 +274,7 @@ html[data-theme="dark"][class*="blog"] main {
 [data-theme="dark"] [class*="blogPostDate"],
 [data-theme="dark"] .blog-post-author-name,
 [data-theme="dark"] time {
-  color: rgba(232, 224, 245, 0.7) !important;
+  color: rgba(232, 224, 245, 0.7);
 }
 
 /* Blog featured tag */
@@ -379,8 +379,8 @@ html[data-theme="dark"][class*="blog"] main {
 
 /* ===== FOOTER on non-homepage pages ===== */
 [data-theme="dark"] .footer {
-  background: #0A0118 !important;
-  box-shadow: none !important;
+  background: #0A0118;
+  box-shadow: none;
 }
 
 /* ===== MISC CATCH-ALL ===== */

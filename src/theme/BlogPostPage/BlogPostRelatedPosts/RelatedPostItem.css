@@ -1,6 +1,6 @@
 
 .related-post-item {
-  border: 1px solid #E7E7E7;
+  border: 1px solid var(--color-border);
   background-color: #FFF;
   border-radius: 16px;
   padding: 16px;
@@ -9,7 +9,7 @@
 }
 
 .related-post-item:hover {
-  color: #4E14D0;
+  color: var(--color-primary);
   cursor: pointer;
 }
 

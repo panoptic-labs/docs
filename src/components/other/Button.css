@@ -36,7 +36,7 @@
 }
 
 [data-theme="dark"] .button-outlined {
-  border-color: #8d8e94;
+  border-color: var(--color-text-secondary);
   color: #ffffff;
 }
 

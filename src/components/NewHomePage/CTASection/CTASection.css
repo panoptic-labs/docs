@@ -66,17 +66,31 @@
   text-decoration: none;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
   box-shadow: 0 0 30px rgba(78, 20, 208, 0.4), 0 0 60px rgba(78, 20, 208, 0.15);
   position: relative;
   overflow: hidden;
 }
 
+.btn-cta-big::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 50px rgba(78, 20, 208, 0.5), 0 0 80px rgba(78, 20, 208, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
 .btn-cta-big:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 50px rgba(78, 20, 208, 0.5), 0 0 80px rgba(78, 20, 208, 0.2);
   color: #fff;
   text-decoration: none;
+}
+
+.btn-cta-big:hover::before {
+  opacity: 1;
 }
 
 .btn-cta-big:focus-visible {
@@ -166,16 +180,30 @@
   color: #fff;
   border: none;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: transform 0.3s;
   box-shadow: 0 0 15px rgba(78, 20, 208, 0.3);
   position: relative;
   overflow: hidden;
   white-space: nowrap;
 }
 
+.cta-newsletter-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 25px rgba(78, 20, 208, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
 .cta-newsletter-btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 0 25px rgba(78, 20, 208, 0.4);
+}
+
+.cta-newsletter-btn:hover::before {
+  opacity: 1;
 }
 
 .cta-newsletter-btn:focus-visible {

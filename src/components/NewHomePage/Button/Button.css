@@ -9,15 +9,29 @@
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
   box-shadow: 0 0 20px rgba(78, 20, 208, 0.4);
   position: relative;
   overflow: hidden;
 }
 
+.primary-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 35px rgba(78, 20, 208, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
 .primary-button:hover:not([disabled]) {
   transform: translateY(-2px);
-  box-shadow: 0 0 35px rgba(78, 20, 208, 0.5);
+}
+
+.primary-button:hover:not([disabled])::before {
+  opacity: 1;
 }
 
 .primary-button:focus-visible {

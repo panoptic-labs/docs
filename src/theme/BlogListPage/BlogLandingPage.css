@@ -1,6 +1,6 @@
 
 .blog-landing-page {
-  background-color: #4E14D0;
+  background-color: var(--color-primary);
   padding: 60px 80px;
 
   background-image: url("/img/blog-landing-page-background.png");

@@ -34,12 +34,12 @@
   font-family: "DM Sans Variable", "DM Sans", sans-serif;
   font-weight: 600;
   font-size: 1rem;
-  color: #E8E0F5;
+  color: var(--color-text-light);
   transition: all 0.3s ease;
 }
 
 .network-pill:hover {
-  border-color: #4E14D0;
+  border-color: var(--color-primary);
   transform: translateY(-2px);
 }
 

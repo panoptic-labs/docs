@@ -205,7 +205,7 @@ html[data-theme="dark"]::before {
 }
 
 .bg-body {
-  background-color: var(--color-body) !important;
+  background-color: var(--color-body);
 }
 
 .icon__arrow-left {

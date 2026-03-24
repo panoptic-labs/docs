@@ -1,5 +1,5 @@
 .bg-lavender {
-  background: hsla(258, 9%, 13%, 1); color:#f3f3f3;
+  background: hsla(258, 9%, 13%, 1); color:var(--color-surface);
 }
 
 .email-signup {
@@ -36,7 +36,7 @@
   padding: 10px 20px;
   min-height: 44px;
   border: none;
-  background-color: #4E14D0; /* You can change this to your preferred color */
+  background-color: var(--color-primary); /* You can change this to your preferred color */
   color: white;
   cursor: pointer;
   border-radius: 10px;

@@ -60,12 +60,12 @@
 }
 
 .tableOfContentsLinkActive {
-  background-color: #F3F3F3;
+  background-color: var(--color-surface);
 }
 
 :global([data-theme="dark"]) .tableOfContentsLinkActive {
   background-color: rgba(78, 20, 208, 0.15);
-  color: #28CB95;
+  color: var(--color-success);
 }
 
 @media (max-width: 996px) {

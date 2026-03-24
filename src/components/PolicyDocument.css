@@ -1,5 +1,5 @@
 .policy-document {
-    background-color: #F3F3F3;
+    background-color: var(--color-surface);
     color: black;
     font-family: "Times New Roman";
 }

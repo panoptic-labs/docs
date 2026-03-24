@@ -37,7 +37,7 @@
 }
 
 .v2-audit-complete {
-  color: #28CB95;
+  color: var(--color-success);
 }
 
 .v2-audit-progress {
