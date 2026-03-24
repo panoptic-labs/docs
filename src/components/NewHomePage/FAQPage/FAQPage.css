@@ -98,19 +98,19 @@
   animation: rotateClosed 300ms forwards;
 }
 
-.accordion-trigger[data-state='open'] > .faq-arrow-container .faq-arrow {
-  animation: faqbounce 2000ms infinite;
-}
-
 /* Content */
 .accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 300ms cubic-bezier(0.87, 0, 0.13, 1);
   overflow: hidden;
 }
 .accordion-content[data-state='open'] {
-  animation: slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1);
+  grid-template-rows: 1fr;
 }
-.accordion-content[data-state='closed'] {
-  animation: slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1);
+
+.accordion-content > .accordion-content-text {
+  overflow: hidden;
 }
 
 @keyframes rotateOpen {
@@ -121,22 +121,6 @@
 @keyframes rotateClosed {
   0% { transform: rotate(90deg)}
   100% { transform: rotate(0deg)}
-}
-
-@keyframes faqbounce {
-  0% { transform: translateX(0); }
-  50% { transform: translateX(-10px); }
-  100% { transform: translateX(0); }
-}
-
-@keyframes slideDown {
-  from { max-height: 0; }
-  to { max-height: var(--radix-accordion-content-height); }
-}
-
-@keyframes slideUp {
-  from { max-height: var(--radix-accordion-content-height); }
-  to { max-height: 0; }
 }
 
 .accordion-content-text {

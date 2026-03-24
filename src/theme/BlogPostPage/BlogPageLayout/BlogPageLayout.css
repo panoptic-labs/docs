@@ -56,7 +56,7 @@
   border: 1px solid #E7E7E7;
   background: #FFF;
   padding: 6px 14px;
-  color: #000;
+  color: var(--ifm-font-color-base);
   font-family: "DM Sans Variable", "DM Sans", sans-serif;
   font-size: 0.875em;
   font-style: normal;

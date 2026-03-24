@@ -100,7 +100,7 @@
   font-size: 12px;
   line-height: 20px;
   letter-spacing: -0.02em;
-  color: #8d8e94;
+  color: #a8a9b0;
 }
 
 .footer__container__learn-part {
@@ -131,7 +131,7 @@
   font-size: 14px;
   line-height: 22px;
   letter-spacing: -0.02em;
-  color: #8d8e94;
+  color: #a8a9b0;
   cursor: pointer;
   transition: color 0.2s ease;
 }
@@ -154,7 +154,7 @@
   font-size: 12px;
   line-height: 20px;
   letter-spacing: -0.02em;
-  color: #8d8e94;
+  color: #a8a9b0;
 }
 
 .community-part__links {
@@ -192,7 +192,7 @@
   font-size: 14px;
   line-height: 22px;
   letter-spacing: -0.02em;
-  color: #8d8e94;
+  color: #a8a9b0;
   cursor: pointer;
   transition: color 0.2s ease;
 }

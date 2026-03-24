@@ -34,6 +34,7 @@
 
 .signup-button {
   padding: 10px 20px;
+  min-height: 44px;
   border: none;
   background-color: #4E14D0; /* You can change this to your preferred color */
   color: white;

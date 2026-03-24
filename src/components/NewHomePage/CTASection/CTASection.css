@@ -156,7 +156,8 @@
 }
 
 .cta-newsletter-btn {
-  padding: 8px 24px;
+  padding: 10px 24px;
+  min-height: 44px;
   border-radius: 10px;
   font-size: 0.85rem;
   font-weight: 600;

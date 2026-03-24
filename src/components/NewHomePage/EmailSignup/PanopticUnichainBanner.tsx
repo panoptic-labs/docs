@@ -12,6 +12,7 @@ const PanopticUnichainBanner: React.FC<React.SVGProps<SVGSVGElement>> = (props) 
     width={1200}
     height={200}
     preserveAspectRatio="xMidYMid meet"
+    aria-hidden="true"
     {...props}
   >
     {/* ───────── reusable shapes ───────── */}
