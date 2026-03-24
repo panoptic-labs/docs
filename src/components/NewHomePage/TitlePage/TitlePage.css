@@ -107,7 +107,7 @@
 
 /* ── Title ── */
 .hero-title {
-  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
   font-size: clamp(2.8rem, 7vw, 5.2rem);
   font-weight: 700;
   color: #ffffff;
@@ -125,7 +125,7 @@
 
 /* ── Subtitle ── */
 .hero-subtitle {
-  font-family: Inter, sans-serif;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
   font-size: clamp(1.05rem, 2vw, 1.25rem);
   font-weight: 400;
   color: rgba(232, 224, 245, 0.5);
@@ -149,7 +149,7 @@
   padding: 14px 32px;
   background: linear-gradient(135deg, #4E14D0, #7B3FE4);
   color: #ffffff;
-  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
   font-size: 1rem;
   font-weight: 600;
   border-radius: 10px;
@@ -189,7 +189,7 @@
   padding: 14px 32px;
   background: transparent;
   color: #E8E0F5;
-  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
   font-size: 1rem;
   font-weight: 600;
   border: 1px solid rgba(78, 20, 208, 0.18);
@@ -237,7 +237,7 @@
 }
 
 .stat-number {
-  font-family: "JetBrains Mono", monospace;
+  font-family: "Fragment Mono", monospace;
   font-weight: 700;
   font-size: clamp(1.8rem, 3.5vw, 2.8rem);
   background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0.6) 100%);

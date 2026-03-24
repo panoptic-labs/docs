@@ -34,7 +34,7 @@
 .footer-cta-title {
   font-weight: 700;
   font-size: 48px;
-  font-family: "Space Grotesk Variable", "Space Grotesk", Inter, sans-serif;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
   line-height: 110%;
   color: #F3F3F3;
 }
@@ -116,7 +116,7 @@
   letter-spacing: -0.02em;
   color: #fff;
   margin-bottom: 20px;
-  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
 }
 
 .learn-part__list {

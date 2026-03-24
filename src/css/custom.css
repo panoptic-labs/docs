@@ -66,8 +66,9 @@
   --ifm-color-primary-lighter: hsl(262, 49%, 50%);
   --ifm-color-primary-lightest: hsl(262, 49%, 56%);
   --ifm-color-navbar-links: hsl(257, 68%, 69%);
-  --ifm-font-family-base: "Inter";
-  --ifm-heading-font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  --ifm-font-family-base: "DM Sans Variable", "DM Sans", sans-serif;
+  --ifm-heading-font-family: "DM Sans Variable", "DM Sans", sans-serif;
+  --ifm-font-family-monospace: "Fragment Mono", monospace;
   --ifm-font-size-base: 16px;
   --ifm-font-weight-semibold: 400;
   --ifm-font-weight-bold: 700;
@@ -194,7 +195,7 @@ html[data-theme="dark"]::before {
 
 @supports (font-variation-settings: normal) {
   .html {
-    font-family: "Inter var", "system-ui";
+    font-family: "DM Sans Variable", "DM Sans", "system-ui";
   }
 }
 

@@ -27,7 +27,7 @@
 }
 
 .cta-title {
-  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
   font-weight: 700;
   font-size: clamp(2rem, 4vw, 3rem);
   letter-spacing: -0.03em;
@@ -60,7 +60,7 @@
   border-radius: 14px;
   font-size: 1rem;
   font-weight: 600;
-  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   color: #fff;
   text-decoration: none;
@@ -105,7 +105,7 @@
   border-radius: 14px;
   font-size: 1rem;
   font-weight: 600;
-  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
   background: transparent;
   color: var(--color-text-light);
   text-decoration: none;
@@ -160,7 +160,7 @@
   border-radius: 10px;
   font-size: 0.85rem;
   font-weight: 600;
-  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   color: #fff;
   border: none;
@@ -227,7 +227,7 @@
 }
 
 .newsletter-modal-header h3 {
-  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
   font-size: 1.15rem;
   font-weight: 600;
   color: #fff;

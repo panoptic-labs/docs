@@ -22,7 +22,7 @@
 }
 
 .recent-updates__title {
-  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
   font-weight: 700;
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1.1;
@@ -126,7 +126,7 @@ a:hover {
 }
 
 .recent-updates__card__title {
-  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
   font-weight: 700;
   font-size: 20px;
   line-height: 28px;

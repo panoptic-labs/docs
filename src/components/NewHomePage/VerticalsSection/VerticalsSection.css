@@ -11,7 +11,7 @@
 
 /* ── Shared section typography ── */
 .section-eyebrow {
-  font-family: "JetBrains Mono", monospace;
+  font-family: "Fragment Mono", monospace;
   font-size: 0.75rem;
   color: #28CB95;
   text-transform: uppercase;
@@ -21,7 +21,7 @@
 }
 
 .section-title {
-  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
   font-weight: 700;
   font-size: clamp(2rem, 4vw, 3rem);
   letter-spacing: -0.03em;
@@ -92,7 +92,7 @@
 }
 
 .feature-card h3 {
-  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
   font-weight: 600;
   font-size: 1.1rem;
   margin: 0 0 10px;

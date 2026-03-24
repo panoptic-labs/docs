@@ -6,7 +6,7 @@ const CountUpStat = ({ end, prefix = "", suffix = "", decimals = 0, duration = 2
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.3 });
 
   return (
-    <span ref={ref} style={{ fontFamily: '"JetBrains Mono", monospace' }}>
+    <span ref={ref} style={{ fontFamily: '"Fragment Mono", monospace' }}>
       {inView ? (
         <CountUp
           end={end}

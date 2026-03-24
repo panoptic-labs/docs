@@ -1,6 +1,5 @@
-import "inter-ui/inter.css";
-import "@fontsource-variable/space-grotesk";
-import "@fontsource/jetbrains-mono";
+import "@fontsource-variable/dm-sans";
+import "@fontsource/fragment-mono";
 import React from "react";
 import { MotionConfig } from "framer-motion";
 

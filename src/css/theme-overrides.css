@@ -110,7 +110,7 @@
 [data-theme="dark"] .theme-doc-markdown h2,
 [data-theme="dark"] .theme-doc-markdown h3,
 [data-theme="dark"] .theme-doc-markdown h4 {
-  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
 }
 
 /* Code blocks with purple tint */
@@ -121,7 +121,7 @@
 }
 
 [data-theme="dark"] code {
-  font-family: "JetBrains Mono", monospace;
+  font-family: "Fragment Mono", monospace;
   color: #E8E0F5;
 }
 
@@ -266,7 +266,7 @@ html[data-theme="dark"][class*="blog"] main {
 
 /* ===== BLOG POST PAGE ===== */
 [data-theme="dark"] article header h1 {
-  font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
+  font-family: "DM Sans Variable", "DM Sans", sans-serif;
 }
 
 /* Blog post metadata */
