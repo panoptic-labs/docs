@@ -31,7 +31,7 @@
   left: calc(33.33% - 16px);
   right: calc(33.33% - 16px);
   height: 1px;
-  background: linear-gradient(90deg, #4E14D0, #28CB95);
+  background: linear-gradient(90deg, var(--color-primary), var(--color-success));
   opacity: 0.3;
   transform-origin: left center;
 }

@@ -37,7 +37,6 @@ function NewsletterModal({ open, onClose }) {
 
 export default function CTASection() {
   const [newsletterOpen, setNewsletterOpen] = useState(false);
-
   return (
     <section className="cta-section">
       <motion.div

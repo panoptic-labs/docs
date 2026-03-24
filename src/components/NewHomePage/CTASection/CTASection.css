@@ -61,7 +61,7 @@
   font-size: 1rem;
   font-weight: 600;
   font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
-  background: linear-gradient(135deg, #4E14D0, #7B3FE4);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   color: #fff;
   text-decoration: none;
   border: none;
@@ -80,7 +80,7 @@
 }
 
 .btn-cta-big:focus-visible {
-  outline: 2px solid #9B6CFF;
+  outline: 2px solid var(--color-focus);
   outline-offset: 2px;
 }
 
@@ -107,22 +107,22 @@
   font-weight: 600;
   font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
   background: transparent;
-  color: #E8E0F5;
+  color: var(--color-text-light);
   text-decoration: none;
-  border: 1px solid rgba(78, 20, 208, 0.18);
+  border: 1px solid var(--color-border-subtle);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .btn-cta-outline:hover {
-  border-color: #4E14D0;
+  border-color: var(--color-primary);
   background: rgba(78, 20, 208, 0.08);
   color: #fff;
   text-decoration: none;
 }
 
 .btn-cta-outline:focus-visible {
-  outline: 2px solid #9B6CFF;
+  outline: 2px solid var(--color-focus);
   outline-offset: 2px;
 }
 
@@ -138,7 +138,7 @@
   padding: 16px 24px;
   border-radius: 14px;
   background: rgba(78, 20, 208, 0.06);
-  border: 1px solid rgba(78, 20, 208, 0.18);
+  border: 1px solid var(--color-border-subtle);
 }
 
 .cta-newsletter-text {
@@ -151,7 +151,7 @@
 }
 
 .cta-newsletter-icon {
-  color: #9B6CFF;
+  color: var(--color-accent);
   flex-shrink: 0;
 }
 
@@ -161,7 +161,7 @@
   font-size: 0.85rem;
   font-weight: 600;
   font-family: "Space Grotesk Variable", "Space Grotesk", sans-serif;
-  background: linear-gradient(135deg, #4E14D0, #7B3FE4);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
   color: #fff;
   border: none;
   cursor: pointer;
@@ -178,7 +178,7 @@
 }
 
 .cta-newsletter-btn:focus-visible {
-  outline: 2px solid #9B6CFF;
+  outline: 2px solid var(--color-focus);
   outline-offset: 2px;
 }
 
@@ -249,7 +249,7 @@
 }
 
 .newsletter-modal-close:focus-visible {
-  outline: 2px solid #9B6CFF;
+  outline: 2px solid var(--color-focus);
   outline-offset: 2px;
 }
 

@@ -1,7 +1,7 @@
 /* components/other/Header.css */
 .header {
   height: 92px;
-  background-color: #F3F3F3;
+  background-color: var(--color-surface);
   position: relative;
 }
 

@@ -22,6 +22,10 @@
   margin: 0 45px 0 45px;
 }
 
+.paused .token-set {
+  animation-play-state: paused;
+}
+
 @keyframes swipe {
   0% {
     transform: translate(0);
