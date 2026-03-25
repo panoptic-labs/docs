@@ -58,4 +58,6 @@ The initial economic analysis [report](/pdf/Simtopia_Panoptic.pdf) was completed
 ## Vault Audits
 
 ### Code4rena
-The Panoptic vault infrastructure audit [report](https://code4rena.com/reports/2025-06-panoptic-hypovault) was completed by [Code4rena](https://code4rena.com/) on August 13, 2025.
+A review of the Panoptic vault infrastructure was completed by top code4rena wardens on March 20, 2026. The report can be found [here](/pdf/ValvesSecurity_Panoptic.pdf).
+
+The initial Panoptic vault infrastructure audit [report](https://code4rena.com/reports/2025-06-panoptic-hypovault) was completed by [Code4rena](https://code4rena.com/) on August 13, 2025.
