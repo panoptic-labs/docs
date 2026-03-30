@@ -223,10 +223,6 @@
   mask-image: url("/img/icons/twitter.svg");
 }
 
-.community-part__link[aria-label="Telegram"] {
-  mask-image: url("/img/icons/telegram-small.svg");
-}
-
 .footer__blured-container {
   position: absolute;
   inset: 0px 0px 0px 0px;

@@ -65,7 +65,6 @@ Panoptic is the first DeFi-native perpetual options protocol. It enables permiss
 - **Brand Kit:** https://brand.panoptic.xyz
 - **Discord:** https://discord.com/invite/8sX5Af2KXG
 - **Twitter/X:** https://twitter.com/panoptic_xyz
-- **Telegram:** https://t.me/panoptic
 - **LinkedIn:** https://www.linkedin.com/company/panoptic-xyz
 
 ## Investors & Partners

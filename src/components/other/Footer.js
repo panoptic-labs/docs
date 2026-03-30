@@ -32,9 +32,6 @@ const Footer = () => {
             <a className="footer-social-icon-link" href="https://twitter.com/panoptic_xyz" aria-label="Twitter">
               <img src={"/img/icons/twitter.svg"} alt="Twitter" className="footer-social-icon" />
             </a>
-            <a className="footer-social-icon-link" href="https://t.me/panoptic" aria-label="Telegram">
-              <img src={"/img/icons/telegram-big.svg"} alt="telegram" className="footer-social-icon" />
-            </a>
             <a className="footer-social-icon-link" href="https://www.linkedin.com/company/panoptic-xyz" aria-label="Linked In">
               <img src={"/img/icons/linkedin.svg"} alt="Linked In" className="footer-social-icon" />
             </a>
@@ -75,7 +72,6 @@ const Footer = () => {
             <div className="community-part__links">
               <a className="community-part__link" href="https://discord.gg/8sX5Af2KXG" aria-label="Discord" />
               <a className="community-part__link" href="https://twitter.com/panoptic_xyz" aria-label="Twitter" />
-              <a className="community-part__link" href="https://t.me/panoptic" aria-label="Telegram" />
               <a className="community-part__link" href="https://www.linkedin.com/company/panoptic-xyz" aria-label="Linked In" />
             </div>
           </div>
