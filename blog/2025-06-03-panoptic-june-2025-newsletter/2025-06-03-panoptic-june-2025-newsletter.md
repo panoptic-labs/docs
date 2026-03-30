@@ -88,7 +88,7 @@ Panoptic's Guillaume Lambert [joined](https://x.com/tastycrypto/status/192742332
 
 The Panoptic team is hitting the road this summer! We’ll be at Permissionless in Brooklyn, New York (June 24–26) and EthCC in Cannes, France (June 30–July 3).
 
-If you're attending either conference, we’d love to connect. Reach out on [Discord or Telegram](http://links.panoptic.xyz/all) to meet up with the team!
+If you're attending either conference, we’d love to connect. Reach out on [Discord](https://discord.com/invite/8sX5Af2KXG) to meet up with the team!
 
 ### Bitcoin Trading Competition Starts June 2
 

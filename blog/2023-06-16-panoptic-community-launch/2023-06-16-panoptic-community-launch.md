@@ -22,11 +22,9 @@ Join our community today.
 
 ## Where Our Community Lives
 
-The Panoptic community has three main hubs: [Twitter](https://twitter.com/panoptic_xyz), [Telegram](https://t.me/panoptic), and [Discord](https://discord.com/invite/8sX5Af2KXG).  
+The Panoptic community has two main hubs: [Twitter](https://twitter.com/panoptic_xyz) and [Discord](https://discord.com/invite/8sX5Af2KXG).  
 
 [Twitter](https://twitter.com/panoptic_xyz) is our public-facing first point of contact. By following us on Twitter, you’ll receive a high-level overview of our day-to-day updates including new protocol developments, partnership announcements, and research bites which dive into trading strategies, Panoptions, DeFi, and Options Finance (OpFi). We’ll also host Twitter Spaces with leading experts in the industry.
-
-Our [Telegram](https://t.me/panoptic) is temporarily paused to concentrate our resources on launching our protocol and other dynamic community spaces. Join us on Telegram (where alpha will be shared) in preparation for its relaunch!
 
 [Discord](https://discord.com/invite/8sX5Af2KXG) is where our community lives. Here, you get the most access to our team and founders through discussion channels and AMAs. We also create spaces where like-minded DeFi enthusiasts and traders can share their thoughts on the latest strategies, ask questions to strengthen their knowledge base, and make suggestions on how to improve the Panoptic user experience.
 
