@@ -5,4 +5,4 @@ label: "Points"
 
 # Points
 
-![](./panoptic-season-2-points.png)
+![](/img/research/panoptic-season-2-points.png)

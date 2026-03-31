@@ -13,41 +13,21 @@ Panoptic vaults span the risk-return spectrum, offering strategies for both cons
 ## Community Vaults
 Panoptic’s community vaults do not charge performance fees and are designed to provide accessible, onchain yield strategies. New vaults and expanded caps will roll out every few weeks after launch.
 
-### Lending Vaults
-Two passive lending vaults — one for USDC and one for ETH — offer simple, lower-risk yield generation. Deposits are allocated into Panoptic’s underlying lending markets, beginning with the ETH/USDC market and expanding to other markets like BTC/USDC over time.
+Panoptic will initially launch with two community vaults.
 
-<ThemedImage
-  alt="Active-LP"
-  sources={{
-    light: useBaseUrl('/img/lending-vault.svg'),
-    dark: useBaseUrl('/img/lending-vault.svg'),
-  }}
-  style={{width: '100%'}}
-/>
+![Panoptic vaults comparison](/img/vaults/panoptic-vaults-comparison.png)
 
-### Covered Call VTF (Vault Traded Fund)
-This option selling vault functions as an ETH covered call ETF, bringing tried-and-true investment vehicles like Grayscale's BTCC and BlackRock's upcoming premium income ETF to DeFi. Users deposit stablecoins, which the vault uses to synthetically acquire ETH exposure and sell call options. Option premiums are distributed as regular income, providing periodic disbursements to all depositors.
+### USDC Unicorn Vault
+Deposited USDC is allocated into Panoptic’s underlying lending markets, beginning with the ETH/USDC market and expanding to additional markets like BTC/USDC over time. The strategy also runs systematic, delta-neutral gamma scalping designed to buy low and sell high.
 
-<ThemedImage
-  alt="Active-LP"
-  sources={{
-    light: useBaseUrl('/img/covered-call-vault.svg'),
-    dark: useBaseUrl('/img/covered-call-vault.svg'),
-  }}
-  style={{width: '100%'}}
-/>
+![USDC Unicorn Vault animation](/img/vaults/usdc-unicorn-vault.gif)
+![USDC Unicorn Vault details](/img/vaults/unicorn-vault-info.png)
 
-### Gamma Scalping Vault
-This option buying vault aims to buy low and sell high by systematically buying call options and dynamically hedging the delta to zero. The strategy is similar to Ethena's basis trade, but for options markets.
+### WETH PLP Vault
+Deposited WETH is allocated into Panoptic’s underlying lending markets, beginning with the ETH/USDC market at launch. The vault provides liquidity to Panoptic through lending and market making strategies, and accrues platform fees.
 
-<ThemedImage
-  alt="Active-LP"
-  sources={{
-    light: useBaseUrl('/img/gamma-scalping-vault.svg'),
-    dark: useBaseUrl('/img/gamma-scalping-vault.svg'),
-  }}
-  style={{width: '100%'}}
-/>
+![WETH PLP Vault animation](/img/vaults/weth-plp-vault.gif)
+![WETH PLP Vault details](/img/vaults/plp-vault-info.png)
 
 ## Curated Vaults
 Anyone can create a vault using Panoptic’s vault infrastructure. Curated vaults may run any strategy — including lending or options trading — and may charge performance fees to depositors.
