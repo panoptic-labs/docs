@@ -44,7 +44,7 @@ The lack of venues to trade the long convexity side leads to a systemic ineffici
 
 ## Do Uniswap LP fees compensate for short-convexity?
 
-To test the difference between the delta-hedging PnL and Uniswap fee, we simulated the performance of hedging a long perpetual call position across multiple Uniswap v3 pools, considering a range of fee tiers and token pairs.
+To test the difference between the delta-hedging PnL and Uniswap fee, we [simulated](https://github.com/panoptic-labs/research/tree/main/_research-bites/20260311) the performance of hedging a long perpetual call position across multiple Uniswap v3 pools, considering a range of fee tiers and token pairs.
 
 ### Notes on the Simulation
 
