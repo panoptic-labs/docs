@@ -45,7 +45,7 @@ As Panoptic is a [perpetual options](/docs/terms/perps) trading platform, the ba
 
 ![](./03.png)
 
-We utilize Panoptic-native synthetic perps returns as proxies for contango and backwardation due to the BTC trend depicted by the above [figure](https://coinbase.bynder.com/m/61e31f57f674ff53/original/MktIntel_2024-06-10_Perps-1.pdf). The chart reveals how the BTC funding rate derived from various centralized exchanges (CEXs) changes in accordance with the underlying BTC price. This illustration demonstrates how underlying BTC price tends to increase (decrease) alongside CEX BTC funding rate increases (decreases), indicating that severe perp funding rate contango (backwardation) would serve as an adjunct to steep price increases (decreases). Hence, we transpose this logic concerning perp-price interdynamics offchain to our synthetic perps trading onchain.
+We utilize Panoptic-native synthetic perps returns as proxies for contango and backwardation due to the BTC trend depicted by the above [figure](https://assets.ctfassets.net/k3n74unfin40/60FctEYNsEfKLgsLKXIJZJ/1a0cd7c4d9b3f8134eacb9d9a0d0a640/MktIntel_2024.06.10_Perps.pdf). The chart reveals how the BTC funding rate derived from various centralized exchanges (CEXs) changes in accordance with the underlying BTC price. This illustration demonstrates how underlying BTC price tends to increase (decrease) alongside CEX BTC funding rate increases (decreases), indicating that severe perp funding rate contango (backwardation) would serve as an adjunct to steep price increases (decreases). Hence, we transpose this logic concerning perp-price interdynamics offchain to our synthetic perps trading onchain.
 
 ![](./04.png)
 
