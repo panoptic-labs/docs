@@ -10,7 +10,7 @@ description: "The Panoptic Vault Suite introduces automated, market-neutral vaul
 
 We are introducing the Panoptic Vault suite, initially launching with two vaults.
 
-Usually, earning yield from options requires expertise, constant management, and complex knowledge. Options are powerful, but inaccessible for many DeFi users. With the [launch](/blog/panoptic-v2-the-defi-yield-platform) of the Panoptic Vault Suite, that changes.
+Usually, earning yield from options requires expertise, constant management, and complex knowledge. Options are powerful, but inaccessible for many DeFi users. With the launch of the Panoptic Vault Suite, that changes.
 
 This launch introduces two interconnected vaults that transform options from a niche trading instrument into onchain income infrastructure. Each vault plays a distinct role, but together they form a system where liquidity, volatility, and yield reinforce one another. The Panoptic vault suite is designed for users who simply want to **deposit** capital and **earn income.**
 
