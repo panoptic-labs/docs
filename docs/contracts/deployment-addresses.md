@@ -6,6 +6,15 @@ sidebar_position: 1
 
 PanopticPools and CollateralTrackers are [proxy contracts](https://info.etherscan.com/what-is-proxy-contract/), with one PanopticPool per underlying Uniswap pool, and two CollateralTrackers per PanopticPool. You can fetch the PanopticPool for a given Uniswap pool [from the PanopticFactory](https://panoptic.xyz/docs/contracts/V2/contract.PanopticFactory#getpanopticpool). The core logic, however, is deployed to the following stable addresses on all EVM chains:
 
+## Vaults
+- `HypoVault (impl)`: `0xEE8300034008f25d60a096ED234C583c49ba6a7A`
+- `Factory`:	`0x4FAe3e0B293Df7980eB9D55dF5463e40E502546d`
+- `Accountant`:	`0xCCAA8adC2776786Fd0A14Fb1f22D6089E0637a49`
+- `RolesAuthority`:	`0xBddfe76460A6124e24E157599D0dD60519490f56`
+- `CollateralTrackerDecoderAndSanitizer`:	`0x1c8620AC42c1F69eE493B953165FCd1864DEB439`
+- `Panoptic Liquidity Provider (PLP) Vault`:	`0x779a2aa634A004b3a3f3b322083744869BBC6D66`
+- `Unicorn Vault`: `0x963Fe9c93bc353602656ee4051A75114bA74d6c5`
+
 ## v2
 
 - `PanopticFactoryV3`: `0x000000000000039Dc5De710B8F7A6a33df0399c8`
