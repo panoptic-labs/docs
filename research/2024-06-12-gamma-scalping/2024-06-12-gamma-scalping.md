@@ -40,16 +40,18 @@ The delta-hedge progression graphic in the prior section visually lays out how a
 
 The fundamental foundation supporting gamma scalping is that there will be sufficient underlying price activity over the course of a certain window to offset the theta decay that will ensue from the purchase of an ATM straddle. There is a tug–of-war aspect to this strategy:
 
-![](./a.png)
+Gamma/Theta Tradeoff: $dV(S,t) = 1/2 Γ dS^2 - Θ dt$ ([1](https://www.amazon.com/Volatility-Smile-Wiley-Finance/dp/1118959167))
 
-The [equation](https://www.amazon.com/Volatility-Smile-Wiley-Finance/dp/1118959167) above characterizes the mathematical nature of the aforementioned gamma-theta tradeoff: the gamma scalper is effectively betting that a specific threshold of underlying price action will translate to satisfactory returns that offset the premium paid to purchase the option.
+where $dV$ = change in hedged portfolio value, $S$ = underlying price, $t$ = time increments, $Θ$ = theta, and $Γ$ = gamma.
+
+The equation above characterizes the mathematical nature of the aforementioned gamma-theta tradeoff: the gamma scalper is effectively betting that a specific threshold of underlying price action will translate to satisfactory returns that offset the premium paid to purchase the option.
 
 ### Exploiting Cheap Volatility
 The overarching thought process for executing this strategy is predicated on the hypothesis that realized volatility (RV) will exceed implied volatility (IV) for some asset. RV is a standard deviation-type ($\sigma$) measure of historical asset returns for a given lookback period, whereas [IV](https://panoptic.xyz/docs/terms/implied_volatility) is a forward-looking metric that quantifies the market expectation of volatility for asset returns during a forthcoming period. However, the conceptual linchpins that are dually responsible for driving the rationale behind gamma scalping are that long options gamma signifies belief in temporarily amplified RV along with a motivation to obtain a positively convex payout profile.
 
-![](./b.png)
+Gamma Scalping P&L = $Vega * (σ_{realized} - σ_{implied})$ ([2](https://www.amazon.com/Positional-Option-Trading-Wiley/dp/1119583519)).
 
-The [equation](https://www.amazon.com/Positional-Option-Trading-Wiley/dp/1119583519) above captures the relative-value element of the gamma scalping trade by illustrating that the profits of a gamma scalper are generated when either the vega or IV of an ATM straddle is undervalued.
+The above equation captures the relative-value element of the gamma scalping trade by illustrating that the profits of a gamma scalper are generated when either the vega or IV of an ATM straddle is undervalued.
 
 ### Positive Convexity
 A majorly attractive attribute when devising a gamma scalping trade is the embedded feature of having a payout with positive convexity. Positive convexity with a long options position leads to a structural profit and loss (PnL) asymmetry where losses are capped, yet gains are theoretically unlimited as depicted in the theoretical [convex](https://medium.com/opyn/squeeth-primer-a-guide-to-understanding-opyns-implementation-of-squeeth-a0f5e8b95684) payout figure below.
