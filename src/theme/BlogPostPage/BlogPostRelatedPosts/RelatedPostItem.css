@@ -1,19 +1,22 @@
 
 .related-post-item {
-  border: 1px solid var(--color-border);
-  background-color: #FFF;
+  border: 1px solid rgba(123, 63, 228, 0.15);
+  background: rgba(19, 8, 40, 0.5);
   border-radius: 16px;
   padding: 16px;
   height: 200px;
   width: 250px;
+  transition: all 0.2s ease;
 }
 
 .related-post-item:hover {
-  color: var(--color-primary);
+  border-color: rgba(123, 63, 228, 0.35);
+  box-shadow: 0 0 20px rgba(123, 63, 228, 0.1);
   cursor: pointer;
 }
 
 .related-post-item-sublabel {
   padding: 0 26px;
+  color: rgba(232, 224, 245, 0.7);
 }
 
