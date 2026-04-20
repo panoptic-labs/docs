@@ -3,7 +3,6 @@ import {HtmlClassNameProvider} from '@docusaurus/theme-common';
 import {DocProvider} from '@docusaurus/theme-common/internal';
 import DocItemMetadata from '@theme/DocItem/Metadata';
 import DocItemLayout from '@theme/DocItem/Layout';
-import GiscusComponent from '@site/src/components/GiscusComponent';
 export default function DocItem(props) {
   const docHtmlClassName = `docs-doc-id-${props.content.metadata.unversionedId}`;
   const MDXComponent = props.content;
@@ -13,9 +12,6 @@ export default function DocItem(props) {
         <DocItemMetadata />
         <DocItemLayout>
           <MDXComponent />
-  <div className="hidden md:block">
-    <GiscusComponent />
-  </div>      
         </DocItemLayout>
       </HtmlClassNameProvider>
     </DocProvider>

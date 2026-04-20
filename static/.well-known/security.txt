@@ -1,0 +1,4 @@
+Contact: https://github.com/panoptic-labs/docs/security
+Expires: 2027-04-16T00:00:00.000Z
+Canonical: https://panoptic.xyz/.well-known/security.txt
+Preferred-Languages: en

@@ -1,12 +1,12 @@
 
 .adjacent-posts {
-  background-color: var(--color-surface);
+  background-color: transparent;
   padding: 20px 0px 0px 0px;
   cursor: pointer;
 }
 
 .related-posts-title {
-  color: black;
+  color: #E8E0F5;
 }
 
 .page-one {
@@ -16,7 +16,7 @@
 
 @media screen and (max-width: 767px) { 
   .blog-page-related-posts {
-    background-color: var(--color-surface);
+    background-color: transparent;
     padding: 20px 16px 32px 16px;
   }
 }

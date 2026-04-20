@@ -11,7 +11,7 @@ const katex = require("rehype-katex");
 const config = {
   title: "Panoptic",
   tagline: "The Panoptic Protocol",
-  url: "http://panoptic.xyz/",
+  url: "https://panoptic.xyz",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -73,7 +73,7 @@ const config = {
         style: "dark",
         logo: {
           alt: "Panoptic Logo",
-          src: "https://raw.githubusercontent.com/panoptic-labs/docs/4825969722841d1ace89c3837ae05511b96d6426/static/img/logo.svg",
+          src: "https://panoptic.xyz/img/logo.svg",
           width: 160,
           height: 160,
         },
@@ -164,6 +164,10 @@ const config = {
           content:
             "https://panoptic.xyz/img/website-banner.png?v=2",
         },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:site", content: "@panoptic_xyz" },
+        { property: "og:site_name", content: "Panoptic" },
+        { property: "og:type", content: "website" },
       ],
       // Announcement bar temporarily disabled — V2 info moved to homepage banner
       // announcementBar: {
@@ -522,6 +526,13 @@ const config = {
       attributes: {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1.0'
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'canonical',
+        href: 'https://panoptic.xyz/',
       },
     },
   ],
