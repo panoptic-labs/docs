@@ -5,7 +5,6 @@ import {BlogPostProvider, useBlogPost} from '@docusaurus/theme-common/internal';
 import BlogLayout from './BlogPageLayout';
 import BlogPostItem from './BlogPostItem';
 import BlogPostPageMetadata from '@theme/BlogPostPage/Metadata';
-import GiscusComponent from '@site/src/components/GiscusComponent';
 import TOC from '@theme/TOC';
 function BlogPostPageContent({sidebar, children}) {
   const {metadata, toc} = useBlogPost();
@@ -27,7 +26,6 @@ function BlogPostPageContent({sidebar, children}) {
         ) : undefined
       }>
       <BlogPostItem>{children}</BlogPostItem>
-      <GiscusComponent />
     </BlogLayout>
   );
 }
