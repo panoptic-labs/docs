@@ -1,2 +1,4 @@
 User-agent: *
-Disallow: /.well_known/
+Disallow: /.well-known/
+
+Sitemap: https://panoptic.xyz/sitemap.xml
