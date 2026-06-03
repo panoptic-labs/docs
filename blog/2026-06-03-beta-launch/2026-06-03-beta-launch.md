@@ -26,4 +26,6 @@ This process allows us to improve product quality while ensuring new releases me
 ## Looking Ahead
 As we continue building toward the future of perpetual options, the Panoptic Prime Beta will remain a critical part of our development process. More features, more strategies, and more opportunities to participate are on the horizon!
 If you'd like to stay up to date on future beta opportunities and product releases, join our Discord and become part of the growing community of Panoptimists helping shape the future of DeFi options.
+
+
 *Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](/docs/intro) and head to our [website](https://panoptic.xyz/).*
