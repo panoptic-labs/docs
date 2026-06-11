@@ -7,6 +7,7 @@ sidebar_position: 1
 PanopticPools and CollateralTrackers are [proxy contracts](https://info.etherscan.com/what-is-proxy-contract/), with one PanopticPool per underlying Uniswap pool, and two CollateralTrackers per PanopticPool. You can fetch the PanopticPool for a given Uniswap pool [from the PanopticFactory](https://panoptic.xyz/docs/contracts/V2/contract.PanopticFactory#getpanopticpool). The core logic, however, is deployed to the following stable addresses on all EVM chains:
 
 ## Vaults
+(Beta version - to be sunsetted)
 - `HypoVault (impl)`: `0xEE8300034008f25d60a096ED234C583c49ba6a7A`
 - `Factory`:	`0x4FAe3e0B293Df7980eB9D55dF5463e40E502546d`
 - `Accountant`:	`0xCCAA8adC2776786Fd0A14Fb1f22D6089E0637a49`
@@ -17,19 +18,19 @@ PanopticPools and CollateralTrackers are [proxy contracts](https://info.ethersca
 
 ## v2
 
-- `PanopticFactoryV3`: `0x000000000000039Dc5De710B8F7A6a33df0399c8`
-- `PanopticFactoryV4`: `0x000000000000048a877bF34C0cF3F25510667a1e`
-- `SemiFungiblePositionManagerV3`: `0x000000000000031d296bBA22f188472157eEb01f`
-- `SemiFungiblePositionManagerV4`: `0x000000000000047534b9E1D528ED997169865a64`
-- `PanopticPool (V4 impl)` (reference implementation - each PanopticPool is a proxy to this): `0x00000000000010bb6695dAAC60D0515c0A01a948`
-- `PanopticPool (V3 impl)` (reference implementation - each PanopticPool is a proxy to this): `0x000000000000111475C0dD47f534Bd1aFF12BC3f`
-- `CollateralTracker` (reference implementation - each CollateralTracker is a proxy to this): `0x0000000000002038055dB8f2B2Fd356598935C51`
-- `BuilderFactory`: `0x00000000000008D41F2cd5bF144F61cEB3661F98`
-- `RiskEngine`: `0x0000000000000e673aECBDB5f5fE5DFAf4a8e9Ac`
+- `PanopticFactoryV3`: `0x0000000000000aDC9A108591e718F2aee963a2a7`
+- `PanopticFactoryV4`: `0x0000000000000c51d0f8cf4bd9adE7191372a625`
+- `SemiFungiblePositionManagerV3`: `0x00000000000005E4693aDc8Ec0f12D686f728198`
+- `SemiFungiblePositionManagerV4`: `0x00000000000005C3287f136Ef5AF56c68Ea6849f`
+- `PanopticPool (V4 impl)` (reference implementation - each PanopticPool is a proxy to this): `0x000000000000135429F0DaCaB61639Bf6a63EbbC`
+- `PanopticPool (V3 impl)` (reference implementation - each PanopticPool is a proxy to this): `0x000000000000155f9860E155A779992Cde7E7449`
+- `CollateralTracker` (reference implementation - each CollateralTracker is a proxy to this): `0x0000000000001d9c38CA405A2e04420865A08A33`
+- `BuilderFactory`: `0x0000000000000a3D22E158417AA639D7F71b0FF7`
+- `RiskEngine`: `0x000000000000075E29Cdaa9cb640A69e148ca7da`
 - `PanopticQuery`: `0x0000000000000e1aE9c66C1c3B0A547D23389C93`
-- `InteractionHelper`: `0x00000000000040ae7CD505F4E0e3F34195D8c08C`
-- `PanopticMath`: `0x000000000000301F5BC0171C75967b8e78a92b10`
-- `PanopticGuardian`: `0x0000000000000C99fD9F3234eDf924E436331569`
+- `InteractionHelper`: `0x00000000000041fe14Ce3c2392337CE501aE8328`
+- `PanopticMath`: `0x000000000000334bbd65C195581cf59ECf315932`
+- `PanopticGuardian`: `0x0000000000000D329aCC1514f4Ba05584a8369ed`
 
 ## v1.1
 
