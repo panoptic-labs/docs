@@ -12,6 +12,11 @@ Panoptic has undergone numerous economic and security reviews by leading firms. 
 
 ## Core Protocol Audits
 
+### Obsidian
+The fourth, and final, Panoptic V2 protocol audit [report](https://github.com/ObsidianAudits/audits/blob/main/2026-05-panoptic-v2.pdf) was completed by [Obsidian](https://www.obsidianaudits.com) on May 6, 2026.
+
+The initial Panoptic V2 protocol audit [report](https://github.com/ObsidianAudits/audits/blob/main/2025-10-panoptic-v2.pdf) was completed by Obsidian on November 15, 2025.
+
 ### Code4rena
 The third Panoptic V2 protocol audit [report](https://code4rena.com/reports/2025-12-panoptic-next-core) was completed by [code4rena](http://code4rena.com/) on March 09, 2026.
 
@@ -27,9 +32,6 @@ The Semi-Fungible Position Manager (SFPM) audit [report](https://code4rena.com/r
 
 ### Nethermind
 The second Panoptic V2 protocol audit [report](https://github.com/NethermindEth/PublicAuditReports/blob/main/NM0701-FINAL_PANOPTIC_V2.pdf) was completed by [Nethermind](https://www.nethermind.io/nethermind-security) on January 12, 2026.
-
-### Obsidian
-The initial Panoptic V2 protocol audit [report](https://github.com/ObsidianAudits/audits/blob/main/2025-10-panoptic-v2.pdf) was completed by [Obsidian](https://www.obsidianaudits.com) on November 15, 2025.
 
 ### Cantina 
 The final [review](https://cantina.xyz/portfolio/0eb3624c-90d4-40d8-93b7-558cb130f753) of the Panoptic V1.1 Protocol was completed by [Cantina](https://cantina.xyz/) on November 20, 2024.
@@ -58,6 +60,9 @@ The initial economic analysis [report](/pdf/Simtopia_Panoptic.pdf) was completed
 ## Vault Audits
 
 ### Code4rena
-A review of the Panoptic vault infrastructure was completed by top code4rena wardens on March 20, 2026. The report can be found [here](/pdf/ValvesSecurity_Panoptic.pdf).
+The final review of the Panoptic vault infrastructure was completed by top code4rena wardens on March 20, 2026. The report can be found [here](/pdf/ValvesSecurity_Panoptic.pdf).
 
 The initial Panoptic vault infrastructure audit [report](https://code4rena.com/reports/2025-06-panoptic-hypovault) was completed by [Code4rena](https://code4rena.com/) on August 13, 2025.
+
+### Nethermind
+The second Panoptic vault infrastructure audit was completed by [Nethermind](https://www.nethermind.io/nethermind-security) on August 25, 2025.
