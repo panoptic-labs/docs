@@ -1,11 +1,19 @@
 [
   {
+    "title": "Trade SPCXx Onchain",
+    "date": "2026-06-12",
+    "image": "https://panoptic.xyz/img/banners/spcxx-banner.png",
+    "link": "https://panoptic.xyz/blog/trade-spcxx-onchain",
+    "description": "Panoptic transforms SPCXx, a tokenized representation of SpaceX available onchain, into a complete financial ecosystem where eligible users can swap, lend, earn yield, and trade options and volatility strategies.",
+    "id": 1
+  },
+  {
     "title": "Panoptic Prime Beta: V2",
     "date": "2026-06-03",
     "image": "https://panoptic.xyz/img/banners/beta-launch-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-prime-beta-v2",
     "description": "The Panoptic Prime Beta provides early access to Panoptic V2's vaults, trading interface, RFQ system, and lending markets while giving community members a direct role in shaping the future of on-chain options.",
-    "id": 1
+    "id": 2
   },
   {
     "title": "Panoptic × Steer: Building the Infrastructure for Onchain Structured Yield",
@@ -13,7 +21,7 @@
     "image": "https://panoptic.xyz/img/banners/panoptic-steer-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-x-steer-partnership",
     "description": "Panoptic and Steer are partnering to build the infrastructure that enables institutions to design, deploy, and manage structured yield strategies fully onchain.",
-    "id": 2
+    "id": 3
   },
   {
     "title": "Perpetual Options — A Block Scholes Research Report (Part II)",
@@ -21,7 +29,7 @@
     "image": "https://panoptic.xyz/img/research/panoptic-block-scholes-gamma-scalping.png",
     "link": "https://panoptic.xyz/research/panoptic-block-scholes-research-gamma-scalping",
     "description": "The combination of short LP positions and continuous delta-hedging permits Panoptic-native traders to scalp gamma, capture a unique risk premium, and bridge the onchain convexity gap.",
-    "id": 3
+    "id": 4
   },
   {
     "title": "Panoptic V2 Codebase",
@@ -29,14 +37,6 @@
     "image": "https://panoptic.xyz/img/banners/panoptic-v2-codebase-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-v2-codebase",
     "description": "Panoptic v2 is an open-sourced unified risk engine that brings options, lending, and AMM liquidity into a single cross-margin system, enabling capital-efficient volatility trading and institutional-grade derivatives infrastructure for DeFi.",
-    "id": 4
-  },
-  {
-    "title": "Panoptic at ETH Denver 2026",
-    "date": "2026-02-24",
-    "image": "https://panoptic.xyz/img/banners/panoptic-at-eth-denver-2026.png",
-    "link": "https://panoptic.xyz/blog/panoptic-at-eth-denver-2026",
-    "description": "Panoptic returned to ETHDenver 2026 to connect with serious builders and traders, share its vision for capital-efficient onchain volatility infrastructure, and leave with renewed conviction, new partnerships, and momentum toward the Panoptic V2 beta launch.",
     "id": 5
   }
 ]
