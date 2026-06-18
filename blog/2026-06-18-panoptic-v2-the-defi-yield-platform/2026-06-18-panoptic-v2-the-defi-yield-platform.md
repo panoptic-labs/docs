@@ -3,12 +3,12 @@ slug: panoptic-v2-the-defi-yield-platform
 title: "Panoptic V2: The DeFi Yield Platform"
 tags: [Launch, Press Release, Ethereum, Vaults]
 image: /img/banners/panoptic-v2-the-defi-yield-platform-banner.jpg
-description: "Panoptic V2 is now live in beta. A unified DeFi yield platform that uses options, lending, and portfolio-aware margin to let users earn, borrow, and customize risk through simple vaults or advanced strategies, all in one system."
+description: "Panoptic V2 is now live. A unified DeFi yield platform that uses options, lending, and portfolio-aware margin to let users earn, borrow, and customize risk through simple vaults or advanced strategies, all in one system."
 ---
 
 ![](./00.jpg)
 
-#### Panoptic V2 is [live](https://app.panoptic.xyz) in beta.
+#### Panoptic V2 is [live](https://app.panoptic.xyz/).
 Panoptic V2, the new-and-improved DeFi yield platform, launched today on Ethereum.
 DeFi offers yield, but rarely in a way that is sustainable. Protocols push users into fixed strategies with narrow risk profiles. What’s missing is the ability to choose where you sit on the risk–return spectrum.
 Options are the most powerful tool for shaping risk and return, but in DeFi they’ve remained complex, siloed, and inaccessible to most users. With V2, Panoptic changes this.
@@ -45,6 +45,9 @@ For users who want more control, Panoptic offers a full-featured options trading
 
 Traders can create custom positions, buying and selling calls, puts, spreads, iron condors, and other perpetual options, all within a portfolio-aware margin system that enables capital-efficient, multi-legged strategies. Advanced order controls allow users to fine-tune strikes and time horizons with precision.
 
+## 24/7 RWA Trading
+Panoptic V2 brings real-world asset (RWA) trading onchain, beginning with [SPCXx](https://panoptic.xyz/blog/trade-spcxx-onchain) at launch. Eligible traders can access RWA markets after hours and on weekends.
+
 ## Incentives
 Season 2 of [Panoptic Incentive Points](/docs/getting-started/points) launches alongside Panoptic V2. Earn points by participating in vaults and trading.
 ![](./05.png)
@@ -61,4 +64,21 @@ To get started:
 -   **Learn about our** [Vault Suite](/docs/getting-started/vaults) and choose how you want to earn income.
 Read the [documentation](/docs/intro) for a full guide on using Panoptic V2.
 
-*Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](/docs/intro) and head to our [website](https://panoptic.xyz/).*
+---
+### Compliance and Market Access
+SPCXx spot markets, options markets, lending products, and market-making vaults are not available to U.S. persons or to persons located in, organized in, or residents of the United States or any other restricted jurisdiction, including jurisdictions subject to comprehensive sanctions administered by OFAC or other applicable sanctions authorities. Access from restricted jurisdictions is prohibited.
+
+We employ jurisdictional screening, IP-based restrictions, VPN detection, and other compliance controls designed to enforce these restrictions. Attempting to circumvent these controls is a violation of the Terms of Use, and we disclaim all liability arising from any such circumvention.
+
+Before participating, users are solely responsible for confirming that their access to and use of these products is permitted under the laws and regulations applicable to them. A list of restricted jurisdictions is set forth in the [Terms of Use.](https://panoptic.xyz/terms-of-use)
+
+### Risk Disclaimer
+Panoptic is a noncustodial, permissionless options protocol. Panoptic does not issue, sell, custody, or distribute tokenized equities. Options markets on tokenized equities (including IPO and pre-IPO assets) reference third-party tokens that provide price exposure only. They do not confer ownership of, or any rights in, the underlying shares.
+
+Not available to US persons. Not available in the UK, Canada, or Australia. Geo restrictions apply. Access from restricted jurisdictions is prohibited, including via VPN or other circumvention.
+
+Options trading involves significant risk, including the loss of your entire position. Pre-IPO and IPO-linked markets carry elevated risk: specialized index pricing, IPO conversion risk, allocation uncertainty, lower liquidity, and higher volatility. Underlying tokenized assets may depeg from, or fail to track, the referenced security.
+
+Panoptic is not affiliated with, sponsored by, or endorsed by SpaceX, any referenced issuer, or any tokenized equity provider. Nothing herein is investment, legal, or tax advice. Capital at risk. Refer to our terms of service here.
+
+*Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](http://localhost:3000/docs/intro) and head to our [website](https://panoptic.xyz/).*
