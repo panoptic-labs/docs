@@ -47,6 +47,7 @@ Traders can create custom positions, buying and selling calls, puts, spreads, ir
 
 ## 24/7 RWA Trading
 Panoptic V2 brings real-world asset (RWA) trading onchain, beginning with [SPCXx](https://panoptic.xyz/blog/trade-spcxx-onchain) at launch. Eligible traders can access RWA markets after hours and on weekends.
+![](./rwa-markets.png)
 
 ## Incentives
 Season 2 of [Panoptic Incentive Points](/docs/getting-started/points) launches alongside Panoptic V2. Earn points by participating in vaults and trading.
