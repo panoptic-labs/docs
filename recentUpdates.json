@@ -1,11 +1,19 @@
 [
   {
+    "title": "Panoptic V2: The Vault Suite",
+    "date": "2026-06-29",
+    "image": "https://panoptic.xyz/img/banners/the-vault-suite-banner.png",
+    "link": "https://panoptic.xyz/blog/panoptic-v2-the-vault-suite",
+    "description": "The Panoptic Vault Suite introduces automated, market-neutral vaults that transform complex options strategies into simple, passive onchain income, allowing users to deposit and earn without active management.",
+    "id": 1
+  },
+  {
     "title": "Panoptic V2: The DeFi Yield Platform",
     "date": "2026-06-23",
     "image": "https://panoptic.xyz/img/banners/panoptic-v2-the-defi-yield-platform-banner.jpg",
     "link": "https://panoptic.xyz/blog/panoptic-v2-the-defi-yield-platform",
     "description": "Panoptic V2 is now live. A unified DeFi yield platform that uses options, lending, and portfolio-aware margin to let users earn, borrow, and customize risk through simple vaults or advanced strategies, all in one system.",
-    "id": 1
+    "id": 2
   },
   {
     "title": "Trade SPCXx Onchain",
@@ -13,7 +21,7 @@
     "image": "https://panoptic.xyz/img/banners/spcxx-banner.png",
     "link": "https://panoptic.xyz/blog/trade-spcxx-onchain",
     "description": "Panoptic transforms SPCXx, a tokenized representation of SpaceX available onchain, into a complete financial ecosystem where eligible users can swap, lend, earn yield, and trade options and volatility strategies.",
-    "id": 2
+    "id": 3
   },
   {
     "title": "Panoptic Prime Beta: V2",
@@ -21,7 +29,7 @@
     "image": "https://panoptic.xyz/img/banners/beta-launch-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-prime-beta-v2",
     "description": "The Panoptic Prime Beta provides early access to Panoptic V2's vaults, trading interface, RFQ system, and lending markets while giving community members a direct role in shaping the future of on-chain options.",
-    "id": 3
+    "id": 4
   },
   {
     "title": "Panoptic × Steer: Building the Infrastructure for Onchain Structured Yield",
@@ -29,14 +37,6 @@
     "image": "https://panoptic.xyz/img/banners/panoptic-steer-banner.png",
     "link": "https://panoptic.xyz/blog/panoptic-x-steer-partnership",
     "description": "Panoptic and Steer are partnering to build the infrastructure that enables institutions to design, deploy, and manage structured yield strategies fully onchain.",
-    "id": 4
-  },
-  {
-    "title": "Perpetual Options — A Block Scholes Research Report (Part II)",
-    "date": "2026-03-11",
-    "image": "https://panoptic.xyz/img/research/panoptic-block-scholes-gamma-scalping.png",
-    "link": "https://panoptic.xyz/research/panoptic-block-scholes-research-gamma-scalping",
-    "description": "The combination of short LP positions and continuous delta-hedging permits Panoptic-native traders to scalp gamma, capture a unique risk premium, and bridge the onchain convexity gap.",
     "id": 5
   }
 ]
