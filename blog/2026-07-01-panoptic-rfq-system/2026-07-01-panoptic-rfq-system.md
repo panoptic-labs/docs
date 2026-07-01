@@ -1,7 +1,7 @@
 ---
 slug: panoptic-rfq-system
 title: "RFQ Without a Settlement Contract"
-tags: [Smart Contracts, RFQ, Open Source]
+tags: [Smart Contracts, RFQ, Liquidity]
 image: /img/banners/panoptic-rfq-system-banner.png
 description: "Panoptic RFQ uses a non-custodial coordinator instead of a settlement contract, enabling native onchain options execution and permissionless liquidity provision."
 ---
