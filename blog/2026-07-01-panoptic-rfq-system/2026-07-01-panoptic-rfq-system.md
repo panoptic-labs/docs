@@ -6,7 +6,7 @@ image: /img/banners/panoptic-rfq-system-banner.png
 description: "Panoptic RFQ lets users post signed buy requests that market makers can satisfy by adding native Panoptic liquidity, without a settlement contract or custodial coordinator."
 ---
 
-### Panoptic RFQ is live.
+## Panoptic RFQ is live.
 
 _**Traders can now post the exact options exposure they want and let market makers fill it by adding liquidity directly onchain with no settlement contract, no custodian, no counterparty to trust.**_
 
