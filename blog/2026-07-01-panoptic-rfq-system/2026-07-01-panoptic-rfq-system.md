@@ -6,6 +6,11 @@ image: /img/banners/panoptic-rfq-system-banner.png
 description: "Panoptic RFQ lets users post signed buy requests that market makers can satisfy by adding native Panoptic liquidity, without a settlement contract or custodial coordinator."
 ---
 
+### Panoptic RFQ is live.
+
+_**Traders can now post the exact options exposure they want and let market makers fill it by adding liquidity directly onchain with no settlement contract, no custodian, no counterparty to trust.**_
+
+--- 
 
 Request for Quote (RFQ) has become a common execution model in DeFi. 
 In most token RFQ systems, a buyer posts the trade they want and a market maker fills it, with the swap settling through a dedicated exchange or settlement contract that moves assets between the two counterparties.
