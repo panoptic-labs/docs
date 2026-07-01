@@ -3,18 +3,18 @@ slug: panoptic-rfq-system
 title: "RFQ Without a Settlement Contract"
 tags: [Smart Contracts, RFQ, Liquidity]
 image: /img/banners/panoptic-rfq-system-banner.png
-description: "Panoptic RFQ uses a non-custodial coordinator instead of a settlement contract, enabling native onchain options execution and permissionless liquidity provision."
+description: "Panoptic RFQ lets users post signed buy requests that market makers can satisfy by adding native Panoptic liquidity, without a settlement contract or custodial coordinator."
 ---
 
-Request for Quote, or RFQ, has become a common execution model in DeFi, with protocols like CoW, 1inch Fusion, 0x, and Hashflow relying on settlement contracts to transfer assets between counterparties. RFQ is a trading mechanism where a buyer specifies the exposure they want and liquidity providers respond with prices or provide liquidity to satisfy that request.
+Request for Quote, or RFQ, has become a common execution model in DeFi, where many token RFQ systems settle through dedicated exchange or settlement contracts that transfer assets between counterparties. RFQ is a trading mechanism where a buyer specifies the exposure they want and liquidity providers respond with prices or provide liquidity to satisfy that request.
 
-Panoptic RFQ brings institutional-grade execution to perpetual options. For traders, RFQ dramatically simplifies options execution. Instead of navigating fragmented options chains, selecting expiries, and managing rolls, users simply specify the exposure they want, set the maximum premium they're willing to pay, and execute directly onchain. Unlike traditional options venues, Panoptic is built on [perpetual options](https://panoptic.xyz/docs/trading/perpetual-options), meaning there are no expiries to select, no positions to roll, and no fragmented liquidity spread across multiple maturities.
+Panoptic RFQ brings institutional-grade execution to perpetual options. For traders, RFQ dramatically simplifies options execution. Instead of navigating fragmented options chains, selecting expiries, and managing rolls, users simply specify the exposure they want, set the maximum premium they're willing to pay, and post the order onchain. Unlike traditional options venues, Panoptic is built on [perpetual options](https://panoptic.xyz/docs/trading/perpetual-options), meaning there are no expiries to select, no positions to roll, and no fragmented liquidity spread across multiple maturities.
 
-*The initial rollout begins with the [**ETH-USDC market**](https://app.panoptic.xyz/trade), with additional markets planned over time.*
+*The initial rollout focuses on the [**ETH-USDC market**](https://app.panoptic.xyz/trade), with additional markets planned over time.*
 
 ## Users Control Their Price
 
-Before requesting quotes, users specify the maximum premium they're willing to pay, expressed as a multiplier on the underlying Uniswap LP fees. This multiplier acts as the user's limit price. A higher multiplier means the user is willing to pay more for the option, increasing the likelihood that liquidity providers will choose to fill the order. A lower multiplier is more restrictive and may result in fewer or no quotes.
+Before posting an order, users specify the maximum premium they're willing to pay, expressed as a multiplier on the underlying Uniswap LP fees. This multiplier acts as the user's limit price. A higher multiplier means the user is willing to pay more for the option, increasing the likelihood that liquidity providers will choose to fill the order. A lower multiplier is more restrictive and may result in fewer or no fills.
 
 ## The RFQ Flow
 
@@ -26,53 +26,29 @@ The user selects the highest premium multiplier they are willing to pay.
 
 ![](./02.png)
 
-The user submits a buy order, and the RFQ is posted with the user's requested exposure and maximum acceptable premium.
+The user posts a buy order, and the RFQ is published to the billboard with the user's requested exposure and maximum acceptable premium.
 
 ![](./03.png)
 
-The order is matched and, once sufficient liquidity has been provided, becomes executable.
+Once the order enters the billboard, market makers or any participant can fill the request by minting the matching short-side liquidity directly through Panoptic. The coordinator does not match counterparties or settle the trade. It simply hosts the user's signed buy request.
 
 ![](./04.png)
 
-Once the order enters the queue, market makers or any participant can choose to provide liquidity within the user's maximum price limit. When sufficient liquidity is available, the user reviews the quote and chooses whether to execute the trade. Once executed, the position settles on Panoptic as an onchain options position, without wrapper contracts or custodial settlement.
+When enough matching liquidity exists onchain, the order becomes executable for the requester. The user can then buy the requested option position directly through Panoptic, and the order is removed from the billboard after execution.
 
 ## No Settlement Contract, By Design
 
-Instead of a wrapper contract, Panoptic uses a coordinator. It doesn't custody funds, doesn't settle trades, and doesn't sit in the middle of execution. Its only job is to coordinate order flow, verify submitted transactions, and facilitate execution without ever taking custody of user funds.
-
-## Designed to Trust Nothing
-
-The coordinator is intentionally minimal. It validates submitted transactions and coordinates order flow, but it never takes custody of assets or acts as a counterparty. Execution occurs directly through Panoptic's native protocol interactions, preserving the system's non-custodial design.
-
-At launch, Panoptic RFQ is not supported by wallets that require signed transactions to be broadcast immediately, such as MetaMask. To use RFQ, users should connect with a wallet that supports this flow, such as Rabby, Frame, Coinbase Wallet, or a hardware wallet.
-
-## The Coordinator is Deliberately Boring
-
-The coordinator's job is intentionally narrow: validate transactions, verify order parameters, and forward valid execution requests. It doesn't decide prices, provide liquidity, or take custody of user assets.
-
-That means:
-
-- Every solver quote is EIP-712 signed and bound to a specific request hash
-- Every transaction is decoded and checked before submission
-- Transactions must match the correct chain, pool, function, and parameters
-- Invalid or mismatched transactions are rejected before they ever reach the chain
-
-Even the way data is handled reflects this philosophy. Signed transactions are kept only in memory and are wiped as soon as the RFQ session completes. There's no persistent storage and no hidden state that the system relies on. The coordinator doesn't try to be trusted. Instead, it tries to make trust unnecessary.
-
-## Why This System Looks Different
+Instead of a wrapper contract, Panoptic uses a coordinator. It doesn't custody funds, doesn't settle trades, and doesn't sit in the middle of execution. Panoptic positions are state transitions that only make sense if both sides are created together, so there's no asset to hand off through a settlement contract. The coordinator's only job is to coordinate order flow — hosting the billboard of open orders so liquidity providers can find and fill them — without ever taking custody of user funds.
 
 ![](./05.png)
 
-Most RFQ systems converge on the same architecture because tokens are easy to move, and settlement contracts can transfer assets between parties. Panoptic positions don't work that way. They're state transitions that only make sense if both sides are created together. Trying to force that into a wrapper-based model would introduce unnecessary complexity and weaken guarantees.
+Its role is intentionally narrow: host signed RFQ orders, verify that posted orders and order-management actions are authorized by the requester, and expose the billboard for market makers and users. It does not decide prices, provide liquidity, custody assets, match counterparties, or settle trades.
 
-So instead, the system leans into the constraint: no settlement contract. It's slightly less convenient in the ways you'd expect.
+That means:
 
-But the important guarantees hold:
+- Posted orders are signed by the requester
+- Market makers fill requests by adding liquidity directly onchain
+- Fillability is derived from Panoptic liquidity, not coordinator state
+- The requester executes the final buy directly through Panoptic
 
-- Orders execute only within the user's selected premium threshold
-- The coordinator never takes custody of assets
-- Option positions are created natively through Panoptic
-
-And in practice, those are the properties that matter. Rather than forcing Panoptic into a traditional RFQ architecture, the system adapts to the protocol's unique design, enabling permissionless liquidity provision and native onchain options execution without custodial settlement.
-
-*Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](/docs/intro) and head to our [website](https://panoptic.xyz/).*
+At launch, Panoptic RFQ works best with wallets that give you fine-grained control over transaction signing, such as Rabby, Frame, Coinbase Wallet, or a hardware wallet. Some wallets that broadcast transactions immediately, such as MetaMask, are not supported for this flow.
