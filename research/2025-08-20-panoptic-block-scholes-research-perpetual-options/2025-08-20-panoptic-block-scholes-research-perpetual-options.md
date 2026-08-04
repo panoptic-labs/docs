@@ -188,6 +188,6 @@ The protocol also completes an otherwise unbalanced market, which already expres
 
 Therefore, the unique value proposition of Panoptions trading is the expansion of AMM market microstructure, combined with the enabling of an onchain, perpetual option market. The platform aims to serve as a gateway to a more complete access to an underlying options market that already exists onchain. The added availability of exotic options also offers exciting opportunities to replicate and hedge exposure using standardized, exchange-traded products.
 
-We detailed in this report how Panoptions compare to vanilla options intuitively, but what about empirically? For the next installment in this series on the Panoptic protocol, we will quantitatively hash out how Panoptions can be statistically simulated and hedged in practice.
+We detailed in this report how Panoptions compare to vanilla options intuitively, but what about empirically? For the [next installment](/research/panoptic-block-scholes-research-gamma-scalping) in this series on the Panoptic protocol, we will quantitatively hash out how Panoptions can be statistically simulated and hedged in practice.
 
 _Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://linktr.ee/panopticxyz). To learn more about Panoptic and all things DeFi options, check out our [docs](/docs/intro) and head to [our website](https://panoptic.xyz/)._
