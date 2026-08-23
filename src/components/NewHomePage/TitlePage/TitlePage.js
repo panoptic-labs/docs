@@ -12,12 +12,12 @@ import { APP_LINK } from "../../../constants";
 const HeroPayoffVisual = () => (
   <div className="hero-demo-panel">
     <div className="hero-demo-header">
-      <span className="hero-demo-title">ETH · Long Call</span>
-      <span className="hero-demo-pill">No expiry</span>
+      <span className="hero-demo-title">Your LP position</span>
+      <span className="hero-demo-pill">Earning +20%</span>
     </div>
     <p className="sr-only">
-      Illustration of a perpetual long call payoff: losses capped below the
-      strike price, unlimited upside above it.
+      Illustration of LP earnings: Panoptic&apos;s liquidity spread accruing on
+      top of Uniswap-equivalent fees over time.
     </p>
     <svg
       className="hero-demo-chart"
@@ -27,36 +27,43 @@ const HeroPayoffVisual = () => (
       preserveAspectRatio="none"
     >
       <defs>
-        <linearGradient id="hero-payoff-profit" x1="0" y1="0" x2="0" y2="1">
+        <linearGradient id="hero-fees-spread" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stopColor="#12AD50" stopOpacity="0.28" />
           <stop offset="1" stopColor="#12AD50" stopOpacity="0.02" />
         </linearGradient>
-        <linearGradient id="hero-payoff-loss" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#D72F22" stopOpacity="0.03" />
-          <stop offset="1" stopColor="#D72F22" stopOpacity="0.22" />
+        <linearGradient id="hero-fees-base" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#B48EFF" stopOpacity="0.16" />
+          <stop offset="1" stopColor="#B48EFF" stopOpacity="0.02" />
         </linearGradient>
       </defs>
-      {/* zero P/L line */}
-      <line x1="0" y1="200" x2="560" y2="200" className="hero-demo-zero" />
-      {/* loss region: flat premium below strike */}
-      <path d="M0,200 L0,236 L300,236 L336,200 Z" fill="url(#hero-payoff-loss)" />
-      {/* profit region: linear upside above breakeven */}
-      <path d="M336,200 L560,40 L560,200 Z" fill="url(#hero-payoff-profit)" />
-      {/* payoff line */}
+      {/* baseline */}
+      <line x1="0" y1="280" x2="560" y2="280" className="hero-demo-zero" />
+      {/* Uniswap-equivalent fees (base accrual) */}
+      <path d="M0,280 C180,244 380,216 560,196 L560,280 Z" fill="url(#hero-fees-base)" />
       <path
-        d="M0,236 L300,236 L560,40"
+        d="M0,280 C180,244 380,216 560,196"
+        fill="none"
+        className="hero-demo-line-base"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+      {/* Panoptic spread on top of Uniswap fees */}
+      <path
+        d="M0,280 C170,220 360,140 560,64 L560,196 C380,216 180,244 0,280 Z"
+        fill="url(#hero-fees-spread)"
+      />
+      <path
+        d="M0,280 C170,220 360,140 560,64"
         fill="none"
         className="hero-demo-line"
         strokeWidth="2.5"
         strokeLinejoin="round"
       />
-      {/* strike marker */}
-      <line x1="300" y1="24" x2="300" y2="296" className="hero-demo-strike" />
     </svg>
     <div className="hero-demo-footer">
-      <span>Strike</span>
-      <span>Breakeven</span>
-      <span>Price →</span>
+      <span>Uniswap fees</span>
+      <span>+ Panoptic spread</span>
+      <span>Time →</span>
     </div>
   </div>
 );
@@ -75,22 +82,22 @@ const TitlePage = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <div className="hero-copy">
-          <p className="hero-eyebrow">Launching on Ethereum</p>
+          <p className="hero-eyebrow">Live on Ethereum</p>
 
           <h1 className="hero-title">
-            Perpetual Options,<br/>
-            DeFi&apos;s Volatility Layer
+            Stake your LP positions.<br/>
+            Earn up to 20% more fees.
           </h1>
 
           <p className="hero-subtitle">
-            Deposit into curator-run vaults that harvest yield from perpetual options.
-            No expiries, capital-efficient, fully onchain.
-            <br/>Powered by Uniswap liquidity.
+            Migrate your Uniswap v3 or v4 position to Panoptic. Keep the same range,
+            earn Uniswap-equivalent fees plus Panoptic&apos;s liquidity spread, and
+            borrow against your liquidity.
           </p>
 
           <div className="hero-cta">
             <a href={APP_LINK} className="btn-launch" target="_blank" rel="noopener noreferrer">
-              Launch App →
+              Stake your LP →
             </a>
             <a href="/docs/intro" className="btn-outline">
               Read the Docs

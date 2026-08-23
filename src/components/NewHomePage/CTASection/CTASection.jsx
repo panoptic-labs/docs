@@ -83,7 +83,7 @@ export default function CTASection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
         >
-          The options layer<br/>DeFi was missing.
+          Put your LP<br/>to work.
         </motion.h2>
         <motion.p
           className="cta-desc"
@@ -92,7 +92,7 @@ export default function CTASection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Join thousands of traders and LPs using Panoptic to trade, hedge, and earn — permissionlessly.
+          Stake your Uniswap LP position and start earning more — permissionless, non-custodial, live on Ethereum.
         </motion.p>
         <motion.div
           className="cta-buttons"
@@ -102,7 +102,7 @@ export default function CTASection() {
           transition={{ duration: 0.5, delay: 0.2, type: "spring", stiffness: 200, damping: 20 }}
         >
           <a href={APP_LINK} className="btn-cta-big" target="_blank" rel="noopener noreferrer">
-            Launch App →
+            Stake your LP →
           </a>
           <a href="/docs/intro" className="btn-cta-outline">
             Documentation

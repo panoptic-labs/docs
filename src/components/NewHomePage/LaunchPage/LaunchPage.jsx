@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 import "./LaunchPage.css"
 
 const chains = [
-  { name: "Ethereum", dotClass: "chain-dot-eth", live: true },
+  { name: "Ethereum — Live", dotClass: "chain-dot-eth", live: true },
   { name: "More L2s Coming Soon", dotClass: "chain-dot-more", live: false },
 ];
 
@@ -37,7 +37,7 @@ const LaunchPage = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.05 }}
         >
-          Launching on Ethereum.
+          Live on Ethereum.
         </motion.h2>
         <motion.p
           className="section-desc networks-desc"
@@ -46,7 +46,7 @@ const LaunchPage = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Panoptic V2 launches on Ethereum mainnet first — where the deepest liquidity lives. Multi-chain expansion to follow.
+          Panoptic V2 is live on Ethereum mainnet — where the deepest liquidity lives. Multi-chain expansion to follow.
         </motion.p>
         <motion.div
           className="network-pills"

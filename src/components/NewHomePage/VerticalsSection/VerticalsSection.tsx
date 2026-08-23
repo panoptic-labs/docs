@@ -44,12 +44,12 @@ const icons = {
 };
 
 const features = [
-  { icon: icons.perpetual, title: "Perpetual Options", description: "No expiry dates. Hold positions indefinitely and manage them on your terms. Exit when you want, not when a contract says so." },
-  { icon: icons.token, title: "Any Token", description: "Create options markets on any asset with a Uniswap pool. Permissionless market creation — no external oracle dependencies." },
-  { icon: icons.leverage, title: "Up to 10× Leverage", description: "Capital-efficient trading with built-in risk controls. Maximize exposure without maximizing trust assumptions." },
-  { icon: icons.margin, title: "Portfolio-Aware Margining", description: "Net positions against one another to create defined-risk strategies. Straddles, strangles, and spreads are capital-efficiently margined as a single portfolio." },
-  { icon: icons.vault, title: "Perpetual Options Vaults", description: "Deposit into curator-managed vaults that run sophisticated options strategies on your behalf. Earn yield from volatility without active management." },
-  { icon: icons.riskEngine, title: "Modular Risk Engines", description: "Trade memecoins, blue chips, or stable pairs — each with a risk engine tailored to its asset class. One protocol, fit for every market." },
+  { icon: icons.perpetual, title: "Trade Perpetual Options", description: "Buy and sell options with no expiry dates and up to 10× leverage. Hold positions indefinitely and exit when you want, not when a contract says so." },
+  { icon: icons.vault, title: "Vaults", description: "Deposit into automated onchain strategies for passive yield, curated by expert vault managers. No active management required." },
+  { icon: icons.token, title: "Lend", description: "Supply capital to options traders and LPs and earn lending yield. Permissionless markets on any asset with a Uniswap pool." },
+  { icon: icons.riskEngine, title: "Curate", description: "Design, deploy, and manage vault strategies on behalf of depositors — earning performance fees while building reputation on-chain." },
+  { icon: icons.margin, title: "Portfolio-Aware Margining", description: "Net positions against one another to create defined-risk strategies, capital-efficiently margined as a single portfolio." },
+  { icon: icons.leverage, title: "Oracle-Free by Design", description: "Pricing derives from Uniswap liquidity itself. No external oracle dependencies or manipulation vectors." },
 ];
 
 const container = {
@@ -84,7 +84,7 @@ export default function VerticalsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          Protocol Features
+          Beyond staking
         </motion.div>
         <motion.h2
           className="section-title"
@@ -93,7 +93,7 @@ export default function VerticalsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.05 }}
         >
-          Built different.<br/>By design.
+          One protocol.<br/>Four ways in.
         </motion.h2>
         <motion.p
           className="section-desc"
@@ -102,7 +102,7 @@ export default function VerticalsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Every component engineered for the on-chain options experience that DeFi deserves.
+          Staking your LP is the front door. Behind it: trade, earn, lend, or curate — all on the same perpetual options engine.
         </motion.p>
         <motion.div
           className="features-grid"

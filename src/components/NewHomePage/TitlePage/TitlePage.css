@@ -180,10 +180,8 @@
   stroke: var(--color-brand-300);
 }
 
-.hero-demo-strike {
-  stroke: rgba(232, 224, 245, 0.18);
-  stroke-width: 1;
-  stroke-dasharray: 2 4;
+.hero-demo-line-base {
+  stroke: rgba(232, 224, 245, 0.35);
 }
 
 .hero-demo-footer {
