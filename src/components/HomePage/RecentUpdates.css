@@ -38,15 +38,18 @@
 
 .pagination__prev,
 .pagination__next {
-  display: block;
-  background: rgba(19, 8, 40, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  background: rgba(19, 8, 40, 0.85);
   color: var(--color-primary-light);
   border: 1px solid rgba(123, 63, 228, 0.2);
   border-radius: 10px;
   padding: 12px;
   cursor: pointer;
-  backdrop-filter: blur(8px);
-  transition: all 0.2s ease;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .pagination__next:hover,
@@ -99,16 +102,14 @@ a:hover {
   width: fit-content;
   margin: auto;
   padding: 12px;
-  background: rgba(78, 20, 208, 0.06);
+  background: rgba(19, 8, 40, 0.85);
   border: 1px solid rgba(78, 20, 208, 0.18);
   border-radius: 16px;
-  backdrop-filter: blur(8px);
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease;
 }
 
 .recent-updates__card:hover .recent-updates__card__content {
-  border-color: rgba(123, 63, 228, 0.3);
-  box-shadow: 0 0 20px rgba(123, 63, 228, 0.1);
+  border-color: rgba(123, 63, 228, 0.4);
 }
 
 .recent-updates__card_top {

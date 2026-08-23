@@ -41,13 +41,15 @@
 :root {
   --color-body: #ffffff;
   --color-card: #fbfbfb;
+  --color-brand: #590FF5;
+  --color-brand-300: #B48EFF;
   --color-primary: #4e14d0;
   --color-primary-light: #7B3FE4;
   --color-accent: #9B6CFF;
   --color-success: #28CB95;
   --color-secondary: #e1e1e1;
   --color-text-primary: #323232;
-  --color-text-secondary: #8d8e94;
+  --color-text-secondary: #5f6067; /* was #8d8e94 — failed 4.5:1 contrast */
   --color-text-muted: rgba(232, 224, 245, 0.75);
   --color-text-light: #E8E0F5;
   --color-surface: #F3F3F3;

@@ -7,12 +7,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 32px;
-  text-align: center;
-}
-
-.how-it-works-desc {
-  margin-left: auto;
-  margin-right: auto;
+  text-align: left;
 }
 
 .steps-grid {
@@ -31,7 +26,7 @@
   left: calc(33.33% - 16px);
   right: calc(33.33% - 16px);
   height: 1px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-success));
+  background: var(--color-brand-300);
   opacity: 0.3;
   transform-origin: left center;
 }
@@ -60,7 +55,7 @@
 }
 
 .step p {
-  color: rgba(232, 224, 245, 0.75);
+  color: var(--color-text-muted);
   font-size: 0.9rem;
   line-height: 1.6;
   margin: 0;

@@ -16,6 +16,7 @@ const FAQPage = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
+          <div className="section-eyebrow">FAQ</div>
           <h2 className="faq-title">
             Frequently Asked<br/>Questions
           </h2>

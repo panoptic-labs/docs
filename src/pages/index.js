@@ -16,15 +16,14 @@ import FloatingLogos from "../components/animations/FloatingLogos";
 import Layout from "@theme/Layout";
 import FadeIn from "../components/animations/FadeIn";
 
-function GradientDivider() {
+function Section({ id, bordered = true, children }) {
   return (
-    <div style={{
-      width: '80%',
-      maxWidth: 900,
-      height: 1,
-      margin: '0 auto',
-      background: 'linear-gradient(90deg, transparent 0%, rgba(123,63,228,0.5) 50%, transparent 100%)',
-    }} />
+    <section
+      id={id}
+      className={`scroll-mt-16 ${bordered ? "border-0 border-b border-solid border-[color:var(--color-border-subtle)]" : ""}`}
+    >
+      {children}
+    </section>
   );
 }
 
@@ -35,18 +34,28 @@ export default function Home() {
       <main style={{ backgroundColor: "var(--color-bg-dark)", position: "relative" }}>
         <FloatingLogos />
         <TitlePage />
-        <FadeIn><RecentUpdates /></FadeIn>
-        <GradientDivider />
-        <FadeIn><VerticalsSection /></FadeIn>
-        <GradientDivider />
-        <FadeIn><HowItWorks /></FadeIn>
-        <FadeIn><SecuritySection /></FadeIn>
-        <GradientDivider />
-        <FadeIn><LaunchPage /></FadeIn>
-        <FadeIn><PartnerPage /></FadeIn>
-        <GradientDivider />
-        <FadeIn><FAQPage /></FadeIn>
-        <CTASection />
+        <Section id="updates">
+          <FadeIn><RecentUpdates /></FadeIn>
+        </Section>
+        <Section id="how-it-works">
+          <FadeIn><HowItWorks /></FadeIn>
+        </Section>
+        <Section id="verticals">
+          <FadeIn><VerticalsSection /></FadeIn>
+        </Section>
+        <Section id="security">
+          <FadeIn><SecuritySection /></FadeIn>
+        </Section>
+        <Section id="launch">
+          <FadeIn><LaunchPage /></FadeIn>
+          <FadeIn><PartnerPage /></FadeIn>
+        </Section>
+        <Section id="faq">
+          <FadeIn><FAQPage /></FadeIn>
+        </Section>
+        <Section id="cta" bordered={false}>
+          <CTASection />
+        </Section>
       </main>
       </MotionConfig>
     </Layout>

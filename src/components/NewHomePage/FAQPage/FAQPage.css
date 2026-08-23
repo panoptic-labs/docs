@@ -76,8 +76,12 @@
   border-bottom-color: transparent;
 }
 
+.accordion-trigger {
+  min-height: 44px;
+}
+
 .accordion-trigger:hover {
-  color: var(--color-success);
+  color: var(--color-brand-300);
 }
 
 .accordion-trigger:focus-visible {

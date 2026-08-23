@@ -61,54 +61,25 @@
   font-size: 1rem;
   font-weight: 600;
   font-family: "DM Sans Variable", "DM Sans", sans-serif;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  background: var(--color-brand);
   color: #fff;
   text-decoration: none;
-  border: none;
+  border: 1px solid var(--color-brand);
   cursor: pointer;
-  transition: transform 0.3s ease;
-  box-shadow: 0 0 30px rgba(78, 20, 208, 0.4), 0 0 60px rgba(78, 20, 208, 0.15);
+  transition: transform 0.3s ease, background-color 0.3s ease;
   position: relative;
-  overflow: hidden;
-}
-
-.btn-cta-big::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  box-shadow: 0 0 50px rgba(78, 20, 208, 0.5), 0 0 80px rgba(78, 20, 208, 0.2);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
 }
 
 .btn-cta-big:hover {
   transform: translateY(-3px);
+  background: #4f0dd8;
   color: #fff;
   text-decoration: none;
-}
-
-.btn-cta-big:hover::before {
-  opacity: 1;
 }
 
 .btn-cta-big:focus-visible {
   outline: 2px solid var(--color-focus);
   outline-offset: 2px;
-}
-
-/* Shimmer */
-.btn-cta-big::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, transparent 40%, rgba(255, 255, 255, 0.12) 50%, transparent 60%);
-  transform: translateX(-100%);
-  transition: transform 0.6s;
-}
-.btn-cta-big:hover::after {
-  transform: translateX(100%);
 }
 
 .btn-cta-outline {
@@ -176,34 +147,18 @@
   font-size: 0.85rem;
   font-weight: 600;
   font-family: "DM Sans Variable", "DM Sans", sans-serif;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  background: var(--color-brand);
   color: #fff;
-  border: none;
+  border: 1px solid var(--color-brand);
   cursor: pointer;
-  transition: transform 0.3s;
-  box-shadow: 0 0 15px rgba(78, 20, 208, 0.3);
+  transition: transform 0.3s, background-color 0.3s;
   position: relative;
-  overflow: hidden;
   white-space: nowrap;
-}
-
-.cta-newsletter-btn::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  box-shadow: 0 0 25px rgba(78, 20, 208, 0.4);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
 }
 
 .cta-newsletter-btn:hover {
   transform: translateY(-1px);
-}
-
-.cta-newsletter-btn:hover::before {
-  opacity: 1;
+  background: #4f0dd8;
 }
 
 .cta-newsletter-btn:focus-visible {
@@ -211,29 +166,42 @@
   outline-offset: 2px;
 }
 
-.cta-newsletter-btn::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, transparent 40%, rgba(255, 255, 255, 0.15) 50%, transparent 60%);
-  transform: translateX(-100%);
-  transition: transform 0.6s;
+/* Newsletter modal (headless-ui Dialog) */
+.newsletter-dialog {
+  position: relative;
+  z-index: 100;
 }
 
-.cta-newsletter-btn:hover::after {
-  transform: translateX(100%);
-}
-
-/* Newsletter modal */
 .newsletter-modal-overlay {
   position: fixed;
   inset: 0;
-  z-index: 100;
   background: rgba(0, 0, 0, 0.7);
+}
+
+.newsletter-modal-positioner {
+  position: fixed;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 16px;
+  overflow-y: auto;
+}
+
+/* Transition classes used by headless-ui Transition.Child */
+.newsletter-fade-enter {
+  transition: opacity 0.25s ease-out, transform 0.25s ease-out;
+}
+.newsletter-fade-leave {
+  transition: opacity 0.2s ease-in, transform 0.2s ease-in;
+}
+.newsletter-fade-from {
+  opacity: 0;
+  transform: translateY(8px);
+}
+.newsletter-fade-to {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .newsletter-modal {

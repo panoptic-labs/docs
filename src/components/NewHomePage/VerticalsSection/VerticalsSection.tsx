@@ -114,7 +114,7 @@ export default function VerticalsSection() {
           {features.map((f, i) => (
             <motion.div
               key={f.title}
-              className="feature-card"
+              className={i === 0 ? "feature-card feature-card--wide" : "feature-card"}
               variants={cardVariant(i)}
             >
               <div className="feature-icon">{f.icon}</div>
