@@ -5,18 +5,18 @@ import "./HowItWorks.css";
 const steps = [
   {
     num: "01",
-    title: "Trade Actively",
-    desc: "Self-directed traders deploy algorithmic and quantitative options strategies on-chain — with up to 10× leverage and full control over every position.",
+    title: "Migrate your position",
+    desc: "Connect your wallet, pick your Uniswap v3 or v4 LP position, and stake it into Panoptic. Same range, same exposure — nothing about your strategy changes.",
   },
   {
     num: "02",
-    title: "Earn Passively",
-    desc: "Deposit into managed strategy vaults and earn yield from options strategies curated by expert vault managers. No active management required.",
+    title: "Earn the spread",
+    desc: "Keep earning Uniswap-equivalent fees, plus streaming premia from options traders who borrow your liquidity. That's the extra 20%+.",
   },
   {
     num: "03",
-    title: "Curate Vaults",
-    desc: "Vault managers design, deploy, and manage options strategies on behalf of depositors — earning performance fees while building reputation on-chain.",
+    title: "Stay in control",
+    desc: "Unstake anytime, borrow against your liquidity, or let a curator-run vault manage it for you. Non-custodial from start to finish.",
   },
 ];
 
@@ -48,7 +48,7 @@ export default function HowItWorks() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.05 }}
         >
-          Three roles. One protocol.
+          Same LP. More yield.
         </motion.h2>
         <motion.p
           className="section-desc how-it-works-desc"
@@ -57,7 +57,7 @@ export default function HowItWorks() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Whether you trade actively, earn passively, or manage strategies — Panoptic has a place for you.
+          Your Uniswap position already earns fees. Staking it through Panoptic adds a second income stream on top — in three steps.
         </motion.p>
         <div className="steps-grid">
           <motion.div

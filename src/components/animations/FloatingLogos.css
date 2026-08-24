@@ -64,19 +64,10 @@
   75% { transform: translate(15px, -25px) rotate(3deg); }
 }
 
-/* Responsive: scale down on smaller screens */
+/* Responsive: hide entirely on small screens (blur+animation is costly there) */
 @media screen and (max-width: 768px) {
-  .floating-logo-1 {
-    width: 250px;
-    height: 250px;
-  }
-  .floating-logo-2 {
-    width: 190px;
-    height: 190px;
-  }
-  .floating-logo-3 {
-    width: 150px;
-    height: 150px;
+  .floating-logos {
+    display: none;
   }
 }
 

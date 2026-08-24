@@ -1,7 +1,7 @@
+/* Top half of the merged #launch band (PartnerPage renders below) */
 .networks-section {
-  background-color: rgba(78, 20, 208, 0.12);
-  padding: 100px 0;
-  text-align: center;
+  padding: 100px 0 56px;
+  text-align: left;
 }
 
 .networks-container {
@@ -10,15 +10,10 @@
   padding: 0 32px;
 }
 
-.networks-desc {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .network-pills {
   display: flex;
   gap: 16px;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   margin-top: 48px;
 }
@@ -72,6 +67,6 @@
 
 @media screen and (max-width: 768px) {
   .networks-section {
-    padding: 72px 0;
+    padding: 72px 0 40px;
   }
 }

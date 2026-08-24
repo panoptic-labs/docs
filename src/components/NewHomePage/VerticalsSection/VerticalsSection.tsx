@@ -44,12 +44,12 @@ const icons = {
 };
 
 const features = [
-  { icon: icons.perpetual, title: "Perpetual Options", description: "No expiry dates. Hold positions indefinitely and manage them on your terms. Exit when you want, not when a contract says so." },
-  { icon: icons.token, title: "Any Token", description: "Create options markets on any asset with a Uniswap pool. Permissionless market creation — no external oracle dependencies." },
-  { icon: icons.leverage, title: "Up to 10× Leverage", description: "Capital-efficient trading with built-in risk controls. Maximize exposure without maximizing trust assumptions." },
-  { icon: icons.margin, title: "Portfolio-Aware Margining", description: "Net positions against one another to create defined-risk strategies. Straddles, strangles, and spreads are capital-efficiently margined as a single portfolio." },
-  { icon: icons.vault, title: "Perpetual Options Vaults", description: "Deposit into curator-managed vaults that run sophisticated options strategies on your behalf. Earn yield from volatility without active management." },
-  { icon: icons.riskEngine, title: "Modular Risk Engines", description: "Trade memecoins, blue chips, or stable pairs — each with a risk engine tailored to its asset class. One protocol, fit for every market." },
+  { icon: icons.perpetual, title: "Perpetual by construction", description: "Options have no expiry because there is no contract to expire. Positions stay open until you close them, so there is nothing to roll and no expiry cliff to trade around." },
+  { icon: icons.token, title: "AMM-native", description: "Options are built directly from concentrated liquidity positions. There is no separate pool of options liquidity to bootstrap before a market can function." },
+  { icon: icons.margin, title: "No order book", description: "Nothing needs to be matched against a counterparty. Pricing is path-dependent and derived from the AMM, so liquidity is never waiting on a market maker to quote." },
+  { icon: icons.leverage, title: "Permissionless markets", description: "Any token pair with a Uniswap pool can become an options market. Nobody has to list it, and no oracle has to support it." },
+  { icon: icons.riskEngine, title: "Composable", description: "Positions are onchain primitives other protocols can build on — vaults, structured products, and hedging strategies all read from the same contracts." },
+  { icon: icons.vault, title: "Oracle-free", description: "Prices come from Uniswap liquidity itself rather than an external feed, removing a whole class of manipulation and downtime risk." },
 ];
 
 const container = {
@@ -84,7 +84,7 @@ export default function VerticalsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          Protocol Features
+          What makes it different
         </motion.div>
         <motion.h2
           className="section-title"
@@ -93,7 +93,7 @@ export default function VerticalsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.05 }}
         >
-          Built different.<br/>By design.
+          No order books.<br/>No oracles. No expiries.
         </motion.h2>
         <motion.p
           className="section-desc"
@@ -102,7 +102,7 @@ export default function VerticalsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Every component engineered for the on-chain options experience that DeFi deserves.
+          These are consequences of building options out of AMM liquidity, not features bolted onto a conventional options venue.
         </motion.p>
         <motion.div
           className="features-grid"
@@ -114,7 +114,7 @@ export default function VerticalsSection() {
           {features.map((f, i) => (
             <motion.div
               key={f.title}
-              className="feature-card"
+              className={i === 0 ? "feature-card feature-card--wide" : "feature-card"}
               variants={cardVariant(i)}
             >
               <div className="feature-icon">{f.icon}</div>

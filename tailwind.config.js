@@ -1,9 +1,24 @@
 module.exports = {
     content: ["./src/**/*.{js,jsx,ts,tsx}"],
+    darkMode: ['class', '[data-theme="dark"]'],
     theme: {
       extend: {
         textColor: ['group-hover'],
         colors: {
+          // Brand scale mirrored from apps/panoptic-ui/tailwind.config.js
+          brand: {
+            50: '#F9F5FF',
+            100: '#F4EDFF',
+            200: '#DCC8FF',
+            300: '#B48EFF',
+            400: '#7A40F5',
+            500: '#590FF5',
+            600: '#4F0DD8',
+            700: '#420ABB',
+            800: '#330896',
+            900: '#25056F',
+            950: '#1B044F',
+          },
           'panoptic-purple': '#4E14D0',
           'panoptic-purple-light': '#7B3FE4',
           'panoptic-purple-dark': '#3A0FA0',

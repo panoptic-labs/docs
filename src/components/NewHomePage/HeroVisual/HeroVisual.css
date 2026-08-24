@@ -1,0 +1,22 @@
+/* Placeholder hero art — decorative only. */
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.hero-visual-svg {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  aspect-ratio: 560 / 460;
+}
+
+@media (max-width: 1023px) {
+  .hero-visual-svg {
+    max-width: 420px;
+  }
+}

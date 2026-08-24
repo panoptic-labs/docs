@@ -1,7 +1,7 @@
+/* Rendered directly under LaunchPage inside the same #launch band */
 .investors-section {
-  background-color: transparent;
-  padding: 100px 0;
-  text-align: center;
+  padding: 0 0 100px;
+  text-align: left;
 }
 
 .investors-container {
@@ -14,8 +14,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  justify-content: center;
-  margin-top: 48px;
+  justify-content: flex-start;
+  margin-top: 32px;
 }
 
 .investor-chip {
@@ -38,6 +38,6 @@
 
 @media screen and (max-width: 768px) {
   .investors-section {
-    padding: 72px 0;
+    padding: 0 0 72px;
   }
 }

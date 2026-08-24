@@ -50,17 +50,20 @@ const RecentUpdates = () => {
   };
 
   return (
-    <section className="recent-updates" id={'updates'}>
+    <section className="recent-updates">
       <div className="recent-updates__container">
         <div className="recent-updates__head">
-          <h3 className="recent-updates__title">Recent updates</h3>
+          <div>
+            <p className="section-eyebrow">Latest</p>
+            <h3 className="recent-updates__title">Recent updates</h3>
+          </div>
           {!isMobileWidth && (
             <div className="recent-updates__pagination">
-              <button className="pagination__prev" onClick={handlePrev}>
-                <i className="pagination__icon icon__arrow-left" />
+              <button className="pagination__prev" onClick={handlePrev} aria-label="Previous updates">
+                <i className="pagination__icon icon__arrow-left" aria-hidden="true" />
               </button>
-              <button className="pagination__next" onClick={handleNext}>
-                <i className="pagination__icon icon__arrow-right" />
+              <button className="pagination__next" onClick={handleNext} aria-label="Next updates">
+                <i className="pagination__icon icon__arrow-right" aria-hidden="true" />
               </button>
             </div>
           )}
@@ -103,11 +106,11 @@ const RecentUpdates = () => {
         </div>
         {isMobileWidth && (
           <div className="recent-updates__pagination">
-            <button className="pagination__prev" onClick={handlePrev}>
-              <i className="pagination__icon icon__arrow-left" />
+            <button className="pagination__prev" onClick={handlePrev} aria-label="Previous updates">
+              <i className="pagination__icon icon__arrow-left" aria-hidden="true" />
             </button>
-            <button className="pagination__next" onClick={handleNext}>
-              <i className="pagination__icon icon__arrow-right" />
+            <button className="pagination__next" onClick={handleNext} aria-label="Next updates">
+              <i className="pagination__icon icon__arrow-right" aria-hidden="true" />
             </button>
           </div>
         )}

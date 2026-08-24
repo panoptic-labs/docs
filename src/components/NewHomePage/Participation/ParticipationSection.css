@@ -1,0 +1,184 @@
+.participation-section {
+  background-color: transparent;
+  padding: 90px 0;
+}
+
+.participation-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .participation-container {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 4rem;
+  }
+
+  .participation-container--reversed .participation-copy {
+    order: 2;
+  }
+
+  .participation-container--reversed .participation-evidence {
+    order: 1;
+  }
+}
+
+.participation-title {
+  max-width: 18ch;
+}
+
+.participation-desc {
+  margin-bottom: 1.25rem;
+}
+
+.participation-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.participation-points li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+.participation-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background-color: var(--color-brand-300);
+}
+
+.participation-cta {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--color-brand-300);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.participation-cta:hover {
+  color: var(--color-text-light);
+  text-decoration: none;
+}
+
+/* Evidence panels */
+.evidence-panel {
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 16px;
+  background-color: rgba(19, 8, 40, 0.85);
+  padding: 1rem 1.25rem 0.875rem;
+}
+
+.evidence-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.evidence-title {
+  font-family: "JetBrains Mono", var(--ifm-font-family-monospace);
+  font-size: 0.8125rem;
+  color: var(--color-text-light);
+}
+
+.evidence-pill {
+  font-family: "JetBrains Mono", var(--ifm-font-family-monospace);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  color: var(--color-brand-300);
+  border: 1px solid var(--color-border-accent);
+  border-radius: 999px;
+  padding: 0.25rem 0.625rem;
+}
+
+.evidence-chart {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 560 / 300;
+}
+
+.evidence-axis {
+  stroke: rgba(232, 224, 245, 0.25);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+}
+
+.evidence-line-brand {
+  stroke: var(--color-brand-300);
+}
+
+.evidence-line-muted {
+  stroke: rgba(232, 224, 245, 0.4);
+}
+
+.evidence-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  font-family: "JetBrains Mono", var(--ifm-font-family-monospace);
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* Vault flow evidence */
+.evidence-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0.25rem 0 0.5rem;
+}
+
+.evidence-flow-step {
+  display: flex;
+  align-items: baseline;
+  gap: 0.875rem;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 12px;
+}
+
+.evidence-flow-num {
+  font-family: "JetBrains Mono", var(--ifm-font-family-monospace);
+  font-size: 0.75rem;
+  color: var(--color-brand-300);
+  flex-shrink: 0;
+}
+
+.evidence-flow-text {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+@media screen and (max-width: 768px) {
+  .participation-section {
+    padding: 64px 0;
+  }
+}

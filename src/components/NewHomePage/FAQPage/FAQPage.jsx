@@ -16,6 +16,7 @@ const FAQPage = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
+          <div className="section-eyebrow">FAQ</div>
           <h2 className="faq-title">
             Frequently Asked<br/>Questions
           </h2>
@@ -36,39 +37,45 @@ const FAQPage = () => {
             <Accordion.Item className="accordion-item" value="item-1">
               <AccordionTrigger>What is Panoptic?</AccordionTrigger>
               <AccordionContent>
-                The Panoptic protocol enables the minting, trading, and market-making of perpetual put and call options. All smart contracts are available 24/7 and users can interact with the Panoptic protocol without the need for intermediaries like banks, brokerage firms, clearinghouses, market makers, or centralized exchanges.
+                Panoptic turns AMM liquidity into perpetual options. LPs migrate their Uniswap positions to earn 20%+ more fees, traders buy and sell options that never expire, and depositors earn passively through curator-run vaults. Everything runs on-chain — no intermediaries, no oracles, no order books, no expiry dates.
               </AccordionContent>
             </Accordion.Item>
             <Accordion.Item className="accordion-item" value="item-2">
-            <AccordionTrigger>How can I use Panoptic?</AccordionTrigger>
+            <AccordionTrigger>I already LP on Uniswap — why migrate to Panoptic?</AccordionTrigger>
               <AccordionContent>
-                You can access Panoptic by connecting your wallet to the Panoptic App (app.panoptic.xyz).
+                Migrating your position to Panoptic keeps your range and market exposure exactly as they are. On top of Uniswap-equivalent fees, you earn Panoptic's liquidity spread — streaming premia paid by options traders who use your liquidity — for 20%+ more fees overall. You can withdraw at any time, and your position stays non-custodial throughout.
               </AccordionContent>
             </Accordion.Item>
             <Accordion.Item className="accordion-item" value="item-3">
-              <AccordionTrigger>What are the key benefits?</AccordionTrigger>
+            <AccordionTrigger>How can I use Panoptic?</AccordionTrigger>
               <AccordionContent>
-                Options in Panoptic differ slightly from conventional options. Instead of using a clearinghouse to settle options contracts, the Panoptic protocol uses Liquidity Provider (LP) positions in Uniswap v3 as a fundamental building block for trading long and short options.
-                <br/>
-                <br/>
-                Panoptic allows users to access new and improved features when trading options:
-                <br/>
-                1) Panoptic options never expire and are perpetual.
-                <br/>
-                2) Anybody can deploy an options market on any asset in a permissionless manner.
-                <br/>
-                3) Panoptic enables anyone to lend their capital to options traders as a liquidity provider.
-                <br/>
-                4) Pricing is path-dependent and does not involve counterparties (such as market makers).
+                Connect your wallet to the Panoptic App (app.panoptic.xyz). From there you can migrate an existing Uniswap LP position, trade perpetual options, or deposit into a curator-run vault for passive yield.
               </AccordionContent>
             </Accordion.Item>
             <Accordion.Item className="accordion-item" value="item-4">
+              <AccordionTrigger>What are the key benefits?</AccordionTrigger>
+              <AccordionContent>
+                Instead of matching orders against a counterparty, Panoptic uses Liquidity Provider (LP) positions in Uniswap v3 and v4 as the fundamental building block for options.
+                <br/>
+                <br/>
+                That unlocks:
+                <br/>
+                1) LPs earn a liquidity spread on top of Uniswap-equivalent fees by migrating their positions.
+                <br/>
+                2) Options never expire and are perpetual.
+                <br/>
+                3) Anybody can deploy an options market on any asset in a permissionless manner.
+                <br/>
+                4) Pricing is path-dependent and does not involve counterparties like market makers or oracles.
+              </AccordionContent>
+            </Accordion.Item>
+            <Accordion.Item className="accordion-item" value="item-5">
             <AccordionTrigger>Which assets can I trade?</AccordionTrigger>
               <AccordionContent>
                 Panoptic works on any ERC20 token. Panoptic users can create an options market on any token pair that exists on Uniswap v3 or v4.
               </AccordionContent>
             </Accordion.Item>
-            <Accordion.Item className="accordion-item" value="item-5">
+            <Accordion.Item className="accordion-item" value="item-6">
               <AccordionTrigger>What networks can I access Panoptic on?</AccordionTrigger>
               <AccordionContent>
                 Panoptic V2 is live on Ethereum mainnet. Multi-chain expansion to follow.

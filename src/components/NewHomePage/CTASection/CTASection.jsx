@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, Fragment } from "react";
 import { motion } from "framer-motion";
+import { Dialog, Transition } from "@headlessui/react";
 import HubspotForm from 'react-hubspot-form';
 import { APP_LINK } from "../../../constants";
 import "./CTASection.css";
@@ -7,75 +8,50 @@ import "./CTASection.css";
 const HUBSPOT_PORTAL_ID = '44445689';
 const HUBSPOT_FORM_ID = 'f0b4f21e-9ddc-4fff-a88d-bba812a2d084';
 
+// Accessible dialog via headless-ui (focus trap, escape, focus restore, scroll
+// lock all handled) — same pattern as EmailSignup.tsx.
 function NewsletterModal({ open, onClose }) {
-  const modalRef = useRef(null);
-  const previousFocusRef = useRef(null);
-
-  useEffect(() => {
-    if (open) {
-      previousFocusRef.current = document.activeElement;
-      document.body.style.overflow = 'hidden';
-      // Focus the modal after render
-      requestAnimationFrame(() => modalRef.current?.focus());
-    } else {
-      document.body.style.overflow = '';
-      previousFocusRef.current?.focus();
-    }
-    return () => { document.body.style.overflow = ''; };
-  }, [open]);
-
-  const handleKeyDown = useCallback((e) => {
-    if (e.key === 'Escape') {
-      onClose();
-      return;
-    }
-    // Trap focus within modal
-    if (e.key === 'Tab' && modalRef.current) {
-      const focusable = modalRef.current.querySelectorAll(
-        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-      );
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-      if (e.shiftKey && document.activeElement === first) {
-        e.preventDefault();
-        last?.focus();
-      } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault();
-        first?.focus();
-      }
-    }
-  }, [onClose]);
-
-  if (!open) return null;
-
   return (
-    <div
-      className="newsletter-modal-overlay"
-      onClick={onClose}
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="newsletter-modal-title"
-      onKeyDown={handleKeyDown}
-    >
-      <div
-        className="newsletter-modal"
-        onClick={(e) => e.stopPropagation()}
-        ref={modalRef}
-        tabIndex={-1}
-      >
-        <div className="newsletter-modal-header">
-          <h3 id="newsletter-modal-title">Get the latest updates</h3>
-          <button className="newsletter-modal-close" onClick={onClose} aria-label="Close newsletter modal">✕</button>
+    <Transition.Root show={open} as={Fragment}>
+      <Dialog as="div" className="newsletter-dialog" onClose={onClose}>
+        <Transition.Child
+          as={Fragment}
+          enter="newsletter-fade-enter"
+          enterFrom="newsletter-fade-from"
+          enterTo="newsletter-fade-to"
+          leave="newsletter-fade-leave"
+          leaveFrom="newsletter-fade-to"
+          leaveTo="newsletter-fade-from"
+        >
+          <div className="newsletter-modal-overlay" aria-hidden="true" />
+        </Transition.Child>
+        <div className="newsletter-modal-positioner">
+          <Transition.Child
+            as={Fragment}
+            enter="newsletter-fade-enter"
+            enterFrom="newsletter-fade-from"
+            enterTo="newsletter-fade-to"
+            leave="newsletter-fade-leave"
+            leaveFrom="newsletter-fade-to"
+            leaveTo="newsletter-fade-from"
+          >
+            <Dialog.Panel className="newsletter-modal">
+              <div className="newsletter-modal-header">
+                <Dialog.Title as="h3">Get the latest updates</Dialog.Title>
+                <button className="newsletter-modal-close" onClick={onClose} aria-label="Close newsletter modal">✕</button>
+              </div>
+              <div className="newsletter-modal-body">
+                <HubspotForm
+                  portalId={HUBSPOT_PORTAL_ID}
+                  formId={HUBSPOT_FORM_ID}
+                  onSubmit={onClose}
+                />
+              </div>
+            </Dialog.Panel>
+          </Transition.Child>
         </div>
-        <div className="newsletter-modal-body">
-          <HubspotForm
-            portalId={HUBSPOT_PORTAL_ID}
-            formId={HUBSPOT_FORM_ID}
-            onSubmit={onClose}
-          />
-        </div>
-      </div>
-    </div>
+      </Dialog>
+    </Transition.Root>
   );
 }
 
@@ -107,7 +83,7 @@ export default function CTASection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
         >
-          The options layer<br/>DeFi was missing.
+          Earn more from<br/>the liquidity you have.
         </motion.h2>
         <motion.p
           className="cta-desc"
@@ -116,7 +92,7 @@ export default function CTASection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Join thousands of traders and LPs using Panoptic to trade, hedge, and earn — permissionlessly.
+          Migrate your Uniswap position and earn 20%+ more fees — permissionless, non-custodial, live on Ethereum.
         </motion.p>
         <motion.div
           className="cta-buttons"
@@ -126,7 +102,7 @@ export default function CTASection() {
           transition={{ duration: 0.5, delay: 0.2, type: "spring", stiffness: 200, damping: 20 }}
         >
           <a href={APP_LINK} className="btn-cta-big" target="_blank" rel="noopener noreferrer">
-            Launch App →
+            Migrate your position →
           </a>
           <a href="/docs/intro" className="btn-cta-outline">
             Documentation

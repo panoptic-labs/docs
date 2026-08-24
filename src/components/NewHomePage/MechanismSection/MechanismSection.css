@@ -1,0 +1,25 @@
+.mechanism-section {
+  padding: 100px 0;
+}
+
+.mechanism-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  text-align: left;
+}
+
+.mechanism-title {
+  max-width: 20ch;
+}
+
+.mechanism-desc {
+  max-width: 62ch;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .mechanism-section {
+    padding: 72px 0;
+  }
+}

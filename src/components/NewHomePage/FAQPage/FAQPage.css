@@ -1,5 +1,4 @@
 .faq-page {
-  background-color: rgba(78, 20, 208, 0.12);
   display: flex;
   justify-content: center;
   padding: 100px 40px;
@@ -76,8 +75,12 @@
   border-bottom-color: transparent;
 }
 
+.accordion-trigger {
+  min-height: 44px;
+}
+
 .accordion-trigger:hover {
-  color: var(--color-success);
+  color: var(--color-brand-300);
 }
 
 .accordion-trigger:focus-visible {
