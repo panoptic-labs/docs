@@ -93,7 +93,7 @@ export default function VerticalsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.05 }}
         >
-          Structurally different,<br/>not incrementally better.
+          No order books.<br/>No oracles. No expiries.
         </motion.h2>
         <motion.p
           className="section-desc"

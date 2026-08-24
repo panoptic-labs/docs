@@ -22,7 +22,7 @@ export default function MechanismSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.05 }}
         >
-          Options, without a separate options order book.
+          Your AMM liquidity is the option.
         </motion.h2>
         <motion.p
           className="section-desc mechanism-desc"
@@ -31,10 +31,14 @@ export default function MechanismSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Panoptic uses concentrated AMM liquidity as the foundation for an onchain
-          options market. There is no dedicated options liquidity to bootstrap, no
-          order book to match against, and no expiry dates to roll — the same
-          Uniswap range that earns you trading fees becomes the option a trader buys.
+          A concentrated liquidity position already behaves like an option: it gains
+          and loses as price moves through its range. Panoptic makes that explicit.
+          Traders borrow a range to open a position, and pay the provider a fee that
+          streams for as long as they hold it.
+          <br/><br/>
+          Because the AMM does the pricing, there is nothing else to build around it —
+          no separate pool of options liquidity, no order book to match against, and
+          no expiry date forcing anyone out of a position.
         </motion.p>
       </div>
     </section>

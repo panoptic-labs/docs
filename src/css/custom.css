@@ -37,6 +37,13 @@
   background-clip: text;
 }
 
+/* Landing-page section banding. Section backgrounds are set here and applied
+   from src/pages/index.js so the alternation is controlled in one place —
+   individual section components must not set their own background-color. */
+.section-band--tint {
+  background-color: rgba(78, 20, 208, 0.12);
+}
+
 /* You can override the default Infima variables here. */
 :root {
   --color-body: #ffffff;
