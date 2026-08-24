@@ -7,7 +7,7 @@
   flex-direction: column;
   justify-content: center;
   min-height: calc(100svh - var(--ifm-navbar-height, 60px));
-  padding: 4rem 1.5rem 3rem;
+  padding: 4rem 1.5rem 5rem;
   overflow: hidden;
   border-bottom: 1px solid var(--color-border-subtle);
 }
@@ -180,8 +180,10 @@
   stroke: var(--color-brand-300);
 }
 
-.hero-demo-line-base {
-  stroke: rgba(232, 224, 245, 0.35);
+.hero-demo-strike {
+  stroke: rgba(232, 224, 245, 0.18);
+  stroke-width: 1;
+  stroke-dasharray: 2 4;
 }
 
 .hero-demo-footer {
@@ -195,15 +197,98 @@
   color: var(--color-text-muted);
 }
 
-/* Scroll hint */
-.hero-scroll-hint {
+/* Entry-point cards (mirrors the app hero's HeroCtaCards) */
+.hero-entry-cards {
   position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 3rem auto 0;
+}
+
+@media (min-width: 768px) {
+  .hero-entry-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.hero-entry-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  min-height: 96px;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 16px;
+  background-color: rgba(19, 8, 40, 0.85);
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.hero-entry-card:hover {
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.hero-entry-card--lp:hover,
+.hero-entry-card--vaults:hover {
+  border-color: rgba(123, 63, 228, 0.45);
+}
+
+.hero-entry-card--trade:hover {
+  border-color: rgba(34, 211, 238, 0.45);
+}
+
+.hero-entry-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.hero-entry-card-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-text-light);
+}
+
+.hero-entry-card-desc {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--color-text-muted);
+}
+
+.hero-entry-card-arrow {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--color-border-accent);
+  border-radius: 999px;
+  color: var(--color-brand-300);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-entry-card:hover .hero-entry-card-arrow {
+  transform: translateX(3px);
+  border-color: var(--color-brand-300);
+}
+
+/* Scroll hint — hugs the bottom of the hero viewport */
+.hero-scroll-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   min-height: 44px;
-  margin: 2.5rem auto 0;
   padding: 0 1rem;
   font-family: "JetBrains Mono", var(--ifm-font-family-monospace);
   font-size: 0.75rem;
