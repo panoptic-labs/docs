@@ -5,7 +5,7 @@ import "@fontsource/jetbrains-mono"
 // import ScrollingTokens from "../ScrollingTokens/ScrollingTokens"
 import React from "react";
 import { motion } from "framer-motion";
-import LiquidityMorph from "../LiquidityMorph/LiquidityMorph";
+import HeroVisual from "../HeroVisual/HeroVisual";
 import { APP_LINK } from "../../../constants";
 
 const TitlePage = () => {
@@ -22,7 +22,7 @@ const TitlePage = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <div className="hero-copy">
-          <p className="hero-eyebrow">Live on Ethereum</p>
+          <p className="hero-eyebrow">Perpetual options protocol</p>
 
           <h1 className="hero-title">
             Trade volatility.<br/>
@@ -38,13 +38,13 @@ const TitlePage = () => {
             <a href={APP_LINK} className="btn-launch" target="_blank" rel="noopener noreferrer">
               Migrate your position →
             </a>
-            <a href={APP_LINK} className="btn-outline" target="_blank" rel="noopener noreferrer">
-              Launch app
+            <a href="/docs/intro" className="btn-outline">
+              Read the Docs
             </a>
           </div>
         </div>
 
-        <LiquidityMorph />
+        <HeroVisual />
       </motion.div>
 
       <a href="#mechanism" className="hero-scroll-hint">
