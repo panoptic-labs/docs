@@ -1,0 +1,97 @@
+.liquidity-morph {
+  position: relative;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 16px;
+  background-color: rgba(19, 8, 40, 0.85);
+  padding: 1rem 1.25rem 0.875rem;
+}
+
+.liquidity-morph-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.liquidity-morph-title {
+  font-family: "JetBrains Mono", var(--ifm-font-family-monospace);
+  font-size: 0.8125rem;
+  color: var(--color-text-light);
+}
+
+.liquidity-morph-pill {
+  font-family: "JetBrains Mono", var(--ifm-font-family-monospace);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  color: var(--color-brand-300);
+  border: 1px solid var(--color-border-accent);
+  border-radius: 999px;
+  padding: 0.25rem 0.625rem;
+}
+
+.liquidity-morph-frame {
+  cursor: ew-resize;
+  touch-action: pan-y;
+}
+
+.liquidity-morph-chart {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 560 / 300;
+}
+
+.liquidity-morph-axis {
+  stroke: rgba(232, 224, 245, 0.25);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+}
+
+.liquidity-morph-line {
+  stroke: var(--color-brand-300);
+}
+
+/* Control — carries the accessible name and gives keyboard/touch parity */
+.liquidity-morph-control {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.liquidity-morph-control-label {
+  font-family: "JetBrains Mono", var(--ifm-font-family-monospace);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--color-text-muted);
+}
+
+.liquidity-morph-control input[type="range"] {
+  flex: 1;
+  min-width: 0;
+  min-height: 44px;
+  accent-color: var(--color-brand);
+  background: transparent;
+  cursor: ew-resize;
+}
+
+.liquidity-morph-control input[type="range"]:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 4px;
+}
+
+.liquidity-morph-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: "JetBrains Mono", var(--ifm-font-family-monospace);
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}

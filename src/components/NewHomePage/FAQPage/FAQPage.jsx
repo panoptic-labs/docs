@@ -37,30 +37,30 @@ const FAQPage = () => {
             <Accordion.Item className="accordion-item" value="item-1">
               <AccordionTrigger>What is Panoptic?</AccordionTrigger>
               <AccordionContent>
-                Panoptic is the perpetual options protocol built on Uniswap. LPs stake their Uniswap positions to earn extra yield on top of trading fees, traders buy and sell options that never expire, and depositors earn passively through curator-run vaults. Everything settles on-chain — no intermediaries, no oracles, no expiry dates.
+                Panoptic turns AMM liquidity into perpetual options. LPs migrate their Uniswap positions to earn 20%+ more fees, traders buy and sell options that never expire, and depositors earn passively through curator-run vaults. Everything runs on-chain — no intermediaries, no oracles, no order books, no expiry dates.
               </AccordionContent>
             </Accordion.Item>
             <Accordion.Item className="accordion-item" value="item-2">
-            <AccordionTrigger>I already LP on Uniswap — why stake through Panoptic?</AccordionTrigger>
+            <AccordionTrigger>I already LP on Uniswap — why migrate to Panoptic?</AccordionTrigger>
               <AccordionContent>
-                Staking your position through Panoptic keeps your range and market exposure exactly as they are. On top of Uniswap-equivalent fees, you earn Panoptic's liquidity spread — streaming premia paid by options traders who borrow your liquidity. You can unstake at any time, and your position stays non-custodial throughout.
+                Migrating your position to Panoptic keeps your range and market exposure exactly as they are. On top of Uniswap-equivalent fees, you earn Panoptic's liquidity spread — streaming premia paid by options traders who use your liquidity — for 20%+ more fees overall. You can withdraw at any time, and your position stays non-custodial throughout.
               </AccordionContent>
             </Accordion.Item>
             <Accordion.Item className="accordion-item" value="item-3">
             <AccordionTrigger>How can I use Panoptic?</AccordionTrigger>
               <AccordionContent>
-                Connect your wallet to the Panoptic App (app.panoptic.xyz). From there you can stake an existing Uniswap LP position, trade perpetual options, or deposit into a curator-run vault for passive yield.
+                Connect your wallet to the Panoptic App (app.panoptic.xyz). From there you can migrate an existing Uniswap LP position, trade perpetual options, or deposit into a curator-run vault for passive yield.
               </AccordionContent>
             </Accordion.Item>
             <Accordion.Item className="accordion-item" value="item-4">
               <AccordionTrigger>What are the key benefits?</AccordionTrigger>
               <AccordionContent>
-                Instead of using a clearinghouse to settle options contracts, Panoptic uses Liquidity Provider (LP) positions in Uniswap v3 and v4 as the fundamental building block for options.
+                Instead of matching orders against a counterparty, Panoptic uses Liquidity Provider (LP) positions in Uniswap v3 and v4 as the fundamental building block for options.
                 <br/>
                 <br/>
                 That unlocks:
                 <br/>
-                1) LPs earn a liquidity spread on top of Uniswap-equivalent fees by staking their positions.
+                1) LPs earn a liquidity spread on top of Uniswap-equivalent fees by migrating their positions.
                 <br/>
                 2) Options never expire and are perpetual.
                 <br/>

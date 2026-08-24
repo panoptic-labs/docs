@@ -11,7 +11,7 @@ const audits = [
 const pillars = [
   {
     title: "Non-Custodial",
-    desc: "Your keys, your funds. No counterparty risk — all positions settle directly on-chain.",
+    desc: "Your keys, your funds. No counterparty risk — every position lives directly on-chain.",
   },
   {
     title: "Oracle-Free",
@@ -66,7 +66,7 @@ export default function SecuritySection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Security isn't a feature — it's the foundation. Panoptic is designed to minimize trust assumptions at every layer.
+          Security isn't a feature — it's the foundation. Panoptic is designed to minimize trust assumptions everywhere they arise.
         </motion.p>
 
         {/* Audit badges */}

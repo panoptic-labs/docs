@@ -5,8 +5,12 @@ import { MotionConfig } from "framer-motion";
 
 import RecentUpdates from "../components/HomePage/RecentUpdates";
 import TitlePage from "../components/NewHomePage/TitlePage/TitlePage";
+import MechanismSection from "../components/NewHomePage/MechanismSection/MechanismSection";
+import ProofBar from "../components/NewHomePage/ProofBar/ProofBar";
+import Participation from "../components/NewHomePage/Participation/Participation";
 import VerticalsSection from "../components/NewHomePage/VerticalsSection/VerticalsSection";
-import HowItWorks from "../components/NewHomePage/HowItWorks/HowItWorks";
+// HowItWorks retired — the mechanism explainer + participation sections cover it.
+// import HowItWorks from "../components/NewHomePage/HowItWorks/HowItWorks";
 import SecuritySection from "../components/NewHomePage/SecuritySection/SecuritySection";
 import LaunchPage from "../components/NewHomePage/LaunchPage/LaunchPage";
 import PartnerPage from "../components/NewHomePage/PartnerPage/PartnerPage";
@@ -34,13 +38,16 @@ export default function Home() {
       <main style={{ backgroundColor: "var(--color-bg-dark)", position: "relative" }}>
         <FloatingLogos />
         <TitlePage />
-        <Section id="updates">
-          <FadeIn><RecentUpdates /></FadeIn>
+        <Section id="mechanism">
+          <FadeIn><MechanismSection /></FadeIn>
         </Section>
-        <Section id="how-it-works">
-          <FadeIn><HowItWorks /></FadeIn>
+        <Section id="proof">
+          <FadeIn><ProofBar /></FadeIn>
         </Section>
-        <Section id="verticals">
+        <Section id="participate">
+          <Participation />
+        </Section>
+        <Section id="different">
           <FadeIn><VerticalsSection /></FadeIn>
         </Section>
         <Section id="security">
@@ -49,6 +56,9 @@ export default function Home() {
         <Section id="launch">
           <FadeIn><LaunchPage /></FadeIn>
           <FadeIn><PartnerPage /></FadeIn>
+        </Section>
+        <Section id="updates">
+          <FadeIn><RecentUpdates /></FadeIn>
         </Section>
         <Section id="faq">
           <FadeIn><FAQPage /></FadeIn>

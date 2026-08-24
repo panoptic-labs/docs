@@ -44,12 +44,12 @@ const icons = {
 };
 
 const features = [
-  { icon: icons.perpetual, title: "Trade Perpetual Options", description: "Buy and sell options with no expiry dates and up to 10× leverage. Hold positions indefinitely and exit when you want, not when a contract says so." },
-  { icon: icons.vault, title: "Vaults", description: "Deposit into automated onchain strategies for passive yield, curated by expert vault managers. No active management required." },
-  { icon: icons.token, title: "Lend", description: "Supply capital to options traders and LPs and earn lending yield. Permissionless markets on any asset with a Uniswap pool." },
-  { icon: icons.riskEngine, title: "Curate", description: "Design, deploy, and manage vault strategies on behalf of depositors — earning performance fees while building reputation on-chain." },
-  { icon: icons.margin, title: "Portfolio-Aware Margining", description: "Net positions against one another to create defined-risk strategies, capital-efficiently margined as a single portfolio." },
-  { icon: icons.leverage, title: "Oracle-Free by Design", description: "Pricing derives from Uniswap liquidity itself. No external oracle dependencies or manipulation vectors." },
+  { icon: icons.perpetual, title: "Perpetual by construction", description: "Options have no expiry because there is no contract to expire. Positions stay open until you close them, so there is nothing to roll and no expiry cliff to trade around." },
+  { icon: icons.token, title: "AMM-native", description: "Options are built directly from concentrated liquidity positions. There is no separate pool of options liquidity to bootstrap before a market can function." },
+  { icon: icons.margin, title: "No order book", description: "Nothing needs to be matched against a counterparty. Pricing is path-dependent and derived from the AMM, so liquidity is never waiting on a market maker to quote." },
+  { icon: icons.leverage, title: "Permissionless markets", description: "Any token pair with a Uniswap pool can become an options market. Nobody has to list it, and no oracle has to support it." },
+  { icon: icons.riskEngine, title: "Composable", description: "Positions are onchain primitives other protocols can build on — vaults, structured products, and hedging strategies all read from the same contracts." },
+  { icon: icons.vault, title: "Oracle-free", description: "Prices come from Uniswap liquidity itself rather than an external feed, removing a whole class of manipulation and downtime risk." },
 ];
 
 const container = {
@@ -84,7 +84,7 @@ export default function VerticalsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          Beyond staking
+          What makes it different
         </motion.div>
         <motion.h2
           className="section-title"
@@ -93,7 +93,7 @@ export default function VerticalsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.05 }}
         >
-          One protocol.<br/>Four ways in.
+          Structurally different,<br/>not incrementally better.
         </motion.h2>
         <motion.p
           className="section-desc"
@@ -102,7 +102,7 @@ export default function VerticalsSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Staking your LP is the front door. Behind it: trade, earn, lend, or curate — all on the same perpetual options engine.
+          These are consequences of building options out of AMM liquidity, not features bolted onto a conventional options venue.
         </motion.p>
         <motion.div
           className="features-grid"
