@@ -2,8 +2,8 @@
   {
     "title": "Earn Up To 20% More Fees on Your Uniswap LP Position",
     "date": "2026-08-25",
-    "image": "/img/banners/lp-staking-banner.png",
-    "link": "/blog/stake-your-lp",
+    "image": "https://panoptic.xyz/img/banners/lp-staking-banner.png",
+    "link": "https://panoptic.xyz/blog/stake-your-lp",
     "description": "Migrate your LP positions from Uniswap to Panoptic and earn up to 20% more in fees through Panoptic-native mechanisms.",
     "id": 1
   },
