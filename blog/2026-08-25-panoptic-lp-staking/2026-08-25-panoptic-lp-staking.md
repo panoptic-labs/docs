@@ -2,7 +2,7 @@
 slug: stake-your-lp
 title: "Earn Up To 20% More Fees on Your Uniswap LP Position"
 tags: [Liquidity, Options, Uniswap, Fees]
-image: /img/banners/panoptic-lp-staking-banner.png
+image: /img/banners/lp-staking-banner.png
 description: "Migrate your LP positions from Uniswap to Panoptic and earn up to 20% more in fees through Panoptic-native mechanisms."
 ---
 
