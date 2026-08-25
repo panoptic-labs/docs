@@ -92,6 +92,7 @@ const RecentUpdates = () => {
                             month: "short",
                             year: "numeric",
                             day: "numeric",
+                            timeZone: "UTC",
                           })
                             .format(new Date(post.date))
                             }
