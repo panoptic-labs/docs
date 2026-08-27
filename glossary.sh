@@ -1,3 +1,3 @@
 echo "📖 building glossary..."
-yarn docusaurus parse
-yarn docusaurus glossary
+pnpm docusaurus parse
+pnpm docusaurus glossary

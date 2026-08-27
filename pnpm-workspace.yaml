@@ -1,0 +1,13 @@
+# Standalone public mirror generated from the Panoptic monorepo.
+minimumReleaseAge: 10080
+blockExoticSubdeps: true
+strictDepBuilds: true
+allowBuilds:
+  "@parcel/watcher": true
+  core-js: false
+  core-js-pure: false
+ignoredBuiltDependencies:
+  - bufferutil
+  - core-js
+  - core-js-pure
+  - utf-8-validate

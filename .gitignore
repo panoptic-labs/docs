@@ -24,4 +24,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Local review and agent artifacts
+.agents/
+CANONICAL_COPY.md
+IMPECCABLE_REPORT.md
+skills-lock.json
 

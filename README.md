@@ -2,20 +2,31 @@
 
 This is the main website of <a href="http://panoptic.xyz/">Panoptic</a>.
 
+> [!NOTE]
+> This public repository is an automated mirror of Panoptic's canonical
+> monorepo. Direct commits and pull requests here may be overwritten. Please
+> open an issue before proposing a documentation change.
+
+The monorepo migration was verified against public docs commit
+`6c9b4132582dd598181b1954c28c4cc9432a5cd3`.
+
 ### Installation
 
 ```
-$ yarn
+$ pnpm install
 ```
 
 ### Local Development
 
 ```
 $ nvm use
-$ yarn start
+$ pnpm start
 ```
 
 This command switches you onto the correct version of node and starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+
+When working from the Panoptic monorepo, run commands from its root with
+`pnpm --filter @panoptic-eng/docs <command>`.
 
 ### Build
 
@@ -40,7 +51,7 @@ $ ./glossary.sh
 To generate subgraph docs, run
 
 ```sh
-yarn graphql-markdown
+pnpm graphql-markdown
 ```
 
 ### Build the Glossary
@@ -48,8 +59,8 @@ yarn graphql-markdown
 We use the plugin here: https://gitlab.grnet.gr/terminology/docusaurus-terminology to manage our glossary. Build the glossary with:
 
 ```
-$ yarn docusaurus parse
-$ yarn docusaurus glossary
+$ pnpm docusaurus parse
+$ pnpm docusaurus glossary
 ```
 
 ### Acknowledgements

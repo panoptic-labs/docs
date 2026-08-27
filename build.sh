@@ -1,5 +1,5 @@
 echo "🔨 building..."
 
-yarn build
-yarn docusaurus parse
-yarn docusaurus glossary
+pnpm build
+pnpm docusaurus parse
+pnpm docusaurus glossary
