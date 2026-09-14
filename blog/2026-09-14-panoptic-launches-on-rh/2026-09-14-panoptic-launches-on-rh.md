@@ -1,6 +1,6 @@
 ---
 slug: panoptic-launches-on-robinhood-chain
-title: "Panoptic Launches on Robinhood"
+title: "Panoptic Launches on Robinhood Chain"
 tags: [Launch, Press Release, L2]
 image: /img/banners/panoptic-on-rh-chain.png
 description: "Panoptic is launching on Robinhood Chain, bringing onchain lending, borrowing, perpetual options trading, and a revamped liquidity-provisioning experience to Robinhood’s new Layer 2."
