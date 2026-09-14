@@ -27,7 +27,7 @@ Panoptic will initially support the SPY/USDG  v4 30bs pool with additional crypt
 
 ![](./01.png)
 
-# Why Robinhood Chain
+## Why Robinhood Chain
 
 Robinhood Chain is a permissionless Layer 2 built using the Arbitrum technology stack and designed specifically for financial services, DeFi, and tokenized RWAs.
 
@@ -37,7 +37,7 @@ Panoptic builds directly on top of that liquidity.
 
 Where spot markets enable users to buy and sell assets, Panoptic enables them to lend, borrow, hedge, earn, and trade volatility around those assets. Together, these components create a more complete onchain financial system.
 
-# From Onchain Ownership to Onchain Utility
+## From Onchain Ownership to Onchain Utility
 
 Robinhood Chain brings a growing universe of financial assets onchain, including Robinhood Stock Tokens that provide eligible users with economic exposure to assets such as stocks and ETFs.
 
@@ -49,7 +49,7 @@ Panoptic provides that infrastructure in one system.
 
 By combining lending, borrowing, and options, Panoptic allows eligible users to put supported assets to work as productive collateral. A user can supply an asset to earn interest, borrow against it without selling, or use options to shape their exposure to its price and volatility.
 
-# Panoptic Incentive Points
+## Panoptic Incentive Points
 
 Panoptic Incentive Points will be available on Robinhood Chain from launch.
 
@@ -59,7 +59,7 @@ Early participants can earn additional points while helping establish lending li
 
 Full information about eligible activities, market multipliers, and point distribution will be available in the Panoptic documentation.
 
-# Put Your LP to Work
+## Put Your LP to Work
 
 Liquidity providers on Robinhood Chain can make their existing Uniswap positions more productive through Panoptic.
 
@@ -73,13 +73,13 @@ Staking does not require LPs to change the underlying pool or price range. Panop
 
 As liquidity develops across Robinhood Chain, Panoptic gives LPs a way to get more from the same position by earning swap fees, collecting options premiums, and borrowing against their LP position without having to redeploy their liquidity.
 
-# Earn Interest by Lending & Unlock Liquidity by Borrowing
+## Earn Interest by Lending & Unlock Liquidity by Borrowing
 
 Users can supply supported assets to Panoptic markets to earn interest or borrow against their collateral without selling it. Borrowed liquidity can be withdrawn, used to establish new positions, or deployed within Panoptic’s options markets.
 
 Lending and borrowing rates adjust dynamically according to market utilization, allowing yields and borrowing costs to respond to real-time supply and demand. Because lending and options operate through the same risk engine, capital can move efficiently between credit and derivatives strategies.
 
-# Trade Perpetual Options
+## Trade Perpetual Options
 
 Panoptic brings permissionless perpetual options to Robinhood Chain.
 
@@ -102,7 +102,7 @@ These markets give users new ways to:
 
 Panoptic’s portfolio-aware margin system evaluates positions together instead of treating each leg in isolation. This enables more capital-efficient multi-legged strategies and allows offsetting positions to receive appropriate margin treatment.
 
-# Vaults Are Coming Next
+## Vaults Are Coming Next
 
 Panoptic Vaults will launch on Robinhood Chain in a later phase.
 
@@ -112,7 +112,7 @@ Future vaults may include strategies designed to earn options premiums, harvest 
 
 Additional information about the first Robinhood Chain vaults will be announced following the initial protocol launch.
 
-# Getting Started
+## Getting Started
 
 Panoptic launches on Robinhood Chain on 09/14/2026.
 
@@ -133,13 +133,13 @@ Follow Panoptic for the final launch-market lineup, points multipliers, and addi
 
 Onchain ownership is only the first step. Panoptic is making those assets productive.
 
-## Market Access
+# Market Access
 
 Access to specific Panoptic markets and products may be restricted based on jurisdiction. Robinhood Stock Tokens are not available in the United States, to U.S. persons, or in certain other restricted jurisdictions.
 
 Users are solely responsible for confirming that their access to and use of Panoptic and any supported asset is permitted under the laws and regulations applicable to them. Attempting to circumvent jurisdictional restrictions or other compliance controls is prohibited under the Panoptic Terms of Use.
 
-## Risk Disclaimer
+# Risk Disclaimer
 
 Lending, borrowing, and options trading involve significant risk, including smart-contract risk, liquidation risk, market volatility, and the potential loss of principal. Options and leveraged positions may not be suitable for all users.
 
