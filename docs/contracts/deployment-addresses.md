@@ -4,9 +4,14 @@ sidebar_position: 1
 
 # Deployment Addresses
 
-PanopticPools and CollateralTrackers are [proxy contracts](https://info.etherscan.com/what-is-proxy-contract/), with one PanopticPool per underlying Uniswap pool, and two CollateralTrackers per PanopticPool. You can fetch the PanopticPool for a given Uniswap pool [from the PanopticFactory](https://panoptic.xyz/docs/contracts/V2/contract.PanopticFactory#getpanopticpool). The core logic, however, is deployed to the following stable addresses on all EVM chains:
+PanopticPools and CollateralTrackers are [proxy contracts](https://info.etherscan.com/what-is-proxy-contract/), with one PanopticPool per underlying Uniswap pool, and two CollateralTrackers per PanopticPool. You can fetch the PanopticPool for a given Uniswap pool [from the PanopticFactory](https://panoptic.xyz/docs/contracts/V2/contract.PanopticFactory#getpanopticpool). The core logic is deployed at the addresses below.
 
-## Vaults
+## v2
+
+### Ethereum Mainnet
+
+#### Vaults
+
 - `HypoVault (impl)`: `0xF16714665955DBd0361D997eFc50fe391D96E8D0`
 - `Factory`: `0xd5049B2647de57141dE7F65E5124707B99A452A3`
 - `Accountant`: `0x65aA902AE3135658587FFC36ED51B61c927114e1`
@@ -15,7 +20,7 @@ PanopticPools and CollateralTrackers are [proxy contracts](https://info.ethersca
 - `Panoptic Liquidity Provider (PLP) Vault`: `0xd4e2c720a760049cc4151bcf61e3a9348db9cd92`
 - `Unicorn Vault`: `0x236d0558f06cd60780b232d4Ec4c92d2cb7e4D18`
 
-## v2
+#### Core contracts
 
 - `PanopticFactoryV3`: `0x0000000000000aDC9A108591e718F2aee963a2a7`
 - `PanopticFactoryV4`: `0x0000000000000c51d0f8cf4bd9adE7191372a625`
@@ -29,7 +34,34 @@ PanopticPools and CollateralTrackers are [proxy contracts](https://info.ethersca
 - `PanopticQuery`: `0x0000000000000e1aE9c66C1c3B0A547D23389C93`
 - `InteractionHelper`: `0x00000000000041fe14Ce3c2392337CE501aE8328`
 - `PanopticMath`: `0x000000000000334bbd65C195581cf59ECf315932`
-- `PanopticGuardian`: `0x0000000000000D329aCC1514f4Ba05584a8369ed`
+
+### Robinhood Chain
+
+#### Vaults
+
+- `HypoVault (impl)`: `0xF16714665955DBd0361D997eFc50fe391D96E8D0`
+- `Factory`: `0xd5049B2647de57141dE7F65E5124707B99A452A3`
+- `Accountant`: `0x9e345d862c41010F87D8E5A279e8D320D2831D36`
+- `RolesAuthority`: `0xb952D345c413Ddb7850173422bAe4968e0330598`
+- `CollateralTrackerDecoderAndSanitizer`: `0xC87c45d2dbE5acb56013e2591427ECC84Fa251E6`
+- `USDG PLP Vault (5% fee)`: `0x08B24123252Bd9c4DD473b6573D4cF67196FFC4B`
+
+#### Core contracts
+
+- `SemiFungiblePositionManagerV4`: `0x00000000000005C3287f136Ef5AF56c68Ea6849f`
+- `SemiFungiblePositionManagerV3`: `0x00000000000005E4693aDc8Ec0f12D686f728198`
+- `BuilderFactory`: `0x0000000000000a3D22E158417AA639D7F71b0FF7`
+- `RiskEngine`: `0x000000000000075E29Cdaa9cb640A69e148ca7da`
+- `RiskEngineXStocks (token1 = USDC)`: `0x0000000000000fE1E261f66ce2F44def4F5Ae0CB`
+- `RiskEngineXStocksReverse (token0 = USDC)`: `0x0000000000000f3fb82469581A74776178E76Ca4`
+- `PanopticPool (V4 impl)` (reference implementation - each PanopticPool is a proxy to this): `0x000000000000135429F0DaCaB61639Bf6a63EbbC`
+- `PanopticPool (V3 impl)` (reference implementation - each PanopticPool is a proxy to this): `0x000000000000155f9860E155A779992Cde7E7449`
+- `CollateralTracker` (reference implementation - each CollateralTracker is a proxy to this): `0x0000000000001d9c38CA405A2e04420865A08A33`
+- `PanopticFactoryV4`: `0x0000000000000c51d0f8cf4bd9adE7191372a625`
+- `PanopticFactoryV3`: `0x0000000000000aDC9A108591e718F2aee963a2a7`
+- `PanopticMath`: `0x000000000000334bbd65C195581cf59ECf315932`
+- `InteractionHelper`: `0x00000000000041fe14Ce3c2392337CE501aE8328`
+- `PanopticQuery`: `0x0000000000000e1aE9c66C1c3B0A547D23389C93`
 
 ## v1.1
 
