@@ -46,6 +46,13 @@
   border-radius: 8px;
 }
 
+/* Italic caption directly under an inline image — match the image's width */
+.blog-page-content p:has(> img + em) > em {
+  display: block;
+  max-width: min(100%, 640px);
+  margin-inline: auto;
+}
+
 .blog-page-featured-tag-container {
   margin: 0px 60px 16px 60px;
   max-width: 1280px;
