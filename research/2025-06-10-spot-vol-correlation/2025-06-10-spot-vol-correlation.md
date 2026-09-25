@@ -42,7 +42,7 @@ We elected to trade on our view of underlying spot-vol correlation and maximize 
 
   
 
-15-delta calls are assigned positive vanna with 15-delta puts being assigned negative vanna, so 15-delta positive risk reversals will theoretically benefit from extremes in positive spot-vol correlation, while 15-delta negative risk reversals will reap the rewards of extremes in negative spot-vol correlation. Per standard prescription of [volatility skew](https://predictingalpha.com/volatility-skew/), the intuitive reasoning behind these vanna designations being that the IV for call options rises as the underlying price rises, but the IV for put options conversely rises as the underlying price decreases.
+15-delta calls are assigned positive vanna with 15-delta puts being assigned negative vanna, so 15-delta positive risk reversals will theoretically benefit from extremes in positive spot-vol correlation, while 15-delta negative risk reversals will reap the rewards of extremes in negative spot-vol correlation. Per standard prescription of [volatility skew](https://optionalpha.com/learn/skew), the intuitive reasoning behind these vanna designations being that the IV for call options rises as the underlying price rises, but the IV for put options conversely rises as the underlying price decreases.
 
   
 
