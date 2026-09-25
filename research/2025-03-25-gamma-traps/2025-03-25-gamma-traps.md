@@ -13,7 +13,7 @@ In recent decades, options trading strategies capitalizing on volatility suppres
 
   
 
-One notable example is the infamous [Black Monday](https://caia.org/sites/default/files/03_volatility_4-2-18.pdf) event of 1987, when the S&P 500 plummeted over 20% in a single trading session. Analysts today widely attribute this dramatic crash to the widespread use of [portfolio insurance](https://www.amazon.com/Demon-Our-Own-Design-Innovation/dp/0470393750)—a hedging strategy that functions like a rolling stop-loss mechanism, systematically selling index futures as underlying prices fall, thereby exacerbating downward pressure.
+One notable example is the infamous [Black Monday](https://docsend.com/view/2b34894bzsaqsbcx) event of 1987, when the S&P 500 plummeted over 20% in a single trading session. Analysts today widely attribute this dramatic crash to the widespread use of [portfolio insurance](https://www.amazon.com/Demon-Our-Own-Design-Innovation/dp/0470393750)—a hedging strategy that functions like a rolling stop-loss mechanism, systematically selling index futures as underlying prices fall, thereby exacerbating downward pressure.
 
 A more recent scenario unfolded in early 2021 with the GameStop (GME) saga. As GameStop's stock price surged, institutions with short [Out-of-The-Money](/docs/product/moneyness#introduction) (OTM) call positions were compelled to buy large amounts of the underlying stock to hedge their exposure. This hedging activity, in turn, pushed prices even higher, creating an accelerating feedback loop.
 
