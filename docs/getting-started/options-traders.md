@@ -8,21 +8,20 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Options Traders
 
-Options Traders can leverage Panoptic's full-featured platform through its advanced trading interface. Users can buy and sell capital-efficient, multi-legged options strategies on any token at any strike price. 
+Panoptic lets traders buy and sell perpetual options and combine legs into strategies. Available trades depend on the underlying AMM pool, its liquidity, valid tick ranges, and the account's collateral.
 
-## Why Trade Options on Panoptic?
+## Trading on Panoptic
 
-Panoptic offers the full flexibility that options traders are familiar with, without sacrificing liquidity. Here is how Panoptic avoids restrictions pervasive in DeFi options:
+- **Perpetual positions**: Positions have no scheduled expiry, but streaming premia, borrow interest, liquidation, and forced exercise can affect how long they remain open.
+- **Market and strike selection**: Permissionless deployment does not guarantee that every asset pair is supported by the interface. Strikes and widths follow the pool's tick grid and position-encoding constraints; sizes must satisfy liquidity and collateral checks.
+- **Multi-leg strategies**: Combine calls, puts, loans, and credits where supported. Risk-partner configuration and the pool's RiskEngine determine collateral treatment, so a strategy label alone does not establish its margin requirement.
+- **Risk monitoring**: Use portfolio balances, buying-power usage, price exposure, and simulations to assess a trade. A displayed maximum or a successful simulation can change before execution.
 
-- **Supports large sized trades**: Panoptic enables unlimited selling of options. When there are no buyers, sellers are still compensated through Uniswap trading fees. Perpetual options remove expiries to consolidate liquidity. Panoptic renders OTC options on longtail assets obsolete since Panoptic is oracle-free and enables immediate listing of any asset pair.
-- **Keeps variety without losing liquidity**: Traders can sell options at any strike price without limitation. Traders can choose whether to buy or sell options, which strike to underwrite, what type of option to trade (put, call, or any multi-leg combination), with full capital efficiency.
-- **Ability to define your risk exposure**: Liquidity provision in Panoptic is separate from options selling. Users can choose between passive provision (no delta risk) and active option selling (has delta risk). Options sellers are equipped with risk management tools on Panoptic such as P&L visualization, [health meters](/docs/product/liquidations#liquidations-and-buying-power-usage), and Greeks calculations.
-- **Capital Efficient**: Panoptic implements dynamic [collateral requirements](/docs/product/collateral-and-buying-power#collateral-requirements), liquidity-based [spreads](/docs/product/spread), and [force exercises](/docs/product/force-exercise) in order to ensure funds are efficiently used.
+## Capital efficiency
 
-## Key Features of Options Trading on Panoptic
-1. **Any Token, Any Strike**: Trade options on any ERC-20 token or native asset at any strike price, powered by the permissionless nature of Panoptic and Uniswap.
-2. **Multi-Leg Strategies**: Create [sophisticated strategies](/research/essential-options-strategies-to-know) like straddles, spreads, iron condors, jade lizards, and more in just one click.
-3. **Leverage**: Buy options with up to 10x leverage, and sell options with up to 5x leverage.
+There is no single leverage limit that applies to every trade. Required collateral depends on the engine, position type, utilization, price, and the rest of the portfolio. Read the [protocol parameters](/docs/contracts/parameters) and [collateral guide](/docs/panoptic-protocol/V2/collateral-overview), and distinguish borrow interest from streaming option premia.
+
+Passive collateral lending and selling options are different activities with different exposures. Neither removes smart-contract, asset, or protocol-loss risk. See [trading risks](/docs/panoptic-protocol/risks) before opening a position.
 
 ## Start Trading Options on Panoptic
 Ready to explore the full potential of options trading? Visit our [app](https://app.panoptic.xyz) to start trading with the flexibility, capital efficiency, and risk management you need to succeed in DeFi.

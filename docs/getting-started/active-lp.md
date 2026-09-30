@@ -9,21 +9,21 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Liquidity Providers (LPs)
 
-If you're a liquidity provider (LP) looking to maximize your returns, mitigate risks, and unlock new earning opportunities, you’re in the right place. Panoptic empowers LPs with tools that transform your LP positions, making it easier to earn more while managing your risks.
+If you're a liquidity provider (LP) looking to maximize your returns, mitigate risks, and unlock new earning opportunities, you’re in the right place. Panoptic offers tools to manage LP positions alongside option and borrowing exposures. Active LP positions remain exposed to price changes and can require additional collateral.
 
 ## Why Choose Panoptic?
-- **Higher Earnings**: By [migrating](/docs/product/uniswap-lps/migrate) to Panoptic, you can earn up to [3x more](/docs/product/spread) in fees compared to traditional LPing on Uniswap. Our innovative staking model allows you to generate additional yield on your LP tokens.
+- **Additional premium income**: Positions opened through Panoptic can receive streaming premia when buyers use their liquidity. Income depends on utilization, AMM activity, and the position range; it is not a fixed multiple of Uniswap fees. Borrow interest, commissions, and price exposure also affect returns.
 - **Enhanced Risk Management**: Manage and monitor your position with a [visual dashboard](https://app.panoptic.xyz) that provides insights into profit, loss, and risk factors, helping you make informed decisions.
 - **Flexible Strategies**: Whether you’re bullish, bearish, or prefer delta-neutral positions, Panoptic opens up a [range of strategies](/research/essential-options-strategies-to-know) to suit your style. With tools including the ability to [short LP positions](/blog/turning-impermanent-loss-into-gain#shorting-lp-tokens-for-impermanent-gain), you’re no longer limited by the impermanent loss risks of standard LPing.
 
 ## How Does It Work?
 1. **Migrate Your LP Position**: To stake Uniswap positions in Panoptic, follow our [migration guide](/docs/product/uniswap-lps/migrate).
 2. **Open a New Position**: If you'd like to create a new Uniswap position through Panoptic, head to our [app](https://app.panoptic.xyz) to [open](/docs/product/opening-a-position) a position.
-3. **Earn Additional Yield**: Panoptic [lends](https://panoptic.xyz/blog/turning-impermanent-loss-into-gain#increased-revenue-from-lending-lp-tokens) out your LP tokens to options buyers, generating additional income beyond Uniswap fees.
+3. **Potential Additional Yield**: Positions may earn streaming premia when options buyers use their liquidity. Yield depends on liquidity use, utilization, AMM activity, and position range; additional income is not guaranteed.
 4. **Monitor and Manage**: Use Panoptic’s tools to [track](/docs/product/position-management) your position’s profit, loss, and risk factors in real-time. Adjust or [close](/docs/product/closing-a-position) your positions as needed.
 
-## Start Earning More Today
-Ready to get started? Visit our [app](https://app.panoptic.xyz) to begin earning more on your LP positions with Panoptic.
+## Manage Your LP Positions
+Visit our [app](https://app.panoptic.xyz) to open, monitor, and manage your LP positions with Panoptic.
 
 <iframe
   src="https://www.youtube.com/embed/O9JsvAaLA6g?si=-a-APtjjlE4PEQXR"

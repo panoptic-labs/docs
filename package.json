@@ -7,15 +7,26 @@
     "generate:recent": "node generateRecentUpdates.js",
     "prestart": "pnpm generate:recent",
     "start": "docusaurus start",
-    "prebuild": "pnpm generate:recent",
+    "prebuild": "pnpm generate:recent && pnpm check:risk-tables",
     "build": "docusaurus build",
-    "graphql-markdown": "graphql-markdown https://api.goldsky.com/api/public/project_cl9gc21q105380hxuh8ks53k3/subgraphs/panoptic-subgraph-sepolia/v2_prod/gn > ./docs/subgraph/schema.md && node ./scripts/gen-subgraph-docs.js",
+    "graphql-markdown": "node ./scripts/gen-subgraph-docs.js",
+    "test:subgraph": "node ./scripts/check-subgraph-docs.js",
+    "lint:subgraph": "prettier --check scripts/gen-subgraph-docs.js scripts/check-subgraph-docs.js",
+    "format:subgraph": "prettier --write scripts/gen-subgraph-docs.js scripts/check-subgraph-docs.js",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids"
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "refresh:risk-engines": "node scripts/refresh-risk-engines.mjs && pnpm format:risk-data && pnpm generate:risk-tables",
+    "generate:risk-tables": "node scripts/generate-risk-tables.mjs",
+    "check:risk-tables": "node scripts/generate-risk-tables.mjs --check",
+    "test": "node --test scripts/*.test.mjs && pnpm check:risk-tables",
+    "lint": "prettier --check \"scripts/*.mjs\" \"static/data/risk-engines.json\"",
+    "format:risk-data": "prettier --write \"scripts/*.mjs\" \"static/data/risk-engines.json\"",
+    "generate:contracts": "node scripts/generate-contracts.mjs",
+    "postbuild": "node scripts/verify-build.mjs"
   },
   "dependencies": {
     "@docsearch/react": "3.9.0",
@@ -69,6 +80,8 @@
     "@docusaurus/module-type-aliases": "2.4.1",
     "graphql": "^16.0.0",
     "graphql-markdown": "^7.0.0",
+    "prettier": "3.7.3",
+    "viem": "2.41.2",
     "webpack": "5.103.0"
   },
   "browserslist": {

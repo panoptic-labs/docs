@@ -1,5 +1,8 @@
 # IRiskEngine
-[Git Source](https://github.com/panoptic-labs/panoptic-next-core-private/blob/8cb6912a84b43ed5df88c9b5bd34535204453dc5/contracts/interfaces/IRiskEngine.sol)
+
+> Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
+
+[Git Source](https://github.com/panoptic-labs/panoptic-v2-core/blob/e3b9d125f929a5a8c7220ec6467613686939edae/contracts/interfaces/IRiskEngine.sol)
 
 **Title:**
 Panoptic Risk Engine Interface
@@ -80,19 +83,217 @@ Address allowed to override the automatically computed safe mode.
 function GUARDIAN() external view returns (address);
 ```
 
+### BUILDER_FACTORY
+
+Address of the builder factory.
+
+
+```solidity
+function BUILDER_FACTORY() external view returns (address);
+```
+
+### DECIMALS
+
+Decimals for computation (1 millitick precision).
+
+
+```solidity
+function DECIMALS() external view returns (uint256);
+```
+
+### EMA_PERIODS
+
+Packed EMA periods for spot, fast, and slow EMAs.
+
+
+```solidity
+function EMA_PERIODS() external view returns (uint96);
+```
+
+### MAX_TICKS_DELTA
+
+The maximum allowed cumulative delta between oracle ticks.
+
+
+```solidity
+function MAX_TICKS_DELTA() external view returns (int256);
+```
+
+### MAX_TWAP_DELTA_DISPATCH
+
+The maximum allowed delta between the currentTick and the Uniswap TWAP tick during dispatch.
+
+
+```solidity
+function MAX_TWAP_DELTA_DISPATCH() external view returns (uint16);
+```
+
+### MAX_SPREAD
+
+The maximum spread for long premium calculations.
+
+
+```solidity
+function MAX_SPREAD() external view returns (uint24);
+```
+
+### BP_DECREASE_BUFFER
+
+Multiplier for the collateral requirement during buying power decrease.
+
+
+```solidity
+function BP_DECREASE_BUFFER() external view returns (uint32);
+```
+
+### MAX_CLAMP_DELTA
+
+The maximum amount of change, in ticks, permitted between internal median updates.
+
+
+```solidity
+function MAX_CLAMP_DELTA() external view returns (int24);
+```
+
+### NOTIONAL_FEE
+
+The notional fee, in basis points, collected from PLPs at option mint.
+
+
+```solidity
+function NOTIONAL_FEE() external view returns (uint16);
+```
+
+### PREMIUM_FEE
+
+The premium fee, in basis points, collected from the premium paid/received.
+
+
+```solidity
+function PREMIUM_FEE() external view returns (uint16);
+```
+
+### PROTOCOL_SPLIT
+
+The protocol split, in basis points, when a builder code is present.
+
+
+```solidity
+function PROTOCOL_SPLIT() external view returns (uint16);
+```
+
+### BUILDER_SPLIT
+
+The builder split, in basis points, when a builder code is present.
+
+
+```solidity
+function BUILDER_SPLIT() external view returns (uint16);
+```
+
+### SELLER_COLLATERAL_RATIO
+
+Required collateral ratio for selling options, scaled by 10_000_000.
+
+
+```solidity
+function SELLER_COLLATERAL_RATIO() external view returns (uint256);
+```
+
+### BUYER_COLLATERAL_RATIO
+
+Required collateral ratio for buying options, scaled by 10_000_000.
+
+
+```solidity
+function BUYER_COLLATERAL_RATIO() external view returns (uint256);
+```
+
+### MAINT_MARGIN_RATE
+
+Required collateral margin for loans in excess of notional, scaled by 10_000_000.
+
+
+```solidity
+function MAINT_MARGIN_RATE() external view returns (uint256);
+```
+
+### FORCE_EXERCISE_COST
+
+Basal exercise-cost coefficient applied when at least one long leg is in range; fully out-of-the-money positions use `ONE_BPS` instead. Scaled by `10_000_000`.
+
+
+```solidity
+function FORCE_EXERCISE_COST() external view returns (uint256);
+```
+
+### TARGET_POOL_UTIL
+
+Target pool utilization below which buying+selling is optimal, scaled by 10_000_000.
+
+
+```solidity
+function TARGET_POOL_UTIL() external view returns (uint256);
+```
+
+### SATURATED_POOL_UTIL
+
+Pool utilization above which selling is 100% collateral backed, scaled by 10_000_000.
+
+
+```solidity
+function SATURATED_POOL_UTIL() external view returns (uint256);
+```
+
+### CROSS_BUFFER_0
+
+Cross buffer parameter for token0.
+
+
+```solidity
+function CROSS_BUFFER_0() external view returns (uint256);
+```
+
+### CROSS_BUFFER_1
+
+Cross buffer parameter for token1.
+
+
+```solidity
+function CROSS_BUFFER_1() external view returns (uint256);
+```
+
+### MAX_OPEN_LEGS
+
+Maximum number of open legs allowed.
+
+
+```solidity
+function MAX_OPEN_LEGS() external view returns (uint256);
+```
+
+### MAX_BONUS
+
+Max raw per-token bonus rate during liquidations (currently 20% of required)
+
+
+```solidity
+function MAX_BONUS() external view returns (uint256);
+```
+
 ### lockPool
 
 Forces a PanopticPool into locked safe mode.
 
 
 ```solidity
-function lockPool(PanopticPool pool) external;
+function lockPool(PanopticPoolV2 pool) external;
 ```
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`pool`|`PanopticPool`|The PanopticPool to lock.|
+|`pool`|`PanopticPoolV2`|The PanopticPool to lock.|
 
 
 ### unlockPool
@@ -101,13 +302,13 @@ Removes the forced safe-mode lock on a PanopticPool.
 
 
 ```solidity
-function unlockPool(PanopticPool pool) external;
+function unlockPool(PanopticPoolV2 pool) external;
 ```
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`pool`|`PanopticPool`|The PanopticPool to unlock.|
+|`pool`|`PanopticPoolV2`|The PanopticPool to unlock.|
 
 
 ### collect
@@ -153,8 +354,8 @@ function getRefundAmounts(
     address payor,
     LeftRightSigned fees,
     int24 atTick,
-    CollateralTracker ct0,
-    CollateralTracker ct1
+    CollateralTrackerV2 ct0,
+    CollateralTrackerV2 ct1
 ) external view returns (LeftRightSigned);
 ```
 **Parameters**
@@ -164,8 +365,8 @@ function getRefundAmounts(
 |`payor`|`address`|The address of the user being exercised/settled|
 |`fees`|`LeftRightSigned`|If applicable, fees to debit from caller (rightSlot = currency0 left = currency1), 0 for `settleLongPremium`|
 |`atTick`|`int24`|The tick at which to convert between currency0/currency1 when redistributing the surplus tokens|
-|`ct0`|`CollateralTracker`|The collateral tracker for currency0|
-|`ct1`|`CollateralTracker`|The collateral tracker for currency1|
+|`ct0`|`CollateralTrackerV2`|The collateral tracker for currency0|
+|`ct1`|`CollateralTrackerV2`|The collateral tracker for currency1|
 
 **Returns**
 
@@ -182,7 +383,7 @@ Get the cost of exercising an option. Used during a forced exercise.
 ```solidity
 function exerciseCost(int24 currentTick, int24 oracleTick, TokenId tokenId, PositionBalance positionBalance)
     external
-    view
+    pure
     returns (LeftRightSigned exerciseFees);
 ```
 **Parameters**
@@ -212,7 +413,8 @@ function getLiquidationBonus(
     LeftRightUnsigned tokenData1,
     uint160 atSqrtPriceX96,
     LeftRightSigned netPaid,
-    LeftRightUnsigned shortPremium
+    LeftRightUnsigned shortPremium,
+    LeftRightUnsigned creditAmounts
 ) external pure returns (LeftRightSigned, LeftRightSigned);
 ```
 **Parameters**
@@ -224,13 +426,14 @@ function getLiquidationBonus(
 |`atSqrtPriceX96`|`uint160`|The oracle price used to swap tokens between the liquidator/liquidatee and determine solvency for the liquidatee|
 |`netPaid`|`LeftRightSigned`|The net amount of tokens paid/received by the liquidatee to close their portfolio of positions|
 |`shortPremium`|`LeftRightUnsigned`|Total owed premium (prorated by available settled tokens) across all short legs being liquidated|
+|`creditAmounts`|`LeftRightUnsigned`|The net credit amounts. Used to make adjustments to the balance amount to avoid double-counting credits|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`LeftRightSigned`|The LeftRight-packed bonus amounts to be paid to the liquidator for both tokens|
-|`<none>`|`LeftRightSigned`|The LeftRight-packed protocol loss (pre-haircut) for both tokens|
+|`<none>`|`LeftRightSigned`|The LeftRight-packed bonus amounts to be paid to the liquidator for both tokens (may be negative)|
+|`<none>`|`LeftRightSigned`|The LeftRight-packed collateral remaining after liquidation costs and bonus; negative slots represent protocol loss before premia haircut|
 
 
 ### haircutPremia
@@ -240,20 +443,19 @@ Haircut/clawback any premium paid by `liquidatee` on `positionIdList` over the p
 
 ```solidity
 function haircutPremia(
-    address liquidatee,
     TokenId[] memory positionIdList,
     LeftRightSigned[4][] memory premiasByLeg,
     LeftRightSigned collateralRemaining,
     uint160 atSqrtPriceX96
 )
     external
+    pure
     returns (LeftRightSigned bonusDeltas, LeftRightUnsigned haircutTotal, LeftRightSigned[4][] memory haircutPerLeg);
 ```
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`liquidatee`|`address`|The address of the user being liquidated|
 |`positionIdList`|`TokenId[]`|The list of position ids being liquidated|
 |`premiasByLeg`|`LeftRightSigned[4][]`|The premium paid (or received) by the liquidatee for each leg of each position|
 |`collateralRemaining`|`LeftRightSigned`|The remaining collateral after the liquidation (negative if protocol loss)|
@@ -440,8 +642,8 @@ function isAccountSolvent(
     address user,
     LeftRightUnsigned shortPremia,
     LeftRightUnsigned longPremia,
-    CollateralTracker ct0,
-    CollateralTracker ct1,
+    CollateralTrackerV2 ct0,
+    CollateralTrackerV2 ct1,
     uint256 buffer
 ) external view returns (bool);
 ```
@@ -455,8 +657,8 @@ function isAccountSolvent(
 |`user`|`address`|The account to check collateral/margin health for|
 |`shortPremia`|`LeftRightUnsigned`|The total amount of premium owed to the short legs of `user`|
 |`longPremia`|`LeftRightUnsigned`|The total amount of premium owed by the long legs of `user`|
-|`ct0`|`CollateralTracker`|The Address of the CollateralTracker for token0|
-|`ct1`|`CollateralTracker`|The Address of the CollateralTracker for token1|
+|`ct0`|`CollateralTrackerV2`|The Address of the CollateralTracker for token0|
+|`ct1`|`CollateralTrackerV2`|The Address of the CollateralTracker for token1|
 |`buffer`|`uint256`|The buffer to apply to the collateral requirement|
 
 **Returns**
@@ -479,8 +681,8 @@ function getMargin(
     TokenId[] calldata positionIdList,
     LeftRightUnsigned shortPremia,
     LeftRightUnsigned longPremia,
-    CollateralTracker ct0,
-    CollateralTracker ct1
+    CollateralTrackerV2 ct0,
+    CollateralTrackerV2 ct1
 )
     external
     view
@@ -496,8 +698,8 @@ function getMargin(
 |`positionIdList`|`TokenId[]`|The list of all option positions held by `user`|
 |`shortPremia`|`LeftRightUnsigned`|Total short premia owed to `user`|
 |`longPremia`|`LeftRightUnsigned`|Total long premia owed by `user`|
-|`ct0`|`CollateralTracker`|CollateralTracker for token0|
-|`ct1`|`CollateralTracker`|CollateralTracker for token1|
+|`ct0`|`CollateralTrackerV2`|CollateralTracker for token0|
+|`ct1`|`CollateralTrackerV2`|CollateralTracker for token1|
 
 **Returns**
 
@@ -506,6 +708,33 @@ function getMargin(
 |`tokenData0`|`LeftRightUnsigned`|LeftRightUnsigned for token0 with left = maintenance requirement, right = available balance|
 |`tokenData1`|`LeftRightUnsigned`|LeftRightUnsigned for token1 with left = maintenance requirement, right = available balance|
 |`globalUtilizations`|`PositionBalance`|The max utilizations encountered in the position set|
+
+
+### getPerPositionCollateralRequirements
+
+Get the collateral requirement for each individual position in a list.
+
+
+```solidity
+function getPerPositionCollateralRequirements(
+    PositionBalance[] calldata positionBalanceArray,
+    TokenId[] calldata positionIdList,
+    int24 atTick
+) external pure returns (LeftRightUnsigned[] memory collateralRequirements);
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`positionBalanceArray`|`PositionBalance[]`|The list of all open positions, stored as `[balance/poolUtilizationAtMint, ...]`|
+|`positionIdList`|`TokenId[]`|The list of all option positions|
+|`atTick`|`int24`|The tick at which to evaluate positions|
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`collateralRequirements`|`LeftRightUnsigned[]`|Net collateral required per position `[requirement_0, requirement_1, ...]`|
 
 
 ### interestRate
@@ -565,6 +794,30 @@ Returns the stored VEGOID parameter
 function vegoid() external view returns (uint8);
 ```
 
+### crossBufferRatio
+
+Get the cross buffer ratio for a given utilization.
+
+This is computed using the global utilization of the user.
+
+
+```solidity
+function crossBufferRatio(int256 utilization, uint256 crossBuffer) external view returns (uint256);
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`utilization`|`int256`|The pool utilization of this collateral vault at the time the position is minted|
+|`crossBuffer`|`uint256`|The cross buffer parameter|
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`<none>`|`uint256`|The cross buffer ratio at `utilization`|
+
+
 ## Events
 ### BorrowRateUpdated
 Emitted when a borrow rate is updated.
@@ -603,4 +856,3 @@ event GuardianSafeModeUpdated(bool lockMode);
 |Name|Type|Description|
 |----|----|-----------|
 |`lockMode`|`bool`|True when safe mode is forcibly locked, false when the lock is lifted.|
-

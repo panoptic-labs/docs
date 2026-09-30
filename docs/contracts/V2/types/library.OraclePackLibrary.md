@@ -1,5 +1,8 @@
 # OraclePackLibrary
-[Git Source](https://github.com/panoptic-labs/panoptic-next-core-private/blob/8cb6912a84b43ed5df88c9b5bd34535204453dc5/contracts/types/OraclePack.sol)
+
+> Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
+
+[Git Source](https://github.com/panoptic-labs/panoptic-v2-core/blob/e3b9d125f929a5a8c7220ec6467613686939edae/contracts/types/OraclePack.sol)
 
 **Title:**
 A Panoptic OraclePack. Tracks a set of 8 price observations, 4 EMAs, and a timestamp to compute the internal oracle price(s)
@@ -26,7 +29,7 @@ uint256 internal constant BITMASK_UINT88 = 0xFFFFFFFFFFFFFFFFFFFFFF
 ### UPPER_138BITS_MASK
 
 ```solidity
-uint256 internal constant UPPER_138BITS_MASK = ~(uint256(1 << 138) - 1)
+uint256 internal constant UPPER_138BITS_MASK = ~(uint256(1 << 118) - 1)
 ```
 
 
@@ -746,5 +749,3 @@ function rebaseOraclePack(OraclePack oraclePack)
 |----|----|-----------|
 |`_newReferenceTick`|`int24`|The new reference tick (set to the current median)|
 |`rebasedOraclePack`|`OraclePack`|The updated median data structure with: - New reference tick set to the current median - All residuals recalculated relative to the new reference - All other data (order map, EMAs, epoch) preserved|
-
-

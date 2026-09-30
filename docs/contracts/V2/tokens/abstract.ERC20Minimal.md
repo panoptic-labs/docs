@@ -1,5 +1,8 @@
 # ERC20Minimal
-[Git Source](https://github.com/panoptic-labs/panoptic-next-core-private/blob/8cb6912a84b43ed5df88c9b5bd34535204453dc5/contracts/tokens/ERC20Minimal.sol)
+
+> Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
+
+[Git Source](https://github.com/panoptic-labs/panoptic-v2-core/blob/e3b9d125f929a5a8c7220ec6467613686939edae/contracts/tokens/ERC20Minimal.sol)
 
 **Title:**
 Minimal efficient ERC20 implementation without metadata
@@ -195,4 +198,3 @@ event Approval(address indexed owner, address indexed spender, uint256 amount);
 |`owner`|`address`|The user who approved the spender|
 |`spender`|`address`|The user who was approved to spend tokens|
 |`amount`|`uint256`|The amount of tokens approved to spend|
-

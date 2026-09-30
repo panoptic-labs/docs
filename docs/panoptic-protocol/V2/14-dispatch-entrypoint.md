@@ -117,7 +117,7 @@ OraclePack oraclePack = _validateSolvency(
 if (OraclePack.unwrap(oraclePack) != 0) s_oraclePack = oraclePack;
 ```
 
-The `bpDecreaseBuffer` (133.33%) ensures users maintain extra margin after operations that could decrease their buying power.
+The engine's `bpDecreaseBuffer` adds margin for applicable actions. Read its verified value on the [per-engine parameter page](/docs/contracts/parameters); it is not a universal fixed percentage.
 
 ---
 

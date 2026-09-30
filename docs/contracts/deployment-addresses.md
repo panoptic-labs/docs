@@ -8,6 +8,8 @@ PanopticPools and CollateralTrackers are [proxy contracts](https://info.ethersca
 
 ## v2
 
+The active RiskEngine configurations below are documented [per engine](/docs/contracts/parameters), with chain-specific block and bytecode evidence. Read a pool's `riskEngine()` to select its configuration. Deprecated engines are not listed as current configurations.
+
 ### Ethereum Mainnet
 
 #### Vaults
@@ -30,7 +32,9 @@ PanopticPools and CollateralTrackers are [proxy contracts](https://info.ethersca
 - `PanopticPool (V3 impl)` (reference implementation - each PanopticPool is a proxy to this): `0x000000000000155f9860E155A779992Cde7E7449`
 - `CollateralTracker` (reference implementation - each CollateralTracker is a proxy to this): `0x0000000000001d9c38CA405A2e04420865A08A33`
 - `BuilderFactory`: `0x0000000000000a3D22E158417AA639D7F71b0FF7`
-- `RiskEngine`: `0x000000000000075E29Cdaa9cb640A69e148ca7da`
+- `RiskEngine (crypto blue chip)`: `0x000000000000075E29Cdaa9cb640A69e148ca7da`
+- `RiskEngineXStocks`: `0x0000000000000fE1E261f66ce2F44def4F5Ae0CB`
+- `RiskEngineXStocksReverse (inverted token ordering)`: `0x0000000000000f3fb82469581A74776178E76Ca4`
 - `PanopticQuery`: `0x0000000000000e1aE9c66C1c3B0A547D23389C93`
 - `InteractionHelper`: `0x00000000000041fe14Ce3c2392337CE501aE8328`
 - `PanopticMath`: `0x000000000000334bbd65C195581cf59ECf315932`
@@ -51,9 +55,9 @@ PanopticPools and CollateralTrackers are [proxy contracts](https://info.ethersca
 - `SemiFungiblePositionManagerV4`: `0x00000000000005C3287f136Ef5AF56c68Ea6849f`
 - `SemiFungiblePositionManagerV3`: `0x00000000000005E4693aDc8Ec0f12D686f728198`
 - `BuilderFactory`: `0x0000000000000a3D22E158417AA639D7F71b0FF7`
-- `RiskEngine`: `0x000000000000075E29Cdaa9cb640A69e148ca7da`
-- `RiskEngineXStocks (token1 = USDC)`: `0x0000000000000fE1E261f66ce2F44def4F5Ae0CB`
-- `RiskEngineXStocksReverse (token0 = USDC)`: `0x0000000000000f3fb82469581A74776178E76Ca4`
+- `RiskEngine (crypto blue chip)`: `0x000000000000075E29Cdaa9cb640A69e148ca7da`
+- `RiskEngineXStocks`: `0x0000000000000fE1E261f66ce2F44def4F5Ae0CB`
+- `RiskEngineXStocksReverse (inverted token ordering)`: `0x0000000000000f3fb82469581A74776178E76Ca4`
 - `PanopticPool (V4 impl)` (reference implementation - each PanopticPool is a proxy to this): `0x000000000000135429F0DaCaB61639Bf6a63EbbC`
 - `PanopticPool (V3 impl)` (reference implementation - each PanopticPool is a proxy to this): `0x000000000000155f9860E155A779992Cde7E7449`
 - `CollateralTracker` (reference implementation - each CollateralTracker is a proxy to this): `0x0000000000001d9c38CA405A2e04420865A08A33`

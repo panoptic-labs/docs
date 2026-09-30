@@ -1,5 +1,8 @@
 # Errors
-[Git Source](https://github.com/panoptic-labs/panoptic-next-core-private/blob/8cb6912a84b43ed5df88c9b5bd34535204453dc5/contracts/libraries/Errors.sol)
+
+> Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
+
+[Git Source](https://github.com/panoptic-labs/panoptic-v2-core/blob/e3b9d125f929a5a8c7220ec6467613686939edae/contracts/libraries/Errors.sol)
 
 **Title:**
 Custom Errors library.
@@ -166,7 +169,7 @@ error NetLiquidityZero();
 ```
 
 ### NoLegsExercisable
-PanopticPool: None of the legs in a position are force-exercisable (they are all either short or ATM long)
+PanopticPool: None of the legs in a position are force-exercisable (they are all short or are credits/loans)
 
 
 ```solidity
@@ -181,8 +184,16 @@ PanopticPool: The leg is not long, so premium cannot be settled through `settleL
 error NotALongLeg();
 ```
 
+### ExecuteFailed
+BuilderWallet: an arbitrary call via execute() failed without a revert reason
+
+
+```solidity
+error ExecuteFailed();
+```
+
 ### NotBuilder
-builderWallet: can only be called by the Builder
+BuilderWallet: can only be called by the Builder
 
 
 ```solidity
@@ -376,4 +387,3 @@ PanopticMath: The supplied tokenId has no valid legs
 ```solidity
 error TokenIdHasZeroLegs();
 ```
-

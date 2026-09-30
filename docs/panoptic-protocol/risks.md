@@ -31,7 +31,7 @@ In the case of Panoptions and other decentralized finance (DeFi) platforms, smar
 
 *Applies to*: (F,P)
 
-*How to Mitigate*: It is important to use trusted and audited platforms and to monitor positions closely. The Panoptic protocol is audited to the highest security standards by leading blockchain security firms. This ensures that our smart contracts are secure and reliable to the best possible standard.
+*How to Mitigate*: It is important to use trusted and audited platforms and to monitor positions closely. Review the [audit reports](/docs/security/security_audits), their scope, and the deployed version. Audits can identify issues but do not guarantee security or protect deposits against loss.
 
 ### Margin Call and Liquidation Risk
 Margin calls occur when a trader's margin account falls below the minimum maintenance margin (buying power requirement) required by the broker (protocol). This can happen when losses in the position exceed the amount of collateral in the account. Margin calls can result in forced liquidations or the need to deposit additional funds into the account. Positions in Panoptic can quickly become liquidatable from large price swings in the underlying AMM pool price.
@@ -55,7 +55,7 @@ Option sellers face the risk of losing more than the premium received if the pos
 *How to Mitigate*: To mitigate the risk of being assigned an exercise notice, it is important to monitor short options positions closely and be prepared to adjust or close the position if needed. Selling options with defined risk strategies such as spreads or iron condors can also help mitigate risk.
 
 ### Panoptic Liquidity Provider Risks:
-Panoptic liquidity providers (PLPs) face the risk of losing (potentially all) funds due to protocol insolvency. Although the Panoptic protocol will be secured by a network of keepers and liquidation bots, an extreme price swing or unexpected market events may cause the liquidation network to fail, resulting in PLPs losing funds due to protocol insolvency.  
+Panoptic liquidity providers (PLPs) face the risk of losing (potentially all) funds due to protocol insolvency. Liquidation depends on timely, economically viable transactions. Extreme price movements, limited liquidity, or chain disruption can leave losses after liquidation and reduce the value recoverable by PLPs.
 
 PLPs also face the risk of being unable to exit a position due to insufficient liquidity in the Panoptic pool which occurs during high pool utilization.
 
@@ -66,14 +66,14 @@ PLPs also face the risk of being unable to exit a position due to insufficient l
 Choosing to deposit liquidity into pools where the underlying AMM is more liquid and price is harder to manipulate can mitigate loss of funds from protocol insolvency caused by sudden price movements. Choosing to deposit liquidity into Panoptic pools which are more liquid can mitigate the risk of being unable to withdraw deposits due to high pool utilization. Monitoring market conditions and staying informed about news and events that could impact the underlying asset's price can also help mitigate risk.
 
 ### Out-of-range Risk
-Panoptions are created by **rearranging** liquidity in a Uniswap V3 pool. In particular, this means that Panoptions are subject to a price *range*, where the position collects fees if the underlying asset's price is in range. For very tight ranges or very volatile or drift-driven assets, the risk of having the price leave the range (causing the option seller to no longer accumulate premia) is more significant.
+Panoptions are created by **rearranging** liquidity in a compatible Uniswap v3 or v4 pool. In particular, this means that Panoptions are subject to a price *range*, where the position collects fees if the underlying asset's price is in range. For very tight ranges or very volatile or drift-driven assets, the risk of having the price leave the range (causing the option seller to no longer accumulate premia) is more significant.
 
 *Applies to*: (P)
 
 *How to Mitigate*: To mitigate out-of-range risk, closely monitor and close your position to protect your capital. Stay informed about news and events that could impact the underlying asset's price.
 
 ### In-range Risk
-Panoptions are created by **rearranging** liquidity in a Uniswap V3 pool. In particular, this means that Panoptions are subject to a price *range*, where the position collects fees if the underlying asset's price is in range. For very wide ranges, the price is likely to stay in range longer (causing the option buyer to accrue additional premia for longer periods of time). For very tight ranges, as long as the price stays in range, the amount of premia owed is amplified (causing the option buyer to accrue large amounts of premia).
+Panoptions are created by **rearranging** liquidity in a compatible Uniswap v3 or v4 pool. In particular, this means that Panoptions are subject to a price *range*, where the position collects fees if the underlying asset's price is in range. For very wide ranges, the price is likely to stay in range longer (causing the option buyer to accrue additional premia for longer periods of time). For very tight ranges, as long as the price stays in range, the amount of premia owed is amplified (causing the option buyer to accrue large amounts of premia).
 
 *Applies to*: (P)
 
@@ -96,7 +96,7 @@ Not all options are highly liquid, which can lead to higher “spreads” and di
 *How to Mitigate*: To ensure sufficient liquidity, focus on trading options with high open interest and trading volume. Liquid options have lower “spreads”, making entering long positions at desired prices easier.
 
 ### Forced Exercise Risk
-For Panoptions, there is a risk that a long option position may be forced to close due to an external party exercising the option. Anyone can force a long option position to be closed by paying a fee proportional to the moneyness of the long option, and the long option holder receives the fee.
+For Panoptions, there is a risk that a long option position may be forced to close due to an external party exercising the option. Third parties can force eligible positions to close under the protocol's exercise and solvency rules. Costs depend on the position and prices; see the [v2 exercise guide](/docs/panoptic-protocol/V2/exercise-cost).
 
 *Applies to*: (P)
 

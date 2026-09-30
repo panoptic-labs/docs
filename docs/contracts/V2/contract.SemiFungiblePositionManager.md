@@ -1,11 +1,14 @@
 ---
 sidebar_position: 1
 ---
-# SemiFungiblePositionManager
-[Git Source](https://github.com/panoptic-labs/panoptic-next-core-private/blob/8cb6912a84b43ed5df88c9b5bd34535204453dc5/contracts/SemiFungiblePositionManager.sol)
+# SemiFungiblePositionManagerV3
+
+> Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
+
+[Git Source](https://github.com/panoptic-labs/panoptic-v2-core/blob/e3b9d125f929a5a8c7220ec6467613686939edae/contracts/SemiFungiblePositionManagerV3.sol)
 
 **Inherits:**
-[ERC1155](/contracts/V2/tokens/abstract.ERC1155.md), [Multicall](/contracts/V2/base/abstract.Multicall.md), [TransientReentrancyGuard](/contracts/V2/libraries/abstract.TransientReentrancyGuard.md)
+[ERC1155](/docs/contracts/V2/tokens/abstract.ERC1155), [Multicall](/docs/contracts/V2/base/abstract.Multicall), [TransientReentrancyGuard](/docs/contracts/V2/libraries/abstract.TransientReentrancyGuard)
 
 **Title:**
 Semi-Fungible Position Manager (ERC1155) - a gas-efficient Uniswap V3 position manager.
@@ -891,4 +894,3 @@ event LiquidityChunkUpdated(
 |`tickLower`|`int24`|The lower tick of the liquidity chunk|
 |`tickUpper`|`int24`|The upper tick of the liquidity chunk|
 |`liquidityDelta`|`int128`|The signed change in liquidity (positive for additions, negative for removals)|
-

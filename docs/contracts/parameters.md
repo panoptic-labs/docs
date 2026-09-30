@@ -5,228 +5,206 @@ sidebar_label: "Protocol Parameters"
 
 # Protocol Parameters (V2)
 
-The parameters below describe the default economic and risk configuration enforced by the Panoptic V2 RiskEngine.
+V2 pools select an immutable RiskEngine at deployment. Read the pool's `riskEngine()` address before choosing a configuration below. These are the three active engines for Ethereum (chain 1) and Robinhood (chain 4663); deprecated engines are excluded.
 
-> For a given Panoptic V2 pool, all parameters are enforced by an immutable RiskEngine contract referenced at deployment time.
-> While these values are not stored as static constants, the logic producing them is immutable for the lifetime of the pool.
+The tables are generated from [block-pinned RPC observations](/data/risk-engines.json). Each snapshot checks the chain, deployed runtime, all listed getters, safe-mode boundaries, and cross-buffer behavior. The runtime is also compared with the result of executing the pinned public release's creation bytecode in a read-only `eth_call`. Source-reference pages describe a pinned public source revision; deployed parameters come from the snapshot, not repository defaults.
 
-## Collateral Parameters
+## How to interpret the parameters
 
-These parameters govern collateral requirements for option buyers and sellers.  
-Collateral requirements may vary based on pool utilization, token type, and oracle state.
+- Fee rates and fee splits use basis points: `10_000` = 100%.
+- Collateral ratios, cross buffers, the buying-power-decrease buffer (`BP_DECREASE_BUFFER`), and exercise-cost coefficients use `DECIMALS = 10_000_000`. The buffer applies to minting and collateral-withdrawal checks. A value of `10_666_667` multiplies the requirement by approximately 1.066667; it is not a fee. In the pinned implementation, force-exercise solvency checks in `dispatchFrom` use `NO_BUFFER` (`10_000_000`).
+- `MAX_SPREAD` uses a scale of `10_000` for removed liquidity divided by remaining liquidity. `VEGOID` is an integer controlling streaming-premium sensitivity.
+- `EMA_PERIODS` packs four 24-bit periods in seconds, ordered spot, fast, slow, eons. Interest rates use WAD (`10^18`) per second; these rates are not APYs or promises of lender returns.
+- `TARGET_POOL_UTIL` is the collateral utilization threshold; `TARGET_UTILIZATION` is the separately scaled interest-model target.
 
-### SELL_COLLATERAL_RATIO
-```text
-Default (baseline): 20%
-Effective range: 20% → 100%
-```
+### Collateral and token ordering
 
-Baseline collateral ratio required to sell an option, expressed as a percentage of the option’s notional value.
+The base seller ratio increases toward full collateralization above the collateral utilization target. The base buyer ratio is constant in these engines; final requirements still depend on position composition, price, and risk partners. `MAINT_MARGIN_RATE` is the additional maintenance margin used for loan legs. None of these base ratios is a universal maximum leverage promise.
 
-- Applies when pool utilization is below `TARGET_POOL_UTIL`
-- Increases linearly toward full collateralization as utilization approaches `SATURATED_POOL_UTIL`
-- Enforced dynamically by the RiskEngine
+`CROSS_BUFFER_0` and `CROSS_BUFFER_1` determine how surplus collateral can support a deficit in the other token. They are not the collateral ratios for opening positions. The effective cross buffer decreases linearly between 90% and 95% utilization and is zero above that range. The two stock engines swap these token-specific coefficients: choose the actual pool engine and token ordering rather than assuming a token symbol or quote asset.
 
+### Fees and builder routing
 
-### BUY_COLLATERAL_RATIO
-```text
-Default (baseline): 10%
-Minimum: 5%
-```
+Opening a position charges the notional fee on the sum of long and short amounts in each collateral token. Interest on borrowed tokens and streaming option premia are separate costs.
 
-Baseline collateral ratio required to buy an option.
+For a close with realized premium, the commission is the smaller of the premium-based fee and ten times the notional fee on the closing notional. A premium-only settlement with zero long and short notional uses the premium fee without that notional cap. The contracts round asset/share conversions; the premium-fee parameter alone does not determine the final amount charged.
 
-- Applies when pool utilization is below `TARGET_POOL_UTIL`
-- Decreases linearly as utilization increases
-- Reaches its minimum at `SATURATED_POOL_UTIL`
-- Designed to incentivize utilization-reducing positions during congestion
+With a valid nonzero builder code, the protocol and builder receive their configured shares of the calculated commission; the remainder is a user discount (currently 10%). With code zero, no builder wallet receives fees and commission share burning benefits collateral-vault shareholders. A nonzero code must resolve to a deployed builder wallet.
 
-### TARGET_POOL_UTIL
-```text
-Default: 50%
-```
+### Oracles, exercise, and liquidation
 
-Utilization inflection point for collateral logic.
+V2 uses internal AMM-derived price observations for risk checks. The automatic safe-mode conditions compare current vs spot EMA using `MAX_TICKS_DELTA`, and spot vs fast EMA and median vs slow EMA using half that threshold. The guardian lock adds three to the automatic score. See the [oracle guide](/docs/panoptic-protocol/V2/oracle-system) and [safe-mode guide](/docs/panoptic-protocol/V2/safe-mode) for behavior.
 
-- Below this value, baseline collateral ratios apply
-- Above this value:
-  - seller collateral requirements increase
-  - buyer collateral requirements decrease
+`FORCE_EXERCISE_COST` is a coefficient in a position- and price-dependent calculation, not a flat charge for every forced exercise. `MAX_BONUS` caps one component of liquidation compensation; final settlement also depends on collateral deficits, token balances, and potential protocol loss. Use the engine's calculation interfaces for an actual position.
 
-### SATURATED_POOL_UTIL
-```text
-Default: 90%
-```
+<!-- BEGIN GENERATED RISK ENGINE TABLES -->
 
-Utilization level at which:
-- sellers are required to post 100% collateral
-- buyers reach their minimum collateral requirement
+## Crypto blue chip {#crypto-blue-chip}
 
-This level maximally discourages additional borrowing while incentivizing utilization-reducing actions.
+Address: `0x000000000000075e29cdaa9cb640a69e148ca7da`.
 
-### BP_DECREASE_BUFFER
-```text
-Default: TBD (bps)
-```
+[Public source](https://github.com/panoptic-labs/panoptic-v2-core/blob/e3b9d125f929a5a8c7220ec6467613686939edae/contracts/RiskEngine.sol) · [Release artifact](https://github.com/panoptic-labs/panoptic-v2-core/blob/e3b9d125f929a5a8c7220ec6467613686939edae/deployment-info-RiskEngine.json)
 
-A multiplicative buffer applied during solvency checks following actions that may reduce buying power, including:
-- minting options
-- force exercising another account
+- **Ethereum (chain 1)**: block `26077088`, 2026-09-28T16:16:23.000Z; runtime hash `0x2831f41cd43d8a4d17ddba4621862181b33eee68f1d4e1b2c1254649c1071dd0`.
+- **Robinhood (chain 4663)**: block `74933551`, 2026-09-28T16:15:56.000Z; runtime hash `0x2831f41cd43d8a4d17ddba4621862181b33eee68f1d4e1b2c1254649c1071dd0`.
 
-This buffer prevents users from placing themselves immediately into a liquidatable state through their own actions.
+Values match on both chains at the recorded blocks.
 
-### CROSS_BUFFER
+### Fees and liquidity
 
-A multiplier applied to the account’s cross-collateral solvency threshold when checking solvency.
+| Getter | Raw value | Interpretation |
+| --- | --- | --- |
+| `NOTIONAL_FEE` | `3` | 3 bps (0.03%) |
+| `PREMIUM_FEE` | `250` | 250 bps (2.5%) |
+| `PROTOCOL_SPLIT` | `5000` | 5000 bps (50%) |
+| `BUILDER_SPLIT` | `4000` | 4000 bps (40%) |
+| `VEGOID` | `8` | 8 |
+| `MAX_SPREAD` | `90000` | 9× |
 
-Internally, solvency compares:
-- `balanceCross` (the account’s cross-collateral value)  
-vs  
-- `thresholdCross * crossBufferBps / 10_000` (the required threshold with buffer applied)
+### Collateral and solvency
 
-This buffer is used to enforce stricter solvency during actions that can reduce buying power (e.g., minting, force exercise, or collateral withdrawals).
+| Getter | Raw value | Interpretation |
+| --- | --- | --- |
+| `DECIMALS` | `10000000` | 10000000 |
+| `SELLER_COLLATERAL_RATIO` | `2000000` | 20% |
+| `BUYER_COLLATERAL_RATIO` | `1000000` | 10% |
+| `MAINT_MARGIN_RATE` | `1000000` | 10% |
+| `TARGET_POOL_UTIL` | `6666667` | 66.66667% |
+| `SATURATED_POOL_UTIL` | `9000000` | 90% |
+| `BP_DECREASE_BUFFER` | `10666667` | 106.66667% |
+| `CROSS_BUFFER_0` | `10000000` | 100% |
+| `CROSS_BUFFER_1` | `10000000` | 100% |
+| `MAX_OPEN_LEGS` | `26` | 26 |
+| `MAX_BONUS` | `2000000` | 20% |
+| `FORCE_EXERCISE_COST` | `30000` | 0.3% |
 
-**Default:** `10_000` (no additional buffer, i.e., `1.00×`)
+### Oracle and interest
 
-## Premium & Spread Parameters
+| Getter | Raw value | Interpretation |
+| --- | --- | --- |
+| `EMA_PERIODS` | `4533471891108855828971580` | 60 / 120 / 240 / 960 seconds (spot / fast / slow / eons) |
+| `MAX_TICKS_DELTA` | `724` | 724 ticks |
+| `MAX_TWAP_DELTA_DISPATCH` | `513` | 513 ticks |
+| `MAX_CLAMP_DELTA` | `149` | 149 ticks |
+| `TARGET_UTILIZATION` | `666666666666666666` | 66.6666666666666666% |
+| `CURVE_STEEPNESS` | `4000000000000000000` | 4× |
+| `MIN_RATE_AT_TARGET` | `31709791` | 0.000000000031709791 per second (WAD) |
+| `MAX_RATE_AT_TARGET` | `63419583967` | 0.000000063419583967 per second (WAD) |
+| `INITIAL_RATE_AT_TARGET` | `1268391679` | 0.000000001268391679 per second (WAD) |
+| `ADJUSTMENT_SPEED` | `1585489599188` | 0.000001585489599188 per second (WAD) |
+| `IRM_MAX_ELAPSED_TIME` | `16384` | 16384 seconds |
 
-These parameters control how option premiums scale with liquidity usage and how much liquidity may be removed from a given chunk.
-
-### VEGOID
-```text
-Default: 2
-```
-
-Controls the curvature of the premium multiplier applied to option buyers.
-
-- Lower values increase convexity (premiums rise faster with utilization)
-- Higher values smooth premium growth
-- Used in the premium multiplier equation governing streamia
-
-### MAX_SPREAD
-```text
-Default: 9x
-```
-
-Maximum allowed ratio of removed liquidity to remaining liquidity within a single liquidity chunk.
-
-- Caps effective liquidity imbalance
-- Limits the maximum premium multiplier paid by option buyers
-- Enforced during minting and burning of positions
-
-### effectiveLiquidityLimit (per mint)
-```text
-User-specified
-```
-
-Optional per-position spread limit supplied by the caller during mint.
-
-For long legs, the enforced spread limit is:
-
-```text
-min(effectiveLiquidityLimit, MAX_SPREAD)
-```
-
-## Fee Parameters
-
-Fees in Panoptic V2 are applied dynamically and may vary based on `builderCode`.
-
-### COMMISSION_FEE (Notional Fee)
-```text
-Default: 0.01%
-Applied on: position open
-```
-
-Fee charged on the notional value of both bought and sold options at mint.
-
-- Distributed to lenders in the corresponding `tokenType` collateral vault
-- Functions as interest for liquidity borrowed by option sellers
-
-### COMMISSION_FEE_P (Premium Fee)
-```text
-Default: 0.1%
-Applied on: position close
-```
-
-Fee charged on net premium accumulated by an options position when closed.
-
-- Distributed to lenders in the corresponding `tokenType` collateral vault
-
-## Builder Codes
-
-Builder codes are fee-routing codes.
-
-When a trade is executed through the Panoptic V2 `RiskEngine`, the caller may provide a `builderCode`. If the code is valid, it deterministically resolves (via CREATE2) to a BuilderWallet address that can receive a portion of protocol fees.
-
-When a builder code is active, fee shares are split as follows:
-- 65% → Protocol (sent to the `RiskEngine` address)
-- 25% → BuilderWallet (sent to the BuilderWallet derived from `builderCode`)
-- 10% → User (10% fee discount, trader only pays 90% of fees)
-
-If `builderCode = 0`, there is **no builder recipient**, and lenders of that pool proportionally receive the full fee.
-
-This fee routing applies to commissions charged when opening positions (notional fees) and when closing positions (premium fees).
-
-
-## Force Exercise Parameters
-
-Force exercise costs are computed dynamically based on oracle state and position configuration.
-
-### FORCE_EXERCISE_COST
-```text
-All long legs are out of range: 0.01%
-Any long leg is in range: 1.024%
-```
-
-Fee paid by the force exercisor to the force exercisee, applied to the notional value of long legs.
-
-- If **all long legs are out of range**, the lower fee applies
-- If **any long leg is in range**, the higher fee applies
-- Enforced dynamically by the RiskEngine
-
-## Oracle Parameters
-
-Panoptic V2 does not rely on external price oracles.  
-All oracle logic is derived from Uniswap-style price observations and internal aggregation.
-
-### Oracle Update Cadence
-```text
-~64 seconds (epoch-based)
-```
-
-Oracle state may be updated at most once per epoch.  
-Updates are permissionless via `pokeOracle()`.
-
-### Oracle Construction
-```text
-Internal median + EMA smoothing
-```
-
-The internal oracle system tracks:
-- EMA-smoothed ticks (fast, slow, long-horizon)
-- Median-derived ticks from rolling observations
-- A reconstructed latest observation tick
-
-### Stale Oracle Protection
-```text
-Enabled
-```
-
-If oracle ticks diverge excessively or become stale:
-- the RiskEngine may enforce conservative solvency assumptions
-- safe mode may be triggered
-- certain actions (e.g. minting) may be restricted
-
-## Miscellaneous Parameters
-
-### MAX_OPEN_LEGS
-```solidity
-uint64 constant MAX_OPEN_LEGS = 25;
-```
-
-Maximum number of legs permitted across all open positions for an account on a single Panoptic pool.
-
-This limit ensures all positions remain liquidatable within practical gas limits.
+## Stocks {#stocks}
+
+Address: `0x0000000000000fe1e261f66ce2f44def4f5ae0cb`.
+
+[Public source](https://github.com/panoptic-labs/panoptic-v2-core/blob/e3b9d125f929a5a8c7220ec6467613686939edae/contracts/RiskEngineXStocks.sol) · [Release artifact](https://github.com/panoptic-labs/panoptic-v2-core/blob/e3b9d125f929a5a8c7220ec6467613686939edae/deployment-info-RiskEngineXStocks.json)
+
+- **Ethereum (chain 1)**: block `26077088`, 2026-09-28T16:16:23.000Z; runtime hash `0x90016233bb93187122d6758e378be70de6a3e5fdcaeb5558bccd7131833a8388`.
+- **Robinhood (chain 4663)**: block `74933551`, 2026-09-28T16:15:56.000Z; runtime hash `0x90016233bb93187122d6758e378be70de6a3e5fdcaeb5558bccd7131833a8388`.
+
+Values match on both chains at the recorded blocks.
+
+### Fees and liquidity
+
+| Getter | Raw value | Interpretation |
+| --- | --- | --- |
+| `NOTIONAL_FEE` | `3` | 3 bps (0.03%) |
+| `PREMIUM_FEE` | `250` | 250 bps (2.5%) |
+| `PROTOCOL_SPLIT` | `5000` | 5000 bps (50%) |
+| `BUILDER_SPLIT` | `4000` | 4000 bps (40%) |
+| `VEGOID` | `8` | 8 |
+| `MAX_SPREAD` | `90000` | 9× |
+
+### Collateral and solvency
+
+| Getter | Raw value | Interpretation |
+| --- | --- | --- |
+| `DECIMALS` | `10000000` | 10000000 |
+| `SELLER_COLLATERAL_RATIO` | `3300000` | 33% |
+| `BUYER_COLLATERAL_RATIO` | `1500000` | 15% |
+| `MAINT_MARGIN_RATE` | `2500000` | 25% |
+| `TARGET_POOL_UTIL` | `6666667` | 66.66667% |
+| `SATURATED_POOL_UTIL` | `9000000` | 90% |
+| `BP_DECREASE_BUFFER` | `10666667` | 106.66667% |
+| `CROSS_BUFFER_0` | `7500000` | 75% |
+| `CROSS_BUFFER_1` | `9000000` | 90% |
+| `MAX_OPEN_LEGS` | `26` | 26 |
+| `MAX_BONUS` | `2000000` | 20% |
+| `FORCE_EXERCISE_COST` | `30000` | 0.3% |
+
+### Oracle and interest
+
+| Getter | Raw value | Interpretation |
+| --- | --- | --- |
+| `EMA_PERIODS` | `9066943782217711657943160` | 120 / 240 / 480 / 1920 seconds (spot / fast / slow / eons) |
+| `MAX_TICKS_DELTA` | `953` | 953 ticks |
+| `MAX_TWAP_DELTA_DISPATCH` | `513` | 513 ticks |
+| `MAX_CLAMP_DELTA` | `149` | 149 ticks |
+| `TARGET_UTILIZATION` | `666666666666666666` | 66.6666666666666666% |
+| `CURVE_STEEPNESS` | `4000000000000000000` | 4× |
+| `MIN_RATE_AT_TARGET` | `31709791` | 0.000000000031709791 per second (WAD) |
+| `MAX_RATE_AT_TARGET` | `63419583967` | 0.000000063419583967 per second (WAD) |
+| `INITIAL_RATE_AT_TARGET` | `1268391679` | 0.000000001268391679 per second (WAD) |
+| `ADJUSTMENT_SPEED` | `1585489599188` | 0.000001585489599188 per second (WAD) |
+| `IRM_MAX_ELAPSED_TIME` | `16384` | 16384 seconds |
+
+## Stocks, inverted token ordering {#stocks-inverted}
+
+Address: `0x0000000000000f3fb82469581a74776178e76ca4`.
+
+[Public source](https://github.com/panoptic-labs/panoptic-v2-core/blob/e3b9d125f929a5a8c7220ec6467613686939edae/contracts/RiskEngineXStocks.sol) · [Release artifact](https://github.com/panoptic-labs/panoptic-v2-core/blob/e3b9d125f929a5a8c7220ec6467613686939edae/deployment-info-RiskEngineXStocks.json)
+
+- **Ethereum (chain 1)**: block `26077088`, 2026-09-28T16:16:23.000Z; runtime hash `0xd2bf788fc4629628208b7e579d531f93074ece9afd35267f35245437d9a9d7d5`.
+- **Robinhood (chain 4663)**: block `74933551`, 2026-09-28T16:15:56.000Z; runtime hash `0xd2bf788fc4629628208b7e579d531f93074ece9afd35267f35245437d9a9d7d5`.
+
+Values match on both chains at the recorded blocks.
+
+### Fees and liquidity
+
+| Getter | Raw value | Interpretation |
+| --- | --- | --- |
+| `NOTIONAL_FEE` | `3` | 3 bps (0.03%) |
+| `PREMIUM_FEE` | `250` | 250 bps (2.5%) |
+| `PROTOCOL_SPLIT` | `5000` | 5000 bps (50%) |
+| `BUILDER_SPLIT` | `4000` | 4000 bps (40%) |
+| `VEGOID` | `8` | 8 |
+| `MAX_SPREAD` | `90000` | 9× |
+
+### Collateral and solvency
+
+| Getter | Raw value | Interpretation |
+| --- | --- | --- |
+| `DECIMALS` | `10000000` | 10000000 |
+| `SELLER_COLLATERAL_RATIO` | `3300000` | 33% |
+| `BUYER_COLLATERAL_RATIO` | `1500000` | 15% |
+| `MAINT_MARGIN_RATE` | `2500000` | 25% |
+| `TARGET_POOL_UTIL` | `6666667` | 66.66667% |
+| `SATURATED_POOL_UTIL` | `9000000` | 90% |
+| `BP_DECREASE_BUFFER` | `10666667` | 106.66667% |
+| `CROSS_BUFFER_0` | `9000000` | 90% |
+| `CROSS_BUFFER_1` | `7500000` | 75% |
+| `MAX_OPEN_LEGS` | `26` | 26 |
+| `MAX_BONUS` | `2000000` | 20% |
+| `FORCE_EXERCISE_COST` | `30000` | 0.3% |
+
+### Oracle and interest
+
+| Getter | Raw value | Interpretation |
+| --- | --- | --- |
+| `EMA_PERIODS` | `9066943782217711657943160` | 120 / 240 / 480 / 1920 seconds (spot / fast / slow / eons) |
+| `MAX_TICKS_DELTA` | `953` | 953 ticks |
+| `MAX_TWAP_DELTA_DISPATCH` | `513` | 513 ticks |
+| `MAX_CLAMP_DELTA` | `149` | 149 ticks |
+| `TARGET_UTILIZATION` | `666666666666666666` | 66.6666666666666666% |
+| `CURVE_STEEPNESS` | `4000000000000000000` | 4× |
+| `MIN_RATE_AT_TARGET` | `31709791` | 0.000000000031709791 per second (WAD) |
+| `MAX_RATE_AT_TARGET` | `63419583967` | 0.000000063419583967 per second (WAD) |
+| `INITIAL_RATE_AT_TARGET` | `1268391679` | 0.000000001268391679 per second (WAD) |
+| `ADJUSTMENT_SPEED` | `1585489599188` | 0.000001585489599188 per second (WAD) |
+| `IRM_MAX_ELAPSED_TIME` | `16384` | 16384 seconds |
+
+<!-- END GENERATED RISK ENGINE TABLES -->
 
 ---
 

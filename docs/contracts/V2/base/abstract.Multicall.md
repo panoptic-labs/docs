@@ -1,5 +1,8 @@
 # Multicall
-[Git Source](https://github.com/panoptic-labs/panoptic-next-core-private/blob/8cb6912a84b43ed5df88c9b5bd34535204453dc5/contracts/base/Multicall.sol)
+
+> Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
+
+[Git Source](https://github.com/panoptic-labs/panoptic-v2-core/blob/e3b9d125f929a5a8c7220ec6467613686939edae/contracts/base/Multicall.sol)
 
 **Title:**
 Multicall
@@ -32,5 +35,3 @@ function multicall(bytes[] calldata data) public payable returns (bytes[] memory
 |Name|Type|Description|
 |----|----|-----------|
 |`results`|`bytes[]`|The data returned by each call|
-
-

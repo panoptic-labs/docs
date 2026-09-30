@@ -9,7 +9,7 @@ Panoptic is a protocol that facilitates the trading of [Panoptions](/docs/terms/
 
 ---
 ## Protocol Parameters
-The Panoptic protocol is governed by a set of immutable parameters used to calculate collateral requirements, streamia, fees, price feeds, and more. These parameters are shared across all Panoptic instances and set once on each chain. To read more about the parameters and their current values, visit the [parameters](/docs/contracts/parameters) page.
+The Panoptic protocol is governed by a set of immutable parameters used to calculate collateral requirements, streamia, fees, price feeds, and more. Each pool selects an immutable RiskEngine; parameters can differ between crypto and stock engines, including the token ordering of cross-collateral buffers. To read more about the parameters and their current values, visit the [parameters](/docs/contracts/parameters) page.
 
 ## Pool Criteria
 Panoptic Pools can be deployed permissionlessly by anyone, but pools listed on our interface must meet a certain set of criteria before they can be traded. To read more about the listing criteria and learn how to ensure a pool appears on our interface, visit the [pool criteria](/docs/contracts/pool-criteria) page.
@@ -17,56 +17,30 @@ Panoptic Pools can be deployed permissionlessly by anyone, but pools listed on o
 ## Architecture & Contracts (Panoptic V2)
 Panoptic V2 is the second major release of the Panoptic Protocol. It expands Panoptic into a unified system for lending and perpetual options, enabling lending markets within Panoptic and options trading on Uniswap V3 and V4 pools.
 
+A pool cannot replace its RiskEngine in place. Adopting a new engine requires users to migrate positions/state to a pool configured with that engine; deployment of a new engine does not migrate user state automatically.
+
 Version 2 introduces a redesigned interest rate model for lending markets, modular risk engines that support higher, controlled leverage and improved capital efficiency, and streamlined position management. Additional upgrades include internalized oracles and builder codes for trading fee discounts and protocol fee capture.
 
 Panoptic V2 also works in tandem with Panoptic Vaults, which add vault-based automation for passive deposits and strategy execution, enabling optimized and hands-off yield generation.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                     Panoptic v2 Contracts                       │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  ┌─────────────────┐    ┌─────────────────┐                     │
-│  │  PanopticPool   │───▶│      SFPM       │                     │
-│  │                 │    │ (Semi-Fungible  │                     │
-│  │  - dispatch()   │    │  Position Mgr)  │                     │
-│  │  - liquidate()  │    │                 │                     │
-│  │  - forceExercise│    │  - ERC1155      │                     │
-│  │  - getAccumFees │    └─────────────────┘                     │
-│  └────────┬────────┘                                            │
-│           │                                                     │
-│  ┌────────▼────────┐    ┌─────────────────┐                     │
-│  │CollateralTracker│    │   RiskEngine    │                     │
-│  │  (x2: token0/1) │    │                 │                     │
-│  │                 │    │  - getMargin()  │                     │
-│  │  - ERC4626 vault│    │  - solvency     │                     │
-│  │  - interest rate│    │  - safe mode    │                     │
-│  └─────────────────┘    │  - oracle       │                     │
-│                         └─────────────────┘                     │
-│                                                                 │
-│  ┌─────────────────┐    ┌─────────────────┐                     │
-│  │ PanopticFactory │    │ PanopticHelper  │                     │
-│  │  - deployPool   │    │ (Upgradable)    │                     │
-│  └─────────────────┘    │                 │                     │
-│                         │  - getLiqPrices │                     │
-│                         │  - getNLV       │                     │
-│                         │  - getGreeks    │                     │
-│                         │  - quoteFinalPx │                     │
-│                         │  - getPoolLiqs  │                     │
-│                         └─────────────────┘                     │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+| Module | Responsibility |
+| --- | --- |
+| PanopticPool | Position operations through `dispatch` and third-party operations through `dispatchFrom` |
+| SemiFungiblePositionManager | AMM liquidity and ERC-1155 position accounting, with v3 and v4 implementations |
+| CollateralTracker (one per token) | Collateral shares, interest accrual, and token settlement |
+| RiskEngine | Pool-specific collateral, oracle, solvency, and fee policy |
+| PanopticFactoryV3 / PanopticFactoryV4 | Deploy pools for their respective AMMs with a selected RiskEngine |
+
 ### Directory
 - [CollateralTracker](/docs/contracts/V2/contract.CollateralTracker)
   - Tracks and manages collateral using a shares model.
-- [PanopticFactory](/docs/contracts/V2/contract.PanopticFactoryV4)
-  - Deploys an options market on top of an existing Uniswap V4 pool. 
+- [PanopticFactoryV3](/docs/contracts/V2/contract.PanopticFactory) / [PanopticFactoryV4](/docs/contracts/V2/contract.PanopticFactoryV4)
+  - Deploys an options market on the corresponding Uniswap v3 or v4 pool.
 - [PanopticPool](/docs/contracts/V2/contract.PanopticPool)
   - Creates and manages undercollateralized options. Manages positions, collateral, liquidations and forced exercises.
 - [SemiFungiblePositionManager](/docs/contracts/V2/contract.SemiFungiblePositionManagerV4)
   - The Semi-fungible Position Manager contract for Panoptic acts as a position manager for Uniswap V4 LPs. Wraps up to 4-legged Uniswap V4 positions in the ERC1155 semi-fungible token interface.
-- [RiskEngine](/docs/contracts/V2/RiskEngine/contract.BuilderFactory)
+- [RiskEngine](/docs/contracts/V2/RiskEngine/contract.RiskEngine)
   - Defines risk policy and fee routing for a given pool deployment. The RiskEngine specifies parameters used in solvency checks and fee calculations (e.g., commission rates, buffers, builder-code routing), and acts as the recipient for protocol-routed fees.
 - [base](/docs/contracts/V2/base/abstract.Multicall)
   - Inherited metadata and multicall contracts
@@ -80,12 +54,12 @@ Panoptic V2 also works in tandem with Panoptic Vaults, which add vault-based aut
 
 ## Architecture & Contracts (Panoptic V1.1)
 Panoptic V1.1 is an upgrade to Panoptic V1 that introduces the ability to create options markets on Uniswap V4 pools. The upgrade adds support for native ETH and native token pools on other chains, as well as pools with hooks (expansions to Uniswap V4) with the permissions `beforeInitialize`, `afterInitialize`, `beforeDonate`, `afterDonate`, `beforeSwap`, `afterSwap`, `beforeSwapReturnDelta`, and `afterSwapReturnDelta`. Panoptic V1.1 still uses V3-style oracles (which can consist of a Uniswap V3 pool or a Uniswap V4 hook that exposes the same interface).
-  
+
 ### Directory
 - [CollateralTracker](/docs/contracts/V1.1/contract.CollateralTracker)
   - Tracks and manages collateral using a shares model.
 - [PanopticFactory](/docs/contracts/V1.1/contract.PanopticFactory)
-  - Deploys an options market on top of an existing Uniswap V4 pool. 
+  - Deploys an options market on top of an existing Uniswap V4 pool.
 - [PanopticPool](/docs/contracts/V1.1/contract.PanopticPool)
   - Creates and manages undercollateralized options. Manages positions, collateral, liquidations and forced exercises.
 - [SemiFungiblePositionManager](/docs/contracts/V1.1/contract.SemiFungiblePositionManager)
@@ -120,7 +94,7 @@ Panoptic V1.0 is the original version of the Panoptic Protocol. It facilitates o
 - [CollateralTracker](/docs/contracts/V1.0/contract.CollateralTracker)
   - Tracks and manages collateral using a shares model.
 - [PanopticFactory](/docs/contracts/V1.0/contract.PanopticFactory)
-  - Deploys an options market on top of an existing Uniswap V3 pool. 
+  - Deploys an options market on top of an existing Uniswap V3 pool.
 - [PanopticPool](/docs/contracts/V1.0/contract.PanopticPool)
   - Creates and manages undercollateralized options. Manages positions, collateral, liquidations and forced exercises.
 - [SemiFungiblePositionManager](/docs/contracts/V1.0/contract.SemiFungiblePositionManager)

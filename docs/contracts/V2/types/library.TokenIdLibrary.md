@@ -1,5 +1,8 @@
 # TokenIdLibrary
-[Git Source](https://github.com/panoptic-labs/panoptic-next-core-private/blob/8cb6912a84b43ed5df88c9b5bd34535204453dc5/contracts/types/TokenId.sol)
+
+> Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
+
+[Git Source](https://github.com/panoptic-labs/panoptic-v2-core/blob/e3b9d125f929a5a8c7220ec6467613686939edae/contracts/types/TokenId.sol)
 
 **Title:**
 Panoptic's tokenId: the fundamental options position.
@@ -673,5 +676,3 @@ function validateIsExercisable(TokenId self) internal pure returns (uint256);
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`uint256`|hasExercisableLong Returns 1 if such a leg exists, 0 otherwise.|
-
-

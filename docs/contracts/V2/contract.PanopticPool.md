@@ -1,11 +1,14 @@
 ---
 sidebar_position: 2
 ---
-# PanopticPool
-[Git Source](https://github.com/panoptic-labs/panoptic-next-core-private/blob/8cb6912a84b43ed5df88c9b5bd34535204453dc5/contracts/PanopticPool.sol)
+# PanopticPoolV2
+
+> Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
+
+[Git Source](https://github.com/panoptic-labs/panoptic-v2-core/blob/e3b9d125f929a5a8c7220ec6467613686939edae/contracts/PanopticPool.sol)
 
 **Inherits:**
-Clone, [Multicall](/contracts/V2/base/abstract.Multicall.md), [TransientReentrancyGuard](/contracts/V2/libraries/abstract.TransientReentrancyGuard.md)
+Clone, [Multicall](/docs/contracts/V2/base/abstract.Multicall), [TransientReentrancyGuard](/docs/contracts/V2/libraries/abstract.TransientReentrancyGuard)
 
 **Title:**
 The Panoptic Pool: Create permissionless options on a CLAMM.
@@ -89,21 +92,30 @@ bool internal constant ASSERT_INSOLVENCY = false
 ```
 
 
+### CALL_CT0
+Flag for calls to CollateralTracker for token0
+
+
+```solidity
+bool internal constant CALL_CT0 = true
+```
+
+
+### CALL_CT1
+Flag for calls to CollateralTracker for token1
+
+
+```solidity
+bool internal constant CALL_CT1 = false
+```
+
+
 ### ADD
 Flag that signals to add a new position to the user's positions hash (as opposed to removing an existing position).
 
 
 ```solidity
 bool internal constant ADD = true
-```
-
-
-### MAX_OPEN_LEGS
-The maximum allowed number of legs across all open positions for a user.
-
-
-```solidity
-uint64 internal constant MAX_OPEN_LEGS = 25
 ```
 
 
@@ -141,7 +153,7 @@ The "engine" of Panoptic - manages AMM liquidity and executes all mints/burns/ex
 
 
 ```solidity
-ISemiFungiblePositionManager internal immutable SFPM
+ISemiFungiblePositionManager public immutable SFPM
 ```
 
 
@@ -230,13 +242,13 @@ Get the collateral token corresponding to token0 of the Uniswap pool.
 
 
 ```solidity
-function collateralToken0() public pure returns (CollateralTracker);
+function collateralToken0() public pure returns (CollateralTrackerV2);
 ```
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`CollateralTracker`|Collateral token corresponding to token0 in Uniswap|
+|`<none>`|`CollateralTrackerV2`|Collateral token corresponding to token0 in Uniswap|
 
 
 ### collateralToken1
@@ -245,13 +257,13 @@ Get the collateral token corresponding to token1 of the Uniswap pool.
 
 
 ```solidity
-function collateralToken1() public pure returns (CollateralTracker);
+function collateralToken1() public pure returns (CollateralTrackerV2);
 ```
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`CollateralTracker`|Collateral token corresponding to token1 in Uniswap|
+|`<none>`|`CollateralTrackerV2`|Collateral token corresponding to token1 in Uniswap|
 
 
 ### riskEngine
@@ -301,6 +313,21 @@ function poolId() public pure returns (uint64);
 |`<none>`|`uint64`|The Pool ID for this Panoptic Pool|
 
 
+### tickSpacing
+
+Get the Uniswap tickSpacing for the Uniswap pool used by this Panoptic.
+
+
+```solidity
+function tickSpacing() public pure returns (int24);
+```
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`<none>`|`int24`|The tickSpacing for this Panoptic Pool|
+
+
 ### poolKey
 
 Get the pool key for the Uniswap pool used by this Panoptic Pool.
@@ -332,6 +359,10 @@ modifier onlyRiskEngine() ;
 ```
 
 ### _onlyRiskEngine
+
+Internal function to verify that the caller is the risk engine
+
+Reverts with NotGuardian error if msg.sender is not the risk engine
 
 
 ```solidity
@@ -409,6 +440,119 @@ function assertMinCollateralValues(uint256 minValue0, uint256 minValue1) externa
 |`minValue1`|`uint256`|The minimum acceptable `token1` value of collateral|
 
 
+### assertBlockRange
+
+Reverts if the current block number is below `minBlockNumber` or above `maxBlockNumber`.
+
+Can be used for composable deadline checks with `multicall` (such as for RFQ order expiry).
+
+
+```solidity
+function assertBlockRange(uint256 minBlockNumber, uint256 maxBlockNumber) external view;
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`minBlockNumber`|`uint256`|The earliest acceptable block number|
+|`maxBlockNumber`|`uint256`|The latest acceptable block number|
+
+
+### assertTimestampRange
+
+Reverts if the current block timestamp is below `minTimestamp` or above `maxTimestamp`.
+
+Can be used for composable deadline checks with `multicall` (such as for RFQ order expiry).
+
+
+```solidity
+function assertTimestampRange(uint256 minTimestamp, uint256 maxTimestamp) external view;
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`minTimestamp`|`uint256`|The earliest acceptable block timestamp|
+|`maxTimestamp`|`uint256`|The latest acceptable block timestamp|
+
+
+### assertTickRange
+
+Reverts if the current pool tick is outside the provided range.
+
+Can be used for composable price checks with `multicall` (such as to verify quoted price is still valid).
+
+
+```solidity
+function assertTickRange(int24 minTick, int24 maxTick) external view;
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`minTick`|`int24`|The minimum acceptable tick (inclusive)|
+|`maxTick`|`int24`|The maximum acceptable tick (inclusive)|
+
+
+### getAssetsOf
+
+Get the balance of underlying collateral tokens (token0 and token1) held by an account.
+
+This queries the `CollateralTracker` for both tokens and converts shares to underlying asset amounts.
+
+
+```solidity
+function getAssetsOf(address account) public view returns (uint256 assets0, uint256 assets1);
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`account`|`address`|The address of the user to query balances for.|
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`assets0`|`uint256`|The total amount of `token0` collateral owned by the account.|
+|`assets1`|`uint256`|The total amount of `token1` collateral owned by the account.|
+
+
+### getChunkData
+
+Get onchain data for a liquidity chunk.
+
+Retrieves both active liquidity from the SFPM and settled tokens from the Panoptic Pool's state for a given tick range.
+
+
+```solidity
+function getChunkData(int24 tickLower, int24 tickUpper)
+    external
+    view
+    returns (
+        LeftRightUnsigned liquidities0,
+        LeftRightUnsigned liquidities1,
+        LeftRightUnsigned settled0,
+        LeftRightUnsigned settled1
+    );
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`tickLower`|`int24`|The lower tick boundary of the chunk.|
+|`tickUpper`|`int24`|The upper tick boundary of the chunk.|
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`liquidities0`|`LeftRightUnsigned`|A packed struct containing the removed/bought liquidity (left slot) and net/available liquidity (right slot) for token0.|
+|`liquidities1`|`LeftRightUnsigned`|A packed struct containing the removed/bought liquidity (left slot) and net/available liquidity (right slot) for token1.|
+|`settled0`|`LeftRightUnsigned`|A packed struct containing settled tokens within the chunk for tokenType = 0.|
+|`settled1`|`LeftRightUnsigned`|A packed struct containing settled tokens within the chunk for tokenType = 1.|
+
+
 ### validateCollateralWithdrawable
 
 Determines if account is eligible to withdraw or transfer collateral.
@@ -435,33 +579,40 @@ function validateCollateralWithdrawable(address user, TokenId[] calldata positio
 |`usePremiaAsCollateral`|`bool`|Whether to compute accumulated premia for all legs held by the user for collateral (true), or just owed premia for long legs (false)|
 
 
-### getAccumulatedFeesAndPositionsData
+### getFullPositionsData
 
-Returns the total amount of premium accumulated for a list of positions and a list containing the corresponding `PositionBalance` information for each position.
+Returns accumulated premium, position balances, per-position collateral requirements, and per-position net premia.
 
 
 ```solidity
-function getAccumulatedFeesAndPositionsData(
-    address user,
-    bool includePendingPremium,
-    TokenId[] calldata positionIdList
-) external view returns (LeftRightUnsigned, LeftRightUnsigned, PositionBalance[] memory);
+function getFullPositionsData(address user, bool includePendingPremium, TokenId[] calldata positionIdList)
+    external
+    view
+    returns (
+        LeftRightUnsigned shortPremium,
+        LeftRightUnsigned longPremium,
+        PositionBalance[] memory positionBalances,
+        LeftRightUnsigned[] memory collateralRequirements,
+        LeftRightSigned[] memory netPremiaPerPosition
+    );
 ```
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
 |`user`|`address`|Address of the user that owns the positions|
-|`includePendingPremium`|`bool`|If true, include premium that is owed to the user but has not yet settled; if false, only include premium that is available to collect|
+|`includePendingPremium`|`bool`|If true, include pending (unsettled) premium; if false, only settled|
 |`positionIdList`|`TokenId[]`|List of positions. Written as `[tokenId1, tokenId2, ...]`|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`LeftRightUnsigned`|The total amount of premium owed (which may `includePendingPremium`) to the short legs in `positionIdList` (token0: right slot, token1: left slot)|
-|`<none>`|`LeftRightUnsigned`|The total amount of premium owed by the long legs in `positionIdList` (token0: right slot, token1: left slot)|
-|`<none>`|`PositionBalance[]`|A list of `PositionBalance` data (balance and pool utilization/oracle ticks at last mint) for each position, of the form `[PositionBalance_0, PositionBalance_1, ...]`|
+|`shortPremium`|`LeftRightUnsigned`|Total premium owed to short legs (token0: right, token1: left)|
+|`longPremium`|`LeftRightUnsigned`|Total premium owed by long legs (token0: right, token1: left)|
+|`positionBalances`|`PositionBalance[]`|PositionBalance data for each position|
+|`collateralRequirements`|`LeftRightUnsigned[]`|Net collateral required per position (token0: right, token1: left)|
+|`netPremiaPerPosition`|`LeftRightSigned[]`|Net premia per position: short minus long (token0: right, token1: left)|
 
 
 ### _calculateAccumulatedPremia
@@ -475,11 +626,16 @@ function _calculateAccumulatedPremia(
     TokenId[] calldata positionIdList,
     bool usePremiaAsCollateral,
     bool includePendingPremium,
-    int24 atTick
+    int24 atTick,
+    bool perPositionPremia
 )
     internal
     view
-    returns (LeftRightUnsigned shortPremium, LeftRightUnsigned longPremium, PositionBalance[] memory balances);
+    returns (
+        LeftRightUnsigned[2] memory shortLongPremium,
+        PositionBalance[] memory balances,
+        LeftRightSigned[] memory netPremiaPerPosition
+    );
 ```
 **Parameters**
 
@@ -490,19 +646,23 @@ function _calculateAccumulatedPremia(
 |`usePremiaAsCollateral`|`bool`|Whether to compute accumulated premia for all legs held by the user for collateral (true), or just owed premia for long legs (false)|
 |`includePendingPremium`|`bool`|If true, include premium that is owed to the user but has not yet settled; if false, only include premium that is available to collect|
 |`atTick`|`int24`|The current tick of the Uniswap pool|
+|`perPositionPremia`|`bool`|If true, compute and return per-position net premia; if false, `netPremiaPerPosition` is empty|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`shortPremium`|`LeftRightUnsigned`|The total amount of premium owed (which may `includePendingPremium`) to the short legs in `positionIdList` (token0: right slot, token1: left slot)|
-|`longPremium`|`LeftRightUnsigned`|The total amount of premium owed by the long legs in `positionIdList` (token0: right slot, token1: left slot)|
+|`shortLongPremium`|`LeftRightUnsigned[2]`|The total amount of premium owed (which may `includePendingPremium`) to the short legs in `positionIdList` (token0: right slot, token1: left slot)|
 |`balances`|`PositionBalance[]`|A list of balances and pool utilization for each position, of the form `[[tokenId0, balances0], [tokenId1, balances1], ...]`|
+|`netPremiaPerPosition`|`LeftRightSigned[]`|The net premia (short minus long) per position (token0: right slot, token1: left slot), empty if `perPositionPremia` is false|
 
 
 ### pokeOracle
 
-Updates the internal oracle.
+Updates the internal oracle by recording the new exponential moving averages based on the current tick and computing a new median.
+
+This function allows anyone to update the oracle state, which is used for risk calculations and collateral requirements.
+The oracle values can only be updated once every 64s
 
 
 ```solidity
@@ -595,6 +755,61 @@ function _payCommissionAndWriteData(
 |`paidAmounts`|`LeftRightSigned`|The amount of tokens paid when creating that option for token0 (right) and token1 (left)|
 
 
+### _settleMint
+
+Internal function that calls CollateralTracker to take commission and settle ITM amounts on option creation.
+
+
+```solidity
+function _settleMint(
+    address optionOwner,
+    int128 longAmount,
+    int128 shortAmount,
+    int128 ammDeltaAmount,
+    RiskParameters riskParameters,
+    bool isCollateralToken0
+) internal returns (uint32 utilization, int128 paid);
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`optionOwner`|`address`|The user minting the option|
+|`longAmount`|`int128`|The amount of longs|
+|`shortAmount`|`int128`|The amount of shorts|
+|`ammDeltaAmount`|`int128`|The amount of tokens moved during creation of the option position|
+|`riskParameters`|`RiskParameters`|The RiskEngine's core parameters|
+|`isCollateralToken0`|`bool`|The flag that determines if the call is to ct0 or ct1|
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`utilization`|`uint32`|The final utilization of the collateral vault (in basis points)|
+|`paid`|`int128`|The total amount of tokens paid by the option owner (negative if tokens were received)|
+
+
+### _getCt
+
+Return the collateral tracker for the given token.
+
+
+```solidity
+function _getCt(bool isCollateralToken0) internal pure returns (CollateralTrackerV2);
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`isCollateralToken0`|`bool`|True for token0, false for token1|
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`<none>`|`CollateralTrackerV2`|The corresponding CollateralTracker|
+
+
 ### _burnAllOptionsFrom
 
 Close all options in `positionIdList`.
@@ -662,6 +877,43 @@ function _burnOptions(
 |`finalTick`|`int24`|The final tick after burning the options|
 
 
+### _settleBurn
+
+Internal function that calls CollateralTracker to Exercise an option and pay to the seller what is owed from the buyer.
+
+Called when a position is burnt because it may need to be exercised.
+
+
+```solidity
+function _settleBurn(
+    address optionOwner,
+    int128 longAmount,
+    int128 shortAmount,
+    int128 ammDeltaAmount,
+    int128 realizedPremium,
+    RiskParameters riskParameters,
+    bool isCollateralToken0
+) internal returns (int128 paid);
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`optionOwner`|`address`|The owner of the option being burned|
+|`longAmount`|`int128`|The notional value of the long legs of the position (if any)|
+|`shortAmount`|`int128`|The notional value of the short legs of the position (if any)|
+|`ammDeltaAmount`|`int128`|The amount of tokens moved during the option close|
+|`realizedPremium`|`int128`|Premium to settle on the current positions|
+|`riskParameters`|`RiskParameters`|The RiskEngine's core risk parameters|
+|`isCollateralToken0`|`bool`||
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`paid`|`int128`|The amount of tokens paid when closing that position|
+
+
 ### _validateSolvency
 
 Validates the solvency of `user`.
@@ -699,6 +951,10 @@ function _validateSolvency(
 
 ### _settleOptions
 
+Settles an option position by updating settlement data and burning premium from the owner's collateral
+
+Calls _updateSettlementPostBurn to calculate realized premia, then settles the burn in both collateral trackers
+
 
 ```solidity
 function _settleOptions(
@@ -709,6 +965,16 @@ function _settleOptions(
     int24 currentTick
 ) internal;
 ```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`owner`|`address`|The address of the position owner whose options are being settled|
+|`tokenId`|`TokenId`|The token ID representing the option position to settle|
+|`positionSize`|`uint128`|The size of the position in contracts|
+|`riskParameters`|`RiskParameters`|The risk parameters for this pool|
+|`currentTick`|`int24`|The current tick at which to settle the position|
+
 
 ### _updateSettlementPostMint
 
@@ -808,6 +1074,92 @@ function dispatchFrom(
 |`usePremiaAsCollateral`|`LeftRightUnsigned`|Packed value indicating whether to use premia as collateral: - leftSlot: For the caller (msg.sender) - rightSlot: For the target account|
 
 
+### _accrueInterests
+
+Internal function that calls CollateralTracker to accrue the protocol-wide interest.
+
+That call will pay any outstanding interest by the caller and update the unrealizedGlobalInterest, currentBorrowIndex, and currentEpoch
+
+
+```solidity
+function _accrueInterests() internal;
+```
+
+### _delegate
+
+Internal function that calls CollateralTracker to increase the share balance of a user by `2^248 - 1` without updating the total supply.
+
+
+```solidity
+function _delegate(address delegatee, bool isCollateralToken0) internal;
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`delegatee`|`address`|The account to increase the balance of|
+|`isCollateralToken0`|`bool`|The flag that determines if the call is to ct0 or ct1|
+
+
+### _revoke
+
+Internal function that calls CollateralTracker to decrease the share balance of a user by `2^248 - 1` without updating the total supply.
+
+
+```solidity
+function _revoke(address delegatee, bool isCollateralToken0) internal;
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`delegatee`|`address`|The account to decrease the balance of|
+|`isCollateralToken0`|`bool`|The flag that determines if the call is to ct0 or ct1|
+
+
+### _refund
+
+Internal function that calls CollateralTracker to refunds tokens to `refunder` from `refundee`.
+
+
+```solidity
+function _refund(address refunder, int256 assets, bool isCollateralToken0) internal;
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`refunder`|`address`|The account refunding tokens to `refundee`|
+|`assets`|`int256`|The amount of assets to refund. Positive means a transfer from refunder to refundee, vice versa for negative|
+|`isCollateralToken0`|`bool`|The flag that determines if the call is to ct0 or ct1|
+
+
+### _getRefundAmounts
+
+Internal function that calls CollateralTracker to substitute surplus tokens to a caller in exchange for any potential token shortages prior to revoking virtual shares from a payor.
+
+
+```solidity
+function _getRefundAmounts(address payor, LeftRightSigned fees, int24 atTick)
+    internal
+    view
+    returns (LeftRightSigned refundAmounts);
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`payor`|`address`|The address of the user being exercised/settled|
+|`fees`|`LeftRightSigned`|If applicable, fees to debit from caller (rightSlot = currency0 left = currency1), 0 for `settleLongPremium`|
+|`atTick`|`int24`|The tick at which to convert between currency0/currency1 when redistributing the surplus tokens|
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`refundAmounts`|`LeftRightSigned`|The LeftRight-packed deltas for currency0/currency1 to move from the caller to the payor|
+
+
 ### _liquidate
 
 Liquidates a distressed account. Will burn all positions and issue a bonus to the liquidator.
@@ -842,14 +1194,30 @@ function _forceExercise(address account, TokenId tokenId, int24 twapTick, int24 
 |Name|Type|Description|
 |----|----|-----------|
 |`account`|`address`|Address of the distressed account|
-|`tokenId`|`TokenId`|The position to be force exercised; this position must contain at least one out-of-range long leg|
-|`twapTick`|`int24`||
-|`currentTick`|`int24`||
+|`tokenId`|`TokenId`|The position to be force exercised|
+|`twapTick`|`int24`|The oracle TWAP tick used for collateral and exercise fee calculations|
+|`currentTick`|`int24`|The current tick of the Uniswap pool|
+
+
+### _refundRevoke
+
+Settle refund amounts with an account and revoke any remaining delegated virtual shares.
+
+
+```solidity
+function _refundRevoke(address account, LeftRightSigned refundAmounts) internal;
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`account`|`address`|The account to refund and revoke|
+|`refundAmounts`|`LeftRightSigned`|The refund deltas for token0 (right slot) and token1 (left slot)|
 
 
 ### _settlePremium
 
-Settle unpaid premium for one `legIndex` on a position owned by `owner`.
+Settle unpaid premium on a position owned by `owner`.
 
 Called by sellers on buyers of their chunk to increase the available premium for withdrawal (before closing their position).
 
@@ -864,7 +1232,7 @@ function _settlePremium(address owner, TokenId tokenId, int24 twapTick, int24 cu
 |Name|Type|Description|
 |----|----|-----------|
 |`owner`|`address`|The owner of the option position to make premium payments on|
-|`tokenId`|`TokenId`|The position to be force exercised; this position must contain at least one out-of-range long leg|
+|`tokenId`|`TokenId`|The position to be force exercised; this position must contain at least one option long leg|
 |`twapTick`|`int24`||
 |`currentTick`|`int24`||
 
@@ -1032,6 +1400,32 @@ function getOracleTicks()
 |`oraclePack`|`OraclePack`|The current value of the 8-slot internal observation queue (`s_oraclePack`)|
 
 
+### _getOracleTicks
+
+Internal call that computes and returns all oracle ticks.
+
+
+```solidity
+function _getOracleTicks(int24 currentTick)
+    internal
+    view
+    returns (int24 spotTick, int24 medianTick, int24 latestTick);
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`currentTick`|`int24`|the current pool tick|
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`spotTick`|`int24`|The fast oracle tick, sourced from the internal 10-minute EMA.|
+|`medianTick`|`int24`|The slow oracle tick, calculated as the median of the 8 stored price points in the internal oracle.|
+|`latestTick`|`int24`|The reconstructed absolute tick of the latest observation stored in the internal oracle.|
+
+
 ### numberOfLegs
 
 Get the current number of legs across all open positions for an account.
@@ -1051,37 +1445,6 @@ function numberOfLegs(address user) external view ensureNonReentrantView returns
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`uint256`|Number of legs across the open positions of `user`|
-
-
-### positionData
-
-Get the `tokenId` position data for `user`.
-
-
-```solidity
-function positionData(address user, TokenId tokenId)
-    external
-    view
-    returns (int24, int24, int24, int24, int256, int256, uint128);
-```
-**Parameters**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`user`|`address`|The account that owns `tokenId`|
-|`tokenId`|`TokenId`|The position to query|
-
-**Returns**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`<none>`|`int24`|`currentTick` at mint|
-|`<none>`|`int24`|Fast oracle tick at mint|
-|`<none>`|`int24`|Slow oracle tick at mint|
-|`<none>`|`int24`|Last observed tick at mint|
-|`<none>`|`int256`|Utilization of token0 at mint|
-|`<none>`|`int256`|Utilization of token1 at mint|
-|`<none>`|`uint128`|Size of the position|
 
 
 ### getTWAP
@@ -1227,6 +1590,32 @@ function _getLiquidities(TokenId tokenId, uint256 leg)
 |`removedLiquidity`|`uint128`|The amount of liquidity removed through buying in the corresponding chunk for a position leg|
 
 
+### _getLiquiditiesFromSFPM
+
+Query the SFPM for the net and removed liquidity of this pool's account in a given chunk.
+
+
+```solidity
+function _getLiquiditiesFromSFPM(int24 tickLower, int24 tickUpper, uint256 tokenType)
+    internal
+    view
+    returns (LeftRightUnsigned accountLiquidities);
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`tickLower`|`int24`|The lower tick of the chunk|
+|`tickUpper`|`int24`|The upper tick of the chunk|
+|`tokenType`|`uint256`|The token type (0 or 1) of the chunk|
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`accountLiquidities`|`LeftRightUnsigned`|Net liquidity (right slot) and removed liquidity (left slot)|
+
+
 ## Events
 ### AccountLiquidated
 Emitted when an account is liquidated.
@@ -1317,3 +1706,11 @@ event OptionMinted(address indexed recipient, TokenId indexed tokenId, PositionB
 |`tokenId`|`TokenId`|TokenId of the created option|
 |`balanceData`|`PositionBalance`|The `PositionBalance` data for `tokenId` containing the number of contracts, pool utilizations, and ticks at mint|
 
+## Errors
+### Deadline
+The current block number or timestamp has exceeded the caller-provided deadline
+
+
+```solidity
+error Deadline();
+```

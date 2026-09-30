@@ -1,5 +1,8 @@
 # PanopticMath
-[Git Source](https://github.com/panoptic-labs/panoptic-next-core-private/blob/8cb6912a84b43ed5df88c9b5bd34535204453dc5/contracts/libraries/PanopticMath.sol)
+
+> Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
+
+[Git Source](https://github.com/panoptic-labs/panoptic-v2-core/blob/e3b9d125f929a5a8c7220ec6467613686939edae/contracts/libraries/PanopticMath.sol)
 
 **Title:**
 Compute general math quantities relevant to Panoptic and AMM pool management.
@@ -428,6 +431,35 @@ function getChunkKey(TokenId tokenId, uint256 leg) internal pure returns (bytes3
 |`chunkKey`|`bytes32`|The keccak256 hash identifying this chunk|
 
 
+### getChunkKey
+
+Computes the chunk key for a given leg of a position.
+
+The chunk key uniquely identifies a liquidity chunk by its strike, width, and token type.
+
+
+```solidity
+function getChunkKey(int24 tickLower, int24 tickUpper, int24 tickSpacing, uint256 tokenType)
+    internal
+    pure
+    returns (bytes32 chunkKey);
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`tickLower`|`int24`|The tickLower of the chunk|
+|`tickUpper`|`int24`|The tickUpper of the chunk|
+|`tickSpacing`|`int24`|The tickspacing of the pool|
+|`tokenType`|`uint256`|The token type (0 = token0, 1 = token1)|
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`chunkKey`|`bytes32`|The keccak256 hash identifying this chunk|
+
+
 ### computeExercisedAmounts
 
 Compute the amount of notional value underlying an option position.
@@ -729,3 +761,53 @@ function calculateIOAmounts(TokenId tokenId, uint128 positionSize, uint256 legIn
 |`shorts`|`LeftRightSigned`|A LeftRight-packed word containing the amount of short positions|
 
 
+### getTotalLoanAmounts
+
+Compute the total notional value of all loan positions (width=0, isLong=0) across a user's portfolio.
+
+
+```solidity
+function getTotalLoanAmounts(PositionBalance[] memory positionBalanceArray, TokenId[] memory positionIdList)
+    internal
+    pure
+    returns (LeftRightUnsigned loanAmounts);
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`positionBalanceArray`|`PositionBalance[]`|The array of position balances for all open positions of the user|
+|`positionIdList`|`TokenId[]`|The list of all option positions held by the user|
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`loanAmounts`|`LeftRightUnsigned`|LeftRight-packed total loan notional: right slot = token0 loans, left slot = token1 loans|
+
+
+### getTotalCreditAmounts
+
+Compute the total notional value of all credit positions (width=0, isLong=1) across a user's portfolio.
+
+Must mirror the credit accounting in `_getRequiredCollateralAtTickSinglePosition`.
+
+
+```solidity
+function getTotalCreditAmounts(PositionBalance[] memory positionBalanceArray, TokenId[] memory positionIdList)
+    internal
+    pure
+    returns (LeftRightUnsigned creditAmounts);
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`positionBalanceArray`|`PositionBalance[]`|The array of position balances for all open positions of the user|
+|`positionIdList`|`TokenId[]`|The list of all option positions held by the user|
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`creditAmounts`|`LeftRightUnsigned`|LeftRight-packed total credit notional: right slot = token0 credits, left slot = token1 credits|

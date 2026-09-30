@@ -1,11 +1,14 @@
 ---
 sidebar_position: 4
 ---
-# PanopticFactory
-[Git Source](https://github.com/panoptic-labs/panoptic-next-core-private/blob/8cb6912a84b43ed5df88c9b5bd34535204453dc5/contracts/PanopticFactory.sol)
+# PanopticFactoryV3
+
+> Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
+
+[Git Source](https://github.com/panoptic-labs/panoptic-v2-core/blob/e3b9d125f929a5a8c7220ec6467613686939edae/contracts/PanopticFactoryV3.sol)
 
 **Inherits:**
-[FactoryNFT](/contracts/V2/base/contract.FactoryNFT.md), [Multicall](/contracts/V2/base/abstract.Multicall.md)
+[FactoryNFT](/docs/contracts/V2/base/contract.FactoryNFT), [Multicall](/docs/contracts/V2/base/abstract.Multicall)
 
 **Title:**
 Panoptic Factory which creates and registers Panoptic Pools.
@@ -31,7 +34,7 @@ The Semi Fungible Position Manager (SFPM) which tracks option positions across P
 
 
 ```solidity
-SemiFungiblePositionManager internal immutable SFPM
+SemiFungiblePositionManagerV3 internal immutable SFPM
 ```
 
 
@@ -58,7 +61,7 @@ Mapping from address(UniswapV3Pool) to address(PanopticPool) that stores the add
 
 
 ```solidity
-mapping(IUniswapV3Pool univ3pool => mapping(IRiskEngine riskEngine => PanopticPool panopticPool)) internal
+mapping(IUniswapV3Pool univ3pool => mapping(IRiskEngine riskEngine => PanopticPoolV2 panopticPool)) internal
     s_getPanopticPool
 ```
 
@@ -71,7 +74,7 @@ Set immutable variables and store metadata pointers.
 
 ```solidity
 constructor(
-    SemiFungiblePositionManager _SFPM,
+    SemiFungiblePositionManagerV3 _SFPM,
     IUniswapV3Factory _univ3Factory,
     address _poolReference,
     address _collateralReference,
@@ -84,7 +87,7 @@ constructor(
 
 |Name|Type|Description|
 |----|----|-----------|
-|`_SFPM`|`SemiFungiblePositionManager`|The canonical `SemiFungiblePositionManager` deployment|
+|`_SFPM`|`SemiFungiblePositionManagerV3`|The canonical `SemiFungiblePositionManagerV3` deployment|
 |`_univ3Factory`|`IUniswapV3Factory`|The canonical Uniswap V3 Factory deployment|
 |`_poolReference`|`address`|The reference implementation of the `PanopticPool` to clone|
 |`_collateralReference`|`address`|The reference implementation of the `CollateralTracker` to clone|
@@ -107,7 +110,7 @@ Salt used in PanopticPool CREATE2 is `[leading 20 msg.sender chars][leading 20 p
 ```solidity
 function deployNewPool(address token0, address token1, uint24 fee, IRiskEngine riskEngine, uint96 salt)
     external
-    returns (PanopticPool newPoolContract);
+    returns (PanopticPoolV2 newPoolContract);
 ```
 **Parameters**
 
@@ -123,7 +126,7 @@ function deployNewPool(address token0, address token1, uint24 fee, IRiskEngine r
 
 |Name|Type|Description|
 |----|----|-----------|
-|`newPoolContract`|`PanopticPool`|The address of the newly deployed Panoptic pool|
+|`newPoolContract`|`PanopticPoolV2`|The address of the newly deployed Panoptic pool|
 
 
 ### minePoolAddress
@@ -170,7 +173,7 @@ Return the address of the Panoptic Pool associated with `univ3pool`.
 
 
 ```solidity
-function getPanopticPool(IUniswapV3Pool univ3pool, IRiskEngine riskEngine) external view returns (PanopticPool);
+function getPanopticPool(IUniswapV3Pool univ3pool, IRiskEngine riskEngine) external view returns (PanopticPoolV2);
 ```
 **Parameters**
 
@@ -183,7 +186,7 @@ function getPanopticPool(IUniswapV3Pool univ3pool, IRiskEngine riskEngine) exter
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`PanopticPool`|Address of the Panoptic Pool associated with `univ3pool`|
+|`<none>`|`PanopticPoolV2`|Address of the Panoptic Pool associated with `univ3pool`|
 
 
 ## Events
@@ -193,10 +196,10 @@ Emitted when a Panoptic Pool is created.
 
 ```solidity
 event PoolDeployed(
-    PanopticPool indexed poolAddress,
+    PanopticPoolV2 indexed poolAddress,
     IUniswapV3Pool indexed uniswapPool,
-    CollateralTracker collateralTracker0,
-    CollateralTracker collateralTracker1,
+    CollateralTrackerV2 collateralTracker0,
+    CollateralTrackerV2 collateralTracker1,
     IRiskEngine riskEngine
 );
 ```
@@ -205,9 +208,8 @@ event PoolDeployed(
 
 |Name|Type|Description|
 |----|----|-----------|
-|`poolAddress`|`PanopticPool`|Address of the deployed Panoptic pool|
+|`poolAddress`|`PanopticPoolV2`|Address of the deployed Panoptic pool|
 |`uniswapPool`|`IUniswapV3Pool`|Address of the underlying Uniswap V3 pool|
-|`collateralTracker0`|`CollateralTracker`|Address of the collateral tracker contract for token0|
-|`collateralTracker1`|`CollateralTracker`|Address of the collateral tracker contract for token1|
+|`collateralTracker0`|`CollateralTrackerV2`|Address of the collateral tracker contract for token0|
+|`collateralTracker1`|`CollateralTrackerV2`|Address of the collateral tracker contract for token1|
 |`riskEngine`|`IRiskEngine`|Address of the risk engine used|
-

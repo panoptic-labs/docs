@@ -1,5 +1,8 @@
 # BuilderFactory
-[Git Source](https://github.com/panoptic-labs/panoptic-next-core-private/blob/8cb6912a84b43ed5df88c9b5bd34535204453dc5/contracts/RiskEngine.sol)
+
+> Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
+
+[Git Source](https://github.com/panoptic-labs/panoptic-v2-core/blob/e3b9d125f929a5a8c7220ec6467613686939edae/contracts/Builder.sol)
 
 
 ## State Variables
@@ -13,12 +16,24 @@ address public immutable OWNER
 ## Functions
 ### constructor
 
+Constructs a new BuilderFactory instance
+
+Reverts if owner is the zero address
+
 
 ```solidity
 constructor(address owner) ;
 ```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`owner`|`address`|The address that will have permission to deploy new builder wallets|
+
 
 ### onlyOwner
+
+Modifier function to check if caller is the factory owner
 
 
 ```solidity
@@ -26,6 +41,10 @@ modifier onlyOwner() ;
 ```
 
 ### _onlyOwner
+
+Internal function to check if caller is the factory owner
+
+Reverts with "NOT_OWNER" if msg.sender is not the OWNER
 
 
 ```solidity
@@ -81,4 +100,3 @@ event BuilderWalletDeployed(uint48 indexed builderCode, address indexed wallet, 
 |`builderCode`|`uint48`|The builder code used as salt|
 |`wallet`|`address`|The address of the deployed wallet|
 |`builderAdmin`|`address`|The admin address for the wallet|
-

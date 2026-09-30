@@ -35,22 +35,21 @@ The Panoptic interface allows existing Uniswap liquidity providers to easily mig
 
 ## Permissionless, Perpetual Options
 Options positions in Panoptic have no expiration.
-Anyone can sell an option at any strike on any asset.
-Buyers can purchase any option that has been sold beforehand.
+Trading requires a compatible pool, valid tick-aligned strikes and widths, sufficient collateral, and available liquidity. Buying removes liquidity supplied by sellers, subject to the position manager's limits. Interface listing is separate from permissionless pool deployment.
 Panoptic aims to transform the way users trade options the same way Uniswap transformed on-chain spot trading.
 
 ## Oracle-free Pricing
 The key difference between the pricing of regular options in TradFi and in Panoptic is the way the premium is calculated. Instead of requiring users to pay for their options upfront, the pricing of a Panoptic option is path-dependent and will grow at each block as long as the spot price is [within range](/docs/terms/in_range) of the option strike price.
-While this may create an extra level of uncertainty for options buyers (it is impossible to know ahead of time how much an option will cost), one of the advantages of the path-dependent pricing model is that some options may cost nothing even if it is held for several days.
+Total streaming premia depend on the path of prices and trading activity. Low or zero premium accrual over an interval does not imply a cost-free trade: commissions, gas, and applicable borrow interest remain separate. V2 uses internal price observations for collateral and solvency checks.
 
 ## Capital Efficiency
 Options sellers in Panoptic are able to write undercollateralized options.
-The collateral required to sell an option can be as low as 20% of the notional value of that option and follows leverage recommendations from the CBOE and the Financial Industry Regulatory Authority (FINRA).
+Required collateral depends on the selected RiskEngine, position composition, price, utilization, and action buffers. A base collateral percentage is not a universal leverage limit or evidence of compliance with traditional broker margin rules.
 Undercollateralized options aim to more accurately reflect the risks associated with selling options compared to fully-collateralized options.
 
 ## Fees
 Users pay fees in three scenarios.
-1. When a position is opened or closed, the options trader pays a [commission fee](/docs/contracts/parameters#fee-parameters) equal to 1 basis point (0.01%) of the notional value of an opened position and 10 bps (0.1%) of the accrued premium of a closed position.
+1. When a position is opened or closed, the options trader pays a [commission fee](/docs/panoptic-protocol/V2/fee-structure) according to the pool's RiskEngine and settlement operation. Premium commission can be subject to a notional cap; builder routing can change the amount paid. See the [parameter page](/docs/contracts/parameters) for configuration.
 
 2. When a user borrows funds from the Panoptic pool to open positions on leverage, the user pays [interest](/docs/panoptic-protocol/V2/interest-accrual) on the borrowed amount. The interest rate is a floating rate which depends on the pool's current utilization vs target utilization.
 

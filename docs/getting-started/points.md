@@ -1,19 +1,20 @@
 ---
 sidebar_position: 1
-label: "Points"
+label: "Pips"
 ---
 
-# Pips — Season 3
+# Pips: Season 3
 
-Pips measure your contribution to Panoptic. In Season 3, they are earned by paying trading fees in eligible markets and are distributed in fixed-size campaigns.
+Pips measure your contribution to Panoptic. In Season 3, they are earned by paying trading fees in eligible markets, weighted by boosts, and distributed in fixed-size campaigns.
 
-**Campaign 1 is live.** It awards **100,000,000 Pips** for activity in the **WETH/USDC 5-bps** market (Uniswap v3), starting **August 24, 2026**.
+**Campaign 2 is live.** Since **September 22, 2026**, it awards **100,000,000 Pips** for activity in two markets that share one allocation: **WETH/USDC 5-bps** on Ethereum (Uniswap v3) and **SPY/USDG 30-bps** on Robinhood Chain (Uniswap v4). Boosts are now active, and Uniswap LPs on the [Panoptic VIP List](#panoptic-vip-list) get a one-time bonus and a boost.
 
 | Season | Market | Pips | Status |
 | --- | --- | --- | --- |
 | Season 1 | Panoptic v1 | 1,498,552,867 | Final |
 | Season 2 | ETH/USDC 30-bps (v4) | 40,000,000 | Final |
-| Season 3 · Campaign 1 | WETH/USDC 5-bps (v3) | 100,000,000 | Live |
+| Season 3 · Campaign 1 | WETH/USDC 5-bps (v3) | 100,000,000 | Final |
+| Season 3 · Campaign 2 | WETH/USDC 5-bps (v3) · SPY/USDG 30-bps (v4, Robinhood Chain) | 100,000,000 | Live |
 
 Season 1 and Season 2 balances are frozen and carried on your account. Nothing you earned expires.
 
@@ -21,38 +22,66 @@ Season 1 and Season 2 balances are frozen and carried on your account. Nothing y
 
 Season 3 awards Pips on **fees paid**. Two kinds of fees count:
 
-- **Opening commission** — the commission charged when you open a position or a loan (currently **3 bps of notional**).
-- **Option premium fees** — the **2.5% fee** on option premium, whether you earn the premium or owe it. It accrues daily while a position is open — you don't need to close to be credited.
+- **Position and loan fees:** **3 bps of notional**, charged when you open a position or a loan.
+- **Option premium fees:** a **2.5% fee** on option premium, whether you earn the premium or owe it, capped at **30 bps of notional**. It accrues daily while a position is open, so you don't need to close it to be credited.
 
-**Want more Pips? Trade more.** Your share of each day's pot scales directly with your activity: more volume means more commissions, and more open positions mean more premium accruing — every dollar of fees counts. [Start trading →](https://app.panoptic.xyz)
+**Want more Pips? Trade more.** More volume means more position fees, and more open positions mean more premium accruing. Every dollar of fees counts. [Start trading →](https://app.panoptic.xyz)
 
-Each UTC day has its own Pips pot. At the end of the day, that pot is shared among all accounts **in proportion to the fees each account paid that day**.
+Each UTC day's Pips issuance is proportional to the total eligible fees paid that day, at a fixed rate for the campaign. That day's Pips are then shared among all accounts **in proportion to each account's fees multiplied by its [boost](#boosts)**. Boosts change how the day's Pips are split; they don't increase how many are issued.
 
-Open positions are snapshotted daily: the premium fees accrued that day are counted toward your fees paid even if the position stays open — unrealized premium earns Pips the day it accrues, not when you close. Only completed (finalized) days count, so your total updates once per day rather than tick by tick.
+Open positions are snapshotted daily, and the premium fees accrued that day count toward your fees paid even if the position stays open. Unrealized premium earns Pips the day it accrues, not when you close. Only completed (finalized) days count, so your total updates once per day rather than tick by tick.
 
-Depositing into the **PLP and Unicorn vaults** also earns: fees paid by a vault pass through to its depositors, in proportion to how long their deposits were held that day. Deposits outside these vaults do not earn Pips in Campaign 1.
+Depositing into an eligible vault also earns: fees paid by a vault pass through to its depositors, in proportion to how long their deposits were held that day. Eligible vaults in Campaign 2 are the **WETH PLP** and **Unicorn USDC** vaults on Ethereum and the **USDG PLP** vault on Robinhood Chain. Deposits outside these vaults do not earn campaign Pips.
 
-There is no longer a depositor/trader split, and profit or loss is irrelevant — only fees paid matter.
+There is no longer a depositor/trader split, and profit or loss is irrelevant. Only fees paid and your boost matter.
 
 ## Campaigns and how they end
 
-Season 3 runs as a sequence of campaigns. Each campaign has a fixed Pips allocation and ends when the market reaches an undisclosed revenue milestone. When the milestone is crossed, the campaign ends at the end of that UTC day — and **that final day is paid out in full**, so activity on the last day is never wasted.
+Season 3 runs as a sequence of campaigns. Each campaign has a Pips allocation and ends when its markets reach an undisclosed revenue milestone. The day the milestone is crossed is paid out in full, and **the following UTC day is a grace day** that is still paid at the same campaign's rate, so activity at the end of a campaign is never wasted. Because of this, a campaign's final total can end slightly above its allocation. The next campaign opens the day after the grace day, and its markets and size are announced then.
 
-When a campaign ends, the next one begins immediately — its market and size are announced at that moment, so there is no gap in earning. More of the campaign mechanics will be disclosed progressively as Season 3 advances.
+Balances from completed campaigns are final and stay on your account. More of the campaign mechanics will be disclosed progressively as Season 3 advances.
 
 ## Pips and the token
 
-Campaign 1's 100,000,000 Pips correspond to **0.5% of the total token supply**. Each campaign's supply allocation is set when the campaign starts and will not be revised afterward. Future campaigns may award different amounts of Pips against their own allocations, announced as each campaign launches. The mechanics of any token distribution — timing, structure, and per-account eligibility — have not been finalized. Pips are non-transferable, and no individual account holds a claim on tokens until a token distribution is formally announced.
+Campaign 2's 100,000,000 Pips correspond to **0.5% of the total token supply**. Each campaign's supply allocation is set when the campaign starts and will not be revised afterward. Future campaigns may award different amounts of Pips against their own allocations, announced as each campaign launches. The mechanics of any token distribution, including timing, structure, and per-account eligibility, have not been finalized. Pips are non-transferable, and no individual account holds a claim on tokens until a token distribution is formally announced.
 
 ## Boosts
 
-Campaign 1 launches with no boosts active. When boosts arrive, they multiply your daily fee share — they redistribute the fixed daily pot rather than inflating it — and will be announced before they take effect.
+Your boost starts at **1.0×**, and each boost you qualify for adds to it. Your fees are multiplied by your boost when each day's Pips are split. Track your progress on the [Pips page](https://app.panoptic.xyz/leaderboard/pips).
 
-**Boosts are coming soon**, and they will reward consistency and engagement: showing up every day, building on your activity over time, and bringing others to Panoptic will all count for more. Staying active now means you're positioned to benefit the moment they go live.
+| Boost | Adds up to | How to qualify |
+| --- | --- | --- |
+| **Uniswap LP** (status) | +0.50× | Your wallet is on the [Panoptic VIP List](#panoptic-vip-list). |
+| **Vault Depositor** (status) | +0.25× | You held a funded eligible vault deposit in an earlier Season 2 or Season 3 campaign. A deposit counts once the vault has fulfilled it and issued shares; deposits made during the current campaign do not qualify. |
+| **Survivor** (status) | +0.25× | Your wallet held eligible protocol liquidity at the time Panoptic V1 was retired. |
+| **Daily Connect** | +0.25× (5 steps of +0.05×) | Connect your wallet in the app once per UTC day. Each qualifying day climbs one step; a missed day drops one step. |
+| **Trade Streak** | +0.50× (5 steps of +0.10×) | Open or close a position or loan each UTC day that uses at least 5% of your collateral. Each qualifying day climbs one step; a missed day drops one step. |
+| **Volume Tiers** | +1.00× (10 tiers of +0.10×) | Lifetime Season 3 fees paid reach $30, $100, $300, $1K, $3K, $10K, $30K, $100K, $300K, and $1M. Each tier is permanent once reached and applies from the following day. |
+
+With every boost, the maximum is **3.75×**.
+
+## Panoptic VIP List
+
+The Panoptic VIP List recognizes **5,000 Uniswap LPs**: wallets that held more than $1,000 in Uniswap LP liquidity at the **September 4, 2026 snapshot**. Each listed wallet gets:
+
+- **A one-time 25,000-Pip bonus**, credited the first time the wallet connects to the app. It is paid outside campaign allocations and is not multiplied by boosts.
+- **The Uniswap LP boost (+0.50×)** on campaign Pips.
+
+Listed wallets are ranked into tiers by their snapshot liquidity:
+
+| Tier | Uniswap LP liquidity |
+| --- | --- |
+| Leviathan | $10M+ |
+| Whale | $1M to under $10M |
+| Dolphin | $100K to under $1M |
+| Fish | $10K to under $100K |
+| Shrimp | $1K to under $10K |
+
+Check any wallet on the [VIP List page](https://app.panoptic.xyz/portfolio), with or without connecting. If a wallet isn't listed but currently holds $1,000 or more in Uniswap LP liquidity, use **Request review** on that page to ask the team to add it. Searching or spectating a wallet does not enroll it.
 
 ## Fair play
 
-Pips reward genuine trading, and all fee-paying activity earns. In exceptional cases — such as large-scale manipulation aimed at capturing a campaign's allocation — Panoptic may withhold Pips from the accounts involved, at its sole discretion.
+Pips reward genuine trading, and all fee-paying activity earns. In exceptional cases, such as large-scale manipulation aimed at capturing a campaign's allocation, Panoptic may withhold Pips from the accounts involved, at its sole discretion. Accounts flagged for wash trading have their boost set to **0.5×**, regardless of any other boosts.
 
 ## Eligibility
 
@@ -68,13 +97,13 @@ The Pips program and any future token distribution are not available to persons 
 A Pip is an off-chain point tracking your contribution to the protocol. It is not a token and cannot be traded or transferred.
 
 **How do I start earning?**
-Open a position or a loan in the eligible market, or deposit into the PLP or Unicorn vaults. Commissions and premium fees you pay earn Pips automatically — no registration needed.
+Open a position or a loan in an eligible market on Ethereum or Robinhood Chain, or deposit into an eligible vault. Position, loan, and option premium fees you pay earn Pips automatically, with no registration needed.
 
 **Why isn't my Pips number updating in real time?**
 Pips are settled per UTC day. Your total includes finalized days only, so it updates once per day.
 
 **Do I earn on premium I receive, or only premium I pay?**
-Both directions count: the 2.5% premium fee earns Pips whether you earn the premium or owe it.
+Both directions count: the 2.5% premium fee (capped at 30 bps of notional) earns Pips whether you earn the premium or owe it.
 
 **Do I have to close my position to get credited?**
 No. Premium fees accrue daily while the position stays open.
@@ -83,16 +112,16 @@ No. Premium fees accrue daily while the position stays open.
 No. Pips are based on fees paid, not PnL.
 
 **Which markets are eligible? Will more be added?**
-Campaign 1 covers only the WETH/USDC 5-bps v3 market. Future campaigns may use other markets; each is announced when the campaign starts.
+Campaign 2 covers the WETH/USDC 5-bps v3 market on Ethereum and the SPY/USDG 30-bps v4 market on Robinhood Chain. Future campaigns may use other markets; each is announced when the campaign starts.
 
 **What is the Pips-per-dollar rate?**
-The daily pot is proportional to that day's share of the campaign; the exact revenue milestone — and therefore the rate — is not disclosed during the campaign.
+Each campaign issues Pips at a fixed rate per dollar of eligible fees, set by its allocation and its revenue milestone. The milestone, and therefore the rate, is not disclosed during the campaign.
 
 **Do my Season 1 and Season 2 Pips still count?**
 Yes. Prior seasons are final and your balances carry forward alongside Season 3 earnings.
 
 **Why did the campaign end when it did?**
-Campaigns end on the revenue milestone, not a calendar date. The final day is paid in full, so ongoing activity is credited through the end.
+Campaigns end on the revenue milestone, not a calendar date. The day the milestone is crossed and the grace day after it are paid in full, so ongoing activity is credited through the end.
 
 **Do fees routed through a builder code earn the same?**
 Yes. Your full fee counts, regardless of how it is split between the protocol and a builder.
@@ -100,11 +129,17 @@ Yes. Your full fee counts, regardless of how it is split between the protocol an
 **How does the vault pass-through work exactly?**
 Each day, the Pips a vault earns from its fees are split among its depositors in proportion to how long each deposit was held during that day. Vault addresses themselves do not appear on the leaderboard.
 
-**When are boosts coming, and what will they do?**
-They'll be announced before going live. Boosts multiply your share of the daily pot; they don't create extra Pips.
+**How do boosts work?**
+Boosts multiply your fees when each day's Pips are split, so they increase your share without creating extra Pips. See [Boosts](#boosts) for the full list.
+
+**Is my wallet on the VIP List?**
+Search it on the [VIP List page](https://app.panoptic.xyz/portfolio). No connection is required.
+
+**When is the VIP bonus credited?**
+The first time a listed wallet connects to the app. Being on the list does not mean the bonus has been credited yet.
 
 ---
 
-*Program terms — eligible markets, fee types, boosts, and similar mechanics — may evolve between campaigns. Each campaign's Pips total and its share of token supply are set when the campaign starts. Statements about the timing and structure of any future token distribution are forward-looking.*
+*Program terms, including eligible markets, fee types, boosts, and similar mechanics, may evolve between campaigns. Each campaign's Pips total and its share of token supply are set when the campaign starts. Statements about the timing and structure of any future token distribution are forward-looking.*
 
 ![](/img/research/panoptic-season-3-points.png)

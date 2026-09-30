@@ -38,6 +38,72 @@ $ ./build.sh
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service. It also ensures that the Glossary is updated.
 
+### Agent documentation index
+
+`static/llms.txt` is the curated index served at `https://panoptic.xyz/llms.txt`.
+Docusaurus copies it unchanged into the build. There is no configured Markdown
+export, so the index uses public page URLs. Update it alongside changes to routes,
+protocol versions, and the maintained documentation.
+
+### Deployed RiskEngine parameters
+
+`static/data/risk-engines.json` records finalized-block observations for the three
+active engines on Ethereum and Robinhood. It contains public addresses, raw getter
+values, block hashes, runtime hashes, and read-only boundary-probe results. The
+refresh also compares deployed runtime with a read-only execution of the pinned
+public release's creation bytecode. This establishes release-artifact correspondence;
+it does not claim that recompiling an arbitrary checkout reproduces that bytecode.
+
+Set `ETHEREUM_RPC_URL` and `ROBINHOOD_RPC_URL` in your environment, then run:
+
+```sh
+pnpm --filter @panoptic-eng/docs refresh:risk-engines
+```
+
+The refresh is explicit and never runs in CI or during the site build. It fails
+without writing a snapshot if a chain, required getter, deployment, bytecode
+comparison, or boundary check fails. RPC error details are suppressed to avoid
+logging credential-bearing endpoints. The checked-in snapshot and generated
+parameter tables should be reviewed together.
+
+The getter inventory, active-engine list, and public source revision are maintained
+in `scripts/risk-engines.mjs`. Ratios are formatted with bigint arithmetic. Edit
+human explanations outside the generated markers in `docs/contracts/parameters.md`.
+After a snapshot change, `generate:risk-tables` updates those tables; `check:risk-tables`
+checks them without writing. The build checks for stale tables and requires no RPC.
+
+### Public contract references
+
+To regenerate the v2 references, check out `panoptic-labs/panoptic-v2-core` at the
+exact `sourceCommit` in `scripts/risk-engines.mjs`, initialize its dependency
+submodules, install Foundry, then run:
+
+```sh
+pnpm --filter @panoptic-eng/docs generate:contracts /absolute/path/to/public-core
+```
+
+This runs `forge doc` with the production profile (no Solidity tests), normalizes
+internal links, applies implementation-verified description corrections, pins
+public source links, and retains existing v3 documentation routes despite the public
+repository's explicit `V3` contract names. The generated pages state their source revision; deployed configuration belongs on the parameter
+page, not in hand-edited generated references.
+
+### Verification
+
+```sh
+pnpm --filter @panoptic-eng/docs lint
+pnpm --filter @panoptic-eng/docs test
+pnpm --filter @panoptic-eng/docs build
+pnpm --filter @panoptic-eng/docs serve --host 127.0.0.1 --port 3000 --no-open
+```
+
+Verify `/llms.txt` returns HTTP 200 and `text/plain`, with bytes matching its source.
+Check every listed URL and fragment against the build and the public site. New
+routes can only resolve publicly after deployment. Docusaurus does not validate
+links inside static text files. Its v2 preview server returns 404 for some dotted
+contract routes even when the generated `build/<route>/index.html` exists; inspect
+those artifacts and their canonical URLs directly.
+
 ### Glossary
 
 You can generate the glossary with:
@@ -48,11 +114,17 @@ $ ./glossary.sh
 
 ### Subgraph docs
 
-To generate subgraph docs, run
+Generate both Ethereum and Robinhood `v2_prod` references from public introspection:
 
 ```sh
-pnpm graphql-markdown
+pnpm --filter @panoptic-eng/docs graphql-markdown
+pnpm --filter @panoptic-eng/docs test:subgraph
+pnpm --filter @panoptic-eng/docs lint:subgraph
 ```
+
+The generator records each deployment ID and schema hash. The check validates and executes every GraphQL example in `docs/subgraph/queries.md` against both endpoints, including cursor pagination and real open-position records. These commands require network access; the normal docs build uses checked-in files. Do not substitute a Sepolia schema for a production reference.
+
+The SDK quickstart in `docs/developers/v2-integration.md` is pinned to public package version 1.0.25. When changing its example, install that version in a temporary ESM project, typecheck the snippet, and run its read-only calls against a documented v2 pool. Never add transaction submission to the verification step.
 
 ### Build the Glossary
 

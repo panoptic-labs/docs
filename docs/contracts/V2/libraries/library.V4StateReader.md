@@ -1,5 +1,8 @@
 # V4StateReader
-[Git Source](https://github.com/panoptic-labs/panoptic-next-core-private/blob/8cb6912a84b43ed5df88c9b5bd34535204453dc5/contracts/libraries/V4StateReader.sol)
+
+> Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
+
+[Git Source](https://github.com/panoptic-labs/panoptic-v2-core/blob/e3b9d125f929a5a8c7220ec6467613686939edae/contracts/libraries/V4StateReader.sol)
 
 **Author:**
 Axicon Labs Limited, credit to Uniswap Labs under MIT License
@@ -109,5 +112,3 @@ function getFeeGrowthInsideLast(IPoolManager manager, PoolId poolId, bytes32 pos
 |----|----|-----------|
 |`feeGrowthInside0LastX128`|`uint256`|The fee growth inside the position for currency0|
 |`feeGrowthInside1LastX128`|`uint256`|The fee growth inside the position for currency1|
-
-

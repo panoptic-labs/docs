@@ -1,8 +1,11 @@
 # FactoryNFT
-[Git Source](https://github.com/panoptic-labs/panoptic-next-core-private/blob/8cb6912a84b43ed5df88c9b5bd34535204453dc5/contracts/base/FactoryNFT.sol)
+
+> Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
+
+[Git Source](https://github.com/panoptic-labs/panoptic-v2-core/blob/e3b9d125f929a5a8c7220ec6467613686939edae/contracts/base/FactoryNFT.sol)
 
 **Inherits:**
-[MetadataStore](/contracts/V2/base/contract.MetadataStore.md), ERC721
+[MetadataStore](/docs/contracts/V2/base/contract.MetadataStore), ERC721
 
 **Title:**
 FactoryNFT: ERC721 contract for Panoptic Factory NFTs.
@@ -24,7 +27,7 @@ Initialize metadata pointers and token name/symbol.
 ```solidity
 constructor(bytes32[] memory properties, uint256[][] memory indices, Pointer[][] memory pointers)
     MetadataStore(properties, indices, pointers)
-    ERC721("Panoptic V1 Factory Deployer NFTs", "PANOPTIC-NFT");
+    ERC721("Panoptic V2 Factory Deployer NFTs", "PANOPTIC-NFT");
 ```
 **Parameters**
 
@@ -265,5 +268,3 @@ function maxStrategyLabelWidth(uint256 rarity) internal pure returns (uint256 wi
 |Name|Type|Description|
 |----|----|-----------|
 |`width`|`uint256`|The maximum SVG unit width for the strategy name label|
-
-

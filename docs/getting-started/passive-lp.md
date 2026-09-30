@@ -8,22 +8,23 @@ import ThemedImage from '@theme/ThemedImage';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Lenders
-Panoptic offers a streamlined approach for lenders and passive liquidity providers (PLPs), enabling you to earn yield without the need for constant position management, monitoring, or dealing with impermanent loss. With Panoptic, you can enjoy the benefits of providing liquidity on Uniswap with the ease of a set-and-forget strategy.
+Lenders, also called passive liquidity providers (PLPs), supply an underlying token to a Panoptic collateral market. Their deposits support borrowing by traders. Lending does not require choosing an AMM price range, but deposits remain exposed to asset-price changes, smart-contract faults, and protocol losses.
 
-## Why Lend on Panoptic?
-- **Hassle-Free Yield**: Unlike Uniswap V3 and V4, which require active management to stay within a price range, Panoptic allows you to provide single-sided liquidity passively. This means no need to rebalance, monitor positions, or handle complex decisions.
-- **Auto-Compounded Rewards**: Lenders on Panoptic enjoy automatically reinvested and auto-compounded rewards, allowing you to earn yield on your yield.
-- **Risk Mitigation**: Lending pools eliminate exposure to impermanent loss (IL) and loss-versus-rebalancing (LVR). Funds are deployed to an intermediary Panoptic pool, with yields generated from borrowers, making this an ideal solution for users who prefer a stable, hands-off approach.
+## How lending works
 
-## How Does Lending Work?
-1. **Provide Single-Sided Liquidity**: Deposit any token, in any amount, into a yield-optimized [lending vault](/docs/getting-started/vaults#lending-vaults) or directly into an isolated lending market.
-2. **Earn Passive Rewards**: Your deposited liquidity is available for users to borrow, generating interest.
-3. **Auto-Compounding**: Rewards from borrow activity are automatically reinvested, maximizing your returns over time.
+1. Choose a supported token and market, or a [managed lending vault](/docs/getting-started/vaults#lending-vaults) with its own strategy and withdrawal terms.
+2. Deposit the token and receive shares representing your claim on the market or vault.
+3. Monitor the share value, market utilization, available withdrawals, and the risks of the underlying asset and strategy.
 
-## Factors Affecting Yield
-Your yield as a lender depends on:
-- **Your Share of the Market**: The more tokens you deposit, the greater your share of the market's interest rewards.
-- **Borrow Activity**: The more volume of funds borrowed, the higher the interest rate.
+Collateral-market returns depend on borrowing activity, interest rates, applicable fee routing, and losses. Accrual through share accounting does not guarantee positive returns or a fixed APY. Borrower rates are not the same as lender yields.
+
+## Withdrawal and loss risks
+
+Deposits lent to traders may not be immediately available for withdrawal. High utilization, account collateral requirements, and managed-vault redemption rules can limit or delay access to funds. Check the withdrawal preview and any vault-specific queue before treating the full displayed balance as available cash.
+
+A PLP does not directly manage the same price-range inventory as an AMM LP. That distinction does not make lending risk-free: collateral assets can lose value, liquidation can fail to recover enough assets, and protocol losses can reduce what shareholders recover. Deposits are not insured by an audit or by the presence of liquidation bots.
+
+See [protocol risks](/docs/panoptic-protocol/risks) and the [CollateralTracker reference](/docs/contracts/V2/contract.CollateralTracker) for collateral-market accounting. Managed vaults add their own strategy and operational risks.
 
 ## Get Started Today
 Ready to earn? Visit our [lending platform](https://app.panoptic.xyz).
@@ -54,7 +55,7 @@ Ready to earn? Visit our [lending platform](https://app.panoptic.xyz).
 
 ---
 ### Resources
-- [Passive LP risks](/blog/bringing-passive-liquidity-to-uniswap#what-are-the-risks)
+- [Passive LP risks](/docs/panoptic-protocol/risks#panoptic-liquidity-provider-risks)
 - [Panoptic awarded Uniswap Foundation grant](/blog/panoptic-awarded-uniswap-foundation-grant) 
 - [Bringing passive liquidity to Uniswap](/blog/bringing-passive-liquidity-to-uniswap)
 - [Passive liquidity pools](/blog/passive-liquidity-pools)

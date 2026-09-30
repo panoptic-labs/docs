@@ -1,5 +1,8 @@
 # InteractionHelper
-[Git Source](https://github.com/panoptic-labs/panoptic-next-core-private/blob/8cb6912a84b43ed5df88c9b5bd34535204453dc5/contracts/libraries/InteractionHelper.sol)
+
+> Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
+
+[Git Source](https://github.com/panoptic-labs/panoptic-v2-core/blob/e3b9d125f929a5a8c7220ec6467613686939edae/contracts/libraries/InteractionHelper.sol)
 
 **Title:**
 InteractionHelper - contains helper functions for external interactions such as approvals.
@@ -22,10 +25,8 @@ Function that performs approvals on behalf of the PanopticPool for CollateralTra
 ```solidity
 function doApprovals(
     ISemiFungiblePositionManager sfpm,
-    CollateralTracker ct0,
-    CollateralTracker ct1,
-    address token0,
-    address token1,
+    CollateralTrackerV2 ct0,
+    CollateralTrackerV2 ct1,
     address poolManager
 ) external;
 ```
@@ -34,10 +35,8 @@ function doApprovals(
 |Name|Type|Description|
 |----|----|-----------|
 |`sfpm`|`ISemiFungiblePositionManager`|The SemiFungiblePositionManager being approved for both token0 and token1|
-|`ct0`|`CollateralTracker`|The CollateralTracker (token0) being approved for token0|
-|`ct1`|`CollateralTracker`|The CollateralTracker (token1) being approved for token1|
-|`token0`|`address`|The token0 (in Uniswap) being approved for|
-|`token1`|`address`|The token1 (in Uniswap) being approved for|
+|`ct0`|`CollateralTrackerV2`|The CollateralTracker (token0) being approved for token0|
+|`ct1`|`CollateralTrackerV2`|The CollateralTracker (token1) being approved for token1|
 |`poolManager`|`address`|The Uniswap V4 pool manager address (zero address if using V3)|
 
 
@@ -116,6 +115,10 @@ function computeDecimals(address token) external view returns (uint8);
 
 ### settleAmounts
 
+Settles haircut premia and burns collateral shares during liquidation when protocol loss occurs.
+
+Updates settled token accumulators for haircut long legs and burns collateral shares equal to the total haircut amount via settleBurn().
+
 
 ```solidity
 function settleAmounts(
@@ -124,9 +127,20 @@ function settleAmounts(
     LeftRightUnsigned haircutTotal,
     LeftRightSigned[4][] memory haircutPerLeg,
     LeftRightSigned[4][] memory premiasByLeg,
-    CollateralTracker ct0,
-    CollateralTracker ct1,
+    CollateralTrackerV2 ct0,
+    CollateralTrackerV2 ct1,
     mapping(bytes32 chunkKey => LeftRightUnsigned settledTokens) storage settledTokens
 ) external;
 ```
+**Parameters**
 
+|Name|Type|Description|
+|----|----|-----------|
+|`liquidatee`|`address`|The address of the user being liquidated whose premia is being haircut|
+|`positionIdList`|`TokenId[]`|The list of all positions held by the liquidatee being closed|
+|`haircutTotal`|`LeftRightUnsigned`|The total premium clawed back from the liquidatee across all positions (rightSlot: token0, leftSlot: token1)|
+|`haircutPerLeg`|`LeftRightSigned[4][]`|The haircut amount for each leg of each position in the positionIdList|
+|`premiasByLeg`|`LeftRightSigned[4][]`|The original premium owed to (positive) or paid by (negative) the liquidatee for each leg before haircut|
+|`ct0`|`CollateralTrackerV2`|The CollateralTracker for token0, used to burn shares corresponding to token0 haircut|
+|`ct1`|`CollateralTrackerV2`|The CollateralTracker for token1, used to burn shares corresponding to token1 haircut|
+|`settledTokens`|`mapping(bytes32 chunkKey => LeftRightUnsigned settledTokens)`|Storage mapping tracking accumulated premia for each liquidity chunk (indexed by chunk key)|

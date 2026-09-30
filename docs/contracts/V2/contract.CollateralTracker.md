@@ -1,12 +1,14 @@
 ---
 sidebar_position: 3
 ---
+# CollateralTrackerV2
 
-# CollateralTracker
-[Git Source](https://github.com/panoptic-labs/panoptic-next-core-private/blob/8cb6912a84b43ed5df88c9b5bd34535204453dc5/contracts/CollateralTracker.sol)
+> Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
+
+[Git Source](https://github.com/panoptic-labs/panoptic-v2-core/blob/e3b9d125f929a5a8c7220ec6467613686939edae/contracts/CollateralTracker.sol)
 
 **Inherits:**
-Clone, [ERC20Minimal](/contracts/V2/tokens/abstract.ERC20Minimal.md), [Multicall](/contracts/V2/base/abstract.Multicall.md), [TransientReentrancyGuard](/contracts/V2/libraries/abstract.TransientReentrancyGuard.md)
+Clone, [ERC20Minimal](/docs/contracts/V2/tokens/abstract.ERC20Minimal), [Multicall](/docs/contracts/V2/base/abstract.Multicall), [TransientReentrancyGuard](/docs/contracts/V2/libraries/abstract.TransientReentrancyGuard)
 
 **Title:**
 Collateral Tracking System / Margin Accounting used in conjunction with a Panoptic Pool.
@@ -39,11 +41,11 @@ string internal constant TICKER_PREFIX = "po"
 
 
 ### NAME_PREFIX
-Prefix for the token name (i.e POPT-V1 USDC LP on ETH/USDC 30bps).
+Prefix for the token name (i.e POPT-V2 USDC LP on ETH/USDC 30bps).
 
 
 ```solidity
-string internal constant NAME_PREFIX = "POPT-V1"
+string internal constant NAME_PREFIX = "POPT-V2"
 ```
 
 
@@ -181,19 +183,6 @@ mapping(address account => LeftRightSigned interestState) internal s_interestSta
 ```
 
 
-### COMMISSION_FEE
-The commission fee, in basis points, collected from PLPs at option mint.
-
-In Panoptic, options never expire, commissions are only paid when a new position is minted.
-
-We believe that this will eliminate the impact of the commission fee on the user's decision-making process when closing a position.
-
-
-```solidity
-uint256 immutable COMMISSION_FEE
-```
-
-
 ## Functions
 ### panopticPool
 
@@ -201,13 +190,13 @@ Retrieve the Panoptic Pool that this collateral token belongs to.
 
 
 ```solidity
-function panopticPool() public pure returns (PanopticPool);
+function panopticPool() public pure returns (PanopticPoolV2);
 ```
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`PanopticPool`|The Panoptic Pool associated with this collateral token|
+|`<none>`|`PanopticPoolV2`|The Panoptic Pool associated with this collateral token|
 
 
 ### underlyingIsToken0
@@ -328,6 +317,10 @@ modifier onlyPanopticPool() ;
 
 ### _onlyPanopticPool
 
+Internal function to verify that the caller is the PanopticPool
+
+Reverts with NotPanopticPool error if msg.sender is not the panoptic pool
+
 
 ```solidity
 function _onlyPanopticPool() internal view;
@@ -335,18 +328,12 @@ function _onlyPanopticPool() internal view;
 
 ### constructor
 
-Set immutable parameters for the Collateral Tracker.
+No immutable parameters for the Collateral Tracker.
 
 
 ```solidity
-constructor(uint256 _commissionFee) ;
+constructor() ;
 ```
-**Parameters**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`_commissionFee`|`uint256`|The commission fee, in basis points, collected from PLPs at option mint|
-
 
 ### initialize
 
@@ -505,7 +492,7 @@ function decimals() external view returns (uint8);
 
 ### transfer
 
-See [IERC20-transfer](/contracts/V2/tokens/abstract.ERC20Minimal.md#transfer).
+See [IERC20-transfer](/docs/contracts/V2/tokens/abstract.ERC20Minimal#transfer).
 
 Requirements:
 - the caller must have a balance of at least `amount`.
@@ -518,7 +505,7 @@ function transfer(address recipient, uint256 amount) public override(ERC20Minima
 
 ### transferFrom
 
-See [IERC20-transferFrom](/contracts/V2/tokens/abstract.ERC20Minimal.md#transferfrom).
+See [IERC20-transferFrom](/docs/contracts/V2/tokens/abstract.ERC20Minimal#transferfrom).
 
 Requirements:
 - the `from` must have a balance of at least `amount`.
@@ -554,8 +541,6 @@ function _settleCurrencyDelta(address account, int256 delta) internal;
 
 Uniswap V4 unlock callback implementation.
 
-Parameters are `(address account, int256 delta, uint256 valueOrigin)`.
-
 Wraps/unwraps `delta` amount of the underlying asset and transfers to/from the Panoptic Pool.
 
 
@@ -566,13 +551,13 @@ function unlockCallback(bytes calldata data) external returns (bytes memory);
 
 |Name|Type|Description|
 |----|----|-----------|
-|`data`|`bytes`|The encoded data containing the account, delta, and valueOrigin|
+|`data`|`bytes`|ABI-encoded `(address account, int256 delta, uint256 valueOrigin)` where `account` is the depositor/recipient, `delta` is the signed token amount to settle (positive = transfer in, negative = transfer out), and `valueOrigin` is `msg.value` forwarded for native ETH settlements|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`bytes`|This function returns no data|
+|`<none>`|`bytes`|Empty bytes (no return data)|
 
 
 ### asset
@@ -1013,23 +998,6 @@ function redeem(uint256 shares, address receiver, address owner) external nonRee
 |`assets`|`uint256`|The amount of assets resulting from the redemption|
 
 
-### donate
-
-Donate exact shares to all shareholders.
-
-Can only be used when the user has no open positions
-
-
-```solidity
-function donate(uint256 shares) external nonReentrant;
-```
-**Parameters**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`shares`|`uint256`|Amount of shares to be donated|
-
-
 ### accrueInterest
 
 Accrues protocol-wide interest for the calling user
@@ -1040,6 +1008,23 @@ Updates global interest state and settles any outstanding interest for msg.sende
 ```solidity
 function accrueInterest() external nonReentrant;
 ```
+
+### accrueInterest
+
+Accrues protocol-wide interest for the calling user
+
+Updates global interest state and settles any outstanding interest for account owner (can only be called from the PanopticPool)
+
+
+```solidity
+function accrueInterest(address owner) external nonReentrant onlyPanopticPool;
+```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`owner`|`address`|the account which calls accrue interest|
+
 
 ### _accrueInterest
 
@@ -1090,10 +1075,24 @@ function _calculateCurrentInterestState(uint128 _assetsInAMM, uint128 interestRa
 
 ### _interestRateView
 
+Returns the current interest rate per second based on pool utilization
+
 
 ```solidity
 function _interestRateView(uint256 utilization) internal view returns (uint128);
 ```
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`utilization`|`uint256`|The pool utilization to view the interest rate at|
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`<none>`|`uint128`|The current interest rate per second in WAD (18 decimal precision)|
+
 
 ### interestRate
 
@@ -1424,11 +1423,20 @@ function _updateBalancesAndSettle(
 |Name|Type|Description|
 |----|----|-----------|
 |`optionOwner`|`address`|The user minting the option|
-|`isCreation`|`bool`|A boolean flag to indicate if this is for option creation (true) or closing (false).|
+|`isCreation`|`bool`|A boolean flag to indicate if this is for option creation (true) or closing (false)|
 |`longAmount`|`int128`|The amount of longs|
 |`shortAmount`|`int128`|The amount of shorts|
 |`ammDeltaAmount`|`int128`|The amount of tokens moved during creation of the option position|
-|`realizedPremium`|`int128`||
+|`realizedPremium`|`int128`|The premium to settle on the current position (only used when closing)|
+
+**Returns**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`<none>`|`uint32`|utilization The final pool utilization (in basis points)|
+|`<none>`|`int128`|paid The net amount of tokens paid by the option owner (negative if tokens were received)|
+|`<none>`|`uint256`|totalAssets_ The total assets in the vault after the operation|
+|`<none>`|`uint256`|totalSupply_ The total share supply after the operation|
 
 
 ### settleMint
@@ -1536,21 +1544,6 @@ event Withdraw(
 |`assets`|`uint256`|The amount of assets withdrawn to `receiver`|
 |`shares`|`uint256`|The amount of shares burned by `owner` in exchange for `assets`|
 
-### Donate
-Emitted when shares are donated to the protocol.
-
-
-```solidity
-event Donate(address indexed sender, uint256 shares);
-```
-
-**Parameters**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`sender`|`address`|The address of the caller|
-|`shares`|`uint256`|The amount of shares burned by the sender|
-
 ### CommissionPaid
 Emitted when a commission is paid.
 
@@ -1592,6 +1585,11 @@ event InsolvencyPenaltyApplied(
 |`sharesBurned`|`uint256`|The number of shares burned in the partial payment|
 
 ### ProtocolLossRealized
+Emitted when protocol loss is realized during liquidation settlement
+
+Protocol loss occurs when the liquidatee's balance is insufficient to cover the required virtual shares (type(uint248).max)
+or when additional shares must be minted to pay the liquidator beyond what the liquidatee owns.
+
 
 ```solidity
 event ProtocolLossRealized(
@@ -1599,3 +1597,11 @@ event ProtocolLossRealized(
 );
 ```
 
+**Parameters**
+
+|Name|Type|Description|
+|----|----|-----------|
+|`liquidatee`|`address`|The account being liquidated whose insufficient balance resulted in protocol loss|
+|`liquidator`|`address`|The account performing the liquidation and receiving the liquidation bonus|
+|`protocolLossAssets`|`uint256`|The total protocol loss denominated in underlying assets|
+|`protocolLossShares`|`uint256`|The total protocol loss denominated in shares (virtual shares + minted bonus shares)|

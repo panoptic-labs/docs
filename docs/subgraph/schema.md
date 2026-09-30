@@ -1,27 +1,2865 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
+sidebar_label: Ethereum schema
 ---
 
-# Panoptic Subgraph Schema
+# Ethereum v2_prod subgraph schema
 
-## Panoptic Subgraph
+Generated from the [Ethereum production endpoint](https://api.goldsky.com/api/public/project_cl9gc21q105380hxuh8ks53k3/subgraphs/panoptic-subgraph-mainnet/v2_prod/gn) (chain ID 1). See [endpoints, query examples, and indexing caveats](./queries) before using these entities for account discovery.
 
-A subgraph is a derived data schema that indexes and organizes data from various decentralized protocols.
+- Deployment: `QmSWvYFWBC5NZNmuDNwZ23ob7juHp64DGUJg2MPpD1nUnd`
+- Schema SHA-256: `5280e3ad027c806911baa65b0c90acb13cc76394d6fe4e147277d0b14e93c9a5`
+- Regenerate both production references: `pnpm --filter @panoptic-eng/docs graphql-markdown`.
 
-The Panoptic subgraph is a comprehensive data schema designed to provide insights into the Panoptic protocol, enabling developers and users to efficiently query and analyze data related to Panoptic pools and its associated entities. The Panoptic subgraph leverages the underlying data from Uniswap pools as its foundation, upon which the Panoptic pools are built. Users can access structured data related to Panoptic pools, accounts, transactions, and more through the subgraph. This documentation serves as a guide to understanding the structure and functionality of the Panoptic subgraph, facilitating effective utilization of its capabilities.
+This reference preserves descriptions returned by the endpoint. Some descriptions are outdated: in particular, do not interpret `panopticVersion` as a reliable protocol-version filter. Entity relationships can also fail to resolve even when the indexer reports no indexing errors. Contract state remains authoritative for balances, risk parameters, and transaction validation.
 
-See some example queries [here](./queries).
+The two production schemas can differ. Use the reference for your chain: [Ethereum](./schema), [Robinhood](./schema-robinhood).
 
+## `Query` {#query}
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="query.panopticfactory">panopticFactory</strong></td>
+<td valign="top"><a href="#panopticfactory">PanopticFactory</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
 
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
 
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
 
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
 
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.panopticfactories">panopticFactories</strong></td>
+<td valign="top">[<a href="#panopticfactory">PanopticFactory</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#panopticfactory_orderby">PanopticFactory_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#panopticfactory_filter">PanopticFactory_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.account">account</strong></td>
+<td valign="top"><a href="#account">Account</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.accounts">accounts</strong></td>
+<td valign="top">[<a href="#account">Account</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#account_orderby">Account_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#account_filter">Account_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.accountbalance">accountBalance</strong></td>
+<td valign="top"><a href="#accountbalance">AccountBalance</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.accountbalances">accountBalances</strong></td>
+<td valign="top">[<a href="#accountbalance">AccountBalance</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#accountbalance_orderby">AccountBalance_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#accountbalance_filter">AccountBalance_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.panopticpoolaccount">panopticPoolAccount</strong></td>
+<td valign="top"><a href="#panopticpoolaccount">PanopticPoolAccount</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.panopticpoolaccounts">panopticPoolAccounts</strong></td>
+<td valign="top">[<a href="#panopticpoolaccount">PanopticPoolAccount</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#panopticpoolaccount_orderby">PanopticPoolAccount_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#panopticpoolaccount_filter">PanopticPoolAccount_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.token">token</strong></td>
+<td valign="top"><a href="#token">Token</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.tokens">tokens</strong></td>
+<td valign="top">[<a href="#token">Token</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#token_orderby">Token_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#token_filter">Token_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.poolidlookup">poolIdLookup</strong></td>
+<td valign="top"><a href="#poolidlookup">PoolIdLookup</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.poolidlookups">poolIdLookups</strong></td>
+<td valign="top">[<a href="#poolidlookup">PoolIdLookup</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#poolidlookup_orderby">PoolIdLookup_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#poolidlookup_filter">PoolIdLookup_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.pool">pool</strong></td>
+<td valign="top"><a href="#pool">Pool</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.pools">pools</strong></td>
+<td valign="top">[<a href="#pool">Pool</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#pool_orderby">Pool_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#pool_filter">Pool_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.chunk">chunk</strong></td>
+<td valign="top"><a href="#chunk">Chunk</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.chunks">chunks</strong></td>
+<td valign="top">[<a href="#chunk">Chunk</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#chunk_orderby">Chunk_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#chunk_filter">Chunk_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.leg">leg</strong></td>
+<td valign="top"><a href="#leg">Leg</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.legs">legs</strong></td>
+<td valign="top">[<a href="#leg">Leg</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#leg_orderby">Leg_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#leg_filter">Leg_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.tokenid">tokenId</strong></td>
+<td valign="top"><a href="#tokenid">TokenId</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.tokenids">tokenIds</strong></td>
+<td valign="top">[<a href="#tokenid">TokenId</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#tokenid_orderby">TokenId_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#tokenid_filter">TokenId_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.collateral">collateral</strong></td>
+<td valign="top"><a href="#collateral">Collateral</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.collaterals">collaterals</strong></td>
+<td valign="top">[<a href="#collateral">Collateral</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#collateral_orderby">Collateral_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#collateral_filter">Collateral_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.panopticpool">panopticPool</strong></td>
+<td valign="top"><a href="#panopticpool">PanopticPool</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.panopticpools">panopticPools</strong></td>
+<td valign="top">[<a href="#panopticpool">PanopticPool</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#panopticpool_orderby">PanopticPool_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#panopticpool_filter">PanopticPool_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.riskengine">riskEngine</strong></td>
+<td valign="top"><a href="#riskengine">RiskEngine</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.riskengines">riskEngines</strong></td>
+<td valign="top">[<a href="#riskengine">RiskEngine</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#riskengine_orderby">RiskEngine_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#riskengine_filter">RiskEngine_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.builderfactory">builderFactory</strong></td>
+<td valign="top"><a href="#builderfactory">BuilderFactory</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.builderfactories">builderFactories</strong></td>
+<td valign="top">[<a href="#builderfactory">BuilderFactory</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#builderfactory_orderby">BuilderFactory_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#builderfactory_filter">BuilderFactory_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.builderwallet">builderWallet</strong></td>
+<td valign="top"><a href="#builderwallet">BuilderWallet</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.builderwallets">builderWallets</strong></td>
+<td valign="top">[<a href="#builderwallet">BuilderWallet</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#builderwallet_orderby">BuilderWallet_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#builderwallet_filter">BuilderWallet_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.panopticpooldaydata">panopticPoolDayData</strong></td>
+<td valign="top"><a href="#panopticpooldaydata">PanopticPoolDayData</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.panopticpooldaydatas">panopticPoolDayDatas</strong></td>
+<td valign="top">[<a href="#panopticpooldaydata">PanopticPoolDayData</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#panopticpooldaydata_orderby">PanopticPoolDayData_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#panopticpooldaydata_filter">PanopticPoolDayData_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.collateraldaydata">collateralDayData</strong></td>
+<td valign="top"><a href="#collateraldaydata">CollateralDayData</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.collateraldaydatas">collateralDayDatas</strong></td>
+<td valign="top">[<a href="#collateraldaydata">CollateralDayData</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#collateraldaydata_orderby">CollateralDayData_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#collateraldaydata_filter">CollateralDayData_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.tokenizedpositionburnt">tokenizedPositionBurnt</strong></td>
+<td valign="top"><a href="#tokenizedpositionburnt">TokenizedPositionBurnt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.tokenizedpositionburnts">tokenizedPositionBurnts</strong></td>
+<td valign="top">[<a href="#tokenizedpositionburnt">TokenizedPositionBurnt</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#tokenizedpositionburnt_orderby">TokenizedPositionBurnt_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#tokenizedpositionburnt_filter">TokenizedPositionBurnt_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.tokenizedpositionminted">tokenizedPositionMinted</strong></td>
+<td valign="top"><a href="#tokenizedpositionminted">TokenizedPositionMinted</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.tokenizedpositionminteds">tokenizedPositionMinteds</strong></td>
+<td valign="top">[<a href="#tokenizedpositionminted">TokenizedPositionMinted</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#tokenizedpositionminted_orderby">TokenizedPositionMinted_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#tokenizedpositionminted_filter">TokenizedPositionMinted_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.collateraldeposit">collateralDeposit</strong></td>
+<td valign="top"><a href="#collateraldeposit">CollateralDeposit</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.collateraldeposits">collateralDeposits</strong></td>
+<td valign="top">[<a href="#collateraldeposit">CollateralDeposit</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#collateraldeposit_orderby">CollateralDeposit_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#collateraldeposit_filter">CollateralDeposit_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.collateralwithdraw">collateralWithdraw</strong></td>
+<td valign="top"><a href="#collateralwithdraw">CollateralWithdraw</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.collateralwithdraws">collateralWithdraws</strong></td>
+<td valign="top">[<a href="#collateralwithdraw">CollateralWithdraw</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#collateralwithdraw_orderby">CollateralWithdraw_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#collateralwithdraw_filter">CollateralWithdraw_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.commissionpaid">commissionPaid</strong></td>
+<td valign="top"><a href="#commissionpaid">CommissionPaid</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.commissionpaids">commissionPaids</strong></td>
+<td valign="top">[<a href="#commissionpaid">CommissionPaid</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#commissionpaid_orderby">CommissionPaid_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#commissionpaid_filter">CommissionPaid_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.insolvencypenaltyapplied">insolvencyPenaltyApplied</strong></td>
+<td valign="top"><a href="#insolvencypenaltyapplied">InsolvencyPenaltyApplied</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.insolvencypenaltyapplieds">insolvencyPenaltyApplieds</strong></td>
+<td valign="top">[<a href="#insolvencypenaltyapplied">InsolvencyPenaltyApplied</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#insolvencypenaltyapplied_orderby">InsolvencyPenaltyApplied_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#insolvencypenaltyapplied_filter">InsolvencyPenaltyApplied_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.protocollossrealized">protocolLossRealized</strong></td>
+<td valign="top"><a href="#protocollossrealized">ProtocolLossRealized</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.protocollossrealizeds">protocolLossRealizeds</strong></td>
+<td valign="top">[<a href="#protocollossrealized">ProtocolLossRealized</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#protocollossrealized_orderby">ProtocolLossRealized_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#protocollossrealized_filter">ProtocolLossRealized_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.optionmint">optionMint</strong></td>
+<td valign="top"><a href="#optionmint">OptionMint</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.optionmints">optionMints</strong></td>
+<td valign="top">[<a href="#optionmint">OptionMint</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#optionmint_orderby">OptionMint_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#optionmint_filter">OptionMint_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.optionburn">optionBurn</strong></td>
+<td valign="top"><a href="#optionburn">OptionBurn</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.optionburns">optionBurns</strong></td>
+<td valign="top">[<a href="#optionburn">OptionBurn</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#optionburn_orderby">OptionBurn_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#optionburn_filter">OptionBurn_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.accountliquidated">accountLiquidated</strong></td>
+<td valign="top"><a href="#accountliquidated">AccountLiquidated</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.accountliquidateds">accountLiquidateds</strong></td>
+<td valign="top">[<a href="#accountliquidated">AccountLiquidated</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#accountliquidated_orderby">AccountLiquidated_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#accountliquidated_filter">AccountLiquidated_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.forcedexercise">forcedExercise</strong></td>
+<td valign="top"><a href="#forcedexercise">ForcedExercise</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.forcedexercises">forcedExercises</strong></td>
+<td valign="top">[<a href="#forcedexercise">ForcedExercise</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#forcedexercise_orderby">ForcedExercise_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#forcedexercise_filter">ForcedExercise_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.premiumsettled">premiumSettled</strong></td>
+<td valign="top"><a href="#premiumsettled">PremiumSettled</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.premiumsettleds">premiumSettleds</strong></td>
+<td valign="top">[<a href="#premiumsettled">PremiumSettled</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#premiumsettled_orderby">PremiumSettled_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#premiumsettled_filter">PremiumSettled_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.borrowrateupdated">borrowRateUpdated</strong></td>
+<td valign="top"><a href="#borrowrateupdated">BorrowRateUpdated</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.borrowrateupdateds">borrowRateUpdateds</strong></td>
+<td valign="top">[<a href="#borrowrateupdated">BorrowRateUpdated</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#borrowrateupdated_orderby">BorrowRateUpdated_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#borrowrateupdated_filter">BorrowRateUpdated_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.tokenscollected">tokensCollected</strong></td>
+<td valign="top"><a href="#tokenscollected">TokensCollected</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.tokenscollecteds">tokensCollecteds</strong></td>
+<td valign="top">[<a href="#tokenscollected">TokensCollected</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#tokenscollected_orderby">TokensCollected_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#tokenscollected_filter">TokensCollected_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.guardiansafemodeupdated">guardianSafeModeUpdated</strong></td>
+<td valign="top"><a href="#guardiansafemodeupdated">GuardianSafeModeUpdated</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.guardiansafemodeupdateds">guardianSafeModeUpdateds</strong></td>
+<td valign="top">[<a href="#guardiansafemodeupdated">GuardianSafeModeUpdated</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#guardiansafemodeupdated_orderby">GuardianSafeModeUpdated_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#guardiansafemodeupdated_filter">GuardianSafeModeUpdated_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.builderdeployed">builderDeployed</strong></td>
+<td valign="top"><a href="#builderdeployed">BuilderDeployed</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.builderdeployeds">builderDeployeds</strong></td>
+<td valign="top">[<a href="#builderdeployed">BuilderDeployed</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#builderdeployed_orderby">BuilderDeployed_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#builderdeployed_filter">BuilderDeployed_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.builderwalletinitialized">builderWalletInitialized</strong></td>
+<td valign="top"><a href="#builderwalletinitialized">BuilderWalletInitialized</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.builderwalletinitializeds">builderWalletInitializeds</strong></td>
+<td valign="top">[<a href="#builderwalletinitialized">BuilderWalletInitialized</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#builderwalletinitialized_orderby">BuilderWalletInitialized_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#builderwalletinitialized_filter">BuilderWalletInitialized_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.tokensswept">tokensSwept</strong></td>
+<td valign="top"><a href="#tokensswept">TokensSwept</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.tokensswepts">tokensSwepts</strong></td>
+<td valign="top">[<a href="#tokensswept">TokensSwept</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#tokensswept_orderby">TokensSwept_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#tokensswept_filter">TokensSwept_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.event">event</strong></td>
+<td valign="top"><a href="#event">Event</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.events">events</strong></td>
+<td valign="top">[<a href="#event">Event</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#event_orderby">Event_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#event_filter">Event_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.baseevent">baseEvent</strong></td>
+<td valign="top"><a href="#baseevent">BaseEvent</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">id</td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query.baseevents">baseEvents</strong></td>
+<td valign="top">[<a href="#baseevent">BaseEvent</a>!]!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#baseevent_orderby">BaseEvent_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#baseevent_filter">BaseEvent_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td>
+
+The block at which the query should be executed. Can either be a `&#123; hash: Bytes &#125;` value containing a block hash, a `&#123; number: Int &#125;` containing the block number, or a `&#123; number_gte: Int &#125;` containing the minimum block number. In the case of `number_gte`, the query will be executed on the latest block only if the subgraph has progressed to or past the minimum block number. Defaults to the latest block when omitted.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">subgraphError</td>
+<td valign="top"><a href="#subgrapherrorpolicy">_SubgraphErrorPolicy_</a>!</td>
+<td>
+
+Set to `allow` to receive data even if the subgraph has skipped over errors while syncing.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="query._meta">_meta</strong></td>
+<td valign="top"><a href="#meta">_Meta_</a></td>
+<td>
+
+Access to subgraph metadata
+
+</td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">block</td>
+<td valign="top"><a href="#block_height">Block_height</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 
 ## Objects
 
-### Account
+### `Account` {#account}
 
- Account of a Uniswap or Panoptic user. 
+ Account of a Uniswap or Panoptic user.
 
 <table>
 <thead>
@@ -38,7 +2876,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
- Account address 
+ Account address
 
 </td>
 </tr>
@@ -47,7 +2885,7 @@ See some example queries [here](./queries).
 <td valign="top">[<a href="#accountbalance">AccountBalance</a>!]!</td>
 <td>
 
- TokenIds owned by this account 
+ TokenIds owned by this account
 
 </td>
 </tr>
@@ -81,7 +2919,7 @@ See some example queries [here](./queries).
 <td valign="top">[<a href="#panopticpoolaccount">PanopticPoolAccount</a>!]</td>
 <td>
 
- Subaccounts for PanopticPools where this Account has options activity 
+ Subaccounts for PanopticPools where this Account has options activity
 
 </td>
 </tr>
@@ -113,9 +2951,9 @@ See some example queries [here](./queries).
 </tbody>
 </table>
 
-### AccountBalance
+### `AccountBalance` {#accountbalance}
 
- The AccountBalance entity represents how many of a specific TokenId an Account holds 
+ The AccountBalance entity represents how many of a specific TokenId an Account holds
 
 <table>
 <thead>
@@ -132,7 +2970,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
- For open positions, IDs will have the structure: 'Sender address' + '#' + 'tokenId'. The sender is to distinguish NFPM/SFPM positions from PanopticPool positions. For closed and force exercised positions, the structure will be 'Sender address' + '#' + 'tokenId' + '#' + 'txn hash of close event' + '#' + log index of close event'. For liquidated positions, the ID will be the same as for other closed positions but with an additional counter for the index of the liquidated position ('#' + 'index of liquidated position'). 
+ For open positions, IDs will have the structure: 'Sender address' + '#' + 'tokenId'. The sender is to distinguish NFPM/SFPM positions from PanopticPool positions. For closed and force exercised positions, the structure will be 'Sender address' + '#' + 'tokenId' + '#' + 'txn hash of close event' + '#' + log index of close event'. For liquidated positions, the ID will be the same as for other closed positions but with an additional counter for the index of the liquidated position ('#' + 'index of liquidated position').
 
 </td>
 </tr>
@@ -141,7 +2979,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#account">Account</a>!</td>
 <td>
 
- Creator of this AccountToken balance (e.g. NFPM Account, SFPM Account, PanopticPool, Uniswap Migrator) 
+ Creator of this AccountToken balance (e.g. NFPM Account, SFPM Account, PanopticPool, Uniswap Migrator)
 
 </td>
 </tr>
@@ -150,7 +2988,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#account">Account</a>!</td>
 <td>
 
- Initiator of this txn (account responsible) 
+ Initiator of this txn (account responsible)
 
 </td>
 </tr>
@@ -159,50 +2997,16 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#tokenid">TokenId</a>!</td>
 <td>
 
- The ERC1155 TokenId held by this Account 
+ The ERC1155 TokenId held by this Account
 
 </td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance.legliquidities">legLiquidities</strong></td>
-<td valign="top">[<a href="#legliquidities">LegLiquidities</a>!]!</td>
-<td>
-
- The Legs and associated liquidity amounts of this AccountBalance's TokenId 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">skip</td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">first</td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">orderBy</td>
-<td valign="top"><a href="#legliquidities_orderby">LegLiquidities_orderBy</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">orderDirection</td>
-<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">where</td>
-<td valign="top"><a href="#legliquidities_filter">LegLiquidities_filter</a></td>
-<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="accountbalance.tokencount">tokenCount</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Amount of TokenId held by this Account 
+ Amount of TokenId held by this Account
 
 </td>
 </tr>
@@ -211,7 +3015,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Position size expressed in terms of the asset 
+ Position size expressed in terms of the asset
 
 </td>
 </tr>
@@ -220,7 +3024,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#panopticpoolaccount">PanopticPoolAccount</a></td>
 <td>
 
- The associated PanopticPoolAccount IF the TokenId exists within a PanopticPool. Null if the tokenId exists outside of a PanopticPool, like an LP position created through direct interaction with the SFPM / NFPM. 
+ The associated PanopticPoolAccount IF the TokenId exists within a PanopticPool. Null if the tokenId exists outside of a PanopticPool, like an LP position created through direct interaction with the SFPM / NFPM.
 
 </td>
 </tr>
@@ -229,25 +3033,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td>
 
- Total token0 premia settled for this position. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance.premiasettled0inethtotal">premiaSettled0InEthTotal</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td>
-
- Total token0 premia, in Eth, settled for this position. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance.premiasettled0inusdtotal">premiaSettled0InUsdTotal</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td>
-
- Total token0 premia, in USD, settled for this position. 
+ Total token0 premia settled for this position.
 
 </td>
 </tr>
@@ -256,25 +3042,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td>
 
- Total token1 premia settled for this position. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance.premiasettled1inethtotal">premiaSettled1InEthTotal</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td>
-
- Total token1 premia, in Eth, settled for this position. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance.premiasettled1inusdtotal">premiaSettled1InUsdTotal</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td>
-
- Total token1 premia, in USD, settled for this position. 
+ Total token1 premia settled for this position.
 
 </td>
 </tr>
@@ -283,7 +3051,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#pool">Pool</a></td>
 <td>
 
- Underlying Uniswap pool associated with AccountBalance 
+ Underlying Uniswap pool associated with AccountBalance
 
 </td>
 </tr>
@@ -292,7 +3060,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#event">Event</a>!</td>
 <td>
 
- ID of the event that created account balance 
+ ID of the event that created account balance
 
 </td>
 </tr>
@@ -301,7 +3069,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#event">Event</a></td>
 <td>
 
- ID of the event that closed account balance 
+ ID of the event that closed account balance
 
 </td>
 </tr>
@@ -319,7 +3087,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Creation timestamp 
+ Creation timestamp
 
 </td>
 </tr>
@@ -328,7 +3096,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Creation block number 
+ Creation block number
 
 </td>
 </tr>
@@ -337,16 +3105,16 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td>
 
- Closed timestamp 
+ Closed timestamp
 
 </td>
 </tr>
 </tbody>
 </table>
 
-### AccountLiquidated
+### `AccountLiquidated` {#accountliquidated}
 
- Liquidation of a distressed PanopticPoolAccount. All of the distressed account's positions in a specific PanopticPool get closed and the liquidator receives a bonus. 
+ Liquidation of a distressed PanopticPoolAccount. All of the distressed account's positions in a specific PanopticPool get closed and the liquidator receives a bonus.
 
 <table>
 <thead>
@@ -389,6 +3157,11 @@ See some example queries [here](./queries).
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong id="accountliquidated.account">account</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong id="accountliquidated.blocknumber">blockNumber</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td></td>
@@ -418,7 +3191,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#account">Account</a>!</td>
 <td>
 
- Address that liquidates the distressed account 
+ Address that liquidates the distressed account
 
 </td>
 </tr>
@@ -427,7 +3200,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#account">Account</a>!</td>
 <td>
 
- Address of the distressed/liquidated account 
+ Address of the distressed/liquidated account
 
 </td>
 </tr>
@@ -436,7 +3209,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- LeftRight encoding for the the bonus paid for token 0 (right slot) and 1 (left slot) from the Panoptic Pool to the liquidator. See liquidationBonus0 and liquidationBonus1 for the unpacked token values. 
+ LeftRight encoding for the the bonus paid for token 0 (right slot) and 1 (left slot) from the Panoptic Pool to the liquidator. See liquidationBonus0 and liquidationBonus1 for the unpacked token values.
 
 </td>
 </tr>
@@ -445,7 +3218,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- The amount of bonus paid for token0 for this liquidation. 
+ The amount of bonus paid for token0 for this liquidation.
 
 </td>
 </tr>
@@ -454,25 +3227,16 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- The amount of bonus paid for token1 for this liquidation. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountliquidated.liquidationbonususd">liquidationBonusUSD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- The summed liquidation bonus in USD. 
+ The amount of bonus paid for token1 for this liquidation.
 
 </td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="accountliquidated.tickat">tickAt</strong></td>
-<td valign="top"><a href="#int">Int</a>!</td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td>
 
- Tick when the position was liquidated 
+ Tick when the position was liquidated
 
 </td>
 </tr>
@@ -481,7 +3245,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#panopticpool">PanopticPool</a>!</td>
 <td>
 
- The PanopticPool this liquidation happened in (from event.address) 
+ The PanopticPool this liquidation happened in (from event.address)
 
 </td>
 </tr>
@@ -490,7 +3254,7 @@ See some example queries [here](./queries).
 <td valign="top">[<a href="#optionburn">OptionBurn</a>!]</td>
 <td>
 
- List of OptionBurn events resulting from this Liquidation 
+ List of OptionBurn events resulting from this Liquidation
 
 </td>
 </tr>
@@ -524,16 +3288,16 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td>
 
- Version of Panoptic contract that emitted this event 
+ Version of Panoptic contract that emitted this event
 
 </td>
 </tr>
 </tbody>
 </table>
 
-### BorrowRateUpdated
+### `BorrowRateUpdated` {#borrowrateupdated}
 
- Emitted when a borrow rate is updated in the RiskEngine. 
+ Emitted when a borrow rate is updated in the RiskEngine.
 
 <table>
 <thead>
@@ -596,16 +3360,11 @@ See some example queries [here](./queries).
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="borrowrateupdated.pool">pool</strong></td>
-<td valign="top"><a href="#pool">Pool</a>!</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="borrowrateupdated.riskengine">riskEngine</strong></td>
 <td valign="top"><a href="#riskengine">RiskEngine</a>!</td>
 <td>
 
- RiskEngine contract address 
+ RiskEngine contract address
 
 </td>
 </tr>
@@ -614,7 +3373,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bytes">Bytes</a>!</td>
 <td>
 
- Address of the collateral token whose rate was updated 
+ Address of the collateral token whose rate was updated
 
 </td>
 </tr>
@@ -623,7 +3382,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- The average borrow rate calculated 
+ The average borrow rate calculated
 
 </td>
 </tr>
@@ -632,16 +3391,16 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- The new rate at target 
+ The new rate at target
 
 </td>
 </tr>
 </tbody>
 </table>
 
-### BuilderDeployed
+### `BuilderDeployed` {#builderdeployed}
 
- Emitted when a new BuilderWallet is deployed through the BuilderFactory. 
+ Emitted when a new BuilderWallet is deployed through the BuilderFactory.
 
 <table>
 <thead>
@@ -704,16 +3463,11 @@ See some example queries [here](./queries).
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="builderdeployed.pool">pool</strong></td>
-<td valign="top"><a href="#pool">Pool</a>!</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="builderdeployed.builderfactory">builderFactory</strong></td>
 <td valign="top"><a href="#builderfactory">BuilderFactory</a>!</td>
 <td>
 
- BuilderFactory contract address 
+ BuilderFactory contract address
 
 </td>
 </tr>
@@ -722,7 +3476,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Builder code (uint48) used as CREATE2 salt 
+ Builder code (uint48) used as CREATE2 salt
 
 </td>
 </tr>
@@ -731,7 +3485,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bytes">Bytes</a>!</td>
 <td>
 
- Address of the deployed BuilderWallet 
+ Address of the deployed BuilderWallet
 
 </td>
 </tr>
@@ -740,16 +3494,16 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bytes">Bytes</a>!</td>
 <td>
 
- Address of the builder admin 
+ Address of the builder admin
 
 </td>
 </tr>
 </tbody>
 </table>
 
-### BuilderFactory
+### `BuilderFactory` {#builderfactory}
 
- BuilderFactory contract - deploys BuilderWallet contracts for fee distribution. 
+ BuilderFactory contract - deploys BuilderWallet contracts for fee distribution.
 
 <table>
 <thead>
@@ -766,7 +3520,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
- BuilderFactory contract address 
+ BuilderFactory contract address
 
 </td>
 </tr>
@@ -775,7 +3529,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#riskengine">RiskEngine</a></td>
 <td>
 
- Owner address that can deploy new builder wallets 
+ Owner address that can deploy new builder wallets
 
 </td>
 </tr>
@@ -784,7 +3538,7 @@ See some example queries [here](./queries).
 <td valign="top">[<a href="#builderwallet">BuilderWallet</a>!]!</td>
 <td>
 
- All builder wallets deployed by this factory 
+ All builder wallets deployed by this factory
 
 </td>
 </tr>
@@ -818,7 +3572,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Total number of builder wallets deployed 
+ Total number of builder wallets deployed
 
 </td>
 </tr>
@@ -827,7 +3581,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Creation timestamp 
+ Creation timestamp
 
 </td>
 </tr>
@@ -836,16 +3590,16 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Creation block number 
+ Creation block number
 
 </td>
 </tr>
 </tbody>
 </table>
 
-### BuilderWallet
+### `BuilderWallet` {#builderwallet}
 
- BuilderWallet contract - holds builder fees and allows sweeping by the builder admin. 
+ BuilderWallet contract - holds builder fees and allows sweeping by the builder admin.
 
 <table>
 <thead>
@@ -862,7 +3616,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
- BuilderWallet contract address 
+ BuilderWallet contract address
 
 </td>
 </tr>
@@ -871,7 +3625,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Builder code (uint48) used as CREATE2 salt 
+ Builder code (uint48) used as CREATE2 salt
 
 </td>
 </tr>
@@ -880,7 +3634,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bytes">Bytes</a>!</td>
 <td>
 
- Address allowed to sweep tokens from this wallet 
+ Address allowed to sweep tokens from this wallet
 
 </td>
 </tr>
@@ -889,7 +3643,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#builderfactory">BuilderFactory</a>!</td>
 <td>
 
- Factory that deployed this wallet 
+ Factory that deployed this wallet
 
 </td>
 </tr>
@@ -898,7 +3652,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Creation timestamp 
+ Creation timestamp
 
 </td>
 </tr>
@@ -907,16 +3661,16 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Creation block number 
+ Creation block number
 
 </td>
 </tr>
 </tbody>
 </table>
 
-### Bundle
+### `BuilderWalletInitialized` {#builderwalletinitialized}
 
- Keeps track of ETH/USD price using a configured Uniswap pool. 
+ Emitted when a BuilderWallet is initialized with a builder admin.
 
 <table>
 <thead>
@@ -929,173 +3683,79 @@ See some example queries [here](./queries).
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong id="bundle.id">id</strong></td>
-<td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
- The ID of the Bundle singleton is always 1. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="bundle.ethpriceusd">ethPriceUSD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Price of ETH in USD. 
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### Burn
-
- Uniswap liquidity burn 
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong id="burn.id">id</strong></td>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized.id">id</strong></td>
 <td valign="top"><a href="#id">ID</a>!</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="burn.hash">hash</strong></td>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized.hash">hash</strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="burn.logindex">logIndex</strong></td>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized.logindex">logIndex</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="burn.eventtype">eventType</strong></td>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized.eventtype">eventType</strong></td>
 <td valign="top"><a href="#eventtype">EventType</a>!</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="burn.from">from</strong></td>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized.from">from</strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="burn.to">to</strong></td>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized.to">to</strong></td>
 <td valign="top"><a href="#string">String</a>!</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="burn.blocknumber">blockNumber</strong></td>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized.blocknumber">blockNumber</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="burn.timestamp">timestamp</strong></td>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized.timestamp">timestamp</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="burn.gasused">gasUsed</strong></td>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized.gasused">gasUsed</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="burn.gasprice">gasPrice</strong></td>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized.gasprice">gasPrice</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="burn.pool">pool</strong></td>
-<td valign="top"><a href="#pool">Pool</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn.owner">owner</strong></td>
-<td valign="top"><a href="#account">Account</a>!</td>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized.builderwallet">builderWallet</strong></td>
+<td valign="top"><a href="#builderwallet">BuilderWallet</a>!</td>
 <td>
 
- The owner of the position for which liquidity is removed 
+ The BuilderWallet that was initialized
 
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="burn.ticklower">tickLower</strong></td>
-<td valign="top"><a href="#int">Int</a>!</td>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized.builderadmin">builderAdmin</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a>!</td>
 <td>
 
- The lower tick of the position 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn.tickupper">tickUpper</strong></td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
- The upper tick of the position 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn.amount">amount</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td>
-
- The amount of liquidity to remove 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn.amount0">amount0</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- The amount of token 0 withdrawn 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn.amount1">amount1</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- The amount of token 1 withdrawn 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn.token0">token0</strong></td>
-<td valign="top"><a href="#token">Token</a>!</td>
-<td>
-
- Allow indexing by tokens 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn.token1">token1</strong></td>
-<td valign="top"><a href="#token">Token</a>!</td>
-<td>
-
- Allow indexing by tokens 
+ Address of the builder admin
 
 </td>
 </tr>
 </tbody>
 </table>
 
-### Chunk
+### `Chunk` {#chunk}
 
- A chunk of liquidity. Used to track liquidity available in Uniswap, as well as liquidity removed from Uniswap for use in PanopticPools. 
+ A chunk of liquidity. Used to track liquidity available in Uniswap, as well as liquidity removed from Uniswap for use in PanopticPools.
 
 <table>
 <thead>
@@ -1112,7 +3772,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
- ID is a concatenated string of: owner + '#' + manager + '#' + poolAddress + '#' + tokenType + '#' + lowerTick + '#' + upperTick 
+ ID is a concatenated string of: owner + '#' + manager + '#' + poolAddress + '#' + tokenType + '#' + lowerTick + '#' + upperTick
 
 </td>
 </tr>
@@ -1121,7 +3781,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#account">Account</a>!</td>
 <td>
 
- TokenizedPositionMinted.caller if mint routes through SFPM. Otherwise, same as manager (will be a PanopticPool address for option mints/burns). 
+ TokenizedPositionMinted.caller if mint routes through SFPM. Otherwise, same as manager (will be a PanopticPool address for option mints/burns).
 
 </td>
 </tr>
@@ -1130,7 +3790,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#account">Account</a>!</td>
 <td>
 
- Mint.sender / Burn.owner on Uniswap pool event 
+ Mint.sender / Burn.owner on Uniswap pool event
 
 </td>
 </tr>
@@ -1139,7 +3799,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Lower tick of the position 
+ Lower tick of the position
 
 </td>
 </tr>
@@ -1148,7 +3808,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Upper tick of the position 
+ Upper tick of the position
 
 </td>
 </tr>
@@ -1157,7 +3817,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Avg. of tickLower & tickUpper 
+ Avg. of tickLower &amp; tickUpper
 
 </td>
 </tr>
@@ -1166,7 +3826,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- (tickUpper - tickLower) / pool.tickSpacing 
+ (tickUpper - tickLower) / pool.tickSpacing
 
 </td>
 </tr>
@@ -1175,7 +3835,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Which token is moved when deployed (0 -> token0, 1 -> token1). When minted through Uniswap's NFPM, tokenType is always 1 (for put). 
+ Which token is moved when deployed (0 -&gt; token0, 1 -&gt; token1). When minted through Uniswap's NFPM, tokenType is always 1 (for put).
 
 </td>
 </tr>
@@ -1184,7 +3844,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#pool">Pool</a>!</td>
 <td>
 
- Pool where this chunk exists 
+ Pool where this chunk exists
 
 </td>
 </tr>
@@ -1193,7 +3853,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#panopticpool">PanopticPool</a></td>
 <td>
 
- If owned by a PanopticPool, PanopticPool that owns this chunk 
+ If owned by a PanopticPool, PanopticPool that owns this chunk
 
 </td>
 </tr>
@@ -1202,52 +3862,52 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Net liquidity in chunk 
+ Net liquidity deployed in chunk. Equals shortLiquidity - longLiquidity, matching the on-chain deployed net liquidity. Consumers may derive it directly from short/long.
 
 </td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="chunk.shortliquidity">shortLiquidity</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td>
 
- Short liquidity in chunk 
+ Short liquidity in chunk. Always initialized to 0 for chunks created by this subgraph.
 
 </td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="chunk.longliquidity">longLiquidity</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td>
 
- Long liquidity in chunk 
+ Long liquidity in chunk. Always initialized to 0 for chunks created by this subgraph.
 
 </td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="chunk.shortcounts">shortCounts</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td>
 
- Total long positions in chunk 
+ Total short positions in chunk. Always initialized to 0 for chunks created by this subgraph.
 
 </td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="chunk.longcounts">longCounts</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td>
 
- Total short positions in chunk 
+ Total long positions in chunk. Always initialized to 0 for chunks created by this subgraph.
 
 </td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="chunk.totalliquidity">totalLiquidity</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td>
 
- Total liquidity in chunk 
+ Total liquidity in chunk. Always initialized to 0 for chunks created by this subgraph.
 
 </td>
 </tr>
@@ -1256,7 +3916,7 @@ See some example queries [here](./queries).
 <td valign="top">[<a href="#leg">Leg</a>!]!</td>
 <td>
 
- Legs created on this chunk of liquidity 
+ Legs created on this chunk of liquidity
 
 </td>
 </tr>
@@ -1288,9 +3948,9 @@ See some example queries [here](./queries).
 </tbody>
 </table>
 
-### Collateral
+### `Collateral` {#collateral}
 
- Contains the collateralization metrics of a certain token in a certain PanopticPool (derived from the CollateralTracker.sol contract). 
+ Contains the collateralization metrics of a certain token in a certain PanopticPool (derived from the CollateralTracker.sol contract).
 
 <table>
 <thead>
@@ -1307,7 +3967,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
- Address of CollateralTracker for pool 
+ Address of CollateralTracker for pool
 
 </td>
 </tr>
@@ -1316,7 +3976,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td>
 
- Can be 1, 1.1, or 2 
+ Can be 1, 1.1, or 2
 
 </td>
 </tr>
@@ -1325,7 +3985,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#token">Token</a>!</td>
 <td>
 
- Address of underlying token 
+ Address of underlying token
 
 </td>
 </tr>
@@ -1334,16 +3994,43 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Total shares supply (receipts to claim assets) 
+ Total shares supply (receipts to claim assets), reconstructed from share-token Transfer events. Useful for indexing audits; approximates the internal supply. Do NOT use as the denominator for share-&gt;asset conversion (it excludes credited shares) — use conversionTotalSupply instead.
 
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral.totaldonations">totalDonations</strong></td>
+<td colspan="2" valign="top"><strong id="collateral.totalassets">totalAssets</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td>
 
- The total amount of shares donated 
+ Contract-derived total assets (CollateralTracker.totalAssets()) read at conversionStateBlockNumber. Canonical numerator for share-&gt;asset conversion. Null until first synced.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral.conversiontotalsupply">conversionTotalSupply</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td>
+
+ Contract-derived total share supply (CollateralTracker.totalSupply(), includes credited shares) read at conversionStateBlockNumber. Canonical denominator for share-&gt;asset conversion. Null until first synced.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral.conversionstateblocknumber">conversionStateBlockNumber</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td>
+
+ Block number at which totalAssets/conversionTotalSupply were read. Distinguishes a missing snapshot from a valid zero value. Null until first synced.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral.conversionstatetimestamp">conversionStateTimestamp</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td>
+
+ Block timestamp at which totalAssets/conversionTotalSupply were read. Null until first synced.
 
 </td>
 </tr>
@@ -1370,7 +4057,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td>
 
- Sum of commissions paid to the builder for this CollateralTracker 
+ Sum of commissions paid to the builder for this CollateralTracker
 
 </td>
 </tr>
@@ -1379,7 +4066,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td>
 
- Sum of interestOwed - interestPaid for each InsolvencyPenaltyApplied event 
+ Sum of interestOwed - interestPaid for each InsolvencyPenaltyApplied event
 
 </td>
 </tr>
@@ -1388,16 +4075,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td>
 
- Sum of protocolLossAssets for each ProtocolLossRealized event 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateral.totalprotocollossrealizedusd">totalProtocolLossRealizedUSD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td>
-
- Sum of protocolLossAssets in USD for each ProtocolLossRealized event 
+ Sum of protocolLossAssets for each ProtocolLossRealized event
 
 </td>
 </tr>
@@ -1406,7 +4084,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Pool utilization represents how many funds are in the AMM pool, times 10,000, over the total assets controlled by the Panoptic pool. 
+ Pool utilization represents how many funds are in the AMM pool, times 10,000, over the total assets controlled by the Panoptic pool.
 
 </td>
 </tr>
@@ -1415,7 +4093,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#panopticpool">PanopticPool</a>!</td>
 <td>
 
- The PanopticPool being collateralized 
+ The PanopticPool being collateralized
 
 </td>
 </tr>
@@ -1424,7 +4102,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Index of 0 or 1, indicating if this is collateralTracker0 or collateralTracker1 in its parent PanopticPool 
+ Index of 0 or 1, indicating if this is collateralTracker0 or collateralTracker1 in its parent PanopticPool
 
 </td>
 </tr>
@@ -1433,7 +4111,7 @@ See some example queries [here](./queries).
 <td valign="top">[<a href="#collateraldaydata">CollateralDayData</a>!]!</td>
 <td>
 
- Snapshots of CollateralDayData 
+ Snapshots of CollateralDayData
 
 </td>
 </tr>
@@ -1465,9 +4143,9 @@ See some example queries [here](./queries).
 </tbody>
 </table>
 
-### CollateralDayData
+### `CollateralDayData` {#collateraldaydata}
 
- Data accumulated and condensed into day stats for each collateral. If no Collateral events are emitted on a given day, there will be a missing CollateralDayData for that day. 
+ Data accumulated and condensed into day stats for each collateral. If no Collateral events are emitted on a given day, there will be a missing CollateralDayData for that day.
 
 <table>
 <thead>
@@ -1484,7 +4162,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
- Timestamp rounded to current day combined with collateral id 
+ Timestamp rounded to current day combined with collateral id
 
 </td>
 </tr>
@@ -1493,7 +4171,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#collateral">Collateral</a>!</td>
 <td>
 
- Pointer to Collateral 
+ Pointer to Collateral
 
 </td>
 </tr>
@@ -1502,7 +4180,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#int">Int</a>!</td>
 <td>
 
- Timestamp rounded to current day by dividing by 86400 
+ Timestamp rounded to current day by dividing by 86400
 
 </td>
 </tr>
@@ -1511,16 +4189,52 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Shares 
+ Shares
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata.totalassets">totalAssets</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td>
+
+ Last observed contract-derived total assets during this day (see Collateral.totalAssets). Carry forward across days without interactions. Null if never synced.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata.conversiontotalsupply">conversionTotalSupply</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td>
+
+ Last observed contract-derived total share supply during this day (see Collateral.conversionTotalSupply). Canonical conversion denominator. Null if never synced.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata.conversionstateblocknumber">conversionStateBlockNumber</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td>
+
+ Block number of the last conversion snapshot observed during this day. Null if never synced.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata.conversionstatetimestamp">conversionStateTimestamp</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td>
+
+ Block timestamp of the last conversion snapshot observed during this day. Null if never synced.
 
 </td>
 </tr>
 </tbody>
 </table>
 
-### CollateralDeposit
+### `CollateralDeposit` {#collateraldeposit}
 
- Collateral deposit (PLP liquidity deposit) 
+ Collateral deposit (PLP liquidity deposit)
 
 <table>
 <thead>
@@ -1563,6 +4277,11 @@ See some example queries [here](./queries).
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit.account">account</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong id="collateraldeposit.blocknumber">blockNumber</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td></td>
@@ -1592,7 +4311,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#account">Account</a>!</td>
 <td>
 
- The address of the caller (and depositor) 
+ The address of the caller (and depositor)
 
 </td>
 </tr>
@@ -1601,7 +4320,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#account">Account</a>!</td>
 <td>
 
- The address of the recipient of the newly minted shares 
+ The address of the recipient of the newly minted shares
 
 </td>
 </tr>
@@ -1610,7 +4329,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- The amount of assets deposited by `sender` in exchange for `shares` 
+ The amount of assets deposited by `sender` in exchange for `shares`
 
 </td>
 </tr>
@@ -1619,7 +4338,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Shares the amount of shares minted to `owner` 
+ Shares the amount of shares minted to `owner`
 
 </td>
 </tr>
@@ -1628,7 +4347,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#collateral">Collateral</a>!</td>
 <td>
 
- The collateral entity that received the deposit. 
+ The collateral entity that received the deposit.
 
 </td>
 </tr>
@@ -1638,38 +4357,20 @@ See some example queries [here](./queries).
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateraldeposit.tokenderivedethatdeposit">tokenDerivedEthAtDeposit</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Price of token in ETH at time of deposit 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldeposit.ethpriceusdatdeposit">ethPriceUSDAtDeposit</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Price of ETH in USD at time of deposit 
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="collateraldeposit.panopticversion">panopticVersion</strong></td>
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td>
 
- Version of Panoptic contract that emitted this event 
+ Version of Panoptic contract that emitted this event
 
 </td>
 </tr>
 </tbody>
 </table>
 
-### CollateralWithdraw
+### `CollateralWithdraw` {#collateralwithdraw}
 
- Collateral deposit (PLP liquidity withdrawal) 
+ Collateral deposit (PLP liquidity withdrawal)
 
 <table>
 <thead>
@@ -1712,6 +4413,11 @@ See some example queries [here](./queries).
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw.account">account</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong id="collateralwithdraw.blocknumber">blockNumber</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td></td>
@@ -1741,7 +4447,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#account">Account</a>!</td>
 <td>
 
- The address of the caller 
+ The address of the caller
 
 </td>
 </tr>
@@ -1750,7 +4456,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#account">Account</a>!</td>
 <td>
 
- The address of the recipient of the withdrawn assets 
+ The address of the recipient of the withdrawn assets
 
 </td>
 </tr>
@@ -1759,7 +4465,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#account">Account</a>!</td>
 <td>
 
- The address of the owner of the shares being burned 
+ The address of the owner of the shares being burned
 
 </td>
 </tr>
@@ -1768,7 +4474,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- The amount of assets withdrawn to `receiver` 
+ The amount of assets withdrawn to `receiver`
 
 </td>
 </tr>
@@ -1777,7 +4483,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- The amount of shares burned by `owner` in exchange for `assets` 
+ The amount of shares burned by `owner` in exchange for `assets`
 
 </td>
 </tr>
@@ -1786,7 +4492,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#collateral">Collateral</a>!</td>
 <td>
 
- The collateral entity that was withdrawn from. 
+ The collateral entity that was withdrawn from.
 
 </td>
 </tr>
@@ -1796,156 +4502,20 @@ See some example queries [here](./queries).
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateralwithdraw.tokenderivedethatwithdraw">tokenDerivedEthAtWithdraw</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateralwithdraw.ethpriceusdatwithdraw">ethPriceUSDAtWithdraw</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="collateralwithdraw.panopticversion">panopticVersion</strong></td>
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td>
 
- Version of Panoptic contract that emitted this event 
+ Version of Panoptic contract that emitted this event
 
 </td>
 </tr>
 </tbody>
 </table>
 
-### Collect
+### `CommissionPaid` {#commissionpaid}
 
- Uniswap collect 
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong id="collect.id">id</strong></td>
-<td valign="top"><a href="#id">ID</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect.hash">hash</strong></td>
-<td valign="top"><a href="#string">String</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect.logindex">logIndex</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect.eventtype">eventType</strong></td>
-<td valign="top"><a href="#eventtype">EventType</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect.from">from</strong></td>
-<td valign="top"><a href="#string">String</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect.to">to</strong></td>
-<td valign="top"><a href="#string">String</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect.blocknumber">blockNumber</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect.timestamp">timestamp</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect.gasused">gasUsed</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect.gasprice">gasPrice</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect.pool">pool</strong></td>
-<td valign="top"><a href="#pool">Pool</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect.owner">owner</strong></td>
-<td valign="top"><a href="#account">Account</a>!</td>
-<td>
-
- The owner of the position for which fees are collected 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect.recipient">recipient</strong></td>
-<td valign="top"><a href="#account">Account</a>!</td>
-<td>
-
- The address that received the output of the collect 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect.ticklower">tickLower</strong></td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
- The lower tick of the position 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect.tickupper">tickUpper</strong></td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
- The upper tick of the position 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect.amount0">amount0</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- The amount of token0 fees collected 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect.amount1">amount1</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- The amount of token1 fees collected 
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### CommissionPaid
-
- Collateral commission paid - Emitted when a commission is paid. 
+ Collateral commission paid - Emitted when a commission is paid.
 
 <table>
 <thead>
@@ -1988,6 +4558,11 @@ See some example queries [here](./queries).
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong id="commissionpaid.account">account</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong id="commissionpaid.blocknumber">blockNumber</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td></td>
@@ -2017,7 +4592,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#account">Account</a>!</td>
 <td>
 
- The address of the owner of the shares being used to pay for the commission 
+ The address of the owner of the shares being used to pay for the commission
 
 </td>
 </tr>
@@ -2026,7 +4601,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bytes">Bytes</a>!</td>
 <td>
 
- The address of the account that received the commission if a builderCode is provided 
+ The address of the account that received the commission if a builderCode is provided
 
 </td>
 </tr>
@@ -2035,7 +4610,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- The amount of assets paid that goes to the PLPs (if builder == address(0)) or to the protocol 
+ The amount of assets paid that goes to the PLPs (if builder == address(0)) or to the protocol
 
 </td>
 </tr>
@@ -2044,7 +4619,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- The amount of assets paid that goes to the builder 
+ The amount of assets paid that goes to the builder
 
 </td>
 </tr>
@@ -2053,168 +4628,43 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#collateral">Collateral</a>!</td>
 <td>
 
- The collateral entity associated with this commission 
+ The collateral entity associated with this commission
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid.optionmint">optionMint</strong></td>
+<td valign="top"><a href="#optionmint">OptionMint</a></td>
+<td>
+
+ The OptionMint event this commission is associated with (if in same tx as a mint)
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid.optionburn">optionBurn</strong></td>
+<td valign="top"><a href="#optionburn">OptionBurn</a></td>
+<td>
+
+ The OptionBurn event this commission is associated with (if in same tx as a burn)
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid.panopticversion">panopticVersion</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td>
+
+ Version of Panoptic contract that emitted this event
 
 </td>
 </tr>
 </tbody>
 </table>
 
-### Donate
+### `ForcedExercise` {#forcedexercise}
 
- Collateral donate - Emitted when shares are donated to the protocol. 
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong id="donate.id">id</strong></td>
-<td valign="top"><a href="#id">ID</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate.hash">hash</strong></td>
-<td valign="top"><a href="#string">String</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate.logindex">logIndex</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate.eventtype">eventType</strong></td>
-<td valign="top"><a href="#eventtype">EventType</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate.from">from</strong></td>
-<td valign="top"><a href="#string">String</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate.to">to</strong></td>
-<td valign="top"><a href="#string">String</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate.blocknumber">blockNumber</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate.timestamp">timestamp</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate.gasused">gasUsed</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate.gasprice">gasPrice</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate.pool">pool</strong></td>
-<td valign="top"><a href="#pool">Pool</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate.sender">sender</strong></td>
-<td valign="top"><a href="#account">Account</a>!</td>
-<td>
-
- The address of the account donating shares 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate.shares">shares</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td>
-
- The amount of shares donated 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate.collateral">collateral</strong></td>
-<td valign="top"><a href="#collateral">Collateral</a>!</td>
-<td>
-
- The collateral entity that was donated to 
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### Factory
-
- Uniswap Factory (deployer of Pools). 
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong id="factory.id">id</strong></td>
-<td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
- Factory address 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory.poolcount">poolCount</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td>
-
- Amount of pools created 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory.owner">owner</strong></td>
-<td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
- Current owner of the factory 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory.opbackfilled">opBackfilled</strong></td>
-<td valign="top"><a href="#boolean">Boolean</a></td>
-<td>
-
- Used to track if regenesis backfill has completed for Optimism.
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### ForcedExercise
-
- Force the exercise of a single position. Exercisor will have to pay a fee to the force exercisee. 
+ Force the exercise of a single position. Exercisor will have to pay a fee to the force exercisee.
 
 <table>
 <thead>
@@ -2257,6 +4707,11 @@ See some example queries [here](./queries).
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong id="forcedexercise.account">account</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong id="forcedexercise.blocknumber">blockNumber</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td></td>
@@ -2286,7 +4741,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#account">Account</a>!</td>
 <td>
 
- Address of the account that forces the exercise of the position 
+ Address of the account that forces the exercise of the position
 
 </td>
 </tr>
@@ -2295,7 +4750,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#account">Account</a>!</td>
 <td>
 
- Address of the owner of the liquidated position 
+ Address of the owner of the liquidated position
 
 </td>
 </tr>
@@ -2304,7 +4759,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- TokenId of the exercised position 
+ TokenId of the exercised position
 
 </td>
 </tr>
@@ -2313,7 +4768,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- LeftRight encoding for the cost paid by the exercisor to force the exercise of the token. The token0 fee is in the right slot, and token1 fee is in the left slot. 
+ LeftRight encoding for the cost paid by the exercisor to force the exercise of the token. The token0 fee is in the right slot, and token1 fee is in the left slot.
 
 </td>
 </tr>
@@ -2322,7 +4777,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- The cost paid by the exercisor to force the exercise for token0 (represented as a negative value, fee debited) 
+ The cost paid by the exercisor to force the exercise for token0 (represented as a negative value, fee debited)
 
 </td>
 </tr>
@@ -2331,25 +4786,16 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- The cost paid by the exercisor to force the exercise for token1 (represented as a negative value, fee debited) 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="forcedexercise.exercisefeeusd">exerciseFeeUSD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- The summed cost in USD paid by the exercisor for this force exercise 
+ The cost paid by the exercisor to force the exercise for token1 (represented as a negative value, fee debited)
 
 </td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="forcedexercise.tickat">tickAt</strong></td>
-<td valign="top"><a href="#int">Int</a>!</td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td>
 
- Tick when the position was exercised 
+ Tick when the position was exercised
 
 </td>
 </tr>
@@ -2358,7 +4804,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#panopticpool">PanopticPool</a>!</td>
 <td>
 
- The PanopticPool this forced exercise happened in (from event.address) 
+ The PanopticPool this forced exercise happened in (from event.address)
 
 </td>
 </tr>
@@ -2367,7 +4813,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#optionburn">OptionBurn</a></td>
 <td>
 
- OptionBurn event for the exercised position 
+ OptionBurn event for the exercised position
 
 </td>
 </tr>
@@ -2376,16 +4822,16 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td>
 
- Version of Panoptic contract that emitted this event 
+ Version of Panoptic contract that emitted this event
 
 </td>
 </tr>
 </tbody>
 </table>
 
-### GuardianSafeModeUpdated
+### `GuardianSafeModeUpdated` {#guardiansafemodeupdated}
 
- Emitted when the guardian updates the enforced safe mode for a PanopticPool. 
+ Emitted when the guardian updates the enforced safe mode for a PanopticPool.
 
 <table>
 <thead>
@@ -2457,16 +4903,16 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#boolean">Boolean</a>!</td>
 <td>
 
- True when safe mode is forcibly locked, false when the lock is lifted 
+ True when safe mode is forcibly locked, false when the lock is lifted
 
 </td>
 </tr>
 </tbody>
 </table>
 
-### InsolvencyPenaltyApplied
+### `InsolvencyPenaltyApplied` {#insolvencypenaltyapplied}
 
- Collateral insolvency penalty - Emitted when a user attempts to settle interest but lacks sufficient shares to pay in full. 
+ Collateral insolvency penalty - Emitted when a user attempts to settle interest but lacks sufficient shares to pay in full.
 
 <table>
 <thead>
@@ -2509,6 +4955,11 @@ See some example queries [here](./queries).
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied.account">account</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong id="insolvencypenaltyapplied.blocknumber">blockNumber</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td></td>
@@ -2538,7 +4989,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#account">Account</a>!</td>
 <td>
 
- The address of the insolvent user 
+ The address of the insolvent user
 
 </td>
 </tr>
@@ -2547,7 +4998,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- The total amount of interest the user owed 
+ The total amount of interest the user owed
 
 </td>
 </tr>
@@ -2556,7 +5007,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- The actual amount of interest paid (value of shares burned) 
+ The actual amount of interest paid (value of shares burned)
 
 </td>
 </tr>
@@ -2565,7 +5016,7 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- The number of shares burned in the partial payment 
+ The number of shares burned in the partial payment
 
 </td>
 </tr>
@@ -2574,16 +5025,16 @@ See some example queries [here](./queries).
 <td valign="top"><a href="#collateral">Collateral</a>!</td>
 <td>
 
- The collateral entity associated with this penalty 
+ The collateral entity associated with this penalty
 
 </td>
 </tr>
 </tbody>
 </table>
 
-### Leg
+### `Leg` {#leg}
 
- A leg of a TokenId, representing a single option. 
+ A leg of a TokenId, representing a single option.
 
 <table>
 <thead>
@@ -2610,7 +5061,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#int">Int</a>!</td>
 <td>
 
- Index of the leg in the tokenId 
+ Index of the leg in the tokenId
 
 </td>
 </tr>
@@ -2619,7 +5070,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
- Hex stringified leg ID 
+ Hex stringified leg ID
 
 </td>
 </tr>
@@ -2628,7 +5079,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#pool">Pool</a>!</td>
 <td>
 
- Pool position is within 
+ Pool position is within
 
 </td>
 </tr>
@@ -2637,7 +5088,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Number of contracts per leg 
+ Number of contracts per leg
 
 </td>
 </tr>
@@ -2646,7 +5097,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Asset of 0 token0, 1 for token1 
+ Asset of 0 token0, 1 for token1
 
 </td>
 </tr>
@@ -2655,7 +5106,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Token type 
+ Token type
 
 </td>
 </tr>
@@ -2664,7 +5115,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Is it a long leg? 
+ Is it a long leg?
 
 </td>
 </tr>
@@ -2673,7 +5124,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Risk partner 
+ Risk partner
 
 </td>
 </tr>
@@ -2682,7 +5133,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Strike 
+ Strike
 
 </td>
 </tr>
@@ -2691,7 +5142,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Width 
+ Width
 
 </td>
 </tr>
@@ -2700,7 +5151,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#chunk">Chunk</a></td>
 <td>
 
- Chunk data (null for zero-width legs that don't have liquidity) 
+ Chunk data (null for zero-width legs that don't have liquidity)
 
 </td>
 </tr>
@@ -2709,7 +5160,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- How many of this Leg exist 
+ How many of this Leg exist
 
 </td>
 </tr>
@@ -2718,7 +5169,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top">[<a href="#tokenid">TokenId</a>!]!</td>
 <td>
 
- TokenIds which this leg exists in 
+ TokenIds which this leg exists in
 
 </td>
 </tr>
@@ -2750,203 +5201,9 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 </tbody>
 </table>
 
-### LegLiquidities
+### `OptionBurn` {#optionburn}
 
- Currently only for Panoptic TokenIds (not synthetic tokenIds created from uniswap positions), stores the liquidity underlying each instance of a leg. While multiple legs may exist with the same ID, each instance of a leg controls a fixed amount of liquidity when active. Can also think of these as the 'operators' of a given chunk. Don't directly own the liquidity (like PanopticPool) or manage it (like SFPM), but the account that owns this Leg has the right to instruct the manager on how to manage the underlying liquidity. The 'operator' wasn't added to Chunk IDs to avoid fragmentation of the entities - we would quickly reach the 1000 query limit otherwise. Maybe this will be removed in favor of a simple 'operator' field in Chunk in the future. 
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities.id">id</strong></td>
-<td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
- leg id + '#' + txnHash + '#' + logIndex 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities.leg">leg</strong></td>
-<td valign="top"><a href="#leg">Leg</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities.chunk">chunk</strong></td>
-<td valign="top"><a href="#chunk">Chunk</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities.liquidity">liquidity</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-### Mint
-
- Uniswap liquidity mint 
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong id="mint.id">id</strong></td>
-<td valign="top"><a href="#id">ID</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint.hash">hash</strong></td>
-<td valign="top"><a href="#string">String</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint.logindex">logIndex</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint.eventtype">eventType</strong></td>
-<td valign="top"><a href="#eventtype">EventType</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint.from">from</strong></td>
-<td valign="top"><a href="#string">String</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint.to">to</strong></td>
-<td valign="top"><a href="#string">String</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint.blocknumber">blockNumber</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint.timestamp">timestamp</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint.gasused">gasUsed</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint.gasprice">gasPrice</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint.pool">pool</strong></td>
-<td valign="top"><a href="#pool">Pool</a>!</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint.sender">sender</strong></td>
-<td valign="top"><a href="#account">Account</a>!</td>
-<td>
-
- The address that minted the liquidity 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint.owner">owner</strong></td>
-<td valign="top"><a href="#account">Account</a>!</td>
-<td>
-
- Owner of position where liquidity minted to 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint.ticklower">tickLower</strong></td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
- Lower tick of the position 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint.tickupper">tickUpper</strong></td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
- Upper tick of the position 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint.amount">amount</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td>
-
- Amount of liquidity minted 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint.amount0">amount0</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Amount of token 0 minted 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint.amount1">amount1</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Amount of token 1 minted 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint.token0">token0</strong></td>
-<td valign="top"><a href="#token">Token</a>!</td>
-<td>
-
- Allow indexing by tokens 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint.token1">token1</strong></td>
-<td valign="top"><a href="#token">Token</a>!</td>
-<td>
-
- Allow indexing by tokens 
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### OptionBurn
-
- Panoption burn / position close 
+ Panoption burn / position close
 
 <table>
 <thead>
@@ -2989,6 +5246,11 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong id="optionburn.account">account</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong id="optionburn.blocknumber">blockNumber</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td></td>
@@ -3018,7 +5280,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#account">Account</a>!</td>
 <td>
 
- User that burnt the option 
+ User that burnt the option
 
 </td>
 </tr>
@@ -3027,7 +5289,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- The number of contracts burnt, expressed in terms of the asset 
+ The number of contracts burnt, expressed in terms of the asset
 
 </td>
 </tr>
@@ -3036,16 +5298,16 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#tokenid">TokenId</a>!</td>
 <td>
 
- TokenId of the burnt option 
+ TokenId of the burnt option
 
 </td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="optionburn.tickat">tickAt</strong></td>
-<td valign="top"><a href="#int">Int</a>!</td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td>
 
- Tick at which the option was burned 
+ Tick at which the option was burned
 
 </td>
 </tr>
@@ -3054,7 +5316,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#panopticpool">PanopticPool</a>!</td>
 <td>
 
- PanopticPool where burn occured (from event.address) 
+ PanopticPool where burn occured (from event.address)
 
 </td>
 </tr>
@@ -3063,7 +5325,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Premium collected for token0 
+ Premium collected for token0
 
 </td>
 </tr>
@@ -3072,7 +5334,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Premium collected for token1 
+ Premium collected for token1
 
 </td>
 </tr>
@@ -3081,7 +5343,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td>
 
- Packed premia for each leg 
+ Packed premia for each leg
 
 </td>
 </tr>
@@ -3090,7 +5352,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#optionmint">OptionMint</a>!</td>
 <td>
 
- ID of the corresponding OptionMint 
+ ID of the corresponding OptionMint
 
 </td>
 </tr>
@@ -3099,7 +5361,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#accountbalance">AccountBalance</a></td>
 <td>
 
- The AccountBalance (a.k.a. user's position) whose closing emitted this OptionBurn event. 
+ The AccountBalance (a.k.a. user's position) whose closing emitted this OptionBurn event.
 
 </td>
 </tr>
@@ -3108,7 +5370,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#forcedexercise">ForcedExercise</a></td>
 <td>
 
- If this optionBurn was due to a position being exercised, this will be the ID of the related ForceExercise event. 
+ If this optionBurn was due to a position being exercised, this will be the ID of the related ForceExercise event.
 
 </td>
 </tr>
@@ -3117,7 +5379,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#accountliquidated">AccountLiquidated</a></td>
 <td>
 
- If this optionBurn was due to a PanopticPoolAccount being liquidated, this will be the ID of the related AccountLiquidated event. 
+ If this optionBurn was due to a PanopticPoolAccount being liquidated, this will be the ID of the related AccountLiquidated event.
 
 </td>
 </tr>
@@ -3126,25 +5388,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td>
 
- Version of Panoptic contract that emitted this event 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn.volume0usd">volume0USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td>
-
- Token0 Volume USD (converted from amount0 using token.derivedETH and ETH prices at time of mint)
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn.volume1usd">volume1USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td>
-
- Token1 Volume USD (converted from amount1 using token.derivedETH and ETH prices at time of mint)
+ Version of Panoptic contract that emitted this event
 
 </td>
 </tr>
@@ -3153,7 +5397,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td>
 
- Net Collateral 0 shares burned from and minted to recipient as a result of this OptionBurn 
+ Net Collateral 0 shares burned from and minted to recipient as a result of this OptionBurn
 
 </td>
 </tr>
@@ -3162,43 +5406,50 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td>
 
- Net Collateral 1 shares burned from and minted to recipient as a result of this OptionBurn 
+ Net Collateral 1 shares burned from and minted to recipient as a result of this OptionBurn
 
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="optionburn.ethpriceusdatburn">ethPriceUSDAtBurn</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td colspan="2" valign="top"><strong id="optionburn.commissions">commissions</strong></td>
+<td valign="top">[<a href="#commissionpaid">CommissionPaid</a>!]!</td>
 <td>
 
- Price of ETH in USD at time of burn 
+ Commissions paid as part of this burn
 
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="optionburn.token0derivedethatburn">token0DerivedEthAtBurn</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td>
-
- Price of token0 in ETH at time of option burn 
-
-</td>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="optionburn.token1derivedethatburn">token1DerivedEthAtBurn</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td>
-
- Price of token1 in ETH at time of option burn 
-
-</td>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#commissionpaid_orderby">CommissionPaid_orderBy</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#commissionpaid_filter">CommissionPaid_filter</a></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 
-### OptionMint
+### `OptionMint` {#optionmint}
 
- Panoption mint / position open 
+ Panoption mint / position open
 
 <table>
 <thead>
@@ -3241,6 +5492,11 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong id="optionmint.account">account</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong id="optionmint.blocknumber">blockNumber</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td></td>
@@ -3270,7 +5526,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#account">Account</a>!</td>
 <td>
 
- User that minted the option 
+ User that minted the option
 
 </td>
 </tr>
@@ -3279,7 +5535,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#tokenid">TokenId</a>!</td>
 <td>
 
- TokenId of the created option 
+ TokenId of the created option
 
 </td>
 </tr>
@@ -3288,7 +5544,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- The number of contracts minted, expressed in terms of the asset 
+ The number of contracts minted, expressed in terms of the asset
 
 </td>
 </tr>
@@ -3297,7 +5553,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Pool utilization of token0 (how many funds are in the AMM pool vs. the Panoptic pool) at the time of mint. Defined as (inAMM / totalBalance) * 10_000 
+ Pool utilization of token0 (how many funds are in the AMM pool vs. the Panoptic pool) at the time of mint. Defined as (inAMM / totalBalance) * 10_000
 
 </td>
 </tr>
@@ -3306,43 +5562,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Pool utilization of token1 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint.currenttick">currentTick</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td>
-
- Tick extracted from PositionBalance 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint.fastoracletick">fastOracleTick</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td>
-
- Tick extracted from PositionBalance 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint.lastobservedtick">lastObservedTick</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td>
-
- Tick extracted from PositionBalance 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint.sloworacletick">slowOracleTick</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td>
-
- Tick extracted from PositionBalance 
+ Pool utilization of token1
 
 </td>
 </tr>
@@ -3351,7 +5571,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#accountbalance">AccountBalance</a></td>
 <td>
 
- The AccountBalance (a.k.a. user's position) whose creation emitted this OptionMinted event. 
+ The AccountBalance (a.k.a. user's position) whose creation emitted this OptionMinted event.
 
 </td>
 </tr>
@@ -3360,7 +5580,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#panopticpool">PanopticPool</a>!</td>
 <td>
 
- PanopticPool mint is within (from event.address) 
+ PanopticPool mint is within (from event.address)
 
 </td>
 </tr>
@@ -3369,7 +5589,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td>
 
- Net Collateral 0 shares burned from and minted to recipient as a result of this OptionMint 
+ Net Collateral 0 shares burned from and minted to recipient as a result of this OptionMint
 
 </td>
 </tr>
@@ -3378,61 +5598,77 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td>
 
- Net Collateral 1 shares burned from and minted to recipient as a result of this OptionMint 
+ Net Collateral 1 shares burned from and minted to recipient as a result of this OptionMint
 
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="optionmint.commissions0">commissions0</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
+<td colspan="2" valign="top"><strong id="optionmint.commissions">commissions</strong></td>
+<td valign="top">[<a href="#commissionpaid">CommissionPaid</a>!]!</td>
 <td>
 
- Token0 commissions paid to mint this option 
+ Commissions paid as part of this mint
 
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="optionmint.commissions1">commissions1</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Token1 commissions paid to mint this option 
-
-</td>
+<td colspan="2" align="right" valign="top">skip</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="optionmint.commissions0usd">commissions0USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td>
-
- Token0 commissions paid in USD (converted using token.derivedEth and Bundle.ethPriceUsd at time of mint)
-
-</td>
+<td colspan="2" align="right" valign="top">first</td>
+<td valign="top"><a href="#int">Int</a></td>
+<td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="optionmint.commissions1usd">commissions1USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td>
-
- Token1 commissions paid in USD 
-
-</td>
+<td colspan="2" align="right" valign="top">orderBy</td>
+<td valign="top"><a href="#commissionpaid_orderby">CommissionPaid_orderBy</a></td>
+<td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="optionmint.commissionsusd">commissionsUSD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td>
-
- Total commissions paid in USD 
-
-</td>
+<td colspan="2" align="right" valign="top">orderDirection</td>
+<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" align="right" valign="top">where</td>
+<td valign="top"><a href="#commissionpaid_filter">CommissionPaid_filter</a></td>
+<td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="optionmint.tickat">tickAt</strong></td>
 <td valign="top"><a href="#int">Int</a>!</td>
 <td>
 
- Tick at which the option was minted 
+ Tick at which the option was minted (from PositionBalance)
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint.timestampatmint">timestampAtMint</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ Timestamp at which the option was minted (from PositionBalance, uint32)
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint.blockatmint">blockAtMint</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ Block number at which the option was minted (from PositionBalance, uint39)
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint.swapatmint">swapAtMint</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a>!</td>
+<td>
+
+ Whether a swap occurred at mint (from PositionBalance, bit 255)
 
 </td>
 </tr>
@@ -3441,61 +5677,16 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td>
 
- Version of Panoptic contract that emitted this event 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint.volume0usd">volume0USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td>
-
- Token0 Volume USD (converted from amount0 using token.derivedETH and ETH prices at time of mint)
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint.volume1usd">volume1USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td>
-
- Token1 Volume USD (converted from amount1 using token.derivedETH and ETH prices at time of mint)
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint.ethpriceusdatmint">ethPriceUSDAtMint</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td>
-
- Price of ETH in USD at time of mint 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint.token0derivedethatmint">token0DerivedEthAtMint</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td>
-
- Price of token0 in ETH at time of option mint 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint.token1derivedethatmint">token1DerivedEthAtMint</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td>
-
- Price of token1 in ETH at time of option mint 
+ Version of Panoptic contract that emitted this event
 
 </td>
 </tr>
 </tbody>
 </table>
 
-### PanopticFactory
+### `PanopticFactory` {#panopticfactory}
 
- Panoptic Factory (deployer of PanopticPools). 
+ Panoptic Factory (deployer of PanopticPools).
 
 <table>
 <thead>
@@ -3512,7 +5703,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
- Factory address 
+ Factory address
 
 </td>
 </tr>
@@ -3521,7 +5712,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Amount of pools created 
+ Amount of pools created
 
 </td>
 </tr>
@@ -3530,7 +5721,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
- Current owner of the factory 
+ Current owner of the factory
 
 </td>
 </tr>
@@ -3539,16 +5730,16 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td>
 
- Can be 1, or 1.1 (or maybe 2 in the future) 
+ Can be 1, or 1.1 (or maybe 2 in the future)
 
 </td>
 </tr>
 </tbody>
 </table>
 
-### PanopticPool
+### `PanopticPool` {#panopticpool}
 
- A pool deployed on top of an existing Uniswap Pool to facilitate perpetual options trading. 
+ A pool deployed on top of an existing Uniswap Pool to facilitate perpetual options trading.
 
 <table>
 <thead>
@@ -3565,16 +5756,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
- Pool address 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool.txcount">txCount</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td>
-
- Total transaction count 
+ Pool address
 
 </td>
 </tr>
@@ -3583,7 +5765,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#token">Token</a>!</td>
 <td>
 
- Token0 
+ Token0
 
 </td>
 </tr>
@@ -3592,7 +5774,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#token">Token</a>!</td>
 <td>
 
- Token1 
+ Token1
 
 </td>
 </tr>
@@ -3601,7 +5783,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Fee amount 
+ Fee amount
 
 </td>
 </tr>
@@ -3610,7 +5792,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#collateral">Collateral</a>!</td>
 <td>
 
- Vault for token 0 collateral 
+ Vault for token 0 collateral
 
 </td>
 </tr>
@@ -3619,7 +5801,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#collateral">Collateral</a>!</td>
 <td>
 
- Vault for token 1 collateral 
+ Vault for token 1 collateral
 
 </td>
 </tr>
@@ -3628,7 +5810,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#pool">Pool</a>!</td>
 <td>
 
- Underlying pool 
+ Underlying pool
 
 </td>
 </tr>
@@ -3637,7 +5819,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td>
 
- Can be 1, 1.1, or 2 
+ Can be 1, 1.1, or 2
 
 </td>
 </tr>
@@ -3646,7 +5828,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bytes">Bytes</a></td>
 <td>
 
- The external oracle contract used by the newly deployed Panoptic Pool (will only be non-0 for V1.1 pools) 
+ The external oracle contract used by the newly deployed Panoptic Pool (will only be non-0 for V1.1 pools)
 
 </td>
 </tr>
@@ -3655,16 +5837,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
 <td>
 
- Token0 moved for OptionMints. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool.mintvolume0usd">mintVolume0USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Token0 moved for OptionMints in USD. 
+ Token0 moved for OptionMints.
 
 </td>
 </tr>
@@ -3673,16 +5846,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
 <td>
 
- Token0 moved for OptionBurns. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool.burnvolume0usd">burnVolume0USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Token0 moved for OptionBurns in USD. 
+ Token0 moved for OptionBurns.
 
 </td>
 </tr>
@@ -3691,16 +5855,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
 <td>
 
- Sum of OptionMint and OptionBurn token0 volume. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool.totalvolume0usd">totalVolume0USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Sum of OptionMint and OptionBurn token0 volume in USD. 
+ Sum of OptionMint and OptionBurn token0 volume.
 
 </td>
 </tr>
@@ -3709,16 +5864,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
 <td>
 
- Token1 moved for OptionMints. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool.mintvolume1usd">mintVolume1USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Token1 moved for OptionMints in USD. 
+ Token1 moved for OptionMints.
 
 </td>
 </tr>
@@ -3727,16 +5873,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
 <td>
 
- Token1 moved for OptionBurns. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool.burnvolume1usd">burnVolume1USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Token1 moved for OptionBurns in USD. 
+ Token1 moved for OptionBurns.
 
 </td>
 </tr>
@@ -3745,25 +5882,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
 <td>
 
- Sum of OptionMint and OptionBurn token1 volume in USD. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool.totalvolume1usd">totalVolume1USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Sum of OptionMint and OptionBurn token1 volume in USD. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool.totalvolumeusd">totalVolumeUSD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Sum of OptionMint and OptionBurn volume for token0 and token1 in USD. 
+ Sum of OptionMint and OptionBurn token1 volume.
 
 </td>
 </tr>
@@ -3772,16 +5891,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
 <td>
 
- All time commissions earned from Collateral0. Commissions increase with every OptionMint and collateral deposit. They may decrease in case of protocol loss, which gets realized as part of a liquidation. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool.commissions0usd">commissions0USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- All time token0 commissions converted to USD (calculated using token0's derivedETH and the bundle.ethPriceUSD values). 
+ All time commissions earned from Collateral0. Commissions increase with every OptionMint and collateral deposit. They may decrease in case of protocol loss, which gets realized as part of a liquidation.
 
 </td>
 </tr>
@@ -3790,25 +5900,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
 <td>
 
- All time commissions earned from Collateral1. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool.commissions1usd">commissions1USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- All time token1 commissions converted to USD. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool.commissionsusd">commissionsUSD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- All time commissions for both tokens converted to USD. 
+ All time commissions earned from Collateral1.
 
 </td>
 </tr>
@@ -3817,7 +5909,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top">[<a href="#chunk">Chunk</a>!]!</td>
 <td>
 
- Link to all chunks of liquidity managed by this PanopticPool. 
+ Link to all chunks of liquidity managed by this PanopticPool.
 
 </td>
 </tr>
@@ -3856,7 +5948,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top">[<a href="#panopticpooldaydata">PanopticPoolDayData</a>!]!</td>
 <td>
 
- Snapshots of PanopticPoolDayData 
+ Snapshots of PanopticPoolDayData
 
 </td>
 </tr>
@@ -3890,7 +5982,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top">[<a href="#panopticpoolaccount">PanopticPoolAccount</a>!]!</td>
 <td>
 
- Link to all PanopticPoolAccounts for this PanopticPool. 
+ Link to all PanopticPoolAccounts for this PanopticPool.
 
 </td>
 </tr>
@@ -3924,7 +6016,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td>
 
- Creation timestamp 
+ Creation timestamp
 
 </td>
 </tr>
@@ -3933,16 +6025,16 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td>
 
- Creation block number 
+ Creation block number
 
 </td>
 </tr>
 </tbody>
 </table>
 
-### PanopticPoolAccount
+### `PanopticPoolAccount` {#panopticpoolaccount}
 
- Tracks Panoption & PLP activity (collateral withdrawals and deposits) for a given Account & PanopticPool the Account has interacted with. 
+ Tracks Panoption &amp; PLP activity (collateral withdrawals and deposits) for a given Account &amp; PanopticPool the Account has interacted with.
 
 <table>
 <thead>
@@ -3959,7 +6051,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
- Address of account + '#' + address of panoptic pool 
+ Address of account + '#' + address of panoptic pool
 
 </td>
 </tr>
@@ -3968,7 +6060,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#panopticpool">PanopticPool</a>!</td>
 <td>
 
- Panoptic pool address 
+ Panoptic pool address
 
 </td>
 </tr>
@@ -3977,7 +6069,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#account">Account</a>!</td>
 <td>
 
- Account address 
+ Account address
 
 </td>
 </tr>
@@ -3986,7 +6078,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#collateral">Collateral</a>!</td>
 <td>
 
- Collateral contract for Token0 
+ Collateral contract for Token0
 
 </td>
 </tr>
@@ -3995,7 +6087,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Number of Collateral0 shares this PanopticPoolAccount controls 
+ Number of Collateral0 shares this PanopticPoolAccount controls
 
 </td>
 </tr>
@@ -4004,7 +6096,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#collateral">Collateral</a>!</td>
 <td>
 
- Collateral contract for Token1 
+ Collateral contract for Token1
 
 </td>
 </tr>
@@ -4013,7 +6105,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Number of Collateral1 shares this PanopticPoolAccount controls 
+ Number of Collateral1 shares this PanopticPoolAccount controls
 
 </td>
 </tr>
@@ -4022,7 +6114,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#int">Int</a>!</td>
 <td>
 
- Whether or not the user has been liquidated for this pool & not opened new positions (1 if true) 
+ Whether or not the user has been liquidated for this pool &amp; not opened new positions (1 if true)
 
 </td>
 </tr>
@@ -4031,7 +6123,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top">[<a href="#accountbalance">AccountBalance</a>!]!</td>
 <td>
 
- TokenId balances that this PanopticPoolAccount is responsible for 
+ TokenId balances that this PanopticPoolAccount is responsible for
 
 </td>
 </tr>
@@ -4065,16 +6157,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td>
 
- All time token0 commissions for this PPA. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount.commissions0usd">commissions0Usd</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td>
-
- All time token0 commissions for this PPA converted to USD (calculated using token0's derivedETH and the bundle.ethPriceUSD values). 
+ All time token0 commissions for this PPA.
 
 </td>
 </tr>
@@ -4083,25 +6166,16 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td>
 
- All time token1 commissions for this PPA. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount.commissions1usd">commissions1Usd</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td>
-
- All time token1 commissions for this PPA converted to USD (calculated using token1's derivedETH and the bundle.ethPriceUSD values). 
+ All time token1 commissions for this PPA.
 
 </td>
 </tr>
 </tbody>
 </table>
 
-### PanopticPoolDayData
+### `PanopticPoolDayData` {#panopticpooldaydata}
 
- Data accumulated and condensed into day stats for each PanopticPool. If no PanopticPool events are emitted on a given day, there will be a missing PanopticPoolDayData for that day. Updated at the end of every Panoptic Pool event handler to guarantee the inclusion of volume updates from SFPM event handling (because SFPM events get emitted and handled before the option events). 
+ Data accumulated and condensed into day stats for each PanopticPool. If no PanopticPool events are emitted on a given day, there will be a missing PanopticPoolDayData for that day. Updated at the end of every Panoptic Pool event handler to guarantee the inclusion of volume updates from SFPM event handling (because SFPM events get emitted and handled before the option events).
 
 <table>
 <thead>
@@ -4118,7 +6192,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
- Timestamp rounded to current day combined with panoptic pool id 
+ Timestamp rounded to current day combined with panoptic pool id
 
 </td>
 </tr>
@@ -4127,7 +6201,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#panopticpool">PanopticPool</a>!</td>
 <td>
 
- Pointer to Panoptic Pool 
+ Pointer to Panoptic Pool
 
 </td>
 </tr>
@@ -4136,7 +6210,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#int">Int</a>!</td>
 <td>
 
- Timestamp rounded to current day by dividing by 86400 
+ Timestamp rounded to current day by dividing by 86400
 
 </td>
 </tr>
@@ -4145,16 +6219,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
 <td>
 
- Token0 moved for OptionMints. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata.mintvolume0usd">mintVolume0USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Token0 moved for OptionMints in USD. 
+ Token0 moved for OptionMints.
 
 </td>
 </tr>
@@ -4163,16 +6228,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
 <td>
 
- Token0 moved for OptionBurns. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata.burnvolume0usd">burnVolume0USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Token0 moved for OptionBurns in USD. 
+ Token0 moved for OptionBurns.
 
 </td>
 </tr>
@@ -4181,16 +6237,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
 <td>
 
- Sum of OptionMint and OptionBurn token0 volume. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata.totalvolume0usd">totalVolume0USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Sum of OptionMint and OptionBurn token0 volume in USD. 
+ Sum of OptionMint and OptionBurn token0 volume.
 
 </td>
 </tr>
@@ -4199,16 +6246,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
 <td>
 
- Token1 moved for OptionMints. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata.mintvolume1usd">mintVolume1USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Token1 moved for OptionMints in USD. 
+ Token1 moved for OptionMints.
 
 </td>
 </tr>
@@ -4217,16 +6255,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
 <td>
 
- Token1 moved for OptionBurns. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata.burnvolume1usd">burnVolume1USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Token1 moved for OptionBurns in USD. 
+ Token1 moved for OptionBurns.
 
 </td>
 </tr>
@@ -4235,25 +6264,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
 <td>
 
- Sum of OptionMint and OptionBurn token1 volume in USD. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata.totalvolume1usd">totalVolume1USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Sum of OptionMint and OptionBurn token1 volume in USD. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata.totalvolumeusd">totalVolumeUSD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Sum of OptionMint and OptionBurn volume for token0 and token1 in USD. 
+ Sum of OptionMint and OptionBurn token1 volume.
 
 </td>
 </tr>
@@ -4262,16 +6273,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
 <td>
 
- All time commissions earned from Collateral0. Commissions increase with every OptionMint and collateral deposit. They may decrease in case of protocol loss, which gets realized as part of a liquidation. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata.commissions0usd">commissions0USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- All time token0 commissions converted to USD (calculated using token0's derivedETH and the bundle.ethPriceUSD values). 
+ All time commissions earned from Collateral0. Commissions increase with every OptionMint and collateral deposit. They may decrease in case of protocol loss, which gets realized as part of a liquidation.
 
 </td>
 </tr>
@@ -4280,34 +6282,16 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
 <td>
 
- All time commissions earned from Collateral1. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata.commissions1usd">commissions1USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- All time token1 commissions converted to USD. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata.commissionsusd">commissionsUSD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- All time commissions for both tokens converted to USD. 
+ All time commissions earned from Collateral1.
 
 </td>
 </tr>
 </tbody>
 </table>
 
-### Pool
+### `Pool` {#pool}
 
- Underlying pool (e.g. Uniswap V3 Pool) 
+ Underlying pool (e.g. Uniswap V3 Pool)
 
 <table>
 <thead>
@@ -4324,7 +6308,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
- Pool address for V3 pool, or for V4 pools, abi encoded hash of the pool key struct for the new pool. 
+ Pool address for V3 pool, or for V4 pools, abi encoded hash of the pool key struct for the new pool.
 
 </td>
 </tr>
@@ -4333,7 +6317,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#boolean">Boolean</a></td>
 <td>
 
- If this is a V4Pool, will be true. If it's a V3Pool, will be false 
+ If this is a V4Pool, will be true. If it's a V3Pool, will be false
 
 </td>
 </tr>
@@ -4342,7 +6326,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bytes">Bytes</a></td>
 <td>
 
- Hook contract address 
+ Hook contract address
 
 </td>
 </tr>
@@ -4351,7 +6335,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#string">String</a></td>
 <td>
 
- Panoptic identifier of uniswap pool 
+ Panoptic identifier of uniswap pool
 
 </td>
 </tr>
@@ -4360,7 +6344,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Fee amount 
+ Fee amount
 
 </td>
 </tr>
@@ -4369,7 +6353,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Min space between ticks 
+ Min space between ticks
 
 </td>
 </tr>
@@ -4378,7 +6362,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#token">Token</a>!</td>
 <td>
 
- Token0 
+ Token0
 
 </td>
 </tr>
@@ -4387,183 +6371,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#token">Token</a>!</td>
 <td>
 
- Token1 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool.txcount">txCount</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td>
-
- Total transaction count 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool.liquidity">liquidity</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td>
-
- In range liquidity 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool.sqrtprice">sqrtPrice</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td>
-
- Current price tracker 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool.tick">tick</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td>
-
- Current tick. May be null if pool has not been initialized. 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool.ticklastupdatetimestamp">tickLastUpdateTimestamp</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td>
-
- Timestamp of the last time this tick was updated 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool.ticklastupdateblocknumber">tickLastUpdateBlockNumber</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td>
-
- Block number of the last time this tick was updated 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool.poolhourdata">poolHourData</strong></td>
-<td valign="top">[<a href="#poolhourdata">PoolHourData</a>!]!</td>
-<td>
-
- Snapshots of PoolHourData 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">skip</td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">first</td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">orderBy</td>
-<td valign="top"><a href="#poolhourdata_orderby">PoolHourData_orderBy</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">orderDirection</td>
-<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">where</td>
-<td valign="top"><a href="#poolhourdata_filter">PoolHourData_filter</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool.pooldaydata">poolDayData</strong></td>
-<td valign="top">[<a href="#pooldaydata">PoolDayData</a>!]!</td>
-<td>
-
- Snapshots of PoolDayData 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">skip</td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">first</td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">orderBy</td>
-<td valign="top"><a href="#pooldaydata_orderby">PoolDayData_orderBy</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">orderDirection</td>
-<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">where</td>
-<td valign="top"><a href="#pooldaydata_filter">PoolDayData_filter</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool.token0price">token0Price</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- token0 per token1 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool.token1price">token1Price</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Token1 per token0 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool.totalvaluelockedtoken0">totalValueLockedToken0</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Total token 0 across all ticks 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool.totalvaluelockedtoken1">totalValueLockedToken1</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Total token 1 across all ticks 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool.totalvaluelockedeth">totalValueLockedETH</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Tvl derived ETH (necessary for tvlUSD using uni's implementation) 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool.totalvaluelockedusd">totalValueLockedUSD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Tvl USD 
+ Token1
 
 </td>
 </tr>
@@ -4572,7 +6380,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td>
 
- The minimum enforced tick for the SFPM to create a position in this pool 
+ The minimum enforced tick for the SFPM to create a position in this pool
 
 </td>
 </tr>
@@ -4581,7 +6389,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td>
 
- The maximum enforced tick for the SFPM to create a position in this pool 
+ The maximum enforced tick for the SFPM to create a position in this pool
 
 </td>
 </tr>
@@ -4590,7 +6398,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#panopticpool">PanopticPool</a></td>
 <td>
 
- Associated PanopticPool. Null if not created yet 
+ Associated PanopticPool. Null if not created yet
 
 </td>
 </tr>
@@ -4599,7 +6407,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top">[<a href="#panopticpool">PanopticPool</a>!]!</td>
 <td>
 
- Associated PanopticPools. For V3 pools, will contain at most one pool. For V4 pools, can contain multiple pools. 
+ Associated PanopticPools. For V3 pools, will contain at most one pool. For V4 pools, can contain multiple pools.
 
 </td>
 </tr>
@@ -4631,159 +6439,9 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 </tbody>
 </table>
 
-### PoolDayData
+### `PoolIdLookup` {#poolidlookup}
 
- Data accumulated and condensed into day stats for each pool. If no Pool events are emitted on a given day, there will be a missing PoolDayData for that day. 
-
-<table>
-<thead>
-<tr>
-<th align="left">Field</th>
-<th align="right">Argument</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata.id">id</strong></td>
-<td valign="top"><a href="#id">ID</a>!</td>
-<td>
-
- Timestamp rounded to current day combined with pool id 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata.pool">pool</strong></td>
-<td valign="top"><a href="#pool">Pool</a>!</td>
-<td>
-
- Pointer to Pool 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata.date">date</strong></td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
- Timestamp rounded to current day by dividing by 86400 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata.txcount">txCount</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td>
-
- Number of transactions during period 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata.liquidity">liquidity</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td>
-
- In range liquidity at end of period 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata.token0price">token0Price</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Price of token0 - derived from sqrtPrice 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata.token1price">token1Price</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Price of token1 - derived from sqrtPrice 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata.volumetoken0">volumeToken0</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Volume in token0 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata.volumetoken1">volumeToken1</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Volume in token1 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata.volumeusd">volumeUSD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Volume in USD 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata.feesusd">feesUSD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Fees in USD 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata.open">open</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Opening price of token0 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata.high">high</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- High price of token0 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata.low">low</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Low price of token0 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata.close">close</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Close price of token0 
-
-</td>
-</tr>
-</tbody>
-</table>
-
-### PoolHourData
+ Reverse lookup from SFPM poolId (64-bit encoded) to Pool entity
 
 <table>
 <thead>
@@ -4796,135 +6454,27 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong id="poolhourdata.id">id</strong></td>
-<td valign="top"><a href="#id">ID</a>!</td>
+<td colspan="2" valign="top"><strong id="poolidlookup.id">id</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
 <td>
 
- Format: pool address + #  + timestamp 
+ The SFPM poolId (64-bit encoded, hex string)
 
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="poolhourdata.pool">pool</strong></td>
+<td colspan="2" valign="top"><strong id="poolidlookup.pool">pool</strong></td>
 <td valign="top"><a href="#pool">Pool</a>!</td>
 <td>
 
- Pointer to pool 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata.txcount">txCount</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td>
-
- Number of transactions during period 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata.liquidity">liquidity</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td>
-
- In range liquidity at end of period 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata.token0price">token0Price</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Price of token0 - derived from sqrtPrice 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata.token1price">token1Price</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Price of token1 - derived from sqrtPrice 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata.volumetoken0">volumeToken0</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Volume in token0 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata.volumetoken1">volumeToken1</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Volume in token1 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata.volumeusd">volumeUSD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Volume in USD 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata.open">open</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Opening price of token0 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata.high">high</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- High price of token0 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata.low">low</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Low price of token0 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata.close">close</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Close price of token0 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata.periodstartunix">periodStartUnix</strong></td>
-<td valign="top"><a href="#int">Int</a>!</td>
-<td>
-
- Unix timestamp for start of hour 
+ The underlying pool
 
 </td>
 </tr>
 </tbody>
 </table>
 
-### PremiumSettled
+### `PremiumSettled` {#premiumsettled}
 
  Emitted when premium is settled independent of a mint/burn (e.g. during `settleLongPremium`)
 
@@ -4969,6 +6519,11 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong id="premiumsettled.account">account</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong id="premiumsettled.blocknumber">blockNumber</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td></td>
@@ -4998,7 +6553,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#account">Account</a>!</td>
 <td>
 
- Address of the owner of the settled position 
+ Address of the owner of the settled position
 
 </td>
 </tr>
@@ -5007,7 +6562,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#tokenid">TokenId</a>!</td>
 <td>
 
- TokenId of the settled position 
+ TokenId of the settled position
 
 </td>
 </tr>
@@ -5016,7 +6571,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td>
 
- The leg index of `tokenId` that the premium was settled for 
+ The leg index of `tokenId` that the premium was settled for
 
 </td>
 </tr>
@@ -5025,7 +6580,7 @@ See TokenId entity for more details, or the source here: https://github.com/pano
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- LeftRight encoding for the amount of premium settled for token0 (right slot) and token1 (left slot) 
+ LeftRight encoding for the amount of premium settled for token0 (right slot) and token1 (left slot)
 
 </td>
 </tr>
@@ -5039,47 +6594,11 @@ Amount settled for token0
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="premiumsettled.settledamount0ineth">settledAmount0InEth</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td>
-
- Amount settled for token0 in ETH 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled.settledamount0inusd">settledAmount0InUsd</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td>
-
- Amount settled for token0 in USD 
-
-</td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="premiumsettled.settledamount1">settledAmount1</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
 Amount settled for token1
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled.settledamount1ineth">settledAmount1InEth</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td>
-
- Amount settled for token1 in ETH 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled.settledamount1inusd">settledAmount1InUsd</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td>
-
- Amount settled for token1 in USD 
 
 </td>
 </tr>
@@ -5097,16 +6616,16 @@ PanopticPool mint is within (from event.address)
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td>
 
- Version of Panoptic contract that emitted this event 
+ Version of Panoptic contract that emitted this event
 
 </td>
 </tr>
 </tbody>
 </table>
 
-### ProtocolLossRealized
+### `ProtocolLossRealized` {#protocollossrealized}
 
- Collateral protocol loss - Emitted when protocol loss is realized during liquidation. 
+ Collateral protocol loss - Emitted when protocol loss is realized during liquidation.
 
 <table>
 <thead>
@@ -5149,6 +6668,11 @@ PanopticPool mint is within (from event.address)
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized.account">account</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong id="protocollossrealized.blocknumber">blockNumber</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td></td>
@@ -5178,7 +6702,7 @@ PanopticPool mint is within (from event.address)
 <td valign="top"><a href="#account">Account</a>!</td>
 <td>
 
- The address of the liquidated account 
+ The address of the liquidated account
 
 </td>
 </tr>
@@ -5187,7 +6711,7 @@ PanopticPool mint is within (from event.address)
 <td valign="top"><a href="#account">Account</a>!</td>
 <td>
 
- The address of the liquidator 
+ The address of the liquidator
 
 </td>
 </tr>
@@ -5196,7 +6720,7 @@ PanopticPool mint is within (from event.address)
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- The protocol loss in asset terms 
+ The protocol loss in asset terms
 
 </td>
 </tr>
@@ -5205,7 +6729,7 @@ PanopticPool mint is within (from event.address)
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- The protocol loss in share terms 
+ The protocol loss in share terms
 
 </td>
 </tr>
@@ -5214,16 +6738,16 @@ PanopticPool mint is within (from event.address)
 <td valign="top"><a href="#collateral">Collateral</a>!</td>
 <td>
 
- The collateral entity associated with this protocol loss 
+ The collateral entity associated with this protocol loss
 
 </td>
 </tr>
 </tbody>
 </table>
 
-### RiskEngine
+### `RiskEngine` {#riskengine}
 
- The RiskEngine contract - central risk assessment and solvency calculator for Panoptic V2. 
+ The RiskEngine contract - central risk assessment and solvency calculator for Panoptic V2.
 
 <table>
 <thead>
@@ -5240,14 +6764,14 @@ PanopticPool mint is within (from event.address)
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
- RiskEngine contract address 
+ RiskEngine contract address
 
 </td>
 </tr>
 </tbody>
 </table>
 
-### Token
+### `Token` {#token}
 
 <table>
 <thead>
@@ -5264,7 +6788,7 @@ PanopticPool mint is within (from event.address)
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
- Token address 
+ Token address
 
 </td>
 </tr>
@@ -5273,7 +6797,7 @@ PanopticPool mint is within (from event.address)
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Token decimals 
+ Token decimals
 
 </td>
 </tr>
@@ -5282,7 +6806,7 @@ PanopticPool mint is within (from event.address)
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
- Token name 
+ Token name
 
 </td>
 </tr>
@@ -5291,7 +6815,7 @@ PanopticPool mint is within (from event.address)
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
- Token symbol 
+ Token symbol
 
 </td>
 </tr>
@@ -5300,68 +6824,16 @@ PanopticPool mint is within (from event.address)
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Token total supply 
+ Token total supply
 
 </td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="token.txcount">txCount</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a>!</td>
-<td>
-
- Number of transactions across all pools that include this token 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="token.derivedeth">derivedETH</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a>!</td>
-<td>
-
- Derived price in ETH, used to provide human readable price 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="token.whitelistpools">whitelistPools</strong></td>
-<td valign="top">[<a href="#pool">Pool</a>!]!</td>
-<td>
-
- Pools token is in that are white listed for USD pricing 
-
-</td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">skip</td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">first</td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">orderBy</td>
-<td valign="top"><a href="#pool_orderby">Pool_orderBy</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">orderDirection</td>
-<td valign="top"><a href="#orderdirection">OrderDirection</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" align="right" valign="top">where</td>
-<td valign="top"><a href="#pool_filter">Pool_filter</a></td>
-<td></td>
 </tr>
 </tbody>
 </table>
 
-### TokenId
+### `TokenId` {#tokenid}
 
- An ERC-1155 ID representing a position. 
+ An ERC-1155 ID representing a position.
 
 <table>
 <thead>
@@ -5387,7 +6859,7 @@ The ERC-1155 TokenId for this position. See the TokenId.sol for more information
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
- Hex stringified tokenId 
+ Hex stringified tokenId
 
 </td>
 </tr>
@@ -5396,7 +6868,7 @@ The ERC-1155 TokenId for this position. See the TokenId.sol for more information
 <td valign="top"><a href="#pool">Pool</a>!</td>
 <td>
 
- Pool position is within 
+ Pool position is within
 
 </td>
 </tr>
@@ -5405,7 +6877,7 @@ The ERC-1155 TokenId for this position. See the TokenId.sol for more information
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Also known as positionSize, the total net number of contracts for this tokenId, expressed in terms of the asset 
+ Also known as positionSize, the total net number of contracts for this tokenId, expressed in terms of the asset
 
 </td>
 </tr>
@@ -5448,7 +6920,7 @@ The ERC-1155 TokenId for this position. See the TokenId.sol for more information
 <td valign="top">[<a href="#leg">Leg</a>!]!</td>
 <td>
 
- Legs in this tokenId 
+ Legs in this tokenId
 
 </td>
 </tr>
@@ -5480,9 +6952,9 @@ The ERC-1155 TokenId for this position. See the TokenId.sol for more information
 </tbody>
 </table>
 
-### TokenizedPositionBurnt
+### `TokenizedPositionBurnt` {#tokenizedpositionburnt}
 
- SFPM tokenized position burn 
+ SFPM tokenized position burn
 
 <table>
 <thead>
@@ -5525,6 +6997,11 @@ The ERC-1155 TokenId for this position. See the TokenId.sol for more information
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt.account">account</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong id="tokenizedpositionburnt.blocknumber">blockNumber</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td></td>
@@ -5554,7 +7031,7 @@ The ERC-1155 TokenId for this position. See the TokenId.sol for more information
 <td valign="top"><a href="#account">Account</a>!</td>
 <td>
 
- User that burnt the position 
+ User that burnt the position
 
 </td>
 </tr>
@@ -5563,7 +7040,7 @@ The ERC-1155 TokenId for this position. See the TokenId.sol for more information
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- The number of contracts burnt, expressed in terms of the asset 
+ The number of contracts burnt, expressed in terms of the asset
 
 </td>
 </tr>
@@ -5572,7 +7049,7 @@ The ERC-1155 TokenId for this position. See the TokenId.sol for more information
 <td valign="top"><a href="#tokenid">TokenId</a>!</td>
 <td>
 
- TokenId of the burnt option 
+ TokenId of the burnt option
 
 </td>
 </tr>
@@ -5581,16 +7058,16 @@ The ERC-1155 TokenId for this position. See the TokenId.sol for more information
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td>
 
- Version of Panoptic contract that emitted this event 
+ Version of Panoptic contract that emitted this event
 
 </td>
 </tr>
 </tbody>
 </table>
 
-### TokenizedPositionMinted
+### `TokenizedPositionMinted` {#tokenizedpositionminted}
 
- SFPM tokenized position mint 
+ SFPM tokenized position mint
 
 <table>
 <thead>
@@ -5633,6 +7110,11 @@ The ERC-1155 TokenId for this position. See the TokenId.sol for more information
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted.account">account</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong id="tokenizedpositionminted.blocknumber">blockNumber</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td></td>
@@ -5662,7 +7144,7 @@ The ERC-1155 TokenId for this position. See the TokenId.sol for more information
 <td valign="top"><a href="#account">Account</a>!</td>
 <td>
 
- User that minted the position 
+ User that minted the position
 
 </td>
 </tr>
@@ -5671,7 +7153,7 @@ The ERC-1155 TokenId for this position. See the TokenId.sol for more information
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- The number of contracts minted, expressed in terms of the asset 
+ The number of contracts minted, expressed in terms of the asset
 
 </td>
 </tr>
@@ -5680,7 +7162,7 @@ The ERC-1155 TokenId for this position. See the TokenId.sol for more information
 <td valign="top"><a href="#tokenid">TokenId</a>!</td>
 <td>
 
- TokenId of the minted position 
+ TokenId of the minted position
 
 </td>
 </tr>
@@ -5689,16 +7171,16 @@ The ERC-1155 TokenId for this position. See the TokenId.sol for more information
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td>
 
- Version of Panoptic contract that emitted this event 
+ Version of Panoptic contract that emitted this event
 
 </td>
 </tr>
 </tbody>
 </table>
 
-### TokensCollected
+### `TokensCollected` {#tokenscollected}
 
- Emitted when tokens are collected from the RiskEngine contract by the guardian. 
+ Emitted when tokens are collected from the RiskEngine contract by the guardian.
 
 <table>
 <thead>
@@ -5761,16 +7243,11 @@ The ERC-1155 TokenId for this position. See the TokenId.sol for more information
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenscollected.pool">pool</strong></td>
-<td valign="top"><a href="#pool">Pool</a>!</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="tokenscollected.riskengine">riskEngine</strong></td>
 <td valign="top"><a href="#riskengine">RiskEngine</a>!</td>
 <td>
 
- RiskEngine contract address 
+ RiskEngine contract address
 
 </td>
 </tr>
@@ -5779,7 +7256,7 @@ The ERC-1155 TokenId for this position. See the TokenId.sol for more information
 <td valign="top"><a href="#bytes">Bytes</a>!</td>
 <td>
 
- Address of the token collected 
+ Address of the token collected
 
 </td>
 </tr>
@@ -5788,7 +7265,7 @@ The ERC-1155 TokenId for this position. See the TokenId.sol for more information
 <td valign="top"><a href="#bytes">Bytes</a>!</td>
 <td>
 
- Address receiving the tokens 
+ Address receiving the tokens
 
 </td>
 </tr>
@@ -5797,14 +7274,117 @@ The ERC-1155 TokenId for this position. See the TokenId.sol for more information
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Amount of tokens collected 
+ Amount of tokens collected
 
 </td>
 </tr>
 </tbody>
 </table>
 
-### _Block_
+### `TokensSwept` {#tokensswept}
+
+ Emitted when tokens are swept from a BuilderWallet.
+
+<table>
+<thead>
+<tr>
+<th align="left">Field</th>
+<th align="right">Argument</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept.id">id</strong></td>
+<td valign="top"><a href="#id">ID</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept.hash">hash</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept.logindex">logIndex</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept.eventtype">eventType</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept.from">from</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept.to">to</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept.blocknumber">blockNumber</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept.timestamp">timestamp</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept.gasused">gasUsed</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept.gasprice">gasPrice</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept.builderwallet">builderWallet</strong></td>
+<td valign="top"><a href="#builderwallet">BuilderWallet</a>!</td>
+<td>
+
+ The BuilderWallet tokens were swept from
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept.token">token</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a>!</td>
+<td>
+
+ Address of the token swept
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept.sweepto">sweepTo</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a>!</td>
+<td>
+
+ Address receiving the swept tokens
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept.amount">amount</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a>!</td>
+<td>
+
+ Amount of tokens swept
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### `_Block_` {#block}
 
 <table>
 <thead>
@@ -5855,7 +7435,7 @@ The hash of the parent block
 </tbody>
 </table>
 
-### _Meta_
+### `_Meta_` {#meta}
 
 The type for the top-level _meta field
 
@@ -5871,7 +7451,7 @@ The type for the top-level _meta field
 <tbody>
 <tr>
 <td colspan="2" valign="top"><strong id="_meta_.block">block</strong></td>
-<td valign="top"><a href="#_block_">_Block_</a>!</td>
+<td valign="top"><a href="#block">_Block_</a>!</td>
 <td>
 
 Information about a specific subgraph block. The hash of the block
@@ -5904,7 +7484,7 @@ If `true`, the subgraph encountered indexing errors at some past block
 
 ## Inputs
 
-### AccountBalance_filter
+### `AccountBalance_filter` {#accountbalance_filter}
 
 <table>
 <thead>
@@ -6271,41 +7851,6 @@ If `true`, the subgraph encountered indexing errors at some past block
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.legliquidities">legLiquidities</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.legliquidities_not">legLiquidities_not</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.legliquidities_contains">legLiquidities_contains</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.legliquidities_contains_nocase">legLiquidities_contains_nocase</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.legliquidities_not_contains">legLiquidities_not_contains</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.legliquidities_not_contains_nocase">legLiquidities_not_contains_nocase</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.legliquidities_">legLiquidities_</strong></td>
-<td valign="top"><a href="#legliquidities_filter">LegLiquidities_filter</a></td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="accountbalance_filter.tokencount">tokenCount</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
@@ -6531,86 +8076,6 @@ If `true`, the subgraph encountered indexing errors at some past block
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled0inethtotal">premiaSettled0InEthTotal</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled0inethtotal_not">premiaSettled0InEthTotal_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled0inethtotal_gt">premiaSettled0InEthTotal_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled0inethtotal_lt">premiaSettled0InEthTotal_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled0inethtotal_gte">premiaSettled0InEthTotal_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled0inethtotal_lte">premiaSettled0InEthTotal_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled0inethtotal_in">premiaSettled0InEthTotal_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled0inethtotal_not_in">premiaSettled0InEthTotal_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled0inusdtotal">premiaSettled0InUsdTotal</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled0inusdtotal_not">premiaSettled0InUsdTotal_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled0inusdtotal_gt">premiaSettled0InUsdTotal_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled0inusdtotal_lt">premiaSettled0InUsdTotal_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled0inusdtotal_gte">premiaSettled0InUsdTotal_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled0inusdtotal_lte">premiaSettled0InUsdTotal_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled0inusdtotal_in">premiaSettled0InUsdTotal_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled0inusdtotal_not_in">premiaSettled0InUsdTotal_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled1total">premiaSettled1Total</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
@@ -6648,86 +8113,6 @@ If `true`, the subgraph encountered indexing errors at some past block
 <tr>
 <td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled1total_not_in">premiaSettled1Total_not_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled1inethtotal">premiaSettled1InEthTotal</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled1inethtotal_not">premiaSettled1InEthTotal_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled1inethtotal_gt">premiaSettled1InEthTotal_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled1inethtotal_lt">premiaSettled1InEthTotal_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled1inethtotal_gte">premiaSettled1InEthTotal_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled1inethtotal_lte">premiaSettled1InEthTotal_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled1inethtotal_in">premiaSettled1InEthTotal_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled1inethtotal_not_in">premiaSettled1InEthTotal_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled1inusdtotal">premiaSettled1InUsdTotal</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled1inusdtotal_not">premiaSettled1InUsdTotal_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled1inusdtotal_gt">premiaSettled1InUsdTotal_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled1inusdtotal_lt">premiaSettled1InUsdTotal_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled1inusdtotal_gte">premiaSettled1InUsdTotal_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled1inusdtotal_lte">premiaSettled1InUsdTotal_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled1inusdtotal_in">premiaSettled1InUsdTotal_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountbalance_filter.premiasettled1inusdtotal_not_in">premiaSettled1InUsdTotal_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
 <td></td>
 </tr>
 <tr>
@@ -7227,7 +8612,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### AccountLiquidated_filter
+### `AccountLiquidated_filter` {#accountliquidated_filter}
 
 <table>
 <thead>
@@ -7635,6 +9020,106 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="accountliquidated_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated_filter.account">account</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated_filter.account_not">account_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated_filter.account_gt">account_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated_filter.account_lt">account_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated_filter.account_gte">account_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated_filter.account_lte">account_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated_filter.account_in">account_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated_filter.account_not_in">account_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated_filter.account_contains">account_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated_filter.account_contains_nocase">account_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated_filter.account_not_contains">account_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated_filter.account_not_contains_nocase">account_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated_filter.account_starts_with">account_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated_filter.account_starts_with_nocase">account_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated_filter.account_not_starts_with">account_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated_filter.account_not_starts_with_nocase">account_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated_filter.account_ends_with">account_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated_filter.account_ends_with_nocase">account_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated_filter.account_not_ends_with">account_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="accountliquidated_filter.account_not_ends_with_nocase">account_not_ends_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
@@ -8234,83 +9719,43 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="accountliquidated_filter.liquidationbonususd">liquidationBonusUSD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountliquidated_filter.liquidationbonususd_not">liquidationBonusUSD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountliquidated_filter.liquidationbonususd_gt">liquidationBonusUSD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountliquidated_filter.liquidationbonususd_lt">liquidationBonusUSD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountliquidated_filter.liquidationbonususd_gte">liquidationBonusUSD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountliquidated_filter.liquidationbonususd_lte">liquidationBonusUSD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountliquidated_filter.liquidationbonususd_in">liquidationBonusUSD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="accountliquidated_filter.liquidationbonususd_not_in">liquidationBonusUSD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="accountliquidated_filter.tickat">tickAt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="accountliquidated_filter.tickat_not">tickAt_not</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="accountliquidated_filter.tickat_gt">tickAt_gt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="accountliquidated_filter.tickat_lt">tickAt_lt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="accountliquidated_filter.tickat_gte">tickAt_gte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="accountliquidated_filter.tickat_lte">tickAt_lte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="accountliquidated_filter.tickat_in">tickAt_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="accountliquidated_filter.tickat_not_in">tickAt_not_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
 <tr>
@@ -8485,7 +9930,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### Account_filter
+### `Account_filter` {#account_filter}
 
 <table>
 <thead>
@@ -8568,7 +10013,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### BaseEvent_filter
+### `BaseEvent_filter` {#baseevent_filter}
 
 <table>
 <thead>
@@ -9161,7 +10606,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### BlockChangedFilter
+### `BlockChangedFilter` {#blockchangedfilter}
 
 <table>
 <thead>
@@ -9180,7 +10625,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### Block_height
+### `Block_height` {#block_height}
 
 <table>
 <thead>
@@ -9209,7 +10654,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### BorrowRateUpdated_filter
+### `BorrowRateUpdated_filter` {#borrowrateupdated_filter}
 
 <table>
 <thead>
@@ -9781,111 +11226,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool">pool</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_not">pool_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_gt">pool_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_lt">pool_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_gte">pool_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_lte">pool_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_in">pool_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_not_in">pool_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_contains">pool_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_contains_nocase">pool_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_not_contains">pool_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_not_contains_nocase">pool_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_starts_with">pool_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_starts_with_nocase">pool_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_not_starts_with">pool_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_not_starts_with_nocase">pool_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_ends_with">pool_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_ends_with_nocase">pool_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_not_ends_with">pool_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_not_ends_with_nocase">pool_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="borrowrateupdated_filter.pool_">pool_</strong></td>
-<td valign="top"><a href="#pool_filter">Pool_filter</a></td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="borrowrateupdated_filter.riskengine">riskEngine</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
@@ -10142,7 +11482,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### BuilderDeployed_filter
+### `BuilderDeployed_filter` {#builderdeployed_filter}
 
 <table>
 <thead>
@@ -10714,111 +12054,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool">pool</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_not">pool_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_gt">pool_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_lt">pool_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_gte">pool_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_lte">pool_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_in">pool_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_not_in">pool_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_contains">pool_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_contains_nocase">pool_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_not_contains">pool_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_not_contains_nocase">pool_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_starts_with">pool_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_starts_with_nocase">pool_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_not_starts_with">pool_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_not_starts_with_nocase">pool_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_ends_with">pool_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_ends_with_nocase">pool_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_not_ends_with">pool_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_not_ends_with_nocase">pool_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="builderdeployed_filter.pool_">pool_</strong></td>
-<td valign="top"><a href="#pool_filter">Pool_filter</a></td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="builderdeployed_filter.builderfactory">builderFactory</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
@@ -11085,7 +12320,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### BuilderFactory_filter
+### `BuilderFactory_filter` {#builderfactory_filter}
 
 <table>
 <thead>
@@ -11388,7 +12623,755 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### BuilderWallet_filter
+### `BuilderWalletInitialized_filter` {#builderwalletinitialized_filter}
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.id">id</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.id_not">id_not</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.id_gt">id_gt</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.id_lt">id_lt</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.id_gte">id_gte</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.id_lte">id_lte</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.id_in">id_in</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.id_not_in">id_not_in</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.hash">hash</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.hash_not">hash_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.hash_gt">hash_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.hash_lt">hash_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.hash_gte">hash_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.hash_lte">hash_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.hash_in">hash_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.hash_not_in">hash_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.hash_contains">hash_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.hash_contains_nocase">hash_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.hash_not_contains">hash_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.hash_not_contains_nocase">hash_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.hash_starts_with">hash_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.hash_starts_with_nocase">hash_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.hash_not_starts_with">hash_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.hash_not_starts_with_nocase">hash_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.hash_ends_with">hash_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.hash_ends_with_nocase">hash_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.hash_not_ends_with">hash_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.hash_not_ends_with_nocase">hash_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.logindex">logIndex</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.logindex_not">logIndex_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.logindex_gt">logIndex_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.logindex_lt">logIndex_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.logindex_gte">logIndex_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.logindex_lte">logIndex_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.logindex_in">logIndex_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.logindex_not_in">logIndex_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.eventtype">eventType</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.eventtype_not">eventType_not</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.eventtype_in">eventType_in</strong></td>
+<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.eventtype_not_in">eventType_not_in</strong></td>
+<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.from">from</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.from_not">from_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.from_gt">from_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.from_lt">from_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.from_gte">from_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.from_lte">from_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.from_in">from_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.from_not_in">from_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.from_contains">from_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.from_contains_nocase">from_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.from_not_contains">from_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.from_not_contains_nocase">from_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.from_starts_with">from_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.from_starts_with_nocase">from_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.from_not_starts_with">from_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.from_not_starts_with_nocase">from_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.from_ends_with">from_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.from_ends_with_nocase">from_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.from_not_ends_with">from_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.from_not_ends_with_nocase">from_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.to">to</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.to_not">to_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.to_gt">to_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.to_lt">to_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.to_gte">to_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.to_lte">to_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.to_in">to_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.to_not_in">to_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.to_contains">to_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.to_contains_nocase">to_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.to_not_contains">to_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.to_not_contains_nocase">to_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.to_starts_with">to_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.to_starts_with_nocase">to_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.to_not_starts_with">to_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.to_not_starts_with_nocase">to_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.to_ends_with">to_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.to_ends_with_nocase">to_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.to_not_ends_with">to_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.blocknumber">blockNumber</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.blocknumber_not">blockNumber_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.blocknumber_gt">blockNumber_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.blocknumber_lt">blockNumber_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.blocknumber_gte">blockNumber_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.blocknumber_lte">blockNumber_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.blocknumber_in">blockNumber_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.blocknumber_not_in">blockNumber_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.timestamp">timestamp</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.timestamp_not">timestamp_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.timestamp_gt">timestamp_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.timestamp_lt">timestamp_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.timestamp_gte">timestamp_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.timestamp_lte">timestamp_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.timestamp_in">timestamp_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.timestamp_not_in">timestamp_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.gasused">gasUsed</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.gasused_not">gasUsed_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.gasused_gt">gasUsed_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.gasused_lt">gasUsed_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.gasused_gte">gasUsed_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.gasused_lte">gasUsed_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.gasused_in">gasUsed_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.gasused_not_in">gasUsed_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.gasprice">gasPrice</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.gasprice_not">gasPrice_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.gasprice_gt">gasPrice_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.gasprice_lt">gasPrice_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.gasprice_gte">gasPrice_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.gasprice_lte">gasPrice_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.gasprice_in">gasPrice_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.gasprice_not_in">gasPrice_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderwallet">builderWallet</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderwallet_not">builderWallet_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderwallet_gt">builderWallet_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderwallet_lt">builderWallet_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderwallet_gte">builderWallet_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderwallet_lte">builderWallet_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderwallet_in">builderWallet_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderwallet_not_in">builderWallet_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderwallet_contains">builderWallet_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderwallet_contains_nocase">builderWallet_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderwallet_not_contains">builderWallet_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderwallet_not_contains_nocase">builderWallet_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderwallet_starts_with">builderWallet_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderwallet_starts_with_nocase">builderWallet_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderwallet_not_starts_with">builderWallet_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderwallet_not_starts_with_nocase">builderWallet_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderwallet_ends_with">builderWallet_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderwallet_ends_with_nocase">builderWallet_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderwallet_not_ends_with">builderWallet_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderwallet_not_ends_with_nocase">builderWallet_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderwallet_">builderWallet_</strong></td>
+<td valign="top"><a href="#builderwallet_filter">BuilderWallet_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderadmin">builderAdmin</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderadmin_not">builderAdmin_not</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderadmin_gt">builderAdmin_gt</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderadmin_lt">builderAdmin_lt</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderadmin_gte">builderAdmin_gte</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderadmin_lte">builderAdmin_lte</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderadmin_in">builderAdmin_in</strong></td>
+<td valign="top">[<a href="#bytes">Bytes</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderadmin_not_in">builderAdmin_not_in</strong></td>
+<td valign="top">[<a href="#bytes">Bytes</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderadmin_contains">builderAdmin_contains</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.builderadmin_not_contains">builderAdmin_not_contains</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter._change_block">_change_block</strong></td>
+<td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
+<td>
+
+Filter for the block changed event.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.and">and</strong></td>
+<td valign="top">[<a href="#builderwalletinitialized_filter">BuilderWalletInitialized_filter</a>]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="builderwalletinitialized_filter.or">or</strong></td>
+<td valign="top">[<a href="#builderwalletinitialized_filter">BuilderWalletInitialized_filter</a>]</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### `BuilderWallet_filter` {#builderwallet_filter}
 
 <table>
 <thead>
@@ -11736,1333 +13719,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### Bundle_filter
-
-<table>
-<thead>
-<tr>
-<th colspan="2" align="left">Field</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong id="bundle_filter.id">id</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="bundle_filter.id_not">id_not</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="bundle_filter.id_gt">id_gt</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="bundle_filter.id_lt">id_lt</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="bundle_filter.id_gte">id_gte</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="bundle_filter.id_lte">id_lte</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="bundle_filter.id_in">id_in</strong></td>
-<td valign="top">[<a href="#id">ID</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="bundle_filter.id_not_in">id_not_in</strong></td>
-<td valign="top">[<a href="#id">ID</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="bundle_filter.ethpriceusd">ethPriceUSD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="bundle_filter.ethpriceusd_not">ethPriceUSD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="bundle_filter.ethpriceusd_gt">ethPriceUSD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="bundle_filter.ethpriceusd_lt">ethPriceUSD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="bundle_filter.ethpriceusd_gte">ethPriceUSD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="bundle_filter.ethpriceusd_lte">ethPriceUSD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="bundle_filter.ethpriceusd_in">ethPriceUSD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="bundle_filter.ethpriceusd_not_in">ethPriceUSD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="bundle_filter._change_block">_change_block</strong></td>
-<td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
-<td>
-
-Filter for the block changed event.
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="bundle_filter.and">and</strong></td>
-<td valign="top">[<a href="#bundle_filter">Bundle_filter</a>]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="bundle_filter.or">or</strong></td>
-<td valign="top">[<a href="#bundle_filter">Bundle_filter</a>]</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-### Burn_filter
-
-<table>
-<thead>
-<tr>
-<th colspan="2" align="left">Field</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.id">id</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.id_not">id_not</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.id_gt">id_gt</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.id_lt">id_lt</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.id_gte">id_gte</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.id_lte">id_lte</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.id_in">id_in</strong></td>
-<td valign="top">[<a href="#id">ID</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.id_not_in">id_not_in</strong></td>
-<td valign="top">[<a href="#id">ID</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.hash">hash</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.hash_not">hash_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.hash_gt">hash_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.hash_lt">hash_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.hash_gte">hash_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.hash_lte">hash_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.hash_in">hash_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.hash_not_in">hash_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.hash_contains">hash_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.hash_contains_nocase">hash_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.hash_not_contains">hash_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.hash_not_contains_nocase">hash_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.hash_starts_with">hash_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.hash_starts_with_nocase">hash_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.hash_not_starts_with">hash_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.hash_not_starts_with_nocase">hash_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.hash_ends_with">hash_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.hash_ends_with_nocase">hash_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.hash_not_ends_with">hash_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.hash_not_ends_with_nocase">hash_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.logindex">logIndex</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.logindex_not">logIndex_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.logindex_gt">logIndex_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.logindex_lt">logIndex_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.logindex_gte">logIndex_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.logindex_lte">logIndex_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.logindex_in">logIndex_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.logindex_not_in">logIndex_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.eventtype">eventType</strong></td>
-<td valign="top"><a href="#eventtype">EventType</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.eventtype_not">eventType_not</strong></td>
-<td valign="top"><a href="#eventtype">EventType</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.eventtype_in">eventType_in</strong></td>
-<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.eventtype_not_in">eventType_not_in</strong></td>
-<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.from">from</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.from_not">from_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.from_gt">from_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.from_lt">from_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.from_gte">from_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.from_lte">from_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.from_in">from_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.from_not_in">from_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.from_contains">from_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.from_contains_nocase">from_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.from_not_contains">from_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.from_not_contains_nocase">from_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.from_starts_with">from_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.from_starts_with_nocase">from_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.from_not_starts_with">from_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.from_not_starts_with_nocase">from_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.from_ends_with">from_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.from_ends_with_nocase">from_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.from_not_ends_with">from_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.from_not_ends_with_nocase">from_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.to">to</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.to_not">to_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.to_gt">to_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.to_lt">to_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.to_gte">to_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.to_lte">to_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.to_in">to_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.to_not_in">to_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.to_contains">to_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.to_contains_nocase">to_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.to_not_contains">to_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.to_not_contains_nocase">to_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.to_starts_with">to_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.to_starts_with_nocase">to_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.to_not_starts_with">to_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.to_not_starts_with_nocase">to_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.to_ends_with">to_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.to_ends_with_nocase">to_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.to_not_ends_with">to_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.blocknumber">blockNumber</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.blocknumber_not">blockNumber_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.blocknumber_gt">blockNumber_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.blocknumber_lt">blockNumber_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.blocknumber_gte">blockNumber_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.blocknumber_lte">blockNumber_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.blocknumber_in">blockNumber_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.blocknumber_not_in">blockNumber_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.timestamp">timestamp</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.timestamp_not">timestamp_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.timestamp_gt">timestamp_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.timestamp_lt">timestamp_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.timestamp_gte">timestamp_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.timestamp_lte">timestamp_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.timestamp_in">timestamp_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.timestamp_not_in">timestamp_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.gasused">gasUsed</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.gasused_not">gasUsed_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.gasused_gt">gasUsed_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.gasused_lt">gasUsed_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.gasused_gte">gasUsed_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.gasused_lte">gasUsed_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.gasused_in">gasUsed_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.gasused_not_in">gasUsed_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.gasprice">gasPrice</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.gasprice_not">gasPrice_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.gasprice_gt">gasPrice_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.gasprice_lt">gasPrice_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.gasprice_gte">gasPrice_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.gasprice_lte">gasPrice_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.gasprice_in">gasPrice_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.gasprice_not_in">gasPrice_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.pool">pool</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.pool_not">pool_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.pool_gt">pool_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.pool_lt">pool_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.pool_gte">pool_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.pool_lte">pool_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.pool_in">pool_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.pool_not_in">pool_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.pool_contains">pool_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.pool_contains_nocase">pool_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.pool_not_contains">pool_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.pool_not_contains_nocase">pool_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.pool_starts_with">pool_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.pool_starts_with_nocase">pool_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.pool_not_starts_with">pool_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.pool_not_starts_with_nocase">pool_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.pool_ends_with">pool_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.pool_ends_with_nocase">pool_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.pool_not_ends_with">pool_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.pool_not_ends_with_nocase">pool_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.pool_">pool_</strong></td>
-<td valign="top"><a href="#pool_filter">Pool_filter</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.owner">owner</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.owner_not">owner_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.owner_gt">owner_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.owner_lt">owner_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.owner_gte">owner_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.owner_lte">owner_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.owner_in">owner_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.owner_not_in">owner_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.owner_contains">owner_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.owner_contains_nocase">owner_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.owner_not_contains">owner_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.owner_not_contains_nocase">owner_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.owner_starts_with">owner_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.owner_starts_with_nocase">owner_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.owner_not_starts_with">owner_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.owner_not_starts_with_nocase">owner_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.owner_ends_with">owner_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.owner_ends_with_nocase">owner_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.owner_not_ends_with">owner_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.owner_not_ends_with_nocase">owner_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.owner_">owner_</strong></td>
-<td valign="top"><a href="#account_filter">Account_filter</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.ticklower">tickLower</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.ticklower_not">tickLower_not</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.ticklower_gt">tickLower_gt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.ticklower_lt">tickLower_lt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.ticklower_gte">tickLower_gte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.ticklower_lte">tickLower_lte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.ticklower_in">tickLower_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.ticklower_not_in">tickLower_not_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.tickupper">tickUpper</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.tickupper_not">tickUpper_not</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.tickupper_gt">tickUpper_gt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.tickupper_lt">tickUpper_lt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.tickupper_gte">tickUpper_gte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.tickupper_lte">tickUpper_lte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.tickupper_in">tickUpper_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.tickupper_not_in">tickUpper_not_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.amount">amount</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.amount_not">amount_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.amount_gt">amount_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.amount_lt">amount_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.amount_gte">amount_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.amount_lte">amount_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.amount_in">amount_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.amount_not_in">amount_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.amount0">amount0</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.amount0_not">amount0_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.amount0_gt">amount0_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.amount0_lt">amount0_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.amount0_gte">amount0_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.amount0_lte">amount0_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.amount0_in">amount0_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.amount0_not_in">amount0_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.amount1">amount1</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.amount1_not">amount1_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.amount1_gt">amount1_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.amount1_lt">amount1_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.amount1_gte">amount1_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.amount1_lte">amount1_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.amount1_in">amount1_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.amount1_not_in">amount1_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token0">token0</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token0_not">token0_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token0_gt">token0_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token0_lt">token0_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token0_gte">token0_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token0_lte">token0_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token0_in">token0_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token0_not_in">token0_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token0_contains">token0_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token0_contains_nocase">token0_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token0_not_contains">token0_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token0_not_contains_nocase">token0_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token0_starts_with">token0_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token0_starts_with_nocase">token0_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token0_not_starts_with">token0_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token0_not_starts_with_nocase">token0_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token0_ends_with">token0_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token0_ends_with_nocase">token0_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token0_not_ends_with">token0_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token0_not_ends_with_nocase">token0_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token0_">token0_</strong></td>
-<td valign="top"><a href="#token_filter">Token_filter</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token1">token1</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token1_not">token1_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token1_gt">token1_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token1_lt">token1_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token1_gte">token1_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token1_lte">token1_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token1_in">token1_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token1_not_in">token1_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token1_contains">token1_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token1_contains_nocase">token1_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token1_not_contains">token1_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token1_not_contains_nocase">token1_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token1_starts_with">token1_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token1_starts_with_nocase">token1_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token1_not_starts_with">token1_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token1_not_starts_with_nocase">token1_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token1_ends_with">token1_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token1_ends_with_nocase">token1_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token1_not_ends_with">token1_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token1_not_ends_with_nocase">token1_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.token1_">token1_</strong></td>
-<td valign="top"><a href="#token_filter">Token_filter</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter._change_block">_change_block</strong></td>
-<td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
-<td>
-
-Filter for the block changed event.
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.and">and</strong></td>
-<td valign="top">[<a href="#burn_filter">Burn_filter</a>]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="burn_filter.or">or</strong></td>
-<td valign="top">[<a href="#burn_filter">Burn_filter</a>]</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-### Chunk_filter
+### `Chunk_filter` {#chunk_filter}
 
 <table>
 <thead>
@@ -14000,7 +14657,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### CollateralDayData_filter
+### `CollateralDayData_filter` {#collateraldaydata_filter}
 
 <table>
 <thead>
@@ -14237,6 +14894,166 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.totalassets">totalAssets</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.totalassets_not">totalAssets_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.totalassets_gt">totalAssets_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.totalassets_lt">totalAssets_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.totalassets_gte">totalAssets_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.totalassets_lte">totalAssets_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.totalassets_in">totalAssets_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.totalassets_not_in">totalAssets_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.conversiontotalsupply">conversionTotalSupply</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.conversiontotalsupply_not">conversionTotalSupply_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.conversiontotalsupply_gt">conversionTotalSupply_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.conversiontotalsupply_lt">conversionTotalSupply_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.conversiontotalsupply_gte">conversionTotalSupply_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.conversiontotalsupply_lte">conversionTotalSupply_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.conversiontotalsupply_in">conversionTotalSupply_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.conversiontotalsupply_not_in">conversionTotalSupply_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.conversionstateblocknumber">conversionStateBlockNumber</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.conversionstateblocknumber_not">conversionStateBlockNumber_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.conversionstateblocknumber_gt">conversionStateBlockNumber_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.conversionstateblocknumber_lt">conversionStateBlockNumber_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.conversionstateblocknumber_gte">conversionStateBlockNumber_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.conversionstateblocknumber_lte">conversionStateBlockNumber_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.conversionstateblocknumber_in">conversionStateBlockNumber_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.conversionstateblocknumber_not_in">conversionStateBlockNumber_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.conversionstatetimestamp">conversionStateTimestamp</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.conversionstatetimestamp_not">conversionStateTimestamp_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.conversionstatetimestamp_gt">conversionStateTimestamp_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.conversionstatetimestamp_lt">conversionStateTimestamp_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.conversionstatetimestamp_gte">conversionStateTimestamp_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.conversionstatetimestamp_lte">conversionStateTimestamp_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.conversionstatetimestamp_in">conversionStateTimestamp_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldaydata_filter.conversionstatetimestamp_not_in">conversionStateTimestamp_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong id="collateraldaydata_filter._change_block">_change_block</strong></td>
 <td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
 <td>
@@ -14258,7 +15075,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### CollateralDeposit_filter
+### `CollateralDeposit_filter` {#collateraldeposit_filter}
 
 <table>
 <thead>
@@ -14666,6 +15483,106 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="collateraldeposit_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit_filter.account">account</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit_filter.account_not">account_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit_filter.account_gt">account_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit_filter.account_lt">account_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit_filter.account_gte">account_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit_filter.account_lte">account_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit_filter.account_in">account_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit_filter.account_not_in">account_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit_filter.account_contains">account_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit_filter.account_contains_nocase">account_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit_filter.account_not_contains">account_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit_filter.account_not_contains_nocase">account_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit_filter.account_starts_with">account_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit_filter.account_starts_with_nocase">account_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit_filter.account_not_starts_with">account_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit_filter.account_not_starts_with_nocase">account_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit_filter.account_ends_with">account_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit_filter.account_ends_with_nocase">account_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit_filter.account_not_ends_with">account_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateraldeposit_filter.account_not_ends_with_nocase">account_not_ends_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
@@ -15370,86 +16287,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateraldeposit_filter.tokenderivedethatdeposit">tokenDerivedEthAtDeposit</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldeposit_filter.tokenderivedethatdeposit_not">tokenDerivedEthAtDeposit_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldeposit_filter.tokenderivedethatdeposit_gt">tokenDerivedEthAtDeposit_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldeposit_filter.tokenderivedethatdeposit_lt">tokenDerivedEthAtDeposit_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldeposit_filter.tokenderivedethatdeposit_gte">tokenDerivedEthAtDeposit_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldeposit_filter.tokenderivedethatdeposit_lte">tokenDerivedEthAtDeposit_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldeposit_filter.tokenderivedethatdeposit_in">tokenDerivedEthAtDeposit_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldeposit_filter.tokenderivedethatdeposit_not_in">tokenDerivedEthAtDeposit_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldeposit_filter.ethpriceusdatdeposit">ethPriceUSDAtDeposit</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldeposit_filter.ethpriceusdatdeposit_not">ethPriceUSDAtDeposit_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldeposit_filter.ethpriceusdatdeposit_gt">ethPriceUSDAtDeposit_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldeposit_filter.ethpriceusdatdeposit_lt">ethPriceUSDAtDeposit_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldeposit_filter.ethpriceusdatdeposit_gte">ethPriceUSDAtDeposit_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldeposit_filter.ethpriceusdatdeposit_lte">ethPriceUSDAtDeposit_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldeposit_filter.ethpriceusdatdeposit_in">ethPriceUSDAtDeposit_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateraldeposit_filter.ethpriceusdatdeposit_not_in">ethPriceUSDAtDeposit_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="collateraldeposit_filter.panopticversion">panopticVersion</strong></td>
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td></td>
@@ -15511,7 +16348,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### CollateralWithdraw_filter
+### `CollateralWithdraw_filter` {#collateralwithdraw_filter}
 
 <table>
 <thead>
@@ -15919,6 +16756,106 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="collateralwithdraw_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.account">account</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.account_not">account_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.account_gt">account_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.account_lt">account_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.account_gte">account_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.account_lte">account_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.account_in">account_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.account_not_in">account_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.account_contains">account_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.account_contains_nocase">account_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.account_not_contains">account_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.account_not_contains_nocase">account_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.account_starts_with">account_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.account_starts_with_nocase">account_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.account_not_starts_with">account_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.account_not_starts_with_nocase">account_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.account_ends_with">account_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.account_ends_with_nocase">account_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.account_not_ends_with">account_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.account_not_ends_with_nocase">account_not_ends_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
@@ -16728,86 +17665,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.tokenderivedethatwithdraw">tokenDerivedEthAtWithdraw</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.tokenderivedethatwithdraw_not">tokenDerivedEthAtWithdraw_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.tokenderivedethatwithdraw_gt">tokenDerivedEthAtWithdraw_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.tokenderivedethatwithdraw_lt">tokenDerivedEthAtWithdraw_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.tokenderivedethatwithdraw_gte">tokenDerivedEthAtWithdraw_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.tokenderivedethatwithdraw_lte">tokenDerivedEthAtWithdraw_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.tokenderivedethatwithdraw_in">tokenDerivedEthAtWithdraw_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.tokenderivedethatwithdraw_not_in">tokenDerivedEthAtWithdraw_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.ethpriceusdatwithdraw">ethPriceUSDAtWithdraw</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.ethpriceusdatwithdraw_not">ethPriceUSDAtWithdraw_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.ethpriceusdatwithdraw_gt">ethPriceUSDAtWithdraw_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.ethpriceusdatwithdraw_lt">ethPriceUSDAtWithdraw_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.ethpriceusdatwithdraw_gte">ethPriceUSDAtWithdraw_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.ethpriceusdatwithdraw_lte">ethPriceUSDAtWithdraw_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.ethpriceusdatwithdraw_in">ethPriceUSDAtWithdraw_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateralwithdraw_filter.ethpriceusdatwithdraw_not_in">ethPriceUSDAtWithdraw_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="collateralwithdraw_filter.panopticversion">panopticVersion</strong></td>
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td></td>
@@ -16869,7 +17726,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### Collateral_filter
+### `Collateral_filter` {#collateral_filter}
 
 <table>
 <thead>
@@ -17106,42 +17963,162 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.totaldonations">totalDonations</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalassets">totalAssets</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.totaldonations_not">totalDonations_not</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalassets_not">totalAssets_not</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.totaldonations_gt">totalDonations_gt</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalassets_gt">totalAssets_gt</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.totaldonations_lt">totalDonations_lt</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalassets_lt">totalAssets_lt</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.totaldonations_gte">totalDonations_gte</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalassets_gte">totalAssets_gte</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.totaldonations_lte">totalDonations_lte</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalassets_lte">totalAssets_lte</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.totaldonations_in">totalDonations_in</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalassets_in">totalAssets_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.totaldonations_not_in">totalDonations_not_in</strong></td>
+<td colspan="2" valign="top"><strong id="collateral_filter.totalassets_not_in">totalAssets_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.conversiontotalsupply">conversionTotalSupply</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.conversiontotalsupply_not">conversionTotalSupply_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.conversiontotalsupply_gt">conversionTotalSupply_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.conversiontotalsupply_lt">conversionTotalSupply_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.conversiontotalsupply_gte">conversionTotalSupply_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.conversiontotalsupply_lte">conversionTotalSupply_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.conversiontotalsupply_in">conversionTotalSupply_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.conversiontotalsupply_not_in">conversionTotalSupply_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.conversionstateblocknumber">conversionStateBlockNumber</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.conversionstateblocknumber_not">conversionStateBlockNumber_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.conversionstateblocknumber_gt">conversionStateBlockNumber_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.conversionstateblocknumber_lt">conversionStateBlockNumber_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.conversionstateblocknumber_gte">conversionStateBlockNumber_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.conversionstateblocknumber_lte">conversionStateBlockNumber_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.conversionstateblocknumber_in">conversionStateBlockNumber_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.conversionstateblocknumber_not_in">conversionStateBlockNumber_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.conversionstatetimestamp">conversionStateTimestamp</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.conversionstatetimestamp_not">conversionStateTimestamp_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.conversionstatetimestamp_gt">conversionStateTimestamp_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.conversionstatetimestamp_lt">conversionStateTimestamp_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.conversionstatetimestamp_gte">conversionStateTimestamp_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.conversionstatetimestamp_lte">conversionStateTimestamp_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.conversionstatetimestamp_in">conversionStateTimestamp_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="collateral_filter.conversionstatetimestamp_not_in">conversionStateTimestamp_not_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
@@ -17343,46 +18320,6 @@ Filter for the block changed event.
 <tr>
 <td colspan="2" valign="top"><strong id="collateral_filter.totalprotocollossrealized_not_in">totalProtocolLossRealized_not_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocollossrealizedusd">totalProtocolLossRealizedUSD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocollossrealizedusd_not">totalProtocolLossRealizedUSD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocollossrealizedusd_gt">totalProtocolLossRealizedUSD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocollossrealizedusd_lt">totalProtocolLossRealizedUSD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocollossrealizedusd_gte">totalProtocolLossRealizedUSD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocollossrealizedusd_lte">totalProtocolLossRealizedUSD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocollossrealizedusd_in">totalProtocolLossRealizedUSD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collateral_filter.totalprotocollossrealizedusd_not_in">totalProtocolLossRealizedUSD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
 <td></td>
 </tr>
 <tr>
@@ -17597,1075 +18534,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### Collect_filter
-
-<table>
-<thead>
-<tr>
-<th colspan="2" align="left">Field</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.id">id</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.id_not">id_not</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.id_gt">id_gt</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.id_lt">id_lt</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.id_gte">id_gte</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.id_lte">id_lte</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.id_in">id_in</strong></td>
-<td valign="top">[<a href="#id">ID</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.id_not_in">id_not_in</strong></td>
-<td valign="top">[<a href="#id">ID</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.hash">hash</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.hash_not">hash_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.hash_gt">hash_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.hash_lt">hash_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.hash_gte">hash_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.hash_lte">hash_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.hash_in">hash_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.hash_not_in">hash_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.hash_contains">hash_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.hash_contains_nocase">hash_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.hash_not_contains">hash_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.hash_not_contains_nocase">hash_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.hash_starts_with">hash_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.hash_starts_with_nocase">hash_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.hash_not_starts_with">hash_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.hash_not_starts_with_nocase">hash_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.hash_ends_with">hash_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.hash_ends_with_nocase">hash_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.hash_not_ends_with">hash_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.hash_not_ends_with_nocase">hash_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.logindex">logIndex</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.logindex_not">logIndex_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.logindex_gt">logIndex_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.logindex_lt">logIndex_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.logindex_gte">logIndex_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.logindex_lte">logIndex_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.logindex_in">logIndex_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.logindex_not_in">logIndex_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.eventtype">eventType</strong></td>
-<td valign="top"><a href="#eventtype">EventType</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.eventtype_not">eventType_not</strong></td>
-<td valign="top"><a href="#eventtype">EventType</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.eventtype_in">eventType_in</strong></td>
-<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.eventtype_not_in">eventType_not_in</strong></td>
-<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.from">from</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.from_not">from_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.from_gt">from_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.from_lt">from_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.from_gte">from_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.from_lte">from_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.from_in">from_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.from_not_in">from_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.from_contains">from_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.from_contains_nocase">from_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.from_not_contains">from_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.from_not_contains_nocase">from_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.from_starts_with">from_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.from_starts_with_nocase">from_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.from_not_starts_with">from_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.from_not_starts_with_nocase">from_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.from_ends_with">from_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.from_ends_with_nocase">from_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.from_not_ends_with">from_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.from_not_ends_with_nocase">from_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.to">to</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.to_not">to_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.to_gt">to_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.to_lt">to_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.to_gte">to_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.to_lte">to_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.to_in">to_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.to_not_in">to_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.to_contains">to_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.to_contains_nocase">to_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.to_not_contains">to_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.to_not_contains_nocase">to_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.to_starts_with">to_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.to_starts_with_nocase">to_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.to_not_starts_with">to_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.to_not_starts_with_nocase">to_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.to_ends_with">to_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.to_ends_with_nocase">to_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.to_not_ends_with">to_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.blocknumber">blockNumber</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.blocknumber_not">blockNumber_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.blocknumber_gt">blockNumber_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.blocknumber_lt">blockNumber_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.blocknumber_gte">blockNumber_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.blocknumber_lte">blockNumber_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.blocknumber_in">blockNumber_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.blocknumber_not_in">blockNumber_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.timestamp">timestamp</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.timestamp_not">timestamp_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.timestamp_gt">timestamp_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.timestamp_lt">timestamp_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.timestamp_gte">timestamp_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.timestamp_lte">timestamp_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.timestamp_in">timestamp_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.timestamp_not_in">timestamp_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.gasused">gasUsed</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.gasused_not">gasUsed_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.gasused_gt">gasUsed_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.gasused_lt">gasUsed_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.gasused_gte">gasUsed_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.gasused_lte">gasUsed_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.gasused_in">gasUsed_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.gasused_not_in">gasUsed_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.gasprice">gasPrice</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.gasprice_not">gasPrice_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.gasprice_gt">gasPrice_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.gasprice_lt">gasPrice_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.gasprice_gte">gasPrice_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.gasprice_lte">gasPrice_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.gasprice_in">gasPrice_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.gasprice_not_in">gasPrice_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.pool">pool</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.pool_not">pool_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.pool_gt">pool_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.pool_lt">pool_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.pool_gte">pool_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.pool_lte">pool_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.pool_in">pool_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.pool_not_in">pool_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.pool_contains">pool_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.pool_contains_nocase">pool_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.pool_not_contains">pool_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.pool_not_contains_nocase">pool_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.pool_starts_with">pool_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.pool_starts_with_nocase">pool_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.pool_not_starts_with">pool_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.pool_not_starts_with_nocase">pool_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.pool_ends_with">pool_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.pool_ends_with_nocase">pool_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.pool_not_ends_with">pool_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.pool_not_ends_with_nocase">pool_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.pool_">pool_</strong></td>
-<td valign="top"><a href="#pool_filter">Pool_filter</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.owner">owner</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.owner_not">owner_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.owner_gt">owner_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.owner_lt">owner_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.owner_gte">owner_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.owner_lte">owner_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.owner_in">owner_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.owner_not_in">owner_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.owner_contains">owner_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.owner_contains_nocase">owner_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.owner_not_contains">owner_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.owner_not_contains_nocase">owner_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.owner_starts_with">owner_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.owner_starts_with_nocase">owner_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.owner_not_starts_with">owner_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.owner_not_starts_with_nocase">owner_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.owner_ends_with">owner_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.owner_ends_with_nocase">owner_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.owner_not_ends_with">owner_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.owner_not_ends_with_nocase">owner_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.owner_">owner_</strong></td>
-<td valign="top"><a href="#account_filter">Account_filter</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.recipient">recipient</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.recipient_not">recipient_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.recipient_gt">recipient_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.recipient_lt">recipient_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.recipient_gte">recipient_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.recipient_lte">recipient_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.recipient_in">recipient_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.recipient_not_in">recipient_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.recipient_contains">recipient_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.recipient_contains_nocase">recipient_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.recipient_not_contains">recipient_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.recipient_not_contains_nocase">recipient_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.recipient_starts_with">recipient_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.recipient_starts_with_nocase">recipient_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.recipient_not_starts_with">recipient_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.recipient_not_starts_with_nocase">recipient_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.recipient_ends_with">recipient_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.recipient_ends_with_nocase">recipient_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.recipient_not_ends_with">recipient_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.recipient_not_ends_with_nocase">recipient_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.recipient_">recipient_</strong></td>
-<td valign="top"><a href="#account_filter">Account_filter</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.ticklower">tickLower</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.ticklower_not">tickLower_not</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.ticklower_gt">tickLower_gt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.ticklower_lt">tickLower_lt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.ticklower_gte">tickLower_gte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.ticklower_lte">tickLower_lte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.ticklower_in">tickLower_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.ticklower_not_in">tickLower_not_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.tickupper">tickUpper</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.tickupper_not">tickUpper_not</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.tickupper_gt">tickUpper_gt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.tickupper_lt">tickUpper_lt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.tickupper_gte">tickUpper_gte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.tickupper_lte">tickUpper_lte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.tickupper_in">tickUpper_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.tickupper_not_in">tickUpper_not_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.amount0">amount0</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.amount0_not">amount0_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.amount0_gt">amount0_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.amount0_lt">amount0_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.amount0_gte">amount0_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.amount0_lte">amount0_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.amount0_in">amount0_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.amount0_not_in">amount0_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.amount1">amount1</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.amount1_not">amount1_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.amount1_gt">amount1_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.amount1_lt">amount1_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.amount1_gte">amount1_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.amount1_lte">amount1_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.amount1_in">amount1_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.amount1_not_in">amount1_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter._change_block">_change_block</strong></td>
-<td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
-<td>
-
-Filter for the block changed event.
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.and">and</strong></td>
-<td valign="top">[<a href="#collect_filter">Collect_filter</a>]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="collect_filter.or">or</strong></td>
-<td valign="top">[<a href="#collect_filter">Collect_filter</a>]</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-### CommissionPaid_filter
+### `CommissionPaid_filter` {#commissionpaid_filter}
 
 <table>
 <thead>
@@ -19073,6 +18942,106 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="commissionpaid_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.account">account</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.account_not">account_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.account_gt">account_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.account_lt">account_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.account_gte">account_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.account_lte">account_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.account_in">account_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.account_not_in">account_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.account_contains">account_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.account_contains_nocase">account_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.account_not_contains">account_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.account_not_contains_nocase">account_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.account_starts_with">account_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.account_starts_with_nocase">account_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.account_not_starts_with">account_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.account_not_starts_with_nocase">account_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.account_ends_with">account_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.account_ends_with_nocase">account_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.account_not_ends_with">account_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.account_not_ends_with_nocase">account_not_ends_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
@@ -19682,6 +19651,256 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionmint">optionMint</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionmint_not">optionMint_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionmint_gt">optionMint_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionmint_lt">optionMint_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionmint_gte">optionMint_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionmint_lte">optionMint_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionmint_in">optionMint_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionmint_not_in">optionMint_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionmint_contains">optionMint_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionmint_contains_nocase">optionMint_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionmint_not_contains">optionMint_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionmint_not_contains_nocase">optionMint_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionmint_starts_with">optionMint_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionmint_starts_with_nocase">optionMint_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionmint_not_starts_with">optionMint_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionmint_not_starts_with_nocase">optionMint_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionmint_ends_with">optionMint_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionmint_ends_with_nocase">optionMint_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionmint_not_ends_with">optionMint_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionmint_not_ends_with_nocase">optionMint_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionmint_">optionMint_</strong></td>
+<td valign="top"><a href="#optionmint_filter">OptionMint_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionburn">optionBurn</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionburn_not">optionBurn_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionburn_gt">optionBurn_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionburn_lt">optionBurn_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionburn_gte">optionBurn_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionburn_lte">optionBurn_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionburn_in">optionBurn_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionburn_not_in">optionBurn_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionburn_contains">optionBurn_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionburn_contains_nocase">optionBurn_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionburn_not_contains">optionBurn_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionburn_not_contains_nocase">optionBurn_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionburn_starts_with">optionBurn_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionburn_starts_with_nocase">optionBurn_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionburn_not_starts_with">optionBurn_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionburn_not_starts_with_nocase">optionBurn_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionburn_ends_with">optionBurn_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionburn_ends_with_nocase">optionBurn_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionburn_not_ends_with">optionBurn_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionburn_not_ends_with_nocase">optionBurn_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.optionburn_">optionBurn_</strong></td>
+<td valign="top"><a href="#optionburn_filter">OptionBurn_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.panopticversion">panopticVersion</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.panopticversion_not">panopticVersion_not</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.panopticversion_gt">panopticVersion_gt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.panopticversion_lt">panopticVersion_lt</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.panopticversion_gte">panopticVersion_gte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.panopticversion_lte">panopticVersion_lte</strong></td>
+<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.panopticversion_in">panopticVersion_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="commissionpaid_filter.panopticversion_not_in">panopticVersion_not_in</strong></td>
+<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong id="commissionpaid_filter._change_block">_change_block</strong></td>
 <td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
 <td>
@@ -19703,955 +19922,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### Donate_filter
-
-<table>
-<thead>
-<tr>
-<th colspan="2" align="left">Field</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.id">id</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.id_not">id_not</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.id_gt">id_gt</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.id_lt">id_lt</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.id_gte">id_gte</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.id_lte">id_lte</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.id_in">id_in</strong></td>
-<td valign="top">[<a href="#id">ID</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.id_not_in">id_not_in</strong></td>
-<td valign="top">[<a href="#id">ID</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.hash">hash</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.hash_not">hash_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.hash_gt">hash_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.hash_lt">hash_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.hash_gte">hash_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.hash_lte">hash_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.hash_in">hash_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.hash_not_in">hash_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.hash_contains">hash_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.hash_contains_nocase">hash_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.hash_not_contains">hash_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.hash_not_contains_nocase">hash_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.hash_starts_with">hash_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.hash_starts_with_nocase">hash_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.hash_not_starts_with">hash_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.hash_not_starts_with_nocase">hash_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.hash_ends_with">hash_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.hash_ends_with_nocase">hash_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.hash_not_ends_with">hash_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.hash_not_ends_with_nocase">hash_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.logindex">logIndex</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.logindex_not">logIndex_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.logindex_gt">logIndex_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.logindex_lt">logIndex_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.logindex_gte">logIndex_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.logindex_lte">logIndex_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.logindex_in">logIndex_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.logindex_not_in">logIndex_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.eventtype">eventType</strong></td>
-<td valign="top"><a href="#eventtype">EventType</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.eventtype_not">eventType_not</strong></td>
-<td valign="top"><a href="#eventtype">EventType</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.eventtype_in">eventType_in</strong></td>
-<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.eventtype_not_in">eventType_not_in</strong></td>
-<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.from">from</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.from_not">from_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.from_gt">from_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.from_lt">from_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.from_gte">from_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.from_lte">from_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.from_in">from_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.from_not_in">from_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.from_contains">from_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.from_contains_nocase">from_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.from_not_contains">from_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.from_not_contains_nocase">from_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.from_starts_with">from_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.from_starts_with_nocase">from_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.from_not_starts_with">from_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.from_not_starts_with_nocase">from_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.from_ends_with">from_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.from_ends_with_nocase">from_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.from_not_ends_with">from_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.from_not_ends_with_nocase">from_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.to">to</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.to_not">to_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.to_gt">to_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.to_lt">to_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.to_gte">to_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.to_lte">to_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.to_in">to_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.to_not_in">to_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.to_contains">to_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.to_contains_nocase">to_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.to_not_contains">to_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.to_not_contains_nocase">to_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.to_starts_with">to_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.to_starts_with_nocase">to_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.to_not_starts_with">to_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.to_not_starts_with_nocase">to_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.to_ends_with">to_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.to_ends_with_nocase">to_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.to_not_ends_with">to_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.blocknumber">blockNumber</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.blocknumber_not">blockNumber_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.blocknumber_gt">blockNumber_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.blocknumber_lt">blockNumber_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.blocknumber_gte">blockNumber_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.blocknumber_lte">blockNumber_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.blocknumber_in">blockNumber_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.blocknumber_not_in">blockNumber_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.timestamp">timestamp</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.timestamp_not">timestamp_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.timestamp_gt">timestamp_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.timestamp_lt">timestamp_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.timestamp_gte">timestamp_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.timestamp_lte">timestamp_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.timestamp_in">timestamp_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.timestamp_not_in">timestamp_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.gasused">gasUsed</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.gasused_not">gasUsed_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.gasused_gt">gasUsed_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.gasused_lt">gasUsed_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.gasused_gte">gasUsed_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.gasused_lte">gasUsed_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.gasused_in">gasUsed_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.gasused_not_in">gasUsed_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.gasprice">gasPrice</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.gasprice_not">gasPrice_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.gasprice_gt">gasPrice_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.gasprice_lt">gasPrice_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.gasprice_gte">gasPrice_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.gasprice_lte">gasPrice_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.gasprice_in">gasPrice_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.gasprice_not_in">gasPrice_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.pool">pool</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.pool_not">pool_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.pool_gt">pool_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.pool_lt">pool_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.pool_gte">pool_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.pool_lte">pool_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.pool_in">pool_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.pool_not_in">pool_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.pool_contains">pool_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.pool_contains_nocase">pool_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.pool_not_contains">pool_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.pool_not_contains_nocase">pool_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.pool_starts_with">pool_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.pool_starts_with_nocase">pool_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.pool_not_starts_with">pool_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.pool_not_starts_with_nocase">pool_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.pool_ends_with">pool_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.pool_ends_with_nocase">pool_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.pool_not_ends_with">pool_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.pool_not_ends_with_nocase">pool_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.pool_">pool_</strong></td>
-<td valign="top"><a href="#pool_filter">Pool_filter</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.sender">sender</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.sender_not">sender_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.sender_gt">sender_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.sender_lt">sender_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.sender_gte">sender_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.sender_lte">sender_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.sender_in">sender_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.sender_not_in">sender_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.sender_contains">sender_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.sender_contains_nocase">sender_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.sender_not_contains">sender_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.sender_not_contains_nocase">sender_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.sender_starts_with">sender_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.sender_starts_with_nocase">sender_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.sender_not_starts_with">sender_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.sender_not_starts_with_nocase">sender_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.sender_ends_with">sender_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.sender_ends_with_nocase">sender_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.sender_not_ends_with">sender_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.sender_not_ends_with_nocase">sender_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.sender_">sender_</strong></td>
-<td valign="top"><a href="#account_filter">Account_filter</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.shares">shares</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.shares_not">shares_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.shares_gt">shares_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.shares_lt">shares_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.shares_gte">shares_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.shares_lte">shares_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.shares_in">shares_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.shares_not_in">shares_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.collateral">collateral</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.collateral_not">collateral_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.collateral_gt">collateral_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.collateral_lt">collateral_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.collateral_gte">collateral_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.collateral_lte">collateral_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.collateral_in">collateral_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.collateral_not_in">collateral_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.collateral_contains">collateral_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.collateral_contains_nocase">collateral_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.collateral_not_contains">collateral_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.collateral_not_contains_nocase">collateral_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.collateral_starts_with">collateral_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.collateral_starts_with_nocase">collateral_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.collateral_not_starts_with">collateral_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.collateral_not_starts_with_nocase">collateral_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.collateral_ends_with">collateral_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.collateral_ends_with_nocase">collateral_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.collateral_not_ends_with">collateral_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.collateral_not_ends_with_nocase">collateral_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.collateral_">collateral_</strong></td>
-<td valign="top"><a href="#collateral_filter">Collateral_filter</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter._change_block">_change_block</strong></td>
-<td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
-<td>
-
-Filter for the block changed event.
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.and">and</strong></td>
-<td valign="top">[<a href="#donate_filter">Donate_filter</a>]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="donate_filter.or">or</strong></td>
-<td valign="top">[<a href="#donate_filter">Donate_filter</a>]</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-### Event_filter
+### `Event_filter` {#event_filter}
 
 <table>
 <thead>
@@ -21043,6 +20314,106 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong id="event_filter.account">account</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="event_filter.account_not">account_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="event_filter.account_gt">account_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="event_filter.account_lt">account_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="event_filter.account_gte">account_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="event_filter.account_lte">account_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="event_filter.account_in">account_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="event_filter.account_not_in">account_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="event_filter.account_contains">account_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="event_filter.account_contains_nocase">account_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="event_filter.account_not_contains">account_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="event_filter.account_not_contains_nocase">account_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="event_filter.account_starts_with">account_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="event_filter.account_starts_with_nocase">account_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="event_filter.account_not_starts_with">account_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="event_filter.account_not_starts_with_nocase">account_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="event_filter.account_ends_with">account_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="event_filter.account_ends_with_nocase">account_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="event_filter.account_not_ends_with">account_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="event_filter.account_not_ends_with_nocase">account_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong id="event_filter.blocknumber">blockNumber</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
@@ -21349,180 +20720,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### Factory_filter
-
-<table>
-<thead>
-<tr>
-<th colspan="2" align="left">Field</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.id">id</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.id_not">id_not</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.id_gt">id_gt</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.id_lt">id_lt</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.id_gte">id_gte</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.id_lte">id_lte</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.id_in">id_in</strong></td>
-<td valign="top">[<a href="#id">ID</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.id_not_in">id_not_in</strong></td>
-<td valign="top">[<a href="#id">ID</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.poolcount">poolCount</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.poolcount_not">poolCount_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.poolcount_gt">poolCount_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.poolcount_lt">poolCount_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.poolcount_gte">poolCount_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.poolcount_lte">poolCount_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.poolcount_in">poolCount_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.poolcount_not_in">poolCount_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.owner">owner</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.owner_not">owner_not</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.owner_gt">owner_gt</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.owner_lt">owner_lt</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.owner_gte">owner_gte</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.owner_lte">owner_lte</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.owner_in">owner_in</strong></td>
-<td valign="top">[<a href="#id">ID</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.owner_not_in">owner_not_in</strong></td>
-<td valign="top">[<a href="#id">ID</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.opbackfilled">opBackfilled</strong></td>
-<td valign="top"><a href="#boolean">Boolean</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.opbackfilled_not">opBackfilled_not</strong></td>
-<td valign="top"><a href="#boolean">Boolean</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.opbackfilled_in">opBackfilled_in</strong></td>
-<td valign="top">[<a href="#boolean">Boolean</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.opbackfilled_not_in">opBackfilled_not_in</strong></td>
-<td valign="top">[<a href="#boolean">Boolean</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter._change_block">_change_block</strong></td>
-<td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
-<td>
-
-Filter for the block changed event.
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.and">and</strong></td>
-<td valign="top">[<a href="#factory_filter">Factory_filter</a>]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="factory_filter.or">or</strong></td>
-<td valign="top">[<a href="#factory_filter">Factory_filter</a>]</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-### ForcedExercise_filter
+### `ForcedExercise_filter` {#forcedexercise_filter}
 
 <table>
 <thead>
@@ -21930,6 +21128,106 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="forcedexercise_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise_filter.account">account</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise_filter.account_not">account_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise_filter.account_gt">account_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise_filter.account_lt">account_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise_filter.account_gte">account_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise_filter.account_lte">account_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise_filter.account_in">account_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise_filter.account_not_in">account_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise_filter.account_contains">account_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise_filter.account_contains_nocase">account_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise_filter.account_not_contains">account_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise_filter.account_not_contains_nocase">account_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise_filter.account_starts_with">account_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise_filter.account_starts_with_nocase">account_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise_filter.account_not_starts_with">account_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise_filter.account_not_starts_with_nocase">account_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise_filter.account_ends_with">account_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise_filter.account_ends_with_nocase">account_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise_filter.account_not_ends_with">account_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="forcedexercise_filter.account_not_ends_with_nocase">account_not_ends_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
@@ -22569,83 +21867,43 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="forcedexercise_filter.exercisefeeusd">exerciseFeeUSD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="forcedexercise_filter.exercisefeeusd_not">exerciseFeeUSD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="forcedexercise_filter.exercisefeeusd_gt">exerciseFeeUSD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="forcedexercise_filter.exercisefeeusd_lt">exerciseFeeUSD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="forcedexercise_filter.exercisefeeusd_gte">exerciseFeeUSD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="forcedexercise_filter.exercisefeeusd_lte">exerciseFeeUSD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="forcedexercise_filter.exercisefeeusd_in">exerciseFeeUSD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="forcedexercise_filter.exercisefeeusd_not_in">exerciseFeeUSD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="forcedexercise_filter.tickat">tickAt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="forcedexercise_filter.tickat_not">tickAt_not</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="forcedexercise_filter.tickat_gt">tickAt_gt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="forcedexercise_filter.tickat_lt">tickAt_lt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="forcedexercise_filter.tickat_gte">tickAt_gte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="forcedexercise_filter.tickat_lte">tickAt_lte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="forcedexercise_filter.tickat_in">tickAt_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="forcedexercise_filter.tickat_not_in">tickAt_not_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
 <tr>
@@ -22820,7 +22078,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### GuardianSafeModeUpdated_filter
+### `GuardianSafeModeUpdated_filter` {#guardiansafemodeupdated_filter}
 
 <table>
 <thead>
@@ -23538,7 +22796,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### InsolvencyPenaltyApplied_filter
+### `InsolvencyPenaltyApplied_filter` {#insolvencypenaltyapplied_filter}
 
 <table>
 <thead>
@@ -23946,6 +23204,106 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.account">account</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.account_not">account_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.account_gt">account_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.account_lt">account_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.account_gte">account_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.account_lte">account_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.account_in">account_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.account_not_in">account_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.account_contains">account_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.account_contains_nocase">account_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.account_not_contains">account_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.account_not_contains_nocase">account_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.account_starts_with">account_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.account_starts_with_nocase">account_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.account_not_starts_with">account_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.account_not_starts_with_nocase">account_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.account_ends_with">account_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.account_ends_with_nocase">account_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.account_not_ends_with">account_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="insolvencypenaltyapplied_filter.account_not_ends_with_nocase">account_not_ends_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
@@ -24566,330 +23924,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### LegLiquidities_filter
-
-<table>
-<thead>
-<tr>
-<th colspan="2" align="left">Field</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.id">id</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.id_not">id_not</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.id_gt">id_gt</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.id_lt">id_lt</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.id_gte">id_gte</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.id_lte">id_lte</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.id_in">id_in</strong></td>
-<td valign="top">[<a href="#id">ID</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.id_not_in">id_not_in</strong></td>
-<td valign="top">[<a href="#id">ID</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.leg">leg</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.leg_not">leg_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.leg_gt">leg_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.leg_lt">leg_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.leg_gte">leg_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.leg_lte">leg_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.leg_in">leg_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.leg_not_in">leg_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.leg_contains">leg_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.leg_contains_nocase">leg_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.leg_not_contains">leg_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.leg_not_contains_nocase">leg_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.leg_starts_with">leg_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.leg_starts_with_nocase">leg_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.leg_not_starts_with">leg_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.leg_not_starts_with_nocase">leg_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.leg_ends_with">leg_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.leg_ends_with_nocase">leg_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.leg_not_ends_with">leg_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.leg_not_ends_with_nocase">leg_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.leg_">leg_</strong></td>
-<td valign="top"><a href="#leg_filter">Leg_filter</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.chunk">chunk</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.chunk_not">chunk_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.chunk_gt">chunk_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.chunk_lt">chunk_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.chunk_gte">chunk_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.chunk_lte">chunk_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.chunk_in">chunk_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.chunk_not_in">chunk_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.chunk_contains">chunk_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.chunk_contains_nocase">chunk_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.chunk_not_contains">chunk_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.chunk_not_contains_nocase">chunk_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.chunk_starts_with">chunk_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.chunk_starts_with_nocase">chunk_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.chunk_not_starts_with">chunk_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.chunk_not_starts_with_nocase">chunk_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.chunk_ends_with">chunk_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.chunk_ends_with_nocase">chunk_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.chunk_not_ends_with">chunk_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.chunk_not_ends_with_nocase">chunk_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.chunk_">chunk_</strong></td>
-<td valign="top"><a href="#chunk_filter">Chunk_filter</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.liquidity">liquidity</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.liquidity_not">liquidity_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.liquidity_gt">liquidity_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.liquidity_lt">liquidity_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.liquidity_gte">liquidity_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.liquidity_lte">liquidity_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.liquidity_in">liquidity_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.liquidity_not_in">liquidity_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter._change_block">_change_block</strong></td>
-<td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
-<td>
-
-Filter for the block changed event.
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.and">and</strong></td>
-<td valign="top">[<a href="#legliquidities_filter">LegLiquidities_filter</a>]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="legliquidities_filter.or">or</strong></td>
-<td valign="top">[<a href="#legliquidities_filter">LegLiquidities_filter</a>]</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-### Leg_filter
+### `Leg_filter` {#leg_filter}
 
 <table>
 <thead>
@@ -25637,1325 +24672,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### Mint_filter
-
-<table>
-<thead>
-<tr>
-<th colspan="2" align="left">Field</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.id">id</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.id_not">id_not</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.id_gt">id_gt</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.id_lt">id_lt</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.id_gte">id_gte</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.id_lte">id_lte</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.id_in">id_in</strong></td>
-<td valign="top">[<a href="#id">ID</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.id_not_in">id_not_in</strong></td>
-<td valign="top">[<a href="#id">ID</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.hash">hash</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.hash_not">hash_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.hash_gt">hash_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.hash_lt">hash_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.hash_gte">hash_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.hash_lte">hash_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.hash_in">hash_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.hash_not_in">hash_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.hash_contains">hash_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.hash_contains_nocase">hash_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.hash_not_contains">hash_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.hash_not_contains_nocase">hash_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.hash_starts_with">hash_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.hash_starts_with_nocase">hash_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.hash_not_starts_with">hash_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.hash_not_starts_with_nocase">hash_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.hash_ends_with">hash_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.hash_ends_with_nocase">hash_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.hash_not_ends_with">hash_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.hash_not_ends_with_nocase">hash_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.logindex">logIndex</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.logindex_not">logIndex_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.logindex_gt">logIndex_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.logindex_lt">logIndex_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.logindex_gte">logIndex_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.logindex_lte">logIndex_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.logindex_in">logIndex_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.logindex_not_in">logIndex_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.eventtype">eventType</strong></td>
-<td valign="top"><a href="#eventtype">EventType</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.eventtype_not">eventType_not</strong></td>
-<td valign="top"><a href="#eventtype">EventType</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.eventtype_in">eventType_in</strong></td>
-<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.eventtype_not_in">eventType_not_in</strong></td>
-<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.from">from</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.from_not">from_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.from_gt">from_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.from_lt">from_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.from_gte">from_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.from_lte">from_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.from_in">from_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.from_not_in">from_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.from_contains">from_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.from_contains_nocase">from_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.from_not_contains">from_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.from_not_contains_nocase">from_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.from_starts_with">from_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.from_starts_with_nocase">from_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.from_not_starts_with">from_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.from_not_starts_with_nocase">from_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.from_ends_with">from_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.from_ends_with_nocase">from_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.from_not_ends_with">from_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.from_not_ends_with_nocase">from_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.to">to</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.to_not">to_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.to_gt">to_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.to_lt">to_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.to_gte">to_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.to_lte">to_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.to_in">to_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.to_not_in">to_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.to_contains">to_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.to_contains_nocase">to_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.to_not_contains">to_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.to_not_contains_nocase">to_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.to_starts_with">to_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.to_starts_with_nocase">to_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.to_not_starts_with">to_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.to_not_starts_with_nocase">to_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.to_ends_with">to_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.to_ends_with_nocase">to_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.to_not_ends_with">to_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.blocknumber">blockNumber</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.blocknumber_not">blockNumber_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.blocknumber_gt">blockNumber_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.blocknumber_lt">blockNumber_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.blocknumber_gte">blockNumber_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.blocknumber_lte">blockNumber_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.blocknumber_in">blockNumber_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.blocknumber_not_in">blockNumber_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.timestamp">timestamp</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.timestamp_not">timestamp_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.timestamp_gt">timestamp_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.timestamp_lt">timestamp_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.timestamp_gte">timestamp_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.timestamp_lte">timestamp_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.timestamp_in">timestamp_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.timestamp_not_in">timestamp_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.gasused">gasUsed</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.gasused_not">gasUsed_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.gasused_gt">gasUsed_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.gasused_lt">gasUsed_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.gasused_gte">gasUsed_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.gasused_lte">gasUsed_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.gasused_in">gasUsed_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.gasused_not_in">gasUsed_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.gasprice">gasPrice</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.gasprice_not">gasPrice_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.gasprice_gt">gasPrice_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.gasprice_lt">gasPrice_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.gasprice_gte">gasPrice_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.gasprice_lte">gasPrice_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.gasprice_in">gasPrice_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.gasprice_not_in">gasPrice_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.pool">pool</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.pool_not">pool_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.pool_gt">pool_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.pool_lt">pool_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.pool_gte">pool_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.pool_lte">pool_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.pool_in">pool_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.pool_not_in">pool_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.pool_contains">pool_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.pool_contains_nocase">pool_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.pool_not_contains">pool_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.pool_not_contains_nocase">pool_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.pool_starts_with">pool_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.pool_starts_with_nocase">pool_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.pool_not_starts_with">pool_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.pool_not_starts_with_nocase">pool_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.pool_ends_with">pool_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.pool_ends_with_nocase">pool_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.pool_not_ends_with">pool_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.pool_not_ends_with_nocase">pool_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.pool_">pool_</strong></td>
-<td valign="top"><a href="#pool_filter">Pool_filter</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.sender">sender</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.sender_not">sender_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.sender_gt">sender_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.sender_lt">sender_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.sender_gte">sender_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.sender_lte">sender_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.sender_in">sender_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.sender_not_in">sender_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.sender_contains">sender_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.sender_contains_nocase">sender_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.sender_not_contains">sender_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.sender_not_contains_nocase">sender_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.sender_starts_with">sender_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.sender_starts_with_nocase">sender_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.sender_not_starts_with">sender_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.sender_not_starts_with_nocase">sender_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.sender_ends_with">sender_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.sender_ends_with_nocase">sender_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.sender_not_ends_with">sender_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.sender_not_ends_with_nocase">sender_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.sender_">sender_</strong></td>
-<td valign="top"><a href="#account_filter">Account_filter</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.owner">owner</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.owner_not">owner_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.owner_gt">owner_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.owner_lt">owner_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.owner_gte">owner_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.owner_lte">owner_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.owner_in">owner_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.owner_not_in">owner_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.owner_contains">owner_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.owner_contains_nocase">owner_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.owner_not_contains">owner_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.owner_not_contains_nocase">owner_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.owner_starts_with">owner_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.owner_starts_with_nocase">owner_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.owner_not_starts_with">owner_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.owner_not_starts_with_nocase">owner_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.owner_ends_with">owner_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.owner_ends_with_nocase">owner_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.owner_not_ends_with">owner_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.owner_not_ends_with_nocase">owner_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.owner_">owner_</strong></td>
-<td valign="top"><a href="#account_filter">Account_filter</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.ticklower">tickLower</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.ticklower_not">tickLower_not</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.ticklower_gt">tickLower_gt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.ticklower_lt">tickLower_lt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.ticklower_gte">tickLower_gte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.ticklower_lte">tickLower_lte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.ticklower_in">tickLower_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.ticklower_not_in">tickLower_not_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.tickupper">tickUpper</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.tickupper_not">tickUpper_not</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.tickupper_gt">tickUpper_gt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.tickupper_lt">tickUpper_lt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.tickupper_gte">tickUpper_gte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.tickupper_lte">tickUpper_lte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.tickupper_in">tickUpper_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.tickupper_not_in">tickUpper_not_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.amount">amount</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.amount_not">amount_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.amount_gt">amount_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.amount_lt">amount_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.amount_gte">amount_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.amount_lte">amount_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.amount_in">amount_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.amount_not_in">amount_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.amount0">amount0</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.amount0_not">amount0_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.amount0_gt">amount0_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.amount0_lt">amount0_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.amount0_gte">amount0_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.amount0_lte">amount0_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.amount0_in">amount0_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.amount0_not_in">amount0_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.amount1">amount1</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.amount1_not">amount1_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.amount1_gt">amount1_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.amount1_lt">amount1_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.amount1_gte">amount1_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.amount1_lte">amount1_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.amount1_in">amount1_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.amount1_not_in">amount1_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token0">token0</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token0_not">token0_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token0_gt">token0_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token0_lt">token0_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token0_gte">token0_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token0_lte">token0_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token0_in">token0_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token0_not_in">token0_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token0_contains">token0_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token0_contains_nocase">token0_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token0_not_contains">token0_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token0_not_contains_nocase">token0_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token0_starts_with">token0_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token0_starts_with_nocase">token0_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token0_not_starts_with">token0_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token0_not_starts_with_nocase">token0_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token0_ends_with">token0_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token0_ends_with_nocase">token0_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token0_not_ends_with">token0_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token0_not_ends_with_nocase">token0_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token0_">token0_</strong></td>
-<td valign="top"><a href="#token_filter">Token_filter</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token1">token1</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token1_not">token1_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token1_gt">token1_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token1_lt">token1_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token1_gte">token1_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token1_lte">token1_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token1_in">token1_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token1_not_in">token1_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token1_contains">token1_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token1_contains_nocase">token1_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token1_not_contains">token1_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token1_not_contains_nocase">token1_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token1_starts_with">token1_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token1_starts_with_nocase">token1_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token1_not_starts_with">token1_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token1_not_starts_with_nocase">token1_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token1_ends_with">token1_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token1_ends_with_nocase">token1_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token1_not_ends_with">token1_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token1_not_ends_with_nocase">token1_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.token1_">token1_</strong></td>
-<td valign="top"><a href="#token_filter">Token_filter</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter._change_block">_change_block</strong></td>
-<td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
-<td>
-
-Filter for the block changed event.
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.and">and</strong></td>
-<td valign="top">[<a href="#mint_filter">Mint_filter</a>]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="mint_filter.or">or</strong></td>
-<td valign="top">[<a href="#mint_filter">Mint_filter</a>]</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-### OptionBurn_filter
+### `OptionBurn_filter` {#optionburn_filter}
 
 <table>
 <thead>
@@ -27363,6 +25080,106 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="optionburn_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.account">account</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.account_not">account_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.account_gt">account_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.account_lt">account_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.account_gte">account_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.account_lte">account_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.account_in">account_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.account_not_in">account_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.account_contains">account_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.account_contains_nocase">account_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.account_not_contains">account_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.account_not_contains_nocase">account_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.account_starts_with">account_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.account_starts_with_nocase">account_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.account_not_starts_with">account_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.account_not_starts_with_nocase">account_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.account_ends_with">account_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.account_ends_with_nocase">account_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.account_not_ends_with">account_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionburn_filter.account_not_ends_with_nocase">account_not_ends_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
@@ -27883,42 +25700,42 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="optionburn_filter.tickat">tickAt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="optionburn_filter.tickat_not">tickAt_not</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="optionburn_filter.tickat_gt">tickAt_gt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="optionburn_filter.tickat_lt">tickAt_lt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="optionburn_filter.tickat_gte">tickAt_gte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="optionburn_filter.tickat_lte">tickAt_lte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="optionburn_filter.tickat_in">tickAt_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="optionburn_filter.tickat_not_in">tickAt_not_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
 <tr>
@@ -28122,17 +25939,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.premiabyleg_contains_nocase">premiaByLeg_contains_nocase</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="optionburn_filter.premiabyleg_not_contains">premiaByLeg_not_contains</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.premiabyleg_not_contains_nocase">premiaByLeg_not_contains_nocase</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
@@ -28597,86 +26404,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.volume0usd">volume0USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.volume0usd_not">volume0USD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.volume0usd_gt">volume0USD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.volume0usd_lt">volume0USD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.volume0usd_gte">volume0USD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.volume0usd_lte">volume0USD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.volume0usd_in">volume0USD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.volume0usd_not_in">volume0USD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.volume1usd">volume1USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.volume1usd_not">volume1USD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.volume1usd_gt">volume1USD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.volume1usd_lt">volume1USD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.volume1usd_gte">volume1USD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.volume1usd_lte">volume1USD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.volume1usd_in">volume1USD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.volume1usd_not_in">volume1USD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="optionburn_filter.shares0">shares0</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
@@ -28757,123 +26484,8 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.ethpriceusdatburn">ethPriceUSDAtBurn</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.ethpriceusdatburn_not">ethPriceUSDAtBurn_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.ethpriceusdatburn_gt">ethPriceUSDAtBurn_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.ethpriceusdatburn_lt">ethPriceUSDAtBurn_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.ethpriceusdatburn_gte">ethPriceUSDAtBurn_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.ethpriceusdatburn_lte">ethPriceUSDAtBurn_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.ethpriceusdatburn_in">ethPriceUSDAtBurn_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.ethpriceusdatburn_not_in">ethPriceUSDAtBurn_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.token0derivedethatburn">token0DerivedEthAtBurn</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.token0derivedethatburn_not">token0DerivedEthAtBurn_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.token0derivedethatburn_gt">token0DerivedEthAtBurn_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.token0derivedethatburn_lt">token0DerivedEthAtBurn_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.token0derivedethatburn_gte">token0DerivedEthAtBurn_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.token0derivedethatburn_lte">token0DerivedEthAtBurn_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.token0derivedethatburn_in">token0DerivedEthAtBurn_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.token0derivedethatburn_not_in">token0DerivedEthAtBurn_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.token1derivedethatburn">token1DerivedEthAtBurn</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.token1derivedethatburn_not">token1DerivedEthAtBurn_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.token1derivedethatburn_gt">token1DerivedEthAtBurn_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.token1derivedethatburn_lt">token1DerivedEthAtBurn_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.token1derivedethatburn_gte">token1DerivedEthAtBurn_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.token1derivedethatburn_lte">token1DerivedEthAtBurn_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.token1derivedethatburn_in">token1DerivedEthAtBurn_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionburn_filter.token1derivedethatburn_not_in">token1DerivedEthAtBurn_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td colspan="2" valign="top"><strong id="optionburn_filter.commissions_">commissions_</strong></td>
+<td valign="top"><a href="#commissionpaid_filter">CommissionPaid_filter</a></td>
 <td></td>
 </tr>
 <tr>
@@ -28898,7 +26510,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### OptionMint_filter
+### `OptionMint_filter` {#optionmint_filter}
 
 <table>
 <thead>
@@ -29306,6 +26918,106 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="optionmint_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.account">account</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.account_not">account_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.account_gt">account_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.account_lt">account_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.account_gte">account_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.account_lte">account_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.account_in">account_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.account_not_in">account_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.account_contains">account_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.account_contains_nocase">account_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.account_not_contains">account_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.account_not_contains_nocase">account_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.account_starts_with">account_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.account_starts_with_nocase">account_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.account_not_starts_with">account_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.account_not_starts_with_nocase">account_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.account_ends_with">account_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.account_ends_with_nocase">account_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.account_not_ends_with">account_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.account_not_ends_with_nocase">account_not_ends_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
@@ -29905,166 +27617,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.currenttick">currentTick</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.currenttick_not">currentTick_not</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.currenttick_gt">currentTick_gt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.currenttick_lt">currentTick_lt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.currenttick_gte">currentTick_gte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.currenttick_lte">currentTick_lte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.currenttick_in">currentTick_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.currenttick_not_in">currentTick_not_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.fastoracletick">fastOracleTick</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.fastoracletick_not">fastOracleTick_not</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.fastoracletick_gt">fastOracleTick_gt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.fastoracletick_lt">fastOracleTick_lt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.fastoracletick_gte">fastOracleTick_gte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.fastoracletick_lte">fastOracleTick_lte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.fastoracletick_in">fastOracleTick_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.fastoracletick_not_in">fastOracleTick_not_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.lastobservedtick">lastObservedTick</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.lastobservedtick_not">lastObservedTick_not</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.lastobservedtick_gt">lastObservedTick_gt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.lastobservedtick_lt">lastObservedTick_lt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.lastobservedtick_gte">lastObservedTick_gte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.lastobservedtick_lte">lastObservedTick_lte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.lastobservedtick_in">lastObservedTick_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.lastobservedtick_not_in">lastObservedTick_not_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.sloworacletick">slowOracleTick</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.sloworacletick_not">slowOracleTick_not</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.sloworacletick_gt">slowOracleTick_gt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.sloworacletick_lt">slowOracleTick_lt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.sloworacletick_gte">slowOracleTick_gte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.sloworacletick_lte">slowOracleTick_lte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.sloworacletick_in">slowOracleTick_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.sloworacletick_not_in">slowOracleTick_not_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="optionmint_filter.accountbalance">accountBalance</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
@@ -30355,203 +27907,8 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions0">commissions0</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions0_not">commissions0_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions0_gt">commissions0_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions0_lt">commissions0_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions0_gte">commissions0_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions0_lte">commissions0_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions0_in">commissions0_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions0_not_in">commissions0_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions1">commissions1</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions1_not">commissions1_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions1_gt">commissions1_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions1_lt">commissions1_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions1_gte">commissions1_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions1_lte">commissions1_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions1_in">commissions1_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions1_not_in">commissions1_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions0usd">commissions0USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions0usd_not">commissions0USD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions0usd_gt">commissions0USD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions0usd_lt">commissions0USD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions0usd_gte">commissions0USD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions0usd_lte">commissions0USD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions0usd_in">commissions0USD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions0usd_not_in">commissions0USD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions1usd">commissions1USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions1usd_not">commissions1USD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions1usd_gt">commissions1USD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions1usd_lt">commissions1USD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions1usd_gte">commissions1USD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions1usd_lte">commissions1USD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions1usd_in">commissions1USD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissions1usd_not_in">commissions1USD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissionsusd">commissionsUSD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissionsusd_not">commissionsUSD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissionsusd_gt">commissionsUSD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissionsusd_lt">commissionsUSD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissionsusd_gte">commissionsUSD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissionsusd_lte">commissionsUSD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissionsusd_in">commissionsUSD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.commissionsusd_not_in">commissionsUSD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
+<td colspan="2" valign="top"><strong id="optionmint_filter.commissions_">commissions_</strong></td>
+<td valign="top"><a href="#commissionpaid_filter">CommissionPaid_filter</a></td>
 <td></td>
 </tr>
 <tr>
@@ -30595,6 +27952,106 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.timestampatmint">timestampAtMint</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.timestampatmint_not">timestampAtMint_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.timestampatmint_gt">timestampAtMint_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.timestampatmint_lt">timestampAtMint_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.timestampatmint_gte">timestampAtMint_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.timestampatmint_lte">timestampAtMint_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.timestampatmint_in">timestampAtMint_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.timestampatmint_not_in">timestampAtMint_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.blockatmint">blockAtMint</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.blockatmint_not">blockAtMint_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.blockatmint_gt">blockAtMint_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.blockatmint_lt">blockAtMint_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.blockatmint_gte">blockAtMint_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.blockatmint_lte">blockAtMint_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.blockatmint_in">blockAtMint_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.blockatmint_not_in">blockAtMint_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.swapatmint">swapAtMint</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.swapatmint_not">swapAtMint_not</strong></td>
+<td valign="top"><a href="#boolean">Boolean</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.swapatmint_in">swapAtMint_in</strong></td>
+<td valign="top">[<a href="#boolean">Boolean</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="optionmint_filter.swapatmint_not_in">swapAtMint_not_in</strong></td>
+<td valign="top">[<a href="#boolean">Boolean</a>!]</td>
+<td></td>
+</tr>
+<tr>
 <td colspan="2" valign="top"><strong id="optionmint_filter.panopticversion">panopticVersion</strong></td>
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td></td>
@@ -30635,206 +28092,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.volume0usd">volume0USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.volume0usd_not">volume0USD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.volume0usd_gt">volume0USD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.volume0usd_lt">volume0USD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.volume0usd_gte">volume0USD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.volume0usd_lte">volume0USD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.volume0usd_in">volume0USD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.volume0usd_not_in">volume0USD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.volume1usd">volume1USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.volume1usd_not">volume1USD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.volume1usd_gt">volume1USD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.volume1usd_lt">volume1USD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.volume1usd_gte">volume1USD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.volume1usd_lte">volume1USD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.volume1usd_in">volume1USD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.volume1usd_not_in">volume1USD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.ethpriceusdatmint">ethPriceUSDAtMint</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.ethpriceusdatmint_not">ethPriceUSDAtMint_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.ethpriceusdatmint_gt">ethPriceUSDAtMint_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.ethpriceusdatmint_lt">ethPriceUSDAtMint_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.ethpriceusdatmint_gte">ethPriceUSDAtMint_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.ethpriceusdatmint_lte">ethPriceUSDAtMint_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.ethpriceusdatmint_in">ethPriceUSDAtMint_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.ethpriceusdatmint_not_in">ethPriceUSDAtMint_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.token0derivedethatmint">token0DerivedEthAtMint</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.token0derivedethatmint_not">token0DerivedEthAtMint_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.token0derivedethatmint_gt">token0DerivedEthAtMint_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.token0derivedethatmint_lt">token0DerivedEthAtMint_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.token0derivedethatmint_gte">token0DerivedEthAtMint_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.token0derivedethatmint_lte">token0DerivedEthAtMint_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.token0derivedethatmint_in">token0DerivedEthAtMint_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.token0derivedethatmint_not_in">token0DerivedEthAtMint_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.token1derivedethatmint">token1DerivedEthAtMint</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.token1derivedethatmint_not">token1DerivedEthAtMint_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.token1derivedethatmint_gt">token1DerivedEthAtMint_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.token1derivedethatmint_lt">token1DerivedEthAtMint_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.token1derivedethatmint_gte">token1DerivedEthAtMint_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.token1derivedethatmint_lte">token1DerivedEthAtMint_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.token1derivedethatmint_in">token1DerivedEthAtMint_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="optionmint_filter.token1derivedethatmint_not_in">token1DerivedEthAtMint_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="optionmint_filter._change_block">_change_block</strong></td>
 <td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
 <td>
@@ -30856,7 +28113,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### PanopticFactory_filter
+### `PanopticFactory_filter` {#panopticfactory_filter}
 
 <table>
 <thead>
@@ -31049,7 +28306,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### PanopticPoolAccount_filter
+### `PanopticPoolAccount_filter` {#panopticpoolaccount_filter}
 
 <table>
 <thead>
@@ -31686,46 +28943,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.commissions0usd">commissions0Usd</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.commissions0usd_not">commissions0Usd_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.commissions0usd_gt">commissions0Usd_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.commissions0usd_lt">commissions0Usd_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.commissions0usd_gte">commissions0Usd_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.commissions0usd_lte">commissions0Usd_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.commissions0usd_in">commissions0Usd_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.commissions0usd_not_in">commissions0Usd_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.commissions1">commissions1</strong></td>
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td></td>
@@ -31766,46 +28983,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.commissions1usd">commissions1Usd</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.commissions1usd_not">commissions1Usd_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.commissions1usd_gt">commissions1Usd_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.commissions1usd_lt">commissions1Usd_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.commissions1usd_gte">commissions1Usd_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.commissions1usd_lte">commissions1Usd_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.commissions1usd_in">commissions1Usd_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpoolaccount_filter.commissions1usd_not_in">commissions1Usd_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="panopticpoolaccount_filter._change_block">_change_block</strong></td>
 <td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
 <td>
@@ -31827,7 +29004,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### PanopticPoolDayData_filter
+### `PanopticPoolDayData_filter` {#panopticpooldaydata_filter}
 
 <table>
 <thead>
@@ -32064,46 +29241,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.mintvolume0usd">mintVolume0USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.mintvolume0usd_not">mintVolume0USD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.mintvolume0usd_gt">mintVolume0USD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.mintvolume0usd_lt">mintVolume0USD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.mintvolume0usd_gte">mintVolume0USD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.mintvolume0usd_lte">mintVolume0USD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.mintvolume0usd_in">mintVolume0USD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.mintvolume0usd_not_in">mintVolume0USD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.burnvolume0">burnVolume0</strong></td>
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td></td>
@@ -32140,46 +29277,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.burnvolume0_not_in">burnVolume0_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.burnvolume0usd">burnVolume0USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.burnvolume0usd_not">burnVolume0USD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.burnvolume0usd_gt">burnVolume0USD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.burnvolume0usd_lt">burnVolume0USD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.burnvolume0usd_gte">burnVolume0USD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.burnvolume0usd_lte">burnVolume0USD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.burnvolume0usd_in">burnVolume0USD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.burnvolume0usd_not_in">burnVolume0USD_not_in</strong></td>
 <td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
 <td></td>
 </tr>
@@ -32224,46 +29321,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.totalvolume0usd">totalVolume0USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.totalvolume0usd_not">totalVolume0USD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.totalvolume0usd_gt">totalVolume0USD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.totalvolume0usd_lt">totalVolume0USD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.totalvolume0usd_gte">totalVolume0USD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.totalvolume0usd_lte">totalVolume0USD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.totalvolume0usd_in">totalVolume0USD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.totalvolume0usd_not_in">totalVolume0USD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.mintvolume1">mintVolume1</strong></td>
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td></td>
@@ -32300,46 +29357,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.mintvolume1_not_in">mintVolume1_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.mintvolume1usd">mintVolume1USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.mintvolume1usd_not">mintVolume1USD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.mintvolume1usd_gt">mintVolume1USD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.mintvolume1usd_lt">mintVolume1USD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.mintvolume1usd_gte">mintVolume1USD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.mintvolume1usd_lte">mintVolume1USD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.mintvolume1usd_in">mintVolume1USD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.mintvolume1usd_not_in">mintVolume1USD_not_in</strong></td>
 <td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
 <td></td>
 </tr>
@@ -32384,46 +29401,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.burnvolume1usd">burnVolume1USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.burnvolume1usd_not">burnVolume1USD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.burnvolume1usd_gt">burnVolume1USD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.burnvolume1usd_lt">burnVolume1USD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.burnvolume1usd_gte">burnVolume1USD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.burnvolume1usd_lte">burnVolume1USD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.burnvolume1usd_in">burnVolume1USD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.burnvolume1usd_not_in">burnVolume1USD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.totalvolume1">totalVolume1</strong></td>
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td></td>
@@ -32460,86 +29437,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.totalvolume1_not_in">totalVolume1_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.totalvolume1usd">totalVolume1USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.totalvolume1usd_not">totalVolume1USD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.totalvolume1usd_gt">totalVolume1USD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.totalvolume1usd_lt">totalVolume1USD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.totalvolume1usd_gte">totalVolume1USD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.totalvolume1usd_lte">totalVolume1USD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.totalvolume1usd_in">totalVolume1USD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.totalvolume1usd_not_in">totalVolume1USD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.totalvolumeusd">totalVolumeUSD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.totalvolumeusd_not">totalVolumeUSD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.totalvolumeusd_gt">totalVolumeUSD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.totalvolumeusd_lt">totalVolumeUSD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.totalvolumeusd_gte">totalVolumeUSD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.totalvolumeusd_lte">totalVolumeUSD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.totalvolumeusd_in">totalVolumeUSD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.totalvolumeusd_not_in">totalVolumeUSD_not_in</strong></td>
 <td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
 <td></td>
 </tr>
@@ -32584,46 +29481,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.commissions0usd">commissions0USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.commissions0usd_not">commissions0USD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.commissions0usd_gt">commissions0USD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.commissions0usd_lt">commissions0USD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.commissions0usd_gte">commissions0USD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.commissions0usd_lte">commissions0USD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.commissions0usd_in">commissions0USD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.commissions0usd_not_in">commissions0USD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.commissions1">commissions1</strong></td>
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td></td>
@@ -32664,86 +29521,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.commissions1usd">commissions1USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.commissions1usd_not">commissions1USD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.commissions1usd_gt">commissions1USD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.commissions1usd_lt">commissions1USD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.commissions1usd_gte">commissions1USD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.commissions1usd_lte">commissions1USD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.commissions1usd_in">commissions1USD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.commissions1usd_not_in">commissions1USD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.commissionsusd">commissionsUSD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.commissionsusd_not">commissionsUSD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.commissionsusd_gt">commissionsUSD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.commissionsusd_lt">commissionsUSD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.commissionsusd_gte">commissionsUSD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.commissionsusd_lte">commissionsUSD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.commissionsusd_in">commissionsUSD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpooldaydata_filter.commissionsusd_not_in">commissionsUSD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="panopticpooldaydata_filter._change_block">_change_block</strong></td>
 <td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
 <td>
@@ -32765,7 +29542,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### PanopticPool_filter
+### `PanopticPool_filter` {#panopticpool_filter}
 
 <table>
 <thead>
@@ -32814,46 +29591,6 @@ Filter for the block changed event.
 <tr>
 <td colspan="2" valign="top"><strong id="panopticpool_filter.id_not_in">id_not_in</strong></td>
 <td valign="top">[<a href="#id">ID</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.txcount">txCount</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.txcount_not">txCount_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.txcount_gt">txCount_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.txcount_lt">txCount_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.txcount_gte">txCount_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.txcount_lte">txCount_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.txcount_in">txCount_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.txcount_not_in">txCount_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
 <td></td>
 </tr>
 <tr>
@@ -33552,46 +30289,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.mintvolume0usd">mintVolume0USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.mintvolume0usd_not">mintVolume0USD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.mintvolume0usd_gt">mintVolume0USD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.mintvolume0usd_lt">mintVolume0USD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.mintvolume0usd_gte">mintVolume0USD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.mintvolume0usd_lte">mintVolume0USD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.mintvolume0usd_in">mintVolume0USD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.mintvolume0usd_not_in">mintVolume0USD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="panopticpool_filter.burnvolume0">burnVolume0</strong></td>
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td></td>
@@ -33628,46 +30325,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="panopticpool_filter.burnvolume0_not_in">burnVolume0_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.burnvolume0usd">burnVolume0USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.burnvolume0usd_not">burnVolume0USD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.burnvolume0usd_gt">burnVolume0USD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.burnvolume0usd_lt">burnVolume0USD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.burnvolume0usd_gte">burnVolume0USD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.burnvolume0usd_lte">burnVolume0USD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.burnvolume0usd_in">burnVolume0USD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.burnvolume0usd_not_in">burnVolume0USD_not_in</strong></td>
 <td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
 <td></td>
 </tr>
@@ -33712,46 +30369,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.totalvolume0usd">totalVolume0USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.totalvolume0usd_not">totalVolume0USD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.totalvolume0usd_gt">totalVolume0USD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.totalvolume0usd_lt">totalVolume0USD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.totalvolume0usd_gte">totalVolume0USD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.totalvolume0usd_lte">totalVolume0USD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.totalvolume0usd_in">totalVolume0USD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.totalvolume0usd_not_in">totalVolume0USD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="panopticpool_filter.mintvolume1">mintVolume1</strong></td>
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td></td>
@@ -33788,46 +30405,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="panopticpool_filter.mintvolume1_not_in">mintVolume1_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.mintvolume1usd">mintVolume1USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.mintvolume1usd_not">mintVolume1USD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.mintvolume1usd_gt">mintVolume1USD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.mintvolume1usd_lt">mintVolume1USD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.mintvolume1usd_gte">mintVolume1USD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.mintvolume1usd_lte">mintVolume1USD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.mintvolume1usd_in">mintVolume1USD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.mintvolume1usd_not_in">mintVolume1USD_not_in</strong></td>
 <td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
 <td></td>
 </tr>
@@ -33872,46 +30449,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.burnvolume1usd">burnVolume1USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.burnvolume1usd_not">burnVolume1USD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.burnvolume1usd_gt">burnVolume1USD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.burnvolume1usd_lt">burnVolume1USD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.burnvolume1usd_gte">burnVolume1USD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.burnvolume1usd_lte">burnVolume1USD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.burnvolume1usd_in">burnVolume1USD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.burnvolume1usd_not_in">burnVolume1USD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="panopticpool_filter.totalvolume1">totalVolume1</strong></td>
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td></td>
@@ -33948,86 +30485,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="panopticpool_filter.totalvolume1_not_in">totalVolume1_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.totalvolume1usd">totalVolume1USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.totalvolume1usd_not">totalVolume1USD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.totalvolume1usd_gt">totalVolume1USD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.totalvolume1usd_lt">totalVolume1USD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.totalvolume1usd_gte">totalVolume1USD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.totalvolume1usd_lte">totalVolume1USD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.totalvolume1usd_in">totalVolume1USD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.totalvolume1usd_not_in">totalVolume1USD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.totalvolumeusd">totalVolumeUSD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.totalvolumeusd_not">totalVolumeUSD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.totalvolumeusd_gt">totalVolumeUSD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.totalvolumeusd_lt">totalVolumeUSD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.totalvolumeusd_gte">totalVolumeUSD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.totalvolumeusd_lte">totalVolumeUSD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.totalvolumeusd_in">totalVolumeUSD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.totalvolumeusd_not_in">totalVolumeUSD_not_in</strong></td>
 <td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
 <td></td>
 </tr>
@@ -34072,46 +30529,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.commissions0usd">commissions0USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.commissions0usd_not">commissions0USD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.commissions0usd_gt">commissions0USD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.commissions0usd_lt">commissions0USD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.commissions0usd_gte">commissions0USD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.commissions0usd_lte">commissions0USD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.commissions0usd_in">commissions0USD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.commissions0usd_not_in">commissions0USD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="panopticpool_filter.commissions1">commissions1</strong></td>
 <td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
 <td></td>
@@ -34148,86 +30565,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="panopticpool_filter.commissions1_not_in">commissions1_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.commissions1usd">commissions1USD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.commissions1usd_not">commissions1USD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.commissions1usd_gt">commissions1USD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.commissions1usd_lt">commissions1USD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.commissions1usd_gte">commissions1USD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.commissions1usd_lte">commissions1USD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.commissions1usd_in">commissions1USD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.commissions1usd_not_in">commissions1USD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.commissionsusd">commissionsUSD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.commissionsusd_not">commissionsUSD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.commissionsusd_gt">commissionsUSD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.commissionsusd_lt">commissionsUSD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.commissionsusd_gte">commissionsUSD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.commissionsusd_lte">commissionsUSD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.commissionsusd_in">commissionsUSD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="panopticpool_filter.commissionsusd_not_in">commissionsUSD_not_in</strong></td>
 <td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
 <td></td>
 </tr>
@@ -34453,7 +30790,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### PoolDayData_filter
+### `PoolIdLookup_filter` {#poolidlookup_filter}
 
 <table>
 <thead>
@@ -34465,672 +30802,212 @@ Filter for the block changed event.
 </thead>
 <tbody>
 <tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.id">id</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.id_not">id_not</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.id_gt">id_gt</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.id_lt">id_lt</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.id_gte">id_gte</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.id_lte">id_lte</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.id_in">id_in</strong></td>
-<td valign="top">[<a href="#id">ID</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.id_not_in">id_not_in</strong></td>
-<td valign="top">[<a href="#id">ID</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.pool">pool</strong></td>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.id">id</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.pool_not">pool_not</strong></td>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.id_not">id_not</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.pool_gt">pool_gt</strong></td>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.id_gt">id_gt</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.pool_lt">pool_lt</strong></td>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.id_lt">id_lt</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.pool_gte">pool_gte</strong></td>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.id_gte">id_gte</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.pool_lte">pool_lte</strong></td>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.id_lte">id_lte</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.pool_in">pool_in</strong></td>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.id_in">id_in</strong></td>
 <td valign="top">[<a href="#string">String</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.pool_not_in">pool_not_in</strong></td>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.id_not_in">id_not_in</strong></td>
 <td valign="top">[<a href="#string">String</a>!]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.pool_contains">pool_contains</strong></td>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.id_contains">id_contains</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.pool_contains_nocase">pool_contains_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.id_contains_nocase">id_contains_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.pool_not_contains">pool_not_contains</strong></td>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.id_not_contains">id_not_contains</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.pool_not_contains_nocase">pool_not_contains_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.id_not_contains_nocase">id_not_contains_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.pool_starts_with">pool_starts_with</strong></td>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.id_starts_with">id_starts_with</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.pool_starts_with_nocase">pool_starts_with_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.id_starts_with_nocase">id_starts_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.pool_not_starts_with">pool_not_starts_with</strong></td>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.id_not_starts_with">id_not_starts_with</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.pool_not_starts_with_nocase">pool_not_starts_with_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.id_not_starts_with_nocase">id_not_starts_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.pool_ends_with">pool_ends_with</strong></td>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.id_ends_with">id_ends_with</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.pool_ends_with_nocase">pool_ends_with_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.id_ends_with_nocase">id_ends_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.pool_not_ends_with">pool_not_ends_with</strong></td>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.id_not_ends_with">id_not_ends_with</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.pool_not_ends_with_nocase">pool_not_ends_with_nocase</strong></td>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.id_not_ends_with_nocase">id_not_ends_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.pool_">pool_</strong></td>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.pool">pool</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.pool_not">pool_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.pool_gt">pool_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.pool_lt">pool_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.pool_gte">pool_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.pool_lte">pool_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.pool_in">pool_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.pool_not_in">pool_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.pool_contains">pool_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.pool_contains_nocase">pool_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.pool_not_contains">pool_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.pool_not_contains_nocase">pool_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.pool_starts_with">pool_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.pool_starts_with_nocase">pool_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.pool_not_starts_with">pool_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.pool_not_starts_with_nocase">pool_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.pool_ends_with">pool_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.pool_ends_with_nocase">pool_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.pool_not_ends_with">pool_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.pool_not_ends_with_nocase">pool_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.pool_">pool_</strong></td>
 <td valign="top"><a href="#pool_filter">Pool_filter</a></td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.date">date</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.date_not">date_not</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.date_gt">date_gt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.date_lt">date_lt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.date_gte">date_gte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.date_lte">date_lte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.date_in">date_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.date_not_in">date_not_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.txcount">txCount</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.txcount_not">txCount_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.txcount_gt">txCount_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.txcount_lt">txCount_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.txcount_gte">txCount_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.txcount_lte">txCount_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.txcount_in">txCount_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.txcount_not_in">txCount_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.liquidity">liquidity</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.liquidity_not">liquidity_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.liquidity_gt">liquidity_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.liquidity_lt">liquidity_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.liquidity_gte">liquidity_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.liquidity_lte">liquidity_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.liquidity_in">liquidity_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.liquidity_not_in">liquidity_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.token0price">token0Price</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.token0price_not">token0Price_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.token0price_gt">token0Price_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.token0price_lt">token0Price_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.token0price_gte">token0Price_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.token0price_lte">token0Price_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.token0price_in">token0Price_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.token0price_not_in">token0Price_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.token1price">token1Price</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.token1price_not">token1Price_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.token1price_gt">token1Price_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.token1price_lt">token1Price_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.token1price_gte">token1Price_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.token1price_lte">token1Price_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.token1price_in">token1Price_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.token1price_not_in">token1Price_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.volumetoken0">volumeToken0</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.volumetoken0_not">volumeToken0_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.volumetoken0_gt">volumeToken0_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.volumetoken0_lt">volumeToken0_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.volumetoken0_gte">volumeToken0_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.volumetoken0_lte">volumeToken0_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.volumetoken0_in">volumeToken0_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.volumetoken0_not_in">volumeToken0_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.volumetoken1">volumeToken1</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.volumetoken1_not">volumeToken1_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.volumetoken1_gt">volumeToken1_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.volumetoken1_lt">volumeToken1_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.volumetoken1_gte">volumeToken1_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.volumetoken1_lte">volumeToken1_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.volumetoken1_in">volumeToken1_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.volumetoken1_not_in">volumeToken1_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.volumeusd">volumeUSD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.volumeusd_not">volumeUSD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.volumeusd_gt">volumeUSD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.volumeusd_lt">volumeUSD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.volumeusd_gte">volumeUSD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.volumeusd_lte">volumeUSD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.volumeusd_in">volumeUSD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.volumeusd_not_in">volumeUSD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.feesusd">feesUSD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.feesusd_not">feesUSD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.feesusd_gt">feesUSD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.feesusd_lt">feesUSD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.feesusd_gte">feesUSD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.feesusd_lte">feesUSD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.feesusd_in">feesUSD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.feesusd_not_in">feesUSD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.open">open</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.open_not">open_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.open_gt">open_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.open_lt">open_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.open_gte">open_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.open_lte">open_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.open_in">open_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.open_not_in">open_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.high">high</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.high_not">high_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.high_gt">high_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.high_lt">high_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.high_gte">high_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.high_lte">high_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.high_in">high_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.high_not_in">high_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.low">low</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.low_not">low_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.low_gt">low_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.low_lt">low_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.low_gte">low_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.low_lte">low_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.low_in">low_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.low_not_in">low_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.close">close</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.close_not">close_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.close_gt">close_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.close_lt">close_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.close_gte">close_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.close_lte">close_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.close_in">close_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.close_not_in">close_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter._change_block">_change_block</strong></td>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter._change_block">_change_block</strong></td>
 <td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
 <td>
 
@@ -35139,677 +31016,19 @@ Filter for the block changed event.
 </td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.and">and</strong></td>
-<td valign="top">[<a href="#pooldaydata_filter">PoolDayData_filter</a>]</td>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.and">and</strong></td>
+<td valign="top">[<a href="#poolidlookup_filter">PoolIdLookup_filter</a>]</td>
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="pooldaydata_filter.or">or</strong></td>
-<td valign="top">[<a href="#pooldaydata_filter">PoolDayData_filter</a>]</td>
+<td colspan="2" valign="top"><strong id="poolidlookup_filter.or">or</strong></td>
+<td valign="top">[<a href="#poolidlookup_filter">PoolIdLookup_filter</a>]</td>
 <td></td>
 </tr>
 </tbody>
 </table>
 
-### PoolHourData_filter
-
-<table>
-<thead>
-<tr>
-<th colspan="2" align="left">Field</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.id">id</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.id_not">id_not</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.id_gt">id_gt</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.id_lt">id_lt</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.id_gte">id_gte</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.id_lte">id_lte</strong></td>
-<td valign="top"><a href="#id">ID</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.id_in">id_in</strong></td>
-<td valign="top">[<a href="#id">ID</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.id_not_in">id_not_in</strong></td>
-<td valign="top">[<a href="#id">ID</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.pool">pool</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.pool_not">pool_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.pool_gt">pool_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.pool_lt">pool_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.pool_gte">pool_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.pool_lte">pool_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.pool_in">pool_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.pool_not_in">pool_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.pool_contains">pool_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.pool_contains_nocase">pool_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.pool_not_contains">pool_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.pool_not_contains_nocase">pool_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.pool_starts_with">pool_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.pool_starts_with_nocase">pool_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.pool_not_starts_with">pool_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.pool_not_starts_with_nocase">pool_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.pool_ends_with">pool_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.pool_ends_with_nocase">pool_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.pool_not_ends_with">pool_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.pool_not_ends_with_nocase">pool_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.pool_">pool_</strong></td>
-<td valign="top"><a href="#pool_filter">Pool_filter</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.txcount">txCount</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.txcount_not">txCount_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.txcount_gt">txCount_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.txcount_lt">txCount_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.txcount_gte">txCount_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.txcount_lte">txCount_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.txcount_in">txCount_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.txcount_not_in">txCount_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.liquidity">liquidity</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.liquidity_not">liquidity_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.liquidity_gt">liquidity_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.liquidity_lt">liquidity_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.liquidity_gte">liquidity_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.liquidity_lte">liquidity_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.liquidity_in">liquidity_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.liquidity_not_in">liquidity_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.token0price">token0Price</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.token0price_not">token0Price_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.token0price_gt">token0Price_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.token0price_lt">token0Price_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.token0price_gte">token0Price_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.token0price_lte">token0Price_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.token0price_in">token0Price_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.token0price_not_in">token0Price_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.token1price">token1Price</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.token1price_not">token1Price_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.token1price_gt">token1Price_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.token1price_lt">token1Price_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.token1price_gte">token1Price_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.token1price_lte">token1Price_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.token1price_in">token1Price_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.token1price_not_in">token1Price_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.volumetoken0">volumeToken0</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.volumetoken0_not">volumeToken0_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.volumetoken0_gt">volumeToken0_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.volumetoken0_lt">volumeToken0_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.volumetoken0_gte">volumeToken0_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.volumetoken0_lte">volumeToken0_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.volumetoken0_in">volumeToken0_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.volumetoken0_not_in">volumeToken0_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.volumetoken1">volumeToken1</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.volumetoken1_not">volumeToken1_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.volumetoken1_gt">volumeToken1_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.volumetoken1_lt">volumeToken1_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.volumetoken1_gte">volumeToken1_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.volumetoken1_lte">volumeToken1_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.volumetoken1_in">volumeToken1_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.volumetoken1_not_in">volumeToken1_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.volumeusd">volumeUSD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.volumeusd_not">volumeUSD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.volumeusd_gt">volumeUSD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.volumeusd_lt">volumeUSD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.volumeusd_gte">volumeUSD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.volumeusd_lte">volumeUSD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.volumeusd_in">volumeUSD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.volumeusd_not_in">volumeUSD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.open">open</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.open_not">open_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.open_gt">open_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.open_lt">open_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.open_gte">open_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.open_lte">open_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.open_in">open_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.open_not_in">open_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.high">high</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.high_not">high_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.high_gt">high_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.high_lt">high_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.high_gte">high_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.high_lte">high_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.high_in">high_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.high_not_in">high_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.low">low</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.low_not">low_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.low_gt">low_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.low_lt">low_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.low_gte">low_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.low_lte">low_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.low_in">low_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.low_not_in">low_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.close">close</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.close_not">close_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.close_gt">close_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.close_lt">close_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.close_gte">close_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.close_lte">close_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.close_in">close_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.close_not_in">close_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.periodstartunix">periodStartUnix</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.periodstartunix_not">periodStartUnix_not</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.periodstartunix_gt">periodStartUnix_gt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.periodstartunix_lt">periodStartUnix_lt</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.periodstartunix_gte">periodStartUnix_gte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.periodstartunix_lte">periodStartUnix_lte</strong></td>
-<td valign="top"><a href="#int">Int</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.periodstartunix_in">periodStartUnix_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.periodstartunix_not_in">periodStartUnix_not_in</strong></td>
-<td valign="top">[<a href="#int">Int</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter._change_block">_change_block</strong></td>
-<td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
-<td>
-
-Filter for the block changed event.
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.and">and</strong></td>
-<td valign="top">[<a href="#poolhourdata_filter">PoolHourData_filter</a>]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="poolhourdata_filter.or">or</strong></td>
-<td valign="top">[<a href="#poolhourdata_filter">PoolHourData_filter</a>]</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-### Pool_filter
+### `Pool_filter` {#pool_filter}
 
 <table>
 <thead>
@@ -36321,496 +31540,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="pool_filter.txcount">txCount</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.txcount_not">txCount_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.txcount_gt">txCount_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.txcount_lt">txCount_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.txcount_gte">txCount_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.txcount_lte">txCount_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.txcount_in">txCount_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.txcount_not_in">txCount_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.liquidity">liquidity</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.liquidity_not">liquidity_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.liquidity_gt">liquidity_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.liquidity_lt">liquidity_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.liquidity_gte">liquidity_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.liquidity_lte">liquidity_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.liquidity_in">liquidity_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.liquidity_not_in">liquidity_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.sqrtprice">sqrtPrice</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.sqrtprice_not">sqrtPrice_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.sqrtprice_gt">sqrtPrice_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.sqrtprice_lt">sqrtPrice_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.sqrtprice_gte">sqrtPrice_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.sqrtprice_lte">sqrtPrice_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.sqrtprice_in">sqrtPrice_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.sqrtprice_not_in">sqrtPrice_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.tick">tick</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.tick_not">tick_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.tick_gt">tick_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.tick_lt">tick_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.tick_gte">tick_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.tick_lte">tick_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.tick_in">tick_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.tick_not_in">tick_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.ticklastupdatetimestamp">tickLastUpdateTimestamp</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.ticklastupdatetimestamp_not">tickLastUpdateTimestamp_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.ticklastupdatetimestamp_gt">tickLastUpdateTimestamp_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.ticklastupdatetimestamp_lt">tickLastUpdateTimestamp_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.ticklastupdatetimestamp_gte">tickLastUpdateTimestamp_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.ticklastupdatetimestamp_lte">tickLastUpdateTimestamp_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.ticklastupdatetimestamp_in">tickLastUpdateTimestamp_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.ticklastupdatetimestamp_not_in">tickLastUpdateTimestamp_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.ticklastupdateblocknumber">tickLastUpdateBlockNumber</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.ticklastupdateblocknumber_not">tickLastUpdateBlockNumber_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.ticklastupdateblocknumber_gt">tickLastUpdateBlockNumber_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.ticklastupdateblocknumber_lt">tickLastUpdateBlockNumber_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.ticklastupdateblocknumber_gte">tickLastUpdateBlockNumber_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.ticklastupdateblocknumber_lte">tickLastUpdateBlockNumber_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.ticklastupdateblocknumber_in">tickLastUpdateBlockNumber_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.ticklastupdateblocknumber_not_in">tickLastUpdateBlockNumber_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.poolhourdata_">poolHourData_</strong></td>
-<td valign="top"><a href="#poolhourdata_filter">PoolHourData_filter</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.pooldaydata_">poolDayData_</strong></td>
-<td valign="top"><a href="#pooldaydata_filter">PoolDayData_filter</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.token0price">token0Price</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.token0price_not">token0Price_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.token0price_gt">token0Price_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.token0price_lt">token0Price_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.token0price_gte">token0Price_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.token0price_lte">token0Price_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.token0price_in">token0Price_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.token0price_not_in">token0Price_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.token1price">token1Price</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.token1price_not">token1Price_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.token1price_gt">token1Price_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.token1price_lt">token1Price_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.token1price_gte">token1Price_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.token1price_lte">token1Price_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.token1price_in">token1Price_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.token1price_not_in">token1Price_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedtoken0">totalValueLockedToken0</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedtoken0_not">totalValueLockedToken0_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedtoken0_gt">totalValueLockedToken0_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedtoken0_lt">totalValueLockedToken0_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedtoken0_gte">totalValueLockedToken0_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedtoken0_lte">totalValueLockedToken0_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedtoken0_in">totalValueLockedToken0_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedtoken0_not_in">totalValueLockedToken0_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedtoken1">totalValueLockedToken1</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedtoken1_not">totalValueLockedToken1_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedtoken1_gt">totalValueLockedToken1_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedtoken1_lt">totalValueLockedToken1_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedtoken1_gte">totalValueLockedToken1_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedtoken1_lte">totalValueLockedToken1_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedtoken1_in">totalValueLockedToken1_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedtoken1_not_in">totalValueLockedToken1_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedeth">totalValueLockedETH</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedeth_not">totalValueLockedETH_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedeth_gt">totalValueLockedETH_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedeth_lt">totalValueLockedETH_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedeth_gte">totalValueLockedETH_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedeth_lte">totalValueLockedETH_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedeth_in">totalValueLockedETH_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedeth_not_in">totalValueLockedETH_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedusd">totalValueLockedUSD</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedusd_not">totalValueLockedUSD_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedusd_gt">totalValueLockedUSD_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedusd_lt">totalValueLockedUSD_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedusd_gte">totalValueLockedUSD_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedusd_lte">totalValueLockedUSD_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedusd_in">totalValueLockedUSD_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="pool_filter.totalvaluelockedusd_not_in">totalValueLockedUSD_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="pool_filter.minenforcedtick">minEnforcedTick</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
@@ -37022,7 +31751,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### PremiumSettled_filter
+### `PremiumSettled_filter` {#premiumsettled_filter}
 
 <table>
 <thead>
@@ -37430,6 +32159,106 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="premiumsettled_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled_filter.account">account</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled_filter.account_not">account_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled_filter.account_gt">account_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled_filter.account_lt">account_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled_filter.account_gte">account_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled_filter.account_lte">account_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled_filter.account_in">account_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled_filter.account_not_in">account_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled_filter.account_contains">account_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled_filter.account_contains_nocase">account_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled_filter.account_not_contains">account_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled_filter.account_not_contains_nocase">account_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled_filter.account_starts_with">account_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled_filter.account_starts_with_nocase">account_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled_filter.account_not_starts_with">account_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled_filter.account_not_starts_with_nocase">account_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled_filter.account_ends_with">account_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled_filter.account_ends_with_nocase">account_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled_filter.account_not_ends_with">account_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="premiumsettled_filter.account_not_ends_with_nocase">account_not_ends_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
@@ -38029,86 +32858,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount0ineth">settledAmount0InEth</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount0ineth_not">settledAmount0InEth_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount0ineth_gt">settledAmount0InEth_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount0ineth_lt">settledAmount0InEth_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount0ineth_gte">settledAmount0InEth_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount0ineth_lte">settledAmount0InEth_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount0ineth_in">settledAmount0InEth_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount0ineth_not_in">settledAmount0InEth_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount0inusd">settledAmount0InUsd</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount0inusd_not">settledAmount0InUsd_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount0inusd_gt">settledAmount0InUsd_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount0inusd_lt">settledAmount0InUsd_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount0inusd_gte">settledAmount0InUsd_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount0inusd_lte">settledAmount0InUsd_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount0inusd_in">settledAmount0InUsd_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount0inusd_not_in">settledAmount0InUsd_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount1">settledAmount1</strong></td>
 <td valign="top"><a href="#bigint">BigInt</a></td>
 <td></td>
@@ -38146,86 +32895,6 @@ Filter for the block changed event.
 <tr>
 <td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount1_not_in">settledAmount1_not_in</strong></td>
 <td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount1ineth">settledAmount1InEth</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount1ineth_not">settledAmount1InEth_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount1ineth_gt">settledAmount1InEth_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount1ineth_lt">settledAmount1InEth_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount1ineth_gte">settledAmount1InEth_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount1ineth_lte">settledAmount1InEth_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount1ineth_in">settledAmount1InEth_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount1ineth_not_in">settledAmount1InEth_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount1inusd">settledAmount1InUsd</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount1inusd_not">settledAmount1InUsd_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount1inusd_gt">settledAmount1InUsd_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount1inusd_lt">settledAmount1InUsd_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount1inusd_gte">settledAmount1InUsd_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount1inusd_lte">settledAmount1InUsd_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount1inusd_in">settledAmount1InUsd_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="premiumsettled_filter.settledamount1inusd_not_in">settledAmount1InUsd_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
 <td></td>
 </tr>
 <tr>
@@ -38395,7 +33064,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### ProtocolLossRealized_filter
+### `ProtocolLossRealized_filter` {#protocollossrealized_filter}
 
 <table>
 <thead>
@@ -38803,6 +33472,106 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="protocollossrealized_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.account">account</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.account_not">account_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.account_gt">account_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.account_lt">account_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.account_gte">account_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.account_lte">account_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.account_in">account_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.account_not_in">account_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.account_contains">account_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.account_contains_nocase">account_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.account_not_contains">account_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.account_not_contains_nocase">account_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.account_starts_with">account_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.account_starts_with_nocase">account_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.account_not_starts_with">account_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.account_not_starts_with_nocase">account_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.account_ends_with">account_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.account_ends_with_nocase">account_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.account_not_ends_with">account_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="protocollossrealized_filter.account_not_ends_with_nocase">account_not_ends_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
@@ -39488,7 +34257,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### RiskEngine_filter
+### `RiskEngine_filter` {#riskengine_filter}
 
 <table>
 <thead>
@@ -39561,7 +34330,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### TokenId_filter
+### `TokenId_filter` {#tokenid_filter}
 
 <table>
 <thead>
@@ -39919,7 +34688,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### Token_filter
+### `Token_filter` {#token_filter}
 
 <table>
 <thead>
@@ -40251,121 +35020,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="token_filter.txcount">txCount</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="token_filter.txcount_not">txCount_not</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="token_filter.txcount_gt">txCount_gt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="token_filter.txcount_lt">txCount_lt</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="token_filter.txcount_gte">txCount_gte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="token_filter.txcount_lte">txCount_lte</strong></td>
-<td valign="top"><a href="#bigint">BigInt</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="token_filter.txcount_in">txCount_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="token_filter.txcount_not_in">txCount_not_in</strong></td>
-<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="token_filter.derivedeth">derivedETH</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="token_filter.derivedeth_not">derivedETH_not</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="token_filter.derivedeth_gt">derivedETH_gt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="token_filter.derivedeth_lt">derivedETH_lt</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="token_filter.derivedeth_gte">derivedETH_gte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="token_filter.derivedeth_lte">derivedETH_lte</strong></td>
-<td valign="top"><a href="#bigdecimal">BigDecimal</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="token_filter.derivedeth_in">derivedETH_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="token_filter.derivedeth_not_in">derivedETH_not_in</strong></td>
-<td valign="top">[<a href="#bigdecimal">BigDecimal</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="token_filter.whitelistpools">whitelistPools</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="token_filter.whitelistpools_not">whitelistPools_not</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="token_filter.whitelistpools_contains">whitelistPools_contains</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="token_filter.whitelistpools_contains_nocase">whitelistPools_contains_nocase</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="token_filter.whitelistpools_not_contains">whitelistPools_not_contains</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="token_filter.whitelistpools_not_contains_nocase">whitelistPools_not_contains_nocase</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="token_filter.whitelistpools_">whitelistPools_</strong></td>
-<td valign="top"><a href="#pool_filter">Pool_filter</a></td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="token_filter._change_block">_change_block</strong></td>
 <td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
 <td>
@@ -40387,7 +35041,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### TokenizedPositionBurnt_filter
+### `TokenizedPositionBurnt_filter` {#tokenizedpositionburnt_filter}
 
 <table>
 <thead>
@@ -40795,6 +35449,106 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.account">account</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.account_not">account_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.account_gt">account_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.account_lt">account_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.account_gte">account_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.account_lte">account_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.account_in">account_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.account_not_in">account_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.account_contains">account_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.account_contains_nocase">account_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.account_not_contains">account_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.account_not_contains_nocase">account_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.account_starts_with">account_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.account_starts_with_nocase">account_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.account_not_starts_with">account_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.account_not_starts_with_nocase">account_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.account_ends_with">account_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.account_ends_with_nocase">account_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.account_not_ends_with">account_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionburnt_filter.account_not_ends_with_nocase">account_not_ends_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
@@ -41375,7 +36129,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### TokenizedPositionMinted_filter
+### `TokenizedPositionMinted_filter` {#tokenizedpositionminted_filter}
 
 <table>
 <thead>
@@ -41783,6 +36537,106 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.account">account</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.account_not">account_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.account_gt">account_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.account_lt">account_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.account_gte">account_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.account_lte">account_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.account_in">account_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.account_not_in">account_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.account_contains">account_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.account_contains_nocase">account_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.account_not_contains">account_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.account_not_contains_nocase">account_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.account_starts_with">account_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.account_starts_with_nocase">account_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.account_not_starts_with">account_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.account_not_starts_with_nocase">account_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.account_ends_with">account_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.account_ends_with_nocase">account_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.account_not_ends_with">account_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokenizedpositionminted_filter.account_not_ends_with_nocase">account_not_ends_with_nocase</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
 </tr>
@@ -42363,7 +37217,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### TokensCollected_filter
+### `TokensCollected_filter` {#tokenscollected_filter}
 
 <table>
 <thead>
@@ -42935,111 +37789,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool">pool</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_not">pool_not</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_gt">pool_gt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_lt">pool_lt</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_gte">pool_gte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_lte">pool_lte</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_in">pool_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_not_in">pool_not_in</strong></td>
-<td valign="top">[<a href="#string">String</a>!]</td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_contains">pool_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_contains_nocase">pool_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_not_contains">pool_not_contains</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_not_contains_nocase">pool_not_contains_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_starts_with">pool_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_starts_with_nocase">pool_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_not_starts_with">pool_not_starts_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_not_starts_with_nocase">pool_not_starts_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_ends_with">pool_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_ends_with_nocase">pool_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_not_ends_with">pool_not_ends_with</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_not_ends_with_nocase">pool_not_ends_with_nocase</strong></td>
-<td valign="top"><a href="#string">String</a></td>
-<td></td>
-</tr>
-<tr>
-<td colspan="2" valign="top"><strong id="tokenscollected_filter.pool_">pool_</strong></td>
-<td valign="top"><a href="#pool_filter">Pool_filter</a></td>
-<td></td>
-</tr>
-<tr>
 <td colspan="2" valign="top"><strong id="tokenscollected_filter.riskengine">riskEngine</strong></td>
 <td valign="top"><a href="#string">String</a></td>
 <td></td>
@@ -43306,9 +38055,847 @@ Filter for the block changed event.
 </tbody>
 </table>
 
+### `TokensSwept_filter` {#tokensswept_filter}
+
+<table>
+<thead>
+<tr>
+<th colspan="2" align="left">Field</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.id">id</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.id_not">id_not</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.id_gt">id_gt</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.id_lt">id_lt</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.id_gte">id_gte</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.id_lte">id_lte</strong></td>
+<td valign="top"><a href="#id">ID</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.id_in">id_in</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.id_not_in">id_not_in</strong></td>
+<td valign="top">[<a href="#id">ID</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.hash">hash</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.hash_not">hash_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.hash_gt">hash_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.hash_lt">hash_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.hash_gte">hash_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.hash_lte">hash_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.hash_in">hash_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.hash_not_in">hash_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.hash_contains">hash_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.hash_contains_nocase">hash_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.hash_not_contains">hash_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.hash_not_contains_nocase">hash_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.hash_starts_with">hash_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.hash_starts_with_nocase">hash_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.hash_not_starts_with">hash_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.hash_not_starts_with_nocase">hash_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.hash_ends_with">hash_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.hash_ends_with_nocase">hash_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.hash_not_ends_with">hash_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.hash_not_ends_with_nocase">hash_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.logindex">logIndex</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.logindex_not">logIndex_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.logindex_gt">logIndex_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.logindex_lt">logIndex_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.logindex_gte">logIndex_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.logindex_lte">logIndex_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.logindex_in">logIndex_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.logindex_not_in">logIndex_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.eventtype">eventType</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.eventtype_not">eventType_not</strong></td>
+<td valign="top"><a href="#eventtype">EventType</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.eventtype_in">eventType_in</strong></td>
+<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.eventtype_not_in">eventType_not_in</strong></td>
+<td valign="top">[<a href="#eventtype">EventType</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.from">from</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.from_not">from_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.from_gt">from_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.from_lt">from_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.from_gte">from_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.from_lte">from_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.from_in">from_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.from_not_in">from_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.from_contains">from_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.from_contains_nocase">from_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.from_not_contains">from_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.from_not_contains_nocase">from_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.from_starts_with">from_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.from_starts_with_nocase">from_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.from_not_starts_with">from_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.from_not_starts_with_nocase">from_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.from_ends_with">from_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.from_ends_with_nocase">from_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.from_not_ends_with">from_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.from_not_ends_with_nocase">from_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.to">to</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.to_not">to_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.to_gt">to_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.to_lt">to_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.to_gte">to_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.to_lte">to_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.to_in">to_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.to_not_in">to_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.to_contains">to_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.to_contains_nocase">to_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.to_not_contains">to_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.to_not_contains_nocase">to_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.to_starts_with">to_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.to_starts_with_nocase">to_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.to_not_starts_with">to_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.to_not_starts_with_nocase">to_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.to_ends_with">to_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.to_ends_with_nocase">to_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.to_not_ends_with">to_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.to_not_ends_with_nocase">to_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.blocknumber">blockNumber</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.blocknumber_not">blockNumber_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.blocknumber_gt">blockNumber_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.blocknumber_lt">blockNumber_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.blocknumber_gte">blockNumber_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.blocknumber_lte">blockNumber_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.blocknumber_in">blockNumber_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.blocknumber_not_in">blockNumber_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.timestamp">timestamp</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.timestamp_not">timestamp_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.timestamp_gt">timestamp_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.timestamp_lt">timestamp_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.timestamp_gte">timestamp_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.timestamp_lte">timestamp_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.timestamp_in">timestamp_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.timestamp_not_in">timestamp_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.gasused">gasUsed</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.gasused_not">gasUsed_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.gasused_gt">gasUsed_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.gasused_lt">gasUsed_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.gasused_gte">gasUsed_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.gasused_lte">gasUsed_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.gasused_in">gasUsed_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.gasused_not_in">gasUsed_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.gasprice">gasPrice</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.gasprice_not">gasPrice_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.gasprice_gt">gasPrice_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.gasprice_lt">gasPrice_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.gasprice_gte">gasPrice_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.gasprice_lte">gasPrice_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.gasprice_in">gasPrice_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.gasprice_not_in">gasPrice_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.builderwallet">builderWallet</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.builderwallet_not">builderWallet_not</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.builderwallet_gt">builderWallet_gt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.builderwallet_lt">builderWallet_lt</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.builderwallet_gte">builderWallet_gte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.builderwallet_lte">builderWallet_lte</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.builderwallet_in">builderWallet_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.builderwallet_not_in">builderWallet_not_in</strong></td>
+<td valign="top">[<a href="#string">String</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.builderwallet_contains">builderWallet_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.builderwallet_contains_nocase">builderWallet_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.builderwallet_not_contains">builderWallet_not_contains</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.builderwallet_not_contains_nocase">builderWallet_not_contains_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.builderwallet_starts_with">builderWallet_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.builderwallet_starts_with_nocase">builderWallet_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.builderwallet_not_starts_with">builderWallet_not_starts_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.builderwallet_not_starts_with_nocase">builderWallet_not_starts_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.builderwallet_ends_with">builderWallet_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.builderwallet_ends_with_nocase">builderWallet_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.builderwallet_not_ends_with">builderWallet_not_ends_with</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.builderwallet_not_ends_with_nocase">builderWallet_not_ends_with_nocase</strong></td>
+<td valign="top"><a href="#string">String</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.builderwallet_">builderWallet_</strong></td>
+<td valign="top"><a href="#builderwallet_filter">BuilderWallet_filter</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.token">token</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.token_not">token_not</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.token_gt">token_gt</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.token_lt">token_lt</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.token_gte">token_gte</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.token_lte">token_lte</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.token_in">token_in</strong></td>
+<td valign="top">[<a href="#bytes">Bytes</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.token_not_in">token_not_in</strong></td>
+<td valign="top">[<a href="#bytes">Bytes</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.token_contains">token_contains</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.token_not_contains">token_not_contains</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.sweepto">sweepTo</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.sweepto_not">sweepTo_not</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.sweepto_gt">sweepTo_gt</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.sweepto_lt">sweepTo_lt</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.sweepto_gte">sweepTo_gte</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.sweepto_lte">sweepTo_lte</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.sweepto_in">sweepTo_in</strong></td>
+<td valign="top">[<a href="#bytes">Bytes</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.sweepto_not_in">sweepTo_not_in</strong></td>
+<td valign="top">[<a href="#bytes">Bytes</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.sweepto_contains">sweepTo_contains</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.sweepto_not_contains">sweepTo_not_contains</strong></td>
+<td valign="top"><a href="#bytes">Bytes</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.amount">amount</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.amount_not">amount_not</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.amount_gt">amount_gt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.amount_lt">amount_lt</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.amount_gte">amount_gte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.amount_lte">amount_lte</strong></td>
+<td valign="top"><a href="#bigint">BigInt</a></td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.amount_in">amount_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.amount_not_in">amount_not_in</strong></td>
+<td valign="top">[<a href="#bigint">BigInt</a>!]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter._change_block">_change_block</strong></td>
+<td valign="top"><a href="#blockchangedfilter">BlockChangedFilter</a></td>
+<td>
+
+Filter for the block changed event.
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.and">and</strong></td>
+<td valign="top">[<a href="#tokensswept_filter">TokensSwept_filter</a>]</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="tokensswept_filter.or">or</strong></td>
+<td valign="top">[<a href="#tokensswept_filter">TokensSwept_filter</a>]</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
 ## Enums
 
-### AccountBalance_orderBy
+### `AccountBalance_orderBy` {#accountbalance_orderby}
 
 <table>
 <thead>
@@ -43355,10 +38942,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>legLiquidities</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>tokenCount</strong></td>
 <td></td>
 </tr>
@@ -43391,15 +38974,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPoolAccount__commissions0Usd</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPoolAccount__commissions1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPoolAccount__commissions1Usd</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -43407,23 +38982,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>premiaSettled0InEthTotal</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>premiaSettled0InUsdTotal</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>premiaSettled1Total</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>premiaSettled1InEthTotal</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>premiaSettled1InUsdTotal</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -43452,54 +39011,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>underlyingPool__tickSpacing</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>underlyingPool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>underlyingPool__liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>underlyingPool__sqrtPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>underlyingPool__tick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>underlyingPool__tickLastUpdateTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>underlyingPool__tickLastUpdateBlockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>underlyingPool__token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>underlyingPool__token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>underlyingPool__totalValueLockedToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>underlyingPool__totalValueLockedToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>underlyingPool__totalValueLockedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>underlyingPool__totalValueLockedUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -43532,6 +39043,10 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>txnOpened__to</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>txnOpened__account</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -43579,6 +39094,10 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>txnClosed__account</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>txnClosed__blockNumber</strong></td>
 <td></td>
 </tr>
@@ -43617,7 +39136,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### AccountLiquidated_orderBy
+### `AccountLiquidated_orderBy` {#accountliquidated_orderby}
 
 <table>
 <thead>
@@ -43649,6 +39168,10 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>to</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>account</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -43693,54 +39216,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>pool__tickSpacing</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__sqrtPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -43780,10 +39255,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>liquidationBonusUSD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>tickAt</strong></td>
 <td></td>
 </tr>
@@ -43793,10 +39264,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>panopticPool__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__txCount</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -43816,15 +39283,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__mintVolume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__burnVolume0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__burnVolume0USD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -43832,15 +39291,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__totalVolume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__mintVolume1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__mintVolume1USD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -43848,19 +39299,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__burnVolume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__totalVolume1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__totalVolume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__totalVolumeUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -43868,19 +39307,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__commissions0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__commissions1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__commissions1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__commissionsUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -43902,7 +39329,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### Account_orderBy
+### `Account_orderBy` {#account_orderby}
 
 <table>
 <thead>
@@ -43927,7 +39354,38 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### Aggregation_interval
+### `Aggregation_current` {#aggregation_current}
+
+Indicates whether the current, partially filled bucket should be included in the response. Defaults to `exclude`
+
+<table>
+<thead>
+<tr>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><strong>exclude</strong></td>
+<td>
+
+Exclude the current, partially filled bucket from the response
+
+</td>
+</tr>
+<tr>
+<td valign="top"><strong>include</strong></td>
+<td>
+
+Include the current, partially filled bucket in the response
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### `Aggregation_interval` {#aggregation_interval}
 
 <table>
 <thead>
@@ -43948,7 +39406,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### BaseEvent_orderBy
+### `BaseEvent_orderBy` {#baseevent_orderby}
 
 <table>
 <thead>
@@ -44001,7 +39459,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### BorrowRateUpdated_orderBy
+### `BorrowRateUpdated_orderBy` {#borrowrateupdated_orderby}
 
 <table>
 <thead>
@@ -44049,90 +39507,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>gasPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__isV4Pool</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__hooks</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__poolId</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__feeTier</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickSpacing</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__sqrtPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__minEnforcedTick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -44158,7 +39532,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### BuilderDeployed_orderBy
+### `BuilderDeployed_orderBy` {#builderdeployed_orderby}
 
 <table>
 <thead>
@@ -44206,90 +39580,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>gasPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__isV4Pool</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__hooks</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__poolId</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__feeTier</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickSpacing</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__sqrtPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__minEnforcedTick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -44327,7 +39617,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### BuilderFactory_orderBy
+### `BuilderFactory_orderBy` {#builderfactory_orderby}
 
 <table>
 <thead>
@@ -44368,7 +39658,88 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### BuilderWallet_orderBy
+### `BuilderWalletInitialized_orderBy` {#builderwalletinitialized_orderby}
+
+<table>
+<thead>
+<tr>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><strong>id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>hash</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>logIndex</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>eventType</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>from</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>to</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>blockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>timestamp</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>gasUsed</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>gasPrice</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>builderWallet</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>builderWallet__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>builderWallet__builderCode</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>builderWallet__builderAdmin</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>builderWallet__createdTimestamp</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>builderWallet__createdBlockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>builderAdmin</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### `BuilderWallet_orderBy` {#builderwallet_orderby}
 
 <table>
 <thead>
@@ -44421,257 +39792,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### Bundle_orderBy
-
-<table>
-<thead>
-<tr>
-<th align="left">Value</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td valign="top"><strong>id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>ethPriceUSD</strong></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-### Burn_orderBy
-
-<table>
-<thead>
-<tr>
-<th align="left">Value</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td valign="top"><strong>id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>hash</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>logIndex</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>eventType</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>from</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>to</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>blockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>timestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>gasUsed</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>gasPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__isV4Pool</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__hooks</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__poolId</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__feeTier</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickSpacing</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__sqrtPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__minEnforcedTick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>owner</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>owner__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>tickLower</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>tickUpper</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>amount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>amount0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>amount1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token0__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token0__decimals</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token0__name</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token0__symbol</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token0__totalSupply</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token0__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token0__derivedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token1__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token1__decimals</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token1__name</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token1__symbol</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token1__totalSupply</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token1__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token1__derivedETH</strong></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-### Chunk_orderBy
+### `Chunk_orderBy` {#chunk_orderby}
 
 <table>
 <thead>
@@ -44750,54 +39871,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>pool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__sqrtPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>pool__minEnforcedTick</strong></td>
 <td></td>
 </tr>
@@ -44811,10 +39884,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>panopticPool__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__txCount</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -44834,15 +39903,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__mintVolume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__burnVolume0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__burnVolume0USD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -44850,15 +39911,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__totalVolume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__mintVolume1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__mintVolume1USD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -44866,19 +39919,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__burnVolume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__totalVolume1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__totalVolume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__totalVolumeUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -44886,19 +39927,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__commissions0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__commissions1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__commissions1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__commissionsUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -44940,7 +39969,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### CollateralDayData_orderBy
+### `CollateralDayData_orderBy` {#collateraldaydata_orderby}
 
 <table>
 <thead>
@@ -44971,7 +40000,19 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__totalDonations</strong></td>
+<td valign="top"><strong>collateral__totalAssets</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__conversionTotalSupply</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__conversionStateBlockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__conversionStateTimestamp</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -44995,10 +40036,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__totalProtocolLossRealizedUSD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>collateral__poolUtilization</strong></td>
 <td></td>
 </tr>
@@ -45014,10 +40051,26 @@ Filter for the block changed event.
 <td valign="top"><strong>totalShares</strong></td>
 <td></td>
 </tr>
+<tr>
+<td valign="top"><strong>totalAssets</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>conversionTotalSupply</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>conversionStateBlockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>conversionStateTimestamp</strong></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
-### CollateralDeposit_orderBy
+### `CollateralDeposit_orderBy` {#collateraldeposit_orderby}
 
 <table>
 <thead>
@@ -45049,6 +40102,10 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>to</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>account</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -45093,54 +40150,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>pool__tickSpacing</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__sqrtPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -45192,7 +40201,19 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__totalDonations</strong></td>
+<td valign="top"><strong>collateral__totalAssets</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__conversionTotalSupply</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__conversionStateBlockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__conversionStateTimestamp</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -45216,10 +40237,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__totalProtocolLossRealizedUSD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>collateral__poolUtilization</strong></td>
 <td></td>
 </tr>
@@ -45232,21 +40249,13 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>tokenDerivedEthAtDeposit</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>ethPriceUSDAtDeposit</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticVersion</strong></td>
 <td></td>
 </tr>
 </tbody>
 </table>
 
-### CollateralWithdraw_orderBy
+### `CollateralWithdraw_orderBy` {#collateralwithdraw_orderby}
 
 <table>
 <thead>
@@ -45278,6 +40287,10 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>to</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>account</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -45322,54 +40335,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>pool__tickSpacing</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__sqrtPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -45429,7 +40394,19 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__totalDonations</strong></td>
+<td valign="top"><strong>collateral__totalAssets</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__conversionTotalSupply</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__conversionStateBlockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__conversionStateTimestamp</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -45453,10 +40430,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__totalProtocolLossRealizedUSD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>collateral__poolUtilization</strong></td>
 <td></td>
 </tr>
@@ -45469,21 +40442,13 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>tokenDerivedEthAtWithdraw</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>ethPriceUSDAtWithdraw</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticVersion</strong></td>
 <td></td>
 </tr>
 </tbody>
 </table>
 
-### Collateral_orderBy
+### `Collateral_orderBy` {#collateral_orderby}
 
 <table>
 <thead>
@@ -45526,19 +40491,23 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>token__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token__derivedETH</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>totalShares</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>totalDonations</strong></td>
+<td valign="top"><strong>totalAssets</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>conversionTotalSupply</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>conversionStateBlockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>conversionStateTimestamp</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -45562,10 +40531,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>totalProtocolLossRealizedUSD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>poolUtilization</strong></td>
 <td></td>
 </tr>
@@ -45575,10 +40540,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>panopticPool__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__txCount</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -45598,15 +40559,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__mintVolume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__burnVolume0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__burnVolume0USD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -45614,15 +40567,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__totalVolume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__mintVolume1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__mintVolume1USD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -45630,19 +40575,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__burnVolume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__totalVolume1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__totalVolume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__totalVolumeUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -45650,19 +40583,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__commissions0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__commissions1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__commissions1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__commissionsUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -45684,7 +40605,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### Collect_orderBy
+### `CommissionPaid_orderBy` {#commissionpaid_orderby}
 
 <table>
 <thead>
@@ -45716,6 +40637,10 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>to</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>account</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -45760,223 +40685,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>pool__tickSpacing</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__sqrtPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__minEnforcedTick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>owner</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>owner__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>recipient</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>recipient__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>tickLower</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>tickUpper</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>amount0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>amount1</strong></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-### CommissionPaid_orderBy
-
-<table>
-<thead>
-<tr>
-<th align="left">Value</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td valign="top"><strong>id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>hash</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>logIndex</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>eventType</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>from</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>to</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>blockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>timestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>gasUsed</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>gasPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__isV4Pool</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__hooks</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__poolId</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__feeTier</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickSpacing</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__sqrtPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -46024,7 +40732,19 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__totalDonations</strong></td>
+<td valign="top"><strong>collateral__totalAssets</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__conversionTotalSupply</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__conversionStateBlockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__conversionStateTimestamp</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -46048,10 +40768,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__totalProtocolLossRealizedUSD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>collateral__poolUtilization</strong></td>
 <td></td>
 </tr>
@@ -46059,211 +40775,178 @@ Filter for the block changed event.
 <td valign="top"><strong>collateral__index</strong></td>
 <td></td>
 </tr>
-</tbody>
-</table>
-
-### Donate_orderBy
-
-<table>
-<thead>
 <tr>
-<th align="left">Value</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td valign="top"><strong>id</strong></td>
+<td valign="top"><strong>optionMint</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>hash</strong></td>
+<td valign="top"><strong>optionMint__id</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>logIndex</strong></td>
+<td valign="top"><strong>optionMint__hash</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>eventType</strong></td>
+<td valign="top"><strong>optionMint__logIndex</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>from</strong></td>
+<td valign="top"><strong>optionMint__eventType</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>to</strong></td>
+<td valign="top"><strong>optionMint__from</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>blockNumber</strong></td>
+<td valign="top"><strong>optionMint__to</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>timestamp</strong></td>
+<td valign="top"><strong>optionMint__account</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>gasUsed</strong></td>
+<td valign="top"><strong>optionMint__blockNumber</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>gasPrice</strong></td>
+<td valign="top"><strong>optionMint__timestamp</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>pool</strong></td>
+<td valign="top"><strong>optionMint__gasUsed</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>pool__id</strong></td>
+<td valign="top"><strong>optionMint__gasPrice</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>pool__isV4Pool</strong></td>
+<td valign="top"><strong>optionMint__positionSize</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>pool__hooks</strong></td>
+<td valign="top"><strong>optionMint__poolUtilization0</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>pool__poolId</strong></td>
+<td valign="top"><strong>optionMint__poolUtilization1</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>pool__feeTier</strong></td>
+<td valign="top"><strong>optionMint__shares0</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>pool__tickSpacing</strong></td>
+<td valign="top"><strong>optionMint__shares1</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>pool__txCount</strong></td>
+<td valign="top"><strong>optionMint__tickAt</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>pool__liquidity</strong></td>
+<td valign="top"><strong>optionMint__timestampAtMint</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>pool__sqrtPrice</strong></td>
+<td valign="top"><strong>optionMint__blockAtMint</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>pool__tick</strong></td>
+<td valign="top"><strong>optionMint__swapAtMint</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
+<td valign="top"><strong>optionMint__panopticVersion</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
+<td valign="top"><strong>optionBurn</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>pool__token0Price</strong></td>
+<td valign="top"><strong>optionBurn__id</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>pool__token1Price</strong></td>
+<td valign="top"><strong>optionBurn__hash</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
+<td valign="top"><strong>optionBurn__logIndex</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
+<td valign="top"><strong>optionBurn__eventType</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
+<td valign="top"><strong>optionBurn__from</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
+<td valign="top"><strong>optionBurn__to</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>pool__minEnforcedTick</strong></td>
+<td valign="top"><strong>optionBurn__account</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
+<td valign="top"><strong>optionBurn__blockNumber</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>sender</strong></td>
+<td valign="top"><strong>optionBurn__timestamp</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>sender__id</strong></td>
+<td valign="top"><strong>optionBurn__gasUsed</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>shares</strong></td>
+<td valign="top"><strong>optionBurn__gasPrice</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral</strong></td>
+<td valign="top"><strong>optionBurn__positionSize</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__id</strong></td>
+<td valign="top"><strong>optionBurn__tickAt</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__panopticVersion</strong></td>
+<td valign="top"><strong>optionBurn__premium0</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__totalShares</strong></td>
+<td valign="top"><strong>optionBurn__premium1</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__totalDonations</strong></td>
+<td valign="top"><strong>optionBurn__panopticVersion</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__totalPLPCommissions</strong></td>
+<td valign="top"><strong>optionBurn__shares0</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__totalProtocolCommissions</strong></td>
+<td valign="top"><strong>optionBurn__shares1</strong></td>
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__commissionPaidBuilder</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>collateral__totalInsolvencyPenalties</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>collateral__totalProtocolLossRealized</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>collateral__totalProtocolLossRealizedUSD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>collateral__poolUtilization</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>collateral__index</strong></td>
+<td valign="top"><strong>panopticVersion</strong></td>
 <td></td>
 </tr>
 </tbody>
 </table>
 
-### EventType
+### `EventType` {#eventtype}
 
 <table>
 <thead>
@@ -46277,7 +40960,7 @@ Filter for the block changed event.
 <td valign="top"><strong>Mint</strong></td>
 <td>
 
- Uniswap liquidity mint 
+ Uniswap liquidity mint
 
 </td>
 </tr>
@@ -46285,7 +40968,7 @@ Filter for the block changed event.
 <td valign="top"><strong>Burn</strong></td>
 <td>
 
- Uniswap liquidity burn 
+ Uniswap liquidity burn
 
 </td>
 </tr>
@@ -46293,7 +40976,7 @@ Filter for the block changed event.
 <td valign="top"><strong>Collect</strong></td>
 <td>
 
- Uniswap collect 
+ Uniswap collect
 
 </td>
 </tr>
@@ -46301,7 +40984,7 @@ Filter for the block changed event.
 <td valign="top"><strong>TokenizedPositionBurnt</strong></td>
 <td>
 
- SFPM tokenized position burn 
+ SFPM tokenized position burn
 
 </td>
 </tr>
@@ -46309,7 +40992,7 @@ Filter for the block changed event.
 <td valign="top"><strong>TokenizedPositionMinted</strong></td>
 <td>
 
- SFPM tokenized position mint 
+ SFPM tokenized position mint
 
 </td>
 </tr>
@@ -46317,7 +41000,7 @@ Filter for the block changed event.
 <td valign="top"><strong>TokenizedPositionRolled</strong></td>
 <td>
 
- SFPM tokenized position roll 
+ SFPM tokenized position roll
 
 </td>
 </tr>
@@ -46325,7 +41008,7 @@ Filter for the block changed event.
 <td valign="top"><strong>Deposit</strong></td>
 <td>
 
- Collateral deposit (PLP liquidity deposit) 
+ Collateral deposit (PLP liquidity deposit)
 
 </td>
 </tr>
@@ -46333,7 +41016,7 @@ Filter for the block changed event.
 <td valign="top"><strong>Withdraw</strong></td>
 <td>
 
- Collateral deposit (PLP liquidity withdrawal) 
+ Collateral deposit (PLP liquidity withdrawal)
 
 </td>
 </tr>
@@ -46341,7 +41024,7 @@ Filter for the block changed event.
 <td valign="top"><strong>OptionMint</strong></td>
 <td>
 
- Panoption mint / position open 
+ Panoption mint / position open
 
 </td>
 </tr>
@@ -46349,7 +41032,7 @@ Filter for the block changed event.
 <td valign="top"><strong>OptionBurn</strong></td>
 <td>
 
- Panoption burn / position close 
+ Panoption burn / position close
 
 </td>
 </tr>
@@ -46357,7 +41040,7 @@ Filter for the block changed event.
 <td valign="top"><strong>OptionRoll</strong></td>
 <td>
 
- Panoption roll 
+ Panoption roll
 
 </td>
 </tr>
@@ -46365,7 +41048,7 @@ Filter for the block changed event.
 <td valign="top"><strong>AccountLiquidated</strong></td>
 <td>
 
- Liquidation of a distressed PanopticPoolAccount. All of the distressed account's positions in a specific PanopticPool get closed and the liquidator receives a bonus. 
+ Liquidation of a distressed PanopticPoolAccount. All of the distressed account's positions in a specific PanopticPool get closed and the liquidator receives a bonus.
 
 </td>
 </tr>
@@ -46373,7 +41056,7 @@ Filter for the block changed event.
 <td valign="top"><strong>ForcedExercised</strong></td>
 <td>
 
- Force the exercise of a single position. Exercisor will have to pay a fee to the force exercisee. 
+ Force the exercise of a single position. Exercisor will have to pay a fee to the force exercisee.
 
 </td>
 </tr>
@@ -46389,7 +41072,7 @@ Filter for the block changed event.
 <td valign="top"><strong>BorrowRateUpdated</strong></td>
 <td>
 
- Borrow rate was updated for a collateral token 
+ Borrow rate was updated for a collateral token
 
 </td>
 </tr>
@@ -46397,7 +41080,7 @@ Filter for the block changed event.
 <td valign="top"><strong>TokensCollected</strong></td>
 <td>
 
- Tokens were collected from the RiskEngine contract 
+ Tokens were collected from the RiskEngine contract
 
 </td>
 </tr>
@@ -46405,7 +41088,7 @@ Filter for the block changed event.
 <td valign="top"><strong>GuardianSafeModeUpdated</strong></td>
 <td>
 
- Guardian updated the safe mode lock status 
+ Guardian updated the safe mode lock status
 
 </td>
 </tr>
@@ -46413,7 +41096,23 @@ Filter for the block changed event.
 <td valign="top"><strong>BuilderDeployed</strong></td>
 <td>
 
- A new builder wallet was deployed 
+ A new builder wallet was deployed
+
+</td>
+</tr>
+<tr>
+<td valign="top"><strong>BuilderWalletInitialized</strong></td>
+<td>
+
+ A builder wallet was initialized
+
+</td>
+</tr>
+<tr>
+<td valign="top"><strong>TokensSwept</strong></td>
+<td>
+
+ Tokens were swept from a builder wallet
 
 </td>
 </tr>
@@ -46421,7 +41120,7 @@ Filter for the block changed event.
 <td valign="top"><strong>ProtocolLossRealized</strong></td>
 <td>
 
- Protocol loss was realized during liquidation 
+ Protocol loss was realized during liquidation
 
 </td>
 </tr>
@@ -46429,7 +41128,7 @@ Filter for the block changed event.
 <td valign="top"><strong>CommissionPaid</strong></td>
 <td>
 
- Collateral commission paid - Emitted when a commission is paid. 
+ Commission paid to a builder or protocol
 
 </td>
 </tr>
@@ -46437,14 +41136,14 @@ Filter for the block changed event.
 <td valign="top"><strong>InsolvencyPenaltyApplied</strong></td>
 <td>
 
- Collateral insolvency penalty - Emitted when a user attempts to settle interest but lacks sufficient shares to pay in full. 
+ Insolvency penalty applied during liquidation
 
 </td>
 </tr>
 </tbody>
 </table>
 
-### Event_orderBy
+### `Event_orderBy` {#event_orderby}
 
 <table>
 <thead>
@@ -46472,6 +41171,10 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>to</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>account</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -46520,54 +41223,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>pool__tickSpacing</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__sqrtPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -46581,36 +41236,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### Factory_orderBy
-
-<table>
-<thead>
-<tr>
-<th align="left">Value</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td valign="top"><strong>id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>poolCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>owner</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>opBackfilled</strong></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-### ForcedExercise_orderBy
+### `ForcedExercise_orderBy` {#forcedexercise_orderby}
 
 <table>
 <thead>
@@ -46642,6 +41268,10 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>to</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>account</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -46686,54 +41316,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>pool__tickSpacing</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__sqrtPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -46777,10 +41359,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>exerciseFeeUSD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>tickAt</strong></td>
 <td></td>
 </tr>
@@ -46790,10 +41368,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>panopticPool__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__txCount</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -46813,15 +41387,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__mintVolume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__burnVolume0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__burnVolume0USD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -46829,15 +41395,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__totalVolume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__mintVolume1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__mintVolume1USD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -46845,19 +41403,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__burnVolume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__totalVolume1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__totalVolume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__totalVolumeUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -46865,19 +41411,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__commissions0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__commissions1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__commissions1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__commissionsUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -46917,6 +41451,10 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>optionBurn__account</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>optionBurn__blockNumber</strong></td>
 <td></td>
 </tr>
@@ -46953,31 +41491,11 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>optionBurn__volume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>optionBurn__volume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>optionBurn__shares0</strong></td>
 <td></td>
 </tr>
 <tr>
 <td valign="top"><strong>optionBurn__shares1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>optionBurn__ethPriceUSDAtBurn</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>optionBurn__token0DerivedEthAtBurn</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>optionBurn__token1DerivedEthAtBurn</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -46987,7 +41505,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### GuardianSafeModeUpdated_orderBy
+### `GuardianSafeModeUpdated_orderBy` {#guardiansafemodeupdated_orderby}
 
 <table>
 <thead>
@@ -47052,7 +41570,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### InsolvencyPenaltyApplied_orderBy
+### `InsolvencyPenaltyApplied_orderBy` {#insolvencypenaltyapplied_orderby}
 
 <table>
 <thead>
@@ -47084,6 +41602,10 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>to</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>account</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -47131,54 +41653,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>pool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__sqrtPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>pool__minEnforcedTick</strong></td>
 <td></td>
 </tr>
@@ -47223,7 +41697,19 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__totalDonations</strong></td>
+<td valign="top"><strong>collateral__totalAssets</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__conversionTotalSupply</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__conversionStateBlockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__conversionStateTimestamp</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -47247,10 +41733,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__totalProtocolLossRealizedUSD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>collateral__poolUtilization</strong></td>
 <td></td>
 </tr>
@@ -47261,128 +41743,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### LegLiquidities_orderBy
-
-<table>
-<thead>
-<tr>
-<th align="left">Value</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td valign="top"><strong>id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>leg</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>leg__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>leg__index</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>leg__idHexString</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>leg__optionRatio</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>leg__asset</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>leg__tokenType</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>leg__isLong</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>leg__riskPartner</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>leg__strike</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>leg__width</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>leg__legCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>chunk</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>chunk__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>chunk__tickLower</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>chunk__tickUpper</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>chunk__strike</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>chunk__width</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>chunk__tokenType</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>chunk__netLiquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>chunk__shortLiquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>chunk__longLiquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>chunk__shortCounts</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>chunk__longCounts</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>chunk__totalLiquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>liquidity</strong></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-### Leg_orderBy
+### `Leg_orderBy` {#leg_orderby}
 
 <table>
 <thead>
@@ -47430,54 +41791,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>pool__tickSpacing</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__sqrtPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -47579,7 +41892,7 @@ Filter for the block changed event.
 </tbody>
 </table>
 
-### Mint_orderBy
+### `OptionBurn_orderBy` {#optionburn_orderby}
 
 <table>
 <thead>
@@ -47611,6 +41924,10 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>to</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>account</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -47655,291 +41972,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>pool__tickSpacing</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__sqrtPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__minEnforcedTick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>sender</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>sender__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>owner</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>owner__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>tickLower</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>tickUpper</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>amount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>amount0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>amount1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token0__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token0__decimals</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token0__name</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token0__symbol</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token0__totalSupply</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token0__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token0__derivedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token1__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token1__decimals</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token1__name</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token1__symbol</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token1__totalSupply</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token1__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token1__derivedETH</strong></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-### OptionBurn_orderBy
-
-<table>
-<thead>
-<tr>
-<th align="left">Value</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td valign="top"><strong>id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>hash</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>logIndex</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>eventType</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>from</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>to</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>blockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>timestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>gasUsed</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>gasPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__isV4Pool</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__hooks</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__poolId</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__feeTier</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickSpacing</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__sqrtPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -47991,10 +42023,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__feeTier</strong></td>
 <td></td>
 </tr>
@@ -48011,15 +42039,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__mintVolume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__burnVolume0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__burnVolume0USD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -48027,15 +42047,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__totalVolume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__mintVolume1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__mintVolume1USD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -48043,19 +42055,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__burnVolume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__totalVolume1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__totalVolume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__totalVolumeUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -48063,19 +42063,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__commissions0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__commissions1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__commissions1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__commissionsUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -48127,6 +42115,10 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>txnOpened__account</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>txnOpened__blockNumber</strong></td>
 <td></td>
 </tr>
@@ -48155,22 +42147,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>txnOpened__currentTick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>txnOpened__fastOracleTick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>txnOpened__lastObservedTick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>txnOpened__slowOracleTick</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>txnOpened__shares0</strong></td>
 <td></td>
 </tr>
@@ -48179,51 +42155,23 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>txnOpened__commissions0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>txnOpened__commissions1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>txnOpened__commissions0USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>txnOpened__commissions1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>txnOpened__commissionsUSD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>txnOpened__tickAt</strong></td>
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>txnOpened__timestampAtMint</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>txnOpened__blockAtMint</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>txnOpened__swapAtMint</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>txnOpened__panopticVersion</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>txnOpened__volume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>txnOpened__volume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>txnOpened__ethPriceUSDAtMint</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>txnOpened__token0DerivedEthAtMint</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>txnOpened__token1DerivedEthAtMint</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -48247,23 +42195,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>accountBalance__premiaSettled0InEthTotal</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>accountBalance__premiaSettled0InUsdTotal</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>accountBalance__premiaSettled1Total</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>accountBalance__premiaSettled1InEthTotal</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>accountBalance__premiaSettled1InUsdTotal</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -48311,6 +42243,10 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>forcedExercise__account</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>forcedExercise__blockNumber</strong></td>
 <td></td>
 </tr>
@@ -48340,10 +42276,6 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>forcedExercise__exerciseFee1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>forcedExercise__exerciseFeeUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -48383,6 +42315,10 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>accountLiquidated__account</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>accountLiquidated__blockNumber</strong></td>
 <td></td>
 </tr>
@@ -48411,10 +42347,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>accountLiquidated__liquidationBonusUSD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>accountLiquidated__tickAt</strong></td>
 <td></td>
 </tr>
@@ -48427,14 +42359,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>volume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>volume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>shares0</strong></td>
 <td></td>
 </tr>
@@ -48443,21 +42367,13 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>ethPriceUSDAtBurn</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token0DerivedEthAtBurn</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token1DerivedEthAtBurn</strong></td>
+<td valign="top"><strong>commissions</strong></td>
 <td></td>
 </tr>
 </tbody>
 </table>
 
-### OptionMint_orderBy
+### `OptionMint_orderBy` {#optionmint_orderby}
 
 <table>
 <thead>
@@ -48489,6 +42405,10 @@ Filter for the block changed event.
 </tr>
 <tr>
 <td valign="top"><strong>to</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>account</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -48536,54 +42456,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>pool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__sqrtPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>pool__minEnforcedTick</strong></td>
 <td></td>
 </tr>
@@ -48628,22 +42500,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>currentTick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>fastOracleTick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>lastObservedTick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>slowOracleTick</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>accountBalance</strong></td>
 <td></td>
 </tr>
@@ -48664,23 +42520,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>accountBalance__premiaSettled0InEthTotal</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>accountBalance__premiaSettled0InUsdTotal</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>accountBalance__premiaSettled1Total</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>accountBalance__premiaSettled1InEthTotal</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>accountBalance__premiaSettled1InUsdTotal</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -48708,10 +42548,6 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__feeTier</strong></td>
 <td></td>
 </tr>
@@ -48728,15 +42564,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__mintVolume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__burnVolume0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__burnVolume0USD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -48744,15 +42572,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__totalVolume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__mintVolume1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__mintVolume1USD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -48760,19 +42580,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__burnVolume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__totalVolume1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__totalVolume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__totalVolumeUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -48780,19 +42588,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__commissions0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__commissions1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__commissions1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__commissionsUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -48812,23 +42608,7 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>commissions0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>commissions1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>commissions0USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>commissions1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>commissionsUSD</strong></td>
+<td valign="top"><strong>commissions</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -48836,33 +42616,25 @@ Filter for the block changed event.
 <td></td>
 </tr>
 <tr>
+<td valign="top"><strong>timestampAtMint</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>blockAtMint</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>swapAtMint</strong></td>
+<td></td>
+</tr>
+<tr>
 <td valign="top"><strong>panopticVersion</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>volume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>volume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>ethPriceUSDAtMint</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token0DerivedEthAtMint</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token1DerivedEthAtMint</strong></td>
 <td></td>
 </tr>
 </tbody>
 </table>
 
-### OrderDirection
+### `OrderDirection` {#orderdirection}
 
 Defines the order direction, either ascending or descending
 
@@ -48885,7 +42657,7 @@ Defines the order direction, either ascending or descending
 </tbody>
 </table>
 
-### PanopticFactory_orderBy
+### `PanopticFactory_orderBy` {#panopticfactory_orderby}
 
 <table>
 <thead>
@@ -48914,7 +42686,7 @@ Defines the order direction, either ascending or descending
 </tbody>
 </table>
 
-### PanopticPoolAccount_orderBy
+### `PanopticPoolAccount_orderBy` {#panopticpoolaccount_orderby}
 
 <table>
 <thead>
@@ -48937,10 +42709,6 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__feeTier</strong></td>
 <td></td>
 </tr>
@@ -48957,15 +42725,7 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__mintVolume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__burnVolume0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__burnVolume0USD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -48973,15 +42733,7 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__totalVolume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__mintVolume1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__mintVolume1USD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -48989,19 +42741,7 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__burnVolume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__totalVolume1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__totalVolume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__totalVolumeUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -49009,19 +42749,7 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__commissions0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__commissions1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__commissions1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__commissionsUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -49057,7 +42785,19 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral0__totalDonations</strong></td>
+<td valign="top"><strong>collateral0__totalAssets</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral0__conversionTotalSupply</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral0__conversionStateBlockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral0__conversionStateTimestamp</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -49078,10 +42818,6 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>collateral0__totalProtocolLossRealized</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>collateral0__totalProtocolLossRealizedUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -49113,7 +42849,19 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral1__totalDonations</strong></td>
+<td valign="top"><strong>collateral1__totalAssets</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral1__conversionTotalSupply</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral1__conversionStateBlockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral1__conversionStateTimestamp</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -49134,10 +42882,6 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>collateral1__totalProtocolLossRealized</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>collateral1__totalProtocolLossRealizedUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -49165,21 +42909,13 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>commissions0Usd</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>commissions1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>commissions1Usd</strong></td>
 <td></td>
 </tr>
 </tbody>
 </table>
 
-### PanopticPoolDayData_orderBy
+### `PanopticPoolDayData_orderBy` {#panopticpooldaydata_orderby}
 
 <table>
 <thead>
@@ -49202,10 +42938,6 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__feeTier</strong></td>
 <td></td>
 </tr>
@@ -49222,15 +42954,7 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__mintVolume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__burnVolume0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__burnVolume0USD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -49238,15 +42962,7 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__totalVolume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__mintVolume1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__mintVolume1USD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -49254,19 +42970,7 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__burnVolume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__totalVolume1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__totalVolume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__totalVolumeUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -49274,19 +42978,7 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__commissions0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__commissions1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__commissions1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__commissionsUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -49306,15 +42998,7 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>mintVolume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>burnVolume0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>burnVolume0USD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -49322,15 +43006,7 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>totalVolume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>mintVolume1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>mintVolume1USD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -49338,19 +43014,7 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>burnVolume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>totalVolume1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>totalVolume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>totalVolumeUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -49358,25 +43022,13 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>commissions0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>commissions1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>commissions1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>commissionsUSD</strong></td>
 <td></td>
 </tr>
 </tbody>
 </table>
 
-### PanopticPool_orderBy
+### `PanopticPool_orderBy` {#panopticpool_orderby}
 
 <table>
 <thead>
@@ -49388,10 +43040,6 @@ Defines the order direction, either ascending or descending
 <tbody>
 <tr>
 <td valign="top"><strong>id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>txCount</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -49419,14 +43067,6 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>token0__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token0__derivedETH</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>token1</strong></td>
 <td></td>
 </tr>
@@ -49451,14 +43091,6 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>token1__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token1__derivedETH</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>feeTier</strong></td>
 <td></td>
 </tr>
@@ -49479,7 +43111,19 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral0__totalDonations</strong></td>
+<td valign="top"><strong>collateral0__totalAssets</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral0__conversionTotalSupply</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral0__conversionStateBlockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral0__conversionStateTimestamp</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -49500,10 +43144,6 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>collateral0__totalProtocolLossRealized</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>collateral0__totalProtocolLossRealizedUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -49531,7 +43171,19 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral1__totalDonations</strong></td>
+<td valign="top"><strong>collateral1__totalAssets</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral1__conversionTotalSupply</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral1__conversionStateBlockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral1__conversionStateTimestamp</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -49552,10 +43204,6 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>collateral1__totalProtocolLossRealized</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>collateral1__totalProtocolLossRealizedUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -49595,54 +43243,6 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>underlyingPool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>underlyingPool__liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>underlyingPool__sqrtPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>underlyingPool__tick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>underlyingPool__tickLastUpdateTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>underlyingPool__tickLastUpdateBlockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>underlyingPool__token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>underlyingPool__token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>underlyingPool__totalValueLockedToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>underlyingPool__totalValueLockedToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>underlyingPool__totalValueLockedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>underlyingPool__totalValueLockedUSD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>underlyingPool__minEnforcedTick</strong></td>
 <td></td>
 </tr>
@@ -49663,15 +43263,7 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>mintVolume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>burnVolume0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>burnVolume0USD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -49679,15 +43271,7 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>totalVolume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>mintVolume1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>mintVolume1USD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -49695,19 +43279,7 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>burnVolume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>totalVolume1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>totalVolume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>totalVolumeUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -49715,19 +43287,7 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>commissions0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>commissions1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>commissions1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>commissionsUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -49761,7 +43321,7 @@ Defines the order direction, either ascending or descending
 </tbody>
 </table>
 
-### PoolDayData_orderBy
+### `PoolIdLookup_orderBy` {#poolidlookup_orderby}
 
 <table>
 <thead>
@@ -49804,54 +43364,6 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>pool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__sqrtPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>pool__minEnforcedTick</strong></td>
 <td></td>
 </tr>
@@ -49859,211 +43371,10 @@ Defines the order direction, either ascending or descending
 <td valign="top"><strong>pool__maxEnforcedTick</strong></td>
 <td></td>
 </tr>
-<tr>
-<td valign="top"><strong>date</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>volumeToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>volumeToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>volumeUSD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>feesUSD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>open</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>high</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>low</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>close</strong></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 
-### PoolHourData_orderBy
-
-<table>
-<thead>
-<tr>
-<th align="left">Value</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td valign="top"><strong>id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__isV4Pool</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__hooks</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__poolId</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__feeTier</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickSpacing</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__sqrtPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__minEnforcedTick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>volumeToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>volumeToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>volumeUSD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>open</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>high</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>low</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>close</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>periodStartUnix</strong></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-### Pool_orderBy
+### `Pool_orderBy` {#pool_orderby}
 
 <table>
 <thead>
@@ -50122,14 +43433,6 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>token0__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token0__derivedETH</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>token1</strong></td>
 <td></td>
 </tr>
@@ -50154,70 +43457,6 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>token1__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token1__derivedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>sqrtPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>tick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>tickLastUpdateTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>tickLastUpdateBlockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>poolHourData</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>poolDayData</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>totalValueLockedToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>totalValueLockedToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>totalValueLockedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>totalValueLockedUSD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>minEnforcedTick</strong></td>
 <td></td>
 </tr>
@@ -50231,10 +43470,6 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>panopticPool__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__txCount</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -50254,15 +43489,7 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__mintVolume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__burnVolume0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__burnVolume0USD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -50270,15 +43497,7 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__totalVolume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__mintVolume1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__mintVolume1USD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -50286,19 +43505,7 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__burnVolume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__totalVolume1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__totalVolume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__totalVolumeUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -50306,19 +43513,7 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__commissions0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__commissions1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__commissions1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__commissionsUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -50336,7 +43531,7 @@ Defines the order direction, either ascending or descending
 </tbody>
 </table>
 
-### PremiumSettled_orderBy
+### `PremiumSettled_orderBy` {#premiumsettled_orderby}
 
 <table>
 <thead>
@@ -50368,6 +43563,10 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>to</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>account</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -50412,54 +43611,6 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>pool__tickSpacing</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__sqrtPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -50507,23 +43658,7 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>settledAmount0InEth</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>settledAmount0InUsd</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>settledAmount1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>settledAmount1InEth</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>settledAmount1InUsd</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -50532,10 +43667,6 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>panopticPool__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__txCount</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -50555,15 +43686,7 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__mintVolume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__burnVolume0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__burnVolume0USD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -50571,15 +43694,7 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__totalVolume0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__mintVolume1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__mintVolume1USD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -50587,19 +43702,7 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__burnVolume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__totalVolume1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__totalVolume1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__totalVolumeUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -50607,19 +43710,7 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>panopticPool__commissions0USD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>panopticPool__commissions1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__commissions1USD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>panopticPool__commissionsUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -50637,7 +43728,7 @@ Defines the order direction, either ascending or descending
 </tbody>
 </table>
 
-### ProtocolLossRealized_orderBy
+### `ProtocolLossRealized_orderBy` {#protocollossrealized_orderby}
 
 <table>
 <thead>
@@ -50669,6 +43760,10 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>to</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>account</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -50713,54 +43808,6 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>pool__tickSpacing</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__sqrtPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -50812,7 +43859,19 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__totalDonations</strong></td>
+<td valign="top"><strong>collateral__totalAssets</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__conversionTotalSupply</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__conversionStateBlockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>collateral__conversionStateTimestamp</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -50836,10 +43895,6 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>collateral__totalProtocolLossRealizedUSD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>collateral__poolUtilization</strong></td>
 <td></td>
 </tr>
@@ -50850,7 +43905,7 @@ Defines the order direction, either ascending or descending
 </tbody>
 </table>
 
-### RiskEngine_orderBy
+### `RiskEngine_orderBy` {#riskengine_orderby}
 
 <table>
 <thead>
@@ -50867,7 +43922,7 @@ Defines the order direction, either ascending or descending
 </tbody>
 </table>
 
-### TokenId_orderBy
+### `TokenId_orderBy` {#tokenid_orderby}
 
 <table>
 <thead>
@@ -50914,54 +43969,6 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>pool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__sqrtPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>pool__minEnforcedTick</strong></td>
 <td></td>
 </tr>
@@ -50984,7 +43991,7 @@ Defines the order direction, either ascending or descending
 </tbody>
 </table>
 
-### Token_orderBy
+### `Token_orderBy` {#token_orderby}
 
 <table>
 <thead>
@@ -51014,22 +44021,10 @@ Defines the order direction, either ascending or descending
 <td valign="top"><strong>totalSupply</strong></td>
 <td></td>
 </tr>
-<tr>
-<td valign="top"><strong>txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>derivedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>whitelistPools</strong></td>
-<td></td>
-</tr>
 </tbody>
 </table>
 
-### TokenizedPositionBurnt_orderBy
+### `TokenizedPositionBurnt_orderBy` {#tokenizedpositionburnt_orderby}
 
 <table>
 <thead>
@@ -51061,6 +44056,10 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>to</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>account</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -51105,54 +44104,6 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>pool__tickSpacing</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__sqrtPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -51198,7 +44149,7 @@ Defines the order direction, either ascending or descending
 </tbody>
 </table>
 
-### TokenizedPositionMinted_orderBy
+### `TokenizedPositionMinted_orderBy` {#tokenizedpositionminted_orderby}
 
 <table>
 <thead>
@@ -51230,6 +44181,10 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>to</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>account</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -51274,54 +44229,6 @@ Defines the order direction, either ascending or descending
 </tr>
 <tr>
 <td valign="top"><strong>pool__tickSpacing</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__sqrtPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
 <td></td>
 </tr>
 <tr>
@@ -51367,7 +44274,7 @@ Defines the order direction, either ascending or descending
 </tbody>
 </table>
 
-### TokensCollected_orderBy
+### `TokensCollected_orderBy` {#tokenscollected_orderby}
 
 <table>
 <thead>
@@ -51418,90 +44325,6 @@ Defines the order direction, either ascending or descending
 <td></td>
 </tr>
 <tr>
-<td valign="top"><strong>pool</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__id</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__isV4Pool</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__hooks</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__poolId</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__feeTier</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickSpacing</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__txCount</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__liquidity</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__sqrtPrice</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateTimestamp</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__tickLastUpdateBlockNumber</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token0Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__token1Price</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken0</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedToken1</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedETH</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__totalValueLockedUSD</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__minEnforcedTick</strong></td>
-<td></td>
-</tr>
-<tr>
-<td valign="top"><strong>pool__maxEnforcedTick</strong></td>
-<td></td>
-</tr>
-<tr>
 <td valign="top"><strong>riskEngine</strong></td>
 <td></td>
 </tr>
@@ -51524,7 +44347,96 @@ Defines the order direction, either ascending or descending
 </tbody>
 </table>
 
-### _SubgraphErrorPolicy_
+### `TokensSwept_orderBy` {#tokensswept_orderby}
+
+<table>
+<thead>
+<tr>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td valign="top"><strong>id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>hash</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>logIndex</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>eventType</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>from</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>to</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>blockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>timestamp</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>gasUsed</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>gasPrice</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>builderWallet</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>builderWallet__id</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>builderWallet__builderCode</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>builderWallet__builderAdmin</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>builderWallet__createdTimestamp</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>builderWallet__createdBlockNumber</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>token</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>sweepTo</strong></td>
+<td></td>
+</tr>
+<tr>
+<td valign="top"><strong>amount</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+### `_SubgraphErrorPolicy_` {#subgrapherrorpolicy}
 
 <table>
 <thead>
@@ -51555,29 +44467,29 @@ If the subgraph has indexing errors, data will be omitted. The default.
 
 ## Scalars
 
-### BigDecimal
+### `BigDecimal` {#bigdecimal}
 
-### BigInt
+### `BigInt` {#bigint}
 
-### Boolean
+### `Boolean` {#boolean}
 
-### Bytes
+### `Bytes` {#bytes}
 
-### Float
+### `Float` {#float}
 
-### ID
+### `ID` {#id}
 
-### Int
+### `Int` {#int}
 
 4 bytes signed integer
 
-### Int8
+### `Int8` {#int8}
 
 8 bytes signed integer
 
-### String
+### `String` {#string}
 
-### Timestamp
+### `Timestamp` {#timestamp}
 
 A string representation of microseconds UNIX timestamp (16 digits)
 
@@ -51585,9 +44497,9 @@ A string representation of microseconds UNIX timestamp (16 digits)
 ## Interfaces
 
 
-### BaseEvent
+### `BaseEvent` {#baseevent}
 
- A generic entity for events which are not pool-specific that get emitted throughout the Panoptic protocol (similar interface to Event but without `pool` field). 
+ A generic entity for events which are not pool-specific that get emitted throughout the Panoptic protocol (similar interface to Event but without `pool` field).
 
 <table>
 <thead>
@@ -51604,7 +44516,7 @@ A string representation of microseconds UNIX timestamp (16 digits)
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
- Txn hash + '#' + log index 
+ Txn hash + '#' + log index
 
 </td>
 </tr>
@@ -51613,7 +44525,7 @@ A string representation of microseconds UNIX timestamp (16 digits)
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
- Txn hash of the transaction emitting this event 
+ Txn hash of the transaction emitting this event
 
 </td>
 </tr>
@@ -51622,7 +44534,7 @@ A string representation of microseconds UNIX timestamp (16 digits)
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Event log index 
+ Event log index
 
 </td>
 </tr>
@@ -51631,7 +44543,7 @@ A string representation of microseconds UNIX timestamp (16 digits)
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
- Sender of transaction 
+ Sender of transaction
 
 </td>
 </tr>
@@ -51640,7 +44552,7 @@ A string representation of microseconds UNIX timestamp (16 digits)
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
- Receiver of transaction 
+ Receiver of transaction
 
 </td>
 </tr>
@@ -51649,7 +44561,7 @@ A string representation of microseconds UNIX timestamp (16 digits)
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Block txn was included in 
+ Block txn was included in
 
 </td>
 </tr>
@@ -51658,7 +44570,7 @@ A string representation of microseconds UNIX timestamp (16 digits)
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Timestamp txn was confirmed 
+ Timestamp txn was confirmed
 
 </td>
 </tr>
@@ -51667,7 +44579,7 @@ A string representation of microseconds UNIX timestamp (16 digits)
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Gas used during txn execution 
+ Gas used during txn execution
 
 </td>
 </tr>
@@ -51676,7 +44588,7 @@ A string representation of microseconds UNIX timestamp (16 digits)
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Gas price during txn execution 
+ Gas price during txn execution
 
 </td>
 </tr>
@@ -51685,18 +44597,18 @@ A string representation of microseconds UNIX timestamp (16 digits)
 <td valign="top"><a href="#eventtype">EventType</a>!</td>
 <td>
 
- Type of event. The Graph doesn't allow filtering by __typename meta so it's explicitly required here 
+ Type of event. The Graph doesn't allow filtering by __typename meta so it's explicitly required here
 
 </td>
 </tr>
 </tbody>
 </table>
 
-**Possible Types:** [BorrowRateUpdated](#borrowrateupdated), [TokensCollected](#tokenscollected), [GuardianSafeModeUpdated](#guardiansafemodeupdated)
+**Possible Types:** [BorrowRateUpdated](#borrowrateupdated), [TokensCollected](#tokenscollected), [GuardianSafeModeUpdated](#guardiansafemodeupdated), [BuilderDeployed](#builderdeployed), [BuilderWalletInitialized](#builderwalletinitialized), [TokensSwept](#tokensswept)
 
-### Event
+### `Event` {#event}
 
- A generic entity for the many account-facing events that get emitted throughout the Panoptic protocol. 
+ A generic entity for the many account-facing events that get emitted throughout the Panoptic protocol.
 
 <table>
 <thead>
@@ -51713,7 +44625,7 @@ A string representation of microseconds UNIX timestamp (16 digits)
 <td valign="top"><a href="#id">ID</a>!</td>
 <td>
 
- Txn hash + '#' + log index 
+ Txn hash + '#' + log index
 
 </td>
 </tr>
@@ -51722,7 +44634,7 @@ A string representation of microseconds UNIX timestamp (16 digits)
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
- Txn hash of the transaction emitting this event 
+ Txn hash of the transaction emitting this event
 
 </td>
 </tr>
@@ -51731,7 +44643,7 @@ A string representation of microseconds UNIX timestamp (16 digits)
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Event log index 
+ Event log index
 
 </td>
 </tr>
@@ -51740,7 +44652,7 @@ A string representation of microseconds UNIX timestamp (16 digits)
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
- Sender of transaction 
+ Sender of transaction
 
 </td>
 </tr>
@@ -51749,7 +44661,16 @@ A string representation of microseconds UNIX timestamp (16 digits)
 <td valign="top"><a href="#string">String</a>!</td>
 <td>
 
- Receiver of transaction 
+ Receiver of transaction
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top"><strong id="event.account">account</strong></td>
+<td valign="top"><a href="#string">String</a>!</td>
+<td>
+
+ The actual position/account owner this event is attributed to (from the contract event's own params, e.g. recipient/owner/liquidatee/user) as opposed to `from`, which is the transaction signer and may differ from the account when submitted via a multisig/smart-account signer.
 
 </td>
 </tr>
@@ -51758,7 +44679,7 @@ A string representation of microseconds UNIX timestamp (16 digits)
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Block txn was included in 
+ Block txn was included in
 
 </td>
 </tr>
@@ -51767,7 +44688,7 @@ A string representation of microseconds UNIX timestamp (16 digits)
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Timestamp txn was confirmed 
+ Timestamp txn was confirmed
 
 </td>
 </tr>
@@ -51776,7 +44697,7 @@ A string representation of microseconds UNIX timestamp (16 digits)
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Gas used during txn execution 
+ Gas used during txn execution
 
 </td>
 </tr>
@@ -51785,7 +44706,7 @@ A string representation of microseconds UNIX timestamp (16 digits)
 <td valign="top"><a href="#bigint">BigInt</a>!</td>
 <td>
 
- Gas price during txn execution 
+ Gas price during txn execution
 
 </td>
 </tr>
@@ -51794,7 +44715,7 @@ A string representation of microseconds UNIX timestamp (16 digits)
 <td valign="top"><a href="#eventtype">EventType</a>!</td>
 <td>
 
- Type of event. The Graph doesn't allow filtering by __typename meta so it's explicitly required here 
+ Type of event. The Graph doesn't allow filtering by __typename meta so it's explicitly required here
 
 </td>
 </tr>
@@ -51803,11 +44724,11 @@ A string representation of microseconds UNIX timestamp (16 digits)
 <td valign="top"><a href="#pool">Pool</a>!</td>
 <td>
 
- Uniswap Pool the event happened within, or the underlying Uniswap Pool for a PanopticPool event. Needed to show all transactions within a pool from a certain account because The Graph doesn't have the ability to add custom filters. 
+ Uniswap Pool the event happened within, or the underlying Uniswap Pool for a PanopticPool event. Needed to show all transactions within a pool from a certain account because The Graph doesn't have the ability to add custom filters.
 
 </td>
 </tr>
 </tbody>
 </table>
 
-**Possible Types:** [Mint](#mint), [Burn](#burn), [Collect](#collect), [TokenizedPositionBurnt](#tokenizedpositionburnt), [TokenizedPositionMinted](#tokenizedpositionminted), [CollateralDeposit](#collateraldeposit), [CollateralWithdraw](#collateralwithdraw), [Donate](#donate), [CommissionPaid](#commissionpaid), [InsolvencyPenaltyApplied](#insolvencypenaltyapplied), [ProtocolLossRealized](#protocollossrealized), [OptionMint](#optionmint), [OptionBurn](#optionburn), [AccountLiquidated](#accountliquidated), [ForcedExercise](#forcedexercise), [PremiumSettled](#premiumsettled), [BuilderDeployed](#builderdeployed)
+**Possible Types:** [TokenizedPositionBurnt](#tokenizedpositionburnt), [TokenizedPositionMinted](#tokenizedpositionminted), [CollateralDeposit](#collateraldeposit), [CollateralWithdraw](#collateralwithdraw), [CommissionPaid](#commissionpaid), [InsolvencyPenaltyApplied](#insolvencypenaltyapplied), [ProtocolLossRealized](#protocollossrealized), [OptionMint](#optionmint), [OptionBurn](#optionburn), [AccountLiquidated](#accountliquidated), [ForcedExercise](#forcedexercise), [PremiumSettled](#premiumsettled)

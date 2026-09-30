@@ -1,11 +1,22 @@
 # PositionBalanceLibrary
-[Git Source](https://github.com/panoptic-labs/panoptic-next-core-private/blob/8cb6912a84b43ed5df88c9b5bd34535204453dc5/contracts/types/PositionBalance.sol)
+
+> Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
+
+[Git Source](https://github.com/panoptic-labs/panoptic-v2-core/blob/e3b9d125f929a5a8c7220ec6467613686939edae/contracts/types/PositionBalance.sol)
 
 **Title:**
 A Panoptic Position Balance. Tracks the Position Size, the Pool Utilizations at mint, and the current/fastOracle/slowOracle/latestObserved ticks at mint.
 
 **Author:**
 Axicon Labs Limited
+
+
+## State Variables
+### BITMASK_UINT39
+
+```solidity
+uint256 internal constant BITMASK_UINT39 = ((uint256(1) << 39) - 1)
+```
 
 
 ## Functions
@@ -15,10 +26,14 @@ Create a new `PositionBalance` given by positionSize, utilizations, and its tick
 
 
 ```solidity
-function storeBalanceData(uint128 _positionSize, uint32 _utilizations, uint96 _tickData)
-    internal
-    pure
-    returns (PositionBalance);
+function storeBalanceData(
+    uint128 _positionSize,
+    uint32 _utilizations,
+    int24 _tickAtMint,
+    uint32 _timestampAtMint,
+    uint40 _blockNumberAtMint,
+    bool _swapAtMint
+) internal pure returns (PositionBalance);
 ```
 **Parameters**
 
@@ -26,138 +41,88 @@ function storeBalanceData(uint128 _positionSize, uint32 _utilizations, uint96 _t
 |----|----|-----------|
 |`_positionSize`|`uint128`|The amount of option minted|
 |`_utilizations`|`uint32`|Packed data containing pool utilizations for token0 and token1 at mint|
-|`_tickData`|`uint96`|Packed data containing ticks at mint (currentTick, fastOracleTick, slowOracleTick, lastObservedTick)|
+|`_tickAtMint`|`int24`|the ticks at the end of the mint|
+|`_timestampAtMint`|`uint32`|the timestamp at mint|
+|`_blockNumberAtMint`|`uint40`|the block number at mint|
+|`_swapAtMint`|`bool`|whether the position was minted with a swapAtMint flag (inverted tick limits)|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`PositionBalance`|The new PositionBalance with the given positionSize, utilization, and tickData|
+|`<none>`|`PositionBalance`|The new PositionBalance with the given positionSize, utilization, and tick/block data|
 
 
-### storeBalanceData
+### swapAtMint
 
-Create a new `PositionBalance` given by positionSize, utilizations, and its tickData.
+Get the swapAtMint of `self`.
 
 
 ```solidity
-function storeBalanceData(uint128 _positionSize, uint32 _utilizations, int24 _finalTick)
-    internal
-    pure
-    returns (PositionBalance);
+function swapAtMint(PositionBalance self) internal pure returns (bool);
 ```
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`_positionSize`|`uint128`|The amount of option minted|
-|`_utilizations`|`uint32`|Packed data containing pool utilizations for token0 and token1 at mint|
-|`_finalTick`|`int24`|the ticks at the end of the mint|
+|`self`|`PositionBalance`|The PositionBalance to retrieve the swapAtMint from|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`PositionBalance`|The new PositionBalance with the given positionSize, utilization, and tickData|
+|`<none>`|`bool`|The swapAtMint of `self`|
 
 
-### packTickData
+### blockAtMint
 
-Concatenate all oracle ticks into a single uint96.
+Get the blockAtMint of `self`.
 
 
 ```solidity
-function packTickData(int24 _currentTick, int24 _fastOracleTick, int24 _slowOracleTick, int24 _lastObservedTick)
-    internal
-    pure
-    returns (uint96);
+function blockAtMint(PositionBalance self) internal pure returns (uint256);
 ```
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`_currentTick`|`int24`|The current tick|
-|`_fastOracleTick`|`int24`|The fast oracle tick|
-|`_slowOracleTick`|`int24`|The slow oracle tick|
-|`_lastObservedTick`|`int24`|The last observed tick|
+|`self`|`PositionBalance`|The PositionBalance to retrieve the blockAtMint from|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`uint96`|A 96bit word concatenating all 4 input ticks|
+|`<none>`|`uint256`|The blockAtMint of `self`|
 
 
-### lastObservedTick
+### timestampAtMint
 
-Get the last observed tick of `self`.
+Get the timestamp at mint of `self`.
 
 
 ```solidity
-function lastObservedTick(PositionBalance self) internal pure returns (int24);
+function timestampAtMint(PositionBalance self) internal pure returns (uint256);
 ```
 **Parameters**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`self`|`PositionBalance`|The PositionBalance to retrieve the last observed tick from|
+|`self`|`PositionBalance`|The PositionBalance to retrieve the timestamp from|
 
 **Returns**
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`int24`|The last observed tick of `self`|
+|`<none>`|`uint256`|The timestamp at mint of `self`|
 
 
-### slowOracleTick
-
-Get the slow oracle tick of `self`.
-
-
-```solidity
-function slowOracleTick(PositionBalance self) internal pure returns (int24);
-```
-**Parameters**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`self`|`PositionBalance`|The PositionBalance to retrieve the slow oracle tick from|
-
-**Returns**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`<none>`|`int24`|The slow oracle tick of `self`|
-
-
-### fastOracleTick
-
-Get the fast oracle tick of `self`.
-
-
-```solidity
-function fastOracleTick(PositionBalance self) internal pure returns (int24);
-```
-**Parameters**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`self`|`PositionBalance`|The PositionBalance to retrieve the fast oracle tick from|
-
-**Returns**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`<none>`|`int24`|The fast oracle tick of `self`|
-
-
-### currentTick
+### tickAtMint
 
 Get the current tick of `self`.
 
 
 ```solidity
-function currentTick(PositionBalance self) internal pure returns (int24);
+function tickAtMint(PositionBalance self) internal pure returns (int24);
 ```
 **Parameters**
 
@@ -170,51 +135,6 @@ function currentTick(PositionBalance self) internal pure returns (int24);
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`int24`|The current tick of `self`|
-
-
-### tickData
-
-Get the tickData of `self`.
-
-
-```solidity
-function tickData(PositionBalance self) internal pure returns (uint96);
-```
-**Parameters**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`self`|`PositionBalance`|The PositionBalance to retrieve the tickData from|
-
-**Returns**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`<none>`|`uint96`|The packed tickData (currentTick, fastOracleTick, slowOracleTick, lastObservedTick)|
-
-
-### unpackTickData
-
-Unpack the current, last observed, and fast/slow oracle ticks from a 96-bit tickData encoding.
-
-
-```solidity
-function unpackTickData(uint96 _tickData) internal pure returns (int24, int24, int24, int24);
-```
-**Parameters**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`_tickData`|`uint96`|The packed tickData to unpack ticks from|
-
-**Returns**
-
-|Name|Type|Description|
-|----|----|-----------|
-|`<none>`|`int24`|The current tick contained in `_tickData`|
-|`<none>`|`int24`|The fast oracle tick contained in `_tickData`|
-|`<none>`|`int24`|The slow oracle tick contained in `_tickData`|
-|`<none>`|`int24`|The last observed tick contained in `_tickData`|
 
 
 ### utilization0
@@ -311,10 +231,10 @@ function unpackAll(PositionBalance self)
     external
     pure
     returns (
-        int24 currentTickAtMint,
-        int24 fastOracleTickAtMint,
-        int24 slowOracleTickAtMint,
-        int24 lastObservedTickAtMint,
+        bool _swapAtMint,
+        uint256 _blockAtMint,
+        uint256 _timestampAtMint,
+        int24 _tickAtMint,
         int256 utilization0AtMint,
         int256 utilization1AtMint,
         uint128 _positionSize
@@ -330,12 +250,10 @@ function unpackAll(PositionBalance self)
 
 |Name|Type|Description|
 |----|----|-----------|
-|`currentTickAtMint`|`int24`|`currentTick` at mint|
-|`fastOracleTickAtMint`|`int24`|Fast oracle tick at mint|
-|`slowOracleTickAtMint`|`int24`|Slow oracle tick at mint|
-|`lastObservedTickAtMint`|`int24`|Last observed tick at mint|
+|`_swapAtMint`|`bool`|whether a swap happened at mint|
+|`_blockAtMint`|`uint256`|`block.number` at mint|
+|`_timestampAtMint`|`uint256`|`block.timestamp` at mint|
+|`_tickAtMint`|`int24`|`currentTick` at mint|
 |`utilization0AtMint`|`int256`|Utilization of token0 at mint|
 |`utilization1AtMint`|`int256`|Utilization of token1 at mint|
 |`_positionSize`|`uint128`|Size of the position|
-
-

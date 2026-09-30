@@ -2,10 +2,13 @@
 sidebar_position: 4.1
 ---
 # PanopticFactoryV4
-[Git Source](https://github.com/panoptic-labs/panoptic-next-core-private/blob/8cb6912a84b43ed5df88c9b5bd34535204453dc5/contracts/PanopticFactoryV4.sol)
+
+> Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
+
+[Git Source](https://github.com/panoptic-labs/panoptic-v2-core/blob/e3b9d125f929a5a8c7220ec6467613686939edae/contracts/PanopticFactoryV4.sol)
 
 **Inherits:**
-[FactoryNFT](/contracts/V2/base/contract.FactoryNFT.md), [Multicall](/contracts/V2/base/abstract.Multicall.md)
+[FactoryNFT](/docs/contracts/V2/base/contract.FactoryNFT), [Multicall](/docs/contracts/V2/base/abstract.Multicall)
 
 **Title:**
 Panoptic Factory which creates and registers Panoptic Pools.
@@ -31,7 +34,7 @@ The Semi Fungible Position Manager (SFPM) which tracks option positions across P
 
 
 ```solidity
-SemiFungiblePositionManager internal immutable SFPM
+SemiFungiblePositionManagerV4 internal immutable SFPM
 ```
 
 
@@ -67,7 +70,7 @@ Mapping from hash(Uniswap V4 pool key, riskEngine contract address) to address(P
 
 
 ```solidity
-mapping(bytes32 panopticPoolKey => PanopticPool panopticPool) internal s_getPanopticPool
+mapping(bytes32 panopticPoolKey => PanopticPoolV2 panopticPool) internal s_getPanopticPool
 ```
 
 
@@ -79,7 +82,7 @@ Set immutable variables and store metadata pointers.
 
 ```solidity
 constructor(
-    SemiFungiblePositionManager _SFPM,
+    SemiFungiblePositionManagerV4 _SFPM,
     IPoolManager _manager,
     address _poolReference,
     address _collateralReference,
@@ -92,7 +95,7 @@ constructor(
 
 |Name|Type|Description|
 |----|----|-----------|
-|`_SFPM`|`SemiFungiblePositionManager`|The canonical `SemiFungiblePositionManager` deployment|
+|`_SFPM`|`SemiFungiblePositionManagerV4`|The canonical `SemiFungiblePositionManager` deployment|
 |`_manager`|`IPoolManager`|The canonical Uniswap V4 pool manager|
 |`_poolReference`|`address`|The reference implementation of the `PanopticPool` to clone|
 |`_collateralReference`|`address`|The reference implementation of the `CollateralTracker` to clone|
@@ -115,7 +118,7 @@ Salt used in PanopticPool CREATE2 is `[leading 20 msg.sender chars][leading 20 p
 ```solidity
 function deployNewPool(PoolKey calldata key, IRiskEngine riskEngine, uint96 salt)
     external
-    returns (PanopticPool newPoolContract);
+    returns (PanopticPoolV2 newPoolContract);
 ```
 **Parameters**
 
@@ -129,7 +132,7 @@ function deployNewPool(PoolKey calldata key, IRiskEngine riskEngine, uint96 salt
 
 |Name|Type|Description|
 |----|----|-----------|
-|`newPoolContract`|`PanopticPool`|The address of the newly deployed Panoptic pool|
+|`newPoolContract`|`PanopticPoolV2`|The address of the newly deployed Panoptic pool|
 
 
 ### minePoolAddress
@@ -176,7 +179,7 @@ Return the address of the Panoptic Pool associated with `univ3pool`.
 
 
 ```solidity
-function getPanopticPool(PoolKey calldata keyV4, IRiskEngine riskEngine) external view returns (PanopticPool);
+function getPanopticPool(PoolKey calldata keyV4, IRiskEngine riskEngine) external view returns (PanopticPoolV2);
 ```
 **Parameters**
 
@@ -189,7 +192,7 @@ function getPanopticPool(PoolKey calldata keyV4, IRiskEngine riskEngine) externa
 
 |Name|Type|Description|
 |----|----|-----------|
-|`<none>`|`PanopticPool`|Address of the Panoptic Pool associated with `univ3pool`|
+|`<none>`|`PanopticPoolV2`|Address of the Panoptic Pool associated with `univ3pool`|
 
 
 ### _getPoolKey
@@ -210,10 +213,10 @@ Emitted when a Panoptic Pool is created.
 
 ```solidity
 event PoolDeployed(
-    PanopticPool indexed poolAddress,
+    PanopticPoolV2 indexed poolAddress,
     PoolId indexed idV4,
-    CollateralTracker collateralTracker0,
-    CollateralTracker collateralTracker1,
+    CollateralTrackerV2 collateralTracker0,
+    CollateralTrackerV2 collateralTracker1,
     IRiskEngine riskEngine
 );
 ```
@@ -222,9 +225,8 @@ event PoolDeployed(
 
 |Name|Type|Description|
 |----|----|-----------|
-|`poolAddress`|`PanopticPool`|Address of the deployed Panoptic pool|
+|`poolAddress`|`PanopticPoolV2`|Address of the deployed Panoptic pool|
 |`idV4`|`PoolId`|The Uniswap V4 pool identifier (hash of `poolKey`) associated with the Panoptic Pool|
-|`collateralTracker0`|`CollateralTracker`|Address of the collateral tracker contract for currency0|
-|`collateralTracker1`|`CollateralTracker`|Address of the collateral tracker contract for currency1|
+|`collateralTracker0`|`CollateralTrackerV2`|Address of the collateral tracker contract for currency0|
+|`collateralTracker1`|`CollateralTrackerV2`|Address of the collateral tracker contract for currency1|
 |`riskEngine`|`IRiskEngine`|Address of the risk engine used|
-

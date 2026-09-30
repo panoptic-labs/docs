@@ -6,7 +6,7 @@ sidebar_class_name: menu__list-item-collapsible
 
 # What is Panoptic?
 
-Panoptic is the perpetual, oracle-free options protocol built on the Ethereum blockchain. 
+Panoptic is a permissionless protocol for perpetual options and lending. V2 supports Uniswap v3 and v4 markets; see [deployment addresses](./contracts/deployment-addresses) for documented chains.
 
 <video src="https://user-images.githubusercontent.com/62954565/223510059-8c057bc5-3957-466d-bbdd-27e2bdea02bb.mp4#t=0.55" preload="metadata" type="video/mp4" width="100%" height="auto" controls>
 </video>
@@ -15,14 +15,13 @@ Panoptic is the perpetual, oracle-free options protocol built on the Ethereum bl
 
 ## Introduction
 
-The Panoptic protocol consists of smart contracts on the Ethereum blockchain that handle the minting, trading, and market-making of perpetual put and call options.
-All smart contracts are available 24/7 and users can interact with the Panoptic protocol without the need for intermediaries like banks, brokerage firms, clearinghouses, market makers, or centralized exchanges.
+The Panoptic protocol consists of smart contracts on supported blockchains that handle the minting, trading, and market-making of perpetual put and call options.
+Users interact directly with smart contracts. Execution still depends on chain availability, liquidity, collateral, and protocol controls.
 
-Panoptic is the first permissionless options protocol that overcomes the technically challenging task of implementing an options protocol on the Ethereum blockchain.
-We achieve this by embracing the decentralized nature of Automated Market Makers and permissionless liquidity providing in Uniswap.
+Perpetual options use concentrated AMM liquidity and streaming premia rather than a scheduled expiry and a single upfront premium. V2 also uses internal AMM-derived price observations for risk and solvency checks; oracle-free pricing does not mean there are no risk oracles.
 
-Panoptic offers **Perpetual Option Vaults (POVs)**: automated vaults that generate yield from market volatility.
-POVs wrap Panoptic’s perpetual options into simple, deposit-based strategies that allow passive users to earn returns, while active traders can interact directly through Panoptic's advanced trading interface.
+Panoptic offers **Perpetual Option Vaults (POVs)**: automated vaults that execute strategies involving market volatility.
+POVs wrap Panoptic’s perpetual options into deposit-based strategies. Returns are variable and can be negative; managed vaults also have strategy and redemption risks. Active traders can interact directly through the trading interface.
 
 The following sections will provide a brief overview of the Panoptic protocol.
 

@@ -1,5 +1,8 @@
 # MetadataStore
-[Git Source](https://github.com/panoptic-labs/panoptic-next-core-private/blob/8cb6912a84b43ed5df88c9b5bd34535204453dc5/contracts/base/MetadataStore.sol)
+
+> Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
+
+[Git Source](https://github.com/panoptic-labs/panoptic-v2-core/blob/e3b9d125f929a5a8c7220ec6467613686939edae/contracts/base/MetadataStore.sol)
 
 **Title:**
 MetadataStore: Cost-effective structured data storage.
@@ -46,5 +49,3 @@ constructor(bytes32[] memory properties, uint256[][] memory indices, Pointer[][]
 |`properties`|`bytes32[]`|An array of identifiers for different categories of metadata|
 |`indices`|`uint256[][]`|A nested array of keys for K-V metadata pairs for each property in `properties`|
 |`pointers`|`Pointer[][]`|Contains pointers to the metadata values stored in contract data slices for each index in `indices`|
-
-
