@@ -26,7 +26,8 @@
     "lint": "prettier --check \"scripts/*.mjs\" \"static/data/risk-engines.json\"",
     "format:risk-data": "prettier --write \"scripts/*.mjs\" \"static/data/risk-engines.json\"",
     "generate:contracts": "node scripts/generate-contracts.mjs",
-    "postbuild": "node scripts/verify-build.mjs"
+    "postbuild": "pnpm export:markdown && node scripts/verify-build.mjs",
+    "export:markdown": "node scripts/export-markdown.mjs"
   },
   "dependencies": {
     "@docsearch/react": "3.9.0",
@@ -78,9 +79,12 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "2.4.1",
+    "cheerio": "1.2.0",
     "graphql": "^16.0.0",
     "graphql-markdown": "^7.0.0",
     "prettier": "3.7.3",
+    "turndown": "7.2.2",
+    "turndown-plugin-gfm": "1.0.2",
     "viem": "2.41.2",
     "webpack": "5.103.0"
   },

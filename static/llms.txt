@@ -2,50 +2,58 @@
 
 > Panoptic is a permissionless protocol for perpetual options and lending built on concentrated liquidity. Panoptic v2 supports options on Uniswap v3 and v4 pools, with streaming premia, collateral vaults, and a dedicated risk engine.
 
-This index prioritizes Panoptic v2. Paths containing `/V2/` are v2-specific; `/contracts/V1.0/` and `/contracts/V1.1/` document older releases and must not be used as v2 API references. Uniswap v3/v4 identifies the underlying AMM, not the Panoptic protocol version. Unversioned introductory and product guides provide context; use the v2 contract references for interfaces at their stated public source revision. For deployed behavior, identify the pool's RiskEngine and use the chain- and block-specific parameter snapshot; repository constants are not a substitute for on-chain data.
-
-Perpetual options have no scheduled expiry, but collateral requirements, liquidation, and forced exercise still apply. Streaming option premia and interest on borrowed tokens are distinct costs. Descriptions of Panoptic as "oracle-free" do not mean v2 lacks internal price oracles for risk and solvency checks. Check the pool's RiskEngine and token0/token1 ordering before applying risk parameters or interpreting amounts. An existing pool cannot replace its RiskEngine in place; adopting another engine requires migration of positions/state.
+This protocol and developer documentation index prioritizes Panoptic v2. Uniswap v3/v4 names the underlying AMM, not the Panoptic version; do not use v1/v1.1 interfaces for v2. Contract references describe their pinned source revision; deployed behavior depends on the pool's RiskEngine and chain- and block-specific configuration. “Oracle-free” pricing does not mean v2 lacks internal risk oracles.
 
 ## Getting started
 
-- [Introduction](https://panoptic.xyz/docs/intro): Protocol purpose and perpetual options basics.
-- [Options traders](https://panoptic.xyz/docs/getting-started/options-traders): Trading workflow and links to product guides.
-- [Lenders](https://panoptic.xyz/docs/getting-started/passive-lp): Passive liquidity provision and lending markets.
+- [Introduction](https://panoptic.xyz/docs/intro.md): Protocol purpose and perpetual options basics.
+- [Options traders](https://panoptic.xyz/docs/getting-started/options-traders.md): Trading workflow and links to product guides.
+- [Lenders](https://panoptic.xyz/docs/getting-started/passive-lp.md): Passive liquidity provision and lending markets.
+- [Borrowers](https://panoptic.xyz/docs/getting-started/borrowers.md): Borrowing workflow, collateral, and interest.
+- [Vaults](https://panoptic.xyz/docs/getting-started/vaults.md): Managed vault strategies, deposits, and withdrawals.
 
 ## Protocol mechanics, options, and LP positions
 
-- [Protocol design](https://panoptic.xyz/docs/panoptic-protocol/design): Relationship between concentrated liquidity and perpetual options.
-- [Streamia](https://panoptic.xyz/docs/product/streamia): Streaming option premia, payment flows, and accumulation.
-- [Option legs](https://panoptic.xyz/docs/product/option-legs): Combining legs into option strategies.
-- [Provide liquidity](https://panoptic.xyz/docs/product/uniswap-lps/provide-liquidity): Product walkthrough for Uniswap LP positions through Panoptic.
-- [V2 position types](https://panoptic.xyz/docs/panoptic-protocol/V2/position-types): Options, zero-width loans and credits, and their collateral treatment.
-- [V2 composite strategies](https://panoptic.xyz/docs/panoptic-protocol/V2/composite-strategies): Risk partners and collateral treatment of multi-leg positions.
+- [Protocol design](https://panoptic.xyz/docs/panoptic-protocol/design.md): Relationship between concentrated liquidity and perpetual options.
+- [Streamia](https://panoptic.xyz/docs/product/streamia.md): Streaming option premia, payment flows, and accumulation.
+- [Option legs](https://panoptic.xyz/docs/product/option-legs.md): Combining legs into option strategies.
+- [Provide liquidity](https://panoptic.xyz/docs/product/uniswap-lps/provide-liquidity.md): Product walkthrough for Uniswap LP positions through Panoptic.
+- [V2 position types](https://panoptic.xyz/docs/panoptic-protocol/V2/position-types.md): Options, zero-width loans and credits, and their collateral treatment.
+- [V2 composite strategies](https://panoptic.xyz/docs/panoptic-protocol/V2/composite-strategies.md): Risk partners and collateral treatment of multi-leg positions.
+
+## Costs and fees
+
+- [V2 fees and builder routing](https://panoptic.xyz/docs/contracts/parameters.md#fees-and-builder-routing): Protocol commissions and builder fees, distinguished from streaming option premia and borrowing interest.
 
 ## Collateral and risk
 
-- [V2 collateral overview](https://panoptic.xyz/docs/panoptic-protocol/V2/collateral-overview): Dual-token collateral accounting and solvency.
-- [V2 oracle system](https://panoptic.xyz/docs/panoptic-protocol/V2/oracle-system): Internal price observations used for risk calculations.
-- [V2 safe mode](https://panoptic.xyz/docs/panoptic-protocol/V2/safe-mode): Protective restrictions and collateral adjustments.
-- [V2 interest accrual](https://panoptic.xyz/docs/panoptic-protocol/V2/interest-accrual): Borrow interest and its effect on collateral balances.
-- [V2 dispatchFrom](https://panoptic.xyz/docs/panoptic-protocol/V2/dispatchfrom-entrypoint): Liquidation, forced exercise, and third-party premium settlement flows.
-- [V2 parameters by RiskEngine](https://panoptic.xyz/docs/contracts/parameters): Verified on-chain configuration and fee semantics for the three active engines on Ethereum and Robinhood.
-- [Crypto blue-chip engine](https://panoptic.xyz/docs/contracts/parameters#crypto-blue-chip): Collateral, fee, oracle, and interest parameters for the crypto engine.
-- [Stock engines](https://panoptic.xyz/docs/contracts/parameters#stocks): Stock-specific risk policy; the stocks-inverted section covers reversed token0/token1 buffers.
-- [Options trading risks](https://panoptic.xyz/docs/panoptic-protocol/risks): Protocol and trading risks, with applicability labels for different instruments.
+- [V2 collateral overview](https://panoptic.xyz/docs/panoptic-protocol/V2/collateral-overview.md): Dual-token collateral accounting and solvency.
+- [V2 oracle system](https://panoptic.xyz/docs/panoptic-protocol/V2/oracle-system.md): Internal price observations used for risk calculations.
+- [V2 safe mode](https://panoptic.xyz/docs/panoptic-protocol/V2/safe-mode.md): Protective restrictions and collateral adjustments.
+- [V2 interest accrual](https://panoptic.xyz/docs/panoptic-protocol/V2/interest-accrual.md): Borrow interest and its effect on collateral balances.
+- [V2 dispatchFrom](https://panoptic.xyz/docs/panoptic-protocol/V2/dispatchfrom-entrypoint.md): Liquidation, forced exercise, and third-party premium settlement flows.
+- [V2 parameters by RiskEngine](https://panoptic.xyz/docs/contracts/parameters.md): On-chain configuration snapshots, token ordering, and engine-specific collateral, oracle, and interest parameters.
+- [Options trading risks](https://panoptic.xyz/docs/panoptic-protocol/risks.md): Protocol and trading risks, with applicability labels for different instruments.
 
 ## Contract architecture and developer integration
 
-- [Smart contracts overview](https://panoptic.xyz/docs/contracts/smart-contracts-overview): Architecture and contract directory, with separate v2, v1.1, and v1 sections.
-- [V2 PanopticPool](https://panoptic.xyz/docs/contracts/V2/contract.PanopticPool): Position management interfaces, including dispatch and dispatchFrom.
-- [V2 CollateralTracker](https://panoptic.xyz/docs/contracts/V2/contract.CollateralTracker): Collateral shares, deposits, withdrawals, and accounting interfaces.
-- [V2 RiskEngine](https://panoptic.xyz/docs/contracts/V2/RiskEngine/contract.RiskEngine): Risk, solvency, oracle, and interest calculation reference.
-- [V2 stock RiskEngine](https://panoptic.xyz/docs/contracts/V2/RiskEngine/contract.RiskEngineXStocks): Stock risk-policy source reference; constructor buffers distinguish normal and inverted deployments.
+- [V2 SDK quickstart](https://panoptic.xyz/docs/developers/v2-integration.md): Worked read-only pool example, integration checklist, position tracking, and RiskEngine migration constraints; does not execute a complete trade lifecycle.
+
+- [Smart contracts overview](https://panoptic.xyz/docs/contracts/smart-contracts-overview.md): Architecture and contract directory, with separate v2, v1.1, and v1 sections.
+- [V2 PanopticPool](https://panoptic.xyz/docs/contracts/V2/contract.PanopticPool.md): Position management interfaces, including dispatch and dispatchFrom.
+- [V2 CollateralTracker](https://panoptic.xyz/docs/contracts/V2/contract.CollateralTracker.md): Collateral shares, deposits, withdrawals, and accounting interfaces.
+- [V2 RiskEngine](https://panoptic.xyz/docs/contracts/V2/RiskEngine/contract.RiskEngine.md): Risk, solvency, oracle, and interest calculation reference.
+- [V2 stock RiskEngine](https://panoptic.xyz/docs/contracts/V2/RiskEngine/contract.RiskEngineXStocks.md): Stock risk-policy source reference; constructor buffers distinguish normal and inverted deployments.
 - [Public core source](https://github.com/panoptic-labs/panoptic-v2-core): Public contract repository; documentation source links pin specific revisions.
-- [V2 dispatch guide](https://panoptic.xyz/docs/panoptic-protocol/V2/dispatch-entrypoint): Inputs and flows for minting, burning, and premium settlement.
-- [V2 TokenIdLibrary](https://panoptic.xyz/docs/contracts/V2/types/library.TokenIdLibrary): Encoding and decoding position legs in a token ID.
-- [V2 factory for Uniswap v3](https://panoptic.xyz/docs/contracts/V2/contract.PanopticFactory): Pool deployment and lookup interfaces for the v3 AMM.
-- [V2 factory for Uniswap v4](https://panoptic.xyz/docs/contracts/V2/contract.PanopticFactoryV4): Pool deployment and lookup interfaces for the v4 AMM.
+- [V2 dispatch guide](https://panoptic.xyz/docs/panoptic-protocol/V2/dispatch-entrypoint.md): Inputs and flows for minting, burning, and premium settlement.
+- [V2 TokenIdLibrary](https://panoptic.xyz/docs/contracts/V2/types/library.TokenIdLibrary.md): Encoding and decoding position legs in a token ID.
+- [V2 factory for Uniswap v3](https://panoptic.xyz/docs/contracts/V2/contract.PanopticFactory.md): Pool deployment and lookup interfaces for the v3 AMM.
+- [V2 factory for Uniswap v4](https://panoptic.xyz/docs/contracts/V2/contract.PanopticFactoryV4.md): Pool deployment and lookup interfaces for the v4 AMM.
 
 ## Deployed addresses
 
-- [Deployment addresses](https://panoptic.xyz/docs/contracts/deployment-addresses): Core and vault addresses grouped by protocol version and, for v2, chain; distinguishes shared implementations from pool proxies.
+- [Deployment addresses](https://panoptic.xyz/docs/contracts/deployment-addresses.md): Core and vault addresses grouped by protocol version and, for v2, chain; distinguishes shared implementations from pool proxies.
+
+## Security
+
+- [Security and audits](https://panoptic.xyz/docs/security/security_audits.md): Core protocol, oracle hook, economic, and vault reports; check each report's version and scope against the intended deployment.

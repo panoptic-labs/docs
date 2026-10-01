@@ -41,9 +41,14 @@ This command generates static content into the `build` directory and can be serv
 ### Agent documentation index
 
 `static/llms.txt` is the curated index served at `https://panoptic.xyz/llms.txt`.
-Docusaurus copies it unchanged into the build. There is no configured Markdown
-export, so the index uses public page URLs. Update it alongside changes to routes,
-protocol versions, and the maintained documentation.
+Docusaurus copies it unchanged into the build. The postbuild step exports rendered
+documentation articles to `/docs/<route>.md` before verifying every indexed local
+URL and fragment. Markdown preserves tables, code, math, heading anchors, and
+rendered component content, while removing navigation and interactive controls.
+Links between exported pages use Markdown URLs; assets and other links are absolute.
+Generated Markdown lives only in `build/` and is refreshed with every production
+build. The development server does not run this export; use `build` and `serve`
+to preview it. Update the curated index alongside route and documentation changes.
 
 ### Deployed RiskEngine parameters
 
