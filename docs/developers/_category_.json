@@ -1,4 +1,8 @@
 {
-  "label": "Developer integration",
-  "position": 5.5
+  "label": "Developers",
+  "position": 5.5,
+  "link": {
+    "type": "doc",
+    "id": "developers/overview"
+  }
 }

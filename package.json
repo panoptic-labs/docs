@@ -22,12 +22,15 @@
     "refresh:risk-engines": "node scripts/refresh-risk-engines.mjs && pnpm format:risk-data && pnpm generate:risk-tables",
     "generate:risk-tables": "node scripts/generate-risk-tables.mjs",
     "check:risk-tables": "node scripts/generate-risk-tables.mjs --check",
-    "test": "node --test scripts/*.test.mjs && pnpm check:risk-tables",
-    "lint": "prettier --check \"scripts/*.mjs\" \"static/data/risk-engines.json\"",
+    "test": "node --test scripts/*.test.mjs && pnpm check:risk-tables && pnpm test:examples",
+    "lint": "prettier --check \"scripts/*.mjs\" \"static/data/risk-engines.json\" && pnpm lint:examples",
     "format:risk-data": "prettier --write \"scripts/*.mjs\" \"static/data/risk-engines.json\"",
     "generate:contracts": "node scripts/generate-contracts.mjs",
     "postbuild": "pnpm export:markdown && node scripts/verify-build.mjs",
-    "export:markdown": "node scripts/export-markdown.mjs"
+    "export:markdown": "node scripts/export-markdown.mjs",
+    "lint:examples": "prettier --check --no-semi --single-quote \"static/examples/trade-lifecycle/*.mjs\" \"static/examples/trade-lifecycle/package.json\"",
+    "format:examples": "prettier --write --no-semi --single-quote \"static/examples/trade-lifecycle/*.mjs\" \"static/examples/trade-lifecycle/package.json\"",
+    "test:examples": "node --test static/examples/trade-lifecycle/*.test.mjs"
   },
   "dependencies": {
     "@docsearch/react": "3.9.0",

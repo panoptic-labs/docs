@@ -60,7 +60,7 @@ const Footer = () => {
             <a href="https://dune.com/brandonly1000/panoptic">Analytics</a>
             <a href="https://paper.panoptic.xyz/" target="_blank">Whitepaper</a>
             <a href="https://intro.panoptic.xyz/" target="_blank">Litepaper</a>
-            <a href="/docs/developers/smart-contracts-overview">Developers</a>
+            <a href="/docs/developers/overview">Developers</a>
             <a href="/docs/terms/glossary">Glossary</a>
             <a href="/privacy-policy">Privacy Policy</a>
             <a href="/terms-of-use">Terms of Use</a>

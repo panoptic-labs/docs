@@ -37,7 +37,14 @@ This protocol and developer documentation index prioritizes Panoptic v2. Uniswap
 
 ## Contract architecture and developer integration
 
-- [V2 SDK quickstart](https://panoptic.xyz/docs/developers/v2-integration.md): Worked read-only pool example, integration checklist, position tracking, and RiskEngine migration constraints; does not execute a complete trade lifecycle.
+- [Developer overview](https://panoptic.xyz/docs/developers/overview.md): SDK capabilities, integration status, and starting points for developers.
+- [Read your first market](https://panoptic.xyz/docs/developers/v2-integration.md): Pinned SDK installation, a concrete Ethereum ETH/USDC pool example, expected output, and troubleshooting; no wallet or funds required.
+- [Simulate your first position](https://panoptic.xyz/docs/developers/simulate-position.md): Read-only first-position simulation, expected unfunded rejection, funded fork verification, and collateral output interpretation.
+- [Complete a trade lifecycle](https://panoptic.xyz/docs/developers/trade-lifecycle.md): Runnable local-fork funding, simulation, opening, account reconstruction, closing, and withdrawal with sandbox guards.
+- [Core concepts](https://panoptic.xyz/docs/developers/core-concepts.md): Perpetual options, token denomination, position identity, collateral, costs, and closing.
+- [Capabilities and support](https://panoptic.xyz/docs/developers/capabilities.md): Demonstrated SDK paths, integration responsibilities, and unverified or unavailable onboarding and mobile capabilities.
+- [Developer troubleshooting](https://panoptic.xyz/docs/developers/troubleshooting.md): Dependency, RPC, account-state, and simulation failures and recovery steps.
+- [How an integration works](https://panoptic.xyz/docs/developers/integration-workflow.md): Trading lifecycle, SDK and application responsibilities, RPC versus indexed data, transaction confirmation, and state freshness.
 
 - [Smart contracts overview](https://panoptic.xyz/docs/contracts/smart-contracts-overview.md): Architecture and contract directory, with separate v2, v1.1, and v1 sections.
 - [V2 PanopticPool](https://panoptic.xyz/docs/contracts/V2/contract.PanopticPool.md): Position management interfaces, including dispatch and dispatchFrom.

@@ -1,0 +1,22 @@
+{
+  "name": "panoptic-trade-lifecycle-example",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sandbox": "node sandbox.mjs",
+    "fund": "node lifecycle.mjs fund",
+    "open": "node lifecycle.mjs open",
+    "status": "node lifecycle.mjs status",
+    "close": "node lifecycle.mjs close",
+    "withdraw": "node lifecycle.mjs withdraw",
+    "test": "node --test safety.test.mjs"
+  },
+  "dependencies": {
+    "@panoptic-eng/sdk": "1.0.25",
+    "viem": "2.41.2",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "wagmi": "2.19.5",
+    "@tanstack/react-query": "5.90.2"
+  }
+}

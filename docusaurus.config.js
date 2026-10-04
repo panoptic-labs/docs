@@ -42,6 +42,12 @@ const config = {
             label: "Docs",
           },
           {
+            type: "doc",
+            docId: "developers/overview",
+            position: "left",
+            label: "Developers",
+          },
+          {
             to: 'blog',
             label: 'Blog',
             position: 'left'
@@ -91,7 +97,7 @@ const config = {
               },
               {
                 label: "Developers",
-                to: "/docs/developers/smart-contracts-overview",
+                to: "/docs/developers/overview",
               },
               {
                 label: "Glossary",
