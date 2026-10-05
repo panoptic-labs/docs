@@ -1,0 +1,128 @@
+.card {
+  --lp-short: #c026d3;
+  --lp-hedge: #4f46e5;
+  --lp-net: #0f9f78;
+  --lp-extra: #ea7a2c;
+  --lp-muted: #71717a;
+  --lp-grid: rgba(113, 113, 122, 0.25);
+  --lp-range: rgba(79, 70, 229, 0.08);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 12px;
+  padding: 16px;
+  width: 92%;
+  margin: 1.75rem auto;
+  background: var(--ifm-background-surface-color);
+}
+
+[data-theme='dark'] .card {
+  --lp-short: #f305f9;
+  --lp-hedge: #6c74f5;
+  --lp-net: #7ceac5;
+  --lp-extra: #ffac6e;
+  --lp-muted: #a1a1aa;
+  --lp-grid: rgba(161, 161, 170, 0.2);
+  --lp-range: rgba(108, 116, 245, 0.12);
+}
+
+.title {
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 16px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.panelLabel {
+  font-size: 0.8rem;
+  color: var(--lp-muted);
+  margin-bottom: 4px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.slider label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.slider output {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.slider input {
+  width: 100%;
+  accent-color: var(--lp-hedge);
+}
+
+.readout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.readout div {
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: var(--ifm-color-emphasis-100);
+}
+
+.readout span {
+  display: block;
+  color: var(--lp-muted);
+  font-size: 0.75rem;
+}
+
+.readout strong {
+  font-variant-numeric: tabular-nums;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  font-size: 0.8rem;
+  margin-top: 6px;
+}
+
+.legend i {
+  display: inline-block;
+  width: 18px;
+  height: 0;
+  border-top: 3px solid;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+.note {
+  font-size: 0.75rem;
+  color: var(--lp-muted);
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
+
+  .split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

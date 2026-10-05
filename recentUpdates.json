@@ -1,11 +1,19 @@
 [
   {
+    "title": "Your Uniswap LP Is a Short Option (Interactive Charts)",
+    "date": "2026-10-05",
+    "image": "/img/research/uniswap-lp-is-a-short-option-banner.png",
+    "link": "/research/uniswap-lp-is-a-short-option",
+    "description": "A Uniswap LP position has short-gamma exposure while in range. Interactive charts show how loans, put spreads, and selling options hedge impermanent loss.",
+    "id": 1
+  },
+  {
     "title": "5,000 Uniswap LPs are on the Panoptic VIP List",
     "date": "2026-09-23",
     "image": "/img/banners/lp-vips.jpg",
     "link": "/blog/lp-vips",
     "description": "Connect your eligible wallet to claim your Season 3 Pips and discover what your liquidity could do in Panoptic.",
-    "id": 1
+    "id": 2
   },
   {
     "title": "Panoptic Launches on Robinhood Chain",
@@ -13,7 +21,7 @@
     "image": "/img/banners/panoptic-on-rh-chain.png",
     "link": "/blog/panoptic-launches-on-robinhood-chain",
     "description": "Panoptic is launching on Robinhood Chain, bringing onchain lending, borrowing, perpetual options trading, and a revamped liquidity-provisioning experience to Robinhood’s new Layer 2.",
-    "id": 2
+    "id": 3
   },
   {
     "title": "Earn Up To 20% More Fees on Your Uniswap LP Position",
@@ -21,7 +29,7 @@
     "image": "/img/banners/lp-staking-banner.png",
     "link": "/blog/stake-your-lp",
     "description": "Migrate your LP positions from Uniswap to Panoptic and earn up to 20% more in fees through Panoptic-native mechanisms.",
-    "id": 3
+    "id": 4
   },
   {
     "title": "Panoptic RFQ brings institutional-grade execution to perpetual options.",
@@ -29,14 +37,6 @@
     "image": "/img/banners/panoptic-rfq-system-banner.png",
     "link": "/blog/panoptic-rfq-system",
     "description": "Panoptic RFQ lets users post signed buy requests that market makers can satisfy by adding native Panoptic liquidity, without a settlement contract or custodial coordinator.",
-    "id": 4
-  },
-  {
-    "title": "Panoptic V2: The Vault Suite",
-    "date": "2026-06-29",
-    "image": "/img/banners/the-vault-suite-banner.png",
-    "link": "/blog/panoptic-v2-the-vault-suite",
-    "description": "The Panoptic Vault Suite introduces automated, market-neutral vaults that transform complex options strategies into simple, passive onchain income, allowing users to deposit and earn without active management.",
     "id": 5
   }
 ]

@@ -30,41 +30,7 @@ The following sections will provide a brief overview of the Panoptic protocol.
 - [Panoptions](./trading/basic-concepts): Options trading resources.
 - [Developers](./developers/overview): Start with the SDK and plan an integration.
 - [Security](./security/security_audits): Security and audit reports.
-
----
-
-## Infographics
-
-import ThemedImage from '@theme/ThemedImage';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
-<ThemedImage
-  alt="Trading-Interface"
-  sources={{
-    light: useBaseUrl('/img/trading-interface.svg'),
-    dark: useBaseUrl('/img/trading-interface.svg'),
-  }}
-  style={{width: '100%'}}
-/>
-
-<ThemedImage
-  alt="Passive-LP"
-  sources={{
-    light: useBaseUrl('/img/passive-lp.svg'),
-    dark: useBaseUrl('/img/passive-lp.svg'),
-  }}
-  style={{width: '100%'}}
-/>
-
-<ThemedImage
-  alt="Active-LP"
-  sources={{
-    light: useBaseUrl('/img/active-lp.svg'),
-    dark: useBaseUrl('/img/active-lp.svg'),
-  }}
-  style={{width: '100%'}}
-/>
-
+- [Hedge a Uniswap LP position](./product/uniswap-lps/hedge): Interactive guide to hedging impermanent loss and earning streamia on top of LP fees.
 
 ---
 
@@ -73,10 +39,5 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 - [Developers](./developers/overview)
 - [Litepaper](https://intro.panoptic.xyz/)
 - [Whitepaper](https://paper.panoptic.xyz/)
-
-#### 10,000-Foot View of Panoptic and the DeFi Options Landscape
-- [Panoptic - The Most Detailed Exposition To Date](https://blog.panoptic.xyz/panoptic-483c6de77a0e)  
-- [Three Sigma: Options Series Part I - An Overview of the DeFi Options Landscape](https://threesigma.xyz/blog/defi-options-landscape)  
-- [Three Sigma: Options Series Part II - Exploring Different Pricing Approaches and Tokenomics](https://threesigma.xyz/blog/exploring-options-pricing-tokenomics)
 
 *Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://linktr.ee/panopticxyz).*

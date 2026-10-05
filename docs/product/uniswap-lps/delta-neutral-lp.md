@@ -76,6 +76,8 @@ Panoptic automatically handles the hedging in protocol. This creates an LP posit
 - **Rebalance:** If the ETH price moves significantly, your position may no longer be delta-neutral. You can rebalance by [closing](/docs/product/closing-a-position) and reopening your position to restore neutrality.
 - **ETH Top-Up:** If the ETH price increases and you unwind your LP, you may need to supply a small additional amount of ETH to fully close the position.
 
+For other ways to hedge, including loans, put spreads, and calendar spreads, see [how to hedge a Uniswap LP position](/docs/product/uniswap-lps/hedge).
+
 ## Summary
 
 - **Strategy:** Delta-neutral = Hedged LP by combining normal and inverted positions

@@ -12,6 +12,8 @@ LPs know that falling prices are detrimental for profitability. Not only do they
 
 In this article, we’ll show how LPs **lose less** on the downside and **earn more** from those juicy LP fees–by embracing delta-neutral LPing.
 
+For an overview of every way to hedge a Uniswap LP position on Panoptic (options, loans, selling options, and vaults), see [how to hedge a Uniswap LP position](/docs/product/uniswap-lps/hedge).
+
 ## The Natural Directionality of LPing
 
 When you LP on Uniswap, you’re implicitly taking a directional bet:
