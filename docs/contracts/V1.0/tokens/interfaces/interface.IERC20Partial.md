@@ -1,4 +1,8 @@
-# IERC20Partial
+---
+sidebar_label: "IERC20Partial"
+title: "IERC20Partial (V1.0)"
+---
+# IERC20Partial (V1.0)
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.0.x/contracts/tokens/interfaces/IERC20Partial.sol)
 
 **Author:**
@@ -81,4 +85,3 @@ Returns the amount of tokens in existence.
 ```solidity
 function totalSupply() external view returns (uint256);
 ```
-

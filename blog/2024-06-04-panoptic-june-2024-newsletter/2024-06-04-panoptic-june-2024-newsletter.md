@@ -30,7 +30,7 @@ Panoptic is seeking feedback on its points ([Pips](https://t.co/Z3WXrnhGLZ)) pro
 
   
 
-A total of three billion Pips will be distributed, with one billion Pips allocated to each user category. The distribution rates are designed to promote liquidity and active participation, with PLPs earning Pips based on the total value locked (TVL) in ETH per block, Options Sellers based on the ETH premia earned, and Options Buyers based on the ETH premia paid. Your feedback on the program is requested. To participate in the discussion, please join us on our Discord [forum](https://discord.gg/eskHUzPw7r). Access is granted upon submitting a short [form](https://forms.gle/5tpR61HmLpgRYoYw5), where you can share your initial ideas.
+A total of three billion Pips will be distributed, with one billion Pips allocated to each user category. The distribution rates are designed to promote liquidity and active participation, with PLPs earning Pips based on the total value locked (TVL) in ETH per block, Options Sellers based on the ETH streamia (streaming premium) earned, and Options Buyers based on the ETH streamia paid. Your feedback on the program is requested. To participate in the discussion, please join us on our Discord [forum](https://discord.gg/eskHUzPw7r). Access is granted upon submitting a short [form](https://forms.gle/5tpR61HmLpgRYoYw5), where you can share your initial ideas.
 
 ### Panoptic Discusses Options Model at Columbia DeFi Conference
 
@@ -44,7 +44,7 @@ After a successful competitive audit hosted on Code4rena from April 1 to April 2
 
 ### Navigating Liquidity on Panoptic
 
-[Liquidity](https://panoptic.xyz/research/navigating-liquidity-in-panoptic) in Panoptic comes from passive and active sources. Passive liquidity providers deposit tokens, earning a percentage of trading volume as options traders leverage their funds. Active liquidity involves option sellers borrowing from passive LPs to create positions in Uniswap v3, mimicking options due to their payoff structures. Users can view liquidity distribution through the liquidity toggle, displaying data on calls and puts across various strike prices and timescales.
+[Liquidity](https://panoptic.xyz/docs/product/liquidity) in Panoptic comes from passive and active sources. Passive liquidity providers deposit tokens, earning a percentage of trading volume as options traders leverage their funds. Active liquidity involves option sellers borrowing from passive LPs to create positions in Uniswap v3, mimicking options due to their payoff structures. Users can view liquidity distribution through the liquidity toggle, displaying data on calls and puts across various strike prices and timescales.
 
   
 

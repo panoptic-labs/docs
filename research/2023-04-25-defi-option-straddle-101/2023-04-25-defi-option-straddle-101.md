@@ -29,7 +29,7 @@ Straddles let you profit when price moves in EITHER direction.
 
 Straddles consist of 2 legs: 1 call + 1 put. The call option lets you profit on the upside and the put option lets you profit on the downside. This results in you profiting if price moves, regardless of direction. However, there's a cost.
 
-The cost of buying a straddle in TradFi is the upfront premia you pay for both legs (call + put). In Panoptic, the upfront cost is 0, and you instead pay a gradual premia that accumulates every block while you're "in range" (think Uni V3 LP).
+The cost of buying a straddle in TradFi is the upfront premiums you pay for both legs (call + put). In Panoptic, the upfront cost is 0, and you instead pay a gradual streamia (streaming premium) that accumulates every block while you're "in range" (think Uni V3 LP).
 
 <blockquote class="twitter-tweet" data-conversation="none"><p lang="en" dir="ltr">1/13 🚀 Panoptic is a 0-to-1 innovation that will soon allow you to trade perpetual, oracle-free options<br/><br/>Panoptic is powered by a groundbreaking Streaming Premia Pricing Model (StrP)! 🌊<br/><br/>Let&#39;s dive into this thread to explore the incredible benefits of our next-gen approach <a href="https://t.co/ftpSzZA5wP">pic.twitter.com/ftpSzZA5wP</a></p>&mdash; Panoptic (@Panoptic_xyz) <a href="https://twitter.com/Panoptic_xyz/status/1647993380851552257?ref_src=twsrc%5Etfw">April 17, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 

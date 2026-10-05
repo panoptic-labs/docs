@@ -7,11 +7,11 @@ sidebar_label: Core concepts
 
 These concepts connect the SDK's inputs and outputs to what your app displays. The [simulation tutorial](./simulate-position) uses a single short call; other strategies need their own sizing and risk treatment.
 
-## Perpetual options and streaming premia
+## Perpetual options and Streamia {#perpetual-options-and-streaming-premia}
 
 A Panoptic option has no scheduled expiry. A user opens a position and later closes it, subject to available liquidity and protocol constraints. Long positions may also be force-exercised under protocol rules; no expiry does not mean indefinite, unconditional holding.
 
-Option buyers pay and sellers receive streaming premia as market activity accrues, rather than fixing the entire lifetime premium upfront. An app should distinguish accrued amounts from estimates of future carrying costs. See [streamia](../product/streamia) and [trading risks](../panoptic-protocol/risks).
+Option buyers pay and sellers receive streamia as market activity accrues, rather than fixing the entire lifetime premium upfront. An app should distinguish accrued amounts from estimates of future carrying costs. See [streamia (streaming premium)](../product/streamia) and [trading risks](../panoptic-protocol/risks).
 
 ## Markets, pools, and tokens
 
@@ -44,8 +44,8 @@ Under-collateralized positions can be liquidated. Read [collateral accounting](.
 | Cost | What an app should communicate |
 | --- | --- |
 | Trading commission | The charge for the operation under the selected RiskEngine. Builder routing can affect its distribution and user discount. |
-| Streaming premia | Accrued option premia and the uncertainty of future premia. |
-| Borrowing interest | Interest associated with borrowing, where applicable; distinct from option premia. |
+| Streamia | Accrued option streamia and the uncertainty of future streamia. |
+| Borrowing interest | Interest associated with borrowing, where applicable; distinct from option streamia. |
 | Network gas | The transaction's network cost, distinct from collateral movements. |
 
 Simulation fields with `null` values mean unavailable information, not a zero charge. Signed token movements are not an all-in fee quote. See [fee rules](../contracts/parameters#fees-and-builder-routing) and [interest accrual](../panoptic-protocol/V2/interest-accrual).

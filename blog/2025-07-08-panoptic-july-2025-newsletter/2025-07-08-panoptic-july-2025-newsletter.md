@@ -30,7 +30,7 @@ Unlike traditional airdrops, this is a dynamic, merit-based system where pools a
 
 ### Delta-Neutral LPing Strategy Gains Traction as Market Volatility Returns
 
-Panoptic's comprehensive [analysis](/blog/delta-neutral-lp-hedge-uniswap-position) of delta-neutral LP hedging strategies reveals how LPs can dramatically reduce downside exposure while earning enhanced fee income through strategic options overlay. The research demonstrates that combining traditional Uniswap LP positions with short perpetual calls can reduce losses from -0.49% to just -0.02% on a 1% ETH drop, while simultaneously doubling fee income through both Uniswap swap fees and Panoptic option premiums. This "perpetual straddle" approach effectively transforms passive liquidity provision into an active options-selling strategy that profits when prices stay in range and provides cushioned exposure during price movements.
+Panoptic's comprehensive [analysis](/blog/delta-neutral-lp-hedge-uniswap-position) of delta-neutral LP hedging strategies reveals how LPs can dramatically reduce downside exposure while earning enhanced fee income through strategic options overlay. The research demonstrates that combining traditional Uniswap LP positions with short perpetual calls can reduce losses from -0.49% to just -0.02% on a 1% ETH drop, while simultaneously doubling fee income through both Uniswap swap fees and Panoptic streamia (streaming premium). This "perpetual straddle" approach effectively transforms passive liquidity provision into an active options-selling strategy that profits when prices stay in range and provides cushioned exposure during price movements.
 
 ![](./02.png)
 
@@ -74,7 +74,7 @@ The study highlights how Panoptic's perpetual options framework transforms tradi
 
 ### OpenZeppelin Audit Strengthens Security Foundation
 
-Panoptic [successfully](docs/security/security_audits#openzeppelin) completed its Uniswap V4 oracle hook audit with OpenZeppelin on May 20, 2025, reinforcing the platform's commitment to security and institutional-grade reliability. The audit covers critical infrastructure components that enable Panoptic's integration with Uniswap v4, ensuring that the protocol's oracle mechanisms meet the highest security standards as the platform scales across multiple networks. This audit represents another milestone in Panoptic's comprehensive security framework, building on previous audits and demonstrating the team's dedication to protecting user funds through rigorous third-party verification.
+Panoptic [successfully](/docs/security/security_audits#openzeppelin) completed its Uniswap V4 oracle hook audit with OpenZeppelin on May 20, 2025, reinforcing the platform's commitment to security and institutional-grade reliability. The audit covers critical infrastructure components that enable Panoptic's integration with Uniswap v4, ensuring that the protocol's oracle mechanisms meet the highest security standards as the platform scales across multiple networks. This audit represents another milestone in Panoptic's comprehensive security framework, building on previous audits and demonstrating the team's dedication to protecting user funds through rigorous third-party verification.
 
 ### Panoptic Vaults Begin Code4rena Competitive Audit
 

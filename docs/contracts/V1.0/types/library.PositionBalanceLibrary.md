@@ -1,4 +1,8 @@
-# PositionBalanceLibrary
+---
+sidebar_label: "PositionBalanceLibrary"
+title: "PositionBalanceLibrary (V1.0)"
+---
+# PositionBalanceLibrary (V1.0)
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.0.x/contracts/types/PositionBalance.sol)
 
 **Author:**
@@ -308,5 +312,3 @@ function unpackAll(PositionBalance self)
 |`utilization0AtMint`|`int256`|Utilization of token0 at mint|
 |`utilization1AtMint`|`int256`|Utilization of token1 at mint|
 |`_positionSize`|`uint128`|Size of the position|
-
-

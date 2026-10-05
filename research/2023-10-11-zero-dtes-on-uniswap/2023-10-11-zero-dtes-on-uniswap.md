@@ -14,7 +14,7 @@ Our investigation zooms in on the ETH-USDC (30 bps) pool of Uniswap v3, a choice
 
   
 
-Currently, LPs on Uniswap can [only sell perpetual put options](https://panoptic.xyz/research/defi-put-options-uniswap-backtest), and receive swap fees as a [streaming premia](https://panoptic.xyz/blog/streamia-defi-native-options-pricing). Panoptic elevates LPs by building on Uniswap to create a full-featured options market allowing users to trade puts, calls, and more [complex strategies](https://panoptic.xyz/research/essential-options-strategies-to-know). But prior to Panoptic’s [launch](https://panoptic.xyz/blog/gated-launch-sign-up), one might wonder how the existing “short-put only” options market on Uniswap is characterized.
+Currently, LPs on Uniswap can [only sell perpetual put options](https://panoptic.xyz/research/defi-put-options-uniswap-backtest), and receive swap fees as a [streamia (streaming premium)](https://panoptic.xyz/docs/product/streamia). Panoptic elevates LPs by building on Uniswap to create a full-featured options market allowing users to trade puts, calls, and more [complex strategies](https://panoptic.xyz/research/essential-options-strategies-to-know). But prior to Panoptic’s [launch](https://panoptic.xyz/blog/gated-launch-sign-up), one might wonder how the existing “short-put only” options market on Uniswap is characterized.
 
   
 
@@ -58,7 +58,7 @@ An LP position's width pertains to the price range selected for liquidity provis
 
   
 
-The chosen width of an LP position implies an expected time horizon on the part of the LP. This is because the volatility of the underlying asset can be used to derive a "[first exit time](https://panoptic.xyz/research/stay-in-range-uniswap-v3)" which represents when the LP position goes out of range. The first exit time can be viewed as an expected time horizon (expiry date) because the LP position (sold option) will stop receiving fees (premia) at this point.
+The chosen width of an LP position implies an expected time horizon on the part of the LP. This is because the volatility of the underlying asset can be used to derive a "[first exit time](https://panoptic.xyz/research/stay-in-range-uniswap-v3)" which represents when the LP position goes out of range. The first exit time can be viewed as an expected time horizon (expiry date) because the LP position (sold option) will stop receiving fees (streamia) at this point.
 
   
 
@@ -66,7 +66,7 @@ The chosen width of an LP position implies an expected time horizon on the part 
 
   
 
-However, there is a caveat. LP positions are not exactly like traditional options; rather, they behave like perpetual options. This means that the LP position will never expire and that the first exit time may be just the first of many entries and exits. Should the price of the underlying asset return in-range, the perpetual short option will continue generating premia and the option has not really “expired”.
+However, there is a caveat. LP positions are not exactly like traditional options; rather, they behave like perpetual options. This means that the LP position will never expire and that the first exit time may be just the first of many entries and exits. Should the price of the underlying asset return in-range, the perpetual short option will continue generating streamia and the option has not really “expired”.
 
   
 

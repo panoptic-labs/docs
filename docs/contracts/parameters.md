@@ -13,7 +13,7 @@ The tables are generated from [block-pinned RPC observations](/data/risk-engines
 
 - Fee rates and fee splits use basis points: `10_000` = 100%.
 - Collateral ratios, cross buffers, the buying-power-decrease buffer (`BP_DECREASE_BUFFER`), and exercise-cost coefficients use `DECIMALS = 10_000_000`. The buffer applies to minting and collateral-withdrawal checks. A value of `10_666_667` multiplies the requirement by approximately 1.066667; it is not a fee. In the pinned implementation, force-exercise solvency checks in `dispatchFrom` use `NO_BUFFER` (`10_000_000`).
-- `MAX_SPREAD` uses a scale of `10_000` for removed liquidity divided by remaining liquidity. `VEGOID` is an integer controlling streaming-premium sensitivity.
+- `MAX_SPREAD` uses a scale of `10_000` for removed liquidity divided by remaining liquidity. `VEGOID` is an integer controlling streamia (streaming premium) sensitivity.
 - `EMA_PERIODS` packs four 24-bit periods in seconds, ordered spot, fast, slow, eons. Interest rates use WAD (`10^18`) per second; these rates are not APYs or promises of lender returns.
 - `TARGET_POOL_UTIL` is the collateral utilization threshold; `TARGET_UTILIZATION` is the separately scaled interest-model target.
 
@@ -25,9 +25,9 @@ The base seller ratio increases toward full collateralization above the collater
 
 ### Fees and builder routing
 
-Opening a position charges the notional fee on the sum of long and short amounts in each collateral token. Interest on borrowed tokens and streaming option premia are separate costs.
+Opening a position charges the notional fee on the sum of long and short amounts in each collateral token. Interest on borrowed tokens and streamia are separate costs.
 
-For a close with realized premium, the commission is the smaller of the premium-based fee and ten times the notional fee on the closing notional. A premium-only settlement with zero long and short notional uses the premium fee without that notional cap. The contracts round asset/share conversions; the premium-fee parameter alone does not determine the final amount charged.
+For a close with realized streamia, the commission is the smaller of the streamia-based fee and ten times the notional fee on the closing notional. A streamia-only settlement with zero long and short notional uses the streamia fee without that notional cap. The contracts round asset/share conversions; the streamia-fee parameter alone does not determine the final amount charged.
 
 With a valid nonzero builder code, the protocol and builder receive their configured shares of the calculated commission; the remainder is a user discount (currently 10%). With code zero, no builder wallet receives fees and commission share burning benefits collateral-vault shareholders. A nonzero code must resolve to a deployed builder wallet.
 
@@ -222,7 +222,7 @@ These parameters are used to calculate the collateral requirements for options t
 uint256 immutable SELL_COLLATERAL_RATIO (bps) = 2_000 = 20%
 ```
 
-The seller collateral ratio is the ratio of the collateral required to sell an option to the option's notional value (amount borrowed from [PLPs](/docs/panoptic-protocol/protocol-roles#passive-liquidity-providers-plps)).
+The seller collateral ratio is the ratio of the collateral required to sell an option to the option's notional value (amount borrowed from [PLPs](/docs/panoptic-protocol/protocol-roles#lenders-passive-liquidity-providers-plps)).
 The collateral ratio remains at the parameter value for options minted when the pool utilization is between `0` and `TARGET_POOL_UTIL`. For options minted `utilization=TARGET_POOL_UTIL` and `utilization=SATURATED_POOL_UTIL`, the collateral ratio increases linearly to 100%.
 
 
@@ -249,7 +249,7 @@ The saturated pool utilization is the point at which options sellers are require
 uint256 immutable BP_DECREASE_BUFFER (bps) = 13_333 = 133.33%
 ```
 This parameter is a multiplier applied to the total collateral requirement for a user during solvency checks after they perform actions which may decrease their buying power, namely, minting options or force exercising another user.
-The buffer ensures that users cannot cause their own account to go into a liquidatable state; insolvency should only occur after a significant price movement or long premium accumulation.
+The buffer ensures that users cannot cause their own account to go into a liquidatable state; insolvency should only occur after a significant price movement or long streamia accumulation.
 
 ## Streamia parameters
 These parameters help to determine the maximum amount of liquidity that can be borrowed from option sellers, and the multiplier over Uniswap fees owed by option buyers to option sellers.  
@@ -259,16 +259,16 @@ These parameters help to determine the maximum amount of liquidity that can be b
 ```solidity
 uint256 immutable VEGOID = 3
 ```
-`VEGOID` is a parameter used to modify the [premium multiplier equation](https://www.desmos.com/calculator/mdeqob2m04): lower values of `VEGOID` result in an increased rate of increase in the premium multiplier as the percentage of sold liquidity borrowed in a chunk increases, while higher values of `VEGOID` result in a more gradual premium multiplier increase alongside increases in liquidity utilization.
+`VEGOID` is a parameter used to modify the [streamia multiplier equation](https://www.desmos.com/calculator/mdeqob2m04): lower values of `VEGOID` result in an increased rate of increase in the streamia multiplier as the percentage of sold liquidity borrowed in a chunk increases, while higher values of `VEGOID` result in a more gradual streamia multiplier increase alongside increases in liquidity utilization.
 
-The premium multiplier (over fees earned by an identical Uniswap position) paid by option buyers in a given liquidity chunk (consisting of `strike`, `width`, and `tokenType`) increases along with the percentage of sold liquidity borrowed in that chunk according to the equation linked above.
+The streamia multiplier (over fees earned by an identical Uniswap position) paid by option buyers in a given liquidity chunk (consisting of `strike`, `width`, and `tokenType`) increases along with the percentage of sold liquidity borrowed in that chunk according to the equation linked above.
 
 ### MAX_SPREAD
 ```solidity
 uint256 immutable MAX_SPREAD (x2^32) = 9 * (2**32) = 9x
 ```
 `MAX_SPREAD` defines the maximum value of `removedLiquidity/remainingLiquidity` (e.g. `MAX_SPREAD=9x` corresponds to a maximum
-`90%` overall liquidity utilization). This serves to limit the multiplier on the premium paid by option buyers to option sellers: according to the  [premium multiplier equation](https://www.desmos.com/calculator/mdeqob2m04), the maximum premium multiplier for a `MAX_SPREAD` of `9x` is `3.25x`.
+`90%` overall liquidity utilization). This serves to limit the multiplier on the streamia paid by option buyers to option sellers: according to the  [streamia multiplier equation](https://www.desmos.com/calculator/mdeqob2m04), the maximum streamia multiplier for a `MAX_SPREAD` of `9x` is `3.25x`.
 
 ## Fee parameters
 These parameters define the fees corresponding to various actions on the Panoptic protocol.
@@ -280,7 +280,7 @@ uint256 immutable COMMISSION_FEE (bps) = 20 = 0.2%
 ```
 The commission fee is the base fee charged on the notional value of both purchased and sold options when they are minted. 
 
-This fee is distributed to [PLPs](/docs/panoptic-protocol/protocol-roles#passive-liquidity-providers-plps) in the corresponding `tokenType` vault, serving as interest payments for tokens borrowed by option sellers.
+This fee is distributed to [PLPs](/docs/panoptic-protocol/protocol-roles#lenders-passive-liquidity-providers-plps) in the corresponding `tokenType` vault, serving as interest payments for tokens borrowed by option sellers.
 
 The commission fee is also charged on PLP deposits and distributed to existing PLPs to discourage the capture of commission fees through just-in-time liquidity provision.
 

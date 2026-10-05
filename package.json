@@ -23,14 +23,17 @@
     "generate:risk-tables": "node scripts/generate-risk-tables.mjs",
     "check:risk-tables": "node scripts/generate-risk-tables.mjs --check",
     "test": "node --test scripts/*.test.mjs && pnpm check:risk-tables && pnpm test:examples",
-    "lint": "prettier --check \"scripts/*.mjs\" \"static/data/risk-engines.json\" && pnpm lint:examples",
+    "lint": "prettier --check \"scripts/*.mjs\" \"static/data/risk-engines.json\" && pnpm lint:examples && pnpm lint:seo",
     "format:risk-data": "prettier --write \"scripts/*.mjs\" \"static/data/risk-engines.json\"",
     "generate:contracts": "node scripts/generate-contracts.mjs",
-    "postbuild": "pnpm export:markdown && node scripts/verify-build.mjs",
+    "postbuild": "pnpm export:markdown && node scripts/verify-build.mjs && pnpm verify:entities",
     "export:markdown": "node scripts/export-markdown.mjs",
     "lint:examples": "prettier --check --no-semi --single-quote \"static/examples/trade-lifecycle/*.mjs\" \"static/examples/trade-lifecycle/package.json\"",
     "format:examples": "prettier --write --no-semi --single-quote \"static/examples/trade-lifecycle/*.mjs\" \"static/examples/trade-lifecycle/package.json\"",
-    "test:examples": "node --test static/examples/trade-lifecycle/*.test.mjs"
+    "test:examples": "node --test static/examples/trade-lifecycle/*.test.mjs",
+    "verify:entities": "node scripts/verify-entity-schema.mjs",
+    "lint:seo": "prettier --check src/data/entities.cjs src/components/StructuredData.js src/pages/about.js src/pages/about.module.css src/theme/BlogPostPage/Metadata/index.js blog/authors.yml research/authors.yml",
+    "format:seo": "prettier --write src/data/entities.cjs src/components/StructuredData.js src/pages/about.js src/pages/about.module.css src/theme/BlogPostPage/Metadata/index.js blog/authors.yml research/authors.yml"
   },
   "dependencies": {
     "@docsearch/react": "3.9.0",

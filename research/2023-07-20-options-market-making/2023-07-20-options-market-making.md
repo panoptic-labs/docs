@@ -6,7 +6,6 @@ image: /img/research/options-market-making.png
 description: "How Options Market Making Works in Panoptic"
 authors: B
 ---
-
 Market making is a core component of any financial system. In Panoptic, it's a unique and critical element of our platform that empowers the future of options trading by removing intermediaries, counterparty pricing, and order books.
 
   
@@ -56,7 +55,7 @@ Overall, spot and options market makers differ from each other due to the nature
 
 ## Market Making in Panoptic
 
-Panoptic is a revolutionary options trading platform that introduces perpetual options to the world of decentralized finance (DeFi). Market making in Panoptic differs from both TradFi and DeFi options market making because our novel framework enables option sellers to receive [streamia](https://panoptic.xyz/blog/streamia-defi-native-options-pricing), or a streaming premium, without the presence of buyers. This enables infinite selling at any desired strike price since sellers will always be compensated.
+Panoptic is a revolutionary options trading platform that introduces perpetual options to the world of decentralized finance (DeFi). Market making in Panoptic differs from both TradFi and DeFi options market making because our novel framework enables option sellers to receive [streamia (streaming premium)](https://panoptic.xyz/docs/product/streamia), without the presence of buyers. This enables infinite selling at any desired strike price since sellers will always be compensated.
 
   
 
@@ -181,6 +180,4 @@ Futures allow traders to easily establish both long and short positions, making 
 
 In crypto, [perpetual futures](https://panoptic.xyz/research/perpetual-futures-vs-options#what-are-perps) (perps) offer added benefits of flexibility with no expiries and have the potential benefit of earning the funding fee. Perpetual options can be hedged with perpetual futures. We will further explore this concept in future research.
 
-  
-
-*Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](https://panoptic.xyz/docs/intro) and head to our [website](https://panoptic.xyz/).*
+For the two hedged-convexity strategies, see [gamma scalping](/research/gamma-scalping) for long gamma and [reverse gamma scalping](/research/reverse-gamma-scalping) for short gamma.

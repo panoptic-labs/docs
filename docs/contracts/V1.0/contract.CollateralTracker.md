@@ -1,7 +1,9 @@
 ---
 sidebar_position: 3
+sidebar_label: "CollateralTracker"
+title: "CollateralTracker (V1.0)"
 ---
-# CollateralTracker
+# CollateralTracker (V1.0)
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.0.x/contracts/CollateralTracker.sol)
 
 **Inherits:**
@@ -1374,4 +1376,3 @@ event Withdraw(address indexed sender, address indexed receiver, address indexed
 |`owner`|`address`|The address of the owner of the shares being burned|
 |`assets`|`uint256`|The amount of assets withdrawn to `receiver`|
 |`shares`|`uint256`|The amount of shares burned by `owner` in exchange for `assets`|
-

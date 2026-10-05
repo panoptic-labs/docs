@@ -1,4 +1,8 @@
-# ERC1155
+---
+sidebar_label: "ERC1155"
+title: "ERC1155 (V2)"
+---
+# ERC1155 (V2)
 
 > Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
 

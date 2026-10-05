@@ -4,6 +4,7 @@ import "@fontsource/jetbrains-mono"
 // ScrollingTokens removed — will revisit with UI screenshots
 // import ScrollingTokens from "../ScrollingTokens/ScrollingTokens"
 import React from "react";
+import entities from "../../../data/entities.cjs";
 import { motion } from "framer-motion";
 import HeroVisual from "../HeroVisual/HeroVisual";
 import { APP_LINK } from "../../../constants";
@@ -30,8 +31,7 @@ const TitlePage = () => {
           </h1>
 
           <p className="hero-subtitle">
-            Panoptic turns AMM liquidity into perpetual options, creating an
-            options market with no order books and no expiries.
+            {entities.description}
           </p>
 
           <div className="hero-cta">

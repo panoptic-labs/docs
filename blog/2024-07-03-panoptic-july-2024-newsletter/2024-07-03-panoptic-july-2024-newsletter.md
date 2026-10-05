@@ -60,7 +60,7 @@ Gamma scalping, a vital [technique](https://panoptic.xyz/research/gamma-scalping
   
   
 
-In the Panoptic context, gamma scalping adapts to the unique dynamics of DeFi. Panoptions introduce the concept of "rangeness" to replace traditional moneyness, where premia (streamia) is paid only when an option is in-range. This innovative mechanism allows for tailored gamma exposure and dynamic hedging using perps. A prospective gamma scalper on Panoptic would benefit from a scenario where the underlying asset starts in-range and eventually moves out-of-range, maximizing the convexity of the payoff curve. This approach not only highlights the flexibility and potential of gamma scalping in decentralized finance but also underscores its ability to harness realized volatility for substantial gains.
+In the Panoptic context, gamma scalping adapts to the unique dynamics of DeFi. Panoptions introduce the concept of "rangeness" to replace traditional moneyness, where streamia (streaming premium) is paid only when an option is in-range. This innovative mechanism allows for tailored gamma exposure and dynamic hedging using perps. A prospective gamma scalper on Panoptic would benefit from a scenario where the underlying asset starts in-range and eventually moves out-of-range, maximizing the convexity of the payoff curve. This approach not only highlights the flexibility and potential of gamma scalping in decentralized finance but also underscores its ability to harness realized volatility for substantial gains.
 
   
 

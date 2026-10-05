@@ -4,6 +4,8 @@
 const lightCodeTheme = require("prism-react-renderer/themes/palenight");
 const darkCodeTheme = require("prism-react-renderer/themes/shadesOfPurple");
 
+const { siteGraph, serializeJsonLd } = require("./src/data/entities.cjs");
+
 const math = require("remark-math");
 const katex = require("rehype-katex");
 
@@ -535,11 +537,9 @@ const config = {
       },
     },
     {
-      tagName: 'link',
-      attributes: {
-        rel: 'canonical',
-        href: 'https://panoptic.xyz/',
-      },
+      tagName: 'script',
+      attributes: { type: 'application/ld+json' },
+      innerHTML: serializeJsonLd(siteGraph),
     },
   ],
 };

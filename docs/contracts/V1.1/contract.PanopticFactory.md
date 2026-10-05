@@ -1,7 +1,9 @@
 ---
 sidebar_position: 4
+sidebar_label: "PanopticFactory"
+title: "PanopticFactory (V1.1)"
 ---
-# PanopticFactory
+# PanopticFactory (V1.1)
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.1.x/contracts/PanopticFactory.sol)
 
 **Inherits:**
@@ -216,4 +218,3 @@ event PoolDeployed(
 |`poolKey`|`PoolKey`|The Uniswap V4 pool key associated with the Panoptic Pool|
 |`collateralTracker0`|`CollateralTracker`|Address of the collateral tracker contract for currency0|
 |`collateralTracker1`|`CollateralTracker`|Address of the collateral tracker contract for currency1|
-

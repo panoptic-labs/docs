@@ -42,7 +42,7 @@ Built on Uniswap, Panoptic LPs earn the same yield as in Uniswap pools, with the
 
 Panoptic's intuitive [interface](http://app.panoptic.xyz) replaces traditional order books with a visual approach, letting users easily build strategies based on whether they believe an asset will rise or fall. Advanced traders can access one-click strategies, including multi-leg options and perp trading. Traders can also create their own options markets using any tokens available on Uniswap.
 
-Panoptic [eliminates IL](https://panoptic.xyz/blog/turning-impermanent-loss-into-gain) by bringing [passive, single-sided liquidity](https://panoptic.xyz/blog/bringing-passive-liquidity-to-uniswap) to Uniswap through gRHO. Passive LPs can lend tokens to other LPs on Panoptic. Passive LPing is as easy as depositing a token, and avoids the hassles of active management, choosing a price range, rebalancing when going out of range, and impermanent loss.
+Panoptic [eliminates IL](https://panoptic.xyz/blog/turning-impermanent-loss-into-gain) by bringing [passive, single-sided liquidity](https://panoptic.xyz/blog/passive-liquidity-pools) to Uniswap through gRHO. Passive LPs can lend tokens to other LPs on Panoptic. Passive LPing is as easy as depositing a token, and avoids the hassles of active management, choosing a price range, rebalancing when going out of range, and impermanent loss.
 
 The [gRHO platform](https://panoptic.xyz/blog/panoptic-awarded-uniswap-foundation-grant) is a lending interface for Uniswap liquidity, where liquidity providers can borrow from passive LPs, generating yield in the process. That means no [LVR](https://panoptic.xyz/research/panoptic-solves-lvr) or IL for passive LPs who deposit single-sided to earn auto-compounded fees.
 

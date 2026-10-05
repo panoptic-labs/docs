@@ -1,6 +1,7 @@
 import "@fontsource-variable/dm-sans";
 import "@fontsource/fragment-mono";
 import React from "react";
+import entities from "../data/entities.cjs";
 import { MotionConfig } from "framer-motion";
 
 import RecentUpdates from "../components/HomePage/RecentUpdates";
@@ -43,7 +44,11 @@ function Section({ id, tint = false, bordered = true, children }) {
 
 export default function Home() {
   return (
-    <Layout purpleMode={false}>
+    <Layout
+      purpleMode={false}
+      title="Perpetual Options Built on Uniswap"
+      description={entities.description}
+    >
       <MotionConfig reducedMotion="user">
       <main style={{ backgroundColor: "var(--color-bg-dark)", position: "relative" }}>
         <FloatingLogos />

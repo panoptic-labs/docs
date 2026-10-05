@@ -18,7 +18,7 @@ Discover the future of trading with Panoptic, your gateway to perpetual options 
 
 
 ## The Evolution of Panoptic: What V1 Was
-Panoptic V1 turned Uniswap LP positions into perpetual options through an oracle-free design. Instead of pricing options upfront with volatility models, it used a streaming premium system where option holders paid over time as prices moved. Liquidity providers deposited capital that traders could borrow and reposition to simulate long option exposure. The system was permissionless—any Uniswap pool could host an options market.
+Panoptic V1 turned Uniswap LP positions into perpetual options through an oracle-free design. Instead of pricing options upfront with volatility models, it used a streamia (streaming premium) system where option holders paid over time as prices moved. Liquidity providers deposited capital that traders could borrow and reposition to simulate long option exposure. The system was permissionless—any Uniswap pool could host an options market.
 
 The innovation proved that "LP equals Options" could work in DeFi. By avoiding external oracles, it reduced manipulation risk while enabling composability across protocols. V1 successfully demonstrated that perpetual options were viable on-chain.
 

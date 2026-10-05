@@ -1,0 +1,865 @@
+Author attribution review
+
+TODO: Confirm the author(s) of each listed post.
+Guillaume suggested Brandon, Nathan, Amy, or Juan as possible authors.
+No explicit author signatures were found in these posts.
+Existing research frontmatter credits Brandon on 20 posts, Nathan on 11, and Amy on 11.
+No Juan author entry or explicit in-text signature was found.
+Public history does show juanpmcianci adding Uniswap vs Panoptic and Synthetic Perps,
+and an earlier draft apparently republished as Streamia vs Black-Scholes.
+Juan draft commit: https://github.com/panoptic-labs/docs/commit/bb1a937
+Both Block Scholes reports need external author credit confirmed; uploaders differ.
+Public history checked at https://github.com/panoptic-labs/docs (HEAD aacd2c9).
+The addition commits below are leads, not confirmed writing credits: file moves,
+uploads, and publication on behalf of another author can change the commit author.
+The monorepo import alone does not establish original authorship.
+Mentions of Brandon as a presenter/quoted source and Amy as author of a linked study
+are not signatures for the surrounding articles.
+No attribution was inferred from quotes, linked research, or mentions.
+Existing credits to other authors are preserved.
+Guillaume confirmed writing Position Spoofing Post-Mortem and LP VIPs; both now
+carry authors: G and are excluded from this list.
+The two section-introduction posts explicitly use authors: [] and are excluded.
+
+BLOG: 119 posts without author metadata
+
+- Panoptic Partners with ABDK for Auditing
+  Source: apps/docs/blog/2023-02-01-abdk/2023-02-01-abdk.md
+  Current-path addition: BrandonL20, 2023-05-12 — added abdk blog post
+  Evidence: https://github.com/panoptic-labs/docs/commit/eb9a4e5ce7f16494b3054c7d4b1edc536a3844fb
+  URL: https://panoptic.xyz/blog/abdk-audits-panoptic-defi-protocol
+
+- The Launch of Panoptic Research
+  Source: apps/docs/blog/2023-02-01-panoptic-research-launch/2023-02-01-panoptic-research-launch.md
+  Current-path addition: BrandonL20, 2023-05-22 — Migrate blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/e565ff8d08c8fa153b51e1ffc7fcf46a0798816a
+  URL: https://panoptic.xyz/blog/panoptic-defi-options-research-launch
+
+- Panoptic Raises $4.5M SAFE Round
+  Source: apps/docs/blog/2023-02-01-safe-round/2023-02-01-safe-round.md
+  Current-path addition: Connor Kwiecien, 2023-06-05 — updating two banners
+  Evidence: https://github.com/panoptic-labs/docs/commit/b8a8879d38ba685e58f17efc1517ff64e506f5b7
+  URL: https://panoptic.xyz/blog/defi-options-protocol-safe-round
+
+- Panoptic Partners with Simtopia.ai to Analyze and Optimize Risk Parameters
+  Source: apps/docs/blog/2023-02-01-simtopia-partnership/2023-02-01-simtopia-partnership.md
+  Current-path addition: BrandonL20, 2023-05-22 — Migrate blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/e565ff8d08c8fa153b51e1ffc7fcf46a0798816a
+  URL: https://panoptic.xyz/blog/simtopia-partnership-panoptic-defi-options
+
+- Panoptic Partners with Vector to Develop End-to-End UX/UI
+  Source: apps/docs/blog/2023-02-01-vector-partnership/2023-02-01-vector-partnership.md
+  Current-path addition: BrandonL20, 2023-05-22 — Migrate blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/e565ff8d08c8fa153b51e1ffc7fcf46a0798816a
+  URL: https://panoptic.xyz/blog/vector-partnership
+
+- Panoptic Research: A Month in Review
+  Source: apps/docs/blog/2023-02-04-panoptic-research-feb/2023-02-04-panoptic-research-feb.md
+  Current-path addition: BrandonL20, 2023-05-22 — Migrate blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/e565ff8d08c8fa153b51e1ffc7fcf46a0798816a
+  URL: https://panoptic.xyz/blog/panoptic-defi-options-research-feb-2023
+
+- ABDK Completes Panoptic’s First Audit, Second Audit with OpenZeppelin Upcoming
+  Source: apps/docs/blog/2023-02-22-abdk-audit-completion/2023-02-22-abdk-audit-completion.md
+  Current-path addition: BrandonL20, 2023-05-22 — Migrate blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/e565ff8d08c8fa153b51e1ffc7fcf46a0798816a
+  URL: https://panoptic.xyz/blog/abdk-audit-completion
+
+- Panoptic 101: An Introduction to the DeFi Options Protocol
+  Source: apps/docs/blog/2023-02-23-panoptic-defi-options-protocol-introduction/2023-02-23-panoptic-defi-options-protocol-introduction.md
+  Current-path addition: Connor Kwiecien, 2023-05-25 — Added Panoptic 101 blog post
+  Evidence: https://github.com/panoptic-labs/docs/commit/7bfd06cc7a43017f1b7f0406e6ce7767c7efb833
+  URL: https://panoptic.xyz/blog/panoptic-defi-options-protocol-introduction
+
+- Panoptic’s V1 Roadmap
+  Source: apps/docs/blog/2023-03-05-panoptic-roadmap/2023-03-05-panoptic-roadmap.md
+  Current-path addition: BrandonL20, 2023-05-22 — Migrate blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/e565ff8d08c8fa153b51e1ffc7fcf46a0798816a
+  URL: https://panoptic.xyz/blog/panoptic-defi-options-protocol-roadmap
+
+- Panoptic Partners with OpenZeppelin for Second Smart Contract Audit
+  Source: apps/docs/blog/2023-03-08-openzeppelin-audit/2023-03-08-openzeppelin-audit.md
+  Current-path addition: BrandonL20, 2023-05-22 — Migrate blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/e565ff8d08c8fa153b51e1ffc7fcf46a0798816a
+  URL: https://panoptic.xyz/blog/openzeppelin-audits-panoptic-defi-options-protocol
+
+- ETH Denver 2023–A Recap
+  Source: apps/docs/blog/2023-03-08-panoptic-at-eth-denver/2023-03-08-panoptic-at-eth-denver.md
+  Current-path addition: BrandonL20, 2023-05-22 — Migrate blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/e565ff8d08c8fa153b51e1ffc7fcf46a0798816a
+  URL: https://panoptic.xyz/blog/panoptic-defi-options-at-eth-denver
+
+- Mastering Panoptic: The Definitive Resource Guide for All Things Panoptic
+  Source: apps/docs/blog/2023-04-04-resources/2023-04-04-resources.md
+  Current-path addition: BrandonL20, 2023-05-26 — Added April blog posts
+  Evidence: https://github.com/panoptic-labs/docs/commit/5453ed9a25e54dac37b2162dee2a3bf16c113319
+  URL: https://panoptic.xyz/blog/resources
+
+- Panoptic at Cornell Blockchain Conference 2023
+  Source: apps/docs/blog/2023-04-28-cornell-blockchain-conference-2023/2023-04-28-cornell-blockchain-conference-2023.md
+  Current-path addition: BrandonL20, 2023-05-26 — Added April blog posts
+  Evidence: https://github.com/panoptic-labs/docs/commit/5453ed9a25e54dac37b2162dee2a3bf16c113319
+  URL: https://panoptic.xyz/blog/cornell-blockchain-conference-2023
+
+- Panoptic Named Honorable Mention in Fast Company’s 2023 World Changing Ideas Awards
+  Source: apps/docs/blog/2023-05-02-fast-company-awards/2023-05-02-fast-company-awards.md
+  Current-path addition: BrandonL20, 2023-05-22 — Migrate blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/e565ff8d08c8fa153b51e1ffc7fcf46a0798816a
+  URL: https://panoptic.xyz/blog/fast-company-awards-panoptic-defi-options-protocol
+
+- Demoing Panoptic’s Protocol: The Future of DeFi Options
+  Source: apps/docs/blog/2023-05-12-demoing-panoptic-defi-options-protocol/2023-05-12-demoing-panoptic-defi-options-protocol.md
+  Current-path addition: BrandonL20, 2023-05-22 — Migrate blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/e565ff8d08c8fa153b51e1ffc7fcf46a0798816a
+  URL: https://panoptic.xyz/blog/demoing-panoptic-defi-options-protocol
+
+- Uniswap Options: Empowering Panoptic and the Future of DeFi Options
+  Source: apps/docs/blog/2023-05-26-uniswap-options/2023-05-26-uniswap-options.md
+  Current-path addition: Connor Kwiecien, 2023-05-26 — add Uniswap Options Blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/f4b92fccc5098dad9f39ca95159baa02d424b754
+  URL: https://panoptic.xyz/blog/uniswap-options
+
+- Democratizing DeFi Research Part I: How to Use Panoptic Research’s GitHub Repository
+  Source: apps/docs/blog/2023-05-29-democratizing-defi-options-research-part-1/2023-05-29-democratizing-defi-options-research-part-1.md
+  Current-path addition: BrandonL20, 2023-05-29 — Added defi options blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/3d4a15ee364695af58365433eacb87046ff1b13a
+  URL: https://panoptic.xyz/blog/democratizing-defi-options-research-part-1
+
+- Democratizing DeFi Research Part II: Deep Dive into Implied Volatility
+  Source: apps/docs/blog/2023-05-31-democratizing-defi-options-research-part-2/2023-05-31-democratizing-defi-options-research-part-2.md
+  Current-path addition: BrandonL20, 2023-05-31 — Added democratizing defi part 2 blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/ba8f6275ca4125c9f1bb11736610ee68eb8284b1
+  URL: https://panoptic.xyz/blog/democratizing-defi-options-research-implied-volatility
+
+- Democratizing DeFi Research Part III: Deep Dive into Backtesting Panoptions
+  Source: apps/docs/blog/2023-06-02-democratizing-defi-options-research-part-3/2023-06-02-democratizing-defi-options-research-part-3.md
+  Current-path addition: BrandonL20, 2023-06-01 — Added democratizing defi options research part 3
+  Evidence: https://github.com/panoptic-labs/docs/commit/c4bd5a00d1a78a13d0b6ad43a7bcf7dfb1badc2c
+  URL: https://panoptic.xyz/blog/democratizing-defi-options-research-backtest
+
+- Panoptic Partners with Three Sigma For Enhanced Economic Security
+  Source: apps/docs/blog/2023-06-09-panoptic-three-sigma-360-audit/2023-06-09-panoptic-three-sigma-360-audit.md
+  Current-path addition: BrandonL20, 2023-06-09 — Added Three Sigma Partnership Post
+  Evidence: https://github.com/panoptic-labs/docs/commit/0a2d4dcb86989de0b7613c83c410c4024132af13
+  URL: https://panoptic.xyz/blog/panoptic-three-sigma-partnership
+
+- Welcome to the Panoptic Community
+  Source: apps/docs/blog/2023-06-16-panoptic-community-launch/2023-06-16-panoptic-community-launch.md
+  Current-path addition: BrandonL20, 2023-06-16 — Added community launch blog and tutorial bite
+  Evidence: https://github.com/panoptic-labs/docs/commit/d4cd5d353f7201fcd763d7ffd3bdb0820d3f3451
+  URL: https://panoptic.xyz/blog/panoptic-community-launch
+
+- Join the Panoptic Ambassador Program
+  Source: apps/docs/blog/2023-06-24-panoptic-ambassador-program/2023-06-24-panoptic-ambassador-program.md
+  Current-path addition: BrandonL20, 2023-06-23 — Final research migration + ambassador program
+  Evidence: https://github.com/panoptic-labs/docs/commit/08c0989482b6a7975472a2ba57ffc6d660fa57aa
+  URL: https://panoptic.xyz/blog/panoptic-ambassador-program
+
+- Streamia vs. Black-Scholes Model (BSM): A Paradigm Shift in DeFi Options Pricing
+  Source: apps/docs/blog/2023-06-28-black-scholes-streamia-defi-options-pricing-models/2023-06-28-black-scholes-streamia-defi-options-pricing-models.md
+  Current-path addition: BrandonL20, 2023-06-28 — Added blog BSM v Streamia
+  Evidence: https://github.com/panoptic-labs/docs/commit/23086e6a3d57e314de4c12acf3d2360265f16ec2
+  URL: https://panoptic.xyz/blog/black-scholes-streamia-defi-options-pricing-models
+
+- The Panoptic Gated Launch: Sign-Up
+  Source: apps/docs/blog/2023-07-05-gated-launch-sign-up/2023-07-05-gated-launch-sign-up.md
+  Current-path addition: BrandonL20, 2023-07-05 — Added sign up post for gated launch
+  Evidence: https://github.com/panoptic-labs/docs/commit/1c2318a996aa3110e12ee55cb509baec115f2148
+  URL: https://panoptic.xyz/blog/gated-launch-sign-up
+
+- Streamia — DeFi-native Options Pricing
+  Source: apps/docs/blog/2023-07-13-streamia-defi-native-options-pricing/2023-07-13-streamia-defi-native-options-pricing.md
+  Current-path addition: BrandonL20, 2023-07-13 — Added blog_7_13_23
+  Evidence: https://github.com/panoptic-labs/docs/commit/964b992e04a3ea010777c47c11b2f531ae0c40e3
+  URL: https://panoptic.xyz/blog/streamia-defi-native-options-pricing
+
+- Panoptic Gated Launch Parameters
+  Source: apps/docs/blog/2023-07-28-gated-launch-parameters/2023-07-28-gated-launch-parameters.md
+  Current-path addition: BrandonL20, 2023-07-28 — Added gated launch parameters blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/a67cf7f441bf61efe87725d14768be94a987d3ed
+  URL: https://panoptic.xyz/blog/gated-launch-parameters
+
+- Panoptic Beta Launch: Epoch 1 Participants
+  Source: apps/docs/blog/2023-08-08-epoch-1-participants/2023-08-08-epoch-1-participants.md
+  Current-path addition: BrandonL20, 2023-08-09 — Added Epoch 1 participants
+  Evidence: https://github.com/panoptic-labs/docs/commit/b9876777d7cd892e114241a7ebcde739bbc2f390
+  URL: https://panoptic.xyz/blog/epoch-1-participants
+
+- Panoptic Awarded Grant from Alchemy's WAGBI Developer Program
+  Source: apps/docs/blog/2023-08-12-alchemy-grant/2023-08-12-panoptic-awarded-alchemy-grant.md
+  Current-path addition: BrandonL20, 2023-08-14 — Added alchemy grant announcement
+  Evidence: https://github.com/panoptic-labs/docs/commit/b28c64b10901579ea8d34c8da6fe70750b19d12c
+  URL: https://panoptic.xyz/blog/panoptic-awarded-alchemy-grant
+
+- Panoptic Releases Smart Contract Code
+  Source: apps/docs/blog/2023-09-07-panoptic-releases-smart-contract-code/2023-09-07-panoptic-releases-smart-contract-code.md
+  Current-path addition: BrandonL20, 2023-09-07 — Added smart contract release announcement
+  Evidence: https://github.com/panoptic-labs/docs/commit/dfdcf20cb18ad51408c22198417e5e638e15a3e7
+  URL: https://panoptic.xyz/blog/panoptic-releases-smart-contract-code
+
+- Panoptic Insights: September Newsletter
+  Source: apps/docs/blog/2023-09-15-panoptic-september-2023-newsletter/2023-09-15-panoptic-september-2023-newsletter.md
+  Current-path addition: BrandonL20, 2023-09-15 — Add September 2023 newsletter
+  Evidence: https://github.com/panoptic-labs/docs/commit/fa0ca28e337c82c1b73339af33859e3820bad679
+  URL: https://panoptic.xyz/blog/panoptic-september-2023-newsletter
+
+- Panoptic at Permissionless II
+  Source: apps/docs/blog/2023-09-18-panoptic-at-permissionless-ii/2023-09-18-panoptic-at-permissionless-ii.md
+  Current-path addition: BrandonL20, 2023-09-18 — Added Permissionless II conference blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/4183ddacc07fee9f3e2c3ace139e4af9e1e60408
+  URL: https://panoptic.xyz/blog/panoptic-at-permissionless-ii
+
+- Panoptic Insights: October Newsletter
+  Source: apps/docs/blog/2023-10-06-panoptic-october-2023-newsletter/2023-10-06-panoptic-october-2023-newsletter.md
+  Current-path addition: BrandonL20, 2023-10-06 — Added newsletter, updated permissionless pics
+  Evidence: https://github.com/panoptic-labs/docs/commit/37cbb264ba3eb7ea303bbae71468a4671da85f30
+  URL: https://panoptic.xyz/blog/panoptic-october-2023-newsletter
+
+- The Start of Panoptic’s Beta Launch: Epoch 1
+  Source: apps/docs/blog/2023-10-10-panoptic-beta-launch-epoch-one/2023-10-10-panoptic-beta-launch-epoch-one.md
+  Current-path addition: BrandonL20, 2023-10-10 — Added epoch one announcement
+  Evidence: https://github.com/panoptic-labs/docs/commit/73690a4eadb7fa24bb940212fc4a384b585535f0
+  URL: https://panoptic.xyz/blog/panoptic-beta-launch-epoch-one
+
+- Perpetual Options Pioneer Launches Beta Platform
+  Source: apps/docs/blog/2023-10-13-panoptic-beta-launch-official/2023-10-13-panoptic-beta-launch-official.md
+  Current-path addition: BrandonL20, 2023-10-13 — Added beta launch announcement
+  Evidence: https://github.com/panoptic-labs/docs/commit/eb8def1ddd7983aa9fd1fe86f9d9318236182c16
+  URL: https://panoptic.xyz/blog/panoptic-beta-launch-official
+
+- Panoptic Community Program
+  Source: apps/docs/blog/2023-10-14-panoptic-community-program/2023-10-14-panoptic-community-program.md
+  Current-path addition: BrandonL20, 2023-10-14 — Added community program announcement
+  Evidence: https://github.com/panoptic-labs/docs/commit/849a93c878ae525824a6edae143cb232dcac2b61
+  URL: https://panoptic.xyz/blog/panoptic-community-program
+
+- Epoch 1 Closed
+  Source: apps/docs/blog/2023-10-20-panoptic-beta-launch-epoch-one-closed/2023-10-20-panoptic-beta-launch-epoch-one-closed.md
+  Current-path addition: BrandonL20, 2023-10-21 — Added epoch 1 end announcement
+  Evidence: https://github.com/panoptic-labs/docs/commit/cfc1c2a64a7296c169b93e240b680fce4837d288
+  URL: https://panoptic.xyz/blog/panoptic-beta-launch-epoch-one-closed
+
+- Better Liquidity Provisioning: Panoptic's Single-Sided, IL-Free, Passive LP Model
+  Source: apps/docs/blog/2023-10-30-better-liquidity-provisioning/2023-10-30-better-liquidity-provisioning.md
+  Current-path addition: BrandonL20, 2023-10-30 — Added PLP blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/2ccf193dde3c2a608c17d4f0455e607f2bd72374
+  URL: https://panoptic.xyz/blog/better-liquidity-provisioning
+
+- The Case Against Perpetual Futures
+  Source: apps/docs/blog/2023-11-01-case-against-perpetual-futures/2023-11-01-case-against-perpetual-futures.md
+  Current-path addition: BrandonL20, 2023-10-31 — Added perps article
+  Evidence: https://github.com/panoptic-labs/docs/commit/5c0b4679212a996869521314e5e66185fde4bcca
+  URL: https://panoptic.xyz/blog/case-against-perpetual-futures
+
+- Beta Launch: Epoch 2
+  Source: apps/docs/blog/2023-11-03-panoptic-beta-launch-epoch-two/2023-11-03-panoptic-beta-launch-epoch-two.md
+  Current-path addition: BrandonL20, 2023-11-03 — Add epoch 2 begins
+  Evidence: https://github.com/panoptic-labs/docs/commit/7c63fc9ddd24271095956d5645beff869ccb44de
+  URL: https://panoptic.xyz/blog/panoptic-beta-launch-epoch-two
+
+- Options 101
+  Source: apps/docs/blog/2023-11-07-crypto-and-options-101/2023-11-07-crypto-and-options-101.md
+  Current-path addition: BrandonL20, 2023-11-07 — Added options 101 blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/4069c9dbcf3633be35e00066931a3c5f740c4d33
+  URL: https://panoptic.xyz/blog/crypto-and-options-101
+
+- Panoptic Insights: November Newsletter
+  Source: apps/docs/blog/2023-11-08-panoptic-november-2023-newsletter/2023-11-08-panoptic-november-2023-newsletter.md
+  Current-path addition: BrandonL20, 2023-11-08 — Updated faqs, gated launch, and november news
+  Evidence: https://github.com/panoptic-labs/docs/commit/235b715fa92df5d59f04d220dda1d84cee9b68d1
+  URL: https://panoptic.xyz/blog/panoptic-november-2023-newsletter
+
+- Panoptic Perpetual Mixer
+  Source: apps/docs/blog/2023-11-14-panoptic-perpetual-mixer/2023-11-14-panoptic-perpetual-mixer.md
+  Current-path addition: BrandonL20, 2023-11-14 — Added blog post
+  Evidence: https://github.com/panoptic-labs/docs/commit/9440a3d876884c09d6498263949f6c2e19c6b153
+  URL: https://panoptic.xyz/blog/panoptic-perpetual-mixer
+
+- Epoch 2 Closed — Get Ready for Epoch 3
+  Source: apps/docs/blog/2023-11-20-panoptic-beta-launch-epoch-two-closed/2023-11-20-panoptic-beta-launch-epoch-two-closed.md
+  Current-path addition: BrandonL20, 2023-11-20 — Added Epoch 2 closes
+  Evidence: https://github.com/panoptic-labs/docs/commit/80005914df674520a032a02bfdf7bf8888e3f6e9
+  URL: https://panoptic.xyz/blog/panoptic-beta-launch-epoch-two-closed
+
+- Panoptic's Demo Platform
+  Source: apps/docs/blog/2023-11-20-panoptic-demo-launch/2023-11-20-panoptic-demo-launch.md
+  Current-path addition: BrandonL20, 2023-11-19 — Added Panoptic Demo launch article
+  Evidence: https://github.com/panoptic-labs/docs/commit/126796c175bfe9e5de85bbc96214ed97d03f61bd
+  URL: https://panoptic.xyz/blog/panoptic-demo-launch
+
+- Beta Launch: Epoch 3
+  Source: apps/docs/blog/2023-11-22-panoptic-beta-launch-epoch-three/2023-11-22-panoptic-beta-launch-epoch-three.md
+  Current-path addition: BrandonL20, 2023-11-22 — Added epoch 3
+  Evidence: https://github.com/panoptic-labs/docs/commit/c10cf4ba056cc6ab0338366f1e8e916a417a2e1b
+  URL: https://panoptic.xyz/blog/panoptic-beta-launch-epoch-three
+
+- Code4rena Audit
+  Source: apps/docs/blog/2023-11-27-panoptic-code4rena-audit/2023-11-27-panoptic-code4rena-audit.md
+  Current-path addition: BrandonL20, 2023-11-27 — Added code4rena article
+  Evidence: https://github.com/panoptic-labs/docs/commit/4e3d7bcd6828d512de45314614968ec3f410beb2
+  URL: https://panoptic.xyz/blog/panoptic-code4rena-audit
+
+- Beta Launch: Epoch 4
+  Source: apps/docs/blog/2023-12-11-panoptic-beta-launch-epoch-four/2023-12-11-panoptic-beta-launch-epoch-four.md
+  Current-path addition: BrandonL20, 2023-12-11 — Added epoch 4 announcement
+  Evidence: https://github.com/panoptic-labs/docs/commit/178679e022b21048c8f8e09d0b60c2d269e045e2
+  URL: https://panoptic.xyz/blog/panoptic-beta-launch-epoch-four
+
+- Epoch 3 Concludes — Epoch 4 Awaits
+  Source: apps/docs/blog/2023-12-11-panoptic-beta-launch-epoch-three-closed/2023-12-11-panoptic-beta-launch-epoch-three-closed.md
+  Current-path addition: BrandonL20, 2023-12-11 — Added epoch 3 closed
+  Evidence: https://github.com/panoptic-labs/docs/commit/d903902846bf5faa326b13e7c07745ddbaaa5fb1
+  URL: https://panoptic.xyz/blog/panoptic-beta-launch-epoch-three-closed
+
+- December Nutcracker Trading Competition
+  Source: apps/docs/blog/2023-12-19-december-nutcracker/2023-12-19-december-nutcracker.md
+  Current-path addition: BrandonL20, 2023-12-19 — Added December Nutcracker
+  Evidence: https://github.com/panoptic-labs/docs/commit/b07c32f4b2264645c237490ac0364306ce9fa823
+  URL: https://panoptic.xyz/blog/december-nutcracker
+
+- Panoptic Insights: December Newsletter
+  Source: apps/docs/blog/2023-12-5-panoptic-december-2023-newsletter/2023-12-5-panoptic-december-2023-newsletter.md
+  Current-path addition: BrandonL20, 2023-12-05 — Added Dec newsletter
+  Evidence: https://github.com/panoptic-labs/docs/commit/b1d6b68641439893669f4bfe9cb407ce8bee5bfe
+  URL: https://panoptic.xyz/blog/panoptic-december-2023-newsletter
+
+- Epoch 2: Trade Analysis
+  Source: apps/docs/blog/2023-12-6-epoch-2-top-trades/2023-12-6-epoch-2-top-trades.md
+  Current-path addition: BrandonL20, 2023-12-06 — Adding epoch 2 analysis
+  Evidence: https://github.com/panoptic-labs/docs/commit/0a7f3bc98559cdeec88c1f9fb97fc882882c9f62
+  URL: https://panoptic.xyz/blog/epoch-2-top-trades
+
+- Panoptic Insights: January Newsletter
+  Source: apps/docs/blog/2024-01-04-panoptic-january-2024-newsletter/2024-01-04-panoptic-january-2024-newsletter.md
+  Current-path addition: Thomas Thachil, 2024-04-12 — Change up dates (#222)
+  Evidence: https://github.com/panoptic-labs/docs/commit/c17a729803d4decdd836953b0d040e3f803f6d47
+  URL: https://panoptic.xyz/blog/panoptic-newsletter-january
+
+- Beta Launch: Epoch 5
+  Source: apps/docs/blog/2024-01-22-panoptic-beta-launch-epoch-five/2024-01-22-panoptic-beta-launch-epoch-five.md
+  Current-path addition: Thomas Thachil, 2024-04-12 — Change up dates (#222)
+  Evidence: https://github.com/panoptic-labs/docs/commit/c17a729803d4decdd836953b0d040e3f803f6d47
+  URL: https://panoptic.xyz/blog/panoptic-beta-launch-epoch-five
+
+- Epoch 4 Concludes
+  Source: apps/docs/blog/2024-01-24-panoptic-beta-launch-epoch-four-closed/2024-01-24-panoptic-beta-launch-epoch-four-closed.md
+  Current-path addition: Thomas Thachil, 2024-04-12 — Change up dates (#222)
+  Evidence: https://github.com/panoptic-labs/docs/commit/c17a729803d4decdd836953b0d040e3f803f6d47
+  URL: https://panoptic.xyz/blog/panoptic-beta-launch-epoch-four-closed
+
+- Panoptic Insights: February Newsletter
+  Source: apps/docs/blog/2024-02-02-panoptic-february-2024-newsletter/2024-02-02-panoptic-february-2024-newsletter.md
+  Current-path addition: Thomas Thachil, 2024-04-12 — Change up dates (#222)
+  Evidence: https://github.com/panoptic-labs/docs/commit/c17a729803d4decdd836953b0d040e3f803f6d47
+  URL: https://panoptic.xyz/blog/panoptic-newsletter-february
+
+- Epoch 5 Concludes
+  Source: apps/docs/blog/2024-02-08-panoptic-beta-launch-epoch-five-closed/2024-02-08-panoptic-beta-launch-epoch-five-closed.md
+  Current-path addition: Thomas Thachil, 2024-04-12 — Change up dates (#222)
+  Evidence: https://github.com/panoptic-labs/docs/commit/c17a729803d4decdd836953b0d040e3f803f6d47
+  URL: https://panoptic.xyz/blog/panoptic-beta-launch-epoch-five-closed
+
+- Beta Launch: Epoch 6
+  Source: apps/docs/blog/2024-02-10-panoptic-beta-launch-epoch-six/2024-02-10-panoptic-beta-launch-epoch-six.md
+  Current-path addition: Thomas Thachil, 2024-04-12 — Change up dates (#222)
+  Evidence: https://github.com/panoptic-labs/docs/commit/c17a729803d4decdd836953b0d040e3f803f6d47
+  URL: https://panoptic.xyz/blog/panoptic-beta-launch-epoch-six
+
+- Epoch 6 Concludes
+  Source: apps/docs/blog/2024-02-23-panoptic-beta-launch-epoch-six-closed/2024-02-23-panoptic-beta-launch-epoch-six-closed.md
+  Current-path addition: Thomas Thachil, 2024-04-12 — Change up dates (#222)
+  Evidence: https://github.com/panoptic-labs/docs/commit/c17a729803d4decdd836953b0d040e3f803f6d47
+  URL: https://panoptic.xyz/blog/panoptic-beta-launch-epoch-six-closed
+
+- December Nutcracker Ends
+  Source: apps/docs/blog/2024-03-04-december-nutcracker-contest-winners/2024-03-04-december-nutcracker-contest-winners.md
+  Current-path addition: Thomas Thachil, 2024-04-12 — Change up dates (#222)
+  Evidence: https://github.com/panoptic-labs/docs/commit/c17a729803d4decdd836953b0d040e3f803f6d47
+  URL: https://panoptic.xyz/blog/december-nutcracker-contest-winners
+
+- Panoptic Insights: March Newsletter
+  Source: apps/docs/blog/2024-03-05-panoptic-march-2024-newsletter/2024-03-05-panoptic-march-2024-newsletter.md
+  Current-path addition: Thomas Thachil, 2024-04-12 — Change up dates (#222)
+  Evidence: https://github.com/panoptic-labs/docs/commit/c17a729803d4decdd836953b0d040e3f803f6d47
+  URL: https://panoptic.xyz/blog/panoptic-newsletter-march-2024
+
+- Panoptic at ETH Denver 2024
+  Source: apps/docs/blog/2024-03-11-panoptic-at-eth-denver-2024/2024-03-11-panoptic-at-eth-denver-2024.md
+  Current-path addition: Thomas Thachil, 2024-04-12 — Change up dates (#222)
+  Evidence: https://github.com/panoptic-labs/docs/commit/c17a729803d4decdd836953b0d040e3f803f6d47
+  URL: https://panoptic.xyz/blog/panoptic-at-eth-denver-2024
+
+- Panoptic Launches Comprehensive Code4rena Audit for Enhanced Security
+  Source: apps/docs/blog/2024-04-01-panoptic-code4rena-comprehensive-audit/2024-04-01-panoptic-code4rena-comprehensive-audit.md
+  Current-path addition: Thomas Thachil, 2024-04-12 — Change up dates (#222)
+  Evidence: https://github.com/panoptic-labs/docs/commit/c17a729803d4decdd836953b0d040e3f803f6d47
+  URL: https://panoptic.xyz/blog/panoptic-code4rena-comprehensive-audit
+
+- Panoptic Insights: April Newsletter
+  Source: apps/docs/blog/2024-04-03-panoptic-april-2024-newsletter/2024-04-03-panoptic-april-2024-newsletter.md
+  Current-path addition: Thomas Thachil, 2024-04-12 — Change up dates (#222)
+  Evidence: https://github.com/panoptic-labs/docs/commit/c17a729803d4decdd836953b0d040e3f803f6d47
+  URL: https://panoptic.xyz/blog/panoptic-newsletter-april-2024
+
+- Panoptic Insights: May Newsletter
+  Source: apps/docs/blog/2024-05-07-panoptic-may-2024-newsletter/2024-05-07-panoptic-may-2024-newsletter.md
+  Current-path addition: BrandonL20, 2024-05-07 — Added May newsletter
+  Evidence: https://github.com/panoptic-labs/docs/commit/36a279b2aa222b1e5e3fade663f6aa2de942cd79
+  URL: https://panoptic.xyz/blog/panoptic-newsletter-may-2024
+
+- Panoptic Insights: June Newsletter
+  Source: apps/docs/blog/2024-06-04-panoptic-june-2024-newsletter/2024-06-04-panoptic-june-2024-newsletter.md
+  Current-path addition: BrandonL20, 2024-06-04 — Added June newsletter
+  Evidence: https://github.com/panoptic-labs/docs/commit/1981df980eba04bee8011e996b4c236138678a44
+  URL: https://panoptic.xyz/blog/panoptic-newsletter-june-2024
+
+- Panoptic Awarded Grant from Arbitrum Foundation
+  Source: apps/docs/blog/2024-06-18-panoptic-awarded-arbitrum-foundation-grant/2024-06-18-panoptic-awarded-arbitrum-foundation-grant.md
+  Current-path addition: BrandonL20, 2024-06-18 — Added arbitrum grant blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/8f0ed24efc4dad8d6c01bfbb4a9d4dd1e0e7c06e
+  URL: https://panoptic.xyz/blog/panoptic-awarded-arbitrum-foundation-grant
+
+- Passive Liquidity Pools
+  Source: apps/docs/blog/2024-06-24-passive-liquidity-pools/2024-06-24-passive-liquidity-pools.md
+  Current-path addition: BrandonL20, 2024-06-24 — Added passive liquidity pools
+  Evidence: https://github.com/panoptic-labs/docs/commit/d0752e702654240c5d9cc99b4d9fa222db783ba0
+  URL: https://panoptic.xyz/blog/passive-liquidity-pools
+
+- Panoptic Awarded Grant from Uniswap Foundation for 'gRHO' Platform
+  Source: apps/docs/blog/2024-07-01-panoptic-awarded-uniswap-foundation-grant/2024-07-01-panoptic-awarded-uniswap-foundation-grant.md
+  Current-path addition: BrandonL20, 2024-07-01 — Added uniswap grant announcement
+  Evidence: https://github.com/panoptic-labs/docs/commit/181bf0a9335b1bbc4215b4c7dab17a616452b943
+  URL: https://panoptic.xyz/blog/panoptic-awarded-uniswap-foundation-grant
+
+- Panoptic Insights: July Newsletter
+  Source: apps/docs/blog/2024-07-03-panoptic-july-2024-newsletter/2024-07-03-panoptic-july-2024-newsletter.md
+  Current-path addition: BrandonL20, 2024-07-05 — Added July newsletter
+  Evidence: https://github.com/panoptic-labs/docs/commit/3a726c40dedbdb3296bbb33bf0cd2d3ada046623
+  URL: https://panoptic.xyz/blog/panoptic-newsletter-july-2024
+
+- Panoptic Insights: August Newsletter
+  Source: apps/docs/blog/2024-08-05-panoptic-august-2024-newsletter/2024-08-05-panoptic-august-2024-newsletter.md
+  Current-path addition: BrandonL20, 2024-08-05 — Added Aug 24 newsletter
+  Evidence: https://github.com/panoptic-labs/docs/commit/0db43c7dd47bae352583524f5ba43a1a17822307
+  URL: https://panoptic.xyz/blog/panoptic-newsletter-august-2024
+
+- Panoptic Insights: September Newsletter
+  Source: apps/docs/blog/2024-09-05-panoptic-september-2024-newsletter/2024-09-05-panoptic-september-2024-newsletter.md
+  Current-path addition: BrandonL20, 2024-09-05 — Added Sep newsletter
+  Evidence: https://github.com/panoptic-labs/docs/commit/568488409d2bbb66f2a2a7eeff06f80859804121
+  URL: https://panoptic.xyz/blog/panoptic-newsletter-september-2024
+
+- Panoptic Insights: October Newsletter
+  Source: apps/docs/blog/2024-10-02-panoptic-october-2024-newsletter/2024-10-02-panoptic-october-2024-newsletter.md
+  Current-path addition: BrandonL20, 2024-10-02 — Added October newsletter
+  Evidence: https://github.com/panoptic-labs/docs/commit/a9124d5df4c27f71bf6158fc5624ca8772e17d39
+  URL: https://panoptic.xyz/blog/panoptic-newsletter-october-2024
+
+- Bringing Passive Liquidity to Uniswap
+  Source: apps/docs/blog/2024-10-08-bringing-passive-liquidity-to-uniswap/2024-10-08-bringing-passive-liquidity-to-uniswap.md
+  Current-path addition: BrandonL20, 2024-10-08 — Added bringing passive liquidity to uniswap blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/1d3f85cf66966f563efec1eecaadfcea4f7ce475
+  URL: https://panoptic.xyz/blog/bringing-passive-liquidity-to-uniswap
+
+- LP = Option: Uniswap as an Options Clearinghouse
+  Source: apps/docs/blog/2024-10-23-uniswap-lp-equals-options/2024-10-23-uniswap-lp-equals-options.md
+  Current-path addition: BrandonL20, 2024-10-22 — Added lp=options blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/603a1282bd3e119ecd14a6495f9d4e0eda7e815c
+  URL: https://panoptic.xyz/blog/uniswap-lp-equals-options
+
+- Panoptic Insights: November Newsletter
+  Source: apps/docs/blog/2024-11-05-panoptic-november-2024-newsletter/2024-11-05-panoptic-november-2024-newsletter.md
+  Current-path addition: BrandonL20, 2024-11-06 — Added newsletter Nov
+  Evidence: https://github.com/panoptic-labs/docs/commit/a64bc8a0f76996f9c6d640b662bc608a6f8ac0ba
+  URL: https://panoptic.xyz/blog/panoptic-newsletter-november-2024
+
+- Panoptic Partners with Margarita Finance for the Next Generation of Structured Products
+  Source: apps/docs/blog/2024-11-06-panoptic-partners-with-margarita-finance/2024-11-06-panoptic-partners-with-margarita-finance.md
+  Current-path addition: BrandonL20, 2024-11-05 — Added Margarita Finance partnership announcement
+  Evidence: https://github.com/panoptic-labs/docs/commit/7ed0bd58a2c6eec3769ec58ba7d671e6cbd5c671
+  URL: https://panoptic.xyz/blog/panoptic-partners-with-margarita-finance-next-generation-structured-products
+
+- Turning Impermanent Loss into Gain with Panoptic
+  Source: apps/docs/blog/2024-11-08-turning-impermanent-loss-into-gain/2024-11-08-turning-impermanent-loss-into-gain.md
+  Current-path addition: BrandonL20, 2024-11-07 — Added IL blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/04b6f757810a969b4c47de5e5f1c5846761fb2ee
+  URL: https://panoptic.xyz/blog/turning-impermanent-loss-into-gain
+
+- Uniswap LPs: Unlock 3x More Fees with Panoptic
+  Source: apps/docs/blog/2024-11-25-uniswap-lps-unlock-3x-more-fees-with-panoptic/2024-11-25-uniswap-lps-unlock-3x-more-fees-with-panoptic.md
+  Current-path addition: BrandonL20, 2024-11-25 — Added blog - 3x more fees
+  Evidence: https://github.com/panoptic-labs/docs/commit/66453e5522b7339833515bd8e2ec5bfe01cc62e8
+  URL: https://panoptic.xyz/blog/uniswap-lps-unlock-3x-more-fees-with-panoptic
+
+- Panoptic Insights: December Newsletter
+  Source: apps/docs/blog/2024-12-03-panoptic-december-2024-newsletter/2024-12-03-panoptic-december-2024-newsletter.md
+  Current-path addition: BrandonL20, 2024-12-02 — Added Dec newsletter
+  Evidence: https://github.com/panoptic-labs/docs/commit/c3944a7902b635162b6cba2f8af5c64b20969df4
+  URL: https://panoptic.xyz/blog/panoptic-newsletter-december-2024
+
+- Panoptic Launches on Ethereum
+  Source: apps/docs/blog/2024-12-18-panoptic-launch/2024-12-18-panoptic-launch.md
+  Current-path addition: BrandonL20, 2024-12-18 — Updated bug bounties
+  Evidence: https://github.com/panoptic-labs/docs/commit/ad37b7a3375554df442325307a642bc2e046595e
+  URL: https://panoptic.xyz/blog/panoptic-launch
+
+- Panoptic Launches on Uniswap v4: Introducing Perpetual Options and gRHO for Passive LPs
+  Source: apps/docs/blog/2025-01-31-panoptic-launches-on-uniswap-v4/2025-01-31-panoptic-launches-on-uniswap-v4.md
+  Current-path addition: BrandonL20, 2025-01-31 — Added uni v4 announcement
+  Evidence: https://github.com/panoptic-labs/docs/commit/8b0778f0f15009bca8c2c1ff8ced5c9a166983ea
+  URL: https://panoptic.xyz/blog/panoptic-launches-on-uniswap-v4
+
+- Panoptic Insights: February Newsletter
+  Source: apps/docs/blog/2025-02-10-panoptic-february-2025-newsletter/2025-02-10-panoptic-february-2025-newsletter.md
+  Current-path addition: BrandonL20, 2025-02-10 — Added feb newsletter
+  Evidence: https://github.com/panoptic-labs/docs/commit/397b25a3038e24ed8da62ae9ce25cfbf05101ef2
+  URL: https://panoptic.xyz/blog/panoptic-newsletter-february-2025
+
+- Panoptic Launches on Unichain
+  Source: apps/docs/blog/2025-02-12-panoptic-launches-on-unichain/2025-02-12-panoptic-launches-on-unichain.md
+  Current-path addition: BrandonL20, 2025-02-12 — Updated date
+  Evidence: https://github.com/panoptic-labs/docs/commit/e3a4c07f6afc48909af9cec0cbaeb00f0ebbfa15
+  URL: https://panoptic.xyz/blog/panoptic-launches-on-unichain
+
+- gRHO Launches on Uniswap v4: Introducing an Easier Way to LP
+  Source: apps/docs/blog/2025-02-24-grho-launches-on-uniswap-v4/2025-02-24-grho-launches-on-uniswap-v4.md
+  Current-path addition: BrandonL20, 2025-02-23 — Renamed announcement
+  Evidence: https://github.com/panoptic-labs/docs/commit/5619704338f03b7ffc3815c89cfb8ef80ca69d9b
+  URL: https://panoptic.xyz/blog/grho-launches-on-uniswap-v4
+
+- Panoptic at ETH Denver 2025
+  Source: apps/docs/blog/2025-03-10-panoptic-at-eth-denver-2025/2025-03-10-panoptic-at-eth-denver-2025.md
+  Current-path addition: BrandonL20, 2025-03-10 — Added ETH Denver blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/3b9b658181253b9e93d2effbb99f138dbdf1e926
+  URL: https://panoptic.xyz/blog/panoptic-defi-options-at-eth-denver-2025
+
+- gRHO, Unichain & ETH Denver Highlights: March Newsletter
+  Source: apps/docs/blog/2025-03-11-panoptic-march-2025-newsletter/2025-03-11-panoptic-march-2025-newsletter.md
+  Current-path addition: BrandonL20, 2025-03-11 — Added march newsletter
+  Evidence: https://github.com/panoptic-labs/docs/commit/591fcd996a6249a5dd652be6a79db51b6665996a
+  URL: https://panoptic.xyz/blog/panoptic-newsletter-march-2025
+
+- Make Uniswap Great Again
+  Source: apps/docs/blog/2025-03-17-make-uniswap-great-again/2025-03-17-make-uniswap-great-again.md
+  Current-path addition: BrandonL20, 2025-03-17 — Added MUGA blog post and updated protocol roles
+  Evidence: https://github.com/panoptic-labs/docs/commit/257ae81c35ef88fd5e25b065900c79e87e41449a
+  URL: https://panoptic.xyz/blog/make-uniswap-great-again
+
+- Trading the Market Crash: April Newsletter
+  Source: apps/docs/blog/2025-04-07-panoptic-april-2025-newsletter/2025-04-07-panoptic-april-2025-newsletter.md
+  Current-path addition: BrandonL20, 2025-04-07 — Added april newsletter
+  Evidence: https://github.com/panoptic-labs/docs/commit/727eb06614c5d0bde3799f3c76ef3f9e3ed8c0d3
+  URL: https://panoptic.xyz/blog/panoptic-newsletter-april-2025
+
+- Panoptic Launches on Base
+  Source: apps/docs/blog/2025-05-02-panoptic-launches-on-base/2025-05-02-panoptic-launches-on-base.md
+  Current-path addition: BrandonL20, 2025-05-02 — Updated
+  Evidence: https://github.com/panoptic-labs/docs/commit/d3d6c4f01b0c23d54a1b5465e7c1172f1bc98ddd
+  URL: https://panoptic.xyz/blog/panoptic-launches-on-base
+
+- Base Trading Competition
+  Source: apps/docs/blog/2025-05-05-base-trading-competition/2025-05-05-base-trading-competition.md
+  Current-path addition: BrandonL20, 2025-05-05 — Added Base contest details
+  Evidence: https://github.com/panoptic-labs/docs/commit/e5914994d20b17eb7e705da912bb5f9bfd8a0c3a
+  URL: https://panoptic.xyz/blog/base-trading-competition
+
+- Base Trading Competition is Live: May Newsletter
+  Source: apps/docs/blog/2025-05-09-panoptic-may-2025-newsletter/2025-05-09-panoptic-may-2025-newsletter.md
+  Current-path addition: BrandonL20, 2025-05-09 — Added newsletter
+  Evidence: https://github.com/panoptic-labs/docs/commit/e73b2da7374c6bd2cc2a4db0397d0f4c5c9be1e4
+  URL: https://panoptic.xyz/blog/panoptic-newsletter-may-2025
+
+- Base Trading Competition Concludes
+  Source: apps/docs/blog/2025-05-19-base-trading-competition-concludes/2025-05-19-base-trading-competition-concludes.md
+  Current-path addition: flanagansteve, 2025-05-19 — feat: post the Base-Launch Competition conclusion announcement (#332)
+  Evidence: https://github.com/panoptic-labs/docs/commit/b37caaa72b6007975b01b984fdbd7a9489898f08
+  URL: https://panoptic.xyz/blog/base-trading-competition-concludes
+
+- Bitcoin Trading Competition on Base
+  Source: apps/docs/blog/2025-06-02-bitcoin-trading-competition-on-base/2025-06-02-bitcoin-trading-competition-on-base.md
+  Current-path addition: BrandonL20, 2025-06-02 — Added Bitcoin contest on Base details
+  Evidence: https://github.com/panoptic-labs/docs/commit/5a5fd749cd792389385bdf6158230078ca9596b3
+  URL: https://panoptic.xyz/blog/bitcoin-trading-competition-on-base
+
+- Bitcoin Trading Contest: June Newsletter
+  Source: apps/docs/blog/2025-06-03-panoptic-june-2025-newsletter/2025-06-03-panoptic-june-2025-newsletter.md
+  Current-path addition: BrandonL20, 2025-06-02 — Added June newsletter
+  Evidence: https://github.com/panoptic-labs/docs/commit/5b369e6c27efa6b366987e7d2753e86919b59a18
+  URL: https://panoptic.xyz/blog/panoptic-newsletter-june-2025
+
+- Panoptic Prime
+  Source: apps/docs/blog/2025-06-09-panoptic-prime/2025-06-09-panoptic-prime.md
+  Current-path addition: BrandonL20, 2025-06-09 — Added Panoptic Prime loyalty program
+  Evidence: https://github.com/panoptic-labs/docs/commit/4d340f2c34a6ccce91ca886a9e3fbef154e2b62a
+  URL: https://panoptic.xyz/blog/panoptic-prime-loyalty-program
+
+- UNI Incentives Live On Panoptic
+  Source: apps/docs/blog/2025-06-10-uni-incentives-on-panoptic/2025-06-10-uni-incentives-on-panoptic.md
+  Current-path addition: BrandonL20, 2025-06-10 — Added Uni incentives blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/437d53896acd0fea4473ca68579965f517282640
+  URL: https://panoptic.xyz/blog/uni-token-incentives-on-panoptic
+
+- Delta-Neutral LP: How to Hedge a Uniswap Position
+  Source: apps/docs/blog/2025-06-11-delta-neutral-lp-how-to-hedge-a-uniwap-position/2025-06-11-delta-neutral-lp-how-to-hedge-a-uniswap-position.md
+  Current-path addition: BrandonL20, 2025-06-11 — Updated date and added image and description
+  Evidence: https://github.com/panoptic-labs/docs/commit/32f8852575154078f1fa6b983a989df1a6fb8b6a
+  URL: https://panoptic.xyz/blog/delta-neutral-lp-hedge-uniswap-position
+
+- Panoptic is the Uniswap of Options
+  Source: apps/docs/blog/2025-06-24-panoptic-is-the-uniswap-of-options/2025-06-24-panoptic-is-the-uniswap-of-options.md
+  Current-path addition: BrandonL20, 2025-06-24 — Added uniswap of options blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/952f37a53641d60b65d9da67ea0d932c90a40e17
+  URL: https://panoptic.xyz/blog/panoptic-is-the-uniswap-of-options
+
+- Bitcoin Trading Competition on Base Concludes
+  Source: apps/docs/blog/2025-06-30-bitcoin-trading-competition-on-base-concludes/2025-06-30-bitcoin-trading-competition-on-base-concludes.md
+  Current-path addition: BrandonL20, 2025-06-30 — Added conclusion of btc contest
+  Evidence: https://github.com/panoptic-labs/docs/commit/fcb424de35c31b2f45223e95501bf30603dd6f23
+  URL: https://panoptic.xyz/blog/bitcoin-trading-competition-on-base-concludes
+
+- ETH Trading Competition on Unichain is Live
+  Source: apps/docs/blog/2025-07-07-unichain-defi-options-trading-competition/2025-07-07-unichain-defi-options-trading-competition.md
+  Current-path addition: BrandonL20, 2025-07-07 — Added Unichain competition announcement
+  Evidence: https://github.com/panoptic-labs/docs/commit/8fc907a06ce4e9ed6d67f54762b5c2adf894414e
+  URL: https://panoptic.xyz/blog/unichain-defi-options-trading-competition
+
+- Panoptic Insights: July Newsletter
+  Source: apps/docs/blog/2025-07-08-panoptic-july-2025-newsletter/2025-07-08-panoptic-july-2025-newsletter.md
+  Current-path addition: BrandonL20, 2025-07-08 — Added July newsletter
+  Evidence: https://github.com/panoptic-labs/docs/commit/d86b007f368ffc6dcecfdf4493e8d422700b137f
+  URL: https://panoptic.xyz/blog/panoptic-july-2025-newsletter
+
+- ETH Trading Competition on Unichain Concludes
+  Source: apps/docs/blog/2025-07-21-unichain-defi-options-trading-competition-concludes/2025-07-21-unichain-defi-options-trading-competition-concludes.md
+  Current-path addition: BrandonL20, 2025-07-22 — Added contest closed, updated banners on home page, updated UNI incentives
+  Evidence: https://github.com/panoptic-labs/docs/commit/faafee3ded835e3e48e63e78be359fc904d604a3
+  URL: https://panoptic.xyz/blog/unichain-defi-options-trading-competition-concludes
+
+- Panoptic: Your Next DeFi Alpha
+  Source: apps/docs/blog/2025-07-25-panoptic-your-next-defi-alpha/2025-07-25-panoptic-your-next-defi-alpha.md
+  Current-path addition: BrandonL20, 2025-07-28 — Added blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/29bc310db64412ee9598a80ef059de26f1a44018
+  URL: https://panoptic.xyz/blog/panoptic-your-next-defi-alpha
+
+- Panoptic Insights: August Newsletter
+  Source: apps/docs/blog/2025-08-14-panoptic-august-2025-newsletter/2025-08-14-panoptic-august-2025-newsletter.md
+  Current-path addition: BrandonL20, 2025-08-14 — Added Aug newsletter
+  Evidence: https://github.com/panoptic-labs/docs/commit/bab2ff2f50fb9b1dd51e83175deaeff38a14426d
+  URL: https://panoptic.xyz/blog/panoptic-august-2025-newsletter
+
+- Panoptic Insights: September Newsletter
+  Source: apps/docs/blog/2025-09-23-panoptic-september-2025-newsletter/2025-09-23-panoptic-september-2025-newsletter.md
+  Current-path addition: BrandonL20, 2025-09-22 — added september 2025 newsletter
+  Evidence: https://github.com/panoptic-labs/docs/commit/03287a408c127f6558d2997a0a2d850a20ddc934
+  URL: https://panoptic.xyz/blog/panoptic-september-2025-newsletter
+
+- The Evolution of Panoptic: From V1 to V2
+  Source: apps/docs/blog/2025-10-16-panoptic-v2-is-coming/2025-10-16-panoptic-v2-is-coming.md
+  Current-path addition: BrandonL20, 2025-10-16 — added v2 is coming blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/01877b0f34bdaf4d78fd751a3ea08f3d878ba6b8
+  URL: https://panoptic.xyz/blog/panoptic-v2-is-coming
+
+- Panoptic Insights: November Newsletter
+  Source: apps/docs/blog/2025-11-04-panoptic-november-2025-newsletter/panoptic-november-2025-newsletter.md
+  Current-path addition: BrandonL20, 2025-11-04 — added nov 25 newsletter
+  Evidence: https://github.com/panoptic-labs/docs/commit/54f3d50de1d0cc1d77d65948110cab6f45e7b45d
+  URL: https://panoptic.xyz/blog/panoptic-november-2025-newsletter
+
+- Happy Vol-idays: December Newsletter
+  Source: apps/docs/blog/2025-12-09-panoptic-december-2025-newsletter/2025-12-09-panoptic-december-2025-newsletter.md
+  Current-path addition: BrandonL20, 2025-12-09 — added dec 25 newsletter
+  Evidence: https://github.com/panoptic-labs/docs/commit/75b87032b1e9e16c91b285203588861de91b3fd8
+  URL: https://panoptic.xyz/blog/panoptic-december-2025-newsletter
+
+- Panoptic Insights: January Newsletter
+  Source: apps/docs/blog/2026-01-12-panoptic-january-2026-newsletter/2026-01-12-panoptic-january-2026-newsletter.md
+  Current-path addition: BrandonL20, 2026-01-12 — added jan newsletter, updated audit banner
+  Evidence: https://github.com/panoptic-labs/docs/commit/4f6271eb5c37f21d78c94e5912193477abbdf4ea
+  URL: https://panoptic.xyz/blog/panoptic-january-2026-newsletter
+
+- Panoptic at ETH Denver 2026
+  Source: apps/docs/blog/2026-02-24-panoptic-at-eth-denver-2026/2026-02-24-panoptic-at-eth-denver-2026.md
+  Current-path addition: BrandonL20, 2026-02-24 — panoptic at eth denver 2026 blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/e8b609eea4ae75b53986f5206e892b219b4d7f93
+  URL: https://panoptic.xyz/blog/panoptic-at-eth-denver-2026
+
+- Panoptic V2 Codebase
+  Source: apps/docs/blog/2026-03-06-panoptic-v2-codebase/2026-03-06-panoptic-v2-codebase.md
+  Current-path addition: BrandonL20, 2026-03-06 — added v2 codebase blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/c13e9890342ed9c2a06af0400efdb46715fead54
+  URL: https://panoptic.xyz/blog/panoptic-v2-codebase
+
+- Panoptic × Steer: Building the Infrastructure for Onchain Structured Yield
+  Source: apps/docs/blog/2026-04-22-panoptic-steer-partnership/2026-04-22-panoptic-steer-partnership.md
+  Current-path addition: Nathan Burks, 2026-04-22 — Added steer partnership announcement
+  Evidence: https://github.com/panoptic-labs/docs/commit/9f4ddddbe21d8e0727ea5cfe5d4627ca232060e6
+  URL: https://panoptic.xyz/blog/panoptic-x-steer-partnership
+
+- Panoptic Prime Beta: V2
+  Source: apps/docs/blog/2026-06-03-beta-launch/2026-06-03-beta-launch.md
+  Current-path addition: nburkswvu18, 2026-06-03 — Added beta blog
+  Evidence: https://github.com/panoptic-labs/docs/commit/d86b5ef6a9e1d18f9772dd952a4d559484b9e037
+  URL: https://panoptic.xyz/blog/panoptic-prime-beta-v2
+
+- Trade SPCXx Onchain
+  Source: apps/docs/blog/2026-06-12-spcxx/2026-06-12-spcxx.md
+  Current-path addition: nburkswvu18, 2026-06-12 — Added SPCXx Announcement
+  Evidence: https://github.com/panoptic-labs/docs/commit/0f5c2387f404866867804a45e568a3ee35d74a1a
+  URL: https://panoptic.xyz/blog/trade-spcxx-onchain
+
+- Panoptic V2: The DeFi Yield Platform
+  Source: apps/docs/blog/2026-06-23-panoptic-v2-the-defi-yield-platform/2026-06-23-panoptic-v2-the-defi-yield-platform.md
+  Current-path addition: BrandonL20, 2026-06-22 — Update V2 launch announcement date to June 23
+  Evidence: https://github.com/panoptic-labs/docs/commit/281f3ee2baab66b12b940fd3168ecdd2f1a7fa72
+  URL: https://panoptic.xyz/blog/panoptic-v2-the-defi-yield-platform
+
+- Panoptic V2: The Vault Suite
+  Source: apps/docs/blog/2026-06-29-panoptic-v2-the-vault-suite/2026-06-29-panoptic-v2-the-vault-suite.md
+  Current-path addition: BrandonL20, 2026-06-29 — updated date
+  Evidence: https://github.com/panoptic-labs/docs/commit/d92f93fb24818c0f502ff04f42aaa6878568c3b6
+  URL: https://panoptic.xyz/blog/panoptic-v2-the-vault-suite
+
+- Panoptic RFQ brings institutional-grade execution to perpetual options.
+  Source: apps/docs/blog/2026-07-01-panoptic-rfq-system/2026-07-01-panoptic-rfq-system.md
+  Current-path addition: BrandonL20, 2026-07-01 — Merge pull request #409 from panoptic-labs/rfq
+  Evidence: https://github.com/panoptic-labs/docs/commit/6eeff7c2ea0a9c54d59364333c1c995f2c8d0212
+  URL: https://panoptic.xyz/blog/panoptic-rfq-system
+
+- Earn Up To 20% More Fees on Your Uniswap LP Position
+  Source: apps/docs/blog/2026-08-25-panoptic-lp-staking/2026-08-25-panoptic-lp-staking.md
+  Current-path addition: Nathan Burks, 2026-08-25 — Added LP Staking Blog (#412)
+  Evidence: https://github.com/panoptic-labs/docs/commit/7cef0621c97e8abbef9cc52a91ced4a365f37349
+  URL: https://panoptic.xyz/blog/stake-your-lp
+
+- Panoptic Launches on Robinhood Chain
+  Source: apps/docs/blog/2026-09-14-panoptic-launches-on-rh/2026-09-14-panoptic-launches-on-rh.md
+  Current-path addition: nburkswvu18, 2026-09-14 — Added RH Announcement
+  Evidence: https://github.com/panoptic-labs/docs/commit/3b80108f198a002366a8dd572116610a9a4a9460
+  URL: https://panoptic.xyz/blog/panoptic-launches-on-robinhood-chain
+
+RESEARCH: 20 posts without author metadata
+
+- Introducing Panoptic's Smart Contracts
+  Source: apps/docs/research/2023-09-07-repo-walkthrough/2023-09-07-repo-walkthrough.md
+  Current-path addition: Henry Frederick, 2023-09-07 — fix: bump date
+  Evidence: https://github.com/panoptic-labs/docs/commit/5158b07b3c4688bbaa75deabf10f67e112673881
+  URL: https://panoptic.xyz/research/introducing-panoptic-smart-contracts
+
+- 0DTEs on Uniswap – Insights from On-Chain LP data
+  Source: apps/docs/research/2023-10-11-zero-dtes-on-uniswap/2023-10-11-zero-dtes-on-uniswap.md
+  Current-path addition: BrandonL20, 2023-10-10 — Added research bite 0dtes on uniswap
+  Evidence: https://github.com/panoptic-labs/docs/commit/066ea79f8da8beb027d1c5c1233ffab89a4897c7
+  URL: https://panoptic.xyz/research/zero-dtes-on-uniswap
+
+- How does LPing in Uniswap V3 compare to selling options in Panoptic?
+  Source: apps/docs/research/2023-10-31-UniV3_vs_panoptic/2023-10-31-UniV3_vs_panoptic.md
+  Current-path addition: juanpmcianci, 2023-10-30 — added research bite 20231030
+  Evidence: https://github.com/panoptic-labs/docs/commit/6961bc495fa2a955e5f9cf08ccb407f2840ee6b1
+  URL: https://panoptic.xyz/research/uniswap_vs_panoptic
+
+- Streamia vs. Black-Scholes Model: A Comparative Study
+  Source: apps/docs/research/2023-11-28-streamia-vs-black-scholes/2023-11-28-streamia-vs-black-scholes.md
+  Current-path addition: BrandonL20, 2023-11-28 — Updated streamia vs BSM
+  Evidence: https://github.com/panoptic-labs/docs/commit/f2bdd8813aa92e8364ac77f3685fa3758ce750ce
+  URL: https://panoptic.xyz/research/streamia-vs-black-scholes
+
+- Buying Power, Collateral, and Leverage
+  Source: apps/docs/research/2023-12-12-buying-power-collateral-leverage/2023-12-12-buying-power-collateral-leverage.md
+  Current-path addition: BrandonL20, 2023-12-12 — Added buying power, collateral, and leverage tutorial
+  Evidence: https://github.com/panoptic-labs/docs/commit/8e48ad4c7c2d72732946a72c151305d0eaad386b
+  URL: https://panoptic.xyz/research/buying-power-collateral-leverage
+
+- Introduction to Synthetic Perpetual Futures
+  Source: apps/docs/research/2023-12-18-introduction-synthetic-perps/2023-12-18-introduction-synthetic-perps.md
+  Current-path addition: juanpmcianci, 2023-12-18 — fixed
+  Evidence: https://github.com/panoptic-labs/docs/commit/98a66f573b8ae8771d36e7a54925cf310bcc5b23
+  URL: https://panoptic.xyz/research/introduction-synthetic-perps
+
+- How To Open a Position on Panoptic
+  Source: apps/docs/research/2023-12-7-opening-a-position-on-panoptic/2023-12-7-opening-a-position-on-panoptic.md
+  Current-path addition: BrandonL20, 2023-12-07 — Added opening a position tutorial
+  Evidence: https://github.com/panoptic-labs/docs/commit/06ec68282115f836ac48e80ac10d8a8e8833be8b
+  URL: https://panoptic.xyz/research/opening-a-position-on-panoptic
+
+- Panoptic’s Markets
+  Source: apps/docs/research/2023-12-8-panoptics-markets/2023-12-8-panoptics-markets.md
+  Current-path addition: BrandonL20, 2023-12-08 — Added panoptic markets article
+  Evidence: https://github.com/panoptic-labs/docs/commit/c2d73e533c7947008309ab1f503e5287caeaaf50
+  URL: https://panoptic.xyz/research/panoptics-markets
+
+- Option Legs: The Building Blocks of Advanced Strategies
+  Source: apps/docs/research/2023-12-9-panoptic-option-legs/2023-12-9-panoptic-option-legs.md
+  Current-path addition: BrandonL20, 2023-12-09 — Added option legs tutorial
+  Evidence: https://github.com/panoptic-labs/docs/commit/d6521128dfe68eb911f4620c8e9c671490bd6c10
+  URL: https://panoptic.xyz/research/panoptic-option-legs
+
+- Closing a Position
+  Source: apps/docs/research/2024-05-01-closing-a-position/2024-05-01-closing-a-position.md
+  Current-path addition: BrandonL20, 2024-05-01 — Added closing a position guide
+  Evidence: https://github.com/panoptic-labs/docs/commit/af4c518522bb4d81fc89c3d469e06be0ac448d87
+  URL: https://panoptic.xyz/research/closing-a-position
+
+- Navigating Liquidity in Panoptic
+  Source: apps/docs/research/2024-05-08-navigating-liquidity-in-panoptic/2024-05-08-navigating-liquidity-in-panoptic.md
+  Current-path addition: BrandonL20, 2024-05-08 — Added liquidity guide
+  Evidence: https://github.com/panoptic-labs/docs/commit/7f73d60c03cca3b82bee87b0c5aaf9620c93d08f
+  URL: https://panoptic.xyz/research/navigating-liquidity-in-panoptic
+
+- Understanding Timescales in Panoptic
+  Source: apps/docs/research/2024-05-10-timescales-in-panoptic/2024-05-10-timescales-in-panoptic.md
+  Current-path addition: BrandonL20, 2024-05-10 — Added timescales guide
+  Evidence: https://github.com/panoptic-labs/docs/commit/fa3745438bdafc9189ff3eef9f53409765dcb344
+  URL: https://panoptic.xyz/research/timescales-in-panoptic
+
+- Leverage
+  Source: apps/docs/research/2024-1-22-perpetual-options-leverage/2024-1-22-perpetual-options-leverage.md
+  Current-path addition: BrandonL20, 2024-01-22 — Added leverage tutorial
+  Evidence: https://github.com/panoptic-labs/docs/commit/45dcc27fb98d6d366fe43112beb64132d8c75942
+  URL: https://panoptic.xyz/research/panoptic-leverage
+
+- The Liquidity Spread: Navigating Perpetual Options Pricing
+  Source: apps/docs/research/2024-2-16-liquidity-spread/2024-2-16-liquidity-spread.md
+  Current-path addition: BrandonL20, 2024-02-16 — Added liquidity spread
+  Evidence: https://github.com/panoptic-labs/docs/commit/44a821dfdd4119328abff83bee7b6ebcf83dbc8f
+  URL: https://panoptic.xyz/research/liquidity-spread
+
+- Streamia (Streaming Premia)
+  Source: apps/docs/research/2024-2-5-streamia-101/2024-2-5-streamia-101.md
+  Current-path addition: BrandonL20, 2024-02-05 — Added streamia tutorial
+  Evidence: https://github.com/panoptic-labs/docs/commit/c0f212578e601b306248de5e619a1995b2b3c525
+  URL: https://panoptic.xyz/research/streamia-101
+
+- Understanding Delta Risk
+  Source: apps/docs/research/2024-3-11-understanding-delta-risk/2024-3-11-understanding-delta-risk.md
+  Current-path addition: BrandonL20, 2024-03-11 — Added delta article
+  Evidence: https://github.com/panoptic-labs/docs/commit/b9e03025562c96e9e4c973136b2f5866ecba4fab
+  URL: https://panoptic.xyz/research/understanding-delta-risk
+
+- Position Management
+  Source: apps/docs/research/2024-3-18-position-management/2024-3-18-position-management.md
+  Current-path addition: BrandonL20, 2024-03-18 — Added position management tutorial
+  Evidence: https://github.com/panoptic-labs/docs/commit/f2de28a31c15c01d8290af5a00c9af130b4a8802
+  URL: https://panoptic.xyz/research/position-management
+
+- Loss Versus Panoptic: Why LPs Are Leaving Money on the Table—and How to Get It Back
+  Source: apps/docs/research/2025-02-25-loss-versus-panoptic/2025-02-25-loss-versus-panoptic.md
+  Current-path addition: BrandonL20, 2025-02-19 — Added LVP rb
+  Evidence: https://github.com/panoptic-labs/docs/commit/5bd64bdc86c40429eeb49840495e3d3ce5733f6b
+  URL: https://panoptic.xyz/research/loss-versus-panoptic-why-lps-are-losing
+
+- Perpetual Options — A Block Scholes Research Report (Part I)
+  Source: apps/docs/research/2025-08-20-panoptic-block-scholes-research-perpetual-options/2025-08-20-panoptic-block-scholes-research-perpetual-options.md
+  Current-path addition: BrandonL20, 2025-08-19 — added Block Scholes research report
+  Evidence: https://github.com/panoptic-labs/docs/commit/c0ec7d86ab4535ede934a1492175270c376a8da4
+  URL: https://panoptic.xyz/research/panoptic-block-scholes-research-perpetual-options
+
+- Perpetual Options — A Block Scholes Research Report (Part II)
+  Source: apps/docs/research/2026-03-11-panoptic-block-scholes-research-gamma-scalping/2026-03-11-panoptic-block-scholes-research-gamma-scalping.md
+  Current-path addition: Nathan Burks, 2026-03-11 — Rename research file from .txt to .md
+  Evidence: https://github.com/panoptic-labs/docs/commit/aedb672adfa822c6ef6eb9acd299bf7e41fb3728
+  URL: https://panoptic.xyz/research/panoptic-block-scholes-research-gamma-scalping
+
+Other TODOs
+- Expand the supplied founder bio when Guillaume provides text.
+- Google Scholar: none supplied; intentionally omitted.
+- Test deployed URLs in Google Rich Results Test.

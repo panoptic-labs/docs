@@ -1,4 +1,8 @@
-# Create2Lib
+---
+sidebar_label: "Create2Lib"
+title: "Create2Lib (V2)"
+---
+# Create2Lib (V2)
 
 > Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
 

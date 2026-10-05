@@ -31,7 +31,7 @@ Furthermore, this mathematical framework also helps LPs assess whether it is mor
 
 ### Master Your Market Exit
 
-[Closing positions](https://panoptic.xyz/research/closing-a-position) in trading involves more than just locking in gains or minimizing losses–it requires strategic decision making and precise timing. Understanding the optimal moment to exit, guided by factors like range, buying power, and profit and loss (PnL), is crucial for maintaining profitability. This guide simplifies the process, detailing how traders can effectively manage their positions. Whether it's monitoring for potential liquidation or assessing the range of your position, each aspect is tailored to help traders make informed decisions.
+[Closing positions](https://panoptic.xyz/docs/product/closing-a-position) in trading involves more than just locking in gains or minimizing losses–it requires strategic decision making and precise timing. Understanding the optimal moment to exit, guided by factors like range, buying power, and profit and loss (PnL), is crucial for maintaining profitability. This guide simplifies the process, detailing how traders can effectively manage their positions. Whether it's monitoring for potential liquidation or assessing the range of your position, each aspect is tailored to help traders make informed decisions.
 
 ![](./02.png)
 
@@ -76,7 +76,7 @@ On April 26, the cryptocurrency markets underwent [significant volatility](https
 
 ### Panoptic Uses Uniswap to Bootstrap Options
 
-Panoptic is utilizing Uniswap V3 liquidity pools to bootstrap its options markets. Even without buyers, options sellers can still earn streaming premia (streamia) through Uniswap.
+Panoptic is utilizing Uniswap V3 liquidity pools to bootstrap its options markets. Even without buyers, options sellers can still earn streamia (streaming premium) through Uniswap.
 
 <blockquote class="twitter-tweet" data-conversation="none"><p lang="en" dir="ltr">7/<br/><br/>Panoptic<a href="https://twitter.com/Panoptic_xyz?ref_src=twsrc%5Etfw">@Panoptic_xyz</a> utilizes Uniswap V3 LP to bootstrap liquidity for option buyers and sellers, earning commissions by providing credit assets in the Panoptic pool. <a href="https://t.co/0KdVtRRyEg">pic.twitter.com/0KdVtRRyEg</a></p>&mdash; DeFI Saint 🦇🔊 (@TheDeFISaint) <a href="https://twitter.com/TheDeFISaint/status/1777687005788270888?ref_src=twsrc%5Etfw">April 9, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 

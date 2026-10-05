@@ -10,11 +10,11 @@ The two stock engines use the same stock risk-policy source with reversed token0
 
 ## Responsibilities
 
-- [Collateral and solvency](./04-collateral-overview.md): evaluate complete portfolios in both underlying tokens, including premium and interest effects.
+- [Collateral and solvency](./04-collateral-overview.md): evaluate complete portfolios in both underlying tokens, including streamia (streaming premium) and interest effects.
 - [Oracle system](./01-oracle-system.md) and [safe mode](./02-safe-mode.md): select risk-check prices and restrict operations during divergence or guardian intervention.
 - [Interest model](./09-interest-rate-model.md): determine borrow rates from utilization and stored market state.
 - [Fees](./10-fee-structure.md): provide commission rates, builder routing, and exercise-cost parameters.
-- [Third-party operations](./15-dispatchfrom-entrypoint.md): calculate risk and settlement inputs for liquidation, exercise, and premium settlement.
+- [Third-party operations](./15-dispatchfrom-entrypoint.md): calculate risk and settlement inputs for liquidation, exercise, and streamia settlement.
 
 ## Modularity and migration
 

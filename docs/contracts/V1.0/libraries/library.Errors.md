@@ -1,4 +1,8 @@
-# Errors
+---
+sidebar_label: "Errors"
+title: "Errors (V1.0)"
+---
+# Errors (V1.0)
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.0.x/contracts/libraries/Errors.sol)
 
 **Author:**
@@ -245,4 +249,3 @@ SFPM: Mints/burns of zero-liquidity chunks in Uniswap are not supported
 ```solidity
 error ZeroLiquidity();
 ```
-

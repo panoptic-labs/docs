@@ -1,4 +1,8 @@
-# ERC20Minimal
+---
+sidebar_label: "ERC20Minimal"
+title: "ERC20Minimal (V1.0)"
+---
+# ERC20Minimal (V1.0)
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.0.x/contracts/tokens/ERC20Minimal.sol)
 
 **Authors:**
@@ -192,4 +196,3 @@ event Approval(address indexed owner, address indexed spender, uint256 amount);
 |`owner`|`address`|The user who approved the spender|
 |`spender`|`address`|The user who was approved to spend tokens|
 |`amount`|`uint256`|The amount of tokens approved to spend|
-

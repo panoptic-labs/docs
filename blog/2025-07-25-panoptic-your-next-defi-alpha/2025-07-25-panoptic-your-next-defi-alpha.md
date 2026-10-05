@@ -22,14 +22,14 @@ This is the million-dollar question. Perps are easier, more liquid, and offer hi
 
 **The Point:** Options aren't binary win/lose. You can be strategic, make money even when you're partially wrong.
 
-With perps, you're either right or wrong about price movement. Instead of going 10x long on ETH and getting liquidated if it drops 10%, you could buy a call option. If the price drops, you only lose the premium you paid, while still having the same upside exposure.  
+With perps, you're either right or wrong about price movement. Instead of going 10x long on ETH and getting liquidated if it drops 10%, you could buy a call option. If the price drops, you only lose the streamia (streaming premium) you paid, while still having the same upside exposure.  
 
 With options, you can also:
 -   Make money even when you're wrong about direction
     ![](./1.png)
 -   Buy calls when you think ETH will pump (but limit your downside)
     ![](./2.png)
--   Sell puts to collect premium while holding
+-   Sell puts to collect streamia while holding
     ![](./3.png)
 -   Create strangles or straddles that profit from sideways movement
     ![](./4.png)
@@ -39,7 +39,7 @@ With options, you can also:
 
 **The best part?** As you explore this innovative trading primitive, you’re also earning [Pips](https://pips.panoptic.xyz)—our points system that rewards your activity and positions you for future incentives. Think of it as getting rewarded while learning the future of DeFi trading.
 
-Pips are calculated based on streamia, which accumulates over time. Selling options earns the most Pips, while buying options gives you the second-highest point rewards. The more active you are, the more you earn. [Streamia](https://panoptic.xyz/docs/product/streamia) is the Uniswap LP fees + a Panoptic premium from option buyers. You can think of this as a funding rate where buyers pay sellers at each block.
+Pips are calculated based on streamia, which accumulates over time. Selling options earns the most Pips, while buying options gives you the second-highest point rewards. The more active you are, the more you earn. [Streamia](https://panoptic.xyz/docs/product/streamia) is the Uniswap LP fees + a Panoptic streamia from option buyers. You can think of this as a funding rate where buyers pay sellers at each block.
 
 ## The Points Game: Earn While You Explore
 **How to Earn Pips (Panoptic Incentive Points)**
@@ -53,7 +53,7 @@ Pips are calculated based on streamia, which accumulates over time. Selling opti
 
 ## Why Options Are Cool
 **1.  Asymmetric Risk/Reward**
-- **Risk:** Limited to premium paid and decline in intrinsic value if price moves against you.
+- **Risk:** Limited to streamia paid and decline in intrinsic value if price moves against you.
 - **Reward:** Potentially unlimited (for calls) or substantial (for puts)![](./5.png) ![](./6.png)
 
 **2. Volatility Trading**
@@ -76,7 +76,7 @@ The number of contracts refers to how much ETH you want to trade with. In the ex
 ![](./9.png)
 Look for the ✨emoji on the markets page to see which markets are currently earning points and start trading today.
 
-For a more detailed guide on how to open a position, visit this [guide](/research/opening-a-position-on-panoptic). Think of your first few trades as educational. You're learning options mechanics while earning points. The goal isn't to become a master trader overnight, but to understand a new DeFi primitive. Time to get some upside exposure and level up to the next derivative!
+For a more detailed guide on how to open a position, visit this [guide](/docs/product/opening-a-position). Think of your first few trades as educational. You're learning options mechanics while earning points. The goal isn't to become a master trader overnight, but to understand a new DeFi primitive. Time to get some upside exposure and level up to the next derivative!
 
 ### Start Here
 -   Access the [Panoptic platform](https://app.panoptic.xyz/)

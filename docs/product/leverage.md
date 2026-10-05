@@ -6,7 +6,6 @@ tags: [Tutorial, Leverage, Collateral, Trading]
 image: /img/research/leverage-banner.png
 description: "Explore the power of leverage in trading with Panoptic, mastering its use for enhanced capital efficiency and risk management in options trading."
 ---
-
 ![](./leverage/leverage-banner.png)
 
 ## Introduction
@@ -69,7 +68,7 @@ Typically, option traders can expect up to 10x leverage when buying and 5x lever
 
 ### Leverage Powered by Liquidity Providers
 
-In Panoptic, [Liquidity Providers](https://panoptic.xyz/docs/panoptic-protocol/protocol-roles#panoptic-liquidity-providers-plps) (PLPs) play a crucial role, akin to liquidity providers in Automated Market Makers (AMMs). PLPs contribute funds to the PanopticPool, earning commissions from option trades. earning commission fees from option trades. This system fosters robust liquidity, reducing risk and enhancing the trading experience for all platform participants
+In Panoptic, [Liquidity Providers](https://panoptic.xyz/docs/panoptic-protocol/protocol-roles#lenders-passive-liquidity-providers-plps) (PLPs) play a crucial role, akin to liquidity providers in Automated Market Makers (AMMs). PLPs contribute funds to the PanopticPool, earning commissions from option trades. earning commission fees from option trades. This system fosters robust liquidity, reducing risk and enhancing the trading experience for all platform participants
 
   
 
@@ -110,4 +109,8 @@ Let's delve into how this works on Panoptic:
 
 Understanding leverage is crucial in financial trading, especially in options. Panoptic's innovative platform allows traders to employ leverage effectively, maximizing their capital efficiency.
 
-*Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](https://panoptic.xyz/docs/intro) and head to our [website](https://panoptic.xyz/).*
+import Head from '@theme/MDXComponents/Head';
+
+<Head>
+  <link rel="canonical" href="https://panoptic.xyz/research/panoptic-leverage" />
+</Head>

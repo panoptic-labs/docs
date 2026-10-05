@@ -45,7 +45,7 @@ Here’s a breakdown of the channels:
 
     We also understand the importance of data in the DeFi ecosystem. That’s why we’re working on providing subgraph details for our platform as well.
 
-5. [Audit Reports](https://panoptic.xyz/docs/security/audits): To ensure the safety and security of our platform, we are in the process of finishing multiple audits. We’ll share these reports with the community as soon as they become available.
+5. [Audit Reports](https://panoptic.xyz/docs/security/security_audits): To ensure the safety and security of our platform, we are in the process of finishing multiple audits. We’ll share these reports with the community as soon as they become available.
 
     Stay tuned for more updates as we continue to expand and refine our offerings.
 

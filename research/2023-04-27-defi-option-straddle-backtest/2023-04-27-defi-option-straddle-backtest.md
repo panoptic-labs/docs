@@ -61,11 +61,11 @@ Buying an ETH straddle via Uniswap every day (all values in USDC):
 
 -   Payoff: +515%
     
--   Premia (cost): -397%
+-   Streamia (streaming premium) (cost): -397%
     
 -   Return: +118%
 
-👉 Payoff > Premia → Profit🔝🤑📈
+👉 Payoff > Streamia → Profit🔝🤑📈
 
 That's pretty good! Which leg had more impact?
 
@@ -151,7 +151,7 @@ Buying an ETH straddle via Uniswap on different pools:
 -   🧑‍🚀 100bps: 62%
     
 
-👉The 5 bps pool outperformed, it had the lowest premia!
+👉The 5 bps pool outperformed, it had the lowest streamia!
 
 ## Backtest #5
 
@@ -176,7 +176,7 @@ Market's belief of SHIB volatility is likely overstated, leading to huge returns
 
 -   Payoff: -632%
     
--   Premia (earned): +1170%
+-   Streamia (earned): +1170%
     
 -   Return: +539%
     
@@ -216,7 +216,7 @@ Caveats:
 
 -   ⛽ Ignores gas/spread/swap fees/commission
     
--   💲 Assumes option premia = LP collected fees
+-   💲 Assumes option streamia = LP collected fees
     
 -   ❓ Hypothetical — you can't buy options on Uniswap (Panoptic soon 🤫)
     

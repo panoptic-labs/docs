@@ -9,7 +9,7 @@ authors: N
 
 ![](./reverse-gamma-scalping-banner.png)
 
-As detailed by a prior Panoptic [analysis](https://panoptic.xyz/research/gamma-scalping), the traditional finance (TradFi) options market maker strategy of gamma scalping entails the buying of [gamma](https://panoptic.xyz/docs/terms/gamma) (typically a long [at-the-money](https://panoptic.xyz/docs/terms/at_the_money)/ATM [straddle](https://panoptic.xyz/research/defi-option-straddle-101)) with continuous [delta-hedging](https://panoptic.xyz/research/options-market-making#what-is-delta) to compensate for [theta](https://panoptic.xyz/docs/terms/theta) (time) decay. Options market makers will harness both gamma and reverse gamma scalping strategies in practice for [Greeks](https://panoptic.xyz/research/understanding-the-greeks-series) management.
+Reverse gamma scalping combines a short-gamma options position with repeated delta hedging. It seeks to earn option premiums that exceed hedging losses and costs; unlike [gamma scalping](/research/gamma-scalping), it sells rather than buys convexity. This guide explains the strategy for perpetual options and Uniswap LP exposure.
 
 Panoptic-native market makers have been highlighted in a separate [article](https://panoptic.xyz/research/options-market-making#market-making-in-panoptic) as being predominantly short gamma. Reverse gamma scalping can hence be deemed a more relevant options market making tactic when considering the internal structure of Panoptic. The focal point of this article will be in detailing how reverse gamma scalping can be executed through the decentralized finance (DeFi) instrument of [perpetual options](https://panoptic.xyz/docs/trading/perpetual-options).
 
@@ -130,14 +130,14 @@ For demonstrative purposes, we perform a backtest of a reverse gamma scalping st
 -   Uniswap pool: ETH/APE 30bps
 -   Period: May 19, 2023 to June 19, 2023
 -   Return: ~4.2%
--   Premia (collected fees): ~7.6%
+-   Streamia (streaming premium) (collected fees): ~7.6%
     
 
 The backtested strategy’s return, ignoring gas and rebalancing costs, compounds to a staggering annualized return of 63.84%. Our previous gamma scalping [backtest](https://github.com/panoptic-labs/research/blob/main/_research-bites/20240612/gamma-scalping.ipynb) highlighted that gamma scalping produces magnified returns during a concentrated period of elevated realized volatility. Reverse gamma scalping, on the other hand, is a more stable, protracted method to capitalize upon a generally status quo state within volatility markets.
 
 ### Panoptic-Native Reverse Gamma Scalping
 
-Specifically regarding the Panoptic protocol, a heightening in accumulated fees stemming from theta decay also translates to increased collection of options [streaming premia](https://panoptic.xyz/research/streamia-101) (streamia). Reverse gamma scalpers can sell [perpetual](https://panoptic.xyz/docs/trading/perpetual-options) straddles on tokens whose price is hypothesized to remain [range bound](https://panoptic.xyz/docs/terms/in_range) as opposed to tokens that have a tendency to fluctuate [out-of-range](https://panoptic.xyz/docs/terms/out_of_range).
+Specifically regarding the Panoptic protocol, a heightening in accumulated fees stemming from theta decay also translates to increased collection of options [streamia](https://panoptic.xyz/docs/product/streamia). Reverse gamma scalpers can sell [perpetual](https://panoptic.xyz/docs/trading/perpetual-options) straddles on tokens whose price is hypothesized to remain [range bound](https://panoptic.xyz/docs/terms/in_range) as opposed to tokens that have a tendency to fluctuate [out-of-range](https://panoptic.xyz/docs/terms/out_of_range).
 
 Reverse gamma scalpers on Panoptic are still subjected to the risks of negative convexity, since Uniswap liquidity provider (LP) positions inherently have [negative convexity](https://panoptic.xyz/research/defi-put-options-uniswap-backtest). To compensate for this risk, Panoptic incentivizes LPs, option sellers, and reverse gamma scalpers with supplemental earnings from a liquidity [spread](https://panoptic.xyz/research/liquidity-spread). Trading with a wider liquidity spread and removing any [rolling](https://panoptic.xyz/research/perpetual-futures-vs-options#no-expiry) requirements also eliminate any incidence of [pin risk](https://panoptic.xyz/blog/panoptic-defi-options-protocol-introduction#advantage-of-perpetual-options).
 

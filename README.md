@@ -163,3 +163,16 @@ If you check the [workers bindings](https://dash.cloudflare.com/f815d14bd6670e42
 The actual code that runs in the Worker is very simple: it intercepts requests to the root path (`/`), requests the Webflow site (configured to live on `home.panoptic.xyz` in our DNS records) and returns the Webflow site in the response.
 
 For all other requests, like /blog or /docs, a request is made to our Vercel Docusaurus site's production deployment URL at `https://docs-bqp0f6xid-panoptic.vercel.app`.
+
+
+## Editorial update dates
+
+Keep the original blog/research publication date and dated filename when revising an article. For a substantial revision (new examples, research, corrections or merged explanations), set an explicit quoted calendar date in front matter:
+
+```yaml
+editorial_update: "2026-10-04"
+```
+
+Use the actual editorial revision date, never a future scheduled date. Do not advance it for link maintenance, canonical tags, formatting or title/version labels alone. Pages without this field retain their publication-only display; docs do not acquire an invented publication date. Dates are formatted in UTC to avoid a one-day shift across visitor time zones.
+
+Blog and research pages display Published and Updated dates; their BlogPosting microdata supplies `datePublished` and `dateModified`, with matching article metadata. Docs display Last updated and expose `dateModified` in WebPage structured data. The field is editorially maintained, not inferred from Git activity or build time.

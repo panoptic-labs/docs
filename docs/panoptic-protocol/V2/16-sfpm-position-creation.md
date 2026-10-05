@@ -118,7 +118,7 @@ Zero-width legs enable capital-efficient composite strategies:
 
 | Strategy | Components | Effect |
 |----------|------------|--------|
-| Prepaid Long | Credit + Long Option | Credit covers long premium |
+| Prepaid Long | Credit + Long Option | Credit covers long streamia (streaming premium) |
 | Cash-Secured Short | Credit + Short Option | Credit provides collateral |
 | Upfront Short | Loan + Short Option | Borrow to deploy as short |
 | Option-Protected Loan | Loan + Long Option | Option hedges loan exposure |

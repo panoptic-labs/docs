@@ -26,7 +26,7 @@ Most DeFi users see "options on Uniswap" and immediately think it's too complex.
 
 Perps are like a car that can only go 100 mph forward, 100 mph backward, or stop completely. Options are like a normal car, where you can accelerate gradually, slow down, and control your speed. Options aren't binary win/lose. You can be strategic, make money even when you're partially wrong.  
 
-As you explore this innovative trading primitive, you're also earning [Pips](https://app.panoptic.xyz/leaderboard/pips)—our points system that rewards your activity. Pips are calculated based on deposits and streamia, which accumulate over time. Selling options earns the most Pips, while buying options and depositing also earns Pips. The more active you are, the more you earn. Why this beats LST farming: You're not just passively earning yield–you're amplifying point rewards through active strategies, harvesting volatility premiums, and targeting precise exposure.  
+As you explore this innovative trading primitive, you're also earning [Pips](https://app.panoptic.xyz/leaderboard/pips)—our points system that rewards your activity. Pips are calculated based on deposits and streamia (streaming premium), which accumulate over time. Selling options earns the most Pips, while buying options and depositing also earns Pips. The more active you are, the more you earn. Why this beats LST farming: You're not just passively earning yield–you're amplifying point rewards through active strategies, harvesting volatility risk premiums, and targeting precise exposure.  
   
 
 ## Panoptic in the Markets

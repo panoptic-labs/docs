@@ -5,7 +5,6 @@ tags: [Launch, Press Release, Passive LP]
 image: /img/banners/grho-on-uniswap-v4.jpg
 description: "Panoptic’s gRHO on Uniswap v4 eliminates impermanent loss with single-sided deposits and auto-compounding yields, simplifying passive DeFi LPing for everyone."
 ---
-
 ![](./grho-on-uniswap-v4.jpg)
 
 Panoptic, the [DeFi-native options trading platform](http://app.panoptic.xyz), is excited to announce the launch of gRHO (pronounced “grow”) on Uniswap v4. Supported by a [grant from the Uniswap Foundation](https://uniswapfoundation.mirror.xyz/qCp75in7UJA2SwOE66u-FrcsPSK-6UfopAfEWRi1RLQ), gRHO is a new, streamlined liquidity interface that eliminates impermanent loss (IL) and removes the complexities of liquidity providing (LPing) on Uniswap.
@@ -69,7 +68,7 @@ Panoptic offers a market-driven solution to [boost LP profitability](/docs/produ
 
   
 
-Panoptic [eliminates IL](/blog/turning-impermanent-loss-into-gain) by bringing [passive, single-sided liquidity](/blog/bringing-passive-liquidity-to-uniswap) to the Uniswap protocol through gRHO. Passive LPs can lend tokens to other LPs on Panoptic. Passive LPing is as easy as depositing a token, and avoids the hassles of active management, choosing a price range, rebalancing when going out of range, and impermanent loss.
+Panoptic [eliminates IL](/blog/turning-impermanent-loss-into-gain) by bringing [passive, single-sided liquidity](/blog/passive-liquidity-pools) to the Uniswap protocol through gRHO. Passive LPs can lend tokens to other LPs on Panoptic. Passive LPing is as easy as depositing a token, and avoids the hassles of active management, choosing a price range, rebalancing when going out of range, and impermanent loss.
 
   
 
@@ -96,4 +95,4 @@ The platform has undergone comprehensive [third-party security audits](/docs/sec
 -   For [token launchers](https://panoptic.xyz/docs/product/token-launchers/bootstrap-liquidity)
 -   For [traders](https://panoptic.xyz/docs/getting-started/options-traders)
 
-_Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](https://panoptic.xyz/docs/intro) and head to our [website](https://panoptic.xyz/)._
+For the evergreen explanation of the lending model, see [passive liquidity pools](/blog/passive-liquidity-pools).

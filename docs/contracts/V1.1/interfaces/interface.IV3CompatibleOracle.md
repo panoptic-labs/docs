@@ -1,4 +1,8 @@
-# IV3CompatibleOracle
+---
+sidebar_label: "IV3CompatibleOracle"
+title: "IV3CompatibleOracle (V1.1)"
+---
+# IV3CompatibleOracle (V1.1)
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.1.x/contracts/interfaces/IV3CompatibleOracle.sol)
 
 **Author:**
@@ -115,5 +119,3 @@ function increaseObservationCardinalityNext(uint16 observationCardinalityNext) e
 |Name|Type|Description|
 |----|----|-----------|
 |`observationCardinalityNext`|`uint16`|The desired minimum number of observations for the oracle to store|
-
-

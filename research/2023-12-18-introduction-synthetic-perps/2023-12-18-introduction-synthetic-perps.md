@@ -81,7 +81,7 @@ To understand how synthetic perps are formulated within Panoptic, let's explore 
 ![image](./long.png)
 
 
-This strategy is a practical application of a [well-established financial principle](https://panoptic.xyz/research/loan-shark-with-put-call-parity), allowing the [replication of portfolio positions](https://panoptic.xyz/docs/trading/multi-leg-strategies#synthetic-positions) using options. Similarly, if one is instead interested in shorting the perp, the process is as follows:
+This strategy is a practical application of a [well-established financial principle](https://panoptic.xyz/research/loan-shark-with-put-call-parity), allowing the [replication of portfolio positions](https://panoptic.xyz/docs/trading/multi-leg-strategies#synthetic-perps) using options. Similarly, if one is instead interested in shorting the perp, the process is as follows:
 
 **Short Perp**
 
@@ -119,7 +119,7 @@ $$
 $$
 
 ### How can I trade them? 
-The process of creating synthetic perps on Panoptic is streamlined, thanks to the one-click strategy templates.  Indeed, one can simply follow the tutorial guide on [*how to open a position*](https://panoptic.xyz/research/opening-a-position-on-panoptic). The main steps are: 
+The process of creating synthetic perps on Panoptic is streamlined, thanks to the one-click strategy templates.  Indeed, one can simply follow the tutorial guide on [*how to open a position*](https://panoptic.xyz/docs/product/opening-a-position). The main steps are:
 
 1. Connecting to Panoptic: The initial step involves establishing wallet connection with the Panoptic platform, ensuring you have access to all its trading features.
 2. Onboarding Tutorial: Engage with the onboarding tutorial provided by Panoptic. This step is crucial for depositing funds onto Panoptic to begin trading.

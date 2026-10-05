@@ -1,4 +1,8 @@
-# MetadataStore
+---
+sidebar_label: "MetadataStore"
+title: "MetadataStore (V1.0)"
+---
+# MetadataStore (V1.0)
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.0.x/contracts/base/MetadataStore.sol)
 
 **Author:**
@@ -43,5 +47,3 @@ constructor(bytes32[] memory properties, uint256[][] memory indices, Pointer[][]
 |`properties`|`bytes32[]`|An array of identifiers for different categories of metadata|
 |`indices`|`uint256[][]`|A nested array of keys for K-V metadata pairs for each property in `properties`|
 |`pointers`|`Pointer[][]`|Contains pointers to the metadata values stored in contract data slices for each index in `indices`|
-
-

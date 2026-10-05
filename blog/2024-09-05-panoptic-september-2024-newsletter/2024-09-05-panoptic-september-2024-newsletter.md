@@ -35,7 +35,7 @@ LP positions on Uniswap, where liquidity is concentrated within specific price r
 ![](./01.png)
   
 
-This approach marks a significant shift from centralized exchanges (CEX) to decentralized exchanges (DEX). Uniswap’s model allows LPs to allocate their capital within a specific price range, making capital deployment more efficient and enabling a more precise IV calculation. Mathematically, this involves equating the cumulative premia—derived from the theta function approximation in traditional options—to the actual fees collected by LPs.
+This approach marks a significant shift from centralized exchanges (CEX) to decentralized exchanges (DEX). Uniswap’s model allows LPs to allocate their capital within a specific price range, making capital deployment more efficient and enabling a more precise IV calculation. Mathematically, this involves equating the cumulative streamia (streaming premium)—derived from the theta function approximation in traditional options—to the actual fees collected by LPs.
 
   
 

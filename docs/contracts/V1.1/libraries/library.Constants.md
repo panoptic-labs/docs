@@ -1,4 +1,8 @@
-# Constants
+---
+sidebar_label: "Constants"
+title: "Constants (V1.1)"
+---
+# Constants (V1.1)
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.1.x/contracts/libraries/Constants.sol)
 
 **Author:**
@@ -119,5 +123,3 @@ Amount of observation indices to skip in between each observation for the "slow"
 ```solidity
 uint256 internal constant SLOW_ORACLE_PERIOD = 5;
 ```
-
-

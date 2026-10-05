@@ -6,7 +6,6 @@ tags: [Tutorial, Uniswap, Markets, Permissionless]
 image: /img/research/panoptics-markets-banner.png
 description: "Discover how Panoptic allows options trading on any token."
 ---
-
 ![](./markets/panoptics-markets-banner.png)
 
 In this article, we delve into the innovative world of Panoptic and its integration with Uniswap, offering a comprehensive guide on trading options on any ERC-20 token pair. This piece aims to clarify key concepts such as markets, assets, numeraires, and the relationship between Uniswap and Panoptic, enhancing your understanding of decentralized options trading.
@@ -27,12 +26,16 @@ Panoptic, supported by Uniswap, presents a groundbreaking infrastructure in dece
 
   
 
+<span id="asset-vs-numeraire-in-trading-pairs" />
+
 ## Trading Pairs
 
 -   Market: In a trading pair, the market token (like WETH in WETH/USDbC) is the primary focus of the option trade. 
 -   Priced In: The 'priced in' token (like USDC in WETH/USDC) serves as the reference currency or benchmark to express the asset's value.
 -   Fee Tier: The fee tier refers to the trading fee of the associated Uniswap pool
     
+
+The market token is also called the **asset**, and the “priced in” token is the **numeraire**. For example, WETH is the asset and USDbC is the numeraire in WETH/USDbC. This is a display/valuation frame, not a claim about the underlying pool’s token0/token1 ordering.
 
 This structure is analogous to the base asset and quote asset in traditional trading.
 
@@ -42,7 +45,7 @@ This structure is analogous to the base asset and quote asset in traditional tra
 
 ![](./markets/1.png)
 
-A market in Panoptic consists of a pair of tokens. For example, a market like WBTC/DAI sets the stage for trading options on WBTC that are priced in terms of DAI. Options are settled in terms of both tokens ([streamia](https://panoptic.xyz/blog/streamia-defi-native-options-pricing), gains, and losses are in terms of both WBTC and DAI, for example).
+A market in Panoptic consists of a pair of tokens. For example, a market like WBTC/DAI sets the stage for trading options on WBTC that are priced in terms of DAI. Options are settled in terms of both tokens ([streamia (streaming premium)](https://panoptic.xyz/docs/product/streamia), gains, and losses are in terms of both WBTC and DAI, for example).
 
   
 
@@ -95,4 +98,4 @@ Panoptic, through its innovative approach and synergy with Uniswap, presents a t
 
 ## Next Steps
 
-To start trading on Panoptic or for further exploration, visit Panoptic's [official website](https://www.panoptic.xyz) and its [documentation](https://docs.panoptic.xyz). Here, you'll find detailed guidance on [opening positions](https://panoptic.xyz/research/opening-a-position-on-panoptic) and navigating the platform's offerings.
+To start trading on Panoptic or for further exploration, visit Panoptic's [official website](https://www.panoptic.xyz) and its [documentation](https://docs.panoptic.xyz). Here, you'll find detailed guidance on [opening positions](https://panoptic.xyz/docs/product/opening-a-position) and navigating the platform's offerings.

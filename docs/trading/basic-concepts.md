@@ -1,7 +1,7 @@
 ---
+editorial_update: "2026-10-04"
 sidebar_position: 1
 ---
-
 # Options Basics
 
 ## What are Options?
@@ -66,9 +66,27 @@ It is worth mentioning that, while the BSM is widely used, it has some limitatio
 Not quite. Panoptic presents a new type of option: an oracle-free, perpetual option. By this we mean that:
 
 - Panoptions do not have an expiration date
-- The option premia is not based on pricing by market makers (who use BSM), but rather on trading activity in the underlying asset's spot market.
+- The option streamia (streaming premium) is not based on pricing by market makers (who use BSM), but rather on trading activity in the underlying asset's spot market.
 
 We will discuss these concepts in the following sections. 
+
+## A strike-price example
+
+A call with a $50 strike gives its holder the right to buy the underlying asset for $50, subject to the contract’s exercise terms. A put with the same strike gives the right to sell for $50. A buyer choosing a call expresses a different payoff from a buyer choosing a put; the option premium is a separate cost from the strike price.
+
+![Option contracts and their underlying assets](../../blog/2023-11-07-crypto-and-options-101/1.png)
+
+## Exchanges and liquidity
+
+Traditional options trade through venues such as the Chicago Board Options Exchange (CBOE), with brokers providing quotes, analytics and access to standardized contracts. Liquidity is split across assets, strikes and expirations. Deeper liquidity generally supports tighter spreads; thin liquidity can make entering or exiting a position more expensive.
+
+![Traditional options markets](../../blog/2023-11-07-crypto-and-options-101/2.png)
+
+![Liquidity and counterparty challenges in options markets](../../blog/2023-11-07-crypto-and-options-101/3.png)
+
+Panoptic’s [perpetual options](/docs/trading/perpetual-options) remove contractual expiration dates, but not the ongoing cost of exposure. Buyers accrue [streamia](/docs/product/streamia), and collateral and liquidation rules still apply. Removing expiry fragmentation does not eliminate liquidity constraints across pools, strikes and widths.
+
+For a longer strategy lesson, see [covered calls and active position management](/research/panoption-trading-strategies-covered-call-rolling). The [V1.3 whitepaper](https://assets.website-files.com/6386d9f380ac551cf9495f22/63fbb72c9ee69fe525e02108_Panoptic_whitepaper_v1.3.pdf) provides the original protocol analysis.
 
 ## Resources
 

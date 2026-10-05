@@ -17,7 +17,7 @@ By taking this analogy to its fullest extent, we derive a new formula for IV tha
 
 ### Step 1: Uniswap as an Options Clearinghouse
 
-As seen in part 1 of our series "From DEX to CEX," the Panoptic protocol uses a streaming premium model called "streamia" for perpetual options. The premium accumulates continuously from block to block as the underlying asset's price moves relative to the strike price. This premium is based on the collected fees from providing liquidity in a Uniswap v3 pool.
+As seen in part 1 of our series "From DEX to CEX," the Panoptic protocol uses a streamia (streaming premium) model called "streamia" for perpetual options. The streamia accumulates continuously from block to block as the underlying asset's price moves relative to the strike price. This streamia is based on the collected fees from providing liquidity in a Uniswap v3 pool.
 
 Moreover, in traditional finance, extracting implied volatility involves using order book data, calculating the mid-price, the greek vega, and applying the Newton-Raphson (or bisection) method. However, the decentralized ecosystem does not support these conventional steps due to the absence of bid and ask prices, order books, and vega. What's even more different is the presence of concentrated liquidity in Uniswap v3 that allows liquidity providers (LPs) to allocate their capital more efficiently by providing liquidity within a specific price range $[P_a, P_b]$ rather than across the entire spectrum.
 
@@ -48,12 +48,12 @@ We have the following:
   \text{Total fees at a given tick} = \frac{\text{feeRate} \times \text{(volume per day)} \times \text{positionSize}}{\text{tickLiquidity}}
   $
 
-### Step 3: Cumulative Premia Using Theta
+### Step 3: Cumulative Streamia Using Theta {#step-3-cumulative-premia-using-theta}
 
-The cumulative premia is the integral of theta over the asset's price path $S(t)$:
+The cumulative streamia is the integral of theta over the asset's price path $S(t)$:
 
 $
-\text{Cumulative Premia} = \int S(t) \theta(S_t, K, \sigma) dt = \int_{+\infty}^{0} \theta(S_{\Delta t}, K, \sigma) \Delta t dS_{\Delta t}
+\text{Cumulative Streamia} = \int S(t) \theta(S_t, K, \sigma) dt = \int_{+\infty}^{0} \theta(S_{\Delta t}, K, \sigma) \Delta t dS_{\Delta t}
 $
 
 Where theta ($\theta$) for an option (assuming a zero interest rate and no dividends) is given by:
@@ -204,7 +204,7 @@ $
 
 Therefore, $p = \frac{K \sigma^2 \cdot 10000}{2 t_S}$.
 
-Theta is approximated as the height of the approximating Dirac delta function multiplied by the time spent in range. Thus, the cumulative premia is:
+Theta is approximated as the height of the approximating Dirac delta function multiplied by the time spent in range. Thus, the cumulative streamia is:
 
 $
 \frac{K \sigma^2 \cdot 10000}{2 t_S} \times \Delta t
@@ -212,10 +212,10 @@ $
 
 ### Step 5: Derive the Implied Volatility (IV)
 
-Equating Premia with Fees: We assert that the accumulated streaming premia (theoretical) of an option is equal to that of the fees collected from liquidity provision (actual). This aligns with our observation that LP positions behave similarly to options, and hence, their premia received is simply the fees collected by the position. By equating premia with collected fees we have:
+Equating Streamia with Fees: We assert that the accumulated streamia (theoretical) of an option is equal to that of the fees collected from liquidity provision (actual). This aligns with our observation that LP positions behave similarly to options, and hence, their streamia received is simply the fees collected by the position. By equating streamia with collected fees we have:
 
 $
-\text{Premia} = \int S(t) \theta(S_t, K, \sigma) dt = \text{Total Fees at a Given Tick over Time} = \text{Collected Fees}
+\text{Streamia} = \int S(t) \theta(S_t, K, \sigma) dt = \text{Total Fees at a Given Tick over Time} = \text{Collected Fees}
 $
 
 We substitute and obtain:
@@ -228,7 +228,7 @@ $
 
 - The relationship between the tick spacing and the fee rate is as follows: $t_S = \text{feeRate} \times 20000$
    In fact, tick spacings are 200 for 1% fee rate, 60 for 0.3%, 10 for 0.05% as seen in Table 1.
-- The premia is calculated for one options contract, which corresponds to a position size of $S$ in terms of the quote asset.
+- The streamia is calculated for one options contract, which corresponds to a position size of $S$ in terms of the quote asset.
 - The LP position is centered around the current spot price, so the spot price $S$ is equal to its strike price $K$.
 
 With the above assumptions, this simplifies further:

@@ -32,7 +32,7 @@ Traders who were able to take advantage of this price movement in the most capit
 The highest-grossing [trade](https://beta.panoptic.xyz/new-position?tokenId=0x14fcf27a202014fcf25c7024c36388be6f416a2) from the round was a [bull put spread](https://panoptic.xyz/research/essential-options-strategies-to-know#put-spread-%EF%B8%8F) that netted the trader a profit and loss (PnL) of +36%. The trade was constructed by selling a $2,048 strike put option and buying a $2,043 strike put option. 
 
 
-In terms of fees, this means the trader would pay [streamia](https://panoptic.xyz/blog/streamia-defi-native-options-pricing) if the price of ETH hovered between $2,022 and $2,063 and earn streamia if the price of ETH hovered between $2,028 and 2,069. 
+In terms of fees, this means the trader would pay [streamia (streaming premium)](https://panoptic.xyz/docs/product/streamia) if the price of ETH hovered between $2,022 and $2,063 and earn streamia if the price of ETH hovered between $2,028 and 2,069. 
 
 
 ![](./epoch-2-top-trade.png)
@@ -59,7 +59,7 @@ The payoff is similar to taking a long position on a perpetual futures contract.
 Options are a powerful financial primitive. Traders can use options to create positions with various risk-reward tradeoffs and express nuanced views on the direction of the market. 
 
 
-We are glad to see traders take full advantage of perpetual options in Panoptic to make outsized returns. Billions of dollars in options liquidity are sitting idle in [Uniswap v3](https://panoptic.xyz/docs/getting-started/liquidity-providers), and we hope that by unlocking this market we can bring on-chain options trading to the mainstream.
+We are glad to see traders take full advantage of perpetual options in Panoptic to make outsized returns. Billions of dollars in options liquidity are sitting idle in [Uniswap v3](https://panoptic.xyz/docs/getting-started/passive-lp), and we hope that by unlocking this market we can bring on-chain options trading to the mainstream.
 
 
 _Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](https://panoptic.xyz/docs/intro) and head to our [website](https://panoptic.xyz/)._

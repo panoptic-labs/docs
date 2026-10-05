@@ -1,4 +1,5 @@
 ---
+editorial_update: "2026-10-04"
 slug: perpetual-futures-vs-options
 title: "Expirationless Options (XPOs) – Will They Replace Perps In Crypto?"
 image: /img/research/perpetual-futures-vs-options.png
@@ -6,7 +7,6 @@ description: "Perpetual options are the next big thing - here's why."
 tags: [Perps Traders, Options Traders, Perps, Perpetual Future, XPO, Perpetual Option, Panoption]
 authors: B
 ---
-
 ![img-1](./img-1.png)
 
 The latest derivatives innovation in decentralized finance (DeFi) is perpetual options, or expirationless options (XPOs). Over the last several months, DeFi derivatives have seen [increased trading volume](https://finance.yahoo.com/news/crypto-derivative-volumes-rose-march-161855410.html) in part thanks to perpetual futures, or [perps](https://panoptic.xyz/docs/trading/perpetual-options#how-do-perpetual-options-compare-to-perpetual-futures-perps).
@@ -97,7 +97,7 @@ White and Bankman-Fried further show through a no-arbitrage assumption that the 
 
 ### Panoptic Perpetual Options Pricing
 
-In Panoptic's [whitepaper](https://paper.panoptic.xyz), Lambert and Kristensen proposed a "streamia" (streaming premia) mechanism where buyers pay sellers the forgone liquidity provider token fees of the position in the underlying automated market maker (AMM) pool on a regular interval (i.e. every block).
+In Panoptic's [whitepaper](https://paper.panoptic.xyz), Lambert and Kristensen proposed a "streamia (streaming premium)" mechanism where buyers pay sellers the forgone liquidity provider token fees of the position in the underlying automated market maker (AMM) pool on a regular interval (i.e. every block).
 
   
 
@@ -265,7 +265,7 @@ Despite the numerous advantages of XPOs, perps still have some benefits.
 
 #### Liquidity
 
-Perps generally offer more liquidity than XPOs, due to the absence of strike fragmentation. Panoptic mitigates this issue for XPOs by allowing anyone to passively participate in [fungible liquidity provision](https://panoptic.xyz/docs/panoptic-protocol/protocol-roles#panoptic-liquidity-providers-plps) that is not specific to any particular strike.
+Perps generally offer more liquidity than XPOs, due to the absence of strike fragmentation. Panoptic mitigates this issue for XPOs by allowing anyone to passively participate in [fungible liquidity provision](https://panoptic.xyz/docs/panoptic-protocol/protocol-roles#lenders-passive-liquidity-providers-plps) that is not specific to any particular strike.
 
   
 
@@ -291,4 +291,22 @@ While XPOs are more complicated products than perps, XPOs trading is made simple
 
 While perps and XPOs both have unique advantages to offer to the crypto markets, they are fundamentally different financial products each with their own role to play in decentralized finance (DeFi). A healthy and efficient market will be composed of both perpetual futures and perpetual options. As DeFi markets matured over the past few years, perps saw an explosive growth in volume. Now it’s time for XPOs to shine.
 
-_Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](https://panoptic.xyz/docs/intro)  and head to our [website](https://panoptic.xyz/)._
+## Market access and execution tradeoffs
+
+The 2023 comparison of perp venues highlighted a practical distinction: listing a new perp market often depended on governance, oracle support and market-making arrangements, whereas a compatible Uniswap pool could supply Panoptic’s underlying liquidity. The historical essay described venues supporting fewer than ten to around ninety markets; those were 2023 observations, not current market counts. A compatible pool still needs sufficient liquidity, valid position parameters and collateral to support a trade.
+
+Perps also support cash-and-carry, funding-rate arbitrage and market-making strategies. Their appeal extends beyond a simple leveraged long or short. Options add nonlinear payoffs and volatility strategies, but introduce additional pricing, liquidity and portfolio-management considerations.
+
+![Comparison of perpetual futures and perpetual options](../../blog/2023-11-01-case-against-perpetual-futures/perps-venn%20diagram.png)
+
+## Liquidation and multi-leg positions
+
+A fully collateralized long option and a leveraged perp have different risk profiles. Streamia can gradually consume an option buyer’s collateral, while a multi-leg portfolio can also include short-option and borrowing exposures. Do not generalize a long-option example into a claim that synthetic perps or every Panoptic portfolio are immune to price-based insolvency. See [liquidations](/docs/product/liquidations) and [V2 collateral tracking](/docs/panoptic-protocol/V2/collateral-overview).
+
+The original interface illustration shows assembling up to four legs to express a strategy:
+
+![Historical Panoptic multi-leg interface compared with a legacy options interface](../../blog/2023-11-01-case-against-perpetual-futures/panoptic-v-legacy-interface.png)
+
+A long call combined with a short put at the same strike illustrates a synthetic long exposure; reversing both legs illustrates a synthetic short. The actual collateral, streamia and borrowing economics are separate from the payoff identity. Read the [synthetic-perp mechanics](/research/introduction-synthetic-perps) and [execution guide](/docs/product/perps) for those distinctions.
+
+![Long call and short put combine into a synthetic long payoff](../../blog/2023-11-01-case-against-perpetual-futures/long-call-short-put-perp.png)

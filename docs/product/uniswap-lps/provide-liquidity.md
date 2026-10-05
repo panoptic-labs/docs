@@ -4,12 +4,12 @@ slug: provide-liquidity
 title: "Provide Liquidity"
 tags: [Tutorial, Uni V2, Uni V3, Uni V4]
 image: /img/provide-liquidity-guide-banner.png
-description: "Learn how to provide liquidity to Uniswap through Panoptic to earn higher yields with built-in hedging, leverage, and streaming premiums."
+description: "Learn how to provide liquidity to Uniswap through Panoptic to earn higher yields with built-in hedging, leverage, and streamia."
 ---
 
 ![](./provide-liquidity/provide-liquidity-guide-banner.png)
 
-Panoptic lets you provide liquidity to Uniswap through the Panoptic protocol — unlocking higher yields by earning additional **premiums** on top of Uniswap trading fees.
+Panoptic lets you provide liquidity to Uniswap through the Panoptic protocol — unlocking higher yields by earning additional **streamia (streaming premium)** on top of Uniswap trading fees.
 
 
 ## LP on Panoptic
@@ -101,7 +101,7 @@ Also, choose your [leverage](/docs/product/leverage). Higher leverage = higher r
 
 ### Step 10: Review and Confirm Position
 
-Inspect your position details, payoff chart, and estimated earnings. Click **Create Position** to mint your LP position. You now earn **Uniswap fees** + **Panoptic streaming premiums**.
+Inspect your position details, payoff chart, and estimated earnings. Click **Create Position** to mint your LP position. You now earn **Uniswap fees** + **Panoptic streamia**.
 
 ![](./provide-liquidity/10.png)
 
@@ -114,7 +114,7 @@ To learn how to manage or exit your position, visit: [Panoptic Position Manageme
 Historical data shows that Panoptic liquidity providers may have earned **25 %–112%+ APR** on fees. These earnings combine:
 
 1. **Uniswap trading fees (21%-95%)** – the baseline return every LP receives.
-2. **Panoptic streaming premia (4%-17%)** – an [extra premium](/research/loss-versus-panoptic-why-lps-are-losing#the-panoptic-spread) from lending out LP positions to option buyers that can increase total fees to as much as **3×** the Uniswap amount.
+2. **Panoptic streamia (4%-17%)** – an [extra streamia](/research/loss-versus-panoptic-why-lps-are-losing#the-panoptic-spread) from lending out LP positions to option buyers that can increase total fees to as much as **3×** the Uniswap amount.
 
 Additional Incentives: UNI Tokens ([currently live](https://gov.uniswap.org/t/governance-proposal-uniswap-unleashed-unichain-and-uniswap-v4-liquidity-incentives/25250) on select Unichain and Ethereum v4 pools and coming to Base)
 
@@ -127,7 +127,7 @@ Additional Incentives: UNI Tokens ([currently live](https://gov.uniswap.org/t/go
 ## Risk Highlights
 
 1. **Smart Contract Risk**:
-    Panoptic completed multiple [third-party audits](/docs/security/security_audits#smart-contract-audits) (Cantina, Code4rena, Trail of Bits, OpenZeppelin, ABDK) and [economic reviews](/docs/security/security_audits#economic-audits) (Three Sigma, Simtopia).
+    Panoptic completed multiple [third-party audits](/docs/security/security_audits#core-protocol-audits) (Cantina, Code4rena, Trail of Bits, OpenZeppelin, ABDK) and [economic reviews](/docs/security/security_audits#economic-audits) (Three Sigma, Simtopia).
     
 2. **Impermanent Loss**:
     LP positions underperform compared to HODL when price moves rapidly out of range. This risk can be hedged in Panoptic by creating [inverted LP positions](/blog/make-uniswap-great-again#bearish-lp-position) or even [shorting LP positions](/blog/turning-impermanent-loss-into-gain#shorting-lp-tokens-for-impermanent-gain) for impermanent gain.

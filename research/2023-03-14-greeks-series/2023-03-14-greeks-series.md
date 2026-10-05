@@ -54,7 +54,7 @@ $\Theta =\frac{\partial V}{\partial t}$
 ### Vega (ν)
 Vega (ν) measures the rate of change of an option's price in relation to changes in volatility. This is of particularly importance in our setting since:
 -   Crypto assets tend to be very volatile
--   Panoptions premia is related to volatility
+-   Panoptions streamia (streaming premium) is related to volatility
 
 $\nu =\frac{\partial V}{\partial \sigma}$
     

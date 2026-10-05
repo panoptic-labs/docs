@@ -10,7 +10,7 @@ description: "Panoptic releases its DeFi options smart contract code"
 
   
 
-Today marks a significant milestone in Panoptic's ongoing mission to revolutionize DeFi options as we publicly release our smart contract code. This major [milestone](https://panoptic.xyz/docs/gated-launch/launch-roadmap) underscores our commitment to transparency, security, and community involvement.  
+Today marks a significant milestone in Panoptic's ongoing mission to revolutionize DeFi options as we publicly release our smart contract code. This major [milestone](https://panoptic.xyz/blog/panoptic-defi-options-protocol-roadmap) underscores our commitment to transparency, security, and community involvement.
   
 Can’t wait to explore our code? Get started on [Github](https://github.com/panoptic-labs/panoptic-v1-core)!
 

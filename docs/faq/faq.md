@@ -87,7 +87,7 @@ Options trading doesn't have to be complicated. At Panoptic, we've created a <a 
 
 <details id="how-do-perpetual-options-compare-to-perpetual-futures">
 <summary>How do Perpetual Options Compare to Perpetual Futures ("Perps")?</summary>
-Perpetual options and perpetual futures are non-expiring financial instruments. Panoptic's perpetual options provides option-like payoffs that are priced through <a href="https://panoptic.xyz/research/streamia-101">streamia</a> (streaming premia), while perpetual futures offer long/short payoffs that are priced via a <a href="https://panoptic.xyz/docs/trading/perpetual-options#how-do-perpetual-options-compare-to-perpetual-futures-perps">funding rate</a>.
+Perpetual options and perpetual futures are non-expiring financial instruments. Panoptic's perpetual options provides option-like payoffs that are priced through <a href="https://panoptic.xyz/docs/product/streamia">streamia (streaming premium)</a>, while perpetual futures offer long/short payoffs that are priced via a <a href="https://panoptic.xyz/docs/trading/perpetual-options#how-do-perpetual-options-compare-to-perpetual-futures-perps">funding rate</a>.
 <br /><br />
 While perpetual futures often offer more leverage, perpetual options offer more <a href="https://twitter.com/Panoptic_xyz/status/1661114864386068480?s=20">flexibility</a> including:<br />
 1) No liquidation risk from single-wick fluctuations<br />
@@ -100,7 +100,7 @@ While perpetual futures often offer more leverage, perpetual options offer more 
 
 <details id="why-should-perp-traders-use-panoptic">
 <summary>Why should perp traders use Panoptic when options are so complicated?</summary>
-Options trading can offer a more retail-friendly approach than perpetual futures (perps). Users can buy puts/calls if they feel bearish/bullish, but without the risk of immediate liquidation. Even during market volatility, options holders won't face sudden liquidations from price wicks. While liquidation risk remains, it is linked to premium accumulation and is more predictable, giving traders several days to anticipate potential liquidation events.
+Options trading can offer a more retail-friendly approach than perpetual futures (perps). Users can buy puts/calls if they feel bearish/bullish, but without the risk of immediate liquidation. Even during market volatility, options holders won't face sudden liquidations from price wicks. While liquidation risk remains, it is linked to streamia accumulation and is more predictable, giving traders several days to anticipate potential liquidation events.
 <br /><br />
 A misconception exists that retail traders desire +50x leverage, mainly achievable with perps. However, our research shows most perp traders on GMX use only <a href="https://panoptic.xyz/research/retail-prefers-2x-over-125x-leverage">2-3x leverage</a>. Panoptic offers up to 10x leverage on options, making it a suitable tool for retail traders looking for manageable leverage without sudden liquidation risks.
 </details>
@@ -145,7 +145,7 @@ Yes.
 
 <details id="why-should-i-sell-an-option-on-Panoptic">
 <summary>Why should I sell an option on Panoptic when I can just LP directly on Uniswap?</summary>
-Selling an option on Panoptic has the same before-fees payoff as LPing on Uniswap. However, selling an option on Panoptic earns a premium (paid by the option buyer) that is strictly greater than the swap fees earned by an LP position due to the <a href="https://panoptic.xyz/docs/panoptic-protocol/streamia#net-gross-and-owed-fees-with-spread">liquidity spread</a> and improved gas efficiency.
+Selling an option on Panoptic has the same before-fees payoff as LPing on Uniswap. However, selling an option on Panoptic earns a streamia (paid by the option buyer) that is strictly greater than the swap fees earned by an LP position due to the <a href="https://panoptic.xyz/docs/panoptic-protocol/streamia#net-gross-and-owed-fees-with-spread">liquidity spread</a> and improved gas efficiency.
 </details>
 
 <details id="uniswap-lps-are-losing-money">
@@ -185,19 +185,19 @@ Selling an option costs a commission fee, interest on borrowed funds, and a gas 
 
 <details id="what-does-it-cost-to-buy-an-option">
 <summary>What does it cost to buy an option?</summary>
-Buying an option costs a commission fee, streamia (streaming premia), and gas fee. The streamia starts at 0, and accumulates while the underlying price remains in range. For more details, click <a href="https://panoptic.xyz/docs/panoptic-protocol/design#fees">here</a>. 
+Buying an option costs a commission fee, streamia, and gas fee. The streamia starts at 0, and accumulates while the underlying price remains in range. For more details, click <a href="https://panoptic.xyz/docs/panoptic-protocol/design#fees">here</a>. 
 </details>
 
 <details id="what-is-the-commission-fee">
 <summary>What is the commission fee?</summary>
-The commission fee is a fee charged when opening a position (based on notional size) and when closing a position if premium has been realized. The commission fee is 0.01% of notional when opening a position and 0.1% of net streamia when closing a position. For more details, click <a href="https://panoptic.xyz/docs/panoptic-protocol/V2/fee-structure">here</a>.
+The commission fee is a fee charged when opening a position (based on notional size) and when closing a position if streamia has been realized. The commission fee is 0.01% of notional when opening a position and 0.1% of net streamia when closing a position. For more details, click <a href="https://panoptic.xyz/docs/panoptic-protocol/V2/fee-structure">here</a>.
 </details>
 
 <details id="how-is-the-streamia-calculated">
-<summary>How is the streaming premia (streamia) calculated?</summary>
-The <a href="https://panoptic.xyz/research/streamia-101">streamia</a> is equal to the amount of swap fees the borrowed LP position would have earned in the Uniswap pool, plus an additional <a href="https://panoptic.xyz/research/liquidity-spread">liquidity spread</a>.  
+<summary>How is the streamia calculated?</summary>
+The <a href="https://panoptic.xyz/docs/product/streamia">streamia</a> is equal to the amount of swap fees the borrowed LP position would have earned in the Uniswap pool, plus an additional <a href="https://panoptic.xyz/research/liquidity-spread">liquidity spread</a>.  
 <br /><br />
-Example: Alice sells an out-of-the-money (OTM) ETH-USDC put Panoption, with strike = 1000 and width = ±10%. Bob buys the OTM put Panoption from Alice for 0 upfront premium. If the ETH-USDC price moves between 909 and 1100, the option is “in range” and would have earned swap fees from the Uniswap pool. If the ETH-USDC price is above 1100 or below 909, the option is “out of range” and would not have earned any swap fees. Bob owes the total amount of accumulated swap fees to Alice as premium.
+Example: Alice sells an out-of-the-money (OTM) ETH-USDC put Panoption, with strike = 1000 and width = ±10%. Bob buys the OTM put Panoption from Alice for 0 upfront premium. If the ETH-USDC price moves between 909 and 1100, the option is “in range” and would have earned swap fees from the Uniswap pool. If the ETH-USDC price is above 1100 or below 909, the option is “out of range” and would not have earned any swap fees. Bob owes the total amount of accumulated swap fees to Alice as streamia.
 </details>
 
 <details id="what-is-the-liquidity-spread">
@@ -214,12 +214,12 @@ For buyers, it is costly to purchase all available options. For sellers, it is p
 </details>
 
 <details id="has-a-streamia-been-used-in-practice-before">
-<summary>Has a streaming premia (streamia) been used in practice before?</summary>
-No, Panoptic is a pioneer in introducing <a href="https://panoptic.xyz/research/streamia-101">streamia</a> for options. While similar pricing mechanisms exist such as the <a href="https://panoptic.xyz/docs/trading/perpetual-options#how-do-perpetual-options-compare-to-perpetual-futures-perps">funding rate</a> in perpetual futures (perps), Panoptic's streamia is unique and innovative.
+<summary>Has a streamia been used in practice before?</summary>
+No, Panoptic is a pioneer in introducing <a href="https://panoptic.xyz/docs/product/streamia">streamia</a> for options. While similar pricing mechanisms exist such as the <a href="https://panoptic.xyz/docs/trading/perpetual-options#how-do-perpetual-options-compare-to-perpetual-futures-perps">funding rate</a> in perpetual futures (perps), Panoptic's streamia is unique and innovative.
 </details>
 
 <details id="how-can-i-manage-risks-associated-with-streamia">
-<summary>How can I manage risks associated with an unpredictable streaming premia (streamia)?</summary>
+<summary>How can I manage risks associated with an unpredictable streamia?</summary>
 Panoption streamia can be managed similar to <a href="https://panoptic.xyz/research/perpetual-futures-vs-options#what-are-perps">perp funding rates</a>, since both are unpredictable fees. Users should closely monitor their positions including their collateral amounts, intrinsic value, and owed fees. Users must maintain sufficient collateral to prevent liquidations, and should be prepared to close or exercise positions to secure profits or limit losses. Remember that options trading is not "set it and forget it"; it requires active management.
 <br /><br />
 Additionally, you will soon be able to view dashboards of historical streamia and fees to better inform you of potential costs.

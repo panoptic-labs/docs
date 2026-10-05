@@ -1,4 +1,5 @@
 ---
+editorial_update: "2026-10-04"
 sidebar_position: 1
 slug: opening-a-position
 title: "Opening a Position"
@@ -6,7 +7,6 @@ tags: [Tutorial]
 image: /img/research/opening-a-position.png
 description: "Discover how to navigate the world of DeFi options trading with Panoptic, a comprehensive guide for beginners and advanced traders alike, covering everything from connecting your wallet to executing sophisticated trading strategies."
 ---
-
 ![](./opening-a-position/1.png)
   
 <iframe
@@ -49,6 +49,8 @@ When accessing the Panoptic platform, users will find the “connect wallet” b
 
 ![](./opening-a-position/2.png)  
 
+<span id="selecting-assets" />
+
 ## Selecting A Market
 
 Traders can select a [market](/docs/product/markets), which is a trading pair of two tokens used to create an option position, such as ETH-USDC.
@@ -59,6 +61,8 @@ To get started, traders must deposit collateral. Users may deposit either one of
 
 ![](./opening-a-position/3.png)
   
+
+For a recorded walkthrough of the original onboarding flow, see the [collateral deposit tutorial](https://www.youtube.com/watch?v=iVfeZUVBN7E).
 
 ## Fee Tiers
 
@@ -183,7 +187,7 @@ On Panoptic, the strike price can be easily found and edited using the chart int
 
   
 
-Understanding when [streamia](https://panoptic.xyz/blog/streamia-defi-native-options-pricing) (streaming premia) is paid in Panoptic is simplified by visual cues on the PnL graph, which are represented by two dots to the left and right of the strike price. These dots indicate the price range within which buyers pay sellers streamia to keep their option open. When the price of the underlying goes outside of this range, buyers no longer pay streamia to sellers.
+Understanding when [streamia (streaming premium)](https://panoptic.xyz/docs/product/streamia) is paid in Panoptic is simplified by visual cues on the PnL graph, which are represented by two dots to the left and right of the strike price. These dots indicate the price range within which buyers pay sellers streamia to keep their option open. When the price of the underlying goes outside of this range, buyers no longer pay streamia to sellers.
 
   
 
@@ -317,6 +321,10 @@ Once traders confirm and create their position, they can manage and monitor the 
 
 Congratulations, you are officially a Panoptic Trader! To monitor your positions, click the “Positions” button at the top left of your screen.
 
-  
+## Historical onboarding and collateral screens
 
-*Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](https://panoptic.xyz/docs/intro) and head to our [website](https://panoptic.xyz/).*
+The original V1 onboarding and collateral views below accompany the recorded walkthrough. Current interface labels may differ.
+
+![Original V1 onboarding and collateral deposit flow](../../research/2023-12-7-opening-a-position-on-panoptic/3.png)
+
+![Original V1 collateral management screen](../../research/2023-12-7-opening-a-position-on-panoptic/10.png)

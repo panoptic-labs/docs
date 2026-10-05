@@ -12,7 +12,7 @@ The concept of spread is pivotal in traditional finance, indicating market liqui
 
 ![](./1.png)
 
-Panoptic's pricing mechanism, as highlighted in the [streamia](https://panoptic.xyz/research/streamia-101) article, involves a base price supplemented by an adjusted price, where the spread acts as this vital adjustment mechanism.
+Panoptic's pricing mechanism, as highlighted in the [streamia (streaming premium)](https://panoptic.xyz/docs/product/streamia) article, involves a base price supplemented by an adjusted price, where the spread acts as this vital adjustment mechanism.
 
 ### Questions We’ll Answer
 
@@ -65,7 +65,7 @@ Both buyers and sellers can deploy strategies to capitalize on the spread dynami
 
 ### Setting Spread Tolerance on the App
 
-Panoptic allows traders to [set a maximum limit](https://panoptic.xyz/research/opening-a-position-on-panoptic#slippage-tolerance-and-spread-limit) on the spread when buying an option, providing a mechanism to manage risk when entering a position. It's important to note that this setting does not affect positions after they are opened. Traders should remain vigilant, as widening spreads after opening a position won't automatically adjust or close the position, emphasizing the need for active management and monitoring of open trades.
+Panoptic allows traders to [set a maximum limit](https://panoptic.xyz/docs/product/opening-a-position#slippage-tolerance-and-spread-limit) on the spread when buying an option, providing a mechanism to manage risk when entering a position. It's important to note that this setting does not affect positions after they are opened. Traders should remain vigilant, as widening spreads after opening a position won't automatically adjust or close the position, emphasizing the need for active management and monitoring of open trades.
 
   
 *Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our social media platforms. To learn more about Panoptic and all things DeFi options, check out our docs and head to our website.*

@@ -9,7 +9,7 @@ authors: N
 
 ![](./gamma-scalping-banner.png)
 
-Traditional finance (TradFi) options market makers deploy an array of [strategies](https://panoptic.xyz/research/options-market-making) to actively manage risks through the [Greeks](https://panoptic.xyz/research/understanding-the-greeks-series). The primary objective of this article will be to detail one of the most prevalent options market maker tactics: gamma scalping. We will explain the concept of gamma scalping in both the context of traditional options and [perpetual](https://panoptic.xyz/docs/trading/perpetual-options) options.
+Gamma scalping combines a long-gamma options position with repeated delta hedging. This guide explains the strategy for traditional and [perpetual options](/docs/trading/perpetual-options), including how hedging gains relate to premium costs. For the short-gamma counterpart, see [reverse gamma scalping](/research/reverse-gamma-scalping).
 
 Gamma scalping supplies options market makers a situational means with which to unload portfolio inventory on the underlying asset due to the recurrent objective of maintaining neutrality and to capitalize on choppy, whipsawing market conditions by applying sound relative-value options trading principles amid broader chaos.
 
@@ -65,10 +65,10 @@ We have previously shown that Uniswap liquidity provider (LP) positions closely 
 
 ![](./04.png)
 
-The overall return for the strategy is roughly 11.5% with the premia paid amounting to approximately -0.4%. For the sake of historical context, the selected one-day period for the backtest is a particularly volatile backdrop as there were several stablecoin depegs the following day on May 20, 2021. The backtest is an illuminating case study as to how gamma scalping, in a highly mercurial environment such as the date in question, can potentially harvest immense returns over an abbreviated time horizon.
+The overall return for the strategy is roughly 11.5% with the streamia (streaming premium) paid amounting to approximately -0.4%. For the sake of historical context, the selected one-day period for the backtest is a particularly volatile backdrop as there were several stablecoin depegs the following day on May 20, 2021. The backtest is an illuminating case study as to how gamma scalping, in a highly mercurial environment such as the date in question, can potentially harvest immense returns over an abbreviated time horizon.
 
 ### Panoptic-Native Gamma Scalping
-With regard to Panoptic, gamma scalping would involve several departures from conventional TradFi procedure. Gamma can be [capped](https://paper.panoptic.xyz/) with [Panoptions](/docs/terms/panoption) based on user preference, and theta decay is paid in the form of [streaming premia](https://panoptic.xyz/research/streamia-101) (streamia). The TradFi heuristic of options moneyness would be supplanted by [rangeness](https://panoptic.xyz/blog/streamia-defi-native-options-pricing) where a Panoption buyer would pay streamia to a seller when an option is [in-range](https://panoptic.xyz/docs/terms/in_range) (IR) and pay nothing when a Panoption is [out-of-range](https://panoptic.xyz/docs/terms/out_of_range) (OOR).
+With regard to Panoptic, gamma scalping would involve several departures from conventional TradFi procedure. Gamma can be [capped](https://paper.panoptic.xyz/) with [Panoptions](/docs/terms/panoption) based on user preference, and theta decay is paid in the form of [streamia](https://panoptic.xyz/docs/product/streamia). The TradFi heuristic of options moneyness would be supplanted by [rangeness](https://panoptic.xyz/docs/product/streamia) where a Panoption buyer would pay streamia to a seller when an option is [in-range](https://panoptic.xyz/docs/terms/in_range) (IR) and pay nothing when a Panoption is [out-of-range](https://panoptic.xyz/docs/terms/out_of_range) (OOR).
 
 Consequently, a conducive market climate to gamma scalp and purchase an ATM straddle on Panoptic would be if a prospective gamma scalper theorizes that an underlying will begin IR and eventually move OOR, while the ongoing delta-hedging could be executed through [perps](https://panoptic.xyz/research/options-market-making#the-benefits-of-hedging-with-futures).
 

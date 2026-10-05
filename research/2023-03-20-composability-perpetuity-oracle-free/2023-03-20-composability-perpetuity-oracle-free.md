@@ -6,11 +6,7 @@ description: "Panoptic is a completely DeFi-native options protocol."
 tags: [Panoptimists, Composable, Perpetual, Oracle-Free]
 authors: C
 ---
-
-We heard some of you might have some Q's regarding Panoptions:
--   How are they priced?
--   Are they any different from Vanilla European Options?
--   Why can't we just use Black-Scholes (BSM)?
+Panoptic’s design combines composable LP positions, perpetual exposure and option pricing derived from AMM activity. This article examines those architectural choices and why they differ from implementing a conventional option-pricing model onchain. For the instrument definition, start with [perpetual options](/docs/trading/perpetual-options).
 
 Read on to find out!
 
@@ -46,11 +42,11 @@ Cons of oracles:
 -   Are complex to integrate on chain
 -   Can be expensive to maintain
 
-This is difficult in DeFi! So how do we calculate the price without oracles? Panoptic uses an oracle-free concept called streamia (streaming premia):
+This is difficult in DeFi! So how do we calculate the price without oracles? Panoptic uses an oracle-free concept called streamia (streaming premium):
 -   No upfront payment
 -   Instead, buyers pay a small fee at every block to keep their position open, whenever it is near-the-money
 -   This per-block fee is computed from every change in price of the asset
-    
+
 Intuitively,
 -   If price changes a lot, volatility + fees are big
 -   If it doesn't change much, volatility + fees are small
@@ -63,7 +59,7 @@ $\theta(S_t,t)=\frac{\partial V(S_t,t)}{\partial t}=\frac{S_t\sigma}{\sqrt{8\pi 
 
 $\text{Here, } \sigma^2\in\mathbb{R}_{>0} \text{ is the volatility and } S_t \text{ is the asset price.}$
 
-This corresponds to options that continuously expire at small time intervals (∆t). Does Panoptic integrate θ on-chain? No! 🙅‍♂️ In practice, this premia corresponds to the LP fees in the Uni V3 pool! Does this converge to BSM? Yes! 🤯 We can verify this w/ Monte Carlo:
+This corresponds to options that continuously expire at small time intervals (∆t). Does Panoptic integrate θ on-chain? No! 🙅‍♂️ In practice, this streamia corresponds to the LP fees in the Uni V3 pool! Does this converge to BSM? Yes! 🤯 We can verify this w/ Monte Carlo:
 
 ![img-2](./img-2.jpg)
 

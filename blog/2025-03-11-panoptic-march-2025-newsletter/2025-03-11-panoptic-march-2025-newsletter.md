@@ -52,13 +52,13 @@ A Panoptic user recently [sold a strangle](https://app.panoptic.xyz/positions/et
     
 **Results:**
 -   Profit and Loss (P/L): +4.82% (≈ +976.6 USDC)
--   Premia Earned: +6.91% (≈ +1,399 USDC)
+-   Streamia (streaming premium) Earned: +6.91% (≈ +1,399 USDC)
 
-By opening both a short call and a short put, the trader collected [streamia](/docs/product/streamia) from two directions. Their strategy likely hinged on ETH’s price staying within the 2,774–3,976 range during elevated implied volatility. Thanks to the heightened volatility, the premiums were priced richly, allowing the trader to collect a larger-than-usual streaming premium.
+By opening both a short call and a short put, the trader collected [streamia](/docs/product/streamia) from two directions. Their strategy likely hinged on ETH’s price staying within the 2,774–3,976 range during elevated implied volatility. Thanks to the heightened volatility, the streamia were priced richly, allowing the trader to collect a larger-than-usual streamia.
 
 ![](./03.png)
 
-When market conditions settled, implied volatility subsided, and the trader was able to profit from  time decay on both option legs. By monitoring ETH’s price moves and actively managing their risk, they locked in a combined gain on the short strangle—securing both the put and call premiums before any large move in ETH could threaten their position. The overall result amounted to over **6.9%** in accumulated premiums, while still earning a healthy **+4.82%** in realized P/L.
+When market conditions settled, implied volatility subsided, and the trader was able to profit from  time decay on both option legs. By monitoring ETH’s price moves and actively managing their risk, they locked in a combined gain on the short strangle—securing both the put and call streamia before any large move in ETH could threaten their position. The overall result amounted to over **6.9%** in accumulated streamia, while still earning a healthy **+4.82%** in realized P/L.
 
 This trade highlights how Panoptic’s real-time streamia accrual can be harnessed to capture time decay and volatility convergence without the overhead of constant rebalancing. With margin requirements set on-chain, the position’s health is transparent, and users can flexibly close or adjust based on market dynamics, all while benefiting from Panoptic’s permissionless environment.
 

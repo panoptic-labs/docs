@@ -36,7 +36,7 @@ Check out the [Code4rena guidelines page](https://docs.code4rena.com/roles/warde
 
 ## After the Audit
 
-Panoptic will run an [additional beta](https://panoptic.xyz/docs/gated-launch/) version before launching Panoptic mainnet V1. Panoptic brings DeFi-native options trading to multiple EVM-compatible chains, enabling the permissionless trading of any token, any strike, any size.
+Panoptic will run an [additional beta](https://panoptic.xyz/blog/gated-launch-sign-up) version before launching Panoptic mainnet V1. Panoptic brings DeFi-native options trading to multiple EVM-compatible chains, enabling the permissionless trading of any token, any strike, any size.
 
 ## About Code4rena
 

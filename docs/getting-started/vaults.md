@@ -10,6 +10,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Panoptic vaults span the risk-return spectrum, offering strategies for both conservative depositors and higher-risk yield seekers. Vaults may be curated by Panoptic or by external managers. Panoptic Community Vaults provide onchain yield with zero performance fees. External curators may deploy custom strategies and charge performance fees.
 
+<span id="lending-vaults" />
+
 ## Community Vaults
 Panoptic’s community vaults do not charge performance fees and are designed to provide accessible, onchain yield strategies. New vaults and expanded caps will roll out every few weeks after launch.
 

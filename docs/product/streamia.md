@@ -1,4 +1,5 @@
 ---
+editorial_update: "2026-10-04"
 sidebar_position: 4
 slug: streamia
 title: "Streamia"
@@ -6,10 +7,9 @@ tags: [Tutorial, Streamia, Liquidation, Timescale]
 image: /img/research/streamia-101-banner.png
 description: "An introductory guide to costs, pricing, accumulation, and safeguarding against liquidation in Panoptic."
 ---
-
 ![](./streamia/streamia-101-banner.png)
 
-Because perpetual options never expire, it is difficult to assess the fair price upfront of endless exposure to an asset. Panoptic uses the streamia pricing model, based on spot market activity, to accurately price these options.
+Because perpetual options never expire, it is difficult to assess the fair price upfront of endless exposure to an asset. Panoptic uses the streamia (streaming premium) pricing model, based on spot market activity, to accurately price these options.
 
 
 >### Questions We'll Answer
@@ -22,17 +22,22 @@ Because perpetual options never expire, it is difficult to assess the fair price
 
 ## What is Streamia?
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Gfl-_yPGZyU?si=-8ERRxZfmXX3xHF1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+Streamia is a continuous payment from option buyers
+to option sellers that compensates sellers for the risk they take on. It
+replaces the upfront premium of traditional options: instead of paying once
+at purchase, a buyer's streamia accrues every block, based on the Uniswap
+fees earned in the option's price range, and is settled when [the position
+is closed or its accrued streamia is explicitly settled](/docs/panoptic-protocol/V2/settlement-flows).
 
-  
+Streamia works like the funding rate in perpetual futures, with one
+difference: funding can flow either way, while streamia always flows from
+buyers to sellers.
 
-Streamia, or streaming premia, is a periodic payment between traders to compensate for the risks of sellers. Streamia is similar to the funding rate in perps, where continuous payments are made between long and short traders. With streamia, small payments are made at every block between option buyers and sellers.
+<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/Gfl-_yPGZyU" title="What is streamia?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-  
-
-A simple way to conceptualize the streamia for perpetual options is to think of a continuous series of options that expire over a short period of time with the total premia gradually accumulating each time the option is rolled.
-
-  
+A simple way to think about it: a perpetual option behaves like a series of
+very short-dated options that are rolled continuously. Each roll costs a
+small premium, and streamia is the running total of those costs.
 
 ## How is the Streamia Determined?
 
@@ -133,4 +138,47 @@ Options on assets with low liquidity in Uniswap accumulate streamia faster than 
 
 Streamia is part and parcel to perpetual options, and understanding how options are priced is essential to trading smart on Panoptic.
 
-*Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](https://panoptic.xyz/docs/intro) and head to our [website](https://panoptic.xyz/).*
+## Rangeness vs. Moneyness
+
+Traditional option premiums are paid upfront. Moneyness compares spot with strike: a call is in the money above its strike and a put is in the money below it. A premium can include both intrinsic value and time value; paying a premium does not guarantee a profitable exercise.
+
+![Call-option moneyness relative to the strike](../../blog/2023-07-13-streamia-defi-native-options-pricing/call-option-moneyness.png)
+
+Streamia instead depends on **rangeness**: whether spot is between the option’s lower and upper bounds. A position may be in or out of the money while still in range. “Near the money” and “far from the money” describe proximity to the strike, rather than whether exercising is profitable. See the [near-the-money definition](https://www.investopedia.com/terms/n/near-the-money.asp) and [delta and moneyness discussion](/research/defi-option-strangle-straddle#delta-as-the-probability-of-being-itm).
+
+![In-range and out-of-range regions for a call option](../../blog/2023-07-13-streamia-defi-native-options-pricing/call-option-rangeness.png)
+
+One intuition is a sequence of short-lived options whose premiums accumulate as they are [rolled](https://www.tastylive.com/definitions/rolling-options). This is a pricing analogy, not an expiry date for a Panoption. The [whitepaper](https://paper.panoptic.xyz) explains the relationship to Black–Scholes pricing under its modeling assumptions.
+
+![Streamia accrual as spot enters and leaves the range](../../blog/2023-07-13-streamia-defi-native-options-pricing/streamia-pricing-model.png)
+
+## Streamia Accumulation Example
+
+
+On Panoptic, say a seller creates a put Panoption on the USDC/ETH pair. The current market price of ETH is 1800 USDC, and the strike price of the Panoption is 2000 USDC with a [width of 10%](https://panoptic.xyz/research/uniswap-lp-calculate-price-range). That means the upper bound of the range is $2200 and the lower bound of the range $1818.
+
+
+To create the put option, the seller can either borrow liquidity from the Panoptic pools provided by Panoptic liquidity providers (PLPs) or use their own funds to deposit the token pair in the corresponding Uniswap v3 pool.
+
+
+When a trader buys this put option, the funds for the option are moved from Uniswap to the corresponding Panoptic pool. The upfront cost to the buyer is zero dollars and the streamia will not start to accumulate until the Panoption is IR.
+
+
+If the price of ETH never exceeds $1818 (the lower bound of the put option) while the buyer holds the contract, no streamia will accumulate because the Panoption is OOR.
+
+
+If the price of ETH rises above $1818 (the lower bound) and remains below $2200 (the upper bound), then streamia will accumulate because the Panoption is IR. Learn more about the exact formula [here](https://panoptic.xyz/docs/panoptic-protocol/streamia).
+
+
+If the price of ETH skyrockets past $2200 (the upper bound of the put option), putting this put option out of the money, then no streamia will accumulate because the option is no longer IR.
+
+
+Please note that the streamia is a fee paid by buyers to sellers. There are other fees associated with trading options on Panoptic outside of streamia which you can read more about [here](https://panoptic.xyz/docs/faq/#fees).
+
+The zero upfront **streamia** in this example does not mean zero collateral, commission, borrowing costs or gas. For accounting formulas, see [streamia fee accumulators](/docs/panoptic-protocol/streamia). For model assumptions and tradeoffs, see [streamia versus Black–Scholes](/blog/black-scholes-streamia-defi-options-pricing-models).
+
+## Why Streamia?
+
+Streamia lets a perpetual option be priced as exposure is held, without selecting a contractual expiry or repeatedly rolling an expiring contract. Pricing follows the underlying AMM’s activity rather than an external option-price feed. The gradual payment model removes an upfront option premium, but accrued costs can still consume collateral and trigger liquidation; rapid accrual is possible in the conditions described above.
+
+![Upfront premiums compared with streamia](../../research/2023-04-17-streamia-panoptic-pricing-perpetual-options/im1.png)

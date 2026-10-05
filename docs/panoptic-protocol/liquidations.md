@@ -1,8 +1,9 @@
 ---
 sidebar_position: 11
 ---
-
 # Liquidations
+
+This page describes liquidation actors and the historical mechanism. For current V2 solvency rules, see [collateral tracking](/docs/panoptic-protocol/V2/collateral-overview); for monitoring and avoiding liquidation in the app, see the [trader guide](/docs/product/liquidations).
 
 ## Introduction
 Panoptic enables leveraged options through undercollateralized trading. This cutting-edge approach necessitates a robust mechanism to maintain the health and stability of the protocol, with liquidators playing a pivotal role. These entities are crucial in managing the risks associated with undercollateralized positions, ensuring the system's resilience and reliability.
@@ -17,6 +18,8 @@ Two critical components of liquidations are the Buyer Collateral Requirement (BC
 
 ### Liquidation Thresholds
 An account becomes liquidatable in a specific pool when its collateral falls short of the required collateral requirement thresholds. This situation typically arises when market movements are unfavorable to the position held by the account, causing the required level to exceed the collateral's value. At this juncture, the account is deemed liquidatable and is subject to being closed out.
+
+<span id="the-liquidation-bot" />
 
 ## Liquidation Bots
 
@@ -127,3 +130,7 @@ The formula for calculating the liquidation bonus is as follows:
 `Bonus = min{Collateral Balance / 2, Collateral Requirement at TWAP - Collateral Balance at TWAP}`
 
 The goal of the liquidation system is to incentivize *Panoptic Liquidity Providers* to be liquidators as well, since a healthy liquidation system means the pool will never incur a loss.
+
+## Forced Exercise
+
+See the [forced exercise guide](/docs/panoptic-protocol/forced-exercise) for an explanation of this mechanism and the roles of the exerciser and option buyer.

@@ -24,7 +24,7 @@ The default address is an unfunded demonstration address. Expect a collateral re
 | Size | `1_000_000_000n` protocol position-size units, a small illustrative input. This is **not** 1 ETH, 1 USDC, or a dollar notional. |
 | Existing positions | An empty list only after `getAccountCollateral` confirms zero open legs at the simulation block. Accounts with existing legs stop before simulation. |
 | Bounds | Current tick plus/minus one tick spacing. These are illustrative tick bounds, not a percentage slippage setting. |
-| Other choices | No swap at mint, no premia as collateral, and builder code zero. `spreadLimit: 0n` disables that additional limit; this is not a production execution policy. |
+| Other choices | No swap at mint, no streamia (streaming premium) as collateral, and builder code zero. `spreadLimit: 0n` disables that additional limit; this is not a production execution policy. |
 
 This example is deliberately specific to one pool and one token ordering. See [position identity and denomination](./core-concepts#position-identity-and-denomination) before adapting it to another market or a multi-leg strategy.
 
@@ -158,7 +158,7 @@ Keep ETH and USDC amounts separate. Do not add them or subtract one token's requ
 
 ## Costs and risk beyond this preview
 
-The asset movements are not an all-in price. [Trading commissions](../contracts/parameters#fees-and-builder-routing), [streaming premia](../product/streamia), borrowing interest when applicable, and transaction gas are different costs. Future premia and interest depend on subsequent market and account conditions; this call does not quote them for a holding period.
+The asset movements are not an all-in price. [Trading commissions](../contracts/parameters#fees-and-builder-routing), [streamia](../product/streamia), borrowing interest when applicable, and transaction gas are different costs. Future streamia and interest depend on subsequent market and account conditions; this call does not quote them for a holding period.
 
 A successful simulation does not establish a maximum loss, guarantee a future fill, or verify a liquidation price. A production integration also needs strategy-aware sizing, complete position discovery for existing accounts, fresh risk checks, wallet authorization, receipt handling, and reconciliation. Continue with [How an integration works](./integration-workflow) and [Capabilities and support](./capabilities).
 

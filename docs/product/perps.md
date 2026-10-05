@@ -47,7 +47,7 @@ Select the [market](/docs/product/markets) you wish to trade in. With Panopticâ€
 
 ### Step 3: Decide on Your Strategy
 
-Determine whether you want to go [long or short](/docs/trading/multi-leg-strategies#synthetic-positions) on the chosen asset.
+Determine whether you want to go [long or short](/docs/trading/multi-leg-strategies#synthetic-perps) on the chosen asset.
 
 If youâ€™re bullish, consider a long perp.
 ![](./perps/04.png)

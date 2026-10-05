@@ -6,7 +6,6 @@ tags: [Tutorial, Risk Management]
 image: /img/research/closing-a-position.png
 description: "This guide provides insights on efficiently closing positions in Panoptic, covering when to close, how to do it, and troubleshooting issues to secure gains or limit losses in DeFi options trading."
 ---
-
 ![](./closing-a-position/closing-a-position.png)
 
 Closing a position is a crucial step in [position management](/docs/product/position-management) to eliminate exposure while securing gains or limiting losses. This guide offers insights on how traders can efficiently close positions and handle potential issues.
@@ -29,7 +28,7 @@ Here are some of the most important indicators to consider when deciding whether
 
 ### Range
 
-[Streamia](/docs/product/streamia) only accumulates while the position is [in range](/docs/product/streamia#in-range-options-accumulate-streamia). Hence, the range of your position greatly affects your profit and loss and whether you should close the position.
+[Streamia (streaming premium)](/docs/product/streamia) only accumulates while the position is [in range](/docs/product/streamia#in-range-options-accumulate-streamia). Hence, the range of your position greatly affects your profit and loss and whether you should close the position.
 
 -   For sellers: Consider keeping the position open to continue earning streamia if in range. Consider closing if out of range.
     
@@ -70,6 +69,8 @@ Here, you can review the details of your closed positions such as the PnL, strea
 
 Generally, options on Panoptic may be freely closed. However, positions with insufficient free [liquidity](/docs/product/liquidity) cannot be closed in the traditional manner. Sometimes you may be unable to close your position without first paying a fee to [force exercise](/docs/product/force-exercise) other positions.
 
+A force exercise is subject to the position’s eligibility conditions; a price move alone does not guarantee an immediate exit. If the relevant long position is not eligible and liquidity remains unavailable, wait for conditions to change or reduce the position where possible. See [force exercise conditions](/docs/product/force-exercise).
+
 ### Insufficient Liquidity
 
 Option buyers may freely close their positions at any time. However, option sellers may only close their positions if there is sufficient liquidity. This is because sellers may not close their position if it has been purchased by another account.
@@ -83,5 +84,3 @@ You have two options if you want to close a position without paying a force exer
 ![](./closing-a-position/6.png)
 
 *Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](https://panoptic.xyz/docs/intro) and head to our [website](https://panoptic.xyz/).*
-
-

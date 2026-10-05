@@ -33,7 +33,7 @@ Despite the current bear market, the conference was teeming with passionate cryp
 The most frequently asked question by options traders and crypto users alike: what are perpetual options?
 
   
-If you're an [option trader](https://panoptic.xyz/docs/getting-started/options-traders), then think of a 12 second expiring option rolled over and over again. For [perp traders](https://panoptic.xyz/docs/getting-started/perps-traders), think of a perp that can be traded on any token without liquidation risk. Or if you [provide liquidity](https://panoptic.xyz/docs/getting-started/liquidity-providers) on Uniswap, or other automated market maker (AMM), think of an LP token ([perpetual put](https://panoptic.xyz/docs/panoptic-protocol/design)), a delta neutral LP position (perpetual straddle), or shorting an LP token ([perpetual long option](https://panoptic.xyz/research/essential-options-strategies-to-know#1-put-%EF%B8%8F)).
+If you're an [option trader](https://panoptic.xyz/docs/getting-started/options-traders), then think of a 12 second expiring option rolled over and over again. For [perp traders](https://panoptic.xyz/docs/getting-started/perps-traders), think of a perp that can be traded on any token without liquidation risk. Or if you [provide liquidity](https://panoptic.xyz/docs/getting-started/passive-lp) on Uniswap, or other automated market maker (AMM), think of an LP token ([perpetual put](https://panoptic.xyz/docs/panoptic-protocol/design)), a delta neutral LP position (perpetual straddle), or shorting an LP token ([perpetual long option](https://panoptic.xyz/research/essential-options-strategies-to-know#put-️)).
   
 
 Perpetual options are options that never expire and bring capital efficiency, flexibility, and risk managed trades to DeFi.

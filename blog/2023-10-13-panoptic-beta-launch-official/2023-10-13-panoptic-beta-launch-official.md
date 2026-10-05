@@ -33,7 +33,7 @@ Panoptic’s gated, beta launch will take place in several rounds of trading com
 During the beta launch, the company is giving away $100,000 to top traders, bug reporters, and participants. On the opposite side, underperforming traders run the risk of being removed from future epochs. This feature of the trading competition is in place to encourage robust participation from all traders.
 
 
-People involved in the beta launch are able to partake in three different activities: providing liquidity as [Panoptic Liquidity Providers (PLPs)](https://panoptic.xyz/docs/panoptic-protocol/protocol-roles#panoptic-liquidity-providers-plps), buying options, and selling options. To prepare, participants are encouraged to read through the [gated launch parameters](https://panoptic.xyz/blog/gated-launch-parameters) to better understand these roles.
+People involved in the beta launch are able to partake in three different activities: providing liquidity as [Panoptic Liquidity Providers (PLPs)](https://panoptic.xyz/docs/panoptic-protocol/protocol-roles#lenders-passive-liquidity-providers-plps), buying options, and selling options. To prepare, participants are encouraged to read through the [gated launch parameters](https://panoptic.xyz/blog/gated-launch-parameters) to better understand these roles.
 
 
 The goal of Panoptic’s gated launch is to empower users to explore the platform, trade real options, and provide feedback. As a beta launch, submitting feedback is highly valued by the team as it works toward the protocol’s full-scale launch.

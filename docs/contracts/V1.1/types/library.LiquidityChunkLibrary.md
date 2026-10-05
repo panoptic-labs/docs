@@ -1,4 +1,8 @@
-# LiquidityChunkLibrary
+---
+sidebar_label: "LiquidityChunkLibrary"
+title: "LiquidityChunkLibrary (V1.1)"
+---
+# LiquidityChunkLibrary (V1.1)
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.1.x/contracts/types/LiquidityChunk.sol)
 
 **Author:**
@@ -222,5 +226,3 @@ function liquidity(LiquidityChunk self) internal pure returns (uint128);
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`uint128`|The liquidity of `self`|
-
-

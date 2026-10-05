@@ -63,15 +63,15 @@ Full information about eligible activities, market multipliers, and point distri
 
 Liquidity providers on Robinhood Chain can make their existing Uniswap positions more productive through Panoptic.
 
-LPs can stake supported Uniswap liquidity positions in Panoptic while that liquidity continues to facilitate swaps and earn trading fees in the underlying pool. Once staked, the position can also support Panoptic’s options markets, creating an additional opportunity to earn options premiums from traders using that liquidity.
+LPs can stake supported Uniswap liquidity positions in Panoptic while that liquidity continues to facilitate swaps and earn trading fees in the underlying pool. Once staked, the position can also support Panoptic’s options markets, creating an additional opportunity to earn options streamia (streaming premium) from traders using that liquidity.
 
 LPs will also be able to borrow against their staked positions, unlocking liquidity without withdrawing their capital from Uniswap. Borrowed funds can be withdrawn or deployed across Panoptic’s lending and options markets.
 
-By staking LP positions on Panoptic, liquidity providers can earn up to 20% more on top of their existing LP returns through additional options premiums. The same underlying capital can serve two markets at once: spot liquidity on Uniswap and options liquidity on Panoptic.
+By staking LP positions on Panoptic, liquidity providers can earn up to 20% more on top of their existing LP returns through additional options streamia. The same underlying capital can serve two markets at once: spot liquidity on Uniswap and options liquidity on Panoptic.
 
 Staking does not require LPs to change the underlying pool or price range. Panoptic adds new utility to capital they are already deploying while helping deepen options liquidity across Robinhood Chain.
 
-As liquidity develops across Robinhood Chain, Panoptic gives LPs a way to get more from the same position by earning swap fees, collecting options premiums, and borrowing against their LP position without having to redeploy their liquidity.
+As liquidity develops across Robinhood Chain, Panoptic gives LPs a way to get more from the same position by earning swap fees, collecting options streamia, and borrowing against their LP position without having to redeploy their liquidity.
 
 ## Earn Interest by Lending & Unlock Liquidity by Borrowing
 

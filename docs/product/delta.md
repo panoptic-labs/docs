@@ -6,7 +6,6 @@ tags: [Tutorial, Risk Management, Volatility, Delta, Greeks]
 image: /img/research/understanding-delta-risk.png 
 description: "Explore the critical role of delta in options trading for risk management and master delta-neutral strategies with Panoptic to navigate market volatility effectively."
 ---
-
 ![](./delta/understanding-delta-risk.png)
 
 ## Delta
@@ -72,7 +71,7 @@ A strangle involves buying a call and a put at different strike prices. The delt
 
 ### Iron Condor
 
-An iron condor involves selling a call spread and selling a put spread. The net delta is zero, offset by the opposing long and short [legs](/docs/product/option-legs). The iron condor is one of the most popular delta neutral trading strategies, as it earns [streamia](/docs/product/streamia) irregardless of small changes in the price of the underlying asset. If price makes a large move up or down, the position’s maximum loss is also capped.
+An iron condor involves selling a call spread and selling a put spread. The net delta is zero, offset by the opposing long and short [legs](/docs/product/option-legs). The iron condor is one of the most popular delta neutral trading strategies, as it earns [streamia (streaming premium)](/docs/product/streamia) irregardless of small changes in the price of the underlying asset. If price makes a large move up or down, the position’s maximum loss is also capped.
 
 ![](./delta/7.png)
 
@@ -80,4 +79,8 @@ An iron condor involves selling a call spread and selling a put spread. The net 
 
 Delta is a crucial metric for traders assessing risk in options trading. It guides decisions on opening and closing positions by indicating how the value of an option might change with the underlying asset's price movement. Understanding delta helps traders manage the risks associated with the direction of the market, making it an indispensable tool in their trading arsenal.
 
-*Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](https://panoptic.xyz/docs/intro) and head to our [website](https://panoptic.xyz/).*
+import Head from '@theme/MDXComponents/Head';
+
+<Head>
+  <link rel="canonical" href="https://panoptic.xyz/research/understanding-delta-risk" />
+</Head>

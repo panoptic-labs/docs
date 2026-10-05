@@ -35,7 +35,7 @@ This spiral is on full display in the above snapshot where the spot price of ETH
   
   
 
-If LPs delta hedge their position, the doom loop is exacerbated. LP positions resemble short [perpetual put options](https://panoptic.xyz/blog/uniswap-lp-equals-options#lps-are-options-sellers). As both LP tokens and short perpetual put options have [negative convexity](https://panoptic.xyz/research/reverse-gamma-scalping#panoptic-native-reverse-gamma-scalping), the hedging of both positions would entail a self-perpetuating feedback loop where LPs and traders sell into downturns. Hence, LP-hedging would apply selling pressure to token prices.
+If LPs delta hedge their position, the doom loop is exacerbated. LP positions resemble short [perpetual put options](https://panoptic.xyz/blog/uniswap-options#lps-are-options-sellers). As both LP tokens and short perpetual put options have [negative convexity](https://panoptic.xyz/research/reverse-gamma-scalping#panoptic-native-reverse-gamma-scalping), the hedging of both positions would entail a self-perpetuating feedback loop where LPs and traders sell into downturns. Hence, LP-hedging would apply selling pressure to token prices.
 
   
 

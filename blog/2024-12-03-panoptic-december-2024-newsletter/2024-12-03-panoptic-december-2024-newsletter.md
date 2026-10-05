@@ -20,7 +20,7 @@ Discover the future of trading with Panoptic, your gateway to perpetual options 
 
 ### Uniswap vs. Deribit: Unpacking the Volatility Connection
 
-The relationship between decentralized (DEX) and centralized exchanges (CEX) is evolving, and implied volatility (IV) metrics provide a critical lens for understanding these dynamics. [Comparing IV](https://panoptic.xyz/research/comparing-uniswap-deribit-implied-volatilities) on Uniswap and Deribit reveals intriguing patterns: while both exhibit correlated trends, Uniswap’s IV is consistently lower, averaging 55%—more than 10 percentage points below Deribit. This difference stems from Uniswap’s “sell-only” options market, where liquidity providers (LPs) act as option sellers without the ability to buy, suppressing IV. Excess liquidity in key pools like ETH/USDC further compounds the issue, reducing option premiums and impacting LP profitability.
+The relationship between decentralized (DEX) and centralized exchanges (CEX) is evolving, and implied volatility (IV) metrics provide a critical lens for understanding these dynamics. [Comparing IV](https://panoptic.xyz/research/comparing-uniswap-deribit-implied-volatilities) on Uniswap and Deribit reveals intriguing patterns: while both exhibit correlated trends, Uniswap’s IV is consistently lower, averaging 55%—more than 10 percentage points below Deribit. This difference stems from Uniswap’s “sell-only” options market, where liquidity providers (LPs) act as option sellers without the ability to buy, suppressing IV. Excess liquidity in key pools like ETH/USDC further compounds the issue, reducing streamia (streaming premium) and impacting LP profitability.
 
 ![](./01.png)
 
@@ -72,7 +72,7 @@ Our founder, Guillaume Lambert, expanded on Panoptic's groundbreaking approach t
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">2. Panoptic also lets you borrow+short LP tokens. Borrowing an LP token is effectively *buying* a perpetual option.<br/><br/>Buying options with no counterparty risk is good for hedging &amp; risk management.<br/><br/>Or it can be used for pure speculation. Think perps, but with no liquidation risk <a href="https://t.co/RVl9Um8IKx">pic.twitter.com/RVl9Um8IKx</a></p>&mdash; GEE-yohm LAMB-bear (@guil_lambert) <a href="https://twitter.com/guil_lambert/status/1838609506546389042?ref_src=twsrc%5Etfw">September 24, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-By tying option premiums to realized volatility, Panoptic ensures accurate pricing and [higher yields](https://panoptic.xyz/blog/uniswap-lps-unlock-3x-more-fees-with-panoptic) compared to traditional Uniswap LPing. Guillaume also highlighted the platform’s use of ERC-1155 tokens, which optimize gas efficiency while making options composable across DeFi.
+By tying streamia to realized volatility, Panoptic ensures accurate pricing and [higher yields](https://panoptic.xyz/blog/make-uniswap-great-again) compared to traditional Uniswap LPing. Guillaume also highlighted the platform’s use of ERC-1155 tokens, which optimize gas efficiency while making options composable across DeFi.
 
 ## Up Next
 

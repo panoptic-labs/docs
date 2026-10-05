@@ -1,7 +1,9 @@
 ---
 sidebar_position: 4
+sidebar_label: "PanopticFactoryV3"
+title: "PanopticFactoryV3 (V2)"
 ---
-# PanopticFactoryV3
+# PanopticFactoryV3 (V2)
 
 > Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
 

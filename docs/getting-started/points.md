@@ -23,13 +23,13 @@ Season 1 and Season 2 balances are frozen and carried on your account. Nothing y
 Season 3 awards Pips on **fees paid**. Two kinds of fees count:
 
 - **Position and loan fees:** **3 bps of notional**, charged when you open a position or a loan.
-- **Option premium fees:** a **2.5% fee** on option premium, whether you earn the premium or owe it, capped at **30 bps of notional**. It accrues daily while a position is open, so you don't need to close it to be credited.
+- **Option streamia (streaming premium) fees:** a **2.5% fee** on option streamia, whether you earn the streamia or owe it, capped at **30 bps of notional**. It accrues daily while a position is open, so you don't need to close it to be credited.
 
-**Want more Pips? Trade more.** More volume means more position fees, and more open positions mean more premium accruing. Every dollar of fees counts. [Start trading →](https://app.panoptic.xyz)
+**Want more Pips? Trade more.** More volume means more position fees, and more open positions mean more streamia accruing. Every dollar of fees counts. [Start trading →](https://app.panoptic.xyz)
 
 Each UTC day's Pips issuance is proportional to the total eligible fees paid that day, at a fixed rate for the campaign. That day's Pips are then shared among all accounts **in proportion to each account's fees multiplied by its [boost](#boosts)**. Boosts change how the day's Pips are split; they don't increase how many are issued.
 
-Open positions are snapshotted daily, and the premium fees accrued that day count toward your fees paid even if the position stays open. Unrealized premium earns Pips the day it accrues, not when you close. Only completed (finalized) days count, so your total updates once per day rather than tick by tick.
+Open positions are snapshotted daily, and the streamia fees accrued that day count toward your fees paid even if the position stays open. Unrealized streamia earns Pips the day it accrues, not when you close. Only completed (finalized) days count, so your total updates once per day rather than tick by tick.
 
 Depositing into an eligible vault also earns: fees paid by a vault pass through to its depositors, in proportion to how long their deposits were held that day. Eligible vaults in Campaign 2 are the **WETH PLP** and **Unicorn USDC** vaults on Ethereum and the **USDG PLP** vault on Robinhood Chain. Deposits outside these vaults do not earn campaign Pips.
 
@@ -97,16 +97,16 @@ The Pips program and any future token distribution are not available to persons 
 A Pip is an off-chain point tracking your contribution to the protocol. It is not a token and cannot be traded or transferred.
 
 **How do I start earning?**
-Open a position or a loan in an eligible market on Ethereum or Robinhood Chain, or deposit into an eligible vault. Position, loan, and option premium fees you pay earn Pips automatically, with no registration needed.
+Open a position or a loan in an eligible market on Ethereum or Robinhood Chain, or deposit into an eligible vault. Position, loan, and option streamia fees you pay earn Pips automatically, with no registration needed.
 
 **Why isn't my Pips number updating in real time?**
 Pips are settled per UTC day. Your total includes finalized days only, so it updates once per day.
 
-**Do I earn on premium I receive, or only premium I pay?**
-Both directions count: the 2.5% premium fee (capped at 30 bps of notional) earns Pips whether you earn the premium or owe it.
+**Do I earn on streamia I receive, or only streamia I pay?**
+Both directions count: the 2.5% streamia fee (capped at 30 bps of notional) earns Pips whether you earn the streamia or owe it.
 
 **Do I have to close my position to get credited?**
-No. Premium fees accrue daily while the position stays open.
+No. Streamia fees accrue daily while the position stays open.
 
 **Do losses reduce my Pips?**
 No. Pips are based on fees paid, not PnL.

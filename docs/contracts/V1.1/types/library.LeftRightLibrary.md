@@ -1,4 +1,8 @@
-# LeftRightLibrary
+---
+sidebar_label: "LeftRightLibrary"
+title: "LeftRightLibrary (V1.1)"
+---
+# LeftRightLibrary (V1.1)
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.1.x/contracts/types/LeftRight.sol)
 
 **Author:**
@@ -380,5 +384,3 @@ function addCapped(LeftRightUnsigned x, LeftRightUnsigned dx, LeftRightUnsigned 
 |----|----|-----------|
 |`<none>`|`LeftRightUnsigned`|The sum `x + dx`|
 |`<none>`|`LeftRightUnsigned`|The sum `y + dy`|
-
-

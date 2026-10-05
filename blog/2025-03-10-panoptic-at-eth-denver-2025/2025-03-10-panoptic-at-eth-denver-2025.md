@@ -31,7 +31,7 @@ We were honored to host Tom Sosnoff, founder of tastytrade and tastylive. His ta
   
   
 
-Next up, Guillaume and Rosalie took the stage for a [live trading show](https://x.com/i/broadcasts/1yoJModYyYoKQ), proving that even in times of market uncertainty and price dips, options are powerful tools for managing risk and earning premia. Watching real trades in action showcased the real power of Panoptic and how it can offer unique strategies in any market condition.
+Next up, Guillaume and Rosalie took the stage for a [live trading show](https://x.com/i/broadcasts/1yoJModYyYoKQ), proving that even in times of market uncertainty and price dips, options are powerful tools for managing risk and earning streamia (streaming premium). Watching real trades in action showcased the real power of Panoptic and how it can offer unique strategies in any market condition.
 
 ![](./07.jpg)
 

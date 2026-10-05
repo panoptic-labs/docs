@@ -1,19 +1,19 @@
 # Fee Structure
 
-V2 charges position commissions separately from streaming option premia and borrow interest. The pool's RiskEngine supplies the fee configuration; use the [engine-specific parameter tables](/docs/contracts/parameters) for verified values.
+V2 charges position commissions separately from streamia (streaming premium) and borrow interest. The pool's RiskEngine supplies the fee configuration; use the [engine-specific parameter tables](/docs/contracts/parameters) for verified values.
 
 ## Notional commission
 
 On mint, CollateralTracker calculates a notional commission on the sum of long and short amounts in that collateral token. It converts the commission to shares with contract-defined rounding.
 
-## Premium commission
+## Streamia commission {#premium-commission}
 
-When closing a position with realized premium, the commission is capped at the smaller of:
+When closing a position with realized streamia, the commission is capped at the smaller of:
 
-- the configured premium rate applied to the absolute realized premium;
+- the configured streamia rate applied to the absolute realized streamia;
 - ten times the configured notional rate applied to the closing long-plus-short notional.
 
-A premium-only settlement has no closing notional and uses the premium-based commission without that cap. A premium-fee constant is therefore not a complete quote for the final transaction cost.
+A streamia-only settlement has no closing notional and uses the streamia-based commission without that cap. A streamia-fee constant is therefore not a complete quote for the final transaction cost.
 
 ## Builder codes
 

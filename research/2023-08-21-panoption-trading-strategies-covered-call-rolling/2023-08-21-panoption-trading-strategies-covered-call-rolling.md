@@ -18,7 +18,7 @@ In Part II of the [series](https://panoptic.xyz/research/panoption-trading-strat
 
 Let’s say you own 1 ETH. Let’s say you also sell ETH call options worth 1 ETH. You now have both the ETH itself and the ETH call options (and importantly, they have the same value meaning the option is written on 1 ETH, not 2 ETH or something else). That’s perfectly allowed. Why would you want to do this? Why not do one or the other—either own the ETH or just sell the option? Why have both? It might seem odd, or it might not.
 
-The covered write is generally considered to be a conservative strategy. This is because the covered write on the token is generally less risky than holding the token itself. Because if a decline in price happens, you have generally  [collected streamia](https://panoptic.xyz/blog/streamia-defi-native-options-pricing)  which offsets the loss.
+The covered write is generally considered to be a conservative strategy. This is because the covered write on the token is generally less risky than holding the token itself. Because if a decline in price happens, you have generally  [collected streamia (streaming premium)](https://panoptic.xyz/docs/product/streamia)  which offsets the loss.
 
 It’s a common strategy in options trading, so let’s dive in some more:
 
@@ -89,7 +89,7 @@ The ITM covered call has greater downside risk protection than the OTM but also 
 
 So in TradFi, selling an ITM call would earn you some money upfront and selling an equivalent OTM call would earn you less money upfront. The intuition is simply that writing an ITM call is worse for you to sell because the likelihood of it getting exercised by the buyer is higher, so you earn more by selling it. Whereas the OTM call is less likely to be exercised, selling it should be cheaper (you have less risk and hence less reward as seller).
 
-Perpetual options in Panoptic behave similarly, but with a few interesting differences. Selling an ITM call in Panoptic would earn you the in-the-money amount ([intrinsic value](https://www.tastylive.com/concepts-strategies/intrinsic-value)  of the option) upfront, and selling an equivalent OTM call would earn you nothing upfront. That’s because the ITM call is worse for you to sell because it is already in the “negative”, so you are immediately compensated for it, while the OTM call is “worthless” for the time being (e.g., has no intrinsic value). But over time, as the price of the underlying asset moves, the perpetual call in Panoptic will collect  [streamia](https://panoptic.xyz/blog/black-scholes-streamia-defi-options-pricing-models)  (streaming premia) the longer the option is sold for.
+Perpetual options in Panoptic behave similarly, but with a few interesting differences. Selling an ITM call in Panoptic would earn you the in-the-money amount ([intrinsic value](https://www.tastylive.com/concepts-strategies/intrinsic-value)  of the option) upfront, and selling an equivalent OTM call would earn you nothing upfront. That’s because the ITM call is worse for you to sell because it is already in the “negative”, so you are immediately compensated for it, while the OTM call is “worthless” for the time being (e.g., has no intrinsic value). But over time, as the price of the underlying asset moves, the perpetual call in Panoptic will collect  [streamia](https://panoptic.xyz/blog/black-scholes-streamia-defi-options-pricing-models) the longer the option is sold for.
 
 So that behavior is directionally the same but you can tell how there are some interesting difference. Specifically, ITM in Panoptic does not imply a high premium for the seller as it does in TradFi — unless that ITM is also near-the-money to collect fees.
 
@@ -181,7 +181,7 @@ We start with a new covered call position in Panoptic (1). We haven’t earned a
 
 Next, fees accumulate, and we earn some income/PnL. That’s (2). Next, the price drops. We close our position (and call it the “original covered call”) and open a new one (“new covered call”) to collect fees at the new price. In Panoptic, two things can happen, we collect some fees (4a) and then say, “great, I got what I came for,” and close the position (of course, gas fees and commission must be accounted for).
 
-And interestingly, unique to Panoptic over TradFi is that the new covered call can actually have a net higher PnL than the previous position because there are no bounds to the fees you can collect. So technically, there’s an unbounded upside (in premia collected), whereas, for TradFi, the upside in this upfront-paid premium is capped. To be sure, there are pros and cons to each as they are different financial instruments.
+And interestingly, unique to Panoptic over TradFi is that the new covered call can actually have a net higher PnL than the previous position because there are no bounds to the fees you can collect. So technically, there’s an unbounded upside (in streamia collected), whereas, for TradFi, the upside in this upfront-paid premium is capped. To be sure, there are pros and cons to each as they are different financial instruments.
 
 ## Comparing the Down-Rolls
 

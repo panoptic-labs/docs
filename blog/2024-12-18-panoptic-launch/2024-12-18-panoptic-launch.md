@@ -10,7 +10,7 @@ description: "Panoptic, a DeFi-native options trading platform, launched today o
 
 Panoptic, a DeFi-native options trading platform, launched today on Ethereum, introducing a new DeFi derivative: the perpetual option.
 
-Perpetual options give investors the right to buy or sell an asset at a specified price at any time, unlike traditional options with fixed expiry dates. Perpetual options are powered by Panoptic's innovative pricing model, [streamia](https://panoptic.xyz/blog/streamia-defi-native-options-pricing), to reduce fees, increase accessibility, and offer 24/7 market access.
+Perpetual options give investors the right to buy or sell an asset at a specified price at any time, unlike traditional options with fixed expiry dates. Perpetual options are powered by Panoptic's innovative pricing model, [streamia (streaming premium)](https://panoptic.xyz/docs/product/streamia), to reduce fees, increase accessibility, and offer 24/7 market access.
 
 >_"Perpetual options are the most innovative financial primitive since perps," said Guillaume Lambert, founder and CEO of Panoptic. "DeFi's biggest strength is that it is permissionless, and Panoptic leverages this openness to effectively create the Uniswap of options, allowing anyone to trade options on any asset."_
 
@@ -31,7 +31,7 @@ Panoptic offers a market-driven solution to boost LP profitability, a safe way t
 
 Built on Uniswap, Panoptic LPs earn the same yield as in Uniswap pools, with the potential to earn extra yield from the [spread](https://panoptic.xyz/docs/product/spread) when their tokens are leveraged in a trade. Uniswap LPs can access this extra yield by [deploying their tokens on Panoptic](http://app.panoptic.xyz).  
   
-Panoptic addresses IL by offering several strategies: LPs can reduce IL with extra yield from lending out LP tokens, avoid it through [passive, single-sided liquidity](https://panoptic.xyz/blog/bringing-passive-liquidity-to-uniswap), or profit from it by shorting an LP position. Shorting LP tokens, a key feature of Panoptic, is the inverse trade of LPing.
+Panoptic addresses IL by offering several strategies: LPs can reduce IL with extra yield from lending out LP tokens, avoid it through [passive, single-sided liquidity](https://panoptic.xyz/blog/passive-liquidity-pools), or profit from it by shorting an LP position. Shorting LP tokens, a key feature of Panoptic, is the inverse trade of LPing.
 
 Panoptic's intuitive interface replaces traditional order books with a visual approach, letting users easily build strategies based on whether they believe an asset will rise or fall. Advanced traders can access one-click strategies, including multi-leg options and perp trading. Traders can also create their own options markets using any tokens available on Uniswap.
 

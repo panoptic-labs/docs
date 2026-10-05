@@ -1,4 +1,8 @@
-# PanopticMath
+---
+sidebar_label: "PanopticMath"
+title: "PanopticMath (V1.1)"
+---
+# PanopticMath (V1.1)
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.1.x/contracts/libraries/PanopticMath.sol)
 
 **Author:**
@@ -720,5 +724,3 @@ function getExerciseDeltas(
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`LeftRightSigned`|The LeftRight-packed deltas for currency0/currency1 to move from the exercisor to the exercisee|
-
-

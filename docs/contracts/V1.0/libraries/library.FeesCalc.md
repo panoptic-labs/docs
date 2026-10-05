@@ -1,4 +1,8 @@
-# FeesCalc
+---
+sidebar_label: "FeesCalc"
+title: "FeesCalc (V1.0)"
+---
+# FeesCalc (V1.0)
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.0.x/contracts/libraries/FeesCalc.sol)
 
 **Author:**
@@ -74,5 +78,3 @@ function _getAMMSwapFeesPerLiquidityCollected(
 |----|----|-----------|
 |`feeGrowthInside0X128`|`uint256`|The fee growth in the AMM of token0|
 |`feeGrowthInside1X128`|`uint256`|The fee growth in the AMM of token1|
-
-

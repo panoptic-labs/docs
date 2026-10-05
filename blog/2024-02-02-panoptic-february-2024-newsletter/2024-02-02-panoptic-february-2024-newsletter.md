@@ -27,7 +27,7 @@ Discover the future of trading with Panoptic, your gateway to perpetual options 
 
 #### Top Trade in Epoch 4
 
-In the recent trading epoch, savvy traders capitalized on the bearish market mood triggered by the post-ETF announcement sell-off. By strategically employing puts and straddles, they not only navigated through the downturn but also accrued [streamia](https://panoptic.xyz/blog/streamia-defi-native-options-pricing), enhancing their profits.
+In the recent trading epoch, savvy traders capitalized on the bearish market mood triggered by the post-ETF announcement sell-off. By strategically employing puts and straddles, they not only navigated through the downturn but also accrued [streamia (streaming premium)](https://panoptic.xyz/docs/product/streamia), enhancing their profits.
 
 ![](./1.png)
 

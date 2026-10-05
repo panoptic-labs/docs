@@ -41,14 +41,14 @@ Margin calls occur when a trader's margin account falls below the minimum mainte
 *How to Mitigate*: To avoid margin calls, it is important to maintain sufficient collateral in the account and monitor positions closely. Avoiding excessive leverage can also help mitigate the risk of margin calls.
 
 ### Option Buyer Risks
-Option buyers face the risk of losing the premium paid for the option if the trade does not go as planned. The risk is limited to the amount of the premium owed plus the in-the-money amount, but option buyers must also contend with other risks such as those associated with delta, gamma, time decay, and liquidity.
+Option buyers face the risk of losing the streamia (streaming premium) paid for the option if the trade does not go as planned. The risk is limited to the amount of the streamia owed plus the in-the-money amount, but option buyers must also contend with other risks such as those associated with delta, gamma, time decay, and liquidity.
 
 *Applies to*: (T,P)
 
-*How to Mitigate*: To mitigate the risk of accumulating premium, closely monitor and close or exercise positions. For Panoptions, premia continues to accumulate as long as the underlying AMM price is "in range" of the Panoption position (as determined by the strike price, k, and range factor, r).
+*How to Mitigate*: To mitigate the risk of accumulating streamia, closely monitor and close or exercise positions. For Panoptions, streamia continues to accumulate as long as the underlying AMM price is "in range" of the Panoption position (as determined by the strike price, k, and range factor, r).
 
 ### Option Seller Risks:
-Option sellers face the risk of losing more than the premium received if the position moves against them. Option sellers also face the risk of being assigned an exercise notice and having to fulfill the obligations of the contract at an unfavorable price.
+Option sellers face the risk of losing more than the streamia received if the position moves against them. Option sellers also face the risk of being assigned an exercise notice and having to fulfill the obligations of the contract at an unfavorable price.
 
 *Applies to*: (T,P)
 
@@ -66,14 +66,14 @@ PLPs also face the risk of being unable to exit a position due to insufficient l
 Choosing to deposit liquidity into pools where the underlying AMM is more liquid and price is harder to manipulate can mitigate loss of funds from protocol insolvency caused by sudden price movements. Choosing to deposit liquidity into Panoptic pools which are more liquid can mitigate the risk of being unable to withdraw deposits due to high pool utilization. Monitoring market conditions and staying informed about news and events that could impact the underlying asset's price can also help mitigate risk.
 
 ### Out-of-range Risk
-Panoptions are created by **rearranging** liquidity in a compatible Uniswap v3 or v4 pool. In particular, this means that Panoptions are subject to a price *range*, where the position collects fees if the underlying asset's price is in range. For very tight ranges or very volatile or drift-driven assets, the risk of having the price leave the range (causing the option seller to no longer accumulate premia) is more significant.
+Panoptions are created by **rearranging** liquidity in a compatible Uniswap v3 or v4 pool. In particular, this means that Panoptions are subject to a price *range*, where the position collects fees if the underlying asset's price is in range. For very tight ranges or very volatile or drift-driven assets, the risk of having the price leave the range (causing the option seller to no longer accumulate streamia) is more significant.
 
 *Applies to*: (P)
 
 *How to Mitigate*: To mitigate out-of-range risk, closely monitor and close your position to protect your capital. Stay informed about news and events that could impact the underlying asset's price.
 
 ### In-range Risk
-Panoptions are created by **rearranging** liquidity in a compatible Uniswap v3 or v4 pool. In particular, this means that Panoptions are subject to a price *range*, where the position collects fees if the underlying asset's price is in range. For very wide ranges, the price is likely to stay in range longer (causing the option buyer to accrue additional premia for longer periods of time). For very tight ranges, as long as the price stays in range, the amount of premia owed is amplified (causing the option buyer to accrue large amounts of premia).
+Panoptions are created by **rearranging** liquidity in a compatible Uniswap v3 or v4 pool. In particular, this means that Panoptions are subject to a price *range*, where the position collects fees if the underlying asset's price is in range. For very wide ranges, the price is likely to stay in range longer (causing the option buyer to accrue additional streamia for longer periods of time). For very tight ranges, as long as the price stays in range, the amount of streamia owed is amplified (causing the option buyer to accrue large amounts of streamia).
 
 *Applies to*: (P)
 
@@ -151,7 +151,7 @@ Delta measures the degree to which an option is exposed to shifts in the underly
 *How to Mitigate*:  Try to utilize delta-neutral strategies.
 
 ### Gamma risk
- Gamma is an options risk metric that describes the rate of change in an option's delta per one-point move in the underlying asset's price. Delta is how much an option's premium (price) will change given a one-point move in the underlying asset's price. Therefore, Gamma measures how an option's price rate will vary with fluctuations in the underlying price. The higher the Gamma, the more volatile the option's price is.
+ Gamma is an options risk metric that describes the rate of change in an option's delta per one-point move in the underlying asset's price. Delta is how much an option's streamia (price) will change given a one-point move in the underlying asset's price. Therefore, Gamma measures how an option's price rate will vary with fluctuations in the underlying price. The higher the Gamma, the more volatile the option's price is.
 
 *Applies to*: (T,F,P). Notice that Panotions have **limited Gamma exposure**, with a maximum of $$\frac{2}{K  \pi \ln(r)},$$ with $K$ the strike price and  $r=\sqrt{\mathsf{PriceUpper/PriceLower}}$ the range factor (c.f. [the white paper](https://arxiv.org/pdf/2204.14232.pdf)). A similar thing occurs in Perps with the so-called power perpetuals (such as squeeth), which can be shown to have constant Gamma. This contrasts TradFi, where this Gamma can diverge to infinity.
 

@@ -78,6 +78,7 @@ const Footer = () => {
           <div className="more-part">
             <div className="more-part__title">More</div>
             <div className="more-part__links">
+              <a className="more-part__link" href="/about">About</a>
               <a className="more-part__link" target="_blank" href="https://github.com/panoptic-labs">
                 Github <i className="icon__external-link" />
               </a>

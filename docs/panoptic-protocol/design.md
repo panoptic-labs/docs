@@ -7,6 +7,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # Protocol design
 
+This reference covers the protocol’s liquidity movement, position manager and pricing architecture. For the conceptual payoff relationship, see [Uniswap LP positions as options](/blog/uniswap-options).
+
 ## What is the relationship between Panoptic and Uniswap?
     
 The core idea behind Perpetual Options is that Uniswap liquidity provider (LP) positions can be seen as tokenized short puts.
@@ -40,7 +42,7 @@ Panoptic aims to transform the way users trade options the same way Uniswap tran
 
 ## Oracle-free Pricing
 The key difference between the pricing of regular options in TradFi and in Panoptic is the way the premium is calculated. Instead of requiring users to pay for their options upfront, the pricing of a Panoptic option is path-dependent and will grow at each block as long as the spot price is [within range](/docs/terms/in_range) of the option strike price.
-Total streaming premia depend on the path of prices and trading activity. Low or zero premium accrual over an interval does not imply a cost-free trade: commissions, gas, and applicable borrow interest remain separate. V2 uses internal price observations for collateral and solvency checks.
+Total streamia (streaming premium) depend on the path of prices and trading activity. Low or zero streamia accrual over an interval does not imply a cost-free trade: commissions, gas, and applicable borrow interest remain separate. V2 uses internal price observations for collateral and solvency checks.
 
 ## Capital Efficiency
 Options sellers in Panoptic are able to write undercollateralized options.
@@ -49,8 +51,8 @@ Undercollateralized options aim to more accurately reflect the risks associated 
 
 ## Fees
 Users pay fees in three scenarios.
-1. When a position is opened or closed, the options trader pays a [commission fee](/docs/panoptic-protocol/V2/fee-structure) according to the pool's RiskEngine and settlement operation. Premium commission can be subject to a notional cap; builder routing can change the amount paid. See the [parameter page](/docs/contracts/parameters) for configuration.
+1. When a position is opened or closed, the options trader pays a [commission fee](/docs/panoptic-protocol/V2/fee-structure) according to the pool's RiskEngine and settlement operation. Streamia commission can be subject to a notional cap; builder routing can change the amount paid. See the [parameter page](/docs/contracts/parameters) for configuration.
 
 2. When a user borrows funds from the Panoptic pool to open positions on leverage, the user pays [interest](/docs/panoptic-protocol/V2/interest-accrual) on the borrowed amount. The interest rate is a floating rate which depends on the pool's current utilization vs target utilization.
 
-3. When a user buys an option, the user accumulates [streaming premia (streamia)](/docs/product/streamia) on the position.
+3. When a user buys an option, the user accumulates [streamia](/docs/product/streamia) on the position.

@@ -1,4 +1,8 @@
-# FeesCalc
+---
+sidebar_label: "FeesCalc"
+title: "FeesCalc (V2)"
+---
+# FeesCalc (V2)
 
 > Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
 

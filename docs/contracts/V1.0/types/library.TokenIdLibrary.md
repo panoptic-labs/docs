@@ -1,4 +1,8 @@
-# TokenIdLibrary
+---
+sidebar_label: "TokenIdLibrary"
+title: "TokenIdLibrary (V1.0)"
+---
+# TokenIdLibrary (V1.0)
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.0.x/contracts/types/TokenId.sol)
 
 **Author:**
@@ -669,5 +673,3 @@ function validateIsExercisable(TokenId self, int24 currentTick) internal pure;
 |----|----|-----------|
 |`self`|`TokenId`|The TokenId to validate for exercisability|
 |`currentTick`|`int24`|The current tick corresponding to the current price in the Uniswap V3 pool|
-
-

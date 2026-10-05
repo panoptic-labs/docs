@@ -32,7 +32,7 @@ The December Nutcracker trading contest [results](https://panoptic.xyz/blog/dece
 
 ### Shallow Dive — Position Management
 
-In Panoptic's platform, [position management](https://panoptic.xyz/research/position-management) for options traders hinges on a keen understanding of streaming premia (streamia) and its relationship to in-range and out-of-range options. Buyers must watch the streamia accrued on in-range positions, as it can erode the profitability of an option over time, prompting a strategic exit. Sellers, conversely, benefit from keeping in-range positions open to continue earning streamia but should be ready to close out-of-range positions which no longer earn streamia income.
+In Panoptic's platform, [position management](https://panoptic.xyz/docs/product/position-management) for options traders hinges on a keen understanding of streamia (streaming premium) and its relationship to in-range and out-of-range options. Buyers must watch the streamia accrued on in-range positions, as it can erode the profitability of an option over time, prompting a strategic exit. Sellers, conversely, benefit from keeping in-range positions open to continue earning streamia but should be ready to close out-of-range positions which no longer earn streamia income.
 
 ![](./1.png)
 

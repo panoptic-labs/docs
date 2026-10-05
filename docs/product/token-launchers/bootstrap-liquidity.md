@@ -7,14 +7,13 @@ tags: [Tutorial, Markets, Liquidity, Passive LP, Token Launcher]
 image: /img/research/bootstrap-liquidity.png
 description: "Panoptic simplifies liquidity bootstrapping for token launchers by enabling passive, single-sided liquidity provision for Uniswap pools without the complexities of active management or impermanent loss."
 ---
-
 ![](./bootstrap-liquidity/00.png)
 
 Launching a new token or project? With Panoptic, bootstrapping liquidity is easier than ever. Panoptic’s [passive liquidity provision](/docs/getting-started/passive-lp) allows you to attract and sustain liquidity for your Uniswap pool, ensuring a smooth start for your project.
 
 ## Simplifying Liquidity Provision
 
-Providing liquidity on Uniswap v3 often involves active management—selecting price ranges, rebalancing positions, and managing impermanent loss. At Panoptic, we simplify the process by offering a single-sided, passive solution. Token launchers can [lend out their tokens](/blog/bringing-passive-liquidity-to-uniswap) and delegate the complexities of active management to other liquidity providers. This allows for hands-off liquidity bootstrapping without sacrificing capital efficiency.
+Providing liquidity on Uniswap v3 often involves active management—selecting price ranges, rebalancing positions, and managing impermanent loss. At Panoptic, we simplify the process by offering a single-sided, passive solution. Token launchers can [lend out their tokens](/blog/passive-liquidity-pools) and delegate the complexities of active management to other liquidity providers. This allows for hands-off liquidity bootstrapping without sacrificing capital efficiency.
 
 ![](./bootstrap-liquidity/01.png)
 
@@ -65,9 +64,8 @@ By providing liquidity, your deposited tokens serve as collateral for options tr
 -   **Deeper Liquidity:** Attract more participants to strengthen your token’s liquidity
 -   **Stable Token Price:** Enhanced liquidity helps stabilize your token’s market value
 -   **Community Engagement:** By allowing your community to earn in a simple way, you create stronger bonds and incentivize long-term participation.
--   **Active LP Opportunities:** The option to manage your own liquidity on Uniswap and [earn up to 3x more fees](/blog/uniswap-lps-unlock-3x-more-fees-with-panoptic) with Panoptic
+-   **Active LP Opportunities:** The option to manage your own liquidity on Uniswap and [earn up to 3x more fees](/blog/make-uniswap-great-again) with Panoptic
     
 With Panoptic, bootstrapping liquidity is easier than ever. Get started by visiting our [app](https://app.panoptic.xyz)!
 
-*Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](https://panoptic.xyz/docs/intro) and head to our [website](https://panoptic.xyz/).*
-
+For the underlying lending model, see [passive liquidity pools](/blog/passive-liquidity-pools). This guide focuses on the steps a token launcher takes to bootstrap a market.

@@ -71,7 +71,7 @@ A strangle involves buying a call and a put at different strike prices. The delt
 
 ### Iron Condor
 
-An iron condor involves selling a call spread and selling a put spread. The net delta is zero, offset by the opposing long and short [legs](https://panoptic.xyz/research/panoptic-option-legs). The iron condor is one of the most popular delta neutral trading strategies, as it earns [streamia](https://panoptic.xyz/research/streamia-101) irregardless of small changes in the price of the underlying asset. If price makes a large move up or down, the position’s maximum loss is also capped.
+An iron condor involves selling a call spread and selling a put spread. The net delta is zero, offset by the opposing long and short [legs](https://panoptic.xyz/research/panoptic-option-legs). The iron condor is one of the most popular delta neutral trading strategies, as it earns [streamia (streaming premium)](https://panoptic.xyz/docs/product/streamia) irregardless of small changes in the price of the underlying asset. If price makes a large move up or down, the position’s maximum loss is also capped.
 
 ![](./7.png)
 

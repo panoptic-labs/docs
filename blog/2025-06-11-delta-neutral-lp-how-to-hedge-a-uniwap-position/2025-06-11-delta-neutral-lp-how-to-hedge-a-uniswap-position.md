@@ -64,7 +64,7 @@ Here’s the formula:
 | Leg | Exposure | Fees Earned |
 |---------------------------|----------|------------------------------------------|
 | **Uniswap LP** | Bullish | Uniswap swap fees |
-| **Short Call (Panoptic)**| Bearish | Uniswap swap fees **+** Option premium |
+| **Short Call (Panoptic)**| Bearish | Uniswap swap fees **+** Option streamia (streaming premium) |
 | **Hedged Position** | Δ ≈ 0 | Both fee streams |
 
 Effectively, you’re running what’s called a short straddle in the options world: profitable if price stays in range, cushioned if it drifts.

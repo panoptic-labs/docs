@@ -43,7 +43,7 @@ const FAQPage = () => {
             <Accordion.Item className="accordion-item" value="item-2">
             <AccordionTrigger>I already LP on Uniswap — why migrate to Panoptic?</AccordionTrigger>
               <AccordionContent>
-                Migrating your position to Panoptic keeps your range and market exposure exactly as they are. On top of Uniswap-equivalent fees, you earn Panoptic's liquidity spread — streaming premia paid by options traders who use your liquidity — for 20%+ more fees overall. You can withdraw at any time, and your position stays non-custodial throughout.
+                Migrating your position to Panoptic keeps your range and market exposure exactly as they are. On top of Uniswap-equivalent fees, you earn Panoptic's liquidity spread — streamia (streaming premium) paid by options traders who use your liquidity — for 20%+ more fees overall. You can withdraw at any time, and your position stays non-custodial throughout.
               </AccordionContent>
             </Accordion.Item>
             <Accordion.Item className="accordion-item" value="item-3">

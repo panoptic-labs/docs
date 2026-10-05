@@ -37,7 +37,7 @@ Server-side code should use plain SDK functions. React hooks belong in React com
 
 1. Verify the connected account, chain, PanopticPool, tokens, and RiskEngine. Engine parameters are pool-specific; do not apply the crypto engine's collateral ratios to a stocks pool.
 2. Reconcile the account's **complete** existing position IDs. Pass them as `existingPositionIds` to the simulation and write. An empty array means no existing positions; it must not be used as a placeholder when discovery is incomplete.
-3. Select the TokenId, position size, tick bounds, spread limit, builder code, and swap/premia behavior deliberately. Respect token decimals and the pool's tick grid. Do not treat permissive tick limits or a default fee assumption as a safe production configuration.
+3. Select the TokenId, position size, tick bounds, spread limit, builder code, and swap/streamia (streaming premium) behavior deliberately. Respect token decimals and the pool's tick grid. Do not treat permissive tick limits or a default fee assumption as a safe production configuration.
 4. Confirm balances, approvals, and collateral funding, then simulate the intended operation. A successful simulation can become stale as prices, liquidity, utilization, or account state change.
 5. Submit through the wallet after user review. The write wrapper returns a transaction result with `wait()`; verify receipt success and refresh the account from RPC before another dependent operation.
 

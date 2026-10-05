@@ -1,9 +1,13 @@
 ---
 sidebar_position: 5
 label: Streamia
+title: "Streamia Fee Accounting and Accumulators"
 ---
+# Streamia Fee Accounting and Accumulators
 
-# Streamia (Streaming Premia)
+<span id="streamia-streaming-premia" />
+
+This implementation reference explains fee-growth accumulators, liquidity chunks and net, gross and owed streamia. For pricing intuition, costs and accrual examples, start with [Streamia](/docs/product/streamia).
 
 ## Fees tracking in Uniswap
 
@@ -85,7 +89,7 @@ def getAccountLiquidity(univ3pool, owner, tokenType, tickLower, tickUpper):
 ### Net, Gross, and Owed fees (no spread)
 
 
-Any liquidity that has been deposited in the AMM using the SFPM will collect fees over time, we call this the `gross` premia. If that liquidity has been removed, we also need to keep track of the amount of fees that *would have been collected*, and we call this the `owed` premia. The `gross` and `owed` premia are tracked per unit of liquidity by the `s_accountPremiumGross` and `s_accountPremiumOwed` accumulators. 
+Any liquidity that has been deposited in the AMM using the SFPM will collect fees over time, we call this the `gross` streamia (streaming premium). If that liquidity has been removed, we also need to keep track of the amount of fees that *would have been collected*, and we call this the `owed` streamia. The `gross` and `owed` streamia are tracked per unit of liquidity by the `s_accountPremiumGross` and `s_accountPremiumOwed` accumulators. 
 
 Here is how we can use the accumulators to compute the `Gross`, `Net`, and `Owed` fees collected by any position.
 
@@ -95,11 +99,11 @@ Let's say user A deposited `T` at a specific tick range into Uniswap and user B 
 
 where `N = netLiquidity = T-S`. 
 
-Had that liquidity never been removed, we want the `gross` premia to be given by:
+Had that liquidity never been removed, we want the `gross` streamia to be given by:
 
 `gross_feesCollectedX128 = feeGrowthX128 * T`
       
-So we must keep track of fees for the shorted (ie. removed) liquidity `S` so that the long premia exactly compensates for the fees that would have been collected from the initial liquidity. 
+So we must keep track of fees for the shorted (ie. removed) liquidity `S` so that the long streamia exactly compensates for the fees that would have been collected from the initial liquidity. 
 
 `owed_feesCollectedX128 = feeGrowthX128 * S`
 
@@ -141,7 +145,7 @@ The two equations above represent the amount of fees paid by an option buyer (Eq
 In the next two sections, we will describe how we constructed the accumulator that is used by the Panoptic Pool to keep track of these amounts per units of liquidity.
 
 
-### Expressions for the owed premium accumulator
+### Expressions for the owed Streamia accumulator {#expressions-for-the-owed-premium-accumulator}
 
 The `s_accountPremiumOwed` accumulator tracks the `feeGrowthX128 * S * (1 + spread)` term per unit of shorted liquidity `S` every time the position touched:
 
@@ -152,7 +156,7 @@ s_accountPremiumOwed += feeGrowthX128 * S * (1 + ν*S/N) / S
                      += feeGrowthX128 * T/N * (1 - S*(1-ν)/T)
 ```
 
-So, the amount of owed premia for a position of size `S` minted at time `t1` and burnt at 
+So, the amount of owed streamia for a position of size `S` minted at time `t1` and burnt at 
 time `t2` is:
 
 ```
@@ -164,9 +168,9 @@ owedPremia(t1, t2) = (s_accountPremiumOwed_t2-s_accountPremiumOwed_t1) * S
 ```
                         
                         
-This way, the amount of premia owed for a position will match Eqn 1 exactly.
+This way, the amount of streamia owed for a position will match Eqn 1 exactly.
 
-### Expressions for the gross premium accumulator
+### Expressions for the gross Streamia accumulator {#expressions-for-the-gross-premium-accumulator}
 
 Similarly, the amount of gross fees for the total liquidity is tracked in a similar manner by the `s_accountPremiumGross` accumulator. However, since we require that Eqn 2 holds up-- ie. the gross fees collected should be equal to the net fees collected plus the ower fees  plus the small spread, the expression for the `s_accountPremiumGross` accumulator has be be given by the expression below, which includes a `S^2/T^2` term (you'll see why in a minute):
 
@@ -186,8 +190,6 @@ where the last expression matches Eqn 2 exactly.
 
 
 Therefore, the `s_accountPremiumOwed` and `s_accountPremiumGross` accumulators allow smart contracts that need to handle long+short liquidity to guarantee that liquidity deposited always receives the correct
-premia, whether that liquidity has been removed from the AMM or not.
+streamia, whether that liquidity has been removed from the AMM or not.
 
-Note that the expression for the spread is extremely opinionated, and may not fit the specific risk management profile of every smart contract. 
-
-
+Note that the expression for the spread is extremely opinionated, and may not fit the specific risk management profile of every smart contract.

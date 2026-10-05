@@ -1,4 +1,8 @@
-# InteractionHelper
+---
+sidebar_label: "InteractionHelper"
+title: "InteractionHelper (V1.1)"
+---
+# InteractionHelper (V1.1)
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.1.x/contracts/libraries/InteractionHelper.sol)
 
 **Author:**
@@ -107,5 +111,3 @@ function computeDecimals(address token) external view returns (uint8);
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`uint8`|The decimals of the token|
-
-

@@ -68,11 +68,11 @@ When initiating a new position, Panoptic provides a clear view of their "implied
 
 ### How Much Leverage Can I Get in Panoptic?
 
-Typically, option traders can expect up to 10x leverage when buying and 5x leverage when selling. However, the exact [collateral requirements](https://panoptic.xyz/research/buying-power-collateral-leverage) in Panoptic vary based on market conditions such as the amount of available liquidity.
+Typically, option traders can expect up to 10x leverage when buying and 5x leverage when selling. However, the exact [collateral requirements](https://panoptic.xyz/docs/product/collateral-and-buying-power) in Panoptic vary based on market conditions such as the amount of available liquidity.
 
 ### Leverage Powered by Liquidity Providers
 
-In Panoptic, [Liquidity Providers](https://panoptic.xyz/docs/panoptic-protocol/protocol-roles#panoptic-liquidity-providers-plps) (PLPs) play a crucial role, akin to liquidity providers in Automated Market Makers (AMMs). PLPs contribute funds to the PanopticPool, earning commissions from option trades. earning commission fees from option trades. This system fosters robust liquidity, reducing risk and enhancing the trading experience for all platform participants
+In Panoptic, [Liquidity Providers](https://panoptic.xyz/docs/panoptic-protocol/protocol-roles#lenders-passive-liquidity-providers-plps) (PLPs) play a crucial role, akin to liquidity providers in Automated Market Makers (AMMs). PLPs contribute funds to the PanopticPool, earning commissions from option trades. earning commission fees from option trades. This system fosters robust liquidity, reducing risk and enhancing the trading experience for all platform participants
 
   
 

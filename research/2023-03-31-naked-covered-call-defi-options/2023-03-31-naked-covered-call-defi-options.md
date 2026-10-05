@@ -40,7 +40,7 @@ Anyone will be able to sell options on Panoptic for any asset at any strike. Pan
 
 ### Backtest #1: Selling (naked) calls on ETH every week
 
--   Earned 126% in premia
+-   Earned 126% in streamia (streaming premium)
     
 -   Lost 132% from calls being exercised
     
@@ -113,7 +113,7 @@ Caveats:
 
 -   ⛽ Ignores gas/swap fees/commission
     
--   💲 Assumes premia = LP fees
+-   💲 Assumes streamia = LP fees
     
 -   ❓ This is hypothetical — you can't sell calls on Uniswap (Panoptic soon 🤫)
 

@@ -1,11 +1,11 @@
 ---
+editorial_update: "2026-10-04"
 slug: make-uniswap-great-again
 title: "Make Uniswap Great Again"
 tags: [Liquidity, Uniswap, DeFi]
 image: /img/banners/muga-banner.png
 description: "Panoptic enhances Uniswap liquidity provision by integrating options strategies, enabling LPs to earn up to 3x more!"
 ---
-
 ![](./00.png)
 
 In the ever-evolving world of decentralized finance (DeFi), liquidity providers (LPs) play a crucial role in ensuring the smooth functioning of trading platforms. Panoptic is a DeFi platform offering enhanced profitability and advanced strategies for LPs.
@@ -33,7 +33,7 @@ And the advantage doesn’t stop there. When prices drop, Uniswap LPs lose. Howe
 The same example above saw LPs earning:
 
 -   19% from Uniswap fees
--   40% from options premiums
+-   40% from options streamia (streaming premium)
 -   41% from the price drop
 
 ![](./03.png)
@@ -127,4 +127,18 @@ Panoptic offers several innovative features that make it an appealing choice for
 
 Why settle for ordinary returns when you can unlock multiple revenue streams? Panoptic empowers LPs with the tools to implement advanced, data-driven strategies. Whether you choose to go bullish, bearish, or delta-neutral, Panoptic makes earning higher returns possible. The next era of liquidity provision is here—offering LPs new ways to maximize their returns.
 
-*Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](https://panoptic.xyz/docs/intro) and head to our [website](https://panoptic.xyz/).*
+## Historical fee-uplift example
+
+The November 2024 example compared the same LP exposure with and without option demand. Unborrowed liquidity continued earning Uniswap fees; borrowed liquidity accrued a Uniswap-equivalent premium plus a liquidity spread. This concerns gross fee income, not net profit after borrowing costs, commissions or price losses.
+
+![LP liquidity and the additional premium from option demand](../2024-11-25-uniswap-lps-unlock-3x-more-fees-with-panoptic/01.png)
+
+![Historical fee APY illustration for the ETH/USDC 0.05% pool](../2024-11-25-uniswap-lps-unlock-3x-more-fees-with-panoptic/02.png)
+
+The original figure used past fees corresponding to 57.68% APY in the ETH/USDC 0.05% pool. Its rounded example compared 60% with up to 180% fee APY under a 3x spread scenario. These are historical illustrations, not current yield offers or guarantees.
+
+![Fee flows with and without borrowed LP liquidity](../2024-11-25-uniswap-lps-unlock-3x-more-fees-with-panoptic/03.png)
+
+<iframe width="1120" height="630" src="https://www.youtube.com/embed/Gfl-_yPGZyU?si=1-5ndx32fj7RA0QP" title="Streaming premia explanation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+See the [liquidity spread](/research/liquidity-spread) for the mechanism and [Loss Versus Panoptic](/research/loss-versus-panoptic-why-lps-are-losing) for a measured fee comparison. Borrowed LP liquidity may delay closing, and force exercise is available only for eligible positions. The [position-manager architecture](/docs/contracts/smart-contracts-overview) and [audit reports](/docs/security/security_audits) describe the additional smart-contract surface.

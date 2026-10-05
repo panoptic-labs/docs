@@ -29,7 +29,7 @@ The actual competition end time was around 12 hours later. To keep the competiti
 0x2513 [sold](https://deeznuts.panoptic.xyz/?view_as=0x2513aa49e95dc6368618f20e2cf75146178c94e0) many puts and calls, incidentally benefiting from the extreme volatility caused by naughty swappers.
 
 ## Best Trade for Streamia
-[mfer](https://opensea.io/collection/mfers) #5997 goes to the highest streamia trader: 0x1f2aac54e7f2d001572571980664aa2185aff164!
+[mfer](https://opensea.io/collection/mfers) #5997 goes to the highest streamia (streaming premium) trader: 0x1f2aac54e7f2d001572571980664aa2185aff164!
 
 ![](./5.png)
 

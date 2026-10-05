@@ -11,7 +11,7 @@ const steps = [
   {
     num: "02",
     title: "Earn the spread",
-    desc: "Keep earning Uniswap-equivalent fees, plus streaming premia from options traders who borrow your liquidity. That's the extra 20%+.",
+    desc: "Keep earning Uniswap-equivalent fees, plus streamia (streaming premium) from options traders who borrow your liquidity. That's the extra 20%+.",
   },
   {
     num: "03",

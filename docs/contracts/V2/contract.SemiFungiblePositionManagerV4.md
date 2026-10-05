@@ -1,7 +1,9 @@
 ---
 sidebar_position: 1.2
+sidebar_label: "SemiFungiblePositionManagerV4"
+title: "SemiFungiblePositionManagerV4 (V2)"
 ---
-# SemiFungiblePositionManagerV4
+# SemiFungiblePositionManagerV4 (V2)
 
 > Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
 

@@ -1,4 +1,8 @@
-# MarketState
+---
+sidebar_label: "MarketState"
+title: "MarketState (V2)"
+---
+# MarketState (V2)
 
 > Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
 

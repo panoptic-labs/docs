@@ -102,6 +102,6 @@ You can replicate futures with options, but not the other way around!
     
 Combining options can yield a static delta with no gamma (just like a futures contract)! 🤯
 
-Similarly, you can replicate "perps" (perpetual futures) with "XPOs" (perpetual options). You'll soon be able to trade perpetual options and synthetic perpetual futures on Panoptic with [up to 3.33x leverage](https://panoptic.xyz/docs/trading/multi-leg-strategies#synthetic-positions).
+Similarly, you can replicate "perps" (perpetual futures) with "XPOs" (perpetual options). You'll soon be able to trade perpetual options and synthetic perpetual futures on Panoptic with [up to 3.33x leverage](https://panoptic.xyz/docs/trading/multi-leg-strategies#synthetic-perps).
 
 Options provide traders with added flexibility that futures fall short of. As crypto and NFT markets evolve and mature, they will follow the inevitable pattern of financial markets: Spot → Derivatives → (Perpetual) Futures → (Perpetual) Options

@@ -1,15 +1,15 @@
 ---
 slug: put-wing-premia-eth-base
-title: "Put Wing Premia: Base vs. Ethereum"
+title: "Put Wing Streamia: Base vs. Ethereum"
 tags: [Gamma, Greeks, Uniswap, Jumps, JIT]
 image: /img/research/put-wing-premia-eth-base-banner.png
-description: "Explore how and why put wing premia translates from Ethereum to Base as well as how Panoptic can be used to capitalize on these qualities."
+description: "Explore how and why put wing streamia translates from Ethereum to Base as well as how Panoptic can be used to capitalize on these qualities."
 authors: N
 ---
 
 ![](./put-wing-premia-eth-base-banner.png)
 
-Previously, we examined deep out-of-the-money ([OTM](/docs/terms/out_of_the_money)) [Panoption](/docs/terms/panoption)  [put](/docs/terms/put) wings on Ethereum. How do streaming premia ([streamia](/research/streamia-101)) and the volatility risk premium ([VRP](/research/implied-volatility-put-wing-premia)) translate to a Layer 2 (L2) blockchain such as Base? Do the idiosyncratic properties that drive the lucrative accrual of streamia on Ethereum still apply when executing on Base?
+Previously, we examined deep out-of-the-money ([OTM](/docs/terms/out_of_the_money)) [Panoption](/docs/terms/panoption)  [put](/docs/terms/put) wings on Ethereum. How do [streamia (streaming premium)](/docs/product/streamia) and the volatility risk premium ([VRP](/research/implied-volatility-put-wing-premia)) translate to a Layer 2 (L2) blockchain such as Base? Do the idiosyncratic properties that drive the lucrative accrual of streamia on Ethereum still apply when executing on Base?
 
   
 
@@ -37,7 +37,7 @@ This article puts the two chains head-to-head and explores the underlying elemen
 
   
 
-The graphics above reveal that the cumulative premia is identical when comparing the monthly sale of 10-[delta](/research/understanding-delta-risk#what-is-delta) Panoption puts from January 2025 through March 2025 for the ETH/USDC 30bps pool (see backtest code [here](https://github.com/panoptic-labs/research/tree/main/_research-bites/20250429)). The summed premia for Ethereum and Base over this period are similar with Ethereum producing 15.8% (80% annualized) and Base generating 16.5% (84% annualized) respectively. LPs on Panoptic earn around 20% more fees compared to the same position on Uniswap. Applying this [1.2x increase](/research/loss-versus-panoptic-why-lps-are-losing) in fees to the Uniswap backtest results, we find that the mean monthly premia on Base is 4.9% and on Ethereum is 4.7%, a marginal difference.
+The graphics above reveal that the cumulative streamia is identical when comparing the monthly sale of 10-[delta](/research/understanding-delta-risk#what-is-delta) Panoption puts from January 2025 through March 2025 for the ETH/USDC 30bps pool (see backtest code [here](https://github.com/panoptic-labs/research/tree/main/_research-bites/20250429)). The summed streamia for Ethereum and Base over this period are similar with Ethereum producing 15.8% (80% annualized) and Base generating 16.5% (84% annualized) respectively. LPs on Panoptic earn around 20% more fees compared to the same position on Uniswap. Applying this [1.2x increase](/research/loss-versus-panoptic-why-lps-are-losing) in fees to the Uniswap backtest results, we find that the mean monthly streamia on Base is 4.9% and on Ethereum is 4.7%, a marginal difference.
 
 ![](./03.png)
 
@@ -47,7 +47,7 @@ The graphics above reveal that the cumulative premia is identical when comparing
 
 ![](./06.png)
 
-The above visuals are indicative of how the [spread-multiplied](/research/liquidity-spread) monthly premia for Base is incrementally higher than Ethereum over this 3-month range. Consistent with prior [findings](/research/implied-volatility-put-wing-premia#results), hiked premia for both chains corresponds with spikes in the [Uniswap](/research/new-formulation-implied-volatility) implied volatility ([IV](/docs/terms/implied_volatility)). The Uniswap IV on Ethereum crosses the 200% annualized level at three separate points and breaches the 800% annualized level on Base during the month of February. Meanwhile, the monthly premia accordingly crests for both Ethereum and Base in February at 8% (153% annualized) and 8.4% (164% annualized) respectively. The Uniswap IV also reaches its highest monthly mean level over the course of the sample period on both blockchains during February.
+The above visuals are indicative of how the [spread-multiplied](/research/liquidity-spread) monthly streamia for Base is incrementally higher than Ethereum over this 3-month range. Consistent with prior [findings](/research/implied-volatility-put-wing-premia#results), hiked streamia for both chains corresponds with spikes in the [Uniswap](/research/new-formulation-implied-volatility) implied volatility ([IV](/docs/terms/implied_volatility)). The Uniswap IV on Ethereum crosses the 200% annualized level at three separate points and breaches the 800% annualized level on Base during the month of February. Meanwhile, the monthly streamia accordingly crests for both Ethereum and Base in February at 8% (153% annualized) and 8.4% (164% annualized) respectively. The Uniswap IV also reaches its highest monthly mean level over the course of the sample period on both blockchains during February.
 
 ## Broader Discussion
 
@@ -55,7 +55,7 @@ There is a continual narrative weaving from Ethereum to Base in the attractivene
 
   
 
-We have previously [highlighted](/research/implied-volatility-put-wing-premia#broader-discussion--conclusions) how Just-in-Time ([JIT](/research/demystifying-IL-LVR-JIT-MEV#3-just-in-time-jit-liquidity)) liquidity providers (LPs), acting as short-term perpetual put options sellers, are capturing situationally elevated volatility risk premia as a byproduct of ascendant demand when IV rises. As LPs [equate](/blog/uniswap-lp-equals-options#lps-are-options-sellers) to perpetual put option sellers, there is a short-lived influx of [gamma](/research/understanding-the-greeks-series#gamma-%CE%B3) supplied by JIT LPs, but there is no structural demand to accommodate this supply glut as Uniswap is a one-sided (incomplete) options market. Hence, we see sudden upward and downward jumps in the Uniswap IV as the JIT LPs capitalize on volatility risk premia and subsequently blunt price impact in respective pools. These are the basic inhibitions on exchange mechanisms for the vast majority of automated market maker (AMM) architectures.
+We have previously [highlighted](/research/implied-volatility-put-wing-premia#broader-discussion--conclusions) how Just-in-Time ([JIT](/research/demystifying-IL-LVR-JIT-MEV#3-just-in-time-jit-liquidity)) liquidity providers (LPs), acting as short-term perpetual put options sellers, are capturing situationally elevated volatility risk premiums as a byproduct of ascendant demand when IV rises. As LPs [equate](/blog/uniswap-options#lps-are-options-sellers) to perpetual put option sellers, there is a short-lived influx of [gamma](/research/understanding-the-greeks-series#gamma-%CE%B3) supplied by JIT LPs, but there is no structural demand to accommodate this supply glut as Uniswap is a one-sided (incomplete) options market. Hence, we see sudden upward and downward jumps in the Uniswap IV as the JIT LPs capitalize on volatility risk premiums and subsequently blunt price impact in respective pools. These are the basic inhibitions on exchange mechanisms for the vast majority of automated market maker (AMM) architectures.
 
   
 

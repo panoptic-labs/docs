@@ -13,7 +13,7 @@ description: "Panoptic’s liquidation system protects passive liquidity provide
 
 Liquidations occur when a borrower's collateral is sold off to repay a loan after its value drops below a specific threshold, often due to high market volatility. Liquidations serve as a protective mechanism for lenders and lending protocols, ensuring that loans remain properly collateralized. However, they can result in significant losses for borrowers, especially during sudden market swings.
 
-Panoptic safeguards [passive liquidity providers](/docs/panoptic-protocol/protocol-roles#passive-liquidity-providers-plps) through a robust [liquidation system](/docs/panoptic-protocol/liquidations). These liquidity providers lend capital to options traders on margin and require protection against excessive losses. Liquidators can forcibly close insufficiently collateralized options accounts, ensuring that trader losses do not deplete the funds of passive liquidity providers.
+Panoptic safeguards [passive liquidity providers](/docs/panoptic-protocol/protocol-roles#lenders-passive-liquidity-providers-plps) through a robust [liquidation system](/docs/panoptic-protocol/liquidations). These liquidity providers lend capital to options traders on margin and require protection against excessive losses. Liquidators can forcibly close insufficiently collateralized options accounts, ensuring that trader losses do not deplete the funds of passive liquidity providers.
 
 ### Questions We’ll Answer
 
@@ -92,7 +92,7 @@ Actively monitor your positions. Close positions at risk of further losses, and 
 
 ## Liquidating Other Accounts
 
-Anyone can operate a [Panoptic liquidation bot](/docs/panoptic-protocol/liquidations#the-liquidation-bot) to automatically detect and liquidate accounts that have breached their collateral requirements. Liquidators are rewarded with a bonus, calculated based on two key factors:
+Anyone can operate a [Panoptic liquidation bot](/docs/panoptic-protocol/protocol-roles#liquidators) to automatically detect and liquidate accounts that have breached their collateral requirements. Liquidators are rewarded with a bonus, calculated based on two key factors:
 
 -   Account Insolvency: Accounts with greater insolvency offer bigger bonuses, but the bonus is capped at half of the collateral balance.
 -   Collateral Balance: Higher collateral balances increase the maximum potential bonus.

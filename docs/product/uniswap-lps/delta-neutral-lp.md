@@ -24,7 +24,7 @@ You can access this easily on Panoptic by [navigating](/docs/product/uniswap-lps
 
 ![](./delta-neutral-lp/2.png)
 
-This is made possible because Panoptic has its own built-in [lending and borrowing market](/blog/bringing-passive-liquidity-to-uniswap#where-does-the-yield-come-from), enabling users to single-sidedly enter a Uniswap v3 or v4 LP position. For example, that means you can start with primarily USDC and still gain exposure to a delta-neutral LP strategy. The only limitation is that there must be enough ETH available to borrow on Panoptic at the time you initiate your position.
+This is made possible because Panoptic has its own built-in [lending and borrowing market](/blog/passive-liquidity-pools#where-does-the-yield-come-from), enabling users to single-sidedly enter a Uniswap v3 or v4 LP position. For example, that means you can start with primarily USDC and still gain exposure to a delta-neutral LP strategy. The only limitation is that there must be enough ETH available to borrow on Panoptic at the time you initiate your position.
 
 ![](./delta-neutral-lp/3.png)
 

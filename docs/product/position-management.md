@@ -32,7 +32,7 @@ Here are the metrics that are shown in the position card:
     
 -   **Price at mint**: The price of the underlying asset when the position was created
     
--   **Accumulated premia**: The amount of premia you have earned (if positive) or owed (if negative) so far. Panoptic uses a continuous pricing model called [streamia](/docs/product/streamia) where buyers pay sellers over time on a block-by-block basis.
+-   **Accrued streamia (streaming premium)**: Streamia earned by sellers or owed by buyers so far, but not yet settled. [Streamia](/docs/product/streamia) accrues from option buyers to sellers based on AMM activity. Settlement adjusts collateral balances and can occur while a position remains open or when it closes. **Settled streamia** is the amount actually paid or received.
     
 -   **Position requirement**: The minimum amount of collateral [required](/docs/product/collateral-and-buying-power) to cover the position
     
@@ -73,13 +73,13 @@ If you are looking for more details about your position, click on the position c
 
   
 
-Switching to the ‘Premia’ tab on the position details page will reveal more information about the cost or earnings of the position.
+Switching to the ‘Streamia’ tab on the position details page will reveal more information about the cost or earnings of the position.
 
 ![](./position-management/6.png)
 
   
 
--   **Total Premia**: The amount of premia accumulated by the position. Positive numbers indicate premia earned for selling options, while negative numbers indicate premia owed for buying options. Since premia is accrued in two different tokens, the breakdown of premia by each token is also shown.
+-   **Total Streamia**: The amount of streamia accumulated by the position. Positive numbers indicate streamia earned for selling options, while negative numbers indicate streamia owed for buying options. Since streamia is accrued in two different tokens, the breakdown of streamia by each token is also shown.
     
 
 -   **Range**: The lower and upper price of the underlying asset where the position is considered in range and accumulates streamia. Purchased options that are in range owe streamia, and sold options that are in range earn streamia. Options that are out of range do not accumulate streamia. Clicking on the leg card will display the lower and upper price range within which that leg earns streamia, as shown in the example above. Here, the put option accumulates streamia as long as the price remains between 1943.069 and 1982.32.

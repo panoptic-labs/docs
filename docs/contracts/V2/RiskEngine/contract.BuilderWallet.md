@@ -1,4 +1,8 @@
-# BuilderWallet
+---
+sidebar_label: "BuilderWallet"
+title: "BuilderWallet (V2)"
+---
+# BuilderWallet (V2)
 
 > Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
 

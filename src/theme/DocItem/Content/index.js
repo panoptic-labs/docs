@@ -1,4 +1,5 @@
 import React from 'react';
+import EditorialUpdate from '@site/src/components/EditorialUpdate';
 import clsx from 'clsx';
 import {ThemeClassNames} from '@docusaurus/theme-common';
 import {useDoc} from '@docusaurus/theme-common/internal';
@@ -25,12 +26,18 @@ function useSyntheticTitle() {
 }
 export default function DocItemContent({children}) {
   const syntheticTitle = useSyntheticTitle();
+  const {frontMatter} = useDoc();
   return (
     <div className={clsx(ThemeClassNames.docs.docMarkdown, 'markdown')}>
       {syntheticTitle && (
         <header>
           <Heading as="h1">{syntheticTitle}</Heading>
         </header>
+      )}
+      {frontMatter.editorial_update && (
+        <p className="text--small text--secondary">
+          <EditorialUpdate date={frontMatter.editorial_update} label="Last updated" />
+        </p>
       )}
       <MDXContent>{children}</MDXContent>
     </div>

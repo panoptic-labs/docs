@@ -15,7 +15,7 @@ This protocol and developer documentation index prioritizes Panoptic v2. Uniswap
 ## Protocol mechanics, options, and LP positions
 
 - [Protocol design](https://panoptic.xyz/docs/panoptic-protocol/design.md): Relationship between concentrated liquidity and perpetual options.
-- [Streamia](https://panoptic.xyz/docs/product/streamia.md): Streaming option premia, payment flows, and accumulation.
+- [Streamia (streaming premium)](https://panoptic.xyz/docs/product/streamia.md): Streaming option streamia, payment flows, and accumulation.
 - [Option legs](https://panoptic.xyz/docs/product/option-legs.md): Combining legs into option strategies.
 - [Provide liquidity](https://panoptic.xyz/docs/product/uniswap-lps/provide-liquidity.md): Product walkthrough for Uniswap LP positions through Panoptic.
 - [V2 position types](https://panoptic.xyz/docs/panoptic-protocol/V2/position-types.md): Options, zero-width loans and credits, and their collateral treatment.
@@ -23,7 +23,7 @@ This protocol and developer documentation index prioritizes Panoptic v2. Uniswap
 
 ## Costs and fees
 
-- [V2 fees and builder routing](https://panoptic.xyz/docs/contracts/parameters.md#fees-and-builder-routing): Protocol commissions and builder fees, distinguished from streaming option premia and borrowing interest.
+- [V2 fees and builder routing](https://panoptic.xyz/docs/contracts/parameters.md#fees-and-builder-routing): Protocol commissions and builder fees, distinguished from streaming option streamia and borrowing interest.
 
 ## Collateral and risk
 
@@ -31,7 +31,7 @@ This protocol and developer documentation index prioritizes Panoptic v2. Uniswap
 - [V2 oracle system](https://panoptic.xyz/docs/panoptic-protocol/V2/oracle-system.md): Internal price observations used for risk calculations.
 - [V2 safe mode](https://panoptic.xyz/docs/panoptic-protocol/V2/safe-mode.md): Protective restrictions and collateral adjustments.
 - [V2 interest accrual](https://panoptic.xyz/docs/panoptic-protocol/V2/interest-accrual.md): Borrow interest and its effect on collateral balances.
-- [V2 dispatchFrom](https://panoptic.xyz/docs/panoptic-protocol/V2/dispatchfrom-entrypoint.md): Liquidation, forced exercise, and third-party premium settlement flows.
+- [V2 dispatchFrom](https://panoptic.xyz/docs/panoptic-protocol/V2/dispatchfrom-entrypoint.md): Liquidation, forced exercise, and third-party streamia settlement flows.
 - [V2 parameters by RiskEngine](https://panoptic.xyz/docs/contracts/parameters.md): On-chain configuration snapshots, token ordering, and engine-specific collateral, oracle, and interest parameters.
 - [Options trading risks](https://panoptic.xyz/docs/panoptic-protocol/risks.md): Protocol and trading risks, with applicability labels for different instruments.
 
@@ -52,7 +52,7 @@ This protocol and developer documentation index prioritizes Panoptic v2. Uniswap
 - [V2 RiskEngine](https://panoptic.xyz/docs/contracts/V2/RiskEngine/contract.RiskEngine.md): Risk, solvency, oracle, and interest calculation reference.
 - [V2 stock RiskEngine](https://panoptic.xyz/docs/contracts/V2/RiskEngine/contract.RiskEngineXStocks.md): Stock risk-policy source reference; constructor buffers distinguish normal and inverted deployments.
 - [Public core source](https://github.com/panoptic-labs/panoptic-v2-core): Public contract repository; documentation source links pin specific revisions.
-- [V2 dispatch guide](https://panoptic.xyz/docs/panoptic-protocol/V2/dispatch-entrypoint.md): Inputs and flows for minting, burning, and premium settlement.
+- [V2 dispatch guide](https://panoptic.xyz/docs/panoptic-protocol/V2/dispatch-entrypoint.md): Inputs and flows for minting, burning, and streamia settlement.
 - [V2 TokenIdLibrary](https://panoptic.xyz/docs/contracts/V2/types/library.TokenIdLibrary.md): Encoding and decoding position legs in a token ID.
 - [V2 factory for Uniswap v3](https://panoptic.xyz/docs/contracts/V2/contract.PanopticFactory.md): Pool deployment and lookup interfaces for the v3 AMM.
 - [V2 factory for Uniswap v4](https://panoptic.xyz/docs/contracts/V2/contract.PanopticFactoryV4.md): Pool deployment and lookup interfaces for the v4 AMM.

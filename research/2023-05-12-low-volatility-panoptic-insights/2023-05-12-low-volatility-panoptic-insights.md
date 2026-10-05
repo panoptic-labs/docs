@@ -40,7 +40,7 @@ You can sell (perpetual) straddles via Uniswap v3 & Aave right now. For example,
 ![img-2](./img-2.png)
 
 Tips:
-- Your "perpetual premia" is the fees you collect from LPing
+- Your "perpetual streamia (streaming premium)" is the fees you collect from LPing
 - The more fees you collect, the wider your straddle breakeven points become
 - Use a narrow range (e.g. r = 1.1) for short-term positions
 - Use a wide range (e.g. r = 1.6) for longer-term positions

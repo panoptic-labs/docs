@@ -5,7 +5,6 @@ tags: [IL, LVR]
 image: /img/banners/turning-impermanent-loss-into-gain.png
 description: "Discover how Panoptic transforms impermanent loss into profit with innovative DeFi tools like LP token lending, single-sided LPing, and shorting LP positions."
 ---
-
 ![](./turning-impermanent-loss-into-gain.png)
 
 Impermanent Loss (IL) has long been a core problem of liquidity providers in DeFi. IL is a phenomenon that occurs when the price ratio of tokens in a liquidity pool changes. When users provide liquidity to a traditional automated market maker (AMM) like Uniswap, they’re exposed to IL whenever the prices of the paired assets diverge from their initial ratio. This divergence can result in your share of the pool being worth less than if you had simply held the assets separately.
@@ -16,7 +15,7 @@ IL is a significant concern for liquidity providers because it can eat into, or 
 
   
 
-Panoptic addresses IL by offering several strategies: LPs can reduce IL with extra yield from lending out LP tokens, avoid it through [passive, single-sided liquidity](https://panoptic.xyz/blog/bringing-passive-liquidity-to-uniswap), or profit from it by shorting an LP position. Shorting LP tokens, a key feature of Panoptic, essentially reverses the traditional role of providing liquidity, allowing LPs to capitalize on downward price movements rather than suffer losses from them. By implementing these strategies, Panoptic provides LPs with safe and efficient ways to navigate the challenges of impermanent loss in decentralized finance.
+Panoptic addresses IL by offering several strategies: LPs can reduce IL with extra yield from lending out LP tokens, avoid it through [passive, single-sided liquidity](https://panoptic.xyz/blog/passive-liquidity-pools), or profit from it by shorting an LP position. Shorting LP tokens, a key feature of Panoptic, essentially reverses the traditional role of providing liquidity, allowing LPs to capitalize on downward price movements rather than suffer losses from them. By implementing these strategies, Panoptic provides LPs with safe and efficient ways to navigate the challenges of impermanent loss in decentralized finance.
 
   
 
@@ -34,11 +33,11 @@ Through extensive [research](https://lambert-guillaume.medium.com/uniswap-v3-lp-
 
   
 
-These extra fees act as a buffer against potential losses from impermanent loss. As options buyers pay [premiums](https://panoptic.xyz/blog/streamia-defi-native-options-pricing) to borrow liquidity, LPs receive these extra fees which can offset or even outweigh the negative impact of impermanent loss during periods of price volatility. This mechanism allows LPs to maintain more stable returns and reduce the risk associated with providing liquidity.
+These extra fees act as a buffer against potential losses from impermanent loss. As options buyers pay [streamia (streaming premium)](https://panoptic.xyz/docs/product/streamia) to borrow liquidity, LPs receive these extra fees which can offset or even outweigh the negative impact of impermanent loss during periods of price volatility. This mechanism allows LPs to maintain more stable returns and reduce the risk associated with providing liquidity.
 
 ## Passive, Single-Sided LPing
 
-Panoptic users can choose to provide single-sided liquidity and [earn passive yield](https://panoptic.xyz/blog/bringing-passive-liquidity-to-uniswap) on their tokens. This approach allows users to provide liquidity for just one asset in a pair, eliminating exposure to IL altogether.
+Panoptic users can choose to provide single-sided liquidity and [earn passive yield](https://panoptic.xyz/blog/passive-liquidity-pools) on their tokens. This approach allows users to provide liquidity for just one asset in a pair, eliminating exposure to IL altogether.
 
   
 ![](./03.png)
@@ -81,5 +80,4 @@ By addressing the IL problem, Panoptic is making LPing easier for everyone. User
 
 By offering tools to hedge against IL, generate additional fees, eliminate IL through single-sided LPing, and even profit from IL by shorting LP positions, Panoptic is paving the way for a more accessible, efficient, and user-friendly DeFi ecosystem.
 
-  
-_Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](https://panoptic.xyz/docs/intro) and head to our [website](https://panoptic.xyz/)._
+Impermanent loss compares LP value with holding the original assets. [Loss-versus-rebalancing](/research/panoptic-solves-lvr) uses a rebalancing benchmark instead; the two measures answer different questions.

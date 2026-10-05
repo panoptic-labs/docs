@@ -1,7 +1,9 @@
 ---
 sidebar_position: 2
+sidebar_label: "PanopticPool"
+title: "PanopticPool (V1.0)"
 ---
-# PanopticPool
+# PanopticPool (V1.0)
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.0.x/contracts/PanopticPool.sol)
 
 **Inherits:**
@@ -1325,4 +1327,3 @@ event OptionMinted(
 |`tokenId`|`TokenId`|TokenId of the created option|
 |`balanceData`|`PositionBalance`|The `PositionBalance` data for `tokenId` containing the number of contracts, pool utilizations, and ticks at mint|
 |`commissions`|`LeftRightUnsigned`|The total amount of commissions (base rate + ITM spread) paid for token0 (right) and token1 (left)|
-

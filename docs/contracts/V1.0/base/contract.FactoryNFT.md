@@ -1,4 +1,8 @@
-# FactoryNFT
+---
+sidebar_label: "FactoryNFT"
+title: "FactoryNFT (V1.0)"
+---
+# FactoryNFT (V1.0)
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.0.x/contracts/base/FactoryNFT.sol)
 
 **Inherits:**
@@ -262,5 +266,3 @@ function maxStrategyLabelWidth(uint256 rarity) internal pure returns (uint256 wi
 |Name|Type|Description|
 |----|----|-----------|
 |`width`|`uint256`|The maximum SVG unit width for the strategy name label|
-
-

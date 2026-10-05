@@ -58,6 +58,8 @@ We'll cover:
     
 
 ----------
+<span id="1-put-️" />
+
 ### Put ⤵️
 Think HEX is worthless?
 
@@ -357,9 +359,9 @@ Call ZEBRA spread + put ZEBRA spread, this one is special 🤪
 ### Summary
 Caveats:
 
--   Panoptions are perpetual options with streaming premia rather than upfront premia, so payoff curves may differ from above
+-   Panoptions are perpetual options with streamia (streaming premium) rather than upfront premiums, so payoff curves may differ from above
     
--   Panoption premia depends on a number of factors including the underlying price path and LP width
+-   Panoption streamia depends on a number of factors including the underlying price path and LP width
     
 
 More on this later 😉

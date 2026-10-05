@@ -1,4 +1,5 @@
 import React from 'react';
+import EditorialUpdate from '@site/src/components/EditorialUpdate';
 import clsx from 'clsx';
 import {translate} from '@docusaurus/Translate';
 import {usePluralForm} from '@docusaurus/theme-common';
@@ -39,10 +40,16 @@ function Spacer() {
 }
 export default function BlogPostItemHeaderInfo({className}) {
   const {metadata} = useBlogPost();
-  const {date, formattedDate, readingTime} = metadata;
+  const {date, formattedDate, readingTime, frontMatter} = metadata;
   return (
     <div className={clsx(styles.container, 'margin-vert--md', className)}>
-      <Date date={date} formattedDate={formattedDate} />
+      Published <Date date={date} formattedDate={formattedDate} />
+      {frontMatter.editorial_update && (
+        <>
+          {' · '}
+          <EditorialUpdate date={frontMatter.editorial_update} itemProp="dateModified" />
+        </>
+      )}
       {typeof readingTime !== 'undefined' && (
         <>
           <Spacer />

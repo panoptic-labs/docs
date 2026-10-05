@@ -2,7 +2,6 @@
 sidebar_position: 4
 label: "Perps Traders"
 ---
-
 import ThemedImage from '@theme/ThemedImage';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -56,7 +55,9 @@ Ready to get started? Visit our [app](https://app.panoptic.xyz) to begin [tradin
 
 ### Advanced Resources
 - [How to Trade Perps on Panoptic: A Complete Guide](/docs/product/perps)
-- [Synthetic perps](/docs/trading/multi-leg-strategies#synthetic-positions)
+- [Synthetic perps](/docs/trading/multi-leg-strategies#synthetic-perps)
 - [Synthetic perp capital efficiency](/docs/trading/capital-efficiency#synthetic-long-asset)
 - [Synthetic perp funding rates](/research/introduction-synthetic-perps)
 - [Risks](/docs/panoptic-protocol/risks)
+
+Compare the instruments in [perpetual futures versus options](/research/perpetual-futures-vs-options), then use the [perps execution guide](/docs/product/perps) to place a trade.

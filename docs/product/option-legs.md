@@ -6,7 +6,6 @@ tags: [Tutorial, Multi-leg, Strangle]
 image: /img/research/panoptic-option-legs-banner.png
 description: "Learn how option legs can enhance your trading strategies, from basic calls and puts to more complicated strategies like strangles."
 ---
-
 ![](./option-legs/panoptic-option-legs-banner.png)
 
 Options trading offers unique opportunities in the financial markets. This guide focuses on how Panoptic enables traders to utilize option strategies effectively.
@@ -124,8 +123,14 @@ By adding new legs, the payoff curve changes based on those additions. In the lo
 
   
 
-Once the position is built, traders can follow our [tutorial on opening a position](https://panoptic.xyz/research/opening-a-position-on-panoptic) to finish and submit their trade.
+Once the position is built, traders can follow our [tutorial on opening a position](https://panoptic.xyz/docs/product/opening-a-position) to finish and submit their trade.
 
   
 
 Legs are at the heart of options strategies and allow for greater flexibility and capital efficiency. Panoptic makes it easy for both the beginner and advanced traders to build their desired strategy.
+
+import Head from '@theme/MDXComponents/Head';
+
+<Head>
+  <link rel="canonical" href="https://panoptic.xyz/research/panoptic-option-legs" />
+</Head>

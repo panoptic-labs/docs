@@ -1,8 +1,9 @@
 ---
 sidebar_position: 12
 ---
-
 # Forced Exercise
+
+This page defines force-exercise roles and eligibility. For the trader workflow, see [Force Exercise](/docs/product/force-exercise); for V2 calculation details, see [Force Exercise Cost](/docs/panoptic-protocol/V2/exercise-cost).
 How long options can be exercised by external users.
 
 ### Force Exerciser (Anybody)
@@ -18,4 +19,3 @@ For single-leg positions, only long positions may be force exercised. Short posi
 
 ### Multi-leg positions
 For multi-leg positions, force exercising closes all legs of the position.
-

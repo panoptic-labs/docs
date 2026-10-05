@@ -42,8 +42,8 @@ In TradFi, options selling is more profitable when Implied Volatility (IV) > Rea
 
 Yes! But let's use fees instead of IVs since:
 - Easier calculation 🧮
-- Fees collected ⇔ options premia 👇
-- ⬆️ options premia ⇔ ⬆️ IV
+- Fees collected ⇔ options streamia (streaming premium) 👇
+- ⬆️ options streamia ⇔ ⬆️ IV
 
 ![img-3](./img-3.png)
 

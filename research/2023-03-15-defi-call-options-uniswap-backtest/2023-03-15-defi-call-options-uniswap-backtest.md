@@ -12,7 +12,7 @@ HODL vs. LP vs. Calls — which one's best?
     
 -   🧢 LP upside is capped on Uni V3 — token goes up, you now hold the other token
     
--   🚫🧢 Call options have unlimited upside, capped downside — but pay premia
+-   🚫🧢 Call options have unlimited upside, capped downside — but pay streamia (streaming premium)
     
 
 Incoming backtest 👇
@@ -37,7 +37,7 @@ Strategy:
     
 -   Exercise/close at end of period
     
--   Pay LP fees as premia
+-   Pay LP fees as streamia
     
 
 Note: Here’s [how Panoptic creates a call option](https://panoptic.xyz/docs/panoptic-protocol/option-properties#creating-a-call-option)
@@ -48,7 +48,7 @@ Note: Here’s [how Panoptic creates a call option](https://panoptic.xyz/docs/pa
 
 -   Payoff: 519%
     
--   Premia: 397%
+-   Streamia: 397%
     
 -   Profit: 122%
 
@@ -56,7 +56,7 @@ Note: Here’s [how Panoptic creates a call option](https://panoptic.xyz/docs/pa
     
 ![img-2](./img-2.png)
 
-👉Payoff > Premia → Profit🔝🤑📈
+👉Payoff > Streamia → Profit🔝🤑📈
 
 That's pretty good! How does it compare to other rebalancing periods?👇
 
@@ -105,7 +105,7 @@ What if you had chosen another fee-tier?
 
 ### Here's how different fee-tier pools breakdown
 
--   🧾 The 5 bps pool had the least trading fees (premia)
+-   🧾 The 5 bps pool had the least trading fees (streamia)
     
 -   🚀 The 5 bps pool had the most upward price action
     
@@ -124,7 +124,7 @@ Key Insights:
     
 -   🚀 Bullish price action = high payoff
     
--   💰 Payoff > premia → profit!
+-   💰 Payoff > streamia → profit!
     
 <blockquote class="twitter-tweet" data-conversation="none"><p lang="en" dir="ltr">5/14 Returns on buying <a href="https://twitter.com/search?q=%24ETH&amp;src=ctag&amp;ref_src=twsrc%5Etfw">$ETH</a> put options:<br/><br/>🌕 ETH-USDC (5bps): 112%<br/>🚀 ETH-USDC (30bps): 85%<br/>🧑‍🚀 ETH-USDC (100bps): 57%<br/><br/>(Returns in USDC)<br/><br/>👉Put option returns are exactly opposite of LP returns👈 <a href="https://t.co/J4Ic4zaczM">pic.twitter.com/J4Ic4zaczM</a></p>&mdash; Panoptic (@Panoptic_xyz) <a href="https://twitter.com/Panoptic_xyz/status/1633602281894715393?ref_src=twsrc%5Etfw">March 8, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -132,7 +132,7 @@ Caveats:
 
 -   ⛽ Ignores gas/spread/swap fees/commission
     
--   💲 Assumes put option premia = LP collected fees
+-   💲 Assumes put option streamia = LP collected fees
     
 -   ❓ This is hypothetical — you can't buy call options on Uniswap (Panoptic soon 🤫)
     

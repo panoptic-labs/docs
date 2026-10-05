@@ -35,7 +35,7 @@ Margarita Finance recently introduced its structured products at [Solana Breakpo
   
 The inaugural product from Margarita Finance, "[Yield Boosters](https://www.app.margarita.finance/)," introduces a customizable solution akin to Barrier Reverse Convertibles in traditional finance, designed to maximize returns beyond standard staking.
 
-Yield generation is driven by capturing option premia in the market, with users selecting:
+Yield generation is driven by capturing option streamia (streaming premium) in the market, with users selecting:
 -   Their preferred crypto asset    
 -   Desired lock-up period
 -   Target yield

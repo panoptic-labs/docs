@@ -21,7 +21,7 @@ Typically, traders buy/sell open contract(s) in the morning & hope to repurchase
 
 # Why trade 0DTE options? 
 
-As expiration approaches, the premia of an option rapidly decreases. This is known as "Theta decay".
+As expiration approaches, the premiums of an option rapidly decreases. This is known as "Theta decay".
 
 <blockquote class="twitter-tweet" data-conversation="none"><p lang="en" dir="ltr">1/13 📈 Want to understand the potential risk/reward of options trading?<br/><br/>Look no further than the Greeks!<br/><br/>We&#39;ll break down Delta, Gamma, Theta, Vega, &amp; Rho and explain how they can help you make more informed decisions when trading Panoptions 😉 <a href="https://t.co/8sMgAOVIRW">pic.twitter.com/8sMgAOVIRW</a></p>&mdash; Panoptic (@Panoptic_xyz) <a href="https://twitter.com/Panoptic_xyz/status/1635765241157160960?ref_src=twsrc%5Etfw">March 14, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 

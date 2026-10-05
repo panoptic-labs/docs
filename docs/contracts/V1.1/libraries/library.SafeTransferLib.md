@@ -1,4 +1,8 @@
-# SafeTransferLib
+---
+sidebar_label: "SafeTransferLib"
+title: "SafeTransferLib (V1.1)"
+---
+# SafeTransferLib (V1.1)
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.1.x/contracts/libraries/SafeTransferLib.sol)
 
 **Authors:**
@@ -59,5 +63,3 @@ function safeTransfer(address token, address to, uint256 amount) internal;
 |`token`|`address`|The address of the ERC20 token|
 |`to`|`address`|The address to transfer tokens to|
 |`amount`|`uint256`|The amount of tokens to transfer|
-
-

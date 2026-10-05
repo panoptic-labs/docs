@@ -31,7 +31,7 @@ For each model, we provide both a rigorous mathematical explanation and an intui
 [^1]: A *European option* can be exercised only at expiry, while an *American option* can be exercised at any time before or at expiry.
 
 
-## Model I: Panoptic – Streaming Premium from On-Chain Liquidity
+## Model I: Panoptic – Streamia from On-Chain Liquidity {#model-i-panoptic--streaming-premium-from-on-chain-liquidity}
 
 ### Quantitative Explanation
 
@@ -44,7 +44,7 @@ Panoptic introduces a DeFi-native pricing model for perpetual options, built ent
 - LPs implicitly write short options by supplying liquidity in specific tick ranges.
 - Option holders pay a fee based on the time spent within the LP range and actual trading volume.
 
-**Streaming Premium Mechanism:**
+**Streamia (streaming premium) Mechanism:**
 
 The core idea is that Uniswap LPs accumulate fees when the price stays near their tick range — especially when liquidity is concentrated, this payoff resembles short option exposure. Panoptic lets users take the long side by paying a fee proportional to:
 
@@ -74,10 +74,10 @@ The protocol defines a function `FeeRate` based on:
 While not used for computation, the protocol shows that in expectation:
 
 $$
-\int_0^T \theta(S_t, K, \sigma) \cdot \mathbb{1}_{\{S_t \in [L, U]\}} \, dt \approx \text{Streaming Premium}
+\int_0^T \theta(S_t, K, \sigma) \cdot \mathbb{1}_{\{S_t \in [L, U]\}} \, dt \approx \text{Streamia}
 $$
 
-This links Panoptic's emergent pricing to the classical Black-Scholes model offering a mathematical benchmark. Under diffusive price paths (e.g., GBM), Monte Carlo simulations show that this streaming premium distribution converges to the Black-Scholes option price in expectation, though with wide variance. Some options cost nearly zero, others exceed Black-Scholes pricing depending on path risk.
+This links Panoptic's emergent pricing to the classical Black-Scholes model offering a mathematical benchmark. Under diffusive price paths (e.g., GBM), Monte Carlo simulations show that this streamia distribution converges to the Black-Scholes option price in expectation, though with wide variance. Some options cost nearly zero, others exceed Black-Scholes pricing depending on path risk.
 
 In fact, Panoptic doesn’t pre-price an option, it charges dynamically as market activity unfolds. When the price lingers near the strike, more fees accrue. If the market stays away, no cost is incurred. This turns options into a metered service rather than a prepaid contract. In short: users pay for *realized risk*, not theoretical exposure.
 
@@ -441,7 +441,7 @@ This setup leads to mathematically rich *free-boundary problems*, which can be a
 
 | **Feature** | **Panoptic** | **Paradigm** | **Sidani** | **Gapeev & Rodosthenous** | **Grossinho et al.** |
 |-------------|--------------|--------------|------------|-----------------------------|------------------------|
-| **Core Idea** | Streaming premium via theta accumulation over time on Uniswap v3 and v4 | Funding-based perpetual option with Black-Scholes anchor | Probabilistic expiry: mixture of European options | Compound perpetual American options via optimal stopping | Perpetual American put with volatility driven by option gamma |
+| **Core Idea** | Streamia via theta accumulation over time on Uniswap v3 and v4 | Funding-based perpetual option with Black-Scholes anchor | Probabilistic expiry: mixture of European options | Compound perpetual American options via optimal stopping | Perpetual American put with volatility driven by option gamma |
 | **Expiry** | None (truly perpetual) | None | Randomized (Exp or Geo) | None | None |
 | **Pricing Method** | Time-integrated theta, path-dependent | Theta as funding; price tracks oracle BSM value | Integral over BSM prices with time distribution weights | Two-layer optimal stopping; closed-form with GBM | Free-boundary PDE with nonlinear volatility function |
 | **Oracle Needed?** | No | Yes (mark price) | Optional (only if BSM used) | No | No |

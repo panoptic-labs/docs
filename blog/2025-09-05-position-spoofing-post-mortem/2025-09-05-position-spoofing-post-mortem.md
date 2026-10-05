@@ -1,4 +1,5 @@
 ---
+authors: G
 slug: position-spoofing-post-mortem
 title: "Position Spoofing Post Mortem"
 tags: [Security, Post-Mortem, Audit, Panoptic V2]
@@ -260,7 +261,7 @@ A tangible example supplied by the researcher is an attack that carries out the 
 - Borrow assets in a [flash loan](https://chain.link/education-hub/flash-loans)
 - Use that funding to deposit lots of collateral
 - Open two deeply [in-the-money](https://www.investopedia.com/ask/answers/042715/what-difference-between-money-and-out-money.asp) positions, a call and a put, at a levered size
-   - In Panoptic, you may [borrow up to 5 times](https://panoptic.xyz/docs/panoptic-protocol/collateral) your deposited collateral in the PanopticPool smart contract to increase the size of a position.
+   - In Panoptic, you may [borrow up to 5 times](https://panoptic.xyz/docs/panoptic-protocol/V2/collateral-overview) your deposited collateral in the PanopticPool smart contract to increase the size of a position.
    - When Panoptic is functioning correctly, in-the-money options have intrinsic value, so levered in-the-money options credit your account with:
      - The value of your deposited collateral,
      - Plus the borrowed capital,

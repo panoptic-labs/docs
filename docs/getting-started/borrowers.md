@@ -14,7 +14,7 @@ Borrowing on Panoptic lets you tap into lender-supplied liquidity to **withdraw 
 - **Transparent Rates**: Borrow rates rise and fall with utilization, aligning cost with supply and demand.
 
 ## How Borrowing Works
-1. **Liquidity Comes From Lenders**: [Lenders](/docs/getting-started/passive-lp) deposit tokens into [vaults](/docs/getting-started/vaults#lending-vaults) or lending markets.
+1. **Liquidity Comes From Lenders**: [Lenders](/docs/getting-started/passive-lp) deposit tokens into [vaults](/docs/getting-started/vaults#weth-plp-vault) or lending markets.
 2. **Borrowing Increases Utilization**: When users borrow, pool utilization and interest rates increase.
 3. **Interest Accrues Over Time**: Interest is accrued on a user’s net amount of borrowed funds and distributed to lenders.
 

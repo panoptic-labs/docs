@@ -60,7 +60,7 @@ In the evolving landscape of decentralized finance (DeFi), Panoptic stands out w
 
   
 
-Panoptic's synthetic perps diverge from conventional perps by not relying on a standard funding rate mechanism. Instead, they utilize a dynamic fee system called 'streamia', which aligns costs more closely with real-time market conditions and trading activity on Uniswap V3. This approach not only simplifies the trading process but also enhances transparency and fairness in pricing. Additionally, the perpetual nature of these contracts, combined with Panoptic's seamless integration with existing liquidity pools, presents traders with continuous and flexible trading opportunities.
+Panoptic's synthetic perps diverge from conventional perps by not relying on a standard funding rate mechanism. Instead, they utilize a dynamic fee system called 'streamia (streaming premium)', which aligns costs more closely with real-time market conditions and trading activity on Uniswap V3. This approach not only simplifies the trading process but also enhances transparency and fairness in pricing. Additionally, the perpetual nature of these contracts, combined with Panoptic's seamless integration with existing liquidity pools, presents traders with continuous and flexible trading opportunities.
 
 ![](./2.png)
 

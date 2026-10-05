@@ -116,7 +116,7 @@ An option with no intrinsic value
 
 
 ### [Panoption](/docs/terms/panoption) 
-A perpetual, oracle-less, decentralized, option with fixed gamma between two prices, operating on a streaming premium model.
+A perpetual, oracle-less, decentralized, option with fixed gamma between two prices, operating on a streamia (streaming premium) model.
 
 
 ### [Perpetual Options](/docs/terms/perps) 
@@ -143,7 +143,7 @@ The range where users provide liquidity
 Strategy betting on a decline in an asset's price
 
 
-### [Streaming Premia](/docs/terms/streaming) 
+### [Streamia](/docs/terms/streaming) {#streaming-premia}
 The way Panption sellers collect fees
 
 

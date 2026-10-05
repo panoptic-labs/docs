@@ -1,4 +1,8 @@
-# PointerLibrary
+---
+sidebar_label: "PointerLibrary"
+title: "PointerLibrary (V1.1)"
+---
+# PointerLibrary (V1.1)
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.1.x/contracts/types/Pointer.sol)
 
 **Author:**
@@ -149,5 +153,3 @@ function decompressedDataStr(Pointer self) internal view returns (string memory)
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`string`|The LZ-77 decompressed data as a string|
-
-

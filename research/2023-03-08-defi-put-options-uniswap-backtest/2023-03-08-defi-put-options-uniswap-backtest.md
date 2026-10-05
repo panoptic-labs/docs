@@ -54,7 +54,7 @@ Daily strategy:
     
 2.  Exercise/close put option at end of day
     
-3.  Pay LP swap fees as premia
+3.  Pay LP swap fees as streamia (streaming premium)
     
 ### ETH Puts
 Returns on buying ETH put options:
@@ -128,23 +128,23 @@ Key Insights:
 
 -   🐻 Bearish price action = high payoff
     
--   💰 Payoff > premia → profit!
+-   💰 Payoff > streamia → profit!
     
 ![img-7](./img-7.png)
 
 In TradFi, options buying is more profitable when Implied Volatility (IV) < Realized Volatility (RV). Do we see the same result here?
 
-Instead of IV let's use the premia:
+Instead of IV let's use the streamia:
 
 -   Easier to calculate 🧮
     
--   ⬆️ IV ⇔ ⬆️ Premia
+-   ⬆️ IV ⇔ ⬆️ Streamia
     
 ![img-8](./img-8.png)
 
 Graph above:
 
--   🐶 Outperforming puts (green dots): lie above the line, low premia given volatility ("IV < RV")
+-   🐶 Outperforming puts (green dots): lie above the line, low streamia given volatility ("IV < RV")
     
 -   😈 Underperforming puts (pink dots): lie below the line, too expensive ("IV > RV")
     
@@ -159,7 +159,7 @@ Caveats:
 
 -   ⛽ Ignores gas/spread/swap fees/commission
     
--   💲 Assumes put option premia = LP collected fees
+-   💲 Assumes put option streamia = LP collected fees
     
 -   ❓ This is a "what if" scenario — you can't buy put options on Uniswap (yet)
     

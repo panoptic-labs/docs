@@ -10,6 +10,8 @@ image: /img/banners/audits-banner.png
 Panoptic has undergone numerous economic and security reviews by leading firms. The following reports are available for public review.
 
 
+<span id="smart-contract-audits" />
+
 ## Core Protocol Audits
 
 ### Obsidian

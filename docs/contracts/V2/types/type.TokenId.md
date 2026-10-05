@@ -1,4 +1,8 @@
-# TokenId
+---
+sidebar_label: "TokenId"
+title: "TokenId (V2)"
+---
+# TokenId (V2)
 
 > Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
 

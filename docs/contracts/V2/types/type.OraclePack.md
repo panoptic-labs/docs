@@ -1,4 +1,8 @@
-# OraclePack
+---
+sidebar_label: "OraclePack"
+title: "OraclePack (V2)"
+---
+# OraclePack (V2)
 
 > Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
 

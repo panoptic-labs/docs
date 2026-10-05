@@ -20,7 +20,7 @@ Discover the future of trading with Panoptic, your gateway to perpetual options 
 
 ### Bringing Passive Liquidity to Uniswap
 
-Panoptic [introduces](https://panoptic.xyz/blog/bringing-passive-liquidity-to-uniswap) a seamless way for liquidity providers (LPs) to earn rewards without actively managing their positions on Uniswap V3. Instead of constantly monitoring and rebalancing price ranges, passive LPs deposit tokens into a pool, allowing active LPs to borrow and deploy the liquidity. This setup allows passive LPs to collect yield without worrying about impermanent loss (IL) or loss-versus-rebalancing (LVR). It functions similarly to a lending model like Aave but where borrowers are LPs in Uniswap pools and lenders have single-sided deposits that are auto-compounded to maximize returns.
+Panoptic [introduces](https://panoptic.xyz/blog/passive-liquidity-pools) a seamless way for liquidity providers (LPs) to earn rewards without actively managing their positions on Uniswap V3. Instead of constantly monitoring and rebalancing price ranges, passive LPs deposit tokens into a pool, allowing active LPs to borrow and deploy the liquidity. This setup allows passive LPs to collect yield without worrying about impermanent loss (IL) or loss-versus-rebalancing (LVR). It functions similarly to a lending model like Aave but where borrowers are LPs in Uniswap pools and lenders have single-sided deposits that are auto-compounded to maximize returns.
 
 ![](./1.png)
 
@@ -34,7 +34,7 @@ The yield for passive LPs is generated through fees paid by active LPs and optio
 
 ![](./2.gif)
 
-Here’s where professor Guillaume Lambert, founder of Panoptic, made a breakthrough: he recognized that LP positions function similarly to options, encapsulated by the formula [LP ≈ options](https://panoptic.xyz/blog/uniswap-lp-equals-options). This insight allows LPs to analyze their positions with the same tools and strategies as options traders, helping them predict profits, manage risk, and refine their approach.
+Here’s where professor Guillaume Lambert, founder of Panoptic, made a breakthrough: he recognized that LP positions function similarly to options, encapsulated by the formula [LP ≈ options](https://panoptic.xyz/blog/uniswap-options). This insight allows LPs to analyze their positions with the same tools and strategies as options traders, helping them predict profits, manage risk, and refine their approach.
 
 ![](./3.png)
 

@@ -1,4 +1,8 @@
-# CallbackLib
+---
+sidebar_label: "CallbackLib"
+title: "CallbackLib (V1.0)"
+---
+# CallbackLib (V1.0)
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.0.x/contracts/libraries/CallbackLib.sol)
 
 **Author:**
@@ -63,4 +67,3 @@ struct CallbackData {
 |----|----|-----------|
 |`poolFeatures`|`PoolFeatures`|The features of the pool that sent the callback (used to validate that the pool is canonical)|
 |`payer`|`address`|The address from which the requested tokens should be transferred|
-

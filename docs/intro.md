@@ -18,7 +18,7 @@ Panoptic is a permissionless protocol for perpetual options and lending. V2 supp
 The Panoptic protocol consists of smart contracts on supported blockchains that handle the minting, trading, and market-making of perpetual put and call options.
 Users interact directly with smart contracts. Execution still depends on chain availability, liquidity, collateral, and protocol controls.
 
-Perpetual options use concentrated AMM liquidity and streaming premia rather than a scheduled expiry and a single upfront premium. V2 also uses internal AMM-derived price observations for risk and solvency checks; oracle-free pricing does not mean there are no risk oracles.
+Perpetual options use concentrated AMM liquidity and streamia (streaming premium) rather than a scheduled expiry and a single upfront premium. V2 also uses internal AMM-derived price observations for risk and solvency checks; oracle-free pricing does not mean there are no risk oracles.
 
 Panoptic offers **Perpetual Option Vaults (POVs)**: automated vaults that execute strategies involving market volatility.
 POVs wrap Panoptic’s perpetual options into deposit-based strategies. Returns are variable and can be negative; managed vaults also have strategy and redemption risks. Active traders can interact directly through the trading interface.

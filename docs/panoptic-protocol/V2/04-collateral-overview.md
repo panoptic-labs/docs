@@ -6,7 +6,7 @@ V2 evaluates a portfolio using both tokens of its underlying AMM pool. Start wit
 
 `getMargin` returns per-token balances and maintenance requirements, with requirements in each result's left slot and balances in its right slot. Both are in raw units of the corresponding token. This is informational output; use `isAccountSolvent` for the engine's buffered, cross-token decision.
 
-The calculation includes positions, eligible premia, interest owed, and collateral shares converted to assets. A base collateral ratio multiplied by notional is not a complete portfolio requirement.
+The calculation includes positions, eligible streamia (streaming premium), interest owed, and collateral shares converted to assets. A base collateral ratio multiplied by notional is not a complete portfolio requirement.
 
 ## Cross-token collateral
 

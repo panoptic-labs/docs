@@ -1,8 +1,9 @@
 ---
 sidebar_position: 4
 ---
-
 # Option properties
+
+Use this reference for asset/numeraire construction, width, moneyness and token type. The [LP-as-options explanation](/blog/uniswap-options) introduces the underlying payoff relationship.
 Panoptic options have: width, moneyness, type, legs, etc.
 
 ## LP token as a short option
@@ -97,8 +98,8 @@ This contrasts slightly with the definition of ATM for traditional options, whic
 In contrast with a position being ATM, a posution whose price is outside the LP position's range is call far-the-money (FTM).
 This is also a new concept that is not seen in traditional finance. 
 
-In Panoptic, it helps to describe a position as being FTM (as opposed to simply ITM or OTM) because a FTM position will not earn any streaming premium.
-A position can be ITM and FTM as well: in that case, a long ITM position is firmly in the profitable zone but, since it will not accumulate any streaming premium, can be exercised without penalty.
+In Panoptic, it helps to describe a position as being FTM (as opposed to simply ITM or OTM) because a FTM position will not earn any streamia (streaming premium).
+A position can be ITM and FTM as well: in that case, a long ITM position is firmly in the profitable zone but, since it will not accumulate any streamia, can be exercised without penalty.
 
 
 ## Option tokenType

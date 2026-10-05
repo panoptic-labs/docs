@@ -1,15 +1,14 @@
 ---
 slug: panoption-trading-strategies-the-basics
-title: "Panoptic Options Trading Strategies Series: Part I — The Basics"
+title: "TradFi and Panoptic Options: A Comparative Trading Chapter"
 tags: [Options Traders, Moneyness, Premium, Commission, Margin, Exercise, Assignment]
 image: /img/research/panoption-trading-strategies-the-basics.webp
 description: "The basics of options trading and how options trading in the legacy system compares to the new decentralized world."
 authors: J
 ---
-
 ![img-1](./img-1.webp)
 
-This blog post is the first in a series on options trading strategies. The series is based on the book “Options as a Strategic Investment” by McMillan.
+This McMillan-based chapter compares the mechanics of traditional options trading with Panoptic: parity, contract classes, exercise and assignment, margin, commission and order entry. It preserves the V1-era comparison from 2023. Start with [Options Basics](/docs/trading/basic-concepts) for a shorter introduction, or consult the [current protocol overview](/docs/panoptic-protocol/overview) for V2.
 
 <!-- truncate -->
 
@@ -103,9 +102,9 @@ An option is at parity (at par) with the underlying stock if it trades at its in
 
 In Panoptic, the option premium is always $0 upfront. So there is no obvious definition of parity. This, of course, does not matter and has no effect.
 
-## **Premiums in Panoptic — How much do Panoptions cost?**
+## **Streamia in Panoptic — How much do Panoptions cost?** {#premiums-in-panoptic--how-much-do-panoptions-cost}
 
-In Panoptic, the premium is paid by the buyer (the holder) to the seller (the writer) in a new unique DeFi-native way. It is based on realized volatility and the fees collected in Uniswap (generally, the underlying DEX). In other words, there won’t be options listed at various prices/premiums, but rather Panoptions start at a $0 premium, and the premium accrues from there based on what the price and trading activity does in the underlying DEX.
+In Panoptic, the streamia (streaming premium) is paid by the buyer (the holder) to the seller (the writer) in a new unique DeFi-native way. It is based on realized volatility and the fees collected in Uniswap (generally, the underlying DEX). In other words, there won’t be options listed at various prices/streamia, but rather Panoptions start at a $0 streamia, and the streamia accrues from there based on what the price and trading activity does in the underlying DEX.
 
 ![img-3](./img-3.webp)
 
@@ -143,9 +142,9 @@ Let the price of ETH be shown in gray, and assume it starts at some point (shown
 
 The seller of course still collects fees from Uniswap as per usual from their green chunk.
 
-But if the red region “received” trading activity, the buyer will owe the seller money, which will accrue over time (whenever the price is within said region), this is shown to the right where the premium curve increases during the highlighted purple circles in the left plot.
+But if the red region “received” trading activity, the buyer will owe the seller money, which will accrue over time (whenever the price is within said region), this is shown to the right where the streamia curve increases during the highlighted purple circles in the left plot.
 
-As mentioned, this becomes the option cost/premium for the buyer: The amount of fees that the red chunk collects in Uniswap (and again: because the red chunk is not physically present in Uniswap, Panoptic settles this automatically between the buyer and seller). Note that, of course, the price could never touch the red chunk, in which case, the option cost to the buyer is zero!
+As mentioned, this becomes the option cost/streamia for the buyer: The amount of fees that the red chunk collects in Uniswap (and again: because the red chunk is not physically present in Uniswap, Panoptic settles this automatically between the buyer and seller). Note that, of course, the price could never touch the red chunk, in which case, the option cost to the buyer is zero!
 
 ## **Panoptic solves DeFi’s liquidity fragmentation problem**
 
@@ -169,9 +168,9 @@ Another way to show this and summarize the comparison is with this figure:
 
 There are two rows. The top row is a TradFi option where the premium is paid upfront based on factors including implied volatility (IV). The premium is the same throughout the option's life, shown to the right (so the overall top right figure).
 
-Panoptic’s model is shown in the bottom row. Here, the premium is a function of time. We show three possible premium evolutions. Premium plot (a) shows Panoptic’s premium increasing over time. This happens as the price in the pool crosses the buyer’s chunk, as discussed earlier. The premium is non-decreasing since the fees collected in Uniswap from trades — and therefore the amount the buyer owes the seller — is a non-decreasing function.
+Panoptic’s model is shown in the bottom row. Here, the streamia is a function of time. We show three possible streamia evolutions. Streamia plot (a) shows Panoptic’s streamia increasing over time. This happens as the price in the pool crosses the buyer’s chunk, as discussed earlier. The streamia is non-decreasing since the fees collected in Uniswap from trades — and therefore the amount the buyer owes the seller — is a non-decreasing function.
 
-Note that the premium can also stay flat at zero in Panoptic; see (b). In addition, it could rise to a given level and stay there for a long time (potentially until closing the position); see (c). This level could be less than or greater than a corresponding expiring option.
+Note that the streamia can also stay flat at zero in Panoptic; see (b). In addition, it could rise to a given level and stay there for a long time (potentially until closing the position); see (c). This level could be less than or greater than a corresponding expiring option.
 
 These scenarios could enable arbitrage opportunities between other options and Panoptions.
 
@@ -378,7 +377,7 @@ In TradFi, both the buyer of the stock via an exercise and the seller of the sto
 
 So the public customer who holds an option is better off selling the option in the secondary market than exercising the call (unless they of course want to hold the underlying stock, then it could be worth it).
 
-We have discussed the option premium above and how Panoptions are priced based on the price movement in the underlying AMM (with a zero-cost upfront).
+We have discussed the option streamia above and how Panoptions are priced based on the price movement in the underlying AMM (with a zero-cost upfront).
 
 However, anyone opening a new position will pay a commission, which will all go to the Panoptic LPs.
 

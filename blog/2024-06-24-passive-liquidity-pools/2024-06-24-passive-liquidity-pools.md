@@ -1,11 +1,11 @@
 ---
+editorial_update: "2026-10-04"
 slug: passive-liquidity-pools
 title: "Passive Liquidity Pools"
 tags: [Passive, Liquidity, Uniswap]
 image: /img/banners/passive-liquidity-pools.png
 description: "Panoptic's passive liquidity pools let LPs earn yield from Uniswap V3 without active management, combining V2's simplicity with V3's efficiency."
 ---
-
 ![](./01.png)
 
 With the release of Uniswap V3, many liquidity providers (LPs) moved their positions from V2 to V3. The concentrated liquidity model of V3 offers increased yield potential, making it more attractive. However, some LPs prefer to stay on V2 because V3 positions require more active management.
@@ -47,11 +47,11 @@ Panoptic’s passive liquidity pools are the ideal solution for LPs. Let's explo
 
 ## Exploring Passive Liquidity Pools
 
-Passive liquidity pools promote an easy and efficient way to provide liquidity. These pools ensure that provided liquidity cannot be deployed anywhere besides Uniswap.
+In the original V1 model described here, passive liquidity supported traders deploying liquidity into Uniswap. Current V2 lending also supports borrowing; consult the [lender guide](/docs/getting-started/passive-lp) for current behavior.
 
 ![](./02.png)
 
-Passive liquidity pools achieve passive yield in two ways:
+The historical V1 commission model generated passive yield in two ways:
 
 1.  Active LPs can shift liquidity from the passive pool into specific Uniswap pool price ranges, paying a fixed fee to passive LPs.
     
@@ -72,6 +72,27 @@ Passive liquidity pools offer four clear advantages:
 3. Streamlined Liquidity Provisioning: Passive pools simplify the complex process of managing concentrated liquidity positions on Uniswap V3.
     
 4. Passive  Income  Focus: LPs are provided with passive yield opportunities, making it attractive for investors who want to earn without the hassles of active management.
- 
-  
-*Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](https://panoptic.xyz/docs/intro) and head to our [website](https://panoptic.xyz/).*
+
+## Active LPing versus lending
+
+An active Uniswap V3 LP selects a token pair, fee tier and price range, deposits the required tokens, and then monitors the position as price changes. Fees are earned when liquidity is used in range. See Uniswap’s [concentrated-liquidity explanation](https://docs.uniswap.org/concepts/protocol/concentrated-liquidity).
+
+A passive lender instead chooses a supported token and market and deposits the token for shares. They do not select an AMM price range or manage its changing token inventory themselves. This makes single-sided participation possible; it does not remove the market-price risk of the deposited token.
+
+![Passive lender liquidity supports active traders](../2023-10-30-better-liquidity-provisioning/PLP-visual-graphic.jpg)
+
+![Active Uniswap LP management compared with passive Panoptic lending](../2024-10-08-bringing-passive-liquidity-to-uniswap/02.png)
+
+## Where Does the Yield Come From?
+
+The 2024 lending explanation describes active LPs borrowing capital to deploy in Uniswap and paying interest, with option activity contributing to the wider pool economics. Share accounting can retain earned returns in the pool, so subsequent returns accrue on the updated share value without a separate manual reinvestment.
+
+Two useful inputs are the lender’s share of deposited tokens and demand for the market’s liquidity. Neither determines a guaranteed APY: utilization, interest rates, applicable fee routing and losses also affect returns. Historical V1 commission examples and current V2 interest-based lending should not be treated as identical fee schedules.
+
+![Passive lender capital flows through Panoptic to active Uniswap liquidity](../2024-10-08-bringing-passive-liquidity-to-uniswap/03.png)
+
+## What Are the Risks?
+
+Passive lending avoids directly managing the two-token inventory of an AMM LP, but it is not risk-free. Extreme price moves, failed or delayed liquidations, smart-contract faults and resulting pool debt can reduce the value of deposits. The deposit’s token price can also change.
+
+High utilization can limit withdrawals. Pool liquidity and asset stability matter when assessing exposure; auto-compounding does not guarantee positive returns or immediate access to all deposited funds. Review the [current lending and withdrawal guidance](/docs/getting-started/passive-lp) before depositing.

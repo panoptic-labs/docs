@@ -12,7 +12,7 @@ Lenders, also called passive liquidity providers (PLPs), supply an underlying to
 
 ## How lending works
 
-1. Choose a supported token and market, or a [managed lending vault](/docs/getting-started/vaults#lending-vaults) with its own strategy and withdrawal terms.
+1. Choose a supported token and market, or a [managed lending vault](/docs/getting-started/vaults#weth-plp-vault) with its own strategy and withdrawal terms.
 2. Deposit the token and receive shares representing your claim on the market or vault.
 3. Monitor the share value, market utilization, available withdrawals, and the risks of the underlying asset and strategy.
 
@@ -57,6 +57,6 @@ Ready to earn? Visit our [lending platform](https://app.panoptic.xyz).
 ### Resources
 - [Passive LP risks](/docs/panoptic-protocol/risks#panoptic-liquidity-provider-risks)
 - [Panoptic awarded Uniswap Foundation grant](/blog/panoptic-awarded-uniswap-foundation-grant) 
-- [Bringing passive liquidity to Uniswap](/blog/bringing-passive-liquidity-to-uniswap)
+- [Bringing passive liquidity to Uniswap](/blog/passive-liquidity-pools)
 - [Passive liquidity pools](/blog/passive-liquidity-pools)
 

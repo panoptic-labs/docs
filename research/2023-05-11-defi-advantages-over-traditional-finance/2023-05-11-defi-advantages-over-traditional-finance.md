@@ -17,7 +17,7 @@ authors: C
 Let's start with 8 reasons why DeFi outperforms TradFi!
 
 ### 1. Lower fees & transaction costs 📉
-DeFi's competitive edge comes from its cost efficiency compared to TradFi. In particular, remember that w/ Panoptic's premia model you [don't pay upfront](https://panoptic.xyz/research/composability-perpetuity-oracle-free) to open positions → more capital efficiency!
+DeFi's competitive edge comes from its cost efficiency compared to TradFi. In particular, remember that w/ Panoptic's streamia (streaming premium) model you [don't pay upfront](https://panoptic.xyz/research/composability-perpetuity-oracle-free) to open positions → more capital efficiency!
 
 ### 2. Greater accessibility 🌐
 DeFi platforms are available to anyone → more retail options traders globally, especially in regions where traditional finance is limited or costly. You'll soon be able to trade in options in Panoptic, as easy as LPing on Uniswap!

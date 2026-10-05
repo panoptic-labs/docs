@@ -123,6 +123,7 @@ for (const file of files) {
     /^(# [^\n]+\n)/,
     `$1\n> Source reference for public revision \`${sourceCommit.slice(0, 7)}\`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).\n\n`,
   );
+  body = body.replace(/^# (.+?)(?: \(V2\))?$/m, "# $1 (V2)");
   let frontmatter = "";
   try {
     frontmatter =

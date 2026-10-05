@@ -11,9 +11,9 @@ authors: A
 
 ## Introduction
 
-Options strategies provide traders with powerful tools for expressing market views and managing risk. Panoptic's innovative approach allows traders to access [option-like](/blog/uniswap-lp-equals-options#uniswap--amms-the-basics) payoffs through Uniswap V3 concentrated liquidity positions.
+Options strategies provide traders with powerful tools for expressing market views and managing risk. Panoptic's innovative approach allows traders to access [option-like](/blog/uniswap-options#uniswap--amms-the-basics) payoffs through Uniswap V3 concentrated liquidity positions.
 
-This research byte examines two popular bearish options strategies implemented through the Panoptic protocol: short calls and long puts on the WETH-USDC pool. While both strategies can profit from downward ETH price movements, they exhibit fundamentally different risk profiles, fee structures, and performance characteristics. Using historical data from the WETH-USDC 30bps pool, we analyze the returns, payoff structures, and premium patterns for each strategy.
+This research byte examines two popular bearish options strategies implemented through the Panoptic protocol: short calls and long puts on the WETH-USDC pool. While both strategies can profit from downward ETH price movements, they exhibit fundamentally different risk profiles, fee structures, and performance characteristics. Using historical data from the WETH-USDC 30bps pool, we analyze the returns, payoff structures, and streamia (streaming premium) patterns for each strategy.
 
 On the other hand, a defining feature of Panoptic options (Panoptions) is their perpetual nature within a concentrated liquidity market. This structure means that when a Panoption is in range—with the spot price between its lower and upper bounds—it continuously accumulates [streamia](/docs/product/streamia): buyers incur a cost, while sellers earn yield. Once the option goes out of range, streamia accumulation halts—buyers no longer pay, and sellers stop receiving income. This dynamic creates a payoff structure that differs from traditional financial options.
 
@@ -21,7 +21,7 @@ On the other hand, a defining feature of Panoptic options (Panoptions) is their 
 
 A short call in Panoptic involves a user acting like an option writer, providing liquidity in such a way that they benefit when the price of the underlying asset moves lower than when it started.
 
-- **Mechanics**: The user sells a call option and the seller collects premia as time passes (no option decay since we are dealing with perpetual options).
+- **Mechanics**: The user sells a call option and the seller collects streamia as time passes (no option decay since we are dealing with perpetual options).
 - **If the underlying price increases above the strike**, the trader incurs losses, just like a traditional short call.
 - **Maximum profit**: The maximum profit is limited to the streamia accumulated.
 - **Unlimited risk**: The greatest risk is that losses can continue to grow if the asset’s price increases a lot, so managing risk is very important.
@@ -43,7 +43,7 @@ We construct our strategies using the WETH/USDC 30 bps Uniswap v3 pool on Ethere
 
 ## Results
 
-In Panoptic's options simulation model, strategy returns consist of two key components. The premia represents fee collection for short calls (positive) or premium costs for long puts (negative), calculated through the swap fees captured within a position's [range](/docs/product/streamia#in-range-options-accumulate-streamia). The payoff reflects position value changes as the underlying asset price moves relative to the strike, with short calls experiencing potentially unlimited negative value during upward price movement and long puts gaining value during downward moves. Total return combines these elements in addition to the streamia accrued when the position moved further OTM. This decomposition illustrates how Panoptic translates traditional options behavior into Uniswap V3's concentrated liquidity framework.
+In Panoptic's options simulation model, strategy returns consist of two key components. The streamia represents fee collection for short calls (positive) or streamia costs for long puts (negative), calculated through the swap fees captured within a position's [range](/docs/product/streamia#in-range-options-accumulate-streamia). The payoff reflects position value changes as the underlying asset price moves relative to the strike, with short calls experiencing potentially unlimited negative value during upward price movement and long puts gaining value during downward moves. Total return combines these elements in addition to the streamia accrued when the position moved further OTM. This decomposition illustrates how Panoptic translates traditional options behavior into Uniswap V3's concentrated liquidity framework.
 
 ![](./2.png)
 
@@ -69,7 +69,7 @@ At a higher level of granularity, the strategy reveals its “insurance policy�
 The strategy’s returns component delivers steady, positive returns, averaging between 2% and 4% per month. However, this consistency comes at the cost of exposure to extreme downside risk. The returns reveal significant drawdowns in three periods: February 2024, May 2024 and November 2024, highlighting the inherent vulnerability of the position to sharp upward moves in the market. The strategy shows a clear imbalance in risk: it makes small gains in many months, but just a few big losses wipe out those profits. In particular, two major losses were close to -40%, much larger than any of the gains in good months. This shows that, even though the strategy earns steady income, it’s still very exposed to rare but extreme losses.
 
 #### Weekly Rolling
-Increasing the rolling frequency slightly reduces the severity of extreme losses, but it does not fully eliminate them. Several drawdowns still exceed -15%, showing that it’s still at risk of big losses. While premia collection becomes more consistent with more frequent rolling, the returns per instance are smaller in magnitude. Despite these adjustments, the strategy continues to exhibit a classic “picking up pennies in front of a steamroller” risk profile—generating steady, modest gains while remaining vulnerable to occasional but substantial losses.
+Increasing the rolling frequency slightly reduces the severity of extreme losses, but it does not fully eliminate them. Several drawdowns still exceed -15%, showing that it’s still at risk of big losses. While streamia collection becomes more consistent with more frequent rolling, the returns per instance are smaller in magnitude. Despite these adjustments, the strategy continues to exhibit a classic “picking up pennies in front of a steamroller” risk profile—generating steady, modest gains while remaining vulnerable to occasional but substantial losses.
 
 ### Cross-Strategy Interpretation
 ![](./1.png)
@@ -89,11 +89,11 @@ In the Panoptic protocol, both short calls and long puts offer unique opportunit
 | Profits From     | WTH price decreasing, flat market           | ETH price decreasing                   |
 | Risks            | ETH price rising significantly              | ETH price staying flat or rising       |
 | Best rolling     | Weekly                                      | Monthly                                |
-| Max Return       | Limited to premium (5%+ observed)           | Potentially high (20%+ observed)       |
-| Max Loss         | Potentially high                            | Limited to premium paid                |
+| Max Return       | Limited to streamia (5%+ observed)           | Potentially high (20%+ observed)       |
+| Max Loss         | Potentially high                            | Limited to streamia paid                |
 
 > **Important Note**  
-One key factor not accounted for in this analysis is the [spread multiplier](/docs/product/spread), which is likely greater than 1x. In fact, observed data shows an [average spread multiplier of approximately 1.2x](/research/loss-versus-panoptic-why-lps-are-losing). This implies that, when the spread multiplier is equal to 1, the option premium reflects its theoretical value with no adjustment. However, when the spread multiplier is greater than 1—in our case, 1.2x—the actual trading conditions deviate from the theoretical pricing. In this case, buyers pay 20% more than the baseline price, making options more expensive to purchase. Conversely, sellers benefit from this spread, earning 20% more than the base premium, which makes selling options more profitable under these conditions.
+One key factor not accounted for in this analysis is the [spread multiplier](/docs/product/spread), which is likely greater than 1x. In fact, observed data shows an [average spread multiplier of approximately 1.2x](/research/loss-versus-panoptic-why-lps-are-losing). This implies that, when the spread multiplier is equal to 1, the option streamia reflects its theoretical value with no adjustment. However, when the spread multiplier is greater than 1—in our case, 1.2x—the actual trading conditions deviate from the theoretical pricing. In this case, buyers pay 20% more than the baseline price, making options more expensive to purchase. Conversely, sellers benefit from this spread, earning 20% more than the base streamia, which makes selling options more profitable under these conditions.
 
 ## Future Work
 

@@ -73,7 +73,7 @@ The protocol's key insight involves recognizing that liquidity providers in Auto
 
 Most LPs operate without understanding options exposure or the tools to evaluate whether collected fees adequately compensate for risks. This creates systematic underpricing in AMM markets due to oversupply of short perpetual options, as LPs don't properly price the optionality they're selling.
 
-Panoptic's "Panoptions" differ from vanilla options in several ways: they don't experience time decay, can be exercised continuously like American options, and charge "streaming premium" based on time spent within price ranges rather than upfront costs.
+Panoptic's "Panoptions" differ from vanilla options in several ways: they don't experience time decay, can be exercised continuously like American options, and charge "streamia (streaming premium)" based on time spent within price ranges rather than upfront costs.
 
 The protocol completes previously incomplete options markets where only short optionality exposure was possible through LP positions. This addresses market imbalances like the "Uniswap Price Doom Loop," where LPs systematically influence prices through forced rebalancing, by enabling both long and short volatility positions.
 

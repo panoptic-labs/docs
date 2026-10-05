@@ -35,7 +35,7 @@ The top trader in the OP options market during Epoch 5 employed a strategic and 
 
   
 
-This achievement was accomplished with minimal cost, as the trader incurred only $0.05 in streamia, which refers to the funding rate or fee paid for holding the synthetic perp. This low fee underscored the effectiveness of the trader's strategy, highlighting their ability to maximize returns while minimizing costs.
+This achievement was accomplished with minimal cost, as the trader incurred only $0.05 in streamia (streaming premium), which refers to the funding rate or fee paid for holding the synthetic perp. This low fee underscored the effectiveness of the trader's strategy, highlighting their ability to maximize returns while minimizing costs.
 
   
 

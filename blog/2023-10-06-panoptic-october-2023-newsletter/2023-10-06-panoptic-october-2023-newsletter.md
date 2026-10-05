@@ -125,7 +125,7 @@ Despite the current bear market, the conference was teeming with passionate cryp
 Our alpha platform is undergoing rigorous testing on Sepolia, and we're pleased to announce that it has matured sufficiently to be upgraded to beta status soon!
 
 
-Reaching this milestone, our beta launch is set to kick off shorty. This gated launch is designed to refine the Panoptic platform further as participants partake in trading competitions. Those interested in joining our [beta launch](https://panoptic.xyz/docs/gated-launch/launch-roadmap) can sign up at [signup.panoptic.xyz](http://signup.panoptic.xyz).
+Reaching this milestone, our beta launch is set to kick off shorty. This gated launch is designed to refine the Panoptic platform further as participants partake in trading competitions. Those interested in joining our [beta launch](https://panoptic.xyz/blog/panoptic-defi-options-protocol-roadmap) can sign up at [signup.panoptic.xyz](http://signup.panoptic.xyz).
 
 
 ## Research Bites

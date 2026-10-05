@@ -46,7 +46,7 @@ This strategy is like the Ethena perps basis trade, but operates on options mark
 
 The PLP Vault is designed for users who want to earn yield on ETH through a combination of market making and lending. The vault is denominated in WETH and users receive returns in WETH when prices remain relatively stable.
 
-This vault earns yield by supplying ETH to lending markets, while generating additional yield through systematic options market making strategies. This creates a dual-yield strategy: stable base yield from borrowers, enhanced by premium yields.
+This vault earns yield by supplying ETH to lending markets, while generating additional yield through systematic options market making strategies. This creates a dual-yield strategy: stable base yield from borrowers, enhanced by streamia (streaming premium) yields.
 ![](./04.png)
 
 The vault operates similar to how professional options market makers operate, with automated hedging and made accessible onchain. It performs best in environments where implied volatility is elevated relative to realized volatility, markets are choppy, and demand for buying options is strong. The vault may experience drawdowns during periods of volatility.

@@ -4,9 +4,8 @@ slug: timescales
 title: "Timescales"
 tags: [Tutorial, Risk Management, Timescale]
 image: /img/research/timescale-banner.png
-description: "Learn how perpetual options operate on Panoptic without traditional expiry dates, utilizing timescales to estimate duration and premia accumulation based on the option's width and price range."
+description: "Learn how perpetual options operate on Panoptic without traditional expiry dates, utilizing timescales to estimate duration and streamia accumulation based on the option's width and price range."
 ---
-
 ![](./timescales/timescale-banner.png)
 
 <iframe
@@ -36,11 +35,11 @@ Perpetual options, unlike traditional options, do not have expiry dates but oper
 
 ## Perpetual Option Timescales
 
-The timescale of a perpetual option represents the estimated duration over which the option is likely to accrue [premia](/docs/product/streamia). This concept is similar to the width of a LP position in Uniswap V3, where the LP position aims to earn fees over a certain period.
+The timescale of a perpetual option represents the estimated duration over which the option is likely to accrue [streamia (streaming premium)](/docs/product/streamia). This concept is similar to the width of a LP position in Uniswap V3, where the LP position aims to earn fees over a certain period.
 
 ### Common Misconceptions of Timescales
 
-The timescale is not an actual expiry date, nor does it indicate how often the option is rolled. Unlike traditional options, perpetual options do not expire but are continuously rolled every block, allowing them to accumulate streaming premia (streamia). Perpetual options behave like Uniswap LP positions – even if the price moves out of range, you can still expect to earn fees if the price returns within range.
+The timescale is not an actual expiry date, nor does it indicate how often the option is rolled. Unlike traditional options, perpetual options do not expire but are continuously rolled every block, allowing them to accumulate streamia. Perpetual options behave like Uniswap LP positions – even if the price moves out of range, you can still expect to earn fees if the price returns within range.
 
 This introduces new opportunities for traders, such as perpetual [calendar spreads](https://panoptic.xyz/research/essential-options-strategies-to-know#call-calendar-spread-).
 
@@ -96,8 +95,12 @@ Streamia is accumulated when in range. The longer the timescale, the wider the r
 
  | Timescale | Range                        | Streamia                        |
 |-----------|------------------------------|---------------------------------|
-| 1D        | Less likely to stay in range | More premia earned while in range |
+| 1D        | Less likely to stay in range | More streamia earned while in range |
 | 1W        | Average                      | Average                         |
-| 1M        | More likely to stay in range | Less premia earned while in range |
- 
-*Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](https://panoptic.xyz/docs/intro) and head to our [website](https://panoptic.xyz/).*
+| 1M        | More likely to stay in range | Less streamia earned while in range |
+
+import Head from '@theme/MDXComponents/Head';
+
+<Head>
+  <link rel="canonical" href="https://panoptic.xyz/research/timescales-in-panoptic" />
+</Head>

@@ -1,4 +1,8 @@
-# PoolDataLibrary
+---
+sidebar_label: "PoolDataLibrary"
+title: "PoolDataLibrary (V2)"
+---
+# PoolDataLibrary (V2)
 
 > Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
 

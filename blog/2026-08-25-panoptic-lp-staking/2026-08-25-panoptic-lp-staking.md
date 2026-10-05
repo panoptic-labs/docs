@@ -16,7 +16,7 @@ Liquidity providers are the foundation of decentralized markets. They supply the
 
 ** That's why we're launching _Stake Your Uniswap LP_, a new feature on Panoptic for ETH/USDC positions. **
 
-Panoptic is a permissionless options protocol built on top of Uniswap. Instead of replacing Uniswap liquidity, it helps LPs [earn more](/blog/make-uniswap-great-again) through an onchain options market. On Panoptic, LP positions become productive assets that can participate in lending markets and the options market, earning interest from borrowers and premiums from traders while keeping the same underlying liquidity.
+Panoptic is a permissionless options protocol built on top of Uniswap. Instead of replacing Uniswap liquidity, it helps LPs [earn more](/blog/make-uniswap-great-again) through an onchain options market. On Panoptic, LP positions become productive assets that can participate in lending markets and the options market, earning interest from borrowers and streamia (streaming premium) from traders while keeping the same underlying liquidity.
 
 ## Introducing Panoptic’s Stake Your Uniswap LP 
 Uniswap v3 and v4 LPs can stake their existing LP NFTs through Panoptic and earn up to *20% more LP fees* on their ETH/USDC positions, without changing their price range, moving their liquidity, or giving up custody of their position.
@@ -49,7 +49,7 @@ Your liquidity stays in the same pool, with the same token pair and the same pri
 > **An additional benefit: borrow against your LP position.** Once migrated, the LP position trades through Panoptic as an undercollateralized option. This allows LPs to borrow against their position without first withdrawing their underlying liquidity, unlocking additional capital efficiency alongside the potential fee boost.
 
 ## Where Does the Extra Yield Come From?
-Panoptic puts staked LP positions to work inside its options [ecosystem](/blog/panoptic-v2-the-defi-yield-platform). Traders pay premiums to access liquidity for options strategies, creating an additional source of revenue beyond standard swap fees. Those premiums are shared with participating LPs on top of the fees they already earn from Uniswap.
+Panoptic puts staked LP positions to work inside its options [ecosystem](/blog/panoptic-v2-the-defi-yield-platform). Traders pay streamia to access liquidity for options strategies, creating an additional source of revenue beyond standard swap fees. Those streamia are shared with participating LPs on top of the fees they already earn from Uniswap.
 
 ### Eligible LPs Can:
 
@@ -60,7 +60,7 @@ Panoptic puts staked LP positions to work inside its options [ecosystem](/blog/p
 - Earn additional fees on top of swap fees
 - Borrow against their migrated LP position
 
-LP opportunities, with their premium boost relative to the same Uniswap LP position, are displayed on the home page of the Panoptic App:
+LP opportunities, with their streamia boost relative to the same Uniswap LP position, are displayed on the home page of the Panoptic App:
 ![](./03.png)
 
 _Participation is subject to eligibility requirements and campaign terms. The additional returns apply only to qualifying markets (WETH/USDC 5bps v3 pool initially) and does not protect against impermanent loss, changes in asset value, smart contract risk, market risk, or other protocol risks._
@@ -73,3 +73,5 @@ While protocol fees may reduce LP earnings, Panoptic is committed to helping LPs
 If you're providing liquidity on Uniswap today, it's time to put your LP position to [work](https://app.panoptic.xyz/home/ethereum).
 
 *Join our growing community and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](/docs/intro) and head to our [website](https://panoptic.xyz/).*
+
+Follow the [migration guide](/docs/product/uniswap-lps/migrate) for the position-transfer workflow and risks.

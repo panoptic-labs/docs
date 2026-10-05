@@ -24,7 +24,7 @@ Thank you to everyone who participated and helped make this competition a succes
 💀 Worst Trade: genlo.eth 
 ![](./03.png)
 
-📈 Most Streamia Earned: 0x1487...b487
+📈 Most Streamia (streaming premium) Earned: 0x1487...b487
 ![](./04.png)
 
 💸 Most Streamia Paid: 0x4c65...ba8e

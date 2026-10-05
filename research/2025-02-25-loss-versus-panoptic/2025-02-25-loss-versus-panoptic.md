@@ -16,9 +16,9 @@ In certain pools, we’ve seen LVP climb as high as **67%**—meaning an LP posi
 
 ## What Is Panoptic?
 
-Panoptic is an on-chain, perpetual options protocol built on top of Uniswap v3 and v4. It enables LPs to lend or “sell” their Uniswap LP positions to options traders. In return, LPs collect [additional premiums](/docs/product/streamia)—on top of standard swap fees—that reflect traders’ demand to speculate or hedge using calls and puts.
+Panoptic is an on-chain, perpetual options protocol built on top of Uniswap v3 and v4. It enables LPs to lend or “sell” their Uniswap LP positions to options traders. In return, LPs collect [additional streamia (streaming premium)](/docs/product/streamia)—on top of standard swap fees—that reflect traders’ demand to speculate or hedge using calls and puts.
 
-**1. Same position, higher returns:** Panoptic LPs earn everything they would on Uniswap plus additional option premiums.
+**1. Same position, higher returns:** Panoptic LPs earn everything they would on Uniswap plus additional option streamia.
 
 **2. No idle liquidity:** If a portion of your LP is borrowed by an options trader, the protocol ensures you receive at least the Uniswap fees you otherwise would have earned, plus a spread-based bonus from the option buyer. 
 
@@ -32,7 +32,7 @@ Panoptic is an on-chain, perpetual options protocol built on top of Uniswap v3 a
 ### Panoptic’s On-Chain Options Layer
 
 -   **Traditional Uniswap:** You deposit liquidity in a specified price range and earn swap fees when trades occur in that price range.
--   **Panoptic:** Your position is still deployed on Uniswap, but now it’s also available to be “borrowed” by option buyers. If someone wants to buy an option, they effectively borrow your LP token—paying you the Uniswap fees you would have earned plus an additional premium called the **Panoptic spread.**
+-   **Panoptic:** Your position is still deployed on Uniswap, but now it’s also available to be “borrowed” by option buyers. If someone wants to buy an option, they effectively borrow your LP token—paying you the Uniswap fees you would have earned plus an additional streamia called the **Panoptic spread.**
     
 
 ### The “Panoptic Spread”
@@ -96,10 +96,10 @@ The process in which the additional yield driving LVP stems from is described be
     A bullish or bearish trader sees an opportunity to leverage up on an ETH trade. They borrow and short the LP position—effectively purchasing an option.
     
 3.  **LP Earns Extra Fees**  
-    In addition to the usual Uniswap swap fees, the LP collects the option premium. This extra payment can significantly boost yield—resulting in the kind of outperformance we saw in the WETH–USDC example.
+    In addition to the usual Uniswap swap fees, the LP collects the option streamia. This extra payment can significantly boost yield—resulting in the kind of outperformance we saw in the WETH–USDC example.
     
 
-In a typical Uniswap arrangement, that same LP capital would have simply sat at its chosen price range, hoping for enough swaps in-range to generate fees. Now, thanks to the call buyer’s demand, the LP captures **extra** revenue from the option premium.
+In a typical Uniswap arrangement, that same LP capital would have simply sat at its chosen price range, hoping for enough swaps in-range to generate fees. Now, thanks to the call buyer’s demand, the LP captures **extra** revenue from the option streamia.
 
 ----------
 
@@ -107,17 +107,17 @@ In a typical Uniswap arrangement, that same LP capital would have simply sat at 
 
 A subtle but important feature is that Panoptic allows LPs to choose from **bullish, bearish, or delta-neutral positions**—far beyond what’s possible with traditional Uniswap positions:
 
--   **Uniswap:** Every LP position deployed in Uniswap will always lose value if the pool’s price falls. This is because [LP positions are naturally bullish](https://panoptic.xyz/blog/uniswap-lp-equals-options).
+-   **Uniswap:** Every LP position deployed in Uniswap will always lose value if the pool’s price falls. This is because [LP positions are naturally bullish](https://panoptic.xyz/blog/uniswap-options).
 ![](./06.png)
 -  **Panoptic:** LP positions can be deployed as bullish, bearish, or delta-neutral. This is achieved through Panoptic’s built-in lending market, which lets LPs [combine the borrowing and shorting of underlying tokens with their LP position](https://lambert-guillaume.medium.com/how-to-deploy-delta-neutral-liquidity-in-uniswap-or-why-euler-finance-is-a-game-changer-for-lps-1d91efe1e8ac), effectively creating a neutral or bearish LP position.
     
 
-This flexibility means that even in bearish markets, an LP can profit. For example, if ETH’s price drops, a Panoptic LP with a bearish position can earn the same Uniswap fees, pocket the additional options premium, and see the option end up worthless for the buyer—resulting in a net gain.
+This flexibility means that even in bearish markets, an LP can profit. For example, if ETH’s price drops, a Panoptic LP with a bearish position can earn the same Uniswap fees, pocket the additional options streamia, and see the option end up worthless for the buyer—resulting in a net gain.
 
 In the example above, the LP’s bearish position on Panoptic netted $316.10 in total profits.
 
 -   $61 (19%) was from base Uniswap fees
--   $125.20 (40%) was from the additional options premium
+-   $125.20 (40%) was from the additional options streamia
 -   $129.90 (41%) was from the ETH price dropping.
     
 
@@ -128,7 +128,7 @@ In the example above, the LP’s bearish position on Panoptic netted $316.10 in 
 1.  **LVP (Loss vs. Panoptic) is Real**
 	-   Empirical data shows an LVP as high as 67% in certain ranges, meaning Uniswap-only positions can under-earn by a wide margin compared to Panoptic.
 3.  **Extra Fee Income from Options**
-	-   Option premiums + swap fees often exceed what a comparable Uniswap-only position would generate.
+	-   Option streamia + swap fees often exceed what a comparable Uniswap-only position would generate.
 5.  **Flexible Bullish or Bearish Exposure**
 	-   Unlike vanilla Uniswap, Panoptic LPs can choose to be bullish, bearish, or even delta neutral when providing liquidity, reaping profits in different market conditions.
 7.  **A More Complete Market**
@@ -139,7 +139,7 @@ In the example above, the LP’s bearish position on Panoptic netted $316.10 in 
 
 ## Conclusion
 
-If you’ve ever wondered how to amplify your Uniswap LP returns without constantly rebalancing or trying to time the market, Panoptic offers a compelling solution. By monetizing volatility via on-chain options, your liquidity is more actively employed, and you collect both swap fees and option premiums.
+If you’ve ever wondered how to amplify your Uniswap LP returns without constantly rebalancing or trying to time the market, Panoptic offers a compelling solution. By monetizing volatility via on-chain options, your liquidity is more actively employed, and you collect both swap fees and option streamia.
 
 Ultimately, Loss Versus Panoptic is a reminder that liquidity left in a vanilla Uniswap position can miss out on significant income. Whether you expect markets to boom or bust, the flexibility to create bullish or bearish LP positions can turn typical LPing into a powerful, dynamic strategy.
 

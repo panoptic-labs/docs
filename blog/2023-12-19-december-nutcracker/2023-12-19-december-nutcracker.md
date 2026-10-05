@@ -41,7 +41,7 @@ Nice accounts adhere strictly to fair play, involving no botting or external ass
 
 -   Prize 2: [Mfer](https://opensea.io/collection/mfers?tab=items)
     
--   Qualifications: Nice account with highest positive streamia percent for any single-leg short option (can be either a short put or a short call).
+-   Qualifications: Nice account with highest positive streamia (streaming premium) percent for any single-leg short option (can be either a short put or a short call).
     
 
   

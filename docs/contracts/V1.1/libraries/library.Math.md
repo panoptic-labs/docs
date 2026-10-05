@@ -1,4 +1,8 @@
-# Math
+---
+sidebar_label: "Math"
+title: "Math (V1.1)"
+---
+# Math (V1.1)
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.1.x/contracts/libraries/Math.sol)
 
 **Author:**
@@ -838,5 +842,3 @@ function sort(int256[] memory data) internal pure returns (int256[] memory);
 |Name|Type|Description|
 |----|----|-----------|
 |`<none>`|`int256[]`|The sorted array|
-
-

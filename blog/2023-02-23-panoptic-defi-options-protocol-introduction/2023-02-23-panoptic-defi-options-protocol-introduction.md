@@ -1,14 +1,13 @@
 ---
 slug: panoptic-defi-options-protocol-introduction
-title: "Panoptic 101: An Introduction to the DeFi Options Protocol" 
+title: "Panoptic V1: The Original Protocol Exposition"
 tags: [LPs, Options Traders, Overview, Explainer, Introduction]
 image: /img/banners/panoptic-banner.jpg
 description: "Our most detailed exposition on the Panoptic protocol to date"
 ---
 ![panoptic-banner](./panoptic-banner.jpg)
 
-In this post, we aim to explain the reason for building Panoptic. We do so in great detail and cover exactly how it works with examples.
-Let’s get started.
+This 2023 exposition documents the original Panoptic V1 design and its historical examples and parameters. For the current protocol, start with [What is Panoptic?](/docs/intro) and the [V2 architecture overview](/docs/panoptic-protocol/overview).
 
 <!--truncate-->
 
@@ -67,7 +66,6 @@ To crystallize the idea, let us look at an example through an ETH-DAI pool, i.e.
 
 In contrast, if an LP supplies the quote asset at a one-tick range, the position will comprise 100% of the quote asset when the spot price is above the range. When the spot price decreases below the chosen tick, the quote asset is fully swapped against the base asset. This replicates a cash-secured put payoff on the base asset. It is noteworthy that Uniswap does not allow one-sided base asset liquidity to be provided at a range lower than the spot price because, as the spot price drops, the liquidity pool requires more of the quote asset instead of the base asset. The same logic prevents an LP from providing one-sided liquidity for the quote asset at a range above the spot price.
 
-
 ![1_LP-range-order](./1_LP-range-order.png)
 *LP range order payoff functions, excluding trading fees, as the range's width decreases. Here, one-sided liquidity for ETH is provided*
 
@@ -81,7 +79,7 @@ In short, the price depends on the current spot price, the time to expiration, a
 
 > *These fees can be related to option premiums.*
 
-As stated earlier, LPs generate fees when the spot price moves into the range that they have chosen. When the range’s width is a single tick, it can be assumed that the price will not dwell in the single-tick range for long, and therefore, premiums are effectively based on two factors:
+As stated earlier, LPs generate fees when the spot price moves into the range that they have chosen. When the range’s width is a single tick, it can be assumed that the price will not dwell in the single-tick range for long, and therefore, LP fees are effectively based on two factors:
 
 - The number of times the price crosses the single tick
 
@@ -90,7 +88,7 @@ As stated earlier, LPs generate fees when the spot price moves into the range th
 ![2_premiums-earned](./2_premiums-earned.png)
 _Premiums earned on an LP covered call position with a single-tick range at $2,500_
 
-Put differently, there is no upper limit on the amount of premium one can collect through a Uniswap v3 LP position.
+Put differently, there is no upper limit on the amount of streamia (streaming premium) one can collect through a Uniswap v3 LP position.
 
 As such, all Black–Scholes models break down since the concept of expiration does not exist.
 
@@ -114,7 +112,7 @@ Inaccurate pricing introduces toxic flow, where takers, who can more precisely p
 
 In contrast, because Panoptic’s options are built on top of LP tokens, the pricing is path dependent, and there is no need for Black–Scholes models. Another inefficiency with protocols that utilize Black–Scholes pricing is their reliance on _oracles_.[ Oracles are prone to price manipulation](https://medium.com/@jesperkristensen58/panoptic-elevating-defi-and-removing-oracles-5b31df1541dc) and are not suited for low-liquidity, long-tail tokens. Panoptic’s design enables it to accurately price options on any tokens with Uniswap v3 liquidity, completely circumventing the need for oracles.
 
-Panoptic’s ecosystem comprises three main participants: liquidity providers whose capital is utilized by option sellers and who receive a yield from lending out their capital; option sellers who deposit collateral and use it to borrow capital from LPs to create short options by providing concentrated liquidity to Uniswap v3 pools; and option buyers who deposit collateral to pay for sellers’ potential premiums and who remove the capital deployed to Uniswap v3 pools by option writers, creating long positions. It is good to note that a specific option must be written through Panoptic by a seller before a long position can be opened.
+Panoptic’s ecosystem comprises three main participants: liquidity providers whose capital is utilized by option sellers and who receive a yield from lending out their capital; option sellers who deposit collateral and use it to borrow capital from LPs to create short options by providing concentrated liquidity to Uniswap v3 pools; and option buyers who deposit collateral to pay for sellers’ potential streamia and who remove the capital deployed to Uniswap v3 pools by option writers, creating long positions. It is good to note that a specific option must be written through Panoptic by a seller before a long position can be opened.
 
 However, since positions are fungible, the size of a long position does not have to match the size of a sold option. Instead, the option can be bought in fractions. If a trader wants to buy an option that is not yet supplied, they can create a buy signal by sending a transaction with a low base fee into the mempool. This design will further be built out in the future. Then, by bundling the buyer’s order with their transaction, an option seller may increase the returns for themselves and Panoptic LPs.
 
@@ -127,7 +125,7 @@ By separating LPs and option sellers, Panoptic creates roles with clearly define
 
 The protocol additionally ensures that LP and seller positions are liquid through two mechanisms:
 
-- Firstly, the more available liquidity a buyer removes, the more premiums they pay. This disincentivizes a buyer from draining a large fraction of the accessible capital.
+- Firstly, the more available liquidity a buyer removes, the more streamia they pay. This disincentivizes a buyer from draining a large fraction of the accessible capital.
 
 - Secondly, to release liquidity, any user can force a long option position far from its range to be exercised or closed against a small payment. When an option is far from its range, it does not generate fees for the seller. This also means that the option is far OTM or ITM; thus, the buyer gains very little from the option itself by holding it further. 
 
@@ -135,7 +133,7 @@ In contrast to Panoptic, option AMMs and DOVs bundle LPing and option selling to
 
 Each role across Panoptic’s ecosystem is distinctly incentivized to attract users and capital to the protocol. LPs are offered a straightforward process for earning low-risk, passive yield. Option sellers gain access to inexpensive leverage, and the UX is simplified compared to providing liquidity on Uniswap.
 
-Furthermore, in addition to earning premiums on the written options, comparable to Uniswap LP fees, sellers also accumulate yield on their collateral. Option buyers can also easily leverage their positions and pay the same premiums as they would for a Black–Scholes priced option on average, but their positions are much more flexible.
+Furthermore, in addition to earning streamia on the written options, comparable to Uniswap LP fees, sellers also accumulate yield on their collateral. Option buyers can also easily leverage their positions and pay the same streamia as they would for a Black–Scholes priced option on average, but their positions are much more flexible.
 
 In other words, Panoptic options provide more utility to buyers at the same price as traditional alternatives.
 
@@ -178,7 +176,7 @@ Another advantage of perpetual options over the traditional alternative is the a
 
 $\frac{K}{1+W} \text{ and } K\cdot(1+W)$
 
-The size of a Panoptic option’s premium is based on the spot price’s proximity to the range of the option, meaning that the price of a Panoptic option is path-dependent.
+The size of a Panoptic option’s streamia is based on the spot price’s proximity to the range of the option, meaning that the price of a Panoptic option is path-dependent.
 
 When the range has a width of a single tick, the option’s price increases every time the spot price passes the range. In comparison, when the range’s width increases, the option’s price increases as the spot price is inside the range.
 
@@ -200,29 +198,29 @@ _The relationship between a Panoptic option’s width and a traditional option�
 
 As mentioned earlier, options built on top of LP tokens do not have an expiry date, so their prices cannot be derived through a conventional Black–Scholes model.
 
-Consequently, Panoptic has developed a novel, oracle-free pricing concept called the *streaming premium*.
+Consequently, Panoptic has developed a novel, oracle-free pricing concept called the *streamia*.
 
-The price of a Panoptic option starts at zero and grows at each block based on the spot price’s proximity to the range of the option. In other words, the option’s price behaves similarly to how a Uniswap LP earns fees. The streaming premium formally corresponds to continuously integrating an option’s theta, the change in an option’s value with respect to time, i.e., time value.
+The price of a Panoptic option starts at zero and grows at each block based on the spot price’s proximity to the range of the option. In other words, the option’s price behaves similarly to how a Uniswap LP earns fees. The streamia formally corresponds to continuously integrating an option’s theta, the change in an option’s value with respect to time, i.e., time value.
 
-While the Black–Scholes expression for theta follows a Gaussian distribution, the streaming premium model utilizes a rectangular function between the upper and lower bounds (the option’s range). Approximating the Gaussian distribution with the rectangular function enables the derivation of an “option-like” IV through earned fees.
+While the Black–Scholes expression for theta follows a Gaussian distribution, the streamia model utilizes a rectangular function between the upper and lower bounds (the option’s range). Approximating the Gaussian distribution with the rectangular function enables the derivation of an “option-like” IV through earned fees.
 
 Assuming a zero risk-free interest rate and that the underlying spot price is not constant, the price of a call option can be derived by integrating theta over the underlying’s stochastic price path (any variable that uncertainly changes over time follows a stochastic process, here, the price).
 
 To crystallize this idea — since we know the change in an option’s value at a certain time in the past, which ultimately derives from the spot price, integrating over the path of the spot price tells us the net amount that the option’s value has changed over the specific price path.
 
-Another way to think of the streaming premium is as a series of continuously expiring options that accumulate a premium at every time step, where the premium depends on the options’ theta. When the spot price is far away from the strike price (the option’s range), theta is small (zero). This is because the option is either worthless or “maximally valuable,” depending on whether the option is a call/put and whether the spot price is below/above the strike price. The impact that time has on the option’s value is therefore minimal and according to the streaming premium, no fees are accumulated. The contrary is true when the strike price is within the option’s range.
+Another way to think of the streamia is as a series of continuously expiring options that accumulate a streamia at every time step, where the streamia depends on the options’ theta. When the spot price is far away from the strike price (the option’s range), theta is small (zero). This is because the option is either worthless or “maximally valuable,” depending on whether the option is a call/put and whether the spot price is below/above the strike price. The impact that time has on the option’s value is therefore minimal and according to the streamia, no fees are accumulated. The contrary is true when the strike price is within the option’s range.
 
 As a Panoptic option’s price depends on the time the spot price is within the option’s range, it is logical that a few extremal outcomes may emerge:
 
 - First, if the spot price never enters the option’s price range, the option will cost nothing.
-- Second, if the spot price is within the option’s range for an extended period of time, the option premium will increase and may become several times larger than the Black–Scholes premium.
-- Interestingly, the average value of a Panoptic option converges to the Black–Scholes price when estimated through a Monte Carlo simulation based on Geometric Brownian Motion (type of stochastic process) and a holding period/days to expiration of 7 days is utilized. However, the price distribution of a Panoptic option — a Panoption — is quite wide, which makes sense since the option premium can be anything between zero and extremely high.
+- Second, if the spot price is within the option’s range for an extended period of time, the accrued streamia will increase and may become several times larger than the Black–Scholes premium.
+- Interestingly, the average value of a Panoptic option converges to the Black–Scholes price when estimated through a Monte Carlo simulation based on Geometric Brownian Motion (type of stochastic process) and a holding period/days to expiration of 7 days is utilized. However, the price distribution of a Panoptic option — a Panoption — is quite wide, which makes sense since the option streamia can be anything between zero and extremely high.
 
-The streaming premium model is appealing from a practical perspective. It enables new financial products to be built and should change the way traders think about selling options.
+The streamia model is appealing from a practical perspective. It enables new financial products to be built and should change the way traders think about selling options.
 
 Instead of betting on IV being overpriced by the market, a Panoption writer is forecasting volatility to stay in a certain range. Even though the options are perpetual, rational sellers will optimize the frequency at which they rebalance their positions to maximize their path-dependent fees.
 
-If done accurately, as mentioned earlier, the premiums from selling a Panoptic option may vastly exceed those from a Black–Scholes option.
+If done accurately, as mentioned earlier, the streamia from selling a Panoptic option may vastly exceed those from a Black–Scholes option.
 
 ## **Improving the return on investment through capital efficiency**
 
@@ -283,4 +281,3 @@ Join the growing community of Panoptians and be the first to hear our latest upd
 Thanks for reading!
 
 > This post was written in collaboration with [Brick](https://twitter.com/0x___Brick) — follow him and check out his [substack here](https://thebrick.substack.com/).
-

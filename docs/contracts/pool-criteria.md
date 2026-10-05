@@ -9,7 +9,7 @@ Panoptic Pools can be deployed permissionlessly by anyone, but pools listed on o
 ## Tokens
 
 ---
-Pools with one or more tokens not on the [Uniswap Labs Default List](https://tokenlists.org/token-list?url=https://tokens.uniswap.org) or the [Uniswap Labs Extended List](https://tokenlists.org/token-list?url=https://tokens.uniswap.org) are not officially supported and will display warnings to [lenders](/docs/panoptic-protocol/protocol-roles#passive-liquidity-providers-plps) and traders.
+Pools with one or more tokens not on the [Uniswap Labs Default List](https://tokenlists.org/token-list?url=https://tokens.uniswap.org) or the [Uniswap Labs Extended List](https://tokenlists.org/token-list?url=https://tokens.uniswap.org) are not officially supported and will display warnings to [lenders](/docs/panoptic-protocol/protocol-roles#lenders-passive-liquidity-providers-plps) and traders.
 
 On the gRHO platform, warnings will be displayed according to the above requirements, with the additional restriction that pools with tokens on the [Uniswap Unsupported List](https://unsupportedtokens.uniswap.org/) (which includes fraudulent tokens) will be delisted from the interface entirely.
 
@@ -55,7 +55,7 @@ With a few exceptions, hooks containing these permissions are unlikely to be sup
 For Panoptic V1, instances deployed on Uniswap pools with less than `0.2 ETH` in TVL will display warnings to depositors and traders. 
 For a token to count toward TVL (unless it is `WETH` or native `ETH`), it must be paired with `WETH`, native `ETH`, `USDC`, `USDT`, or `DAI` in at least one pool containing at least `10 ETH` in value of the other token.
 
-Panoptic V1 instances where unused [lending](/docs/panoptic-protocol/protocol-roles#passive-liquidity-providers-plps) liquidity exceeds the underlying Uniswap V3 pool's TVL are discouraged. 
+Panoptic V1 instances where unused [lending](/docs/panoptic-protocol/protocol-roles#lenders-passive-liquidity-providers-plps) liquidity exceeds the underlying Uniswap V3 pool's TVL are discouraged.
 Warnings will be displayed on deposits and trades once a Panoptic pool's unused PLP liquidity exceed `25%` of the underlying pool's TVL.
 
 Note that liquidity added to Uniswap through Panoptic will count towards Uniswap's TVL, but not towards Panoptic's TVL.

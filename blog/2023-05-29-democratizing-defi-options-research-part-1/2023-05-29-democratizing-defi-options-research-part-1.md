@@ -103,7 +103,7 @@ If you want to run a .ipynb file, read this step-by-step guide on [how to run a 
 
 **Upcoming Articles in the Series**
 
-In our next posts, we'll take an in-depth look at [implied volatility on Uniswap](https://panoptic.xyz/research/democratizing-defi-options-research-implied-volatility) followed by a deep dive into the [Panoption backtester](https://panoptic.xyz/research/democratizing-defi-options-research-backtest).
+In our next posts, we'll take an in-depth look at [implied volatility on Uniswap](https://panoptic.xyz/blog/democratizing-defi-options-research-implied-volatility) followed by a deep dive into the [Panoption backtester](https://panoptic.xyz/blog/democratizing-defi-options-research-backtest).
 
 Join the growing community of Panoptians and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](https://panoptic.xyz/docs/intro) and head to our [website](https://panoptic.xyz/).  
 

@@ -161,7 +161,7 @@ Continuing running through the notebook cells, including this `_plot_summed_rets
 
 ![img-1-backtest.png](./img-1-backtest.png)
 
-From here, you can continue running through the notebook to gain deeper insight into the premia, returns, performance metrics, and subsample analysis of each strategy.
+From here, you can continue running through the notebook to gain deeper insight into the streamia (streaming premium), returns, performance metrics, and subsample analysis of each strategy.
 
 Be sure to play around with the strategy builder and create your own strategies!
 

@@ -10,7 +10,7 @@ Vault utilization affects [borrow rates](./09-interest-rate-model.md), [collater
 
 ## Chunk utilization
 
-Options buyers remove liquidity from a chunk supplied by sellers. The position manager tracks removed and remaining liquidity for premium accounting. `MAX_SPREAD` constrains their ratio; its raw scale and observed value are on the [parameter page](/docs/contracts/parameters).
+Options buyers remove liquidity from a chunk supplied by sellers. The position manager tracks removed and remaining liquidity for streamia (streaming premium) accounting. `MAX_SPREAD` constrains their ratio; its raw scale and observed value are on the [parameter page](/docs/contracts/parameters).
 
 A caller's per-position spread limit can be tighter than the protocol limit. Available chunk liquidity and collateral-vault liquidity are separate execution constraints.
 

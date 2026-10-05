@@ -45,7 +45,7 @@ Congratulations to these traders who showcased their incredible talent!
 
 *Note: The top Joe traders are in the red because both Joe and Avax prices saw an average -13% drop (in USD) over the contest period.*
 
-Epoch 4 saw a lot of price action in the crypto markets. Check out our [analysis](https://x.com/Panoptic_xyz/status/1749946671646273650?s=20) of how the top traders used puts to go short and straddles to collect juicy streamia (streaming premia) fees in the trading arena.
+Epoch 4 saw a lot of price action in the crypto markets. Check out our [analysis](https://x.com/Panoptic_xyz/status/1749946671646273650?s=20) of how the top traders used puts to go short and straddles to collect juicy streamia (streaming premium) fees in the trading arena.
     
 
 Winners, claim your POAP [here](https://poap.delivery/panoptic-epoch-4-top-trader)! Additionally, the first 100 Epoch 4 participants can grab their Epoch 4 POAP [here](https://poap.delivery/panoptic-epoch-4). 

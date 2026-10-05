@@ -72,7 +72,7 @@ Trading options carries both benefits and risks. Let's explore the pros and cons
 
 ### Benefits and risks of trading ATM options
 
-For buyers: You gain exposure to the underlying asset with limited downside risk (capped loss), but you pay [streamia](https://panoptic.xyz/docs/product/streamia) for this privilege.
+For buyers: You gain exposure to the underlying asset with limited downside risk (capped loss), but you pay [streamia (streaming premium)](https://panoptic.xyz/docs/product/streamia) for this privilege.
 
   
 

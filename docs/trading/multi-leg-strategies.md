@@ -78,6 +78,8 @@ Another type of spread is the diagonal spread (also called the "Poor Man's Cover
 While its payoff is similar to that of a covered call, its capital requirements are much lower. This makes the diagonal spread a capital-efficient version of the covered call.
 
 
+<span id="synthetic-positions" />
+
 ## Synthetic Perps
 A synthetic position is a trading strategy that involves creating a position that mimics the risk/reward profile of another position. Typically, this results in higher capital efficiency, as you are exposed to the profit profiles of some position without actually holding it. On Panoptic, you can use perpetual options to create [synthetic perpetual futures (perps)](/research/introduction-synthetic-perps).
 

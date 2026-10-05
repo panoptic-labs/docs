@@ -1,4 +1,8 @@
-# ERC1155
+---
+sidebar_label: "ERC1155"
+title: "ERC1155 (V1.1)"
+---
+# ERC1155 (V1.1)
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.1.x/contracts/tokens/ERC1155Minimal.sol)
 
 **Authors:**
@@ -252,4 +256,3 @@ Emitted when an attempt is made to initiate a transfer to a contract recipient t
 ```solidity
 error UnsafeRecipient();
 ```
-

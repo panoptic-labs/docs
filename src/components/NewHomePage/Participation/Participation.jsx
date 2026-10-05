@@ -128,7 +128,7 @@ const VaultFlow = () => (
       <div className="evidence-flow-step">
         <span className="evidence-flow-num">03</span>
         <span className="evidence-flow-text">
-          Premia accrue to the vault; the curator earns a performance fee only on gains.
+          Streamia (streaming premium) accrues to the vault; the curator earns a performance fee only on gains.
         </span>
       </div>
     </div>
@@ -146,10 +146,10 @@ export default function Participation() {
         id="liquidity-providers"
         eyebrow="For liquidity providers"
         title="Earn 20%+ more fees on the liquidity you already have."
-        description="Migrate an existing Uniswap v3 or v4 position and keep the range you already chose. Your liquidity keeps earning trading fees, and now also earns premia from traders who use it to open options."
+        description="Migrate an existing Uniswap v3 or v4 position and keep the range you already chose. Your liquidity keeps earning trading fees, and now also earns streamia (streaming premium) from traders who use it to open options."
         points={[
           "Same pool, same range, same market exposure",
-          "Trading fees plus streaming premia, not one or the other",
+          "Trading fees plus streamia, not one or the other",
           "Migrate and withdraw permissionlessly — always non-custodial",
         ]}
         ctaLabel="Migrate your position"
@@ -165,7 +165,7 @@ export default function Participation() {
         description="Take a view on volatility without rolling positions or hunting for a counterparty. Pricing comes from the AMM itself, so any pair with Uniswap liquidity is a market you can trade."
         points={[
           "No expiry dates — hold a position as long as your thesis lasts",
-          "Streaming premia instead of a large upfront debit",
+          "Streamia (streaming premium) instead of a large upfront debit",
           "Up to 10× leverage with portfolio-aware margining",
         ]}
         ctaLabel="Start trading"

@@ -23,7 +23,7 @@ Jesper Kristensen, our COO, gave a presentation that ended with the first-ever l
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Dt5AdCNavjs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-This presentation came less than a year after our CEO, Guillaume Lambert, gave a [talk](https://panoptic.xyz/docs/faq/ask-the-founder#eth-denver-2022---riding-the-unicorn-uniswap-v3-as-a-perpetual-option-primitive) at ETH Denver 2022 on the initial idea underlying Panoptic.
+This presentation came less than a year after our CEO, Guillaume Lambert, gave a [talk](https://panoptic.xyz/docs/faq/media#eth-denver-2022---riding-the-unicorn-uniswap-v3-as-a-perpetual-option-primitive) at ETH Denver 2022 on the initial idea underlying Panoptic.
 
 In the time between presentations, we have achieved a number of significant milestones. These include successfully closing our seed round, building a highly competent team, and maintaining a laser-like focus on BUIDLing (building and contributing to the blockchain and cryptocurrency ecosystem) — resulting in a working model of our protocol.
 
@@ -67,7 +67,7 @@ Panoptic holds a unique position in the industry since it solves the critical li
 
 ### March 3
 
-On our fourth day at the conference, we went to see our good friends at Coinbase. Their Ventures arm participated in our [Seed Round](https://panoptic.xyz/blog/defi-options-protocol-seed-round), and we are partnering with them for their Base launch:
+On our fourth day at the conference, we went to see our good friends at Coinbase. Their Ventures arm participated in our [Seed Round](https://panoptic.xyz/blog/defi-options-protocol-safe-round), and we are partnering with them for their Base launch:
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">We&#39;re excited to be part of the <a href="https://twitter.com/hashtag/BuildOnBase?src=hash&amp;ref_src=twsrc%5Etfw">#BuildOnBase</a> DeFi ecosystem! <a href="https://t.co/qrgnb2TFV9">https://t.co/qrgnb2TFV9</a></p>&mdash; Panoptic (@Panoptic_xyz) <a href="https://twitter.com/Panoptic_xyz/status/1632428712397516802?ref_src=twsrc%5Etfw">March 5, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 

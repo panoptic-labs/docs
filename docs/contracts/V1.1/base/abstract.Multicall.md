@@ -1,4 +1,8 @@
-# Multicall
+---
+sidebar_label: "Multicall"
+title: "Multicall (V1.1)"
+---
+# Multicall (V1.1)
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.1.x/contracts/base/Multicall.sol)
 
 **Author:**
@@ -29,5 +33,3 @@ function multicall(bytes[] calldata data) public returns (bytes[] memory results
 |Name|Type|Description|
 |----|----|-----------|
 |`results`|`bytes[]`|The data returned by each call|
-
-

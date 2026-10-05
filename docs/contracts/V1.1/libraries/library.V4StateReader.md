@@ -1,4 +1,8 @@
-# V4StateReader
+---
+sidebar_label: "V4StateReader"
+title: "V4StateReader (V1.1)"
+---
+# V4StateReader (V1.1)
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.1.x/contracts/libraries/V4StateReader.sol)
 
 **Author:**
@@ -137,5 +141,3 @@ function getFeeGrowthInsideLast(IPoolManager manager, PoolId poolId, bytes32 pos
 |----|----|-----------|
 |`feeGrowthInside0LastX128`|`uint256`|The fee growth inside the position for currency0|
 |`feeGrowthInside1LastX128`|`uint256`|The fee growth inside the position for currency1|
-
-

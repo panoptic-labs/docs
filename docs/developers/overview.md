@@ -40,7 +40,7 @@ The [Panoptic hedger bot](https://github.com/panoptic-labs/panoptic-hedger-bot#r
 
 ## Understand the instruments
 
-Panoptic options have no scheduled expiry and use [streaming premia](../product/streamia). Integrations need to account for ongoing premia, borrowing interest where applicable, trading commissions, and collateral requirements. Start with the [protocol introduction](../intro) and [risk overview](../panoptic-protocol/risks).
+Panoptic options have no scheduled expiry and use [streamia (streaming premium)](../product/streamia). Integrations need to account for ongoing streamia, borrowing interest where applicable, trading commissions, and collateral requirements. Start with the [protocol introduction](../intro) and [risk overview](../panoptic-protocol/risks).
 
 **Panoptic V2** is the protocol version. **Uniswap v3/v4** identifies the underlying AMM. A Panoptic V2 pool can use either AMM; V1 and V1.1 contract interfaces are not interchangeable with V2.
 

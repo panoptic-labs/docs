@@ -27,7 +27,7 @@ Panoptic is built on [perpetual options](https://panoptic.xyz/docs/trading/perpe
 Because liquidity isn't split across maturities, every order draws on the same shared pool of capital.
 Hence, instead of navigating options chains and managing rolls, traders simply specify the options they want and post the order onchain.
 
-Before posting an order, users specify the maximum premium they're willing to pay over realized volatility, expressed as a multiplier on the underlying Uniswap LP fees. 
+Before posting an order, users specify the maximum streamia (streaming premium) they're willing to pay over realized volatility, expressed as a multiplier on the underlying Uniswap LP fees. 
 This multiplier acts as the user's limit on implied volatility: a higher multiplier means the user is willing to pay more over the lifetime of that option, increasing the likelihood that liquidity providers will choose to fill the order, whereas a lower multiplier has a more competitive pricing but may result in fewer sellers willing to fill.
 
 ## The RFQ Flow
@@ -36,11 +36,11 @@ The user specifies their desired exposure.
 
 ![](./01.png)
 
-The user selects the highest premium multiplier they are willing to pay.
+The user selects the highest streamia multiplier they are willing to pay.
 
 ![](./02.png)
 
-The user posts a buy order, and the RFQ is published to the billboard with the user's requested exposure and maximum acceptable premium.
+The user posts a buy order, and the RFQ is published to the billboard with the user's requested exposure and maximum acceptable streamia.
 
 ![](./03.png)
 

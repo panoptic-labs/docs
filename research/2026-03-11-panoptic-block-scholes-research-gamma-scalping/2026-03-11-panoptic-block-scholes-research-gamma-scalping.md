@@ -1,18 +1,17 @@
 ---
 slug: panoptic-block-scholes-research-gamma-scalping
-title: "Perpetual Options — A Block Scholes Research Report (Part II)"
+title: "Onchain Gamma Scalping Backtests — Block Scholes Part II"
 tags: [Gamma, AMM, LP, RV, IV]
 image: /img/research/panoptic-block-scholes-gamma-scalping.png
 description: "The combination of short LP positions and continuous delta-hedging permits Panoptic-native traders to scalp gamma, capture a unique risk premium, and bridge the onchain convexity gap."
 ---
-
 ![](./panoptic-block-scholes-gamma-scalping.png)
 
 ## Panoptic unlocks long gamma positions onchain
 
-Inherent deficiencies with liquidity provisioning (LP) on Automated Market Makers (AMMs), such as impermanent loss, are well-known to DeFi traders, despite not being recognized for the short optionality positions that they are. While many mechanisms have attempted to address such issues, Panoptic adopts a radically different and much more intuitive approach: enabling traders to go long on optionality in an environment where this trade would otherwise be impossible.
+This Block Scholes Part II report tests onchain gamma scalping against Uniswap LP fee income using 2024–2025 simulations, multiple assets and fee tiers. It examines when fees compensate for short convexity and how intra-block trading limits the comparison. For the strategy definitions, see [gamma scalping](/research/gamma-scalping) and [reverse gamma scalping](/research/reverse-gamma-scalping).
 
-In the first [article](https://www.blockscholes.com/research/block-scholes-x-panoptic-perpetual-option) of this report series, we illustrated that Panoptions are structured as exotic options and present opportunities to capitalize on inefficiencies within AMM market microstructure. The contents of this report will be focused on empirically validating those opportunities – how the streaming premia (streamia) paid for Panoptions is often underpriced relative to an illustrative simulation of the profit-&-loss (PnL) of scalping the gamma of a long optionality/convexity position.
+In the first [article](https://www.blockscholes.com/research/block-scholes-x-panoptic-perpetual-option) of this report series, we illustrated that Panoptions are structured as exotic options and present opportunities to capitalize on inefficiencies within AMM market microstructure. The contents of this report will be focused on empirically validating those opportunities – how the streamia (streaming premium) paid for Panoptions is often underpriced relative to an illustrative simulation of the profit-&-loss (PnL) of scalping the gamma of a long optionality/convexity position.
 
 Uniswap functions as an incomplete options market by design, allowing a large supply of short optionality via liquidity provisioning without an easy way for traders to take exposure in the opposite direction. The resulting oversupply of short optionality positions leads to underpricing Uniswap LP positions relative to their exposure to realized volatility. In this report, we will pinpoint exactly how and why these incomplete market inefficiencies can be exploited through gamma scalping on Panoptic.
 
@@ -26,12 +25,10 @@ This means that a “delta-hedged” Uniswap LP position gives exposure to two c
 
 However, there is no reason to believe that the design of the AMM’s fee structure should match the reverse gamma scalping rate. The amount that an LP stands to collect from an AMM pool over any period is dependent on:
 
-  
-
 -   the volume traded in the pool (Uniswap lists pools for most token pairs in 1bp, 5bps, and 30bps fee tiers)
-    
+
 -   the liquidity deposited by other users (who are allocated shares of the total fees collected by the pool proportional to the size and effectiveness of their LP position)
-    
+
 -   The nature of flow seen by the pool (retail price-takers tend to adjust the AMM price with more volatility and volume than price arbitrageurs).
 
 The only common driver between the Uniswap trading fees and the cost to maintain a dynamic delta hedge is volume, and even that link is only indirect via its relationship to volatility. In fact, as we will show, there are many cases where the rate paid to an LP is drastically lower than the cost to maintain a delta-hedged position. For example, fees paid to LPs of the ETH-USDC 30bps Uniswap pool were up to 18% less than the cost of gamma-scalping their delta exposure from January 2024 to December 2025.

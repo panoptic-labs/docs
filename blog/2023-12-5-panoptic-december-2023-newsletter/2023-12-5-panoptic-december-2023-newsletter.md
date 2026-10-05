@@ -35,13 +35,13 @@ Discover the future of trading with Panoptic, your gateway to perpetual options 
 The competition ended on November 20, and the [Epoch 2 leaderboard](https://beta2.panoptic.xyz/leaderboard?tokenId=0x4c36388be6f416a2&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz--7DQcEIkGN2cQgcvwtWsIjdZnbMzSoKefB2N3PaZ_C72YmpLuxVD4iW8oOR-bsfWFvsEsf) displays the top performers. The best trade in our recent competition was a well-executed [bull put spread](https://panoptic.xyz/research/essential-options-strategies-to-know?utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz--7DQcEIkGN2cQgcvwtWsIjdZnbMzSoKefB2N3PaZ_C72YmpLuxVD4iW8oOR-bsfWFvsEsf) on ETH, achieving a 36% profit. This strategy involved selling a put at the $2,048 strike and buying at the $2,043 strike. 
 
  
-The position maximized profits primarily through ETH's price appreciation while incurring minimal streamia on the long leg. The trader's success was amplified by Panoptic's capital-efficient dynamics, allowing for higher leverage (approximately 4x). This strategic approach not only capitalized on market movements but also highlighted the advantages of Panoptic's unique leverage and pricing features.
+The position maximized profits primarily through ETH's price appreciation while incurring minimal streamia (streaming premium) on the long leg. The trader's success was amplified by Panoptic's capital-efficient dynamics, allowing for higher leverage (approximately 4x). This strategic approach not only capitalized on market movements but also highlighted the advantages of Panoptic's unique leverage and pricing features.
 
 
 ![](./epoch-2-top-trade.png)
 
 
-Another notable strategy was a [long synthetic perp position](https://panoptic.xyz/docs/trading/multi-leg-strategies?utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz--7DQcEIkGN2cQgcvwtWsIjdZnbMzSoKefB2N3PaZ_C72YmpLuxVD4iW8oOR-bsfWFvsEsf#synthetic-positions), securing a 14% profit. This was executed by trading a $1,886 strike call and put option, demonstrating another effective use of Panoptic’s platform to bet on large directional moves. 
+Another notable strategy was a [long synthetic perp position](https://panoptic.xyz/docs/trading/multi-leg-strategies?utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz--7DQcEIkGN2cQgcvwtWsIjdZnbMzSoKefB2N3PaZ_C72YmpLuxVD4iW8oOR-bsfWFvsEsf#synthetic-perps), securing a 14% profit. This was executed by trading a $1,886 strike call and put option, demonstrating another effective use of Panoptic’s platform to bet on large directional moves.
 
 
 Congratulations to our top traders and a big thank you to all participants for making Epoch 2 a success! 
@@ -104,7 +104,7 @@ The burgeoning interest in BTC options, evident from large block trades and bull
 ### Shallow Dive | How Does Streamia Work on Panoptic?
 
 
-Streamia, pioneered by Panoptic, marks a transformative leap in DeFi options pricing, uniquely blending streaming payments with premium pricing to manage perpetual options. This innovation deviates from traditional pricing models like the Black-Scholes Model (BSM) which relies on fixed premiums determined by factors such as asset volatility and strike price. In contrast, streamia introduces a dynamic, ongoing fee accumulation system, aligning seamlessly with the perpetual nature of the options it handles.
+Streamia, pioneered by Panoptic, marks a transformative leap in DeFi options pricing, uniquely blending streaming payments with streamia pricing to manage perpetual options. This innovation deviates from traditional pricing models like the Black-Scholes Model (BSM) which relies on fixed streamia determined by factors such as asset volatility and strike price. In contrast, streamia introduces a dynamic, ongoing fee accumulation system, aligning seamlessly with the perpetual nature of the options it handles.
 
 
 At the core of streamia's functionality is the concept of 'rangeness' – categorizing options as 'In Range' (IR) or 'Out of Range' (OOR). This classification is analogous to traditional 'near the money' and 'far the money' terms but is specifically adapted for Panoptic's perpetual options.
@@ -116,7 +116,7 @@ Fees, or 'streamia', start accumulating when an option becomes IR, mirroring sce
 ![](./streamia-graph.webp)
 
 
-For more information, check out our previous blog post on [streamia pricing](https://panoptic.xyz/blog/streamia-defi-native-options-pricing). 
+For more information, check out our previous blog post on [streamia pricing](https://panoptic.xyz/docs/product/streamia).
 
 
 ### Streamia vs. BSM

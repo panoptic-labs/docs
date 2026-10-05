@@ -10,6 +10,6 @@ The [RiskEngine reference](/docs/contracts/V2/RiskEngine/contract.RiskEngine) do
 
 ## Evaluate the complete portfolio
 
-Calculate requirements in token units before valuation. Mixed-asset frames can require conversion even when two legs appear to share a strike or notional. Evaluate both token0/token1 orderings, both surplus directions, and the account's other positions and premium balances.
+Calculate requirements in token units before valuation. Mixed-asset frames can require conversion even when two legs appear to share a strike or notional. Evaluate both token0/token1 orderings, both surplus directions, and the account's other positions and streamia (streaming premium) balances.
 
 Risk partnering does not remove account-level solvency checks, interest, mint buffers, or safe-mode restrictions. Supply the full position list to simulation and compare the resulting account state, not just the sum of individual leg estimates.

@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 ## Who should use Panoptic?
 
 Options are one of the most traded instruments in traditional finance.
-They can be used to [hedge](/research/hedge-with-panoptic-options) a portfolio, speculate on the value of an asset, create [synthetic positions](/docs/trading/multi-leg-strategies#synthetic-positions) in a capital-efficient manner, or as a way to create [defined-risk](/docs/trading/multi-leg-strategies#managing-definedundefined-risk) positions.
+They can be used to [hedge](/research/hedge-with-panoptic-options) a portfolio, speculate on the value of an asset, create [synthetic positions](/docs/trading/multi-leg-strategies#synthetic-perps) in a capital-efficient manner, or as a way to create [defined-risk](/docs/trading/multi-leg-strategies#managing-definedundefined-risk) positions.
 
 Investors that first learn about options may be overwhelmed at first. 
 While the math behind options may seem daunting for most users, anyone without a math background can understand how to trade options by following a set of [basic strategies](/docs/product/opening-a-position#selecting-a-strategy).
@@ -60,7 +60,7 @@ Institutions may need to hedge their portfolio exposure in order to reduce the o
 They may do this by purchasing <a href="/research/defi-put-options-uniswap-backtest">put options</a> on pairs representative of the crypto market (e.g. ETH-USDC, ETH-BTC, etc.).
 Alternatively, funds may <a href="/research/naked-covered-call-defi-options">sell calls</a> on tokens they hold as a way to realize profits on tokens.
 <br />
-In addition, institutions may deposit funds in the Panoptic pool as <a href="/docs/panoptic-protocol/protocol-roles#panoptic-liquidity-providers-plps">passive liquidity providers</a> in order to collect yield on their capital, which means they would effectively be lending their tokens to options sellers and market makers for a fixed commission fee. 
+In addition, institutions may deposit funds in the Panoptic pool as <a href="/docs/panoptic-protocol/protocol-roles#lenders-passive-liquidity-providers-plps">passive liquidity providers</a> in order to collect yield on their capital, which means they would effectively be lending their tokens to options sellers and market makers for a fixed commission fee.
 <br />
 🔗 <a href="/research/naked-covered-call-defi-options">Strategies for institutions</a>.
 <br />
@@ -74,7 +74,7 @@ DAOs and protocol treasuries are in a uniquely difficult position when deploying
 By seeding a Panoptic pool from the "token" side, DAOs can generate revenue by earning commission fees and incentivize trading activity and interest in their token by enabling leveraged options trading on their token. 
 These tokens could in turn be used as collateral to back a DAO's market making activities, which could help stabilize prices and decrease market volatility.
 <br />
-🔗 <a href="/docs/panoptic-protocol/protocol-roles#panoptic-liquidity-providers-plps">Strategies for DAOs and protocols</a>.
+🔗 <a href="/docs/panoptic-protocol/protocol-roles#lenders-passive-liquidity-providers-plps">Strategies for DAOs and protocols</a>.
 <br />
 &nbsp;
 </details>
@@ -91,14 +91,14 @@ Panoptic allows users to access new and improved features when options trading:
 
 - Panoptic Options [never expire and are perpetual](/docs/trading/perpetual-options)
 - Anybody can deploy an options market on any asset in a [permissionless manner](/docs/contracts/smart-contracts-overview)
-- Panoptic enables anyone to lend their capital to options traders as a [liquidity provider](/docs/panoptic-protocol/protocol-roles#liquidity-providers)
+- Panoptic enables anyone to lend their capital to options traders as a [liquidity provider](/docs/panoptic-protocol/protocol-roles#lenders-passive-liquidity-providers-plps)
 - Options have [unique properties](/docs/panoptic-protocol/option-properties): width, new concept of moneyness, user-defined numeraire, etc.
 - [Pricing](/docs/panoptic-protocol/streamia) is path-dependent and does not involve counterparties (such as market makers)
-- There is no concept of vega, which means that the premium for open positions will not be affected by volatility expansion
+- There is no concept of vega, which means that the streamia (streaming premium) for open positions will not be affected by volatility expansion
 - Collateralization requirements and buying power reduction [respond](/docs/panoptic-protocol/liquidations) to market activity
 - Buying power requirements [do not change over time](/docs/panoptic-protocol/buying-power)
 - Distressed accounts will be [liquidated](/docs/panoptic-protocol/liquidations) by external users
-- External users may [forcefully exercise](/docs/panoptic-protocol/liquidations#forced-exercise) far out-of-the-money long positions
+- External users may [forcefully exercise](/docs/panoptic-protocol/forced-exercise) far out-of-the-money long positions
 
 
 ---
@@ -111,7 +111,7 @@ Any user that wishes to interact with the Panoptic protocol should understand th
 
 The main [risks](/docs/panoptic-protocol/risks) include:
 - **Over-exposure**: losing due to [leveraged exposure](/docs/product/leverage).
-- **Unfavorable pricing**: paying a [large premium](/docs/product/streamia#streamia-induced-liquidation) for options.
+- **Unfavorable pricing**: paying a [large streamia](/docs/product/streamia#streamia-induced-liquidation) for options.
 - **Forced exercise**: having far-the-money positions [forcefully closed](/docs/panoptic-protocol/risks#forced-exercise-risk) by external actors/liquidators.
 - **Liquidations**: losing deposited collateral because of a [margin call](/docs/product/position-management#avoiding-liquidations).
          

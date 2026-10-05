@@ -1,7 +1,9 @@
 ---
 sidebar_position: 1
+sidebar_label: "SemiFungiblePositionManager"
+title: "SemiFungiblePositionManager (V1.0)"
 ---
-# SemiFungiblePositionManager
+# SemiFungiblePositionManager (V1.0)
 [Git Source](https://github.com/panoptic-labs/panoptic-v1-core/blob/v1.0.x/contracts/SemiFungiblePositionManager.sol)
 
 **Inherits:**
@@ -866,4 +868,3 @@ struct PoolData {
 |`pool`|`IUniswapV3Pool`|A canonical Uniswap V3 pool initialized in the SFPM|
 |`minEnforcedTick`|`int24`|The current minimum enforced tick for the pool in the SFPM|
 |`maxEnforcedTick`|`int24`|The current maximum enforced tick for the pool in the SFPM|
-

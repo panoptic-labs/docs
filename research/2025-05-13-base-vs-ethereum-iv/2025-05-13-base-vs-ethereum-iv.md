@@ -77,11 +77,11 @@ The implied volatility charts (see Figure 4) reveals that while the overall shap
 
 The bullish strategy panel (see Figure 5) reveals a distinct skew in performance between short volatility and long volatility trades.
 
-The Short Call strategy generated strong, consistent returns on both chains, with Base outperforming Ethereum (+17.65% vs. +14.76%). This outperformance was driven by higher implied volatility on Base, which inflated call premia without being matched by proportionate realized upside.
+The Short Call strategy generated strong, consistent returns on both chains, with Base outperforming Ethereum (+17.65% vs. +14.76%). This outperformance was driven by higher implied volatility on Base, which inflated call streamia without being matched by proportionate realized upside.
 
-Meanwhile, the Long Call strategy struggled on both networks, producing negative net returns (Base: –18.06%, Ethereum: –14.76%), despite modest positive payoffs. This underperformance is a clear example of premium drag: the implied volatility priced into the calls was not justified by the realized volatility of ETH.
+Meanwhile, the Long Call strategy struggled on both networks, producing negative net returns (Base: –18.06%, Ethereum: –14.76%), despite modest positive payoffs. This underperformance is a clear example of streamia drag: the implied volatility priced into the calls was not justified by the realized volatility of ETH.
 
-This divergence underscores a core principle: in markets with elevated implied vol but low realized vol, short convexity strategies (e.g., selling options) extract premium efficiently, while long convexity strategies suffer unless the market breaks trend.
+This divergence underscores a core principle: in markets with elevated implied vol but low realized vol, short convexity strategies (e.g., selling options) extract streamia efficiently, while long convexity strategies suffer unless the market breaks trend.
 
 ### Bearish Strategy
 
@@ -91,19 +91,19 @@ This divergence underscores a core principle: in markets with elevated implied v
 
 The bearish side exhibits symmetrical payoff behavior but diverging return profiles:
 
-Both Long Puts realized identical payoffs of +33.44%, reflecting the shared ETH price path. Yet, Ethereum’s Long Put yielded a higher net return (+17.58%) than Base (+13.42%). This suggests that put premia were cheaper on Ethereum, likely due to more stable implied volatility and deeper liquidity.
+Both Long Puts realized identical payoffs of +33.44%, reflecting the shared ETH price path. Yet, Ethereum’s Long Put yielded a higher net return (+17.58%) than Base (+13.42%). This suggests that put streamia were cheaper on Ethereum, likely due to more stable implied volatility and deeper liquidity.
 
-Conversely, Short Puts on Base delivered better relative returns (–13.42% loss vs. –17.58% on Ethereum)—a result of higher upfront premia on Base, which helped cushion the downside.
+Conversely, Short Puts on Base delivered better relative returns (–13.42% loss vs. –17.58% on Ethereum)—a result of higher upfront premiums on Base, which helped cushion the downside.
 
-This asymmetry in premium structure across chains suggests that Base’s option market consistently prices in higher tail risk, benefiting sellers when price movements are muted, but penalizing buyers unless volatility is actually realized.
+This asymmetry in streamia structure across chains suggests that Base’s option market consistently prices in higher tail risk, benefiting sellers when price movements are muted, but penalizing buyers unless volatility is actually realized.
 
 ### Cross-Cutting Observations
 
-Payoffs were chain-invariant, validating that the strategies were modeled on the same ETH/USDC price trajectory—this is crucial for attribution analysis. Premia, on the other hand, were consistently richer on Base, reinforcing the presence of a volatility risk premium or market segmentation effect, possibly due to fewer LPs, JIT liquidity, or thinner markets. From a hedging standpoint, long options didn’t pay off because price moves were limited, while short options earned steady returns by collecting premium in a low-volatility environment.
+Payoffs were chain-invariant, validating that the strategies were modeled on the same ETH/USDC price trajectory—this is crucial for attribution analysis. Streamia, on the other hand, were consistently richer on Base, reinforcing the presence of a volatility risk premium or market segmentation effect, possibly due to fewer LPs, JIT liquidity, or thinner markets. From a hedging standpoint, long options didn’t pay off because price moves were limited, while short options earned steady returns by collecting streamia in a low-volatility environment.
 
 ## Conclusion & Future Work
 
-This analysis highlights how the structure and behavior of perpetual options vary meaningfully across chains like Ethereum and Base. While Ethereum offers more efficient pricing and smoother implied volatility, Base exhibits elevated IV and wider premia, creating asymmetries exploitable by short-volatility strategies. Future work will involve formalizing this into a systematic trading strategy, developing signal thresholds based on historical IV spreads, and backtesting PnL performance with transaction costs and funding flows accounted for. The goal: to construct a delta-neutral, cross-chain vol arb portfolio that captures mispricings in decentralized options markets in real time.
+This analysis highlights how the structure and behavior of perpetual options vary meaningfully across chains like Ethereum and Base. While Ethereum offers more efficient pricing and smoother implied volatility, Base exhibits elevated IV and wider streamia, creating asymmetries exploitable by short-volatility strategies. Future work will involve formalizing this into a systematic trading strategy, developing signal thresholds based on historical IV spreads, and backtesting PnL performance with transaction costs and funding flows accounted for. The goal: to construct a delta-neutral, cross-chain vol arb portfolio that captures mispricings in decentralized options markets in real time.
 
 ## References
 * Base documentation: https://docs.base.org

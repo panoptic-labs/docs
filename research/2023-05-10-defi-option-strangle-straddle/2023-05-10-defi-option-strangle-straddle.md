@@ -36,7 +36,7 @@ The names "straddle" & "strangle" conjure up images of fitness🤸🏽‍♂️ 
 ### Differences
 Straddles and strangles differ in 6 major ways:
 1. Strike prices
-2. Premia
+2. Premiums
 3. Ease of management
 4. Delta
 5. Probability of profit (POP)
@@ -49,8 +49,8 @@ Straddles and strangles differ in 6 major ways:
     
 -   Strangle: different strikes
 
-#### Premia
-Another difference is the premia:
+#### Premiums {#premia}
+Another difference is the premiums:
 
 -   Straddle: expensive💰
     
@@ -117,7 +117,7 @@ Strangles have a <100% chance of ending ITM. Ex:
 #### Probability of Profit and Profit Potential
 Seller's POV:
 
-We also have to factor in the upfront premia earned from selling straddles/strangles. There might be a 60% chance of the strangle expiring worthless (40% chance of becoming ITM). But the probability of profit (POP) is >60% due to premia earned by the seller.
+We also have to factor in the upfront premiums earned from selling straddles/strangles. There might be a 60% chance of the strangle expiring worthless (40% chance of becoming ITM). But the probability of profit (POP) is >60% due to premiums earned by the seller.
 
 In fact, strangles have higher POP than straddles. But there's a tradeoff:
 

@@ -1,6 +1,6 @@
 # Dispatch Entry Point
 
-The `dispatch` function is the primary entry point for users to manage their option positions. It handles minting new positions, burning existing positions, and settling premium on open positions—all through a single unified interface.
+The `dispatch` function is the primary entry point for users to manage their option positions. It handles minting new positions, burning existing positions, and settling streamia (streaming premium) on open positions—all through a single unified interface.
 
 ## Overview
 
@@ -23,7 +23,7 @@ function dispatch(
 | `finalPositionIdList` | Expected position list after all operations complete |
 | `positionSizes` | Position sizes for mints; matches stored size for settles; ignored for burns |
 | `tickAndSpreadLimits` | Per-position array of [tickLimitLow, tickLimitHigh, spreadLimit] |
-| `usePremiaAsCollateral` | Whether to include all accumulated premia in collateral calculations |
+| `usePremiaAsCollateral` | Whether to include all accumulated streamia in collateral calculations |
 | `builderCode` | Builder referral code for fee sharing (0 if none) |
 
 ## Operation Determination
@@ -54,7 +54,7 @@ if (PositionBalance.unwrap(positionBalanceData) == 0) {
 | Position Exists | Size Match | Operation |
 |-----------------|------------|-----------|
 | No | N/A | Mint |
-| Yes | Yes | Settle Premium |
+| Yes | Yes | Settle Streamia |
 | Yes | No | Burn |
 
 ## Safe Mode Enforcement
@@ -200,8 +200,8 @@ This function:
 - Adds the position to the user's positions hash
 - Verifies liquidity spread doesn't exceed limits
 - Credits collected Uniswap fees to `s_settledTokens`
-- Snapshots current premium accumulators for the user
-- Adjusts `s_grossPremiumLast` for shorts to maintain premium accounting
+- Snapshots current streamia accumulators for the user
+- Adjusts `s_grossPremiumLast` for shorts to maintain streamia accounting
 
 ### 3. Commission and Collateral Settlement
 
@@ -311,9 +311,9 @@ _burnOptions
 );
 ```
 
-The `commitLongSettled` flag controls whether long premium is committed to storage:
-- **true**: Normal burns, premium is settled
-- **false**: Liquidations, premium settlement is deferred for haircut processing
+The `commitLongSettled` flag controls whether long streamia is committed to storage:
+- **true**: Normal burns, streamia is settled
+- **false**: Liquidations, streamia settlement is deferred for haircut processing
 
 ### 3. Collateral Settlement
 
@@ -341,7 +341,7 @@ int128 paid1 = collateralToken1().settleBurn(
 
 # Settle Options Flow
 
-The `_settleOptions` function settles accumulated premium on an open position without closing it.
+The `_settleOptions` function settles accumulated streamia on an open position without closing it.
 
 ## Function Signature
 
@@ -383,18 +383,18 @@ LeftRightSigned.wrap(1).addToLeftSlot(1 + (int128(currentTick) << 2))
 ```
 
 This signals to `_updateSettlementPostBurn`:
-- **rightSlot != 0**: Commit long premium to storage
+- **rightSlot != 0**: Commit long streamia to storage
 - **leftSlot != 0**: Keep position open (don't remove from hash)
 
 ## Use Cases
 
-1. **Long Position Holders**: Settle premium they owe to continue holding
-2. **Short Position Holders**: Collect accumulated premium without closing
+1. **Long Position Holders**: Settle streamia they owe to continue holding
+2. **Short Position Holders**: Collect accumulated streamia without closing
 3. **External Callers**: Can trigger settlement on behalf of others via `dispatchFrom`
 
-## Premium Collection for Shorts
+## Streamia Collection for Shorts {#premium-collection-for-shorts}
 
-When `msg.sender == owner`, shorts can auto-collect their available premium:
+When `msg.sender == owner`, shorts can auto-collect their available streamia:
 
 ```solidity
 if (commitLongSettledAndKeepOpen.leftSlot() == 0 || msg.sender == owner) {
@@ -405,4 +405,4 @@ if (commitLongSettledAndKeepOpen.leftSlot() == 0 || msg.sender == owner) {
 }
 ```
 
-This allows sellers to realize their earned premium while keeping positions open.
+This allows sellers to realize their earned streamia while keeping positions open.

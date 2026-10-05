@@ -50,7 +50,7 @@ One trader on Base opened a [perpetual call option](https://app.panoptic.xyz/pos
 
   
 
-The trader’s call option had a leveraged exposure of 10 times its capital requirement, profiting +21% on the notional (+210% on margin) and costing the trader less than 1% of notional in streaming premia.
+The trader’s call option had a leveraged exposure of 10 times its capital requirement, profiting +21% on the notional (+210% on margin) and costing the trader less than 1% of notional in streamia (streaming premium).
 
 This strategic entry captured value during a critical market transition, helping this trader top the [Panoptic leaderboards](https://app.panoptic.xyz/leaderboard/pnl) during its ongoing Base trading competition. The timing aligns perfectly with the broader crypto market's bullish reversal, particularly as Bitcoin has shattered the psychological $100K barrier that many analysts had long anticipated as a major milestone for institutional adoption.
 
@@ -62,13 +62,13 @@ This strategic entry captured value during a critical market transition, helping
 
 Guillaume Lambert, the founder of Panoptic, appeared on the ["Ungovernable Podcast”](https://x.com/i/broadcasts/1ypKdZLVlXVJW). During this conversation, Guillaume shared insights about Panoptic's origin story and development journey, discussing how the platform evolved to its current state. The podcast offers listeners a behind-the-scenes look at the challenges and milestones Panoptic has faced, as well as Guillaume's vision for on-chain options and Uniswap.
 
-### Put Wing Premia: Base vs. Ethereum Analysis Reveals Similar Returns Across Chains
+### Put Wing Streamia: Base vs. Ethereum Analysis Reveals Similar Returns Across Chains {#put-wing-premia-base-vs-ethereum-analysis-reveals-similar-returns-across-chains}
 
-The comparative analysis of [Panoption put wings on Ethereum versus Base](https://panoptic.xyz/research/put-wing-premia-eth-base) reveals striking similarities in performance metrics. Despite their architectural differences, both chains demonstrate nearly identical cumulative premia when examining monthly sales of 10-delta Panoption puts from January through March 2025. The data shows Ethereum producing 15.8% (80% annualized) premia while Base generated slightly higher premia at 16.5% (84% annualized). This marginal difference suggests that the underlying market mechanics driving volatility risk premium (VRP) transcend the specific blockchain implementation.
+The comparative analysis of [Panoption put wings on Ethereum versus Base](https://panoptic.xyz/research/put-wing-premia-eth-base) reveals striking similarities in performance metrics. Despite their architectural differences, both chains demonstrate nearly identical cumulative streamia when examining monthly sales of 10-delta Panoption puts from January through March 2025. The data shows Ethereum producing 15.8% (80% annualized) streamia while Base generated slightly higher streamia at 16.5% (84% annualized). This marginal difference suggests that the underlying market mechanics driving volatility risk premium (VRP) transcend the specific blockchain implementation.
 
 ![](./4.png)
 
-These similarities stem from shared fundamental characteristics that contribute to on-chain VRP: market incompleteness and price jumps. Both chains experience the effects of Just-in-Time (JIT) liquidity providers who essentially function as short-term perpetual put option sellers, capturing elevated volatility risk premia during periods of high implied volatility. The research demonstrates how jumps in ETH/USDC pools follow a fat-tailed power law distribution, indicating larger kurtosis associated with these price movements. As the article suggests, these patterns may gradually smooth over time as trading platforms like Panoptic provide outlets for options buyers, potentially enhancing stability across both L1 and L2 blockchain environments.
+These similarities stem from shared fundamental characteristics that contribute to on-chain VRP: market incompleteness and price jumps. Both chains experience the effects of Just-in-Time (JIT) liquidity providers who essentially function as short-term perpetual put option sellers, capturing elevated volatility risk premiums during periods of high implied volatility. The research demonstrates how jumps in ETH/USDC pools follow a fat-tailed power law distribution, indicating larger kurtosis associated with these price movements. As the article suggests, these patterns may gradually smooth over time as trading platforms like Panoptic provide outlets for options buyers, potentially enhancing stability across both L1 and L2 blockchain environments.
 
 ### Bear Strategy Breakdown: Short Calls vs Long Puts – Which Strategy Wins?
 
@@ -80,11 +80,11 @@ The research highlights three key insights for traders: long puts offer better r
 
 ### Volatility Risk Premium: Capturing Enhanced Returns with OTM Put Wings
 
-Panoptic's examination of volatility risk premium reveals compelling opportunities for traders [selling deep out-of-the-money (OTM) put options](https://panoptic.xyz/research/implied-volatility-put-wing-premia). The research found that 10-delta Panoption puts saw mean monthly premia of approximately 3.9% (58.6% annualized) for ETH/USDC and 2.8% (39.5% annualized) for WBTC/USDC 30bps pools from May 2021 to March 2025. These strategies generated cumulative returns of 153% and 108% respectively, highlighting significant profit potential during volatility spikes.
+Panoptic's examination of volatility risk premium reveals compelling opportunities for traders [selling deep out-of-the-money (OTM) put options](https://panoptic.xyz/research/implied-volatility-put-wing-premia). The research found that 10-delta Panoption puts saw mean monthly streamia of approximately 3.9% (58.6% annualized) for ETH/USDC and 2.8% (39.5% annualized) for WBTC/USDC 30bps pools from May 2021 to March 2025. These strategies generated cumulative returns of 153% and 108% respectively, highlighting significant profit potential during volatility spikes.
 
 ![](./6.jpg)
 
-The study provides critical insights into Just-in-Time (JIT) liquidity provision, equating it to extremely short-dated put options selling that captures heightened options premia during macro events. The research refined Panoptic's previous findings, demonstrating that expanded volatility and abbreviated time horizons significantly enhance streamia collected by Panoptions sellers, with these effects amplified when trading deep OTM puts. The unique structural components of crypto markets create opportunities accessible through Panoptic that would otherwise be unavailable to traditional Uniswap LPs.
+The study provides critical insights into Just-in-Time (JIT) liquidity provision, equating it to extremely short-dated put options selling that captures heightened options streamia during macro events. The research refined Panoptic's previous findings, demonstrating that expanded volatility and abbreviated time horizons significantly enhance streamia collected by Panoptions sellers, with these effects amplified when trading deep OTM puts. The unique structural components of crypto markets create opportunities accessible through Panoptic that would otherwise be unavailable to traditional Uniswap LPs.
 
 ## Up Next  
 Panoptic is live on Base and kicking things off with a [trading competition](https://x.com/Panoptic_xyz/status/1919437098027028482). Stay tuned for more contests and prizes!

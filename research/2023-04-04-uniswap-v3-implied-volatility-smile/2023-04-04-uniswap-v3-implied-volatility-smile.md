@@ -30,11 +30,11 @@ Traders use IV rank and IV percentile to gauge whether options are expensive wit
 
 ## How does this work in Panoptic? 🤔
 
-We use a "streaming premia" model, in which buyers pay sellers a small fee whenever a Panoption is in range.
+We use a "streamia (streaming premium)" model, in which buyers pay sellers a small fee whenever a Panoption is in range.
 
 This fee is related to the amount of fees a UniV3 LP would make (plus a small spread).
 
-From 👆 we see that option premia then depends on the fees collected in a pool, which in turn depend on: 
+From 👆 we see that option streamia then depends on the fees collected in a pool, which in turn depend on: 
 - 1️⃣ Fee tier in UniV3 pool.
 - 2️⃣ Volume - trading activity within the pool.
 - 3️⃣ Tick liquidity - the amount of funds in the pool. 🌊💰
@@ -43,7 +43,7 @@ A volatile market can be due to:
 1. High trading volumes
 2. Low liquidity
 
-By comparing the cumulative premia of an at-the-money option to the actual fees collected by a UniV3 pool per unit of time, we can derive an IV for Panoptions that incorporate those quantities:
+By comparing the cumulative streamia of an at-the-money option to the actual fees collected by a UniV3 pool per unit of time, we can derive an IV for Panoptions that incorporate those quantities:
 
 $\mathsf{IV}=2\cdot\mathsf{Fee Rate}\cdot\sqrt{\frac{\mathsf{Volume}}{\mathsf{Tick \ Liquidity}}}$
 

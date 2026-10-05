@@ -16,7 +16,7 @@ Epoch 6 is **open to everyone**. Whether you're a seasoned trader or new to the 
 
 ## About Our Beta Launch
 
-Panoptic's [beta launch](https://panoptic.xyz/docs/gated-launch/) is structured as multiple rounds of trading competitions called epochs. In the epochs, participants use real, albeit capped, assets to buy and sell perpetual options.
+Panoptic's [beta launch](https://panoptic.xyz/blog/gated-launch-sign-up) is structured as multiple rounds of trading competitions called epochs. In the epochs, participants use real, albeit capped, assets to buy and sell perpetual options.
 
 
 In each round of the trading competition, top performers receive prizes. Throughout the beta launch, we’re offering exclusive NFTs and up to $100,000 in monetary prizes.

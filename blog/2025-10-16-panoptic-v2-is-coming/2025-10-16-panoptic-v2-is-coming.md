@@ -18,7 +18,7 @@ Panoptic V1 turned Uniswap V3 and V4 LP positions into perpetual options.
 
 #### The V1 Blueprint
 
--   **Oracle-free premium streaming:** Instead of pricing options upfront with Black–Scholes or volatility oracles, V1 used a path-dependent fee model where option holders paid a streaming premium over time as prices moved
+-   **Oracle-free streamia (streaming premium):** Instead of pricing options upfront with Black–Scholes or volatility oracles, V1 used a path-dependent fee model where option holders paid a streamia over time as prices moved
 -   **Liquidity as collateral:** Liquidity providers (LPs) could deposit capital, and traders could borrow that liquidity and reposition it to simulate long option exposure
 -   **Utilization and risk caps:** Parameters limited how aggressively borrowed liquidity could be used
 -   **Permissionless deployment:** Any Uniswap V3 and V4 pool could host an options market
