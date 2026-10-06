@@ -12,6 +12,7 @@ typechain/
 # Generated files
 .docusaurus
 .cache-loader
+/static/img/generated/recent-updates/
 
 # Misc
 .DS_Store

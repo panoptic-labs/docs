@@ -2,24 +2,12 @@
 editorial_update: "2026-10-04"
 sidebar_position: 4
 slug: streamia
-title: "Streamia"
+title: "Streamia (Streaming Premium) in DeFi Options"
+sidebar_label: Streamia
 tags: [Tutorial, Streamia, Liquidation, Timescale]
 image: /img/research/streamia-101-banner.png
-description: "An introductory guide to costs, pricing, accumulation, and safeguarding against liquidation in Panoptic."
+description: "Streamia, or streaming premium, is a continuous payment from option buyers to sellers that replaces the upfront premium. Learn how it is calculated, who pays it, and how it compares to perp funding rates."
 ---
-![](./streamia/streamia-101-banner.png)
-
-Because perpetual options never expire, it is difficult to assess the fair price upfront of endless exposure to an asset. Panoptic uses the streamia (streaming premium) pricing model, based on spot market activity, to accurately price these options.
-
-
->### Questions We'll Answer
->
->-   How much does an option cost in Panoptic?
->-   Who earns and who pays streamia?
->-   When does streamia accumulate?
->-   How can I avoid being liquidated?
-    
-
 ## What is Streamia?
 
 Streamia is a continuous payment from option buyers
@@ -34,6 +22,34 @@ difference: funding can flow either way, while streamia always flows from
 buyers to sellers.
 
 <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/Gfl-_yPGZyU" title="What is streamia?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+![](./streamia/streamia-101-banner.png)
+
+Because perpetual options never expire, it is difficult to assess the fair price upfront of endless exposure to an asset. Panoptic uses the streamia (streaming premium) pricing model, based on spot market activity, to accurately price these options.
+
+
+>### Questions We'll Answer
+>
+>-   How much does an option cost in Panoptic?
+>-   Who earns and who pays streamia?
+>-   When does streamia accumulate?
+>-   How can I avoid being liquidated?
+
+## Who pays streamia: buyers or sellers?
+
+Buyers pay streamia and sellers earn it. An option buyer accrues streamia owed for as long as the option is in range, and an option seller accrues the same streamia as income. In a multi-leg position, long legs pay and short legs earn, so the net streamia can be either paid or earned. Out-of-range options accrue nothing.
+
+## Streamia vs funding rate
+
+Streamia replaces an upfront option premium with ongoing payments. Perp funding is a separate mechanism: a periodic transfer between long and short positions that keeps the futures price near spot, and it can flow from longs to shorts or the reverse. Streamia prices an option, always flows from buyers to sellers, accrues every block instead of every few hours, and is driven by Uniswap fees rather than a futures–spot gap.
+
+## How is streamia calculated?
+
+Each block, Panoptic measures the Uniswap swap fees earned by the liquidity in the option's price range. That base amount is multiplied by a spread factor that rises with the ratio of liquidity removed by buyers to liquidity remaining in each chunk. Narrower ranges can make streamia accrue faster when price stays inside them, and low-liquidity pools can when price moves through the range more often. A popular strike raises the spread only when buying there increases the removed-to-remaining ratio. See [How is the Streamia Determined?](#how-is-the-streamia-determined) for details.
+
+## Streamia vs Black-Scholes premium
+
+The [pricing-model comparison](/research/perpetual-option-pricing-model-comparison) reports that Monte Carlo simulations under diffusive price paths show total streamia converging to the Black-Scholes price of the equivalent option on average, with wide variation across individual paths. It does not publish its simulation parameters or numerical results. The difference is timing: a Black-Scholes premium is paid upfront and fixed, while streamia is paid over time and depends on how long price stays in range.
 
 A simple way to think about it: a perpetual option behaves like a series of
 very short-dated options that are rolled continuously. Each roll costs a

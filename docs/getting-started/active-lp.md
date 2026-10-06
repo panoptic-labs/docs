@@ -62,6 +62,7 @@ Visit our [app](https://app.panoptic.xyz) to open, monitor, and manage your LP p
 ---
 ### Resources
 - [How to Provide Liquidity on Uniswap with Panoptic](/docs/product/uniswap-lps/provide-liquidity)
+- [How to Hedge a Uniswap LP Position](/docs/product/uniswap-lps/hedge)
 - [LP = Options](/blog/uniswap-options)
 - [Liquidity Spread](/docs/product/spread)
 - [Delta Neutral LP - How to Hedge a Uniswap Position](/blog/delta-neutral-lp-hedge-uniswap-position)

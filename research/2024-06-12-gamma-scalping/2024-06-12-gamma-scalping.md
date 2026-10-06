@@ -1,77 +1,196 @@
 ---
 slug: gamma-scalping
-title: "Gamma Scalping"
+title: "Gamma Scalping: Strategy, Example, and How It Works"
 tags: [Gamma, Volatility, IV, Delta Neutral, Hedge, Straddle, Perps]
 image: /img/research/gamma-scalping-banner.png
-description: "Gamma scalping in Panoptic uses continuous delta-hedging and at-the-money options to profit from market volatility, integrating traditional finance strategies with perpetual options trading."
+description: "Gamma scalping explained: buy options for long gamma, delta hedge as price moves, and profit when realized volatility beats implied volatility. Step-by-step strategy, ETH example, and how to gamma scalp with perpetual options."
 authors: N
 ---
 
-![](./gamma-scalping-banner.png)
+<head>
+  <script type="application/ld+json">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is gamma scalping?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Gamma scalping is an options strategy that buys gamma, usually with an at-the-money straddle, and repeatedly delta hedges the position by trading the underlying. Each hedge sells after price rises and buys after it falls. The strategy profits when realized volatility is higher than the implied volatility paid for the options."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is gamma scalping profitable?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Gamma scalping is profitable only when the underlying moves more than the options price implies. Hedging gains scale with the square of each price move, while the cost (theta, or streamia on Panoptic) accrues with time. In quiet markets the cost exceeds the hedging gains and the trade loses money."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often should you rehedge when gamma scalping?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most traders rehedge on a delta threshold (for example, when net delta exceeds 0.1 per straddle) or on a fixed schedule. Hedging more often captures more small moves but pays more fees and slippage; hedging less often lets trends run further but leaves more directional risk between hedges."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between gamma scalping and delta scalping?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Gamma scalping is long options and delta neutral: the trader buys gamma and trades the underlying only to remove the delta that gamma creates. Delta scalping is a broader term for actively trading the underlying around a position's delta, and may keep a directional bias or be applied to short-gamma books."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are Uniswap LPs doing reverse gamma scalping?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, while price is in range. An in-range Uniswap v3 or v4 LP position is short gamma: the pool sells the rising asset and buys the falling one. It earns swap fees in exchange, so an in-range LP is running a reverse gamma scalp. Out of range, the position is single-sided, does not rebalance, and earns no fees until price re-enters. Impermanent loss is the hedging loss of the in-range short-gamma position."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you gamma scalp without options expiring?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Panoptic perpetual options never expire, so a gamma scalper can hold a long straddle without rolling it. Instead of an upfront premium and theta decay, the buyer pays streamia (streaming premium) to sellers while the position is in range."
+          }
+        }
+      ]
+    })}
+  </script>
+</head>
 
-Gamma scalping combines a long-gamma options position with repeated delta hedging. This guide explains the strategy for traditional and [perpetual options](/docs/trading/perpetual-options), including how hedging gains relate to premium costs. For the short-gamma counterpart, see [reverse gamma scalping](/research/reverse-gamma-scalping).
+![Gamma scalping banner](./gamma-scalping-banner.png)
 
-Gamma scalping supplies options market makers a situational means with which to unload portfolio inventory on the underlying asset due to the recurrent objective of maintaining neutrality and to capitalize on choppy, whipsawing market conditions by applying sound relative-value options trading principles amid broader chaos.
+## What is gamma scalping?
 
-## What is Gamma?
-The options Greek of [gamma](https://panoptic.xyz/docs/terms/gamma) delineates the rate of change of [delta](https://panoptic.xyz/research/options-market-making#what-is-delta). Delta represents the slope (i.e. linear) portion of an option’s payoff curve, whereas gamma represents the curvature and convexity (i.e. nonlinear) portion of the option’s payoff curve.
+Gamma scalping is an options strategy that buys gamma, usually with an [at-the-money](/docs/terms/at_the_money) (ATM) [straddle](/research/defi-option-straddle-101), and repeatedly [delta hedges](/research/options-market-making#delta-neutral-trading) it by trading the underlying. Each hedge sells after price rises and buys after it falls. The trade profits when realized volatility is higher than the implied volatility paid for the options.
 
-The [graphic](https://derivativesacademy.com/storage/uploads/files/modules/resources/1702207867_allen_einchcomb_granger_jpm_2006_variance_swaps.pdf) below reflects how an option will always be as valuable, if not more valuable, than a linear product (such as buy-and-hold or long [perps](https://panoptic.xyz/research/perpetual-futures-vs-options#what-are-perps)) because of gamma. While the full breadth of financial products (linear or nonlinear) will contain some form of delta, the gamma of linear products will always be zero due to the lack of convexity.
+For the short-gamma counterpart, see [reverse gamma scalping](/research/reverse-gamma-scalping).
 
-![](./01.png)
+## How gamma scalping works
 
-The principle of convexity constitutes the nonlinearity that options allot due to the right, but not the obligation, to exercise the instrument. This is also one reason why many options traders deem gamma to be the most significant Greek. Due to the reality that delta can only account for linear risks when hedging, hedging errors will inevitably arise from the inability to properly mitigate nonlinear risks that compound with a rise in underlying movement as mirrored in the above figure. Gamma serves as the Greek that can insulate a portfolio from hazards stemming from curvature.
+Three ideas make the strategy work.
 
-## Gamma Scalping
-Gamma scalping entails the buying of gamma while continuously [delta-hedging](https://panoptic.xyz/research/options-market-making#delta-neutral-trading). Buying gamma typically takes place by buying [at-the-money](https://panoptic.xyz/docs/terms/at_the_money) (ATM) [straddles](https://panoptic.xyz/research/defi-option-straddle-101), and delta-hedging can be implemented by buying and selling either the underlying asset, futures, or perps.
+**Long gamma.** [Gamma](/docs/terms/gamma) is the rate of change of [delta](/research/options-market-making#what-is-delta). A long option position has positive gamma: as price rises, its delta grows; as price falls, its delta shrinks. A linear position such as spot or a [perp](/research/perpetual-futures-vs-options#what-are-perps) has zero gamma.
 
-An integral factor in successful gamma scalping is the retention of directional (or delta) neutrality. If the underlying price rises, then a gamma scalper would short the delta-specified quantity of the underlying required to reattain delta neutrality. Conversely though, if the underlying price were to fall, then a gamma scalper would buy the appropriate quantity. In deciding how often to delta-hedge, traders may base their hedging frequency on some delta threshold or time-based measure.
+![Payoff curves showing an option's convex payoff staying at or above a linear position's straight-line payoff](./01.png)
 
-![](./02.png)
+**Delta hedging.** A long straddle starts close to delta neutral. When price rises, the straddle becomes long delta, so the scalper sells the underlying to return to neutral. When price falls, the straddle becomes short delta, so the scalper buys. Every hedge is a contrarian trade: sell high, buy low.
 
-The above [figure](https://www.trading-volatility.com/Trading-Volatility.pdf) illustrates the natural delta-hedging progression within a hypothetical gamma scalping paradigm example. In step one, the initial delta of an ATM straddle is zero. In step two, delta gradually turns negative, the underlying is purchased, and the opposite process occurs in step three with a shift to positive delta as the underlying is then shorted.
+![Three-step delta-hedging example on a long straddle: start delta neutral, buy the underlying as delta turns negative, sell it as delta turns positive](./02.png)
 
-The distilled hedging convention of a gamma scalper can therefore be interpreted as contrarian via buying into underlying downturns and selling into underlying rallies. Profits come when the gamma scalper can consistently buy low and sell high enough to offset [theta](https://panoptic.xyz/docs/terms/theta) (or time) decay. A secondary effect of this contrarian objective is also in the dampening of continuing market swings.
+The animation below shows the same loop on a payoff curve. As price moves away from the strike, the straddle picks up delta (the orange tangent line). The hedge removes that delta and re-centers the position, locking in a small gain each time.
 
-### How to Profit from Gamma Scalping
-The core initial component of gamma scalping in being long an ATM straddle would ostensibly leave a gamma scalper in an enviable position of only being exposed to upfront premium costs and theta decay on the downside with a panoply of underlying price scenarios that could generate substantial upside profits. Since realized volatility is often heightened, the potential to generate healthy profits from a gamma scalping trade is considerably broad.
+<video src={require("./hedged-long-straddle.mp4").default} title="Animation: delta hedging a long straddle as price moves" autoPlay loop muted playsInline preload="metadata" width="100%" height="auto"></video>
 
-The delta-hedge progression graphic in the prior section visually lays out how a gamma scalper could cumulatively lock in profits based on underlying market oscillations. In this exact case, the gamma scalper reverts to delta-neutrality when skewing towards negative portfolio delta and nets 10 euros, then quickly scalps 40 more euros to bring total gains to 50 euros when the portfolio delta flips into positive territory. If the premium of the straddle was less than 50 euros, the scalper has already profited.
+**Realized vs implied volatility.** The hedging gains have to pay for the options. Over a short interval, the hedged position changes by approximately:
 
-The fundamental foundation supporting gamma scalping is that there will be sufficient underlying price activity over the course of a certain window to offset the theta decay that will ensue from the purchase of an ATM straddle. There is a tug–of-war aspect to this strategy:
+$$dV \approx \tfrac{1}{2}\,\Gamma\,dS^2 - \Theta\,dt$$
 
-Gamma/Theta Tradeoff: $dV(S,t) = 1/2 Γ dS^2 - Θ dt$ ([1](https://www.amazon.com/Volatility-Smile-Wiley-Finance/dp/1118959167))
+Gains grow with the square of each price move ($dS^2$), while the cost ($\Theta$, theta) accrues with time. Summed over the life of the trade, the P&L is roughly:
 
-where $dV$ = change in hedged portfolio value, $S$ = underlying price, $t$ = time increments, $Θ$ = theta, and $Γ$ = gamma.
+$$\text{P\&L} \approx \text{Vega} \times (\sigma_{\text{realized}} - \sigma_{\text{implied}})$$
 
-The equation above characterizes the mathematical nature of the aforementioned gamma-theta tradeoff: the gamma scalper is effectively betting that a specific threshold of underlying price action will translate to satisfactory returns that offset the premium paid to purchase the option.
+So gamma scalping is a bet that the underlying will move more than the option price implies. The premium caps the loss on the long option's own payoff, while gains from large moves are open-ended thanks to its positive convexity. That cap excludes hedging costs and streamia, so it does not cap the net strategy's losses.
 
-### Exploiting Cheap Volatility
-The overarching thought process for executing this strategy is predicated on the hypothesis that realized volatility (RV) will exceed implied volatility (IV) for some asset. RV is a standard deviation-type ($\sigma$) measure of historical asset returns for a given lookback period, whereas [IV](https://panoptic.xyz/docs/terms/implied_volatility) is a forward-looking metric that quantifies the market expectation of volatility for asset returns during a forthcoming period. However, the conceptual linchpins that are dually responsible for driving the rationale behind gamma scalping are that long options gamma signifies belief in temporarily amplified RV along with a motivation to obtain a positively convex payout profile.
+![Convex long-option payoff with a capped loss on the downside and growing gains as price moves](./03.png)
 
-Gamma Scalping P&L = $Vega * (σ_{realized} - σ_{implied})$ ([2](https://www.amazon.com/Positional-Option-Trading-Wiley/dp/1119583519)).
+## Gamma scalping strategy, step by step
 
-The above equation captures the relative-value element of the gamma scalping trade by illustrating that the profits of a gamma scalper are generated when either the vega or IV of an ATM straddle is undervalued.
+1. **Choose the market.** Look for an asset where you expect realized volatility to exceed implied volatility: an upcoming catalyst, a regime change, or options that look cheap against recent price action.
+2. **Enter long gamma.** Buy an ATM straddle (a call and a put at the current price). Gamma is highest at the money, so an ATM straddle gives high absolute gamma for the hedging to harvest.
+3. **Neutralize delta.** If the straddle is not exactly ATM, trade the underlying or a perp so net delta starts near zero.
+4. **Set the hedge rule.** Rehedge when net delta crosses a threshold (for example ±0.1 per straddle), or on a fixed schedule (for example every hour). Tighter rules capture more small moves but pay more in fees and slippage.
+5. **Hedge mechanically.** Sell into rallies and buy into dips back to neutral each time the rule triggers. Don't override the rule with a directional view; that turns the trade into a directional bet.
+6. **Track hedging gains vs cost.** Compare cumulative hedging P&L against theta (or streamia on Panoptic). This is your running realized-vs-implied scorecard.
+7. **Know when to stop.** Exit when realized volatility falls below what you are paying, when the catalyst has passed, or when price has moved far from the strike and gamma has faded. On a fixed-expiry option, at-the-money gamma generally rises as expiry approaches, while gamma falls for options far from the strike.
 
-### Positive Convexity
-A majorly attractive attribute when devising a gamma scalping trade is the embedded feature of having a payout with positive convexity. Positive convexity with a long options position leads to a structural profit and loss (PnL) asymmetry where losses are capped, yet gains are theoretically unlimited as depicted in the theoretical [convex](https://medium.com/opyn/squeeth-primer-a-guide-to-understanding-opyns-implementation-of-squeeth-a0f5e8b95684) payout figure below.
+## Gamma scalping example
 
-![](./03.png)
+Here is a worked example with an ETH straddle, using Black-Scholes approximations.
 
-The convexity of the options straddle coupled with the delta-hedging technique described earlier are the main crux to implement a gamma scalping strategy. In the event of heightened price action, scalpers reap outsized profits from the convexity of their payoff curve. The main takeaway here is that being long gamma is functionally being long both realized volatility and convexity as well.
+- ETH price: **$2,500**
+- Position: **long 1 ATM straddle** (1 call + 1 put, strike $2,500, 30 days)
+- Implied volatility: **60%**
 
-## Gamma Scalping in Uniswap
-We have previously shown that Uniswap liquidity provider (LP) positions closely [resemble](https://panoptic.xyz/research/defi-put-options-uniswap-backtest) perpetual options, and that the ability to short Uniswap LP positions would enable one to gamma scalp on Uniswap. For explanatory purposes, we perform a small [backtest](https://github.com/panoptic-labs/research/blob/main/_research-bites/20240612/gamma-scalping.ipynb) of a gamma scalping strategy on the ETH/USDC 5bps Uniswap pool taking place on May 19, 2021.
+At these inputs the straddle has a gamma of about **0.00186 per $1** and a theta of about **$5.70 per day**.
 
-![](./04.png)
+**Day 1: ETH rises to $2,600.** Delta goes from 0 to about +0.186 (gamma × $100). The scalper sells **0.186 ETH at $2,600** to return to neutral.
 
-The overall return for the strategy is roughly 11.5% with the streamia (streaming premium) paid amounting to approximately -0.4%. For the sake of historical context, the selected one-day period for the backtest is a particularly volatile backdrop as there were several stablecoin depegs the following day on May 20, 2021. The backtest is an illuminating case study as to how gamma scalping, in a highly mercurial environment such as the date in question, can potentially harvest immense returns over an abbreviated time horizon.
+**Day 2: ETH falls back to $2,500.** The straddle's delta returns to about 0, leaving the hedge net short 0.186, so the scalper buys back **0.186 ETH at $2,500**.
 
-### Panoptic-Native Gamma Scalping
-With regard to Panoptic, gamma scalping would involve several departures from conventional TradFi procedure. Gamma can be [capped](https://paper.panoptic.xyz/) with [Panoptions](/docs/terms/panoption) based on user preference, and theta decay is paid in the form of [streamia](https://panoptic.xyz/docs/product/streamia). The TradFi heuristic of options moneyness would be supplanted by [rangeness](https://panoptic.xyz/docs/product/streamia) where a Panoption buyer would pay streamia to a seller when an option is [in-range](https://panoptic.xyz/docs/terms/in_range) (IR) and pay nothing when a Panoption is [out-of-range](https://panoptic.xyz/docs/terms/out_of_range) (OOR).
+| | Amount |
+|---|---|
+| Hedge profit (0.186 ETH × $100) | **+$18.60** |
+| Theta paid (2 days × $5.70) | **−$11.40** |
+| Net | **+$7.20** |
 
-Consequently, a conducive market climate to gamma scalp and purchase an ATM straddle on Panoptic would be if a prospective gamma scalper theorizes that an underlying will begin IR and eventually move OOR, while the ongoing delta-hedging could be executed through [perps](https://panoptic.xyz/research/options-market-making#the-benefits-of-hedging-with-futures).
+ETH ended where it started, yet the trade made money because it moved enough in between. The daily break-even move is about **$78** (that is, $2{,}500 \times 60\% / \sqrt{365}$). Days with larger swings make money; quieter days lose theta.
 
-In a future article, we will explore the [risks](https://panoptic.xyz/research/demystifying-IL-LVR-JIT-MEV) of being short gamma, which Uniswap LP positions fall under. The parallels of impermanent loss (IL) to options gamma risk and loss-versus-rebalancing (LVR) to continuous delta-hedging lend specific insights to that effect. Prior Panoptic quantitative [analysis](https://panoptic.xyz/research/uniswap-options-lp-analysis) also demonstrates how LPs are constrained to being profitable with relation to only Uniswap v3 pools that have relatively muted underlying realized volatility.
+### Backtest: gamma scalping on Uniswap
 
-*Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](https://panoptic.xyz/docs/intro) and head to our [website](https://panoptic.xyz/).*
+Uniswap LP positions closely [resemble](/research/defi-put-options-uniswap-backtest) perpetual options, so shorting LP positions lets you gamma scalp on Uniswap. A [backtest](https://github.com/panoptic-labs/research/blob/main/_research-bites/20240612/gamma-scalping.ipynb) on the ETH/USDC 5 bps pool on May 19, 2021, a highly volatile day, returned about **11.5%**, with streamia paid of about **−0.4%**.
+
+![Backtest of gamma scalping on the ETH/USDC 5 bps Uniswap pool on May 19, 2021, showing cumulative return of about 11.5% and streamia paid of about -0.4%](./04.png)
+
+## Delta-neutral gamma scalping vs delta scalping
+
+| | Gamma scalping | Delta scalping |
+|---|---|---|
+| Options position | Long gamma (long straddle or strangle) | Any, often directional |
+| Goal of hedges | Return to delta neutral | Trade around a target delta |
+| Profits from | Realized volatility above implied | Short-term price swings, sometimes with a directional bias |
+| Main cost | Theta / streamia | Fees, slippage, directional risk |
+
+Gamma scalping is always delta neutral and always long options. "Delta scalping" is a looser term for actively trading the underlying around a position's delta, and can be done without being long gamma.
+
+## Reverse gamma scalping and Uniswap LPs
+
+While price is inside its selected range, a Uniswap v3 or v4 LP position is **short gamma**. As price rises, swappers buy the rising asset out of the pool, so the LP holds less of it; as price falls, they sell the falling asset into the pool, so the LP holds more. The LP's exposure shrinks before further gains and grows before further losses, the opposite of a long-gamma position. Delta-hedging that short-gamma book means buying after rallies and selling after drops (buying high and selling low), the mirror image of a gamma scalper's hedges. The LP earns swap fees in exchange. Out of range, the position is single-sided: it does not rebalance and earns no swap fees until price re-enters.
+
+In other words, **every in-range Uniswap LP is running a reverse gamma scalp**. Impermanent loss is the hedging loss of a short-gamma position, and swap fees play the role of theta. LPs come out ahead only when fees exceed losses from realized volatility, which is why [LP returns are concentrated in lower-volatility pools](/research/uniswap-options-lp-analysis). See [reverse gamma scalping](/research/reverse-gamma-scalping) and [IL, LVR, JIT, and MEV](/research/demystifying-IL-LVR-JIT-MEV) for the full treatment.
+
+Panoptic makes this two-sided: selling an option on Panoptic is providing Uniswap liquidity (short gamma), and buying an option removes it (long gamma). The gamma scalper and the LP are taking opposite sides of the same trade.
+
+## How to gamma scalp on Panoptic
+
+Panoptic [perpetual options](/docs/trading/perpetual-options) change the mechanics in three useful ways:
+
+- **No expiry, no roll.** A perpetual straddle keeps its gamma until you close it. There is no expiry date where gamma collapses and no need to roll into a new contract.
+- **Streamia instead of theta.** The buyer pays [streamia](/docs/product/streamia) to sellers each block while the option is [in range](/docs/terms/in_range), and nothing while it is [out of range](/docs/terms/out_of_range). Your hedging gains are measured against streamia instead of upfront premium and theta decay.
+- **Any Uniswap pool.** You can buy gamma on tokens that trade on Uniswap, including many that no other options venue lists. Delta hedges can be placed with spot or [perps](/research/options-market-making#the-benefits-of-hedging-with-futures).
+
+The ideal setup is the same as in traditional markets: buy an ATM straddle when you expect price to move more than the streamia you are paying implies, then delta hedge mechanically.
+
+**[Open a straddle on Panoptic →](https://app.panoptic.xyz)**
+
+## FAQ
+
+### Is gamma scalping profitable?
+
+Only when the underlying moves more than the options price implies. Hedging gains scale with the square of each move, while the cost (theta, or streamia on Panoptic) accrues with time. In quiet markets, the cost exceeds the hedging gains and the trade loses money.
+
+### How often should you rehedge when gamma scalping?
+
+Most traders rehedge on a delta threshold (for example, when net delta exceeds 0.1 per straddle) or on a fixed schedule. Hedging more often captures more small moves but pays more fees and slippage; hedging less often lets trends run further but leaves more directional risk between hedges.
+
+### What is the difference between gamma scalping and delta scalping?
+
+Gamma scalping is long options and delta neutral: the trader buys gamma and trades the underlying only to remove the delta that gamma creates. Delta scalping is a broader term for actively trading the underlying around a position's delta, and may keep a directional bias or be applied to short-gamma books.
+
+### Are Uniswap LPs doing reverse gamma scalping?
+
+Yes, while price is in range. An in-range LP position is short gamma: the pool sells the rising asset and buys the falling one, and earns swap fees in exchange. Out of range, it is single-sided, does not rebalance, and earns no fees until price re-enters. Impermanent loss is the hedging loss of that short-gamma position.
+
+### Can you gamma scalp without options expiring?
+
+Yes. Panoptic perpetual options never expire, so you can hold a long straddle without rolling it. Instead of an upfront premium and theta decay, you pay streamia to sellers while the position is in range.
+
+*Join the growing community of Panoptimists and be the first to hear our latest updates by following us on our [social media platforms](https://links.panoptic.xyz/all). To learn more about Panoptic and all things DeFi options, check out our [docs](/docs/intro) and head to our [website](https://panoptic.xyz/).*

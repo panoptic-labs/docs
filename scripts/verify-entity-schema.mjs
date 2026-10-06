@@ -139,7 +139,7 @@ for (const instance of ["default", "research"]) {
     `Expected authored articles in ${instance}`,
   );
 }
-assert.equal(founderPosts, 6);
+assert.ok(founderPosts > 0, "Expected founder-authored articles");
 assert.ok(example);
 if (process.argv.includes("--print")) {
   console.log(

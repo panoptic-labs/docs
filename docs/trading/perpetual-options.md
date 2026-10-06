@@ -1,7 +1,16 @@
 ---
 sidebar_position: 2
+title: "Perpetual Options: Options With No Expiry, Explained"
+sidebar_label: Perpetual options
+description: "Perpetual options are calls and puts that never expire. Learn how they work, how they compare to perps and traditional options, and how to trade them onchain on Panoptic."
 ---
 # Perpetual options
+
+## What are perpetual options?
+
+Perpetual options are calls and puts with no expiry date. You keep the option's payoff for as long as you hold it, and there is nothing to roll. Instead of paying an upfront premium, the buyer pays a small ongoing fee, called streamia (streaming premium), to the seller. On Panoptic, perpetual options trade onchain on any token with a Uniswap pool.
+
+> **Perps or options?** Perpetual options sit between the two: no expiry like perps, but a convex payoff like options. For buyers, the option's own payoff can't lose more than its value at entry, but streamia keeps accruing while the option is in range, so total cost isn't capped and can lead to liquidation. Sellers take the other side of that risk. See [perps vs options](/docs/trading/perps-vs-options) for a side-by-side comparison.
 
 
 Perpetual options (also known as [XPOs](https://www.investopedia.com/terms/p/perpetual-option.asp)) are financial derivatives that give investors the right (but not obligation) to buy or sell an asset at a specified price *at any time*. This is in contrast to traditional options that have a predetermined expiry date to the contract. Perpetual options give investors the flexibility to exercise their option whenever they see fit. 
@@ -13,7 +22,7 @@ Perpetual options are not commonly found on TradFi exchanges, as they are exotic
 
 ### How do Perpetual Options Work?
 
-**Streamia (streaming premium)-driven**: The buyer of the option pays nothing upfront to open the position, but instead pays a (relatively small) fee on a block-to-block basis to keep their position open. This is the model that Panoptic uses. The streamia-driven perpetual options (AKA Panoptions) do not need a price oracle.
+**Streamia-driven**: The buyer of the option pays nothing upfront to open the position, but instead pays a (relatively small) fee on a block-to-block basis to keep their position open. This is the model that Panoptic uses. The streamia-driven perpetual options (AKA Panoptions) do not need a price oracle.
 
 ### How do Perpetual Options Compare to Perpetual Futures ("Perps")?
 

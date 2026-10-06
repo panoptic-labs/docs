@@ -267,6 +267,7 @@ const config = {
 
 
   plugins: [
+    require.resolve('./plugins/external-fonts.cjs'),
     // "@docusaurus-terminology/parser",
 
     [
