@@ -3,6 +3,7 @@ const path = require('path');
 const matter = require('gray-matter');
 
 async function generateRecentUpdates() {
+  const { optimizeRecentImages } = await import('./scripts/recent-images.mjs');
   const blogDirectory = path.join(__dirname, './blog');
   const researchDirectory = path.join(__dirname, './research');
   const blogFiles = fs.readdirSync(blogDirectory);
@@ -22,7 +23,8 @@ async function generateRecentUpdates() {
   recentCombinedPosts.map((post) => post.id = generateId())
   recentPosts.push(...recentCombinedPosts);
 
-  fs.writeFileSync('recentUpdates.json', JSON.stringify(recentPosts, null, 2));
+  const optimizedPosts = await optimizeRecentImages(recentPosts, path.join(__dirname, 'static'));
+  fs.writeFileSync(path.join(__dirname, 'recentUpdates.json'), JSON.stringify(optimizedPosts, null, 2));
 }
 
 function generatePosts(files, directory, type) {
@@ -101,4 +103,7 @@ function getShortDescription(file) {
   return shortWords.join(' ');
 }
 
-generateRecentUpdates();
+generateRecentUpdates().catch(error => {
+  console.error(error);
+  process.exitCode = 1;
+});

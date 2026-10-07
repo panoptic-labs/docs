@@ -8,7 +8,7 @@ sidebar_class_name: menu__list-item-collapsible
 
 Panoptic is a permissionless protocol for perpetual options and lending. V2 supports Uniswap v3 and v4 markets; see [deployment addresses](./contracts/deployment-addresses) for documented chains.
 
-<video src="https://user-images.githubusercontent.com/62954565/223510059-8c057bc5-3957-466d-bbdd-27e2bdea02bb.mp4#t=0.55" preload="metadata" type="video/mp4" width="100%" height="auto" controls>
+<video src="https://user-images.githubusercontent.com/62954565/223510059-8c057bc5-3957-466d-bbdd-27e2bdea02bb.mp4#t=0.55" poster="/img/panoptic-intro-poster.webp" preload="none" width="1920" height="1080" style={{ width: "100%", height: "auto", aspectRatio: "16 / 9" }} controls playsInline>
 </video>
 
 ---

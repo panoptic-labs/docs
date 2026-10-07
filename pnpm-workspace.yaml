@@ -6,8 +6,10 @@ allowBuilds:
   "@parcel/watcher": true
   core-js: false
   core-js-pure: false
+  sharp: false
 ignoredBuiltDependencies:
   - bufferutil
   - core-js
   - core-js-pure
+  - sharp
   - utf-8-validate

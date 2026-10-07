@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import Slider from "react-slick";
 import PillText from "../NewHomePage/PillText/PillText";
 import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import ReactMarkdown from "react-markdown";
 import recentUpdates from '../../../recentUpdates.json';
 
@@ -78,7 +77,13 @@ const RecentUpdates = () => {
                       <img
                         className="recent-updates__card__image"
                         src={post.image}
+                        srcSet={post.imageSrcSet}
+                        sizes="(max-width: 767px) calc(100vw - 114px), 320px"
+                        width={post.imageWidth}
+                        height={post.imageHeight}
                         alt={post.title}
+                        loading="lazy"
+                        decoding="async"
                       />
                       <div className="recent-updates__card__title">{post.title}</div>
                       <p className="recent-updates__card__excerpt">

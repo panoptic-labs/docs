@@ -5,7 +5,6 @@ import "@fontsource/jetbrains-mono"
 // import ScrollingTokens from "../ScrollingTokens/ScrollingTokens"
 import React from "react";
 import entities from "../../../data/entities.cjs";
-import { motion } from "framer-motion";
 import HeroVisual from "../HeroVisual/HeroVisual";
 import { APP_LINK } from "../../../constants";
 
@@ -16,12 +15,7 @@ const TitlePage = () => {
       <div className="hero-glow" aria-hidden="true" />
       <div className="hero-grid" aria-hidden="true" />
 
-      <motion.div
-        className="hero-content"
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
+      <div className="hero-content">
         <div className="hero-copy">
           <p className="hero-eyebrow">Perpetual options protocol</p>
 
@@ -45,7 +39,7 @@ const TitlePage = () => {
         </div>
 
         <HeroVisual />
-      </motion.div>
+      </div>
 
       <a href="#mechanism" className="hero-scroll-hint">
         Scroll to explore
