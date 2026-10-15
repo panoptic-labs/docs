@@ -4,7 +4,7 @@ Panoptic V2 uses internal AMM-derived observations for risk and solvency. Descri
 
 ## Engine-specific periods
 
-The engine exposes `EMA_PERIODS`, packing four 24-bit periods in seconds: spot, fast, slow, and eons. Read the [engine-specific tables](/docs/contracts/parameters) for the current values. The stock engines use longer periods than the crypto blue-chip engine.
+The implementation stores internal `EMA_PERIODS`, packing four 24-bit periods in seconds: spot, fast, slow, and eons. Read the [engine-specific tables](/docs/contracts/parameters) for the current values. The xStocks tier uses longer periods than the crypto blue-chip tier. Read periods from verified implementation constructor arguments; the new implementation has no public `EMA_PERIODS()` getter. EMA periods must remain fixed across upgrades of a proxy because existing pools retain oracle packs written under them.
 
 `OraclePack` stores smoothed ticks, rolling observations, an epoch, and a guardian lock. Its layout is separate from the packed period configuration. Use the [OraclePack reference](/docs/contracts/V2/types/library.OraclePackLibrary) for encoding and decoding.
 

@@ -25,4 +25,4 @@ An exercise requires eligible long legs. Identical-length streamia-settlement li
 
 Liquidation closes the portfolio, computes compensation, and can apply streamia haircuts and recognize protocol loss. Forced exercise and streamia settlement can redistribute collateral between tokens. Keep amounts and packed slots in their native token frames and simulate the whole call.
 
-See [exercise cost](./08-exercise-cost.md), [RiskEngine](/docs/contracts/V2/RiskEngine/contract.RiskEngine), and [deployed parameters](/docs/contracts/parameters). These engines are immutable per pool; none of these operations changes the pool's engine.
+See [exercise cost](./08-exercise-cost.md), [RiskEngine](/docs/contracts/V2/RiskEngine/contract.RiskEngine), and [deployed parameters](/docs/contracts/parameters). These operations do not change the pool's configured engine address. Proxy implementation upgrades use the separate [ProxyAdmin authority](/docs/contracts/V2/RiskEngine/contract.RiskEngineProxy).

@@ -9,7 +9,7 @@ Panoptic is a protocol that facilitates the trading of [Panoptions](/docs/terms/
 
 ---
 ## Protocol Parameters
-The Panoptic protocol is governed by a set of immutable parameters used to calculate collateral requirements, streamia, fees, price feeds, and more. Each pool selects an immutable RiskEngine; parameters can differ between crypto and stock engines, including the token ordering of cross-collateral buffers. To read more about the parameters and their current values, visit the [parameters](/docs/contracts/parameters) page.
+The RiskEngine defines parameters used to calculate collateral requirements, streamia, fees, price feeds, and more. New pools select a fixed RiskEngine proxy address; parameters are immutable within an implementation and can change through an authorized proxy upgrade. Crypto blue-chip and xStocks tiers use the same implementation source with different constructor inputs. To read more about the parameters and their current values, visit the [parameters](/docs/contracts/parameters) page.
 
 ## Pool Criteria
 Panoptic Pools can be deployed permissionlessly by anyone, but pools listed on our interface must meet a certain set of criteria before they can be traded. To read more about the listing criteria and learn how to ensure a pool appears on our interface, visit the [pool criteria](/docs/contracts/pool-criteria) page.
@@ -17,7 +17,7 @@ Panoptic Pools can be deployed permissionlessly by anyone, but pools listed on o
 ## Architecture & Contracts (Panoptic V2)
 Panoptic V2 is the second major release of the Panoptic Protocol. It expands Panoptic into a unified system for lending and perpetual options, enabling lending markets within Panoptic and options trading on Uniswap V3 and V4 pools.
 
-A pool cannot replace its RiskEngine in place. Adopting a new engine requires users to migrate positions/state to a pool configured with that engine; deployment of a new engine does not migrate user state automatically.
+Proxy-backed pools can adopt compatible RiskEngine implementation upgrades in place through the ProxyAdmin owner. Pools and collateral trackers remain immutable. Legacy pools bound directly to older engines must migrate to new pools to adopt the proxy release. See the [RiskEngine proxy reference](/docs/contracts/V2/RiskEngine/contract.RiskEngineProxy).
 
 Version 2 introduces a redesigned interest rate model for lending markets, modular risk engines that support higher, controlled leverage and improved capital efficiency, and streamlined position management. Additional upgrades include internalized oracles and builder codes for trading fee discounts and protocol fee capture.
 
@@ -40,7 +40,7 @@ Panoptic V2 also works in tandem with Panoptic Vaults, which add vault-based aut
   - Creates and manages undercollateralized options. Manages positions, collateral, liquidations and forced exercises.
 - [SemiFungiblePositionManager](/docs/contracts/V2/contract.SemiFungiblePositionManagerV4)
   - The Semi-fungible Position Manager contract for Panoptic acts as a position manager for Uniswap V4 LPs. Wraps up to 4-legged Uniswap V4 positions in the ERC1155 semi-fungible token interface.
-- [RiskEngine](/docs/contracts/V2/RiskEngine/contract.RiskEngine)
+- [RiskEngine proxy and implementation](/docs/contracts/V2/RiskEngine/contract.RiskEngineProxy)
   - Defines risk policy and fee routing for a given pool deployment. The RiskEngine specifies parameters used in solvency checks and fee calculations (e.g., commission rates, buffers, builder-code routing), and acts as the recipient for protocol-routed fees.
 - [base](/docs/contracts/V2/base/abstract.Multicall)
   - Inherited metadata and multicall contracts

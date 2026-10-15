@@ -12,7 +12,7 @@ The engine adds one for each strict inequality that holds:
 | Internal disagreement | absolute difference between spot EMA and fast EMA | `MAX_TICKS_DELTA / 2`, rounded down |
 | High divergence | absolute difference between median tick and slow EMA | `MAX_TICKS_DELTA / 2`, rounded down |
 
-The [snapshot](/data/risk-engines.json) includes read-only boundary probes for high divergence: equality does not trigger it; one tick above does. Tick distances are logarithmic price ratios, not identical upward and downward percentage moves.
+The legacy direct-engine [snapshot](/data/risk-engines.json) includes read-only boundary probes for high divergence: equality does not trigger it; one tick above does. Tick distances are logarithmic price ratios, not identical upward and downward percentage moves.
 
 ## Guardian lock
 
@@ -20,7 +20,7 @@ A guardian lock contributes three to the score. It therefore produces a score of
 
 ## Effects
 
-- Any positive score makes ordinary solvency evaluation use multiple ticks.
+- Any positive score makes ordinary solvency evaluation use multiple ticks. In the new implementation, the pool-supplied safe-mode sentinel also floors account-wide cross-buffer utilization at 91%, reducing cross-token support to at most 72% for blue chip and 60% for xStocks.
 - A score greater than one enforces the covered mint/burn tick-limit ordering in `dispatch`.
 - A score greater than two prevents minting new positions through `dispatch`.
 

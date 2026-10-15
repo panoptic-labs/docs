@@ -214,7 +214,7 @@ export function renderTables(snapshot) {
         : rows
             .map((row) => `### Chain ${row.chainId}\n\n${table(row.values)}`)
             .join("\n\n");
-      return `## ${engine.name} {#${engine.id}}\n\nAddress: \`${engine.address}\`.\n\n[Public source](${sourceRepository}/blob/${sourceCommit}/contracts/${engine.source}) · [Release artifact](${sourceRepository}/blob/${sourceCommit}/${engine.release})\n\n${evidence}\n\n${content}`;
+      return `## Legacy ${engine.name} {#${engine.id}}\n\nAddress: \`${engine.address}\`.\n\n[Public source](${sourceRepository}/blob/${sourceCommit}/contracts/${engine.source}) · [Release artifact](${sourceRepository}/blob/${sourceCommit}/${engine.release})\n\n${evidence}\n\n${content}`;
     })
     .join("\n\n");
 }

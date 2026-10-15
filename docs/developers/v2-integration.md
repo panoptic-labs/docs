@@ -24,6 +24,8 @@ This walkthrough pins SDK **1.0.25**. That published release imports React-relat
 
 Save the following as `read-market.mjs`. The `.mjs` extension enables ES modules without changing `package.json`.
 
+This read-only example uses a legacy direct-engine pool; its recorded RiskEngine address is not the proxy release configuration, and the pool is close-only. Use the [deployment addresses](../contracts/deployment-addresses) and [integration workflow](./integration-workflow) to select a current pool for trading.
+
 The example selects Ethereum Panoptic V2 pool `0x00000000563b70d704f4c6675a5f6ac989fbae13`, which uses the Uniswap v4 ETH/USDC market. This is a PanopticPool address, not a factory, RiskEngine, or underlying Uniswap pool identifier.
 
 ```js

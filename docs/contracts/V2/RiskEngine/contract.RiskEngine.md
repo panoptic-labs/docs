@@ -4,6 +4,8 @@ title: "RiskEngine (V2)"
 ---
 # RiskEngine (V2)
 
+> Legacy direct-engine reference. For the proxy-based release, use the [RiskEngine proxy and implementation reference](/docs/contracts/V2/RiskEngine/contract.RiskEngineProxy).
+
 > Source reference for public revision `e3b9d12`. For deployed configuration, select the pool's engine on the [parameter page](/docs/contracts/parameters).
 
 [Git Source](https://github.com/panoptic-labs/panoptic-v2-core/blob/e3b9d125f929a5a8c7220ec6467613686939edae/contracts/RiskEngine.sol)

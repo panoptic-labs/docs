@@ -8,7 +8,16 @@ PanopticPools and CollateralTrackers are [proxy contracts](https://info.ethersca
 
 ## v2
 
-The active RiskEngine configurations below are documented [per engine](/docs/contracts/parameters), with chain-specific block and bytecode evidence. Read a pool's `riskEngine()` to select its configuration. Deprecated engines are not listed as current configurations.
+The proxy-based release launched on Ethereum Mainnet and Robinhood Chain on October 12, 2026, as recorded in the [app changelog](https://app.panoptic.xyz/changelog). Addresses below are reported by [core PR #270](https://github.com/panoptic-labs/panoptic-v2-core/pull/270) and its pinned build configs. Read a pool's `riskEngine()` and resolve the proxy implementation at the block you use; the reported initial implementation can change after an upgrade. These are release records, not fresh block-pinned RPC observations.
+
+| Tier | Proxy address used by pools | Reported implementation |
+| --- | --- | --- |
+| Crypto blue chip | `0x000000000000ffE5eFdB5AE76b9200263C58b4c0` | `0x000000000000F0b287c19f606bC3A471F260c502` |
+| xStocks | `0x000000000000FfADa7c641E2aD6B13b51b50Cc94` | `0x000000000000F4901018445c697e1e358DAb8dAD` |
+| Reserved A | `0x000000000000ff1F72EB9b4a215DDac4d9dDa3dA` | Stub `0x000000000000F4a3109180d77f4d8242863c6e8A` |
+| Reserved B | `0x000000000000Ff944ed41CbFa03edc0b477cBbf4` | Stub `0x000000000000F4a3109180d77f4d8242863c6e8A` |
+
+The release reports ProxyAdmin owner `0x8DFEAA4AEe4596b90EF581d7731E4E0b7AbA3221`. Reserved proxies revert until activated and cannot yet host pools. See [proxy controls](/docs/contracts/V2/RiskEngine/contract.RiskEngineProxy) and [tier parameters](/docs/contracts/parameters).
 
 ### Ethereum Mainnet
 
@@ -32,9 +41,8 @@ The active RiskEngine configurations below are documented [per engine](/docs/con
 - `PanopticPool (V3 impl)` (reference implementation - each PanopticPool is a proxy to this): `0x000000000000155f9860E155A779992Cde7E7449`
 - `CollateralTracker` (reference implementation - each CollateralTracker is a proxy to this): `0x0000000000001d9c38CA405A2e04420865A08A33`
 - `BuilderFactory`: `0x0000000000000a3D22E158417AA639D7F71b0FF7`
-- `RiskEngine (crypto blue chip)`: `0x000000000000075E29Cdaa9cb640A69e148ca7da`
-- `RiskEngineXStocks`: `0x0000000000000fE1E261f66ce2F44def4F5Ae0CB`
-- `RiskEngineXStocksReverse (inverted token ordering)`: `0x0000000000000f3fb82469581A74776178E76Ca4`
+- `RiskEngineProxy (crypto blue chip)`: `0x000000000000ffE5eFdB5AE76b9200263C58b4c0`
+- `RiskEngineProxy (xStocks)`: `0x000000000000FfADa7c641E2aD6B13b51b50Cc94`
 - `PanopticQuery`: `0x0000000000000e1aE9c66C1c3B0A547D23389C93`
 - `InteractionHelper`: `0x00000000000041fe14Ce3c2392337CE501aE8328`
 - `PanopticMath`: `0x000000000000334bbd65C195581cf59ECf315932`
@@ -55,9 +63,8 @@ The active RiskEngine configurations below are documented [per engine](/docs/con
 - `SemiFungiblePositionManagerV4`: `0x00000000000005C3287f136Ef5AF56c68Ea6849f`
 - `SemiFungiblePositionManagerV3`: `0x00000000000005E4693aDc8Ec0f12D686f728198`
 - `BuilderFactory`: `0x0000000000000a3D22E158417AA639D7F71b0FF7`
-- `RiskEngine (crypto blue chip)`: `0x000000000000075E29Cdaa9cb640A69e148ca7da`
-- `RiskEngineXStocks`: `0x0000000000000fE1E261f66ce2F44def4F5Ae0CB`
-- `RiskEngineXStocksReverse (inverted token ordering)`: `0x0000000000000f3fb82469581A74776178E76Ca4`
+- `RiskEngineProxy (crypto blue chip)`: `0x000000000000ffE5eFdB5AE76b9200263C58b4c0`
+- `RiskEngineProxy (xStocks)`: `0x000000000000FfADa7c641E2aD6B13b51b50Cc94`
 - `PanopticPool (V4 impl)` (reference implementation - each PanopticPool is a proxy to this): `0x000000000000135429F0DaCaB61639Bf6a63EbbC`
 - `PanopticPool (V3 impl)` (reference implementation - each PanopticPool is a proxy to this): `0x000000000000155f9860E155A779992Cde7E7449`
 - `CollateralTracker` (reference implementation - each CollateralTracker is a proxy to this): `0x0000000000001d9c38CA405A2e04420865A08A33`

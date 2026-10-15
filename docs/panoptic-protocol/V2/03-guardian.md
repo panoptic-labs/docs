@@ -1,6 +1,6 @@
 # Guardian Role
 
-Each V2 RiskEngine has an immutable `GUARDIAN` address. The engine gates pool locking, unlocking, and token collection through that address. See the [public RiskEngine reference](/docs/contracts/V2/RiskEngine/contract.RiskEngine) and [PanopticGuardian reference](/docs/contracts/V2/contract.PanopticGuardian) for the separate access-control interfaces.
+Each RiskEngine implementation has a constructor-set immutable `GUARDIAN` address. A proxy upgrade can select an implementation with a different guardian. The engine gates pool locking, unlocking, and token collection through that address. See the [public RiskEngine reference](/docs/contracts/V2/RiskEngine/contract.RiskEngine) and [PanopticGuardian reference](/docs/contracts/V2/contract.PanopticGuardian) for the separate access-control interfaces.
 
 ## Pool controls
 
@@ -12,6 +12,8 @@ A lock prevents new mints under the [safe-mode rules](./02-safe-mode.md). It doe
 
 The authorized guardian can collect tokens held by the RiskEngine, including protocol-routed fee shares. This capability is distinct from withdrawing a user's collateral from a CollateralTracker.
 
-## Modularity, not in-place upgrades
+## Guardian and upgrade authority
 
-The pool's RiskEngine address is immutable. A new engine can define a different policy for a new pool, but users must migrate their positions/state to adopt it. Locking an existing pool is not a migration mechanism.
+The pool's RiskEngine address is fixed, but proxy-backed pools can receive implementation upgrades through the proxy's ProxyAdmin owner. Guardian authorization only controls the engine's guardian operations; it does not itself grant upgrade authority. `GUARDIAN` is fixed within an implementation, while proxy upgrades may change the implementation and its configured guardian.
+
+Legacy direct-engine pools require migration to adopt a proxy. Locking or unlocking a pool does not migrate it. See the [proxy reference](/docs/contracts/V2/RiskEngine/contract.RiskEngineProxy).

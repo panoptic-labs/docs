@@ -5,41 +5,71 @@ sidebar_label: "Protocol Parameters"
 
 # Protocol Parameters (V2)
 
-V2 pools select an immutable RiskEngine at deployment. Read the pool's `riskEngine()` address before choosing a configuration below. These are the three active engines for Ethereum (chain 1) and Robinhood (chain 4663); deprecated engines are excluded.
+The proxy-based RiskEngine release uses one parameterized `RiskEngineV2` implementation for crypto blue-chip and xStocks tiers. Pools retain a fixed RiskEngine proxy address; an authorized implementation upgrade can change their risk policy in place. Read `PanopticPool.riskEngine()` and resolve its implementation before applying parameters. See the [proxy reference](/docs/contracts/V2/RiskEngine/contract.RiskEngineProxy) for authority, interfaces, and upgrade constraints.
 
-The tables are generated from [block-pinned RPC observations](/data/risk-engines.json). Each snapshot checks the chain, deployed runtime, all listed getters, safe-mode boundaries, and cross-buffer behavior. The runtime is also compared with the result of executing the pinned public release's creation bytecode in a read-only `eth_call`. Source-reference pages describe a pinned public source revision; deployed parameters come from the snapshot, not repository defaults.
+## Proxy release parameters
 
-## How to interpret the parameters
+The release launched on Ethereum Mainnet and Robinhood Chain on October 12, 2026; see [PR #270](https://github.com/panoptic-labs/panoptic-v2-core/pull/270) and the [app changelog](https://app.panoptic.xyz/changelog). The minimum target rate increased from 0.1% to 2% annualized, and buyer base collateral fell from 10% to 1%.
 
-- Fee rates and fee splits use basis points: `10_000` = 100%.
-- Collateral ratios, cross buffers, the buying-power-decrease buffer (`BP_DECREASE_BUFFER`), and exercise-cost coefficients use `DECIMALS = 10_000_000`. The buffer applies to minting and collateral-withdrawal checks. A value of `10_666_667` multiplies the requirement by approximately 1.066667; it is not a fee. In the pinned implementation, force-exercise solvency checks in `dispatchFrom` use `NO_BUFFER` (`10_000_000`).
-- `MAX_SPREAD` uses a scale of `10_000` for removed liquidity divided by remaining liquidity. `VEGOID` is an integer controlling streamia (streaming premium) sensitivity.
-- `EMA_PERIODS` packs four 24-bit periods in seconds, ordered spot, fast, slow, eons. Interest rates use WAD (`10^18`) per second; these rates are not APYs or promises of lender returns.
-- `TARGET_POOL_UTIL` is the collateral utilization threshold; `TARGET_UTILIZATION` is the separately scaled interest-model target.
+These values come from core revision `ec910b4` on `feat/risk-engine-v2`: the [blue-chip build config](https://github.com/panoptic-labs/panoptic-v2-core/blob/ec910b4f4e8f3fae0156b1cd0604210b23d026f0/build-config-RiskEngine.json), [xStocks build config](https://github.com/panoptic-labs/panoptic-v2-core/blob/ec910b4f4e8f3fae0156b1cd0604210b23d026f0/build-config-RiskEngineXStocks.json), and [canonical tier definitions](https://github.com/panoptic-labs/panoptic-v2-core/blob/ec910b4f4e8f3fae0156b1cd0604210b23d026f0/script/params/RiskEngineParams.sol). They describe release configuration, not a block-pinned verification of deployment or the current implementation on any chain. The upgrade-template config is not the canonical initial tier configuration.
 
-### Collateral and token ordering
+Ratios use `DECIMALS = 10_000_000`; fee rates and splits use basis points (`10_000 = 100%`). Both tiers use the same source. Their symmetric cross buffers remove the need for a separate inverted-stock configuration in this release, though token ordering still determines how balances and requirements are calculated.
 
-The base seller ratio increases toward full collateralization above the collateral utilization target. The base buyer ratio is constant in these engines; final requirements still depend on position composition, price, and risk partners. `MAINT_MARGIN_RATE` is the additional maintenance margin used for loan legs. None of these base ratios is a universal maximum leverage promise.
+| Constructor field | Crypto blue chip | xStocks | Meaning |
+| --- | --- | --- | --- |
+| `crossBuffer0`, `crossBuffer1` | `9_000_000` each (90%) | `7_500_000` each (75%) | Base surplus collateral credited across tokens |
+| `emaPeriods` | `4_533_471_891_108_855_828_971_580` | `9_066_943_782_217_711_657_943_160` | Packed spot/fast/slow/eons periods: 60/120/240/960 s and 120/240/480/1920 s respectively |
+| `maxTicksDelta` | `724` | `953` | Oracle-divergence threshold in ticks |
+| `maxClampDelta` | `149` | `149` | Maximum median update movement in ticks |
+| `maxTwapDeltaDispatch` | `513` | `513` | Dispatch price-divergence limit in ticks |
+| `maxSpread` | `90_000` | `90_000` | Removed/net liquidity ratio, scaled by `10_000` |
+| `bpDecreaseBuffer` | `10_750_000` (1.075×) | `10_750_000` (1.075×) | Requirement multiplier for applicable buying-power-decrease checks |
+| `sellerCollateralRatio` | `2_000_000` (20%) | `2_000_000` (20%) | Base short-option ratio |
+| `buyerCollateralRatio` | `100_000` (1%) | `100_000` (1%) | Base long-option ratio |
+| `maintMarginRate` | `1_000_000` (10%) | `2_500_000` (25%) | Additional loan-margin floor |
+| `loanMarginDivisor` | `4` | `4` | Loan-margin ceiling divisor: `DECIMALS / 4` = 25% |
+| `forceExerciseCost` | `5_000_000` (50%) | `5_000_000` (50%) | Share of estimated remaining long-leg extrinsic value used for exercise compensation |
+| `targetPoolUtil` | `6_666_667` (≈66.67%) | `6_666_667` (≈66.67%) | Collateral-curve target |
+| `saturatedPoolUtil` | `9_000_000` (90%) | `9_000_000` (90%) | Collateral-curve saturation |
+| `maxOpenLegs` | `26` | `26` | Open-leg limit |
+| `maxBonus` | `2_000_000` (20%) | `2_000_000` (20%) | Raw per-token liquidation-bonus cap relative to requirement |
+| `notionalFee` | `3` bps | `3` bps | Notional commission |
+| `premiumFee` | `250` bps | `250` bps | Streamia commission |
+| `protocolSplit` | `5_000` bps | `5_000` bps | Protocol share with builder routing |
+| `builderSplit` | `4_000` bps | `4_000` bps | Builder share with builder routing |
+| `minRateAtTarget` | `634_195_839` | `634_195_839` | Minimum target rate, WAD per second (≈2% annualized simple rate) |
 
-`CROSS_BUFFER_0` and `CROSS_BUFFER_1` determine how surplus collateral can support a deficit in the other token. They are not the collateral ratios for opening positions. The effective cross buffer decreases linearly between 90% and 95% utilization and is zero above that range. The two stock engines swap these token-specific coefficients: choose the actual pool engine and token ordering rather than assuming a token symbol or quote asset.
+Most fields are internal immutables, with some packed into the result of `getRiskParameters`; they no longer have separate public getters. Use the [parameter interface](/docs/contracts/V2/RiskEngine/contract.RiskEngineProxy#parameter-interface) and verified implementation constructor arguments rather than the legacy snapshot ABI.
+
+### Fixed and derived values
+
+`VEGOID = 8` remains fixed. The interest model retains `TARGET_UTILIZATION = 666_666_666_666_666_666`, `CURVE_STEEPNESS = 4 × 10^18`, `INITIAL_RATE_AT_TARGET = 1_268_391_679`, `MAX_RATE_AT_TARGET = 63_419_583_967`, `ADJUSTMENT_SPEED = 1_585_489_599_188`, and `IRM_MAX_ELAPSED_TIME = 16_384` seconds. Rates and adjustment speed use WAD per second; they are not APYs or guaranteed lender returns. `TARGET_UTILIZATION` is distinct from the collateral threshold `targetPoolUtil`.
+
+`SAFE_MODE_UTIL_FLOOR` is derived as `saturatedPoolUtil + (DECIMALS - saturatedPoolUtil) / 10`, or 91% for both tiers. When the pool supplies the safe-mode sentinel, account-wide utilization used for cross-collateral support is floored at 91%. With the 90–95% cross-buffer ramp, this limits support to at most 80% of the base coefficient: 72% for blue chip and 60% for xStocks, with further reductions at higher utilization.
+
+### Collateral and exercise behavior
+
+Short-option collateral rises from its base ratio toward 100% between target and saturation; the buyer base ratio stays constant. Loan principal requires an additional margin computed by the seller curve with baseline `loanMarginDivisor × maintMarginRate`, then divided by `loanMarginDivisor`. Blue-chip loan margin therefore rises from 10% to 25%; xStocks loan margin stays at 25%. These are margin components, not universal leverage limits. Multi-leg strategies and mixed-token portfolios still require full engine evaluation.
+
+Cross buffers discount surplus collateral used to cover the other token's deficit. They decrease linearly from their configured coefficients at 90% utilization to zero at 95%. Per-position collateral uses that position's recorded utilization; account-wide maxima feed the cross-buffer calculation. Preserve token0/token1 denomination and conversion direction.
+
+Force exercise pays compensation based on the long legs' estimated remaining extrinsic value at the oracle tick. The 50% coefficient is not a flat 50% notional fee. The calculation includes a notional-fee floor, an in-range tick-spacing floor, and current/oracle value adjustments. See [force exercise](/docs/panoptic-protocol/V2/exercise-cost).
 
 ### Fees and builder routing
 
-Opening a position charges the notional fee on the sum of long and short amounts in each collateral token. Interest on borrowed tokens and streamia are separate costs.
+Opening commissions use long and short notional; borrow interest and streamia are separate costs. Closing commissions with realized streamia are capped at ten times the notional commission on closing notional. A streamia-only settlement with zero closing notional uses the streamia commission without that cap.
 
-For a close with realized streamia, the commission is the smaller of the streamia-based fee and ten times the notional fee on the closing notional. A streamia-only settlement with zero long and short notional uses the streamia fee without that notional cap. The contracts round asset/share conversions; the streamia-fee parameter alone does not determine the final amount charged.
+With a valid nonzero builder code, the configured protocol and builder splits leave a 10% user discount. Code zero routes no fees to a builder wallet and benefits collateral-vault shareholders through commission share burning. A nonzero code must resolve to a deployed wallet. The implementation validates its builder init-code hash against its factory during construction.
 
-With a valid nonzero builder code, the protocol and builder receive their configured shares of the calculated commission; the remainder is a user discount (currently 10%). With code zero, no builder wallet receives fees and commission share burning benefits collateral-vault shareholders. A nonzero code must resolve to a deployed builder wallet.
+## Legacy direct-engine snapshots
 
-### Oracles, exercise, and liquidation
+The following tables retain block-pinned observations for the earlier direct deployments at public revision `e3b9d12`. Their headings and addresses identify historical configurations, not the proxy release's tiers. Legacy pools still use their configured direct engines until users migrate; these values must not be applied to proxy-backed pools.
 
-V2 uses internal AMM-derived price observations for risk checks. The automatic safe-mode conditions compare current vs spot EMA using `MAX_TICKS_DELTA`, and spot vs fast EMA and median vs slow EMA using half that threshold. The guardian lock adds three to the automatic score. See the [oracle guide](/docs/panoptic-protocol/V2/oracle-system) and [safe-mode guide](/docs/panoptic-protocol/V2/safe-mode) for behavior.
-
-`FORCE_EXERCISE_COST` is a coefficient in a position- and price-dependent calculation, not a flat charge for every forced exercise. `MAX_BONUS` caps one component of liquidation compensation; final settlement also depends on collateral deficits, token balances, and potential protocol loss. Use the engine's calculation interfaces for an actual position.
+The [snapshot](/data/risk-engines.json) checks the chain, deployed runtime, listed getters, safe-mode boundaries, and cross-buffer behavior. Runtime is compared with the pinned public release's creation bytecode executed in a read-only `eth_call`. This checks direct deployments only; it does not resolve a proxy's implementation or validate its internal constructor parameters.
 
 <!-- BEGIN GENERATED RISK ENGINE TABLES -->
 
-## Crypto blue chip {#crypto-blue-chip}
+## Legacy Crypto blue chip {#crypto-blue-chip}
 
 Address: `0x000000000000075e29cdaa9cb640a69e148ca7da`.
 
@@ -94,7 +124,7 @@ Values match on both chains at the recorded blocks.
 | `ADJUSTMENT_SPEED` | `1585489599188` | 0.000001585489599188 per second (WAD) |
 | `IRM_MAX_ELAPSED_TIME` | `16384` | 16384 seconds |
 
-## Stocks {#stocks}
+## Legacy Stocks {#stocks}
 
 Address: `0x0000000000000fe1e261f66ce2f44def4f5ae0cb`.
 
@@ -149,7 +179,7 @@ Values match on both chains at the recorded blocks.
 | `ADJUSTMENT_SPEED` | `1585489599188` | 0.000001585489599188 per second (WAD) |
 | `IRM_MAX_ELAPSED_TIME` | `16384` | 16384 seconds |
 
-## Stocks, inverted token ordering {#stocks-inverted}
+## Legacy Stocks, inverted token ordering {#stocks-inverted}
 
 Address: `0x0000000000000f3fb82469581a74776178e76ca4`.
 

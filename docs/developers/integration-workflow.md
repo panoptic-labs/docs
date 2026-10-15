@@ -45,6 +45,8 @@ Closing a position follows the same simulate, sign, confirm, and refresh sequenc
 
 ## RiskEngine and source versions
 
-Read the pool's engine address and its deployed getters. Source-code defaults, SDK estimates, and indexed parameter descriptions do not override deployed values. A new RiskEngine requires moving to a pool configured with that engine and migrating the relevant positions/state; existing pools do not switch engines automatically.
+Read the pool's engine address. For proxy-backed pools, resolve the ERC-1967 implementation and its verified constructor arguments at the same block as the pool reads. Most tier parameters no longer have public getters; decode the packed `getRiskParameters` result for exposed fields and use verified constructor inputs for internal immutables. See the [proxy reference](../contracts/V2/RiskEngine/contract.RiskEngineProxy).
+
+Proxy upgrades can change risk logic and parameters across existing pools without changing their engine address. Do not cache configuration solely by that address. Legacy direct-engine pools require migration to a new pool to adopt the proxy release. Source-code defaults, SDK estimates, and indexed descriptions do not override the active implementation's configuration.
 
 Use the [public contract repository](https://github.com/panoptic-labs/panoptic-v2-core) for contract implementation details and the [parameter reference](../contracts/parameters) for documented deployment snapshots. The [read-only quickstart](./v2-integration) validates pool metadata; it does not verify every risk helper or execute this transaction lifecycle.
