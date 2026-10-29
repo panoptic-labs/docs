@@ -67,4 +67,4 @@ The final review of the Panoptic vault infrastructure was completed by top code4
 The initial Panoptic vault infrastructure audit [report](https://code4rena.com/reports/2025-06-panoptic-hypovault) was completed by [Code4rena](https://code4rena.com/) on August 13, 2025.
 
 ### Nethermind
-The second Panoptic vault infrastructure audit was completed by [Nethermind](https://www.nethermind.io/nethermind-security) on August 25, 2025.
+The second Panoptic vault infrastructure audit [report](https://github.com/NethermindEth/PublicAuditReports/blob/main/NM0615-FINAL_PANOPTIC.pdf) was completed by [Nethermind](https://www.nethermind.io/nethermind-security) on August 25, 2025.
